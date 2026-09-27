@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="960" viewBox="0 0 1400 960" role="img" aria-labelledby="title desc">
+  <title id="title">Desktop speaker system-level architecture</title>
+  <desc id="desc">Provisional block diagram for a battery speaker with USB-C, Bluetooth, analogue input, three drivers, headphone output, fuel gauge, charger, power path and control MCU.</desc>
+  <defs>
+    <linearGradient id="bg" x2="0" y2="1"><stop stop-color="#101b2b"/><stop offset="1" stop-color="#0a1220"/></linearGradient>
+    <linearGradient id="panel" x2="0" y2="1"><stop stop-color="#1b2a3e"/><stop offset="1" stop-color="#142235"/></linearGradient>
+    <marker id="audioArrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#52d7e8"/></marker>
+    <marker id="powerArrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#83dfa1"/></marker>
+    <marker id="ctrlArrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#f5c66b"/></marker>
+    <style>
+      text{font-family:Inter,Arial,sans-serif;fill:#eef4fb}.title{font-size:31px;font-weight:700;letter-spacing:.2px}.sub{font-size:15px;fill:#a9bbcf}.head{font-size:17px;font-weight:700}.body{font-size:14px;fill:#c8d5e4}.small{font-size:12px;fill:#9fb2c8}.tag{font-size:11px;font-weight:700;letter-spacing:1px}.card{fill:url(#panel);stroke:#30445e;stroke-width:1.5;rx:16}.inner{fill:#101b2b;stroke:#344a63;stroke-width:1.2;rx:11}.audio{fill:none;stroke:#52d7e8;stroke-width:3;marker-end:url(#audioArrow)}.power{fill:none;stroke:#83dfa1;stroke-width:3;marker-end:url(#powerArrow)}.ctrl{fill:none;stroke:#f5c66b;stroke-width:2;stroke-dasharray:7 6;marker-end:url(#ctrlArrow)}
+    </style>
+  </defs>
+  <rect width="1400" height="960" fill="url(#bg)"/>
+  <text x="52" y="58" class="title">Desktop speaker · system-level architecture</text>
+  <text x="53" y="87" class="sub">Working concept · footprint about 163 × 156 mm · height about 82 mm · component choices are provisional</text>
+
+  <!-- Audio source cards -->
+  <rect x="45" y="133" width="285" height="465" class="card"/>
+  <text x="70" y="169" class="tag" fill="#52d7e8">AUDIO SOURCES</text>
+  <rect x="68" y="192" width="239" height="102" class="inner"/>
+  <text x="88" y="222" class="head">USB-C audio</text>
+  <text x="88" y="247" class="body">USB Audio Class interface</text>
+  <text x="88" y="270" class="small">Audio data + negotiated power</text>
+  <rect x="68" y="316" width="239" height="102" class="inner"/>
+  <text x="88" y="346" class="head">Bluetooth receiver</text>
+  <text x="88" y="371" class="body">A2DP audio SoC / module</text>
+  <text x="88" y="394" class="small">Wireless source · antenna zone</text>
+  <rect x="68" y="440" width="239" height="102" class="inner"/>
+  <text x="88" y="470" class="head">3.5 mm line input</text>
+  <text x="88" y="495" class="body">Input protection + analogue path</text>
+  <text x="88" y="518" class="small">Auto-detect / source selection</text>
+
+  <!-- DSP and amplification -->
+  <rect x="397" y="192" width="300" height="350" class="card"/>
+  <text x="423" y="229" class="tag" fill="#52d7e8">AUDIO PROCESSING</text>
+  <rect x="423" y="255" width="248" height="106" class="inner"/>
+  <text x="444" y="287" class="head">Input select + audio DSP</text>
+  <text x="444" y="313" class="body">Crossover · EQ · limiter</text>
+  <text x="444" y="338" class="small">Shared volume and mute control</text>
+  <rect x="423" y="388" width="248" height="118" class="inner"/>
+  <text x="444" y="420" class="head">3-channel Class-D amp</text>
+  <text x="444" y="446" class="body">Left · right · mono woofer</text>
+  <text x="444" y="473" class="small">Power limited to input / battery</text>
+
+  <!-- outputs -->
+  <rect x="766" y="133" width="285" height="465" class="card"/>
+  <text x="791" y="169" class="tag" fill="#52d7e8">LISTENING OUTPUTS</text>
+  <rect x="790" y="192" width="237" height="102" class="inner"/>
+  <text x="811" y="222" class="head">Front left driver</text>
+  <text x="811" y="247" class="body">Small full-range speaker</text>
+  <text x="811" y="270" class="small">Faces the listener</text>
+  <rect x="790" y="316" width="237" height="102" class="inner"/>
+  <text x="811" y="346" class="head">Front right driver</text>
+  <text x="811" y="371" class="body">Small full-range speaker</text>
+  <text x="811" y="394" class="small">Faces the listener · stereo pair</text>
+  <rect x="790" y="440" width="237" height="102" class="inner"/>
+  <text x="811" y="470" class="head">Down-firing woofer</text>
+  <text x="811" y="495" class="body">Dedicated mono low-frequency channel</text>
+  <text x="811" y="518" class="small">Clearance set by feet + suspension</text>
+
+  <!-- headphone output -->
+  <rect x="1090" y="192" width="265" height="168" class="card"/>
+  <text x="1116" y="227" class="tag" fill="#52d7e8">HEADPHONE OUTPUT</text>
+  <text x="1116" y="263" class="head">Dedicated headphone amp</text>
+  <text x="1116" y="290" class="body">3.5 mm stereo jack</text>
+  <text x="1116" y="318" class="small">Jack detect mutes speaker amps</text>
+  <path d="M697 303H1090" class="audio"/>
+
+  <!-- audio routes -->
+  <path d="M330 243H397" class="audio"/>
+  <path d="M330 367H397" class="audio"/>
+  <path d="M330 491H397" class="audio"/>
+  <path d="M697 446H733V243H766" class="audio"/>
+  <path d="M733 367H766" class="audio"/>
+  <path d="M733 491H766" class="audio"/>
+  <text x="713" y="225" class="small">L</text><text x="713" y="350" class="small">R</text><text x="713" y="475" class="small">SUB</text>
+
+  <!-- power subsystem -->
+  <rect x="45" y="650" width="1310" height="246" class="card"/>
+  <text x="70" y="686" class="tag" fill="#83dfa1">POWER, BATTERY &amp; CONTROL</text>
+  <rect x="70" y="710" width="235" height="132" class="inner"/>
+  <text x="91" y="742" class="head">USB-C power input</text>
+  <text x="91" y="768" class="body">5 V / 2 A compatible</text>
+  <text x="91" y="793" class="small">USB PD adds power headroom</text>
+  <text x="91" y="817" class="small">Source current detected first</text>
+  <rect x="360" y="710" width="265" height="132" class="inner"/>
+  <text x="382" y="742" class="head">Charger + power path</text>
+  <text x="382" y="768" class="body">System load gets priority</text>
+  <text x="382" y="793" class="small">Slow / pause charging if input limited</text>
+  <text x="382" y="817" class="small">Desk charge ceiling configurable</text>
+  <rect x="684" y="710" width="216" height="132" class="inner"/>
+  <text x="707" y="742" class="head">Battery pack</text>
+  <text x="707" y="768" class="body">Cell format TBD</text>
+  <text x="707" y="793" class="small">Protection + temperature sense</text>
+  <text x="707" y="817" class="small">Capacity sized for runtime target</text>
+  <rect x="959" y="710" width="177" height="132" class="inner"/>
+  <text x="980" y="742" class="head">Fuel gauge</text>
+  <text x="980" y="768" class="body">Accurate state of charge</text>
+  <text x="980" y="793" class="small">Low-current monitoring</text>
+  <rect x="1182" y="710" width="147" height="132" class="inner"/>
+  <text x="1202" y="742" class="head">MCU</text>
+  <text x="1202" y="768" class="body">Controls + policy</text>
+  <text x="1202" y="793" class="small">Standby / storage</text>
+  <text x="1202" y="817" class="small">LEDs + buttons</text>
+  <path d="M305 776H360" class="power"/>
+  <path d="M625 754H684" class="power"/>
+  <path d="M625 800H642V865H1120V842" class="power"/>
+  <path d="M900 776H959" class="power"/>
+  <path d="M1136 776H1182" class="ctrl"/>
+  <!-- control bus -->
+  <path d="M1255 710V626H548V542" class="ctrl"/>
+  <path d="M1255 626H908V598" class="ctrl"/>
+  <path d="M1182 730H1058V600" class="ctrl"/>
+  <text x="1044" y="619" class="small">jack detect</text>
+  <text x="385" y="622" class="small">control / mute / source commands</text>
+
+  <!-- legend -->
+  <path d="M72 927H112" class="audio"/><text x="123" y="932" class="small">Audio signal</text>
+  <path d="M272 927H312" class="power"/><text x="323" y="932" class="small">Power flow</text>
+  <path d="M462 927H502" class="ctrl"/><text x="513" y="932" class="small">Control / status</text>
+  <text x="805" y="932" class="small">Headphone, battery chemistry, drivers, DSP and ICs remain to be selected.</text>
+</svg>

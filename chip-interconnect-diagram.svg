@@ -1,0 +1,209 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1180" viewBox="0 0 1800 1180" role="img" aria-labelledby="title desc">
+  <title id="title">Desktop speaker chip interconnection diagram</title>
+  <desc id="desc">Provisional chip-level interconnections for a three-source, three-driver battery desktop speaker controlled by an STM32G071.</desc>
+  <defs>
+    <linearGradient id="bg" x2="0" y2="1"><stop stop-color="#101b2b"/><stop offset="1" stop-color="#0a1220"/></linearGradient>
+    <linearGradient id="card" x2="0" y2="1"><stop stop-color="#1b2a3e"/><stop offset="1" stop-color="#142235"/></linearGradient>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#52d7e8"/></marker>
+    <marker id="p" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#83dfa1"/></marker>
+    <marker id="c" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#f5c66b"/></marker>
+    <style>
+      text{font-family:Inter,Arial,sans-serif;fill:#eef4fb}.title{font-size:31px;font-weight:700}.sub{font-size:15px;fill:#a9bbcf}.label{font-size:12px;font-weight:700;letter-spacing:1px}.head{font-size:17px;font-weight:700}.body{font-size:14px;fill:#c8d5e4}.small{font-size:12px;fill:#9fb2c8}.tiny{font-size:11px;fill:#93a9bf}.card{fill:url(#card);stroke:#30445e;stroke-width:1.5;rx:15}.chip{fill:#101b2b;stroke:#3b526d;stroke-width:1.3;rx:10}.audio{fill:none;stroke:#52d7e8;stroke-width:3;marker-end:url(#a)}.power{fill:none;stroke:#83dfa1;stroke-width:3;marker-end:url(#p)}.control{fill:none;stroke:#f5c66b;stroke-width:2;stroke-dasharray:7 6;marker-end:url(#c)}.bus{fill:none;stroke:#f5c66b;stroke-width:2;stroke-dasharray:7 6}
+    </style>
+  </defs>
+  <rect width="1800" height="1180" fill="url(#bg)"/>
+  <text x="48" y="54" class="title">Desktop speaker · chip interconnections</text>
+  <text x="49" y="82" class="sub">Provisional component-level concept · all listed parts are candidates pending driver, runtime, supply and availability checks</text>
+
+  <!-- AUDIO SOURCE CONNECTIONS -->
+  <rect x="40" y="120" width="235" height="500" class="card"/>
+  <text x="62" y="153" class="label" fill="#52d7e8">CONNECTORS / SOURCES</text>
+  <rect x="61" y="174" width="193" height="145" class="chip"/>
+  <text x="78" y="202" class="head">USB-C receptacle</text>
+  <text x="78" y="228" class="body">D+ / D− → USB audio</text>
+  <text x="78" y="251" class="small">VBUS / CC → power section</text>
+  <text x="78" y="275" class="small">USB2 data and PD power</text>
+  <text x="78" y="298" class="tiny">one connector, separate paths</text>
+  <rect x="61" y="338" width="193" height="105" class="chip"/>
+  <text x="78" y="369" class="head">3.5 mm line-in</text>
+  <text x="78" y="395" class="body">ESD + AC coupling</text>
+  <text x="78" y="420" class="small">Stereo L / R</text>
+  <rect x="61" y="462" width="193" height="122" class="chip"/>
+  <text x="78" y="493" class="head">Bluetooth antenna</text>
+  <text x="78" y="519" class="body">2.4 GHz RF keepout</text>
+  <text x="78" y="544" class="small">For BM83 module</text>
+  <text x="78" y="566" class="tiny">module antenna layout rules</text>
+
+  <!-- USB and BT audio chips -->
+  <rect x="315" y="155" width="235" height="174" class="card"/>
+  <text x="338" y="188" class="label" fill="#52d7e8">USB AUDIO</text>
+  <text x="338" y="222" class="head">TI PCM2912A</text>
+  <text x="338" y="250" class="body">USB Audio Class codec</text>
+  <text x="338" y="276" class="small">USB D+ / D−, stereo DAC L/R</text>
+  <text x="338" y="301" class="small">Class-compliant host playback</text>
+  <rect x="315" y="375" width="235" height="174" class="card"/>
+  <text x="338" y="408" class="label" fill="#52d7e8">BLUETOOTH AUDIO</text>
+  <text x="338" y="442" class="head">Microchip BM83</text>
+  <text x="338" y="470" class="body">A2DP receiver / stereo DAC</text>
+  <text x="338" y="496" class="small">Antenna · UART control</text>
+  <text x="338" y="521" class="small">Analog stereo out to mux</text>
+  <text x="338" y="541" class="tiny">RF-certified module · production</text>
+  <path d="M275 244H315" class="audio"/>
+  <path d="M275 522H294V462H315" class="audio"/>
+  <text x="281" y="230" class="tiny">D+/D−</text>
+  <text x="284" y="509" class="tiny">RF</text>
+
+  <!-- Mux stages -->
+  <rect x="592" y="155" width="228" height="394" class="card"/>
+  <text x="615" y="188" class="label" fill="#52d7e8">STEREO SOURCE SELECT</text>
+  <rect x="615" y="213" width="182" height="112" class="chip"/>
+  <text x="631" y="242" class="head">TS5A23157 #1</text>
+  <text x="631" y="269" class="body">2 × SPDT, L/R</text>
+  <text x="631" y="294" class="small">USB DAC or BT DAC</text>
+  <text x="631" y="314" class="tiny">low-level analogue switch</text>
+  <rect x="615" y="357" width="182" height="112" class="chip"/>
+  <text x="631" y="386" class="head">TS5A23157 #2</text>
+  <text x="631" y="413" class="body">2 × SPDT, L/R</text>
+  <text x="631" y="438" class="small">mux #1 or 3.5 mm</text>
+  <text x="631" y="458" class="tiny">stereo 3:1, exclusive select</text>
+  <text x="615" y="503" class="small">STM32 select lines; mute → switch → fade in</text>
+  <text x="615" y="526" class="tiny">AC coupling / bias and signal levels need design</text>
+  <path d="M550 242H592" class="audio"/>
+  <path d="M550 462H572V269H592" class="audio"/>
+  <path d="M254 390H570V413H592" class="audio"/>
+
+  <!-- DSP -->
+  <rect x="858" y="200" width="245" height="275" class="card"/>
+  <text x="882" y="235" class="label" fill="#52d7e8">PROCESSING</text>
+  <text x="882" y="272" class="head">Analog Devices</text>
+  <text x="882" y="298" class="head">ADAU1701 DSP</text>
+  <text x="882" y="329" class="body">Stereo ADC from mux</text>
+  <text x="882" y="354" class="body">Crossover + EQ + limiter</text>
+  <text x="882" y="379" class="small">DAC1: left · DAC2: right</text>
+  <text x="882" y="402" class="small">DAC3: mono woofer</text>
+  <text x="882" y="428" class="small">I²C control · EEPROM boot</text>
+  <text x="882" y="453" class="tiny">4 DACs available; 3 used here</text>
+  <path d="M820 413H858" class="audio"/>
+  <text x="826" y="400" class="tiny">stereo</text>
+
+  <!-- Amplifiers -->
+  <rect x="1142" y="155" width="244" height="210" class="card"/>
+  <text x="1166" y="188" class="label" fill="#52d7e8">SPEAKER AMPLIFIERS</text>
+  <text x="1166" y="224" class="head">TI TPA3118D2 #1</text>
+  <text x="1166" y="253" class="body">Stereo BTL: left + right</text>
+  <text x="1166" y="280" class="small">Analog inputs from DSP DACs</text>
+  <text x="1166" y="305" class="small">Enable / fault → STM32</text>
+  <text x="1166" y="336" class="tiny">Output level set by supply + drivers</text>
+  <rect x="1142" y="395" width="244" height="154" class="card"/>
+  <text x="1166" y="428" class="head">TI TPA3118D2 #2</text>
+  <text x="1166" y="456" class="body">Mono PBTL: woofer</text>
+  <text x="1166" y="483" class="small">Dedicated DSP low-pass output</text>
+  <text x="1166" y="510" class="small">Enable / fault → STM32</text>
+  <text x="1166" y="534" class="tiny">candidate power stage; validate idle draw</text>
+  <path d="M1103 306H1123V253H1142" class="audio"/>
+  <path d="M1123 253V470H1142" class="audio"/>
+
+  <!-- Drivers -->
+  <rect x="1431" y="155" width="330" height="394" class="card"/>
+  <text x="1455" y="188" class="label" fill="#52d7e8">DRIVER CONNECTIONS</text>
+  <rect x="1455" y="213" width="281" height="86" class="chip"/>
+  <text x="1475" y="246" class="head">Front left · full range</text>
+  <text x="1475" y="273" class="small">L+ / L− from BTL amplifier</text>
+  <rect x="1455" y="319" width="281" height="86" class="chip"/>
+  <text x="1475" y="352" class="head">Front right · full range</text>
+  <text x="1475" y="379" class="small">R+ / R− from BTL amplifier</text>
+  <rect x="1455" y="425" width="281" height="86" class="chip"/>
+  <text x="1475" y="458" class="head">Down-firing woofer</text>
+  <text x="1475" y="485" class="small">PBTL output · foot clearance required</text>
+  <path d="M1386 253H1410V256H1431" class="audio"/>
+  <path d="M1410 256V362H1431" class="audio"/>
+  <path d="M1386 470H1431" class="audio"/>
+
+  <!-- Headphone path -->
+  <rect x="858" y="510" width="245" height="116" class="card"/>
+  <text x="881" y="541" class="label" fill="#52d7e8">HEADPHONE PATH</text>
+  <text x="881" y="569" class="head">TPA6132A2</text>
+  <text x="881" y="592" class="small">stereo amp, &lt;1 µA shutdown</text>
+  <text x="881" y="613" class="tiny">analogue tap from selected source</text>
+  <rect x="1142" y="568" width="244" height="58" class="chip"/>
+  <text x="1164" y="593" class="head">3.5 mm headphones</text>
+  <text x="1164" y="615" class="tiny">jack sense → STM32; mute speakers</text>
+  <path d="M820 413H838V568H858" class="audio"/>
+  <path d="M1103 568H1142" class="audio"/>
+  <path d="M1142 602H1119V645H1065V626" class="control"/>
+
+  <!-- MCU control -->
+  <rect x="320" y="660" width="362" height="142" class="card"/>
+  <text x="345" y="694" class="label" fill="#f5c66b">SYSTEM CONTROL MCU</text>
+  <text x="345" y="730" class="head">ST STM32G071KBT6</text>
+  <text x="345" y="756" class="body">Cortex-M0+ · 64 MHz · 128 KB Flash · 36 KB RAM</text>
+  <text x="345" y="780" class="small">I²C · UART · GPIO · low-power standby / wake</text>
+  <text x="345" y="798" class="tiny">control only; USB audio data bypasses MCU</text>
+  <!-- control links -->
+  <path d="M421 660V594H458V549" class="control"/>
+  <path d="M500 660V642H705V469" class="control"/>
+  <path d="M560 660V637H1265V549" class="control"/>
+  <path d="M645 660V651H1067V626" class="control"/>
+  <text x="465" y="640" class="tiny">UART</text><text x="711" y="631" class="tiny">mux SEL</text><text x="1272" y="638" class="tiny">EN / FAULT</text>
+
+  <!-- Shared I2C bus -->
+  <path d="M682 706H737V675H1410" class="bus"/>
+  <path d="M737 675V634H979V626" class="control"/>
+  <path d="M484 675V902" class="control"/>
+  <path d="M805 675V902" class="control"/>
+  <path d="M1403 675V902" class="control"/>
+  <text x="772" y="666" class="tiny">shared I²C: DSP config · charger · fuel gauge · PD status</text>
+
+  <!-- Power management panel -->
+  <rect x="40" y="842" width="1720" height="273" class="card"/>
+  <text x="64" y="878" class="label" fill="#83dfa1">POWER MANAGEMENT · USB POWER-PATH OPERATION</text>
+  <rect x="65" y="902" width="245" height="165" class="chip"/>
+  <text x="87" y="935" class="head">USB-C VBUS / CC</text>
+  <text x="87" y="963" class="body">5 V / 2 A source accepted</text>
+  <text x="87" y="989" class="small">PD contract can add headroom</text>
+  <text x="87" y="1017" class="tiny">USB2 D+ / D− route separately</text>
+  <rect x="362" y="902" width="245" height="165" class="chip"/>
+  <text x="384" y="935" class="head">STUSB4500</text>
+  <text x="384" y="963" class="body">USB-C PD sink controller</text>
+  <text x="384" y="989" class="small">autonomous PDO negotiation</text>
+  <text x="384" y="1017" class="tiny">CC + I²C status to MCU</text>
+  <rect x="665" y="902" width="280" height="165" class="chip"/>
+  <text x="688" y="935" class="head">TI BQ25792</text>
+  <text x="688" y="963" class="body">1–4 cell buck-boost charger</text>
+  <text x="688" y="989" class="small">power path + input DPM</text>
+  <text x="688" y="1017" class="tiny">load first; reduce charge if input limited</text>
+  <rect x="1003" y="902" width="240" height="165" class="chip"/>
+  <text x="1025" y="935" class="head">2S Li-ion pack</text>
+  <text x="1025" y="963" class="body">cell protection + NTC</text>
+  <text x="1025" y="989" class="small">voltage / current shunt</text>
+  <text x="1025" y="1017" class="tiny">capacity and cell choice TBD</text>
+  <rect x="1301" y="902" width="205" height="165" class="chip"/>
+  <text x="1323" y="935" class="head">TI BQ34Z100-G1</text>
+  <text x="1323" y="963" class="body">multi-cell fuel gauge</text>
+  <text x="1323" y="989" class="small">I²C / ALERT to MCU</text>
+  <text x="1323" y="1017" class="tiny">sleep modes for low drain</text>
+  <rect x="1564" y="902" width="166" height="165" class="chip"/>
+  <text x="1586" y="935" class="head">Power rails</text>
+  <text x="1586" y="963" class="body">SYS → amps</text>
+  <text x="1586" y="989" class="small">buck → 5 V / 3.3 V</text>
+  <text x="1586" y="1017" class="tiny">DSP / MCU / BT / codec</text>
+  <path d="M310 982H362" class="power"/>
+  <path d="M607 982H665" class="power"/>
+  <path d="M945 982H1003" class="power"/>
+  <path d="M1243 982H1301" class="power"/>
+  <path d="M1506 982H1564" class="power"/>
+  <path d="M770 902V866H522V802" class="control"/>
+  <path d="M1410 902V864H622V802" class="control"/>
+  <text x="659" y="860" class="tiny">VBUS protected path</text>
+  <text x="1260" y="850" class="tiny">battery data</text>
+
+  <!-- Speaker amp supply -->
+  <path d="M1647 902V822H1265V549" class="power"/>
+  <text x="1410" y="813" class="tiny">SYS rail to Class-D power stages</text>
+
+  <!-- Legend -->
+  <path d="M53 1151H97" class="audio"/><text x="108" y="1156" class="small">analogue audio</text>
+  <path d="M261 1151H305" class="power"/><text x="316" y="1156" class="small">power</text>
+  <path d="M415 1151H459" class="control"/><text x="470" y="1156" class="small">control / status</text>
+  <text x="690" y="1156" class="small">BT BM83 is a module mounted on the custom PCB; battery protection circuit details remain to be selected.</text>
+</svg>
