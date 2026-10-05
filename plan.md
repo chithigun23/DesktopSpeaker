@@ -66,10 +66,10 @@ Updated: 2026-10-05. Use this checklist with `AGENTS.md` and `ai-files/HANDOVER.
 
 ## 5. USB audio and connector data path — PARTIAL
 
-- [x] Connect PCM2902C (U2, moved to child sheet `USB_Audio.kicad_sch`, root page 8) supplies/grounds, decoupling, 12 MHz crystal (Y170, R174, C177/C178), SEL0/SEL1 high, D+ 1.5 k pull-up and 22 R series resistors, VCOM/VCCCI bypass. Supply is `5V_LOGIC` through R170 2.2 R / C170 1 uF. See `ai-files/reports/usb-audio-notes.md`.
+- [x] Connect PCM2902C (U2, moved to child sheet `USB_Audio.kicad_sch`, root page 8) supplies/grounds, decoupling, 12 MHz crystal (Y170, R174, C177/C178), SEL0/SEL1 high, D+ 1.5 k pull-up and 22 R series resistors, VCOM/VCCCI bypass. Supply is now `5V_CODEC` (switched by U23 on Source_Select_ADC; was `5V_LOGIC`) through R170 2.2 R / C170 1 uF. See `ai-files/reports/usb-audio-notes.md`.
 - [x] Wire USB-C D+/D- (J1 A6/B6, A7/B7) through D1 to the sheet ports USB_DP/USB_DN. Tap point for the later source-detect mux noted in the root; mux not added.
 - [x] Shield: EH pins direct to GND (no RC). Note: this also joins the previously isolated root-local J1 `/GND` net to system GND.
-- [x] Codec output: 4.7 uF coupling + 100 k bleed to ports `USB_AUDIO_L/R` (about 2 Vpp, 1.65 V DC before coupling). Not connected to any mux yet.
+- [x] Codec output: 4.7 uF coupling + 100 k bleed to ports `USB_AUDIO_L/R` (about 2 Vpp, 1.65 V DC before coupling). Now feeds Source_Select_ADC VIN1 (2026-10-06).
 - [ ] Source-selection mux, SSPND/HID/MCU connections, crystal/ceramic qualification, LCSC codes for R170/R171/R172, 100 mA/suspend budget handling (5V_LOGIC_EN sequencing).
 - [ ] Check USB data operation under 5 V fallback, PD operation and battery/rail transitions.
 
@@ -85,6 +85,7 @@ Updated: 2026-10-05. Use this checklist with `AGENTS.md` and `ai-files/HANDOVER.
 
 ## 7. Source selection and analogue-to-digital conversion
 
+- [x] Source_Select_ADC child sheet captured (2026-10-06, root page 10): U24 PCM1862DBTR (I2C 0x4A, I2S master from Y200 24.576 MHz, VIN1 USB / VIN2 BT / VIN3 AUX, 2.2 uF-100R-10 nF C0G input networks), U22 TPS7A2033PDBVR 3V3_AUDIO LDO (EN tied to IN) from 5V_LOGIC, U23 TPS22917DBVR load switch for 5V_CODEC (CODEC_PWR_EN, 100 k pull-down), FB200 on AVDD, I2S through 33 R to ports I2S_BCK/LRCK/SDATA, AUD_SCL/SDA 2.2 k pull-ups to 3V3_AUDIO, ADC_INT 100 k pull-down. MCU PB10/PB11/PC5/PC7 connected. USB_Audio now supplied from 5V_CODEC. AUX_L/R, I2S and 3V3_AUDIO stay open root stubs until Headphone_Aux and Amplifiers. Open: LCSC codes/stock for U22-U24 passives, crystal CL (15 pF) trim, PCM1862 bench check. See HANDOVER.
 - [ ] Define the complete USB/Bluetooth/auxiliary audio path and switching truth table.
 - [ ] Connect/configure TS5A23157 switches only after confirming signal swing, bias, supply and default state.
 - [ ] Select an audio ADC or a compatible alternative architecture. TAS5825M requires digital audio; current analogue codec/mux outputs cannot directly drive it.

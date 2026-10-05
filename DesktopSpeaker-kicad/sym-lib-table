@@ -43,4 +43,7 @@
   (lib (name "CSD17579Q3A") (type "KiCad") (uri "${KIPRJMOD}/kicad-library/schematic/CSD17579Q3A.kicad_sym") (options "") (descr "External charger ship FET, TI DNH0008A"))
   (lib (name "TPS3839G33DBZR") (type "KiCad") (uri "${KIPRJMOD}/kicad-library/schematic/TPS3839G33DBZR.kicad_sym") (options "") (descr "Low-battery gauge bus supervisor"))
   (lib (name "TPS25730DREFR") (type "KiCad") (uri "${KIPRJMOD}/kicad-library/schematic/TPS25730DREFR.kicad_sym") (options "") (descr "5-20V USB PD sink controller, TI REF0038A"))
+  (lib (name "PCM1862DBTR") (type "KiCad") (uri "${KIPRJMOD}/kicad-library/schematic/PCM1862DBTR.kicad_sym") (options "") (descr "Texas Instruments PCM1862 audio ADC"))
+  (lib (name "TPS7A2033PDBVR") (type "KiCad") (uri "${KIPRJMOD}/kicad-library/schematic/TPS7A2033PDBVR.kicad_sym") (options "") (descr "Texas Instruments TPS7A2033 LDO"))
+  (lib (name "TPS22917DBVR") (type "KiCad") (uri "${KIPRJMOD}/kicad-library/schematic/TPS22917DBVR.kicad_sym") (options "") (descr "Texas Instruments TPS22917 load switch"))
 )
