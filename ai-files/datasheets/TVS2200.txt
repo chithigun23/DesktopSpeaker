@@ -1,0 +1,1115 @@
+                                                                                                                                        TVS2200
+                                                                                            SLVSED5C – DECEMBER 2017 – REVISED AUGUST 2023
+
+                           TVS2200 22-V Flat-Clamp Surge Protection Device
+                                                                       The TVS2200 uses a unique feedback mechanism
+1 Features                                                             for precise flat clamping during a fault, allowing
+•   Protection against ±1 kV, 42 Ω IEC 61000-4-5                       system exposure below 30 V. The tight voltage
+    surge test for industrial signal lines                             regulation allows designers to confidently select
+•   Maximum clamping voltage of 28.4 V at 40 A of                      system components with a lower voltage tolerance,
+    8/20 µs surge current                                              lowering system costs and complexity without
+•   Standoff voltage: 22 V                                             sacrificing robustness.
+•   Tiny 4 mm2 footprint
+                                                                       In addition, the TVS2200 is available in a small 2
+•   Survives over 5,000 repetitive strikes of 35 A 8/20
+                                                                       mm × 2 mm SON footprint which is designed for
+    µs surge current at 125°C
+                                                                       space constrained applications, offering a 70 percent
+•   Robust surge protection:
+                                                                       reduction in size compared to industry standard
+    – IEC 61000-4-5 (8/20 µs): 40 A                                    SMA and SMB packages. The extremely low device
+    – IEC 61643-321 (10/1000 µs): 5 A                                  leakage and capacitance causes a minimal effect
+•   Low leakage current:                                               on the protected line. For robust protection over the
+    – 3.5 nA typical at 27°C                                           lifetime of the product, TI tests the TVS2200 against
+    – 25 nA typical at 85°C                                            5,000 repetitive surge strikes at high temperature with
+•   Low capacitance: 105 pF                                            no shift in device performance.
+•   Integrated level 4 IEC 61000-4-2 ESD protection
+                                                                       The TVS2200 is part of TI's Flat-Clamp family of
+2 Applications                                                         surge devices. For more information on the other
+•   Industrial Sensor I/O                                              devices in the family, see the Device Comparison
+•   Medical Equipment                                                  Table.
+•   USB Type-C™ Vbus                                                                           Package Information
+•   PLC I/O Modules                                                      PART NUMBER(1)                PACKAGE(2)           PACKAGE SIZE(3)
+•   Appliances
+                                                                       TVS2200                    DRV (SON, 6)         2 mm × 2 mm
+3 Description
+                                                                       (1)   See Device Comparison Table
+The TVS2200 robustly shunts up to 40 A of IEC                          (2)   For all available packages, see the orderable addendum at
+                                                                             the end of the data sheet.
+61000-4-5 fault current to protect systems from high
+                                                                       (3)   The package size (length × width) is a nominal value and
+power transients or lightning strikes. The device                            includes pins, where applicable.
+offers a solution to the common industrial signal
+line EMC requirement to survive up to ±1 kV IEC
+61000-4-5 open circuit voltage coupled through a 42
+Ω impedance.
+                                                                                  Voltage
+
+
+
+
+                                                                                                  10         20        30
+
+
+                                                                                                          Time ( s)
+                  Footprint Comparison                                                                                Traditional TVS
+                                                                                                                      TI Flat-Clamp
+
+                                                                       Voltage Clamp Response to 8 µs to 20 µs Surge
+                                                                                          Event
+
+
+     An IMPORTANT NOTICE at the end of this data sheet addresses availability, warranty, changes, use in safety-critical applications,
+     intellectual property matters and other important disclaimers. PRODUCTION DATA.
+TVS2200
+SLVSED5C – DECEMBER 2017 – REVISED AUGUST 2023                                                                                                                   www.ti.com
+
+
+                                                                        Table of Contents
+1 Features............................................................................1     8.3 Feature Description.....................................................8
+2 Applications..................................................................... 1       8.4 Reliability Testing........................................................ 8
+3 Description.......................................................................1       8.5 Device Functional Modes............................................9
+4 Revision History.............................................................. 2        9 Application and Implementation.................................. 10
+5 Device Comparison Table...............................................3                   9.1 Application Information............................................. 10
+6 Pin Configuration and Functions...................................3                       9.2 Typical Application.................................................... 10
+7 Specifications.................................................................. 4        9.3 Power Supply Recommendations............................. 11
+  7.1 Absolute Maximum Ratings........................................ 4                    9.4 Layout....................................................................... 11
+  7.2 ESD Ratings - JEDEC................................................ 4               10 Device and Documentation Support..........................13
+  7.3 ESD Ratings - IEC...................................................... 4             10.1 Documentation Support.......................................... 13
+  7.4 Recommended Operating Conditions.........................4                            10.2 Receiving Notification of Documentation Updates..13
+  7.5 Thermal Information....................................................5              10.3 Support Resources................................................. 13
+  7.6 Electrical Characteristics.............................................5              10.4 Trademarks............................................................. 13
+  7.7 Typical Characteristics................................................ 6             10.5 Electrostatic Discharge Caution..............................13
+8 Detailed Description........................................................8             10.6 Glossary..................................................................13
+  8.1 Overview..................................................................... 8     11 Mechanical, Packaging, and Orderable
+  8.2 Functional Block Diagram........................................... 8                 Information.................................................................... 13
+
+
+
+4 Revision History
+NOTE: Page numbers for previous revisions may differ from page numbers in the current version.
+Changes from Revision B (July 2023) to Revision C (August 2023)                                                                       Page
+• Updated the Pin Configuration and Functions section........................................................................................3
+
+Changes from Revision A (March 2018) to Revision B (July 2023)                                                                                Page
+• Updated the numbering format for tables, figures, and cross-references throughout the document................. 1
+• Changed the moisture sensitivity level for TVS2200DRCR from: 2 to: 1........................................................... 1
+• Updated the Package Information table............................................................................................................. 1
+
+Changes from Revision * (December 2017) to Revision A (March 2018)                                                               Page
+• Changed product status from Advance Information to Production Data............................................................ 1
+• Updated the DRV Package, 6-Pin SON (Top View) figure................................................................................. 3
+
+
+
+
+2       Submit Document Feedback                                                                                         Copyright © 2023 Texas Instruments Incorporated
+
+                                                                      Product Folder Links: TVS2200
+                                                                                                                                   TVS2200
+www.ti.com                                                                                    SLVSED5C – DECEMBER 2017 – REVISED AUGUST 2023
+
+
+5 Device Comparison Table
+                                                                                        Vrwm leakage
+       Device                 Vrwm                Vclamp at Ipp     Ipp (8/20 µs)                       Package Options        Polarity
+                                                                                            (nA)
+      TVS0500                   5                     9.2                 43                 0.07             SON           Unidirectional
+      TVS1400                  14                     18.4                43                  2               SON           Unidirectional
+      TVS1800                  18                     22.8                40                  0.5             SON           Unidirectional
+      TVS2200                  22                     27.7                40                  3.2             SON           Unidirectional
+      TVS2700                  27                     32.5                40                  1.7             SON           Unidirectional
+      TVS3300                  33                      38                 35                  19           WCSP, SON        Unidirectional
+
+
+6 Pin Configuration and Functions
+
+                                                        GND 3         7                   4 IN
+
+
+
+                                                        GND 2             GND             5 IN
+
+
+
+                                                        GND 1                             6 IN
+
+
+
+                                       Figure 6-1. DRV Package, 6-Pin SON (Bottom View)
+
+                                                             Table 6-1. Pin Functions
+                PIN
+                                      TYPE(1)                                                DESCRIPTION
+ NAME                  NO.
+                         1
+ GND                     2               G            Ground
+                         3
+                         4
+ IN                      5                I           ESD and surge protected channel
+                         6
+ Exposed thermal pad                    GND           Ground
+
+(1)    I = input, GND = ground
+
+
+
+
+Copyright © 2023 Texas Instruments Incorporated                                                              Submit Document Feedback        3
+
+                                                             Product Folder Links: TVS2200
+TVS2200
+SLVSED5C – DECEMBER 2017 – REVISED AUGUST 2023                                                                                        www.ti.com
+
+
+7 Specifications
+7.1 Absolute Maximum Ratings
+TA = 27°C (unless otherwise noted)(1)
+                                                                                                 MIN                MAX               UNIT
+                       IEC 61000-4-5 Current (8/20 µs)                                                               40                 A
+
+    Maximum            IEC 61000-4-5 Power (8/20 µs)                                                                1120                W
+    Surge              IEC 61643-321 Current (10/1000 µs)                                                             5                 A
+                       IEC 61643-321 Power (10/1000 µs)                                                             145                 W
+                       IEC 61000-4-5 Current (8/20 µs)                                                               50                 A
+
+    Maximum            IEC 61000-4-5 Power (8/20 µs)                                                                 80                 W
+    Forward Surge      IEC 61643-321 Current (10/1000 µs)                                                            23                 A
+                       IEC 61643-321 Power (10/1000 µs)                                                              60                 W
+    EFT               IEC 61000-4-4 EFT Protection                                                                   80                 A
+    IBR               DC Breakdown current                                                                           18                mA
+    IF                DC Forward Current                                                                            500                mA
+    TA                Ambient Operating Temperature                                              -40                125                 °C
+    Tstg              Storage Temperature                                                        -65                150                 °C
+
+(1)        Operation outside the Absolute Maximum Rating may cause permanent device damage. Absolute Maximum Rating do not imply
+           functional operation of the device at these or any other conditions beyond those listed under Recommended Operating Condition. If
+           used outside the Recommended Operating Condition but within the Absolute Maximum Rating, the device may not be fully functional,
+           and this may affect device reliability, functionality, performance, and shorten the device lifetime.
+
+7.2 ESD Ratings - JEDEC
+                                                                                                                           VALUE         UNIT
+                                                                   Human body model (HBM), per ANSI/ESDA/
+                                                                                                                           ±2000
+                                                                   JEDEC JS-001, all pins(1)
+    V(ESD)        Electrostatic discharge                                                                                                    V
+                                                                   Charged device model (CDM), per JEDEC
+                                                                                                                           ±500
+                                                                   specification JESD22-C101, all pins(2)
+
+(1)        JEDEC document JEP155 states that 500-V HBM allows safe manufacturing with a standard ESD control process.
+(2)        JEDEC document JEP157 states that 250-V CDM allows safe manufacturing with a standard ESD control process.
+
+7.3 ESD Ratings - IEC
+                                                                                                                           VALUE         UNIT
+                                                                   IEC 61000-4-2 contact discharge                          ±17
+    V(ESD)        Electrostatic discharge                                                                                                   kV
+                                                                   IEC 61000-4-2 air-gap discharge                          ±30
+
+
+7.4 Recommended Operating Conditions
+over operating free-air temperature range (unless otherwise noted)
+                                     PARAMETER                                             MIN             NOM              MAX        UNIT
+    VRWM            Reverse Stand-off Voltage                                                                 22                         V
+
+
+
+
+4          Submit Document Feedback                                                                  Copyright © 2023 Texas Instruments Incorporated
+
+                                                          Product Folder Links: TVS2200
+                                                                                                                                    TVS2200
+www.ti.com                                                                               SLVSED5C – DECEMBER 2017 – REVISED AUGUST 2023
+
+
+
+7.5 Thermal Information
+                                                                                                    TVS2200
+                                      THERMAL METRIC(1)                                            DRV (SON)                       UNIT
+                                                                                                     6 PINS
+ RqJA               Junction-to-ambient thermal resistance                                             70.4                     °C/W
+ RqJC(top)          Junction-to-case (top) thermal resistance                                          73.7                     °C/W
+ RqJB               Junction-to-board thermal resistance                                                40                      °C/W
+ YJT                Junction-to-top characterization parameter                                         2.2                      °C/W
+ YJB                Junction-to-board characterization parameter                                       40.3                     °C/W
+ RqJC(bot)          Junction-to-case (bottom) thermal resistance                                        11                      °C/W
+
+(1)      For more information about traditional and new thermal metrics, see the Semiconductor and IC Package Thermal Metrics application
+         report.
+
+7.6 Electrical Characteristics
+over operating free-air temperature range (unless otherwise noted)
+                      PARAMETER                                    TEST CONDITIONS                     MIN       TYP       MAX       UNIT
+ VRWM         Reverse Stand-off Voltage                                                                -0.5                  22       V
+                                                        Measured at VIN = VRWM TA = 27°C                          3.5        62       nA
+ ILEAK        Leakage Current                           Measured at VIN = VRWM TA = 85°C                           25       400       nA
+                                                        Measured at VIN = VRWM TA = 105°C                          80      1300       nA
+ VF           Forward Voltage                           IIN = 1 mA from GND to IO                      0.25       0.5       0.65      V
+ VBR          Break-down Voltage                        IIN = 1 mA from IO to GND                      24.6      25.9       27.6      V
+                                                        40 A IEC 61000-4-5 Surge (8/20 µs) from
+ VFCLAMP      Forward Clamp Voltage                                                                       1         2          5      V
+                                                        GND to IO, 27°C
+                                                        24 A IEC 61000-4-5 Surge (8/20 µs) from
+                                                                                                                 27.2       27.7      V
+                                                        IO to GND, VIN = 0 V before surge, 27°C
+                                                        40 A IEC 61000-4-5 Surge (8/20 µs) from
+                                                                                                                 27.6        28       V
+ VCLAMP       Clamp Voltage                             IO to GND, VIN = 0 V before surge, 27°C
+                                                        35 A IEC 61000-4-5 Surge (8/20 µs) from
+                                                        IO to GND, VIN = VRWM before surge, TA                   27.8     28.35       V
+                                                        = 125°C
+                                                        Calculated from VCLAMP at .5*Ipp and Ipp
+ RDYN         8/20 µs surge dynamic resistance                                                                     30                 mΩ
+                                                        surge current levels, 27°C
+                                                        VIN = VRWM, f = 1 MHz, 30 mVpp, IO to
+ CIN          Input pin capacitance                                                                               105                 pF
+                                                        GND
+                                                        0-VRWM rising edge, sweep rise time and
+                                                        measure slew rate when IPK = 1 mA,                        2.5                V/µs
+                                                        27°C
+ SR           Maximum Slew Rate
+                                                        0-VRWM rising edge, sweep rise time and                   0.7                V/µs
+                                                        measure slew rate when IPK = 1 mA,
+                                                        105°C
+
+
+
+
+Copyright © 2023 Texas Instruments Incorporated                                                          Submit Document Feedback           5
+
+                                                        Product Folder Links: TVS2200
+TVS2200
+SLVSED5C – DECEMBER 2017 – REVISED AUGUST 2023                                                                                                                                                                                www.ti.com
+
+7.7 Typical Characteristics
+                                        45                                                                                                           40
+                                                                                            TVS2200 Voltage                                                                                                   -40qC
+                                        40                                                  Surge Current                                            35                                                       25qC
+                                        35                                                                                                                                                                    105qC
+                                                                                                                                                     30                                                       125qC
+    Voltage (V) / Current (A)
+
+
+
+
+                                                                                                                         Voltage (V) / Current (A)
+                                        30                                                                                                                                                                    Surge Current (A)
+                                                                                                                                                     25
+                                        25
+                                                                                                                                                     20
+                                        20
+                                                                                                                                                     15
+                                        15
+                                        10                                                                                                           10
+
+                                        5                                                                                                             5
+
+                                        0                                                                                                             0
+                                        -5                                                                                                           -5
+                                                     0         10      20      30           40             50    60                                             0         10        20        30     40        50        60
+                                                                        Time (Ps)                                D001                                                                      Time (Ps)                              D002
+                                                                            .                                                                                                                             .
+                                                   Figure 7-1. Surge Response at 40 A                                                   Figure 7-2. Surge Response at 35 A Across Temperature
+                                                                           =                                                                         500
+                                    450                                                                                                              450
+                                                   0 V Bias
+                                    400            11 V Bias                                                                                         400
+                                                   22 V Bias
+                                    350                                                                                                              350
+                                                                                                                        Leakage (nA)
+    Capacitance (pF)
+
+
+
+
+                                    300                                                                                                              300
+
+                                    250                                                                                                              250
+                                                                                                                                                     200
+                                    200
+                                                                                                                                                     150
+                                    150
+                                                                                                                                                     100
+                                    100
+                                                                                                                                                      50
+                                    50
+                                                                                                                                                       0
+                                        0                                                                                                               -40   -25   -10        5    20 35 50 65                80   95    110 125
+                                         -40   -25   -10   5        20 35 50 65             80        95    110 125                                                                  Temperature (qC)                             D004
+                                                                     Temperature (qC)                            D003                                                                                     .
+                                                         f = 1 MHz, 30 mVpp, IO to GND                                                                                                                    .
+                                    Figure 7-3. Capacitance vs Temperature Across Bias                                                               Figure 7-4. Leakage Current vs Temperature at 22 V
+                                    1                                                                                                                0.7
+                                               -40qC
+                                               27qC                                                                                                  0.6
+                                               105qC
+                            0.5                125qC
+                                                                                                                                                     0.5
+                     Current (mA)
+
+
+
+
+                                                                                                                        Voltage (V)
+
+
+
+
+                                                                                                                                                     0.4
+                                    0
+                                                                                                                                                     0.3
+
+                                                                                                                                                     0.2
+                    -0.5
+
+                                                                                                                                                     0.1
+
+                                -1                                                                                                                    0
+                                  -3           0     3     6        9    12    15   18           21        24   27                                    -40     -20     0            20      40    60      80      100     120     140
+                                                                     Voltage (V)                                D005
+                                                                                                                                                                                        Temperature (°C)                          D006
+
+                                                                                        .                                                                                                                 .
+                                                   Figure 7-5. IV Across Temperature                                    Figure 7-6. Forward Voltage vs Temperature Across Current
+
+
+
+
+6                               Submit Document Feedback                                                                                                                           Copyright © 2023 Texas Instruments Incorporated
+
+                                                                                                       Product Folder Links: TVS2200
+                                                                                                                                                                                                TVS2200
+www.ti.com                                                                                                                                    SLVSED5C – DECEMBER 2017 – REVISED AUGUST 2023
+
+
+7.7 Typical Characteristics (continued)
+                     27                                                                                                           45
+
+                  26.75                                                                                                           40
+
+                   26.5                                                                                                           35
+
+                                                                                                                                  30
+                  26.25
+    Voltage (V)
+
+
+
+
+                                                                                                                                  25
+
+
+
+
+                                                                                                                        IPP (A)
+                     26
+                                                                                                                                  20
+                  25.75
+                                                                                                                                  15
+                   25.5
+                                                                                                                                  10
+                  25.25
+                                                                                                                                  5
+                     25
+                       -40   -25   -10   5   20 35 50 65                                  80     95    110 125                    0
+                                              Temperature (qC)                                                                    -40   -25   -10       5   20 35 50 65             80   95   110 125
+                                                                                                            D007                                             Temperature (qC)                      D008
+                                                                                      .
+                                                                                                                                                                                .
+                  Figure 7-7. Breakdown Voltage at 1 mA vs Temperature
+                                                                                                                       Figure 7-8. Maximum Surge Current (8/20 µs) vs Temperature
+                                                                              8
+                                                                            7.5                -40qC
+                                                                              7                25qC
+                                                                            6.5                85qC
+                                                                              6                105qC
+                                                     Dynamic Leakage (mA)
+
+
+
+
+                                                                            5.5                125qC
+                                                                              5
+                                                                            4.5
+                                                                              4
+                                                                            3.5
+                                                                              3
+                                                                            2.5
+                                                                              2
+                                                                            1.5
+                                                                              1
+                                                                            0.5
+                                                                              0
+                                                                                  0             0.5        1         1.5        2             2.5           3
+                                                                                                               Slew Rate (V/Ps)                             D009
+
+                                                                                                                                                    .
+                                               Figure 7-9. Maximum Leakage vs Signal Slew Rate Across Temperature
+
+
+
+
+Copyright © 2023 Texas Instruments Incorporated                                                                                                                    Submit Document Feedback               7
+
+                                                                                                 Product Folder Links: TVS2200
+TVS2200
+SLVSED5C – DECEMBER 2017 – REVISED AUGUST 2023                                                                          www.ti.com
+
+
+8 Detailed Description
+8.1 Overview
+The TVS2200 is a precision clamp with a low, flat clamping voltage during transient overvoltage events like
+surge and protecting the system with zero voltage overshoot. For a detailed overview of the Flat-Clamp family
+of devices, please reference TI's Flat-Clamp surge protection technology for efficient system protection white
+paper. This document explains in detail the functional operation of the devices and how they impact and improve
+system design.
+8.2 Functional Block Diagram
+                                                                                 IN
+
+
+
+
+                                        Voltage Level       Power FET
+                                         Detection            Driver
+
+
+
+
+                                                                                 GND
+
+8.3 Feature Description
+The TVS2200 is a precision clamp that handles 40 A of IEC 61000-4-5 8/20 µs surge pulse. The flat clamping
+feature helps keep the clamping voltage very low to keep the downstream circuits from being stressed. The
+flat clamping feature can also help end-equipment designers save cost by opening up the possibility to use
+lower-cost lower voltage tolerant downstream ICs. The TVS2200 has minimal leakage under the standoff voltage
+of 22 V, making it a good candidate for applications where low leakage and power dissipation is a necessity.
+IEC 61000-4-2 and IEC 61000-4-4 ratings make it a robust protection solution for ESD and EFT events. Wide
+ambient temperature range of –40°C to +125°C makes it a good candidate for most applications. Compact
+packages enable it to be used in small devices and save board area.
+8.4 Reliability Testing
+For device reliability, the TVS2200 is characterized against 5000 repetitive pulses of 35 A IEC 61000-4-5 8/20 µs
+surge pulses at 125°C. The test is performed with less than 10 seconds between each pulse at high temperature
+to simulate worst case scenarios for fault regulation. After each surge pulse, the TVS2200 clamping voltage,
+breakdown voltage, and leakage are recorded so that there is no variation or performance degradation. By
+design, the robust, reliable, high temperature protection of the TVS2200 enables fault protection in applications
+that must withstand years of continuous operation with no performance change.
+
+
+
+
+8     Submit Document Feedback                                                         Copyright © 2023 Texas Instruments Incorporated
+
+                                                 Product Folder Links: TVS2200
+                                                                                                                      TVS2200
+www.ti.com                                                                        SLVSED5C – DECEMBER 2017 – REVISED AUGUST 2023
+
+
+8.5 Device Functional Modes
+8.5.1 Protection Specifications
+The TVS2200 is specified according to both the IEC 61000-4-5 and IEC 61643-321 standards. This enables
+usage in systems regardless of which standard is required in relevant product standards or best matches
+measured fault conditions. The IEC 61000-4-5 standard requires protection against a pulse with a rise time of 8
+µs and a half length of 20 µs while the IEC 61643-321 standard requires protection against a much longer pulse
+with a rise time of 10 µs and a half length of 1000 µs.
+The positive and negative surges are imposed to the TVS2200 by a combinational waveform generator (CWG)
+with a 2-Ω coupling resistor at different peak voltage levels. For powered on transient tests that need power
+supply bias, inductance's are usually used to decouple the transient stress and protect the power supply. By
+design, the TVS2200 is post tested so that there is no shift in device breakdown or leakage at Vrwm.
+In addition, the TVS2200 has been tested according to IEC 61000-4-5 to pass a ±1 kV surge test through a 42-Ω
+coupling resistor and a 0.5 µF capacitor. This test is a common test requirement for industrial signal I/O lines and
+the TVS2200 will serve as a good protection solution for applications with that requirement.
+The TVS2200 also integrates IEC 61000-4-2 Level 4 ESD Protection and 80 A of IEC 61000-4-4 EFT Protection.
+These combine so that the device can be protected against all transient conditions regardless of length or type.
+For more information on TI's test methods for Surge, ESD, and EFT testing, reference TI's IEC 61000-4-x
+Testing Application Note.
+8.5.2 Minimal Derating
+Unlike traditional diodes the TVS2200 has very little derating of maximum power dissipation and allows for
+robust performance up to 125°C shown in Figure 7-8. Traditional TVS diodes lose up to 50% of their current
+carrying capability when at high temperatures, so a surge pulse above 85°C ambient can cause failures that are
+not seen at room temperature. The TVS2200 prevents this and allows for the same level of protection regardless
+of temperature.
+8.5.3 Transient Performance
+During large transient swings, the TVS2200 will begin clamping the input signal to protect downstream
+conditions. While this prevents damage during fault conditions, it can cause leakage when the intended input
+signal has a fast slew rate. In order to keep power dissipation low and remove the chance of signal distortion, it
+is recommended to keep the slew rate of any input signal on the TVS2200 below 2.5 V/µs at room temperature
+and below 0.7 V/µs at 125°C shown in Figure 7-9. Faster slew rates will cause the device to clamp the input
+signal and draw current through the device for a few microseconds, increasing the rise time of the signal. This
+will not cause any harm to the system or to the device, however if the fast input voltage swings occur regularly it
+can cause device overheating.
+
+
+
+
+Copyright © 2023 Texas Instruments Incorporated                                                  Submit Document Feedback     9
+
+                                                  Product Folder Links: TVS2200
+TVS2200
+SLVSED5C – DECEMBER 2017 – REVISED AUGUST 2023                                                                             www.ti.com
+
+
+9 Application and Implementation
+                                                             Note
+      Information in the following applications sections is not part of the TI component specification,
+      and TI does not warrant its accuracy or completeness. TI’s customers are responsible for
+      determining suitability of components for their purposes, as well as validating and testing their design
+      implementation to confirm system functionality.
+
+9.1 Application Information
+The TVS2200 can be used to protect any power, analog, or digital signal from transient fault conditions caused
+by the environment or other electrical components.
+9.2 Typical Application
+
+                                 V(VBUS)                                     VBUS
+                                                                                 TPS65982
+
+                                                                                    GND
+                                                   IN   IN   IN
+
+                                                    TVS2200x
+
+                                                  GND GND GND
+
+
+
+
+                                           Figure 9-1. TVS2200 Application
+
+9.2.1 Design Requirements
+A typical operation for the TVS2200 would be protecting a USB Type-C Vbus input, with a nominal input voltage
+of 20 V and a required withstand of 22 V, shown in Figure 9-1. In this example, a TVS2200 is protecting the
+input to a TPS65982 Type-C Port Controller. Without any input protection, if a surge event is caused by lightning,
+coupling, hot-swap ringing, or any other fault condition this input voltage will rise to hundreds of volts for multiple
+microseconds, violating the absolute maximum input voltage and harming the device.
+9.2.2 Detailed Design Procedure
+If the TVS2200 is in place to protect the device, during a surge event the voltage will rise to the breakdown of the
+diode at 25.9 V, and then the TVS2200 will turn on, shunting the surge current to ground. With the low dynamic
+resistance of the TVS2200, even large amounts of surge current will have minimal impact on the clamping
+voltage. The dynamic resistance of the TVS2200 is around 30 mΩ, which means 40 A of surge current will cause
+a voltage raise of 40 A × 30 mΩ = 1.2 V. Because the device turns on at 25.9 V, this means the input will be
+exposed to a maximum of 25.9 V + 1.2 V = 27.1 V during surge pulses, robustly protecting the USB Type-C port.
+This pulse is shown in Figure 9-2 and allows for robust protection of the circuit.
+Finally, the small size of the device also improves fault protection by lowering the effect of fault current coupling
+onto neighboring traces. The small form factor of the TVS2200 allows the device to be placed extremely close to
+the input connector, lowering the length of the path fault current will take through the system compared to larger
+protection solutions.
+
+
+
+
+10    Submit Document Feedback                                                            Copyright © 2023 Texas Instruments Incorporated
+
+                                                 Product Folder Links: TVS2200
+                                                                                                                                                   TVS2200
+www.ti.com                                                                                                 SLVSED5C – DECEMBER 2017 – REVISED AUGUST 2023
+
+
+9.2.3 Application Curves
+
+                                                                      45
+                                                                                                     TVS2200 Voltage
+                                                                      40                             Surge Current
+                                                                      35
+
+
+
+
+                                          Voltage (V) / Current (A)
+                                                                      30
+                                                                      25
+                                                                      20
+                                                                      15
+                                                                      10
+                                                                      5
+                                                                      0
+                                                                      -5
+                                                                           0    10     20      30    40      50    60
+                                                                                        Time (Ps)                      D001
+
+                                                               Figure 9-2. TVS2200 Surge Response at 40 A
+
+9.2.4 Configuration Options
+The TVS2200 can be used in either unidirectional or bidirectional configuration. The TVS2200 shows
+unidirectional usage to protect an input. By placing two TVS2200's in series with reverse orientation, bidirectional
+operation can be used which will allow a working voltage of ±22 V. TVS2200 operation in bidirectional will
+be similar to unidirectional operation, with a minor increase in breakdown voltage and clamping voltage. The
+TVS3300 bidirectional performance has been characterized in the TVS3300 Configurations Characterization.
+While the TVS2200 in bidirectional configuration has not specifically been characterized, it will have similar
+relative changes to the TVS3300 in bidirectional configuration.
+9.3 Power Supply Recommendations
+The TVS2200 is a clamping device so there is no need to power it. Take care to not violate the recommended
+VIN voltage range (0 V to 22 V) so that the device functions properly.
+9.4 Layout
+9.4.1 Layout Guidelines
+The optimum placement is as close to the connector as possible. EMI during an ESD event can couple from the
+trace being struck to other nearby unprotected traces, resulting in early system failures. The PCB designer must
+minimize the possibility of EMI coupling by keeping any unprotected traces away from the protected traces which
+are between the TVS and the connector.
+Route the protected traces as straight as possible.
+Eliminate any sharp corners on the protected traces between the TVS2200 and the connector by using rounded
+corners with the largest radii possible. Electric fields tend to build up on corners, increasing EMI coupling.
+
+
+
+
+Copyright © 2023 Texas Instruments Incorporated                                                                               Submit Document Feedback   11
+
+                                                                           Product Folder Links: TVS2200
+TVS2200
+SLVSED5C – DECEMBER 2017 – REVISED AUGUST 2023                                                                                     www.ti.com
+
+9.4.2 Layout Example
+
+                                                                  GND Plane
+
+
+
+
+                                         Connector                                    Protected
+
+
+
+
+                                                            I/O
+
+
+
+
+                                                                     I/O
+
+
+
+
+                                                                              I/O
+                                         Input                                        Input
+
+
+
+
+                                                                    GND
+
+
+
+
+                                                                              GND
+                                                            GND
+
+
+
+
+                                                                     GND
+                                                     Figure 9-3. TVS2200 Layout
+
+
+
+
+12    Submit Document Feedback                                                                    Copyright © 2023 Texas Instruments Incorporated
+
+                                                      Product Folder Links: TVS2200
+                                                                                                                                  TVS2200
+www.ti.com                                                                              SLVSED5C – DECEMBER 2017 – REVISED AUGUST 2023
+
+
+10 Device and Documentation Support
+10.1 Documentation Support
+10.1.1 Related Documentation
+For related documentation, see the following:
+•    Texas Instruments, Flat-Clamp surge protection technology for efficient system protection
+•    Texas Instruments, TI's IEC 61000-4-x Testing Application Note.
+•    Texas Instruments, TVS3300 Configurations Characterization
+10.2 Receiving Notification of Documentation Updates
+To receive notification of documentation updates, navigate to the device product folder on ti.com. Click on
+Subscribe to updates to register and receive a weekly digest of any product information that has changed. For
+change details, review the revision history included in any revised document.
+10.3 Support Resources
+TI E2E™ support forums are an engineer's go-to source for fast, verified answers and design help — straight
+from the experts. Search existing answers or ask your own question to get the quick design help you need.
+Linked content is provided "AS IS" by the respective contributors. They do not constitute TI specifications and do
+not necessarily reflect TI's views; see TI's Terms of Use.
+10.4 Trademarks
+Type-C™ is a trademark of USB Implementers Forum, Inc..
+TI E2E™ is a trademark of Texas Instruments.
+All trademarks are the property of their respective owners.
+10.5 Electrostatic Discharge Caution
+                    This integrated circuit can be damaged by ESD. Texas Instruments recommends that all integrated circuits be handled
+                    with appropriate precautions. Failure to observe proper handling and installation procedures can cause damage.
+                    ESD damage can range from subtle performance degradation to complete device failure. Precision integrated circuits may
+                    be more susceptible to damage because very small parametric changes could cause the device not to meet its published
+                    specifications.
+
+
+10.6 Glossary
+ TI Glossary             This glossary lists and explains terms, acronyms, and definitions.
+
+11 Mechanical, Packaging, and Orderable Information
+The following pages include mechanical, packaging, and orderable information. This information is the most
+current data available for the designated devices. This data is subject to change without notice and revision of
+this document. For browser-based versions of this data sheet, refer to the left-hand navigation.
+
+
+
+
+Copyright © 2023 Texas Instruments Incorporated                                                          Submit Document Feedback         13
+
+                                                       Product Folder Links: TVS2200
+                                                                                                                                                                      PACKAGE OPTION ADDENDUM
+
+       www.ti.com                                                                                                                                                                                                    9-Nov-2025
+
+
+
+
+PACKAGING INFORMATION
+
+       Orderable part number          Status     Material type      Package | Pins      Package qty | Carrier        RoHS             Lead finish/              MSL rating/               Op temp (°C)          Part marking
+                                        (1)            (2)                                                             (3)            Ball material             Peak reflow                                           (6)
+                                                                                                                                            (4)                      (5)
+
+           TVS2200DRVR                Active      Production       WSON (DRV) | 6        3000 | LARGE T&R             Yes                NIPDAU            Level-1-260C-UNLIM              -40 to 125               1HVH
+          TVS2200DRVR.A               Active      Production       WSON (DRV) | 6        3000 | LARGE T&R             Yes                NIPDAU            Level-1-260C-UNLIM              -40 to 125               1HVH
+
+(1)
+      Status: For more details on status, see our product life cycle.
+
+(2)
+   Material type: When designated, preproduction parts are prototypes/experimental devices, and are not yet approved or released for full production. Testing and final process, including without limitation quality assurance,
+reliability performance testing, and/or process qualification, may not yet be complete, and this item is subject to further changes or possible discontinuation. If available for ordering, purchases will be subject to an additional
+waiver at checkout, and are intended for early internal evaluation purposes only. These items are sold without warranties of any kind.
+
+(3)
+      RoHS values: Yes, No, RoHS Exempt. See the TI RoHS Statement for additional information and value definition.
+
+(4)
+   Lead finish/Ball material: Parts may have multiple material finish options. Finish options are separated by a vertical ruled line. Lead finish/Ball material values may wrap to two lines if the finish value exceeds the maximum
+column width.
+
+(5)
+  MSL rating/Peak reflow: The moisture sensitivity level ratings and peak solder (reflow) temperatures. In the event that a part has multiple moisture sensitivity ratings, only the lowest level per JEDEC standards is shown.
+Refer to the shipping label for the actual reflow temperature that will be used to mount the part to the printed circuit board.
+
+(6)
+      Part marking: There may be an additional marking, which relates to the logo, the lot trace code information, or the environmental category of the part.
+
+Multiple part markings will be inside parentheses. Only one part marking contained in parentheses and separated by a "~" will appear on a part. If a line is indented then it is a continuation of the previous line and the two
+combined represent the entire part marking for that device.
+
+Important Information and Disclaimer:The information provided on this page represents TI's knowledge and belief as of the date that it is provided. TI bases its knowledge and belief on information provided by third parties, and
+makes no representation or warranty as to the accuracy of such information. Efforts are underway to better integrate information from third parties. TI has taken and continues to take reasonable steps to provide representative
+and accurate information but may not have conducted destructive testing or chemical analysis on incoming materials and chemicals. TI and TI suppliers consider certain information to be proprietary, and thus CAS numbers
+and other limited information may not be available for release.
+
+In no event shall TI's liability arising out of such information exceed the total purchase price of the TI part(s) at issue in this document sold by TI to Customer on an annual basis.
+
+
+
+
+                                                                                                          Addendum-Page 1
+                                                                             PACKAGE MATERIALS INFORMATION
+
+www.ti.com                                                                                                                                       3-Sep-2026
+
+
+
+TAPE AND REEL INFORMATION
+
+       REEL DIMENSIONS                                                                    TAPE DIMENSIONS
+                                                                                     K0         P1
+
+
+
+                                                                                                                      B0 W
+                                       Reel
+                                     Diameter
+                                                                                  Cavity             A0
+                                                              A0   Dimension designed to accommodate the component width
+                                                              B0   Dimension designed to accommodate the component length
+                                                              K0   Dimension designed to accommodate the component thickness
+                                                              W    Overall width of the carrier tape
+                                                              P1   Pitch between successive cavity centers
+
+
+                                      Reel Width (W1)
+                              QUADRANT ASSIGNMENTS FOR PIN 1 ORIENTATION IN TAPE
+
+                                                                                                     Sprocket Holes
+
+
+                                                Q1       Q2          Q1    Q2
+
+                                                Q3       Q4          Q3    Q4                    User Direction of Feed
+
+
+
+                                                          Pocket Quadrants
+
+
+*All dimensions are nominal
+             Device           Package Package Pins            SPQ       Reel   Reel   A0                    B0         K0     P1     W     Pin1
+                               Type Drawing                           Diameter Width (mm)                  (mm)       (mm)   (mm)   (mm) Quadrant
+                                                                        (mm) W1 (mm)
+      TVS2200DRVR             WSON     DRV           6        3000        180.0           8.4        2.3    2.3       1.15   4.0    8.0     Q2
+
+
+
+
+                                                                    Pack Materials-Page 1
+                                                                PACKAGE MATERIALS INFORMATION
+
+www.ti.com                                                                                                              3-Sep-2026
+
+
+
+ TAPE AND REEL BOX DIMENSIONS
+
+
+
+
+                                                               Width (mm)
+                                                                              H
+                      W
+
+
+
+
+                                                          L
+
+
+
+
+*All dimensions are nominal
+             Device           Package Type   Package Drawing   Pins         SPQ    Length (mm)   Width (mm)   Height (mm)
+      TVS2200DRVR                WSON             DRV           6           3000      210.0        185.0         35.0
+
+
+
+
+                                                        Pack Materials-Page 2
+                                                                    GENERIC PACKAGE VIEW
+DRV 6                                                          WSON - 0.8 mm max height
+                                                                            PLASTIC SMALL OUTLINE - NO LEAD
+
+
+
+
+  Images above are just a representation of the package family, actual package may vary.
+  Refer to the product data sheet for package details.
+
+                                                                                                  4206925/F
+                                                                                                               PACKAGE OUTLINE
+DRV0006A                                                             SCALE 5.500
+                                                                                                           WSON - 0.8 mm max height
+                                                                                                               PLASTIC SMALL OUTLINE - NO LEAD
+
+
+
+
+                                                        2.1                            A
+                                        B
+                                                        1.9
+
+
+
+
+                 PIN 1 INDEX AREA
+                                                                                       2.1
+                                                                                       1.9
+                                                                                                                                    0.1 MIN
+
+
+
+
+                                                                                                                0.08 MAX
+
+                                                                                                           OPTIONAL: SIDE WALL PIN DETAIL
+                                                                                                                       NOTE 4
+
+
+
+
+                                  0.8
+                                  0.7                                                             C
+
+                                                                                                      SEATING PLANE
+
+                                                                                                      0.08 C
+
+                                                                                                                                 (0.2) TYP
+                                                      1 0.1                                                        0.05
+                           EXPOSED                                                                                 0.00
+                        THERMAL PAD
+
+                                            3
+                                                                                   4
+
+
+                            2X
+                                                          7
+                            1.3                                                         1.6 0.1
+
+
+
+                                                                                   6
+                                            1
+                        4X 0.65
+                                                                                                  0.35
+                                                                                             6X
+                                PIN 1 ID                       0.3                                0.25
+                                                          6X
+                             (OPTIONAL)                        0.2                                  0.1    C A B
+                                                                                                    0.05    C
+
+
+                                                                                                                               4222173/C 11/2025
+
+NOTES:
+
+1. All linear dimensions are in millimeters. Any dimensions in parenthesis are for reference only. Dimensioning and tolerancing
+   per ASME Y14.5M.
+2. This drawing is subject to change without notice.
+3. The package thermal pad must be soldered to the printed circuit board for thermal and mechanical performance.
+4. Minimum 0.1 mm solder wetting on pin side wall. Available for wettable flank version only.
+
+
+
+
+                                                                     www.ti.com
+                                                                                 EXAMPLE BOARD LAYOUT
+DRV0006A                                                                                  WSON - 0.8 mm max height
+                                                                                                PLASTIC SMALL OUTLINE - NO LEAD
+
+
+
+
+                               6X (0.45)
+                                                                  (1)
+                                            1                       7
+
+                                 6X (0.3)                                                 6
+
+
+
+                                                                                              SYMM           (1.6)
+                                                                                                     (1.1)
+
+                               4X (0.65)
+
+                                                                                          4
+                                            3
+
+                        (R0.05) TYP                             SYMM
+
+                                ( 0.2) VIA
+                                      TYP                       (1.95)
+
+
+                                                    LAND PATTERN EXAMPLE
+                                                               SCALE:25X
+
+
+
+
+                                                0.07 MAX                                         0.07 MIN
+                                                ALL AROUND                                       ALL AROUND
+
+
+
+
+                     SOLDER MASK                       METAL               METAL UNDER                        SOLDER MASK
+                     OPENING                                               SOLDER MASK                        OPENING
+                                 NON SOLDER MASK
+                                     DEFINED                                                  SOLDER MASK
+                                   (PREFERRED)                                                  DEFINED
+
+
+                                                        SOLDER MASK DETAILS
+
+
+                                                                                                                     4222173/C 11/2025
+
+NOTES: (continued)
+
+5. This package is designed to be soldered to a thermal pad on the board. For more information, see Texas Instruments literature
+   number SLUA271 (www.ti.com/lit/slua271).
+6. Vias are optional depending on application, refer to device data sheet. If some or all are implemented, recommended via locations
+   are shown.
+
+
+
+
+                                                                  www.ti.com
+                                                                               EXAMPLE STENCIL DESIGN
+DRV0006A                                                                                  WSON - 0.8 mm max height
+                                                                                               PLASTIC SMALL OUTLINE - NO LEAD
+
+
+
+
+                                                                 SYMM
+                                             6X (0.45)
+                                                                                  METAL
+                                         1                       7
+
+                              6X (0.3)                                                          6
+
+
+
+                                                                                                    (0.45)
+                                                                                                                SYMM
+
+
+
+                            4X (0.65)
+                                                                                                        (0.7)
+                                                                                                4
+                                         3
+
+                       (R0.05) TYP
+                                                                     (1)
+
+                                                                 (1.95)
+
+
+
+                                                         SOLDER PASTE EXAMPLE
+                                                     BASED ON 0.125 mm THICK STENCIL
+
+                                                       EXPOSED PAD #7
+                                     88% PRINTED SOLDER COVERAGE BY AREA UNDER PACKAGE
+                                                          SCALE:30X
+
+
+
+
+                                                                                                                       4222173/C 11/2025
+NOTES: (continued)
+
+7. Laser cutting apertures with trapezoidal walls and rounded corners may offer better paste release. IPC-7525 may have alternate
+   design recommendations.
+
+
+
+
+                                                                 www.ti.com
+                                         IMPORTANT NOTICE AND DISCLAIMER
+TI PROVIDES TECHNICAL AND RELIABILITY DATA (INCLUDING DATASHEETS), DESIGN RESOURCES (INCLUDING REFERENCE
+DESIGNS), APPLICATION OR OTHER DESIGN ADVICE, WEB TOOLS, SAFETY INFORMATION, AND OTHER RESOURCES “AS IS”
+AND WITH ALL FAULTS, AND DISCLAIMS ALL WARRANTIES, EXPRESS AND IMPLIED, INCLUDING WITHOUT LIMITATION ANY
+IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NON-INFRINGEMENT OF THIRD
+PARTY INTELLECTUAL PROPERTY RIGHTS.
+These resources are intended for skilled developers designing with TI products. You are solely responsible for (1) selecting the appropriate
+TI products for your application, (2) designing, validating and testing your application, and (3) ensuring your application meets applicable
+standards, and any other safety, security, regulatory or other requirements.
+These resources are subject to change without notice. TI grants you permission to use these resources only for development of an
+application that uses the TI products described in the resource. Other reproduction and display of these resources is prohibited. No license
+is granted to any other TI intellectual property right or to any third party intellectual property right. TI disclaims responsibility for, and you fully
+indemnify TI and its representatives against any claims, damages, costs, losses, and liabilities arising out of your use of these resources.
+TI’s products are provided subject to TI’s Terms of Sale, TI’s General Quality Guidelines, or other applicable terms available either on
+ti.com or provided in conjunction with such TI products. TI’s provision of these resources does not expand or otherwise alter TI’s applicable
+warranties or warranty disclaimers for TI products. Unless TI explicitly designates a product as custom or customer-specified, TI products
+are standard, catalog, general purpose devices.
+TI objects to and rejects any additional or different terms you may propose.
+IMPORTANT NOTICE
+
+                                                Copyright © 2026, Texas Instruments Incorporated
+                                                                Last updated 10/2025
+

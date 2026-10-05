@@ -23,7 +23,7 @@ Updated: 2026-10-05. Use this checklist with `AGENTS.md` and `ai-files/HANDOVER.
 - [x] Add D5 ESDA25L CC protection, D6 TVS2200 raw-VBUS TVS and U18 hardware overvoltage cutoff for 5/9 V operation; D1 remains USB data protection. Final transient qualification and NVM programming remain open.
 - [x] Select captured power resistor/decoupling MPNs and add eFuse startup ramp C181.
 - [ ] Finalize service header, remaining capacitor selections/effective-capacitance proof, and discharge/pulse qualification.
-- [ ] Define 5 V fallback and 9 V request/current policy with the charger and total power budget.
+- [ ] Define 5 V fallback and 5–20 V contract/current policy with the charger and total power budget.
 - [ ] Redesign charger/protection/sense circuitry for 5–20 V operation, then define/program/read back compatible PDOs. Until that redesign is integrated, the active schematic still requires a 5 V / 9 V-only profile; do not enable 15/20 V against the present 11 V cutoff/BQ25895.
 - [x] Connect `VBUS_PD` to the charger; keep it away from 5 V-only audio electronics.
 - [ ] Recheck final pin connectivity, hierarchy and applicable ERC findings after system integration.
@@ -220,8 +220,8 @@ Fresh review found15 expected power net relations correct,101 component refs cov
 
 - [x] Refine U14 feedback to78.7k/9.1k using currentlylisted SAE/Yageo parts; nominal unchanged, conservativeDC4.60004–5.05869V. Enableddivider55uA; outputdisconnect preservesoff priority.
 - [x] Add D9 selected BZT52C12 after R4 on U11 VBUS_VS_DISCH, directly toGND; retained physical pin groups verified. Correct inheritedD7 datasheet link (ds18004 BZT52, notds18001 BZX84). Temperature-table arithmetic improves sensepin margin; dynamic qualification and rawVDD remain open.
-- [ ] Integrate lower-loss60V LTC4368/NFET mainpath after circuit/library review; retain source-safe bootstrap as needed. Candidate report ai-files/reports/LTC4368-2-protection-redesign-candidate.md; circuitbreaker is not activecurrentlimiter.
-- [ ] Resolve automaticUSB coldstart: BQ25895 resets500mA, startsupat200mA, ILIMpin doesnot supportbelow500mA. Default-isolateddata+firmwarealone cannotguarantee100mA USB fallback. Independently limited bootstrap plus defaultoff mainpath is underreview beforecapture.
+- Superseded proposal: LTC4368/NFET mainpath retained as an alternative report; the selected TPS25730D replacement now supplies the managed low-loss sink path. No LTC capture is currently planned.
+- [ ] Resolve automatic USB cold-start through the new BQ25792 ILIM_HIZ default-off converter plus independent USB auxiliary MCU supply. The active BQ25895 circuit still has its documented startup/current gap until replaced.
 - [ ] Capture source-detectionmux and gates only after hardwarecoldstart/resetbudget and3D modelgap resolved. CandidateTS3USB221ARSER C128396; VCC2.5–3.3V guaranteed, not2.3V.
 
 ## Latest integration check (2026-10-05)
@@ -229,7 +229,7 @@ Fresh review found15 expected power net relations correct,101 component refs cov
 - [x] Reconcile all102 physical references against the71-row BOM: no missing/extraneous references or MPN/LCSC mismatches. Partial subtotal US$73.73 fitted /US$92.66 MOQ; pack and final headers/switches/D8 remain unpriced.
 - [x] Select D4 1N4148W-7-F/C83528 and C103 CC0603KRX7R9BB473/C107093; retain displayed minimum ratings and existing positions.
 - [x] Re-export/inspect PD and codec pages using KiCad10.0.6; retained physical net groups preserved excluding intentionalU14/L2/D9 changes.
-- [ ] Qualify limited legacy startup and suspend: distinguish charge-qualified USB attach inrush from the100mA sustained budget and2.5mA suspend budget. MAX4995B remains a candidate, not captured hardware.
+- [ ] Qualify legacy startup and suspend with the replacement architecture: distinguish charge-qualified attach inrush from100mA sustained attach and2.5mA suspend budgets. Prior MAX4995B bootstrap is an inactive alternative, not planned capture.
 
 - [x] Prepare unregistered TPS7B8450QWDRBRQ1 functional symbol and review DRB footprint/generic STEP for raw-VDD hardening. Activation waits for integration and output-cap review; this is not yet a completed protection fix.
 - [x] Source provisional QON momentary candidate TE1977066-1/C2972219; geometry/model and activeBOM integration remain open. Mechanical disconnect remains unselected until battery current/audio budget is fixed.
@@ -240,7 +240,7 @@ Fresh review found15 expected power net relations correct,101 component refs cov
 
 ## Authorized voltage-range redesign (2026-10-05)
 
-- [ ] Select a 1S charger operating from 5–20 V with power path, battery-absent start, temperature monitoring, low ship drain and source-current control. Compare a direct high-voltage charger against adding a pre-buck.
+- [x] Select BQ25792 as the native 5–20 V-capable 1S charger; no pre-buck stage. Active replacement capture and review remain pending below.
 - [ ] Redesign input cutoff, FETs and TVS/clamp coordination for normal 20 V plus tolerances/transients. The present D9 12 V sense clamp and D8 10 V TVS are incompatible with normal 20 V operation.
 - [ ] Review STUSB4500 three-PDO limits and controller policy against requested source compatibility; EPR support is not implied by accepting common 20 V PD.
 - [ ] Update child-sheet capture, libraries/BOM, power budget, preview and configuration warning together after reviewed integration.
@@ -249,4 +249,6 @@ Fresh review found15 expected power net relations correct,101 component refs cov
 
 - [x] Select BQ25792RQMR / C2862876 for the replacement design: native 3.6–24 V input, 1S power path and buck-boost headroom on weak 5 V supplies. No extra pre-buck stage. BQ25672 is also voltage-compatible, but its observed price is higher with no cited standby benefit.
 - [ ] Finish BQ25792 library/package/model review and child-sheet capture; retain source-aware default-disabled charge and add the explicitly required external ship FET. The active schematic still uses BQ25895 until integration.
-- [ ] Resolve PD controller choice: STUSB4500 plus MCU runtime profiles versus TPS25730 automatic fixed-PDO matching/integrated low-loss path. Check current-status interface, legacy policy and surge margins before choosing.
+- [x] Select TPS25730DREFR / C22438973 for the replacement prototype: autonomous fixed 5–20 V SPR matching and integrated sink switch. TI recommends TVS2200, but its full-rated clamp versus the controller absolute maximum still needs physical qualification; this is not a proven surge rating. Non-PD Rp current is not exposed by documented TPS interfaces; conservative fallback plus separate BC1.2 policy is required.
+- [ ] Capture/review TPS25730D and BQ25792 replacements, including exact models, ship FET, source detection ports and root interfaces.
+- [ ] Provide independent USB-powered MCU startup while the charger converter remains hardware-disabled. Review low-current OR/mux into the existing always-on regulator; avoid backfeeding SYS or USB.
