@@ -14,7 +14,7 @@
 "Q1, Q2","PD reverse-blocking PMOS","ST","STL9P3LLH6","C2969828","2","1","1","2","1","1.0781","2.1562","2.1562","829","Snapshot","46299","3 months ago",,"https://www.lcsc.com/product-detail/C2969828.html"
 "U12","3.0 V always-on LDO","TI","TPS7A0230PDBVR","C3747031","1","1","1","1","1","0.4515","0.4515","0.4515","37473","Snapshot","46299","today",,"https://www.lcsc.com/product-detail/C3747031.html"
 "U13, U16, U17","Low-current gauge signal isolation","TI","TS5A3167DBVR","C128416","3","5","5","5","5","0.3187","0.9561","1.5935","11755","Listing snapshot","46299","2026-10-04",,"https://www.lcsc.com/product-detail/C128416.html"
-"Q100","Charge-enable NMOS","Nexperia","2N7002,215","C65189","1","20","20","20","20","0.0183","0.0183","0.366","274640","Snapshot","46299","today",,"https://www.lcsc.com/product-detail/C65189.html"
+"Q100, Q104","Charger CE and gauge-enable NMOS","Nexperia","2N7002,215","C65189","2","20","20","20","20","0.0183","0.0366","0.366","274640","Snapshot","46299","today",,"https://www.lcsc.com/product-detail/C65189.html"
 "D5","USB-C CC protection","ST","ESDA25L","C95343","1","5","5","5","5","0.0971","0.0971","0.4855","1955","Snapshot","46299","2 months ago",,"https://www.lcsc.com/product-detail/C95343.html"
 "D6","Raw VBUS 22V standoff TVS","TI","TVS2200DRVR","C523793","1","5","5","5","5","0.4672","0.4672","2.336","3285","Listing snapshot","46299","2026-10-04",,"https://www.lcsc.com/product-detail/C523793.html"
 "L1","Charger inductor","Bourns","SRN6045TA-2R2Y","C1332316","1","5","5","5","5","0.2261","0.2261","1.1305","2980","Snapshot","46299","5 days ago",,"https://www.lcsc.com/product-detail/C1332316.html"
@@ -46,7 +46,7 @@
 "SW100","QON wake pushbutton",,,,"1",,,"",,,"","",,"MPN open",,,,
 "SW101","Pack-positive disconnect switch",,,,"1",,,"",,,"","",,"MPN open",,,,
 "PACK","Protected 1S Li-ion pack with 10k NTC; capacity/curve/lead open",,,,"1",,,"",,,"","",,"MPN open",,,,
-"C120, C121, C130, C131, C132, C143, C151","100nF / 10V-or-higher 0603 decoupling","Samsung Electro-Mechanics","CL10B104KB8NNNC","C1591","7","100","100","100","100","0.0111","0.0777","1.11","1192600","Listing snapshot","46300","2026-10-05",,"https://www.lcsc.com/product-detail/C1591.html"
+"C120, C121, C130, C131, C132, C143, C151, C126","100nF / 10V-or-higher 0603 decoupling; supervisor C126","Samsung Electro-Mechanics","CL10B104KB8NNNC","C1591","8","100","100","100","100","0.0111","0.0888","1.11","1192600","Listing snapshot","46300","2026-10-05",,"https://www.lcsc.com/product-detail/C1591.html"
 "C122, C123, C124, C125","AO LDO 1uF X7R 10V capacitors","Taiyo Yuden","LMK107B7105KA-T","C92806","4","50","50","50","50","0.0231","0.0924","1.155","3650","Listing snapshot","46300","2026-10-05",,"https://www.lcsc.com/es/product-detail/C92806.html"
 "R120, R121","Gauge I2C 4.7k resistors","YAGEO","RC0603FR-074K7L","C99782","2","100","100","0","100","0.0011","0.0022","","1575400","Listing snapshot","46300","2026-10-05",,"https://www.lcsc.com/product-detail/C99782.html"
 "R122","Gauge 47k resistor","YAGEO","RC0603FR-0747KL","C105579","1","100","100","100","100","0.0012","0.0012","0.12","887500","Listing snapshot","46300","2026-10-05",,"https://www.lcsc.com/product-detail/C105579.html"
@@ -74,3 +74,5 @@
 "U20","USB and system logic priority mux","Texas Instruments","TPS2116DRLR","C3235557","1",,,"",,,"","",,"Stock/price unverified",,,"Selected MPN/LCSC mapping; current stock and price not verified.","https://www.lcsc.com/product-detail/C3235557.html"
 "R124","180k 1% USB-priority threshold divider resistor","YAGEO","RC0603FR-07180KL","C123419","1","100","100","100","100","0.0012","0.0012","",,"Stock unverified; price snapshot","46300","2026-10-05","Observed listing tier: $0.0012 at MOQ100. Product page may be stale; stock is unverified.","https://www.lcsc.com/product-detail/C123419.html"
 "R125","100k PR1 divider resistor","YAGEO","RC0603FR-07100KL","C14675","1","100","100","0","100","0.0036","0.0036","","7813400","Listing snapshot","46300","2026-10-05","Reuse same selected MPN/LCSC mapping as existing 100k BOM rows; no additional MOQ order.","https://www.lcsc.com/product-detail/C14675.html"
+"U21","Gauge undervoltage supervisor","Texas Instruments","TPS3839G33DBZR","C485802","1","1","1","1","1","0.439","0.439","0.439","3444","Listing snapshot","46300","2026-10-05",,"https://www.lcsc.com/product-detail/C485802.html"
+"R126, R127","Gauge signal-switch and supervisor gate pull-up/pull-down resistors","YAGEO","RC0603FR-071ML","C105578","2","100","100","100","100","0.0056","0.0112","0.56","359600","Listing snapshot","46300","2026-10-05",,"https://www.lcsc.com/product-detail/C105578.html"

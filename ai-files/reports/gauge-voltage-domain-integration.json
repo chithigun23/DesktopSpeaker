@@ -1,0 +1,13 @@
+{
+  "retained_pin_groups_preserved_except_intended_switch_supply_enable_changes": true,
+  "new_supervisor_MOS_pullup_pulldown_bypass_nets_verified": true,
+  "low_nonzero_battery_voltage_domain_fixed": true,
+  "cold_gate_drive_and_transient_behavior_require_qualification": true,
+  "supervisor_threshold_V": [
+    3.003,
+    3.08,
+    3.126
+  ],
+  "added_steady_battery_current_typ_upper_estimate_uA_at4V2": 4.35,
+  "mechanical_switch_removes_board_drain": true
+}
