@@ -58,9 +58,9 @@ Updated: 2026-10-05. Use this checklist with `AGENTS.md` and `ai-files/HANDOVER.
 
 - [x] Connect the STM32G071RBT6 (U3, replaced the STM32G031K8T6 on 2026-10-06 per the audio architecture, moved to child sheet `MCU.kicad_sch`, symbol pins regrouped by function) supply/grounds, decoupling (C160 100nF, C161 4.7uF), NRST 100nF (C162), BOOT0/SWCLK pull-down (R160) and SWD connectors: J7 Tag-Connect TC2030-IDC (legged footprint; 1 3V_AO, 2 SWDIO, 3 NRST, 4 SWCLK, 5 GND, 6 SWO unused) and J6 4-pin 2.54 mm header (1 SWDIO, 2 SWCLK, 3 NRST, 4 GND), see 2026-10-06 SWD update.
 - [x] Connect MCU to the captured power blocks only: CTRL_SDA/SCL (I2C1 PB7/PB6), PDCTRL_SDA/SCL (software I2C PA12/PA11), CHG_ENABLE, CHG_SYS_ENABLE, CHG_INT, GAUGE_ALRT_N, PD_PLUG_EVENT, PD_SINK_EN, BT_PWR_EN, BT_FORCE_PWM, 5V_LOGIC_EN. Allocation and rationale: `ai-files/reports/mcu-pin-allocation.md`. All other MCU pins are no-connect (reserved list in that report).
-- [ ] Check pin allocation and voltage domains for amplifiers, Bluetooth UART and controls (reserved pins only: PA2/PA3 UART, PA4/PA5 selects, PA6/PA7 amp PDN/FAULT, PA1 button ladder, PB0 headphone detect, PB1 USB-source detect). GPIO budget is tight; third I2C bus for audio has no hardware instance left (bit-bang on PB3/PB4 or share CTRL).
+- [x] Check pin allocation and voltage domains for amplifiers, Bluetooth UART and controls (reserved pins only: PA2/PA3 UART, PA4/PA5 selects, PA6/PA7 amp PDN/FAULT, PA1 button ladder, PB0 headphone detect, PB1 USB-source detect). GPIO budget is tight; third I2C bus for audio has no hardware instance left (bit-bang on PB3/PB4 or share CTRL). (Done: `ai-files/reports/mcu-pin-allocation.md`; 3V3 MCU domain, series resistors on BT UART.)
 - [ ] Define buttons, indicators, volume/source control and battery display requirements. QON sense needs a new Battery_Charger port (no net exists today).
-- [ ] Allocate remaining interrupt/enable/mute lines and bus addresses; select pull-ups by bus capacitance and rail state.
+- [x] Allocate remaining interrupt/enable/mute lines and bus addresses; select pull-ups by bus capacitance and rail state. (Done in the pin allocation; audio I2C is on the PCM1862/TAS bus with 2.2k pull-ups R209/R210.)
 - [ ] Document startup/shutdown sequencing, fault handling and external-power charge policy (see `reports/replacement-power-control-contract.md`).
 - [ ] Resolve any MCU/Bluetooth architecture change explicitly before replacing the currently selected parts.
 
@@ -86,10 +86,10 @@ Updated: 2026-10-05. Use this checklist with `AGENTS.md` and `ai-files/HANDOVER.
 ## 7. Source selection and analogue-to-digital conversion
 
 - [x] Source_Select_ADC child sheet captured (2026-10-06, root page 10): U24 PCM1862DBTR (I2C 0x4A, I2S master from Y200 24.576 MHz, VIN1 USB / VIN2 BT / VIN3 AUX, 2.2 uF-100R-10 nF C0G input networks), U22 TPS7A2033PDBVR 3V3_AUDIO LDO (EN tied to IN) from 5V_LOGIC, U23 TPS22917DBVR load switch for 5V_CODEC (CODEC_PWR_EN, 100 k pull-down), FB200 on AVDD, I2S through 33 R to ports I2S_BCK/LRCK/SDATA, AUD_SCL/SDA 2.2 k pull-ups to 3V3_AUDIO, ADC_INT 100 k pull-down. MCU PB10/PB11/PC5/PC7 connected. USB_Audio now supplied from 5V_CODEC. AUX_L/R now come from Headphone_Aux; I2S stays an open root stub until Amplifiers. Y200 load caps changed to 22 pF C0G; LCSC codes filled except 10 nF C0G and 33R. Open: LCSC codes/stock for U22-U24 passives, crystal CL (15 pF) trim, PCM1862 bench check. See HANDOVER.
-- [ ] Define the complete USB/Bluetooth/auxiliary audio path and switching truth table.
-- [ ] Connect/configure TS5A23157 switches only after confirming signal swing, bias, supply and default state.
-- [ ] Select an audio ADC or a compatible alternative architecture. TAS5825M requires digital audio; current analogue codec/mux outputs cannot directly drive it.
-- [ ] Evaluate PCM1862DBTR as a candidate; finalize channels, gain, input bias/coupling, digital format and clocks.
+- [x] Define the complete USB/Bluetooth/auxiliary audio path and switching truth table. (PCM1862 4:1 input, 2026-10-06.)
+- [x] Connect/configure TS5A23157 switches only after confirming signal swing, bias, supply and default state. (Headphone_Aux sheet, USB default.)
+- [x] Select an audio ADC or a compatible alternative architecture. TAS5825M requires digital audio; current analogue codec/mux outputs cannot directly drive it. (PCM1862DBTR selected.)
+- [x] Evaluate PCM1862DBTR as a candidate; finalize channels, gain, input bias/coupling, digital format and clocks.
 - [ ] Define source-change mute timing and prevent clicks or simultaneous source contention.
 - [ ] Confirm stereo handling, woofer summing and any DSP crossover/equalization architecture.
 
@@ -110,17 +110,17 @@ Updated: 2026-10-05. Use this checklist with `AGENTS.md` and `ai-files/HANDOVER.
 - [x] Channels: U6 stereo BTL (J9 FRONT_L, J10 FRONT_R), U7 mono PBTL (J11 WOOFER). **PBTL pairing verified from the rendered SLASEH7F Fig. 159 (page 86): OUT_A+ (2) with OUT_A- (30) to one inductor, OUT_B+ (23) with OUT_B- (27) to the other. This corrects the earlier plan (A+ with B+).**
 - [ ] Open: driver impedances/power ratings, crossover/DSP and loudness limits; mute/fault/shutdown firmware sequence; bench check of boost compensation, PFM acoustics and the 22 uH inductors.
 - [x] Speaker connectors (JST B2P-VH) and 22 uH + 0.68 uF output filters added.
-- [ ] Open parts: LCSC codes for the 22 uH (Sunlord MWSA1265S-220MT) and 2.2 uH (Coilcraft XAL7070-222MEC, not at LCSC) inductors, 0.47 uF 25 V, 6.8 nF, 47 pF, 100 uF polymer, boost resistors and 0R; TPS61088 footprint pads are from the EasyEDA package (verify against TI RHL0020A); no 3D model on the VH connector; reference range extended to C300-C307.
+- [ ] Open parts (2026-10-06 sweep: only C1623 for CL10B474KA8NNNC found; LCSC search blocked, 8-lookup budget spent): LCSC codes for the 22 uH (Sunlord MWSA1265S-220MT) and 2.2 uH (Coilcraft XAL7070-222MEC, not at LCSC) inductors, 0.47 uF 25 V, 6.8 nF, 47 pF, 100 uF polymer, boost resistors and 0R; TPS61088 footprint pads are from the EasyEDA package (verify against TI RHL0020A); no 3D model on the VH connector; reference range extended to C300-C307.
 
 ## 10. Integration, BOM and schematic review
 
-- [ ] Agree rail names, voltage domains, hierarchical ports, reference ranges and sheet ownership before connecting subsystems.
-- [ ] Integrate each subsystem into the root hierarchy; keep direct local wiring and clear functional boundaries.
+- [x] Agree rail names, voltage domains, hierarchical ports, reference ranges and sheet ownership before connecting subsystems. (11 child sheets plus root.)
+- [x] Integrate each subsystem into the root hierarchy; keep direct local wiring and clear functional boundaries. (Done; hierarchical pin names/types verified against child ports by script 2026-10-06.)
 - [ ] Finalize all remaining parts and passives; distinguish candidates from selected parts.
 - [x] Reconcile the LCSC BOM with current captured power parts, quantities and unresolved selections (2026-10-05). Continue updating as open MPNs are selected; current costs are partial subtotals, not complete product cost.
-- [ ] Confirm symbol pin-to-footprint mapping and project-relative footprint/3D links for newly added parts.
+- [x] Confirm symbol pin-to-footprint mapping and project-relative footprint/3D links for newly added parts. (Scripted 2026-10-06: every symbol footprint and linked 3D path resolves; no model on PD_C_0402, J5 Micro-Fit, SW101, JST VH, SW100.)
 - [ ] Review the complete schematic against manufacturer datasheets, power budget, signal domains and startup states.
-- [ ] When verification is requested, export/inspect all pages, run ERC and reconcile every finding. Current unfinished sections mean the project is not ERC-clean.
+- [ ] When verification is requested, export/inspect all pages, run ERC and reconcile every finding. 2026-10-06 final: ERC 19 = 18 root `endpoint_off_grid` at J1 (symbol geometry/off-grid origin 248.75, documented) + 1 `power_pin_not_driven` (U11 VIN_3V3 deliberately tied low via R12). lib_symbol_mismatch U4 and BAT/BATP power_pin_not_driven cleared (PWR_FLAGs on BAT_INT/BATP nets). Not ERC-clean; remaining items are justified.
 - [ ] Record open hardware/firmware assumptions in the single handover. Do not begin PCB layout without a request.
 
 ## Schematic style and user feedback
@@ -207,7 +207,7 @@ PD tolerance capture: U18 TPS26600PWPR (C544399) follows Q1/Q2. OVP is about11.0
 - [x] Replace codec TPS61023 with TPS63802, R140/R14178.7k/9.1k and0.47uH L2. Conservative steady-PWM DC bound4.600–5.059V; startup PFM/ripple/load-step qualification remains open.
 - [ ] Complete physical startup/transient, temperature, surge and5V weak-source validation. Current CLI ERC319 inherited root findings; all captured power children zero. No physical tests or PCB layout.
 
-Current partial BOM: US$75.08 fitted / US$94.01 MOQ order estimate (2026-10-05 U19 integration). Shared MPN orders are consolidated; repeated functional rows show order quantity0. Snapshots remain per-row dated; these are not a complete product cost.
+Current partial BOM (2026-10-06 sweep): US$78.94 fitted / US$95.64 MOQ order estimate (workbook E4/E5; unchanged by the sweep, still excludes ~25 unpriced rows incl. pack, switches, J5, inductors, boost/filter passives, many unverified stocks). Shared MPN orders are consolidated; repeated functional rows show order quantity0. Snapshots remain per-row dated; these are not a complete product cost.
 
 
 ## Review follow-up (2026-10-05)
@@ -314,3 +314,7 @@ Quick mechanical envelope review: `ai-files/reports/mechanical-fit-rough-2026-10
 - [x] New `CHG_QON_SENSE` (Battery_Charger output, MCU PC13/WKUP2 input) through R113 100k from the BQ QON net (high-impedance tap, no divider needed). BOM updated (U3, C163, C164, R113; C164 LCSC unverified; subtotals still partial).
 - [ ] Verify G071 stock/price at order; confirm C164 LCSC code; capture the reserved signals with their sheets and add the external pull-downs listed in the allocation report.
 
+
+## Final consistency sweep (2026-10-06, not committed)
+- Open items: see "Final open-items list" at the end of `ai-files/HANDOVER.md`.
+- Sweep results: 321 references, no duplicates; BOM covers all (R256 DNP inside the R260 row, PACK is external); D6 MPN property corrected to TVS2200DRVR; stray note rows removed from the BOM; CHG_VIO_3V0 is a dangling port with nothing behind it in Battery_Charger (BQ25792 has no VIO pin).
