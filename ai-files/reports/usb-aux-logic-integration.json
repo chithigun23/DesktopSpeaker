@@ -1,0 +1,23 @@
+{
+  "retained_physical_pin_groups_match": true,
+  "intended_U12_input_change": [
+    "U12.1",
+    "U12.3",
+    "C122.1"
+  ],
+  "aux_sys_output_ao_raw_isolation": true,
+  "mux_physical_stack_correct": [
+    2,
+    7
+  ],
+  "active_pd_range": "5/9 V only",
+  "erc": {
+    "/": 319,
+    "/USB_PD/": 0,
+    "/Battery_Charger/": 0,
+    "/Fuel_Gauge_Power/": 0,
+    "/Bluetooth_Power/": 0,
+    "/Logic_Audio_Power/": 0
+  },
+  "runtime_hardware_qualification_pending": true
+}

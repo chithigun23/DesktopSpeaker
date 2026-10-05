@@ -1,0 +1,110 @@
+{
+  "candidate": "BQ25792RQMR",
+  "status": "unregistered_candidate_pending_main_integration_selection",
+  "datasheet": {
+    "source": "Texas Instruments BQ25792 Rev C (SLUSDG1C, August 2022)",
+    "local": "ai-files/datasheets/BQ25792.pdf",
+    "mechanical_drawing": "RQM0029A, pages 140-141",
+    "package": "29-pin VQFN-HR, 4.0 mm nominal body (3.9-4.1 mm), 0.8-1.0 mm body height"
+  },
+  "candidate_files": [
+    "ai-files/candidates/BQ25792RQMR.kicad_sym",
+    "ai-files/candidates/BQ25792RQMR.kicad_mod",
+    "ai-files/candidates/RQM0029A.stp"
+  ],
+  "symbol": {
+    "pin_mapping": "Table 7-1 roles and logical numbers 1-29; VBUS uses native pin stack [2-3], BAT uses [22-23], GND is pin 27 only. No fictitious pins 30-33 or exposed pad.",
+    "datasheet_pin_count": 29,
+    "layout": "Functional grouping with 2.54 mm side-pin spacing on a taller 40.64 \u00d7 30.48 mm body. Left: status/control, I2C, TS/ILIM/PROG/INT; right: switching/bootstrap group above SYS/BAT/BATP/SDRV/ACDRV group; top power pins, GND27 below. CE is marked active-low as ~{CE}; BTST and ACDRV are passive pin types. Preview: ai-files/reports/bq25792-symbol-svg/BQ25792RQMR_unit1.png."
+  },
+  "footprint": {
+    "source": "Installed KiCad 10.0.6 official Package_DFN_QFN.pretty/Texas_RQM0029A_VQFN-29_4x4mm_P0.4mm.kicad_mod",
+    "pad_count": 29,
+    "pitch": "0.4 mm standard signal pitch as named by upstream footprint",
+    "special_geometry": "Pads 1, 9, 16 and 24 are official custom-shaped corner lands; exact pad polygons and pad centers retained from installed standard library. These are numbered terminal pads, not additional EP/GND pads.",
+    "manual_drawing_review": "TI datasheet rendered at 220 DPI (pages 140-141) and visually compared; package outline and board layout show the RQM HOTROD corner/edge-metal geometry. Candidate footprint geometry replaced with the installed official RQM0029A footprint; prior fabricated regular-perimeter draft is no longer in a library folder."
+  },
+  "step_model": {
+    "status": "found_exact_TI_model",
+    "file": "ai-files/candidates/RQM0029A.stp",
+    "source_url": "https://webench.ti.com/cad/dlbxl.cgi/newstep/RQM0029A.stp",
+    "source_page": "https://webench.ti.com/cad/cad.cgi?partno=BQ25792",
+    "model_identity": {
+      "STEP_FILE_NAME": "RQM0029A_ASM",
+      "timestamp": "2019-10-30T08:11:18",
+      "author": "a0412086",
+      "creator": "Creo Parametric by PTC Inc.",
+      "schema": "AUTOMOTIVE_DESIGN AP214"
+    },
+    "sha256": "2b506f614e8de3b8d4fd691a864bbf33dfe113a3ca635bd76cc83714a26860be",
+    "freecad_inspection": "ai-files/reports/bq25792-step-inspection.json",
+    "body_bbox_mm": {
+      "x": 4.0,
+      "y": 4.0,
+      "z": 1.0
+    },
+    "datasheet_package_dimensions_mm": {
+      "x_nominal": 4.0,
+      "x_min": 3.9,
+      "x_max": 4.1,
+      "y_nominal": 4.0,
+      "y_min": 3.9,
+      "y_max": 4.1,
+      "height_min": 0.8,
+      "height_max": 1.0
+    },
+    "comparison": "STEP extents 4.0 x 4.0 x 1.0 mm agree with TI RQM0029A outline limits.",
+    "solid_count": 30,
+    "link_status": "Candidate footprint now contains project-relative model link `${KIPRJMOD}/kicad-library/3d/RQM0029A.stp`; source model remains in ai-files/candidates pending main integration.",
+    "lead_alignment": {
+      "orientation": "STEP top-view perimeter order matches pad numbers 1 through 29 when STEP +Y is converted to KiCad footprint -Y; first corner lead is pad 1 at STEP (-1.56,+1.68) and the sequence proceeds along left, lower, right and upper edges consistent with the TI/installed footprint numbering.",
+      "z_origin": "Lead bottoms are at STEP z=0.000 mm; lead tops at 0.100 mm. Body begins z=0.025 mm and ends z=1.000 mm. Candidate model placement is offset (0,0,0), scale (1,1,1), rotation (0,0,0), so the model rests on F.Cu plane with body height 1 mm.",
+      "inspection": "FreeCAD 1.0.0 decomposed the valid STEP into 29 individual lead solids plus one molded body; detailed bounds and centers in ai-files/reports/bq25792-step-parts.json. Pad numbering/orientation compared against official Texas_RQM0029A footprint and TI rendered pages 140\u2013141.",
+      "model_path_in_candidate": "${KIPRJMOD}/kicad-library/3d/RQM0029A.stp (destination path for main integration; STEP source remains under ai-files/candidates until activation)"
+    }
+  },
+  "verification": {
+    "kicad_cli": "installed KiCad 10.0.6",
+    "symbol_svg_export": "passed after 2.54 mm side-pin spacing update; CLI export preview visually reviewed.",
+    "footprint_svg_export": "passed: installed KiCad 10.0.6 exported the corrected candidate footprint as SVG",
+    "freecad": "FreeCAD 1.0.0 at /usr/bin/freecadcmd successfully read the TI STEP; shape valid, 30 solids, 4.0 x 4.0 x 1.0 mm bounding box.",
+    "datasheet_render": "ai-files/reports/bq25792-ti-render/page-140.png and page-141.png",
+    "model_orientation_vertical_review": "Passed for exact BQ25792 RQM0029A STEP using per-solid lead/body decomposition and coordinate comparison with official footprint; not a bbox-only check.",
+    "ship_fet_symbol_svg_export": "passed: KiCad10.0.6 CLI export to ai-files/reports/CSD17579Q3A_unit1.svg.",
+    "ship_fet_footprint_export": "passed: KiCad10.0.6 PCB_IO loaded 9 numbered pads and 4 paste-only apertures; SVG was visually compared with TI Figures7-2 and7-3 after anchor/paste corrections."
+  },
+  "unresolved": [
+    "Main integration owner has not finalized BQ25792 vs alternate charger.",
+    "Main integration owner must approve the BQ25792 charger selection before moving candidate STEP to the project 3D folder. CSD17579Q3A is recommended but not registered; exact custom footprint/model alignment to the TI land pattern remains to be completed before placing Q103."
+  ],
+  "external_ship_fet": {
+    "status": "recommended_candidate_not_approved_or_registered",
+    "part": "Texas Instruments CSD17579Q3A",
+    "datasheet": "ai-files/datasheets/CSD17579Q3A.pdf (SLPS527A Rev A, January 2016)",
+    "source_links": {
+      "datasheet": "https://www.ti.com/lit/ds/symlink/csd17579q3a.pdf",
+      "TI_CAD": "https://webench.ti.com/cad/cad.cgi?partno=CSD17579Q3A",
+      "exact_STEP": "https://webench.ti.com/cad/dlbxl.cgi/newstep/DNH0008A.stp",
+      "LCSC": "https://www.lcsc.com/product-detail/C97376.html"
+    },
+    "package_mapping": "DNH0008A SON-8-EP: gate pad 4; source pads 1\u20133; drain pads 5\u20138 plus exposed thermal pad 9 (datasheet top view and recommended land pattern).",
+    "ratings": "30 V VDS; \u00b120 V VGS; RDS(on) max 14.2 m\u03a9 at VGS=4.5 V, ID=8 A; Qg 5.3 nC typ / 6.9 nC max at 4.5 V; package-limited continuous current 20 A under datasheet thermal test conditions.",
+    "ship_topology": "Connect source (1\u20133) to charger BAT and drain (5\u20139) to physical pack positive. TI Fig. 9-14 depicts a single external N-FET in this orientation; body diode then permits charger-to-pack current and blocks pack-to-charger current with gate off.",
+    "SDRV_compatibility": "BQ25792 Rev C \u00a79.3.12: SDRV typical gate drive is about 5 V above battery with 100 nA typical drive current. CSD17579Q3A needs VGS 4.5 V for its specified RDS(on). Gate charge suggests 53\u201369 ms idealized charge time at 100 nA; the datasheet does not guarantee this transition estimate across operating conditions. No gate pulldown should be added; confirm timing in the actual application. The 350 ms reset pulse is a related timescale but not proof of guaranteed gate settling.",
+    "loss_estimate": "At 6 A and 14.2 m\u03a9, room-temperature conduction estimate is 0.51 W. This excludes temperature rise and board thermal resistance; package/datasheet 20 A rating is not blanket board-level 1-second/continuous certification.",
+    "sourcing_snapshot": "LCSC C97376 observed 300 stock, MOQ 5, USD 0.241 each at 5+ during sourcing snapshot; availability and price unverified for purchase date.",
+    "exact_model": "TI DNH0008A.stp downloaded to ai-files/candidates/DNH0008A.stp; FreeCAD decomposition: six solids, four narrow perimeter lands on STEP -X, one wide drain land spanning STEP X/Y with z=0..0.2 mm, and package body z=0.05..0.9 mm. Overall model bbox and footprint suitability still require comparison to TI recommended-land drawing; no FET footprint/model link or registered library asset has been made.",
+    "sha256": "26822bbb4a4b1874481c18de404dd194dce4554cd319bc6ab12b4c227540200d",
+    "candidate_assets": [
+      "ai-files/candidates/CSD17579Q3A.kicad_sym",
+      "ai-files/candidates/CSD17579Q3A_DNH0008A.kicad_mod",
+      "ai-files/candidates/CSD17579Q3A_DNH0008A.step"
+    ],
+    "symbol": "Recognizable native N-MOSFET graphic; Gate pin4, Source native pin stack [1-3], Drain native pin stack [5-9].",
+    "footprint": "Corrected after review against TI Figure7-2 and 7-3. Nine numbered copper lands: individual source/gate pads1\u20134 and drain pads5\u20138 plus separately numbered exposed drain pad9. Pad9 anchor center is (0.3275,0) with nominal body size1.775\u00d72.45mm; main-land left datum\u22120.56mm/right edge1.215mm and separate drain fingers extend to the terminal pads. Side lands are0.6\u00d70.3mm, 0.65mm pitch, with centers x=\u00b11.55mm and y=\u00b10.975/\u00b10.325mm. Removed obsolete overlapping terminal paste-only pads. Four paste-only thermal apertures are0.705\u00d71.125mm at x=\u22120.125/0.78mm and y=\u00b10.6625mm (column gap0.905mm, row gap1.325mm). Footprint instantiated in KiCad10.0.6 PCB_IO and SVG export visually reviewed (`ai-files/reports/CSD17579Q3A_footprint_zoom.png`). Candidate still requires main PCB editor DRC review before activation.",
+    "step_alignment": "TI DNH0008A exact STEP decomposes to four source/gate lead solids on model X<0 and a drain metal solid on X>0, plus molded body. Lead row top-to-bottom mapping after KiCad Y sign flip is 1,2,3,4; high-X drain side matches pad8\u21925 upper-to-lower. Lead underside Z=0, leads top Z=0.2 mm, body Z=0.05..0.90 mm. Candidate placement origin (0,0,0), scale1, rotation0. These dimensions are consistent with TI Figure7.2 metal/body extent and the footprint origin.",
+    "step_sha256": "26822bbb4a4b1874481c18de404dd194dce4554cd319bc6ab12b4c227540200d",
+    "candidate_assets_status": "candidate-only, unregistered; Q103 placement to remain provisional until main integration review.",
+    "footprint_svg": "ai-files/reports/CSD17579Q3A_footprint_zoom.png"
+  }
+}

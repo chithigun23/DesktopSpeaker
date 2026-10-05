@@ -50,6 +50,7 @@ Updated: 2026-10-05. Use this checklist with `AGENTS.md` and `ai-files/HANDOVER.
 - [x] Capture enabled TPS63802 codec rail at nominal4.824V, forced PWM after soft-start, default-off enable and output disconnect; replaces TPS61023 after corner review.
 - [x] Capture an enabled TPS63802 3.8 V rail for BM83, with default-off enable and selectable PWM/PFM. Module connections remain in section 6.
 - [ ] Finish regulator passive/corner review, source power limits and downstream signal-pin isolation. Bluetooth regulator/inductor footprint and STEP assignments are complete.
+- [x] Add TPS2116 USB-priority logic mux between USB_AUX_5V/SYS_RAW and U12; USB-powered logic no longer depends on charger switching. Physical pin connectivity and schematic readability reviewed; MCU startup and switchover qualification remain open.
 - [x] Add SW100 QON wake button and SW101 pack-positive physical disconnect to the charger sheet.
 - [ ] Finalize both selected storage modes: physical battery disconnect and electronic off with USB/button wake; finalize switch ratings, shutdown sequencing and drain budget.
 
@@ -252,3 +253,7 @@ Fresh review found15 expected power net relations correct,101 component refs cov
 - [x] Select TPS25730DREFR / C22438973 for the replacement prototype: autonomous fixed 5–20 V SPR matching and integrated sink switch. TI recommends TVS2200, but its full-rated clamp versus the controller absolute maximum still needs physical qualification; this is not a proven surge rating. Non-PD Rp current is not exposed by documented TPS interfaces; conservative fallback plus separate BC1.2 policy is required.
 - [ ] Capture/review TPS25730D and BQ25792 replacements, including exact models, ship FET, source detection ports and root interfaces.
 - [ ] Provide independent USB-powered MCU startup while the charger converter remains hardware-disabled. Review low-current OR/mux into the existing always-on regulator; avoid backfeeding SYS or USB.
+
+### Auxiliary logic integration (2026-10-05)
+
+U20 TPS2116DRLR now selects U19 USB_AUX_5V or SYS_RAW into U12. R124/R125 180k/100k set nominal 2.8 V priority threshold; C124/C125 bypass the inputs. Preserve SYS_RAW below 5.5 V recommended maximum (6 V absolute); replacement charger must enforce the selected 1S configuration. Fast input collapse with alternate supply below 2.5 V needs switchover/BOR qualification. The physical gauge, storage switches and other power circuits are unchanged. Active USB PD/charger remains 5/9 V only pending reviewed TPS25730D/BQ25792 integration.

@@ -1,0 +1,21 @@
+{
+  "pads_checked": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8"
+  ],
+  "pin_map": "GND1/VOUT2+7/VIN1=3/PR1=4/MODE5/VIN2=6/ST8",
+  "model_source": "installed KiCad SOT-583-8; not authenticated TI STEP",
+  "model_sha256": "34d40dd5a4b023474c893715ba83608c48ba22a44d91723fb6791db21a0f63bb",
+  "geometry_evidence": [
+    "tps2116-model-inspection.json",
+    "tps2116-model-sections.json",
+    "tps2116-ti-render"
+  ],
+  "project_relative_model_link": true
+}

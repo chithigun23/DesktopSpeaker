@@ -1,0 +1,19 @@
+{
+  "step": "/home/chithi/Desktop/DesktopSpeaker/ai-files/candidates/RQM0029A.stp",
+  "is_valid": true,
+  "solids": 30,
+  "faces": 754,
+  "edges": 2082,
+  "bbox_mm": {
+    "xmin": -2.0,
+    "xmax": 2.0,
+    "ymin": -2.0,
+    "ymax": 2.0,
+    "zmin": 0.0,
+    "zmax": 1.0,
+    "x": 4.0,
+    "y": 4.0,
+    "z": 1.0
+  },
+  "volume_mm3": 15.678858433850005
+}

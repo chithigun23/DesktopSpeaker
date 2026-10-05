@@ -1,0 +1,136 @@
+{
+  "date": "2026-10-05",
+  "scope": "Active USB auxiliary mux milestone only; draft BQ25792/TPS25730 not included.",
+  "netlistPhysicalReferences": 108,
+  "bomPhysicalReferences": 108,
+  "nonphysicalBomRows": [
+    "PACK"
+  ],
+  "missingNetlistReferences": [],
+  "identityCheck": {
+    "mpn": {
+      "checked": 103,
+      "matched": 103,
+      "mismatches": [],
+      "unresolved": []
+    },
+    "lcsc": {
+      "checked": 58,
+      "matched": 58,
+      "mismatches": [],
+      "unresolved": []
+    }
+  },
+  "newPartIdentityChecks": [
+    {
+      "reference": "U20",
+      "bom": {
+        "mpn": "TPS2116DRLR",
+        "lcsc": "C3235557"
+      },
+      "netlist": {
+        "ref": "U20",
+        "mpn": "TPS2116DRLR",
+        "lcsc": "C3235557"
+      }
+    },
+    {
+      "reference": "R124",
+      "bom": {
+        "mpn": "RC0603FR-07180KL",
+        "lcsc": "C123419"
+      },
+      "netlist": {
+        "ref": "R124",
+        "mpn": "RC0603FR-07180KL",
+        "lcsc": "C123419"
+      }
+    },
+    {
+      "reference": "R125",
+      "bom": {
+        "mpn": "RC0603FR-07100KL",
+        "lcsc": "C14675"
+      },
+      "netlist": {
+        "ref": "R125",
+        "mpn": "RC0603FR-07100KL",
+        "lcsc": "C14675"
+      }
+    },
+    {
+      "reference": "C124",
+      "bom": {
+        "mpn": "LMK107B7105KA-T",
+        "lcsc": "C92806"
+      },
+      "netlist": {
+        "ref": "C124",
+        "mpn": "LMK107B7105KA-T",
+        "lcsc": "C92806"
+      }
+    },
+    {
+      "reference": "C125",
+      "bom": {
+        "mpn": "LMK107B7105KA-T",
+        "lcsc": "C92806"
+      },
+      "netlist": {
+        "ref": "C125",
+        "mpn": "LMK107B7105KA-T",
+        "lcsc": "C92806"
+      }
+    }
+  ],
+  "newReferences": [
+    "U20",
+    "C124",
+    "C125",
+    "R124",
+    "R125"
+  ],
+  "reusedCapacitor": {
+    "references": "C122, C123, C124, C125",
+    "mpn": "LMK107B7105KA-T",
+    "lcsc": "C92806",
+    "fittedQuantity": 4
+  },
+  "newLines": [
+    {
+      "reference": "U20",
+      "mpn": "TPS2116DRLR",
+      "lcsc": "C3235557",
+      "stockPrice": "unverified; excluded from priced totals"
+    },
+    {
+      "reference": "R124",
+      "mpn": "RC0603FR-07180KL",
+      "lcsc": "C123419",
+      "moq": 100,
+      "observedTierUnitUsd": 0.0012,
+      "stock": "unverified; listing page may be stale"
+    },
+    {
+      "reference": "R125",
+      "mpn": "RC0603FR-07100KL",
+      "lcsc": "C14675",
+      "note": "reused mapping; no new MOQ order"
+    }
+  ],
+  "fittedSubtotalUsd": 75.13,
+  "inStockOrderSubtotalUsd": 94.01,
+  "formulaErrorMatches": 0,
+  "coveragePass": true,
+  "rendered": [
+    "usb-aux-bom-changed-parts.png",
+    "usb-aux-bom-order-pricing.png",
+    "usb-aux-bom-totals.png"
+  ],
+  "limitations": [
+    "U20 stock/price not verified.",
+    "R124 listing page may be stale; stock unverified.",
+    "Priced fitted estimate includes selected but unverified-stock R124 pricing; in-stock order subtotal excludes unverified stock.",
+    "Partial subtotals are not product cost."
+  ]
+}
