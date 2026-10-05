@@ -41,4 +41,5 @@
   (lib (name "TPS2116DRLR") (type "KiCad") (uri "${KIPRJMOD}/kicad-library/schematic/TPS2116DRLR.kicad_sym") (options "") (descr "USB and battery logic priority mux"))
   (lib (name "CSD17579Q3A") (type "KiCad") (uri "${KIPRJMOD}/kicad-library/schematic/CSD17579Q3A.kicad_sym") (options "") (descr "External charger ship FET, TI DNH0008A"))
   (lib (name "TPS3839G33DBZR") (type "KiCad") (uri "${KIPRJMOD}/kicad-library/schematic/TPS3839G33DBZR.kicad_sym") (options "") (descr "Low-battery gauge bus supervisor"))
+  (lib (name "TPS25730DREFR") (type "KiCad") (uri "${KIPRJMOD}/kicad-library/schematic/TPS25730DREFR.kicad_sym") (options "") (descr "5-20V USB PD sink controller, TI REF0038A"))
 )
