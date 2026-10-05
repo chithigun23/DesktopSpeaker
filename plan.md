@@ -85,7 +85,7 @@ Updated: 2026-10-05. Use this checklist with `AGENTS.md` and `ai-files/HANDOVER.
 
 ## 7. Source selection and analogue-to-digital conversion
 
-- [x] Source_Select_ADC child sheet captured (2026-10-06, root page 10): U24 PCM1862DBTR (I2C 0x4A, I2S master from Y200 24.576 MHz, VIN1 USB / VIN2 BT / VIN3 AUX, 2.2 uF-100R-10 nF C0G input networks), U22 TPS7A2033PDBVR 3V3_AUDIO LDO (EN tied to IN) from 5V_LOGIC, U23 TPS22917DBVR load switch for 5V_CODEC (CODEC_PWR_EN, 100 k pull-down), FB200 on AVDD, I2S through 33 R to ports I2S_BCK/LRCK/SDATA, AUD_SCL/SDA 2.2 k pull-ups to 3V3_AUDIO, ADC_INT 100 k pull-down. MCU PB10/PB11/PC5/PC7 connected. USB_Audio now supplied from 5V_CODEC. AUX_L/R, I2S and 3V3_AUDIO stay open root stubs until Headphone_Aux and Amplifiers. Open: LCSC codes/stock for U22-U24 passives, crystal CL (15 pF) trim, PCM1862 bench check. See HANDOVER.
+- [x] Source_Select_ADC child sheet captured (2026-10-06, root page 10): U24 PCM1862DBTR (I2C 0x4A, I2S master from Y200 24.576 MHz, VIN1 USB / VIN2 BT / VIN3 AUX, 2.2 uF-100R-10 nF C0G input networks), U22 TPS7A2033PDBVR 3V3_AUDIO LDO (EN tied to IN) from 5V_LOGIC, U23 TPS22917DBVR load switch for 5V_CODEC (CODEC_PWR_EN, 100 k pull-down), FB200 on AVDD, I2S through 33 R to ports I2S_BCK/LRCK/SDATA, AUD_SCL/SDA 2.2 k pull-ups to 3V3_AUDIO, ADC_INT 100 k pull-down. MCU PB10/PB11/PC5/PC7 connected. USB_Audio now supplied from 5V_CODEC. AUX_L/R now come from Headphone_Aux; I2S stays an open root stub until Amplifiers. Y200 load caps changed to 22 pF C0G; LCSC codes filled except 10 nF C0G and 33R. Open: LCSC codes/stock for U22-U24 passives, crystal CL (15 pF) trim, PCM1862 bench check. See HANDOVER.
 - [ ] Define the complete USB/Bluetooth/auxiliary audio path and switching truth table.
 - [ ] Connect/configure TS5A23157 switches only after confirming signal swing, bias, supply and default state.
 - [ ] Select an audio ADC or a compatible alternative architecture. TAS5825M requires digital audio; current analogue codec/mux outputs cannot directly drive it.
@@ -95,11 +95,12 @@ Updated: 2026-10-05. Use this checklist with `AGENTS.md` and `ai-files/HANDOVER.
 
 ## 8. Headphone output and auxiliary input
 
-- [ ] Connect switched PJ-307 jacks using verified contact mapping (sleeve 1, ring 2, switched ring 3, switched tip 4, tip 5).
-- [ ] Connect TPA6132A2, decoupling/charge-pump components and shutdown control per datasheet.
-- [ ] Define headphone source/volume path and supported load range.
-- [ ] Define insertion detection and speaker mute behaviour; check how jack switches interact with audio routing.
-- [ ] Add appropriate input/output protection, filtering and coupling where required.
+- [x] Headphone_Aux child sheet captured (2026-10-06, root page 11): U8/U9 TS5A23157 3:1 mux (USB default, BT, AUX; HP_SEL_A/B 100 k pull-downs), six 1 uF / 100 k to VMID_HP / 1 k input networks, VMID_HP 47 k/47 k + 4.7 uF, U10 TPA6132A2 (1 uF inputs, 2.2 uF HPVDD/HPVSS, 1 uF flying cap, EN/G0/G1 ports with 100 k pull-downs), J2 HEAD_OUT and J3 AUX_IN (verified mapping: sleeve 1, ring 2, switched ring 3 NC, switched tip 4 = HP_DET / AUX_DET, tip 5), D200/D201 PESD5V0S2BT, AUX 10 k bleeds. MCU PC0-PC3, PA4, PB1, PB2 connected. See HANDOVER.
+- [x] Connect TPA6132A2 decoupling/charge-pump and shutdown control per datasheet (SLOS597B fig. 27).
+- [x] Headphone source/volume path: fixed-gain analogue pass-through, volume at the source (architecture doc section 4); loads 16-300 ohm.
+- [x] Insertion detection and speaker mute behaviour: HP_DET/AUX_DET to the MCU; insertion mutes the speaker chain by firmware only (no hardware mute), then the TPA6132A2 is enabled after the source settles.
+- [x] Input/output protection, coupling: PESD5V0S2BT on each jack, 1 uF AC coupling, 1 k series.
+- [ ] Open: verify PESD5V0S2BT pin 3 common and stock (LCSC C5380400 is a DOWO listing), PJ-307 mapping against the part, HP_DET behaviour with the real jack, TPA6132A2 click/pop timing on the bench, amplifiers (section 9) not started.
 
 ## 9. Amplifier supply and three-driver audio output
 

@@ -46,4 +46,5 @@
   (lib (name "PCM1862DBTR") (type "KiCad") (uri "${KIPRJMOD}/kicad-library/schematic/PCM1862DBTR.kicad_sym") (options "") (descr "Texas Instruments PCM1862 audio ADC"))
   (lib (name "TPS7A2033PDBVR") (type "KiCad") (uri "${KIPRJMOD}/kicad-library/schematic/TPS7A2033PDBVR.kicad_sym") (options "") (descr "Texas Instruments TPS7A2033 LDO"))
   (lib (name "TPS22917DBVR") (type "KiCad") (uri "${KIPRJMOD}/kicad-library/schematic/TPS22917DBVR.kicad_sym") (options "") (descr "Texas Instruments TPS22917 load switch"))
+  (lib (name "PESD5V0S2BT") (type "KiCad") (uri "${KIPRJMOD}/kicad-library/schematic/PESD5V0S2BT.kicad_sym") (options "") (descr "Nexperia PESD5V0S2BT ESD diode"))
 )

@@ -38,21 +38,21 @@
 | AUD_SCL | bidir | PB10 (30) | I2C2_SCL AF6; pull-up R209 2.2 k to 3V3_AUDIO. PB13/PB14 stay LEDs.
 | CODEC_PWR_EN | out | PC7 (39) | Captured: U23 TPS22917 ON, R212 100 k pull-down on Source_Select_ADC (high = 5V_CODEC on).
 | ADC_INT | in | PC5 (26) | Captured: PCM1862 GPIO1/INTA, R211 100 k pull-down (optional input; configure the GPIO as INTA in firmware).
+| HP_SEL_A, HP_SEL_B | out | PC0 (13), PC1 (14) | Captured 2026-10-06: TS5A23157 U8/U9 IN1+IN2 (via Headphone_Aux, 100 k pull-downs R234/R235: USB default).
+| HP_EN | out | PC2 (15) | Captured: TPA6132A2 EN, R236 100 k pull-down on Headphone_Aux.
+| HP_G0, HP_G1 | out | PC3 (16), PA4 (21) | Captured: TPA6132A2 gain, R237/R238 100 k pull-downs (default -6 dB). PA4 is TT_a: fine as an output.
+| HP_DET | in | PB1 (28) | Captured: J2 switched tip, 100 k (R239) pull-up to 3V3_AUDIO, 1 k (R240) series. EXTI. Reads low with no plug or with the audio rail off.
+| AUX_DET | in | PB2 (29) | Captured: J3 switched tip, 1 M (R241) to 3V_AO, 100 nF (C246), 10 k (R242) series. About 30 mV unplugged, high when a plug is inserted.
 
 All captured pins are 5 V tolerant FT variants. Pin moves versus the G031 are numbering only; every non-MCU pin group of each net is unchanged (netlist compared).
 
-## Reserved for sections 7-9 and open sections (labelled no-connect on the MCU sheet; AUD_SDA/SCL, CODEC_PWR_EN and ADC_INT moved to the captured table)
+## Reserved for sections 7-9 and open sections (labelled no-connect on the MCU sheet; AUD_SDA/SCL, CODEC_PWR_EN, ADC_INT and the seven headphone signals moved to the captured table)
 
 | Signal | Dir | Pin | Notes |
 |---|---|---|---|
 | AMP_PDN | out | PA6 (23) | Shared U6/U7 PDN. 100 k pull-down (arch doc). |
 | AMP_BOOST_EN | out | PA7 (24) | U25 EN, 100 k pull-down. |
-| HP_SEL_A, HP_SEL_B | out | PC0 (13), PC1 (14) | TS5A23157 selects, 100 k pull-downs (USB default). |
-| HP_EN | out | PC2 (15) | TPA6132A2 EN, 100 k pull-down. |
-| HP_G0, HP_G1 | out | PC3 (16), PA4 (21) | TPA6132A2 gain, 100 k pull-downs. PA4 is TT_a (not 5 V tolerant): fine as an output. |
 | AMP_FAULT_N | in | PC4 (25) | Open-drain wired-OR, pull-up to 3V3_AUDIO (FT_a, 3.3 V on a 3.0 V VDD is inside the FT limit). EXTI. |
-| HP_DET | in | PB1 (28) | J2 switched tip, pull-up to 3V3_AUDIO via 1 k. EXTI. |
-| AUX_DET | in | PB2 (29) | J3 switched tip via 10 k, 1 M to 3V_AO. EXTI. |
 | USB_SRC_DET | in | PB0 (27) | ADC_IN8 (analog). |
 | BTN_ADC | in | PA1 (18) | ADC_IN1, resistor-ladder buttons. |
 | LED_R, LED_G, LED_B | out | PB13 (33), PB14 (34), PB15 (35) | TIM1_CH1N/CH2N/CH3N AF2 PWM (set MOE). |
@@ -60,7 +60,7 @@ All captured pins are 5 V tolerant FT variants. Pin moves versus the G031 are nu
 | CODEC_SSPND | out | PD2 (52) | PCM2902C suspend status/control. |
 | USB_HID_MUTE, USB_HID_VOLUP, USB_HID_VOLDN | out | PD3 (53), PD4 (54), PD5 (55) | PCM2902C HID0/HID1/HID2 drive, pull-downs. |
 
-Spare GPIO (13, unlabelled no-connect): PA5 (22), PA15 (47), PB12 (32), PC8 (48), PC9 (49), PC10 (64), PC11 (1), PC12 (2), PD6 (56), PD8 (40), PD9 (41), PF0 (10), PF1 (11). Budget: 60 I/O = 25 captured + NRST + 21 reserved + 13 spare.
+Spare GPIO (13, unlabelled no-connect): PA5 (22), PA15 (47), PB12 (32), PC8 (48), PC9 (49), PC10 (64), PC11 (1), PC12 (2), PD6 (56), PD8 (40), PD9 (41), PF0 (10), PF1 (11). Budget: 60 I/O = 32 captured + NRST + 14 reserved + 13 spare.
 
 ## Constraints checked
 

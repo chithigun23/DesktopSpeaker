@@ -173,11 +173,11 @@ SAM = 'Samsung Electro-Mechanics'
 C100N = ('DesktopSpeaker:PD_C_0603', 'CL10B104KB8NNNC', SAM, 'C1591')
 C1U = ('DesktopSpeaker:PD_C_0805', 'CL21B105KBFNNNE', SAM, 'C28323')
 C10U = ('DesktopSpeaker:PD_C_0805', 'CL21B106KPQNNNE', SAM, 'C32635')
-C22U = ('DesktopSpeaker:PD_C_0805', 'CL21B225KAFNNNE', SAM, '')
+C22U = ('DesktopSpeaker:PD_C_0805', 'CL21B225KAFNNNE', SAM, 'C19110')
 C10N = ('DesktopSpeaker:PD_C_0603', 'GRM1885C1H103JA01D', 'Murata', '')
-C20P = ('DesktopSpeaker:PD_C_0603', 'CL10C200JB8NNNC', SAM, '')
+C20P = ('DesktopSpeaker:PD_C_0603', 'CL10C220JB8NNNC', SAM, 'C1653')
 RY = lambda mpn, lcsc: (mpn, 'YAGEO', lcsc)
-R100 = RY('RC0603FR-07100RL', ''); R33 = RY('RC0603FR-0733RL', ''); R2K2 = RY('RC0603FR-072K2L', '')
+R100 = RY('RC0603FR-07100RL', 'C105588'); R33 = RY('RC0603FR-0733RL', ''); R2K2 = RY('RC0603FR-072K2L', 'C114662')
 R100K = RY('RC0603FR-07100KL', 'C14675')
 
 # ---- U24 PCM1862
@@ -284,8 +284,8 @@ for nm in ('MISO/GPIO0', 'GPIO2/INTB', 'GPIO3/INTC'): nc(XY[nm])
 # crystal Y200 (24.576 MHz): XI row crystal, XO row returns around the right
 xiy, xoy = XY['XI'][1], XY['XO'][1]
 cx = 55.88
-wire(XY['XI'], (cx - 3.81, xiy)); junc((33.02, xiy)); vcap('C226', '20pF C0G', C20P, (33.02, xiy))
-wire((cx + 3.81, xiy), (71.12, xiy), (71.12, xoy), XY['XO']); junc((45.72, xoy)); vcap('C227', '20pF C0G', C20P, (45.72, xoy))
+wire(XY['XI'], (cx - 3.81, xiy)); junc((33.02, xiy)); vcap('C226', '22pF C0G', C20P, (33.02, xiy))
+wire((cx + 3.81, xiy), (71.12, xiy), (71.12, xoy), XY['XO']); junc((45.72, xoy)); vcap('C227', '22pF C0G', C20P, (45.72, xoy))
 x, y = P(cx, xiy)
 items.append(f'(symbol (lib_id "Device:Crystal_GND24") (at {f(x)} {f(y)} 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "{U()}") '
              f'(property "Reference" "Y200" (at {f(x+5.08)} {f(y-5.08)} 0) (effects (font (size 1.27 1.27)) (justify left))) '
@@ -301,7 +301,7 @@ gnd((cx, xiy - 5.08))
 text('Power: U22 TPS7A2033 (3V3_AUDIO, EN tied to IN) and U23 TPS22917 (5V_CODEC for USB_Audio, CODEC_PWR_EN, QOD tied to VOUT, CT open).', (-60.96, 154.94))
 text('PCM1862: I2C mode (MD0 low), address 0x4A (MS/AD low), I2S master from the 24.576 MHz crystal (512 fs, PLL off), SCKI grounded. VIN1 = USB, VIN2 = BT, VIN3 = AUX.', (-60.96, 152.4))
 text('Inputs: 2.2 uF - 100 R - 10 nF C0G (datasheet fig. 61 filter; ~5 mA ESD-diode limit). AVDD via FB200. No reset pin: firmware re-initialises after every 3V3_AUDIO enable.', (-60.96, 149.86))
-text('Crystal CL 15 pF (Lucki L327S240P11L): 2 x 20 pF with about 3 pF stray gives about 13 pF; trim at bring-up. Spare VIN4, MICBIAS and GPIO0/2/3 are no-connect.', (-60.96, 147.32))
+text('Crystal CL 15 pF (Lucki L327S240P11L): 2 x 22 pF with about 3 pF stray gives about 14 pF; trim at bring-up. Spare VIN4, MICBIAS and GPIO0/2/3 are no-connect.', (-60.96, 147.32))
 
 lib_syms = '(lib_symbols ' + ' '.join([pcm_emb, ldo_emb, sw_emb, PD_C, PD_R, GND, XTAL, FERR, FLAG]) + ')'
 hdr = ['(kicad_sch', '(version 20260306)', '(generator "eeschema")', '(generator_version "10.0")',
