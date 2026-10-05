@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-05",
+  "fittedSubtotalUsd": 73.7302,
+  "fittedSubtotalDisplayedUsd": 73.73,
+  "orderSubtotalUsd": 92.6647,
+  "orderSubtotalDisplayedUsd": 92.66,
+  "unpricedRefs": [
+    "J4",
+    "J5",
+    "SW100",
+    "SW101",
+    "D8"
+  ],
+  "otherOpenUnpricedRefs": [
+    "J4",
+    "J5",
+    "SW100",
+    "SW101",
+    "D8"
+  ],
+  "newlyUnpricedRefs": [],
+  "electricalQualificationOpen": [
+    "C103 effective capacitance under BTST-SW DC bias has no guaranteed value from the YAGEO datasheet simulation; confirm effective capacitance need during charger qualification"
+  ],
+  "excludedProductItems": [
+    "PACK",
+    "battery",
+    "speakers",
+    "open audio selections"
+  ],
+  "notCompleteProductCost": true,
+  "changes": [
+    "U14 mapped to selected TPS63802DLAR C2845237 same as U15",
+    "L2 mapped to Coilcraft XFL4015-471MEC C18221164 same as L3",
+    "R140 changed to SAE 1RC0603F7872 C54531588 (78.7kΩ); in-stock listing snapshot captured",
+    "R141 changed to YAGEO RC0603FR-079K1L C114639 (9.1kΩ); in-stock listing snapshot; distinct from R151",
+    "R142 retained YAGEO RC0603FR-07100KL C14675",
+    "D7 and D9 merged as two BZT52C12-7-F clamps; existing listing snapshot retained",
+    "D4 selected Diodes Incorporated 1N4148W-7-F C83528; MOQ/multiple 20",
+    "C103 selected YAGEO CC0603KRX7R9BB473 C107093; MOQ/multiple 50; effective DC-bias capacitance remains unqualified"
+  ]
+}

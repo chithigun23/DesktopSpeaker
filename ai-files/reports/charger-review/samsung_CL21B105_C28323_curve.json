@@ -1,0 +1,469 @@
+{
+  "manufacturer": "Samsung Electro-Mechanics",
+  "mpn": "CL21B105KBFNNNE",
+  "part_number_package_code": "CL21B105KBFNNNE",
+  "product_page": "https://product.samsungsem.com/mlcc/CL21B105KBFNNN.do",
+  "chart_conditions": {
+    "type": "DCBias",
+    "test": "LCR meter, 1 kHz, 1 Vrms",
+    "temperature_c": 25
+  },
+  "data_is_typical_only": true,
+  "typical_curve_points_0_to_25V": [
+    {
+      "dc_bias_v": 0.0,
+      "delta_c_percent": 0.0
+    },
+    {
+      "dc_bias_v": 0.05,
+      "delta_c_percent": 0.03211095702239332
+    },
+    {
+      "dc_bias_v": 0.1,
+      "delta_c_percent": 0.063564006335896
+    },
+    {
+      "dc_bias_v": 0.15000000000000002,
+      "delta_c_percent": 0.09464110838717543
+    },
+    {
+      "dc_bias_v": 0.2,
+      "delta_c_percent": 0.12562422362289907
+    },
+    {
+      "dc_bias_v": 0.25,
+      "delta_c_percent": 0.1567953124897343
+    },
+    {
+      "dc_bias_v": 0.3,
+      "delta_c_percent": 0.18843633543434857
+    },
+    {
+      "dc_bias_v": 0.35,
+      "delta_c_percent": 0.22082925290340932
+    },
+    {
+      "dc_bias_v": 0.39999999999999997,
+      "delta_c_percent": 0.2542560253435839
+    },
+    {
+      "dc_bias_v": 0.44999999999999996,
+      "delta_c_percent": 0.2889986132015398
+    },
+    {
+      "dc_bias_v": 0.5,
+      "delta_c_percent": 0.3253389769239444
+    },
+    {
+      "dc_bias_v": 0.5477500000000001,
+      "delta_c_percent": 0.36488179350506006
+    },
+    {
+      "dc_bias_v": 0.592,
+      "delta_c_percent": 0.4082261467377478
+    },
+    {
+      "dc_bias_v": 0.6342500000000001,
+      "delta_c_percent": 0.454145607266573
+    },
+    {
+      "dc_bias_v": 0.6759999999999999,
+      "delta_c_percent": 0.5014137457361011
+    },
+    {
+      "dc_bias_v": 0.71875,
+      "delta_c_percent": 0.5488041327908975
+    },
+    {
+      "dc_bias_v": 0.764,
+      "delta_c_percent": 0.5950903390755278
+    },
+    {
+      "dc_bias_v": 0.81325,
+      "delta_c_percent": 0.6390459352345572
+    },
+    {
+      "dc_bias_v": 0.868,
+      "delta_c_percent": 0.6794444919125515
+    },
+    {
+      "dc_bias_v": 0.92975,
+      "delta_c_percent": 0.7150595797540757
+    },
+    {
+      "dc_bias_v": 1.0,
+      "delta_c_percent": 0.7446647694036954
+    },
+    {
+      "dc_bias_v": 1.079075,
+      "delta_c_percent": 0.7723609750967982
+    },
+    {
+      "dc_bias_v": 1.1655999999999997,
+      "delta_c_percent": 0.8016983351846058
+    },
+    {
+      "dc_bias_v": 1.2585250000000001,
+      "delta_c_percent": 0.8306242564854341
+    },
+    {
+      "dc_bias_v": 1.3568,
+      "delta_c_percent": 0.8570861458175999
+    },
+    {
+      "dc_bias_v": 1.4593749999999999,
+      "delta_c_percent": 0.8790314099994194
+    },
+    {
+      "dc_bias_v": 1.5652,
+      "delta_c_percent": 0.8944074558492092
+    },
+    {
+      "dc_bias_v": 1.673225,
+      "delta_c_percent": 0.9011616901852857
+    },
+    {
+      "dc_bias_v": 1.7824000000000002,
+      "delta_c_percent": 0.8972415198259649
+    },
+    {
+      "dc_bias_v": 1.8916749999999996,
+      "delta_c_percent": 0.8805943515895636
+    },
+    {
+      "dc_bias_v": 2.0,
+      "delta_c_percent": 0.8491675922943984
+    },
+    {
+      "dc_bias_v": 2.110275,
+      "delta_c_percent": 0.8007731401455177
+    },
+    {
+      "dc_bias_v": 2.2252,
+      "delta_c_percent": 0.7363239981859911
+    },
+    {
+      "dc_bias_v": 2.343425,
+      "delta_c_percent": 0.6584192304911658
+    },
+    {
+      "dc_bias_v": 2.4636,
+      "delta_c_percent": 0.5696579011363889
+    },
+    {
+      "dc_bias_v": 2.5843749999999996,
+      "delta_c_percent": 0.47263907419700774
+    },
+    {
+      "dc_bias_v": 2.7044,
+      "delta_c_percent": 0.36996181374836945
+    },
+    {
+      "dc_bias_v": 2.8223249999999998,
+      "delta_c_percent": 0.2642251838658212
+    },
+    {
+      "dc_bias_v": 2.9368,
+      "delta_c_percent": 0.15802824862471004
+    },
+    {
+      "dc_bias_v": 3.046475,
+      "delta_c_percent": 0.053970072100383404
+    },
+    {
+      "dc_bias_v": 3.15,
+      "delta_c_percent": -0.04535028163181207
+    },
+    {
+      "dc_bias_v": 3.2464749999999998,
+      "delta_c_percent": -0.141007630677811
+    },
+    {
+      "dc_bias_v": 3.3367999999999998,
+      "delta_c_percent": -0.23629442191534508
+    },
+    {
+      "dc_bias_v": 3.4223250000000003,
+      "delta_c_percent": -0.3319380344267615
+    },
+    {
+      "dc_bias_v": 3.5044,
+      "delta_c_percent": -0.4286658472944074
+    },
+    {
+      "dc_bias_v": 3.5843749999999996,
+      "delta_c_percent": -0.5272052396006299
+    },
+    {
+      "dc_bias_v": 3.6636,
+      "delta_c_percent": -0.6282835904277762
+    },
+    {
+      "dc_bias_v": 3.743425,
+      "delta_c_percent": -0.7326282788581933
+    },
+    {
+      "dc_bias_v": 3.8251999999999997,
+      "delta_c_percent": -0.8409666839742287
+    },
+    {
+      "dc_bias_v": 3.9102749999999995,
+      "delta_c_percent": -0.9540261848582291
+    },
+    {
+      "dc_bias_v": 4.0,
+      "delta_c_percent": -1.072534160592542
+    },
+    {
+      "dc_bias_v": 4.092575,
+      "delta_c_percent": -1.1947349801838647
+    },
+    {
+      "dc_bias_v": 4.1856,
+      "delta_c_percent": -1.318898974032003
+    },
+    {
+      "dc_bias_v": 4.279525,
+      "delta_c_percent": -1.4457924633089654
+    },
+    {
+      "dc_bias_v": 4.3748000000000005,
+      "delta_c_percent": -1.5761817691867603
+    },
+    {
+      "dc_bias_v": 4.471875000000001,
+      "delta_c_percent": -1.7108332128373969
+    },
+    {
+      "dc_bias_v": 4.571199999999999,
+      "delta_c_percent": -1.8505131154328835
+    },
+    {
+      "dc_bias_v": 4.6732249999999995,
+      "delta_c_percent": -1.9959877981452292
+    },
+    {
+      "dc_bias_v": 4.7784,
+      "delta_c_percent": -2.148023582146442
+    },
+    {
+      "dc_bias_v": 4.887174999999999,
+      "delta_c_percent": -2.3073867886085324
+    },
+    {
+      "dc_bias_v": 5.0,
+      "delta_c_percent": -2.474843738703507
+    },
+    {
+      "dc_bias_v": 5.11605,
+      "delta_c_percent": -2.6487801102866273
+    },
+    {
+      "dc_bias_v": 5.2344,
+      "delta_c_percent": -2.827504354284288
+    },
+    {
+      "dc_bias_v": 5.3553500000000005,
+      "delta_c_percent": -3.0116669514752
+    },
+    {
+      "dc_bias_v": 5.4792,
+      "delta_c_percent": -3.2019183826380724
+    },
+    {
+      "dc_bias_v": 5.606249999999999,
+      "delta_c_percent": -3.398909128551617
+    },
+    {
+      "dc_bias_v": 5.7368,
+      "delta_c_percent": -3.6032896699945436
+    },
+    {
+      "dc_bias_v": 5.871149999999999,
+      "delta_c_percent": -3.815710487745563
+    },
+    {
+      "dc_bias_v": 6.009600000000001,
+      "delta_c_percent": -4.0368220625833855
+    },
+    {
+      "dc_bias_v": 6.15245,
+      "delta_c_percent": -4.267274875286722
+    },
+    {
+      "dc_bias_v": 6.3,
+      "delta_c_percent": -4.507719406634282
+    },
+    {
+      "dc_bias_v": 6.452450000000001,
+      "delta_c_percent": -4.758371037601294
+    },
+    {
+      "dc_bias_v": 6.6095999999999995,
+      "delta_c_percent": -5.018674851625703
+    },
+    {
+      "dc_bias_v": 6.77115,
+      "delta_c_percent": -5.288125883180298
+    },
+    {
+      "dc_bias_v": 6.936800000000001,
+      "delta_c_percent": -5.566219166737861
+    },
+    {
+      "dc_bias_v": 7.106249999999999,
+      "delta_c_percent": -5.852449736771183
+    },
+    {
+      "dc_bias_v": 7.279199999999999,
+      "delta_c_percent": -6.146312627753049
+    },
+    {
+      "dc_bias_v": 7.455349999999999,
+      "delta_c_percent": -6.447302874156245
+    },
+    {
+      "dc_bias_v": 7.634399999999999,
+      "delta_c_percent": -6.754915510453557
+    },
+    {
+      "dc_bias_v": 7.816049999999999,
+      "delta_c_percent": -7.0686455711177745
+    },
+    {
+      "dc_bias_v": 8.0,
+      "delta_c_percent": -7.387988090621682
+    },
+    {
+      "dc_bias_v": 8.16985,
+      "delta_c_percent": -7.68145314790106
+    },
+    {
+      "dc_bias_v": 8.316799999999999,
+      "delta_c_percent": -7.932070010318821
+    },
+    {
+      "dc_bias_v": 8.45195,
+      "delta_c_percent": -8.161112494988453
+    },
+    {
+      "dc_bias_v": 8.5864,
+      "delta_c_percent": -8.389854419023449
+    },
+    {
+      "dc_bias_v": 8.73125,
+      "delta_c_percent": -8.639569599537289
+    },
+    {
+      "dc_bias_v": 8.897599999999999,
+      "delta_c_percent": -8.931531853643461
+    },
+    {
+      "dc_bias_v": 9.096549999999999,
+      "delta_c_percent": -9.287014998455456
+    },
+    {
+      "dc_bias_v": 9.339200000000002,
+      "delta_c_percent": -9.727292851086759
+    },
+    {
+      "dc_bias_v": 9.63665,
+      "delta_c_percent": -10.273639228650858
+    },
+    {
+      "dc_bias_v": 10.0,
+      "delta_c_percent": -10.94732794826124
+    },
+    {
+      "dc_bias_v": 10.4245,
+      "delta_c_percent": -11.739633254244191
+    },
+    {
+      "dc_bias_v": 10.896,
+      "delta_c_percent": -12.623645768292919
+    },
+    {
+      "dc_bias_v": 11.411499999999998,
+      "delta_c_percent": -13.593363873571297
+    },
+    {
+      "dc_bias_v": 11.968,
+      "delta_c_percent": -14.642785953243198
+    },
+    {
+      "dc_bias_v": 12.5625,
+      "delta_c_percent": -15.765910390472492
+    },
+    {
+      "dc_bias_v": 13.192,
+      "delta_c_percent": -16.956735568423053
+    },
+    {
+      "dc_bias_v": 13.8535,
+      "delta_c_percent": -18.209259870258755
+    },
+    {
+      "dc_bias_v": 14.543999999999999,
+      "delta_c_percent": -19.517481679143465
+    },
+    {
+      "dc_bias_v": 15.2605,
+      "delta_c_percent": -20.87539937824106
+    },
+    {
+      "dc_bias_v": 16.0,
+      "delta_c_percent": -22.27701135071541
+    },
+    {
+      "dc_bias_v": 16.773999999999997,
+      "delta_c_percent": -23.758279236143505
+    },
+    {
+      "dc_bias_v": 17.592000000000002,
+      "delta_c_percent": -25.345405622120413
+    },
+    {
+      "dc_bias_v": 18.448,
+      "delta_c_percent": -27.017750313837084
+    },
+    {
+      "dc_bias_v": 19.336,
+      "delta_c_percent": -28.754673116484483
+    },
+    {
+      "dc_bias_v": 20.25,
+      "delta_c_percent": -30.53553383525358
+    },
+    {
+      "dc_bias_v": 21.183999999999997,
+      "delta_c_percent": -32.33969227533534
+    },
+    {
+      "dc_bias_v": 22.132,
+      "delta_c_percent": -34.14650824192073
+    },
+    {
+      "dc_bias_v": 23.088,
+      "delta_c_percent": -35.935341540200696
+    },
+    {
+      "dc_bias_v": 24.046,
+      "delta_c_percent": -37.685551975366224
+    },
+    {
+      "dc_bias_v": 25.0,
+      "delta_c_percent": -39.37649935260828
+    }
+  ],
+  "estimate_at_20V": {
+    "interpolated_delta_c_percent": -30.048427511739057,
+    "retention_percent": 69.95157248826095,
+    "nominal_uF": 1.0,
+    "typical_biased_uF": 0.6995157248826095,
+    "illustrative_tolerance_factor": 0.9,
+    "illustrative_temperature_factor": 0.85,
+    "illustrative_uF_before_aging_or_curve_uncertainty": 0.5351295295351963,
+    "minimum_check_uF": 0.1,
+    "result": "Illustrative typical estimate is above 0.1uF; not a guaranteed minimum. C180 at the eFuse input can see 20V fault voltage per system review; qualify against actual fault/transient requirements."
+  }
+}

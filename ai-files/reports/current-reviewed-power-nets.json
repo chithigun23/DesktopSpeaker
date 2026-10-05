@@ -1,0 +1,259 @@
+[
+  {
+    "relation": "eFuse ramp",
+    "pins": [
+      [
+        "U18",
+        "12"
+      ],
+      [
+        "C181",
+        "1"
+      ]
+    ],
+    "same_net": true,
+    "net": "Net-(U18-dVdT)"
+  },
+  {
+    "relation": "eFuse OVP",
+    "pins": [
+      [
+        "U18",
+        "5"
+      ],
+      [
+        "R180",
+        "2"
+      ],
+      [
+        "R181",
+        "1"
+      ]
+    ],
+    "same_net": true,
+    "net": "/USB_PD/OVP_11V"
+  },
+  {
+    "relation": "eFuse UVLO/input",
+    "pins": [
+      [
+        "U18",
+        "1"
+      ],
+      [
+        "U18",
+        "2"
+      ],
+      [
+        "U18",
+        "3"
+      ],
+      [
+        "C180",
+        "1"
+      ]
+    ],
+    "same_net": true,
+    "net": "Net-(Q2-D)"
+  },
+  {
+    "relation": "protected charger supply",
+    "pins": [
+      [
+        "U18",
+        "15"
+      ],
+      [
+        "U18",
+        "16"
+      ],
+      [
+        "U4",
+        "1"
+      ],
+      [
+        "D8",
+        "1"
+      ]
+    ],
+    "same_net": true,
+    "net": "/USB_PD/VBUS_PD"
+  },
+  {
+    "relation": "PMID capacitors",
+    "pins": [
+      [
+        "U4",
+        "23"
+      ],
+      [
+        "C101",
+        "1"
+      ],
+      [
+        "C108",
+        "1"
+      ]
+    ],
+    "same_net": true,
+    "net": "Net-(U4-PMID)"
+  },
+  {
+    "relation": "REGN capacitors",
+    "pins": [
+      [
+        "U4",
+        "22"
+      ],
+      [
+        "C102",
+        "1"
+      ],
+      [
+        "C109",
+        "1"
+      ]
+    ],
+    "same_net": true,
+    "net": "/Battery_Charger/REGN"
+  },
+  {
+    "relation": "wake",
+    "pins": [
+      [
+        "U4",
+        "12"
+      ],
+      [
+        "SW100",
+        "1"
+      ]
+    ],
+    "same_net": true,
+    "net": "Net-(U4-QON)"
+  },
+  {
+    "relation": "pack mechanical isolation",
+    "pins": [
+      [
+        "J5",
+        "1"
+      ],
+      [
+        "SW101",
+        "2"
+      ]
+    ],
+    "same_net": true,
+    "net": "Net-(J5-Pin_1)"
+  },
+  {
+    "relation": "charger disable",
+    "pins": [
+      [
+        "U4",
+        "9"
+      ],
+      [
+        "Q100",
+        "3"
+      ],
+      [
+        "R103",
+        "2"
+      ]
+    ],
+    "same_net": true,
+    "net": "Net-(Q100-D)"
+  },
+  {
+    "relation": "gauge SDA",
+    "pins": [
+      [
+        "U5",
+        "8"
+      ],
+      [
+        "U13",
+        "1"
+      ]
+    ],
+    "same_net": true,
+    "net": "Net-(U13-NC)"
+  },
+  {
+    "relation": "gauge SCL",
+    "pins": [
+      [
+        "U5",
+        "7"
+      ],
+      [
+        "U16",
+        "1"
+      ]
+    ],
+    "same_net": true,
+    "net": "Net-(U16-NC)"
+  },
+  {
+    "relation": "gauge alert",
+    "pins": [
+      [
+        "U5",
+        "5"
+      ],
+      [
+        "U17",
+        "1"
+      ]
+    ],
+    "same_net": true,
+    "net": "Net-(U17-NC)"
+  },
+  {
+    "relation": "logic inductor",
+    "pins": [
+      [
+        "U14",
+        "5"
+      ],
+      [
+        "L2",
+        "2"
+      ]
+    ],
+    "same_net": true,
+    "net": "Net-(U14-SW)"
+  },
+  {
+    "relation": "BT inductor L1",
+    "pins": [
+      [
+        "U15",
+        "9"
+      ],
+      [
+        "L3",
+        "1"
+      ]
+    ],
+    "same_net": true,
+    "net": "Net-(U15-L1)"
+  },
+  {
+    "relation": "BT inductor L2",
+    "pins": [
+      [
+        "U15",
+        "7"
+      ],
+      [
+        "L3",
+        "2"
+      ]
+    ],
+    "same_net": true,
+    "net": "Net-(U15-L2)"
+  }
+]

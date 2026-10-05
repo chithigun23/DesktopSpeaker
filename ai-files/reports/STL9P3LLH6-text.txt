@@ -1,0 +1,566 @@
+                                                                                                                   STL9P3LLH6
+
+                                                                                                                            Datasheet
+
+                      P-channel -30 V, 12 mΩ typ., -9 A STripFET™ H6 Power MOSFET in a
+                                                              PowerFLAT™ 3.3x3.3 package
+
+
+                                                        Features
+                                                               Order code              VDS           RDS(on) max               ID
+
+                                                              STL9P3LLH6               -30 V            15 mΩ                 -9 A
+
+                                                        •     Very low on-resistance
+                                                        •     Very low gate charge
+                                                        •     High avalanche ruggedness
+                                                        •     Low gate drive power loss
+
+
+                                                        Applications
+                D(5, 6, 7, 8)
+                                                        •     Switching applications
+
+
+                                                        Description
+            G(4)                                        This device is a P-channel Power MOSFET developed using the STripFET™ H6
+                                                        technology with a new trench gate structure. The resulting Power MOSFET exhibits
+                                                        very low RDS(on) in all packages.
+                    S(1, 2, 3)
+                                           AM01475v4
+
+
+
+
+                Product status
+
+                   STL9P3LLH6
+
+              Product summary
+
+ Order code                STL9P3LLH6
+   Marking                       9P3L
+   Package            PowerFLAT™ 3.3x3.3
+   Packing                 Tape and reel
+
+
+
+
+DS10145 - Rev 3 - February 2018                                                                                                     www.st.com
+For further information contact your local STMicroelectronics sales office.
+                                                                                                             STL9P3LLH6
+                                                                                                               Electrical ratings
+
+
+
+
+1                 Electrical ratings
+
+                                                                 Table 1. Absolute maximum ratings
+
+                      Symbol                                              Parameter                    Value              Unit
+
+                        VDS             Drain-source voltage                                            -30                V
+
+                        VGS             Gate-source voltage                                             ± 20               V
+
+                         ID             Drain current (continuous) at Tpcb = 25 °C                       -9                A
+
+                         ID             Drain current (continuous) at Tpcb = 100 °C                     -5.9               A
+
+                       IDM    (1)
+                                        Drain current (pulsed)                                          -36                A
+
+                        PTOT            Total dissipation at Tpcb=25 °C                                  3                 W
+
+                        Tstg            Storage temperature range
+                                                                                                     - 55 to 150           °C
+                         Tj             Operating junction temperature range
+
+                  1. Pulse width limited by safe operating area.
+
+
+                                                                          Table 2. Thermal data
+
+                         Symbol               Parameter                                               Value             Unit
+
+                          Rthj-case           Thermal resistance junction-case                         2.5             °C/W
+
+                         Rthj-pcb (1)         Thermal resistance junction-pcb                           42             °C/W
+
+                  1. When mounted on FR-4 board of 1inch², 2oz Cu t < 10 s
+
+
+
+
+DS10145 - Rev 3                                                                                                         page 2/15
+                                                                                                                       STL9P3LLH6
+                                                                                                                Electrical characteristics
+
+
+
+
+2                 Electrical characteristics
+
+                  (TC = 25 °C unless otherwise specified)
+
+
+                                                                     Table 3. On /off states
+
+                      Symbol                  Parameter                        Test conditions           Min.   Typ.     Max.      Unit
+
+                                   Drain-source breakdown
+                     V(BR)DSS                                      VGS = 0 V, ID = -1 mA                  -30                        V
+                                   voltage
+                                                                   VGS = 0 V, VDS = -30 V                                  -1       µA
+                                   Zero gate voltage
+                        IDSS                                       VGS = 0 V, VDS = -30 V, TC = 125 °C
+                                   drain current                                                                          -10       µA
+                                                                   (1)
+
+
+                                   Gate-body leakage
+                        IGSS                                       VDS = 0 V, VGS = ± 20 V                               ±100       nA
+                                   current
+                      VGS(th)      Gate threshold voltage          VDS = VGS, ID = -250 µA                 -1                        V
+
+                                                                   VGS = -10 V, ID =-4.5 A                       12       15        mΩ
+                                   Static drain-source on-
+                      RDS(on)
+                                   resistance                      VGS = -4.5 V, ID = -4.5 A                     18       22.5      mΩ
+
+                  1. Defined by design, not subject to production test.
+
+
+                                                                          Table 4. Dynamic
+
+                     Symbol                   Parameter                       Test conditions            Min.   Typ.     Max.      Unit
+
+                       Ciss       Input capacitance                                                       -     2615       -        pF
+                                                                  VDS = -25 V, f = 1 MHz,
+                       Coss       Output capacitance                                                      -     340        -        pF
+                                                                  VGS = 0 V
+                       Crss       Reverse transfer capacitance                                            -     235        -        pF
+
+                        Qg        Total gate charge               VDD = -15 V, ID = -9 A,                 -      24        -        nC
+
+                       Qgs        Gate-source charge              VGS = -4.5 to 0 V                       -      9         -        nC
+                                                                  (see Figure 13. Gate charge test
+                       Qgd        Gate-drain charge               circuit)                                -      8         -        nC
+
+
+
+
+                                                                   Table 5. Switching times
+
+                     Symbol                   Parameter                       Test conditions            Min.   Typ.     Max.      Unit
+
+                       td(on)     Turn-on delay time                                                      -     13.2       -        ns
+                                                                  VDD = -15 V, ID = -4.5 A,
+                         tr       Rise time                                                               -      93        -        ns
+                                                                  RG = 4.7 Ω, VGS = -10 V
+                       td(off)    Turn-off delay time             (see Figure 12. Switching times test    -      50        -        ns
+                                                                  circuit for resistive load)
+                         tf       Fall time                                                               -      18        -        ns
+
+
+
+
+                                                                 Table 6. Source drain diode
+
+                     Symbol                   Parameter                       Test conditions            Min.   Typ.     Max.      Unit
+
+                      VSD (1)     Forward on voltage              ISD = -9 A, VGS = 0 V                   -              -1.1        V
+
+
+
+
+DS10145 - Rev 3                                                                                                                  page 3/15
+                                                                                                                   STL9P3LLH6
+                                                                                                            Electrical characteristics
+
+
+
+
+                     Symbol                Parameter                       Test conditions           Min.   Typ.     Max.      Unit
+
+                        trr       Reverse recovery time         ISD = -9 A, di/dt = 100 A/µs          -     20                  ns
+
+                        Qrr       Reverse recovery charge       VDD = -24 V, Tj=150 °C                -     16                  nC
+                                                                (see Figure 14. Test circuit for
+                       IRRM       Reverse recovery current      inductive load switching and diode    -     -1.6                 A
+                                                                recovery times)
+
+                  1. Pulsed: pulse duration = 300 µs, duty cycle 1.5%
+
+
+
+
+DS10145 - Rev 3                                                                                                              page 4/15
+                                                                                                                                    STL9P3LLH6
+                                                                                                           Electrical characteristics (curves)
+
+
+
+
+2.1               Electrical characteristics (curves)
+Note:             Note: For the P-channel Power MOSFET, current and voltage polarities are reversed.
+
+                    Figure 1. Safe operating area                                      Figure 2. Thermal impedance
+
+           ID                          GIPG0903166B3P9SOA                      K                                GIPG0903166B3P9ZTH
+           (A) Operation in this area is
+               limited by R DS(on)
+
+
+
+                                                                                                                       0.05
+          10 1                                                               10 -1
+
+
+                                                                 tp =10 ms
+
+
+          10 0                                                   tp =10 ms   10 -2
+                                                                                                                   Rth-pcb
+                             T j ≤150 °C                         tp =1 s
+                              Tpcb = 25°C
+                            single pulse
+         10 -1                                                               10 -3
+           10 -1           10 0             10 1                V DS (V)       10 -4       10 -3   10 -2       10 -1         10 0       t p (s)
+
+
+                  Figure 3. Output characteristics                                   Figure 4. Transfer characteristics
+
+           ID                         GIPG180320161003OCH                     ID                               GIPG180320161101TCH
+           (A) V GS = 7,8,9,10 V                                              (A)
+                                              V GS = 6 V
+          140                                                                140             V DS =5 V
+                                       V GS = 5 V
+          120                                                                120
+
+          100                                                                100
+                                                   V GS = 4 V
+           80                                                                  80
+
+           60                                                                  60
+
+           40                                      V GS = 3 V                  40
+
+           20                                                                  20
+            0                                                                   0
+             0         1          2     3            4          V DS (V)         0     1       2   3       4     5       6          7   V GS (V)
+
+
+
+
+DS10145 - Rev 3                                                                                                                                   page 5/15
+                                                                                                                             STL9P3LLH6
+                                                                                                          Electrical characteristics (curves)
+
+
+
+
+        Figure 5. Gate charge vs gate-source voltage                           Figure 6. Static drain-source on-resistance
+
+         V GS                                 GIPG1803166B3PDQVG            R DS(on)                         GIPG0903166B3P9RID
+           (V)                                                                (mΩ)
+
+           10                                                                    14
+                              V DD = 15 V                                                    V GS =10 V
+                              ID=9A
+            8                                                                    13
+
+
+            6                                                                    12
+
+
+            4                                                                    11
+
+
+            2                                                                    10
+
+            0                                                                     9
+             0       10        20        30        40    50   Q g (nC)            10    15     20   25      30    35     40    I D (A)
+
+
+                  Figure 7. Capacitance variations                           Figure 8. Normalized gate threshold voltage vs
+                                                                                              temperature
+            C                                 GIPG0903166B3PDCVR
+          (pF)                                                              V GS(th)                         GIPG0903166B3PDVTH
+                                                                            (norm.)
+
+                                                                                1.1
+                                                                   C ISS                        I D = 250 µA
+
+                                                                                1.0
+          10 3
+                                    f = 1 MHz                                   0.9
+
+
+                                                                   C OSS        0.8
+                                                                   C RSS
+                                                                                0.7
+          10 2
+              0      5        10    15        20    25   30   V DS (V)          0.6
+                                                                                  -75    -25        25       75        125     T j (°C)
+
+
+     Figure 9. Normalized on-resistance vs temperature                       Figure 10. Normalized V(BR)DSS vs temperature
+
+      R DS(on)                                GIPG1003166B3PDRON           V (BR)DSS                         GIPG0903166B3PDBDV
+      (norm.)                                                               (norm.)
+
+           1.5                                                                 1.08
+                         V GS = 10 V                                                         I D = 1 mA
+
+         1.25                                                                  1.04
+
+
+         1.00                                                                  1.00
+
+
+         0.75                                                                  0.96
+
+
+           0.5                                                                 0.92
+             -50 -25      0    25 50 75 100 125 150 I D (A)                       -75    -25        25       75        125     T j (°C)
+
+
+
+
+DS10145 - Rev 3                                                                                                                          page 6/15
+                                                                                             STL9P3LLH6
+                                                                              Electrical characteristics (curves)
+
+
+
+
+                  Figure 11. Source-drain diode forward characteristics
+
+                      V SD                       GIPG0903166B3PDSDF
+                       (V)
+                        1.0
+                                           T j = -55 °C
+
+                        0.9
+                                                T j = 25 °C
+
+                        0.8
+
+                        0.7
+                                                T j = 175 °C
+                        0.6
+
+                        0.5
+
+                        0.4
+                           2    4     6     8       10        12   I SD (A)
+
+
+
+
+DS10145 - Rev 3                                                                                         page 7/15
+                                                                                                         STL9P3LLH6
+                                                                                                                 Test circuits
+
+
+
+
+3                 Test circuits
+
+    Figure 12. Switching times test circuit for resistive load             Figure 13. Gate charge test circuit
+
+
+
+
+                        Figure 14. Test circuit for inductive load switching and diode recovery times
+
+
+
+
+DS10145 - Rev 3                                                                                                      page 8/15
+                                                                                                             STL9P3LLH6
+                                                                                                            Package information
+
+
+
+
+4                 Package information
+
+
+                  In order to meet environmental requirements, ST offers these devices in different grades of ECOPACK®
+                  packages, depending on their level of environmental compliance. ECOPACK® specifications, grade definitions
+                  and product status are available at: www.st.com. ECOPACK® is an ST trademark.
+
+
+
+
+DS10145 - Rev 3                                                                                                         page 9/15
+                                                                                              STL9P3LLH6
+                                                                         PowerFLAT™ 3.3x3.3 package information
+
+
+
+
+4.1               PowerFLAT™ 3.3x3.3 package information
+
+                                     Figure 15. PowerFLAT™ 3.3x3.3 package outline
+
+
+                                                                                     BOTTOM VIEW
+
+
+
+
+                                                                                        SIDE VIEW
+
+
+
+
+                                                                                         TOP VIEW
+
+
+
+
+                                                                                                 8465286_2
+
+
+
+
+DS10145 - Rev 3                                                                                         page 10/15
+                                                                                        STL9P3LLH6
+                                                                   PowerFLAT™ 3.3x3.3 package information
+
+
+
+
+                         Table 7. PowerFLAT™ 3.3x3.3 package mechanical data
+
+                                                             mm
+                  Dim.
+                                    Min.                    Typ.                         Max.
+
+                   A                0.70                    0.80                         0.90
+                   b                0.25                    0.30                         0.39
+                   c                0.14                    0.15                         0.20
+                   D                3.10                    3.30                         3.50
+                  D1                3.05                    3.15                         3.25
+                  D2                2.15                    2.25                         2.35
+                   e                0.55                    0.65                         0.75
+                   E                3.10                    3.30                         3.50
+                  E1                2.90                    3.00                         3.10
+                  E2                1.60                    1.70                         1.80
+                   H                0.25                    0.40                         0.55
+                   K                0.65                    0.75                         0.85
+                   L                0.30                    0.45                         0.60
+                  L1                0.05                    0.15                         0.25
+                  L2                                                                     0.15
+                   θ                 8°                     10°                           12°
+
+
+
+
+DS10145 - Rev 3                                                                                  page 11/15
+                                                                                         STL9P3LLH6
+                                                                    PowerFLAT™ 3.3x3.3 package information
+
+
+
+
+                  Figure 16. PowerFLAT™ 3.3x3.3 recommended footprint (dimensions are in mm)
+
+
+
+
+                                                                                        8465286_footprint
+
+
+
+
+DS10145 - Rev 3                                                                                       page 12/15
+                                                                                                                        STL9P3LLH6
+
+
+
+
+Revision history
+
+                                                         Table 8. Document revision history
+
+                     Date       Revision Changes
+
+                  23-Jan-2014      1    First release.
+                                        Modified: title and RDS(on) max value
+
+                  07-Mar-2016      2    Modified: Table 2: "Absolute maximum ratings", Table 4: "On /off states", Table 5: "Dynamic", Table
+                                        6: "Switching times" and Table 7: "Source drain diode"
+                                        Minor text changes.
+                                        Updated Figure 1. Safe operating area and Figure 2. Thermal impedance.
+                  20-Feb-2018      3
+                                        Removed maturity status indication from cover page. The document status is production data.
+
+
+
+
+DS10145 - Rev 3                                                                                                                    page 13/15
+                                                                                                                                             STL9P3LLH6
+                                                                                                                                                          Contents
+
+
+
+
+Contents
+1        Electrical ratings. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .2
+2        Electrical characteristics. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+         2.1         Electrical characteristics (curves). . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5
+
+3        Test circuits . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .8
+4        Package information . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 9
+         4.1         PowerFLAT™ 3.3x3.3 package information . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 9
+
+Revision history . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .13
+Contents . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .14
+Disclaimer . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .15
+
+
+
+
+DS10145 - Rev 3                                                                                                                                           page 14/15
+                                                                                                                                          STL9P3LLH6
+
+
+
+
+                                                     IMPORTANT NOTICE – PLEASE READ CAREFULLY
+STMicroelectronics NV and its subsidiaries (“ST”) reserve the right to make changes, corrections, enhancements, modifications, and improvements to ST
+products and/or to this document at any time without notice. Purchasers should obtain the latest relevant information on ST products before placing orders. ST
+products are sold pursuant to ST’s terms and conditions of sale in place at the time of order acknowledgement.
+Purchasers are solely responsible for the choice, selection, and use of ST products and ST assumes no liability for application assistance or the design of
+Purchasers’ products.
+No license, express or implied, to any intellectual property right is granted by ST herein.
+Resale of ST products with provisions different from the information set forth herein shall void any warranty granted by ST for such product.
+ST and the ST logo are trademarks of ST. All other product or service names are the property of their respective owners.
+Information in this document supersedes and replaces information previously supplied in any prior versions of this document.
+                                                         © 2018 STMicroelectronics – All rights reserved
+
+
+
+
+DS10145 - Rev 3                                                                                                                                      page 15/15
+X-ON Electronics
+Largest Supplier of Electrical and Electronic Components
+
+Click to view similar products for MOSFET category:
+
+Click to view products by STMicroelectronics manufacturer:
+
+Other Similar products are found below :
+
+614233C 648584F IRFD120 JANTX2N5237 SPP20N60S5XK FCA20N60_F109 FDZ595PZ 2SK2545(Q,T) 405094E 423220D
+TPCC8103,L1Q(CM MIC4420CM-TR VN1206L SBVS138LT1G 614234A 715780A NTNS3166NZT5G SSM6J414TU,LF(T 751625C
+BUK954R8-60E DMN3404LQ-7 NTE6400 SQJ402EP-T1-GE3 2SK2614(TE16L1,Q) 2N7002KW-FAI DMN1017UCP3-7
+EFC2J004NUZTDG ECH8691-TL-W FCAB21350L1 P85W28HP2F-7071 DMN1053UCP4-7 NTE221 NTE2384 NTE2903 NTE2941
+NTE2945 NTE2946 NTE2960 NTE2967 NTE2969 NTE2976 NTE455 NTE6400A NTE2910 NTE2916 NTE2956 NTE2911
+DMN2080UCB4-7 TK10A80W,S4X(S SSM6P69NU,LF
+

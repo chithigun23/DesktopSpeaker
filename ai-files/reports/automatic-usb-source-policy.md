@@ -1,0 +1,57 @@
+# Automatic USB-A source policy and data switch research
+
+Updated: 2026-10-05. Research only; no schematic, library, or firmware changes were made. The existing BQ25895 D+/D− pins remain NC and PCM2902C is not connected. This document is a candidate architecture and qualification brief, not an implemented behavior claim.
+
+## Recommended candidate
+
+- **TI TS3USB221A**, orderable **TS3USB221ARSER**, LCSC **C128396**. LCSC’s listing was accessible on 2026-10-05 and a current category/search snapshot showed **33,475 in stock**; stock can change and must be checked again before ordering. Listing: https://www.lcsc.com/product-detail/C128396.html . TI data sheet Rev. C (Oct. 2024) is saved as [`TI_TS3USB221A.pdf`](../datasheets/TI_TS3USB221A.pdf).
+- This is a USB 2.0 1:2 differential data mux, suitable for choosing either BQ25895 DPDM detection or PCM2902C data. It supports 2.5–3.3 V VCC (do not rely on a 2.3 V minimum), USB I/O to 5.5 V, up to 480 Mbps, and 6 Ω maximum on resistance. It therefore supports Full-Speed PCM2902C and the charger’s low-speed BC1.2 signaling. It is not a USB power switch.
+- **Off-state behavior is reasonably suitable:** with VCC=0 V, TI specifies power-off data-port leakage to ±2 μA max for I/O 0–5.25 V (±1 μA max over 0–2.7 V). With VCC present and OE high, the disabled low-power mode is 1 μA max (30 μA max in normal enabled mode). This is bounded leakage, not galvanic isolation. The MCU must leave OE in its disabled state during reset; use a board pull resistor so the switch cannot enable accidentally while the MCU pin is high impedance. A 3.0 V AO rail clears TI’s 2.5 V minimum; a rail that droops below 2.5 V is outside guaranteed operation.
+- Switch common port goes to connector D+/D−; branch A goes only to BQ25895 D+/D−; branch B goes only to PCM2902C D+/D−. Keep connector-side ESD protection on the connector side of the mux. Select and route branches per the exact symbol pin map before capture. Do not connect the charger and codec simultaneously to the same data pair.
+
+### Footprint/model candidate
+
+A standalone candidate footprint copy is at [`TS3USB221ARSER_C128396_Texas_UQFN-10_1.5x2mm_P0.5mm.kicad_mod`](../candidates/TS3USB221ARSER_C128396_Texas_UQFN-10_1.5x2mm_P0.5mm.kicad_mod). It is copied from the installed KiCad 10 library and is a generic TI UQFN-10, 2.0 × 1.5 mm package, 0.5 mm pitch candidate. Confirm each pad against TI package RSE0010A land-pattern drawing before activation. The footprint references `Texas_UQFN-10_1.5x2mm_P0.5mm.step`, but that STEP file is absent from the installed 3D library. The nearest installed UQFN-10 STEP is 1.4 × 1.8 mm / 0.4 mm pitch and is not a valid substitute. No TS3USB221A STEP was downloaded or linked; leave the model unresolved until a dimension-checked exact package model is available.
+
+## Source classification and limits
+
+Separate two questions in firmware: (1) what is connected to USB data, and (2) what input current the source is entitled/known to supply. Never treat the BQ input-current-limit register as proof of permission. In particular, BQ25895’s reset value of 500 mA and its automatic detector outputs are not universal current grants.
+
+| Classification | Data route after classification | Conservative system input ceiling | Reason |
+|---|---|---:|---|
+| USB 2.0 SDP / host | Codec | 100 mA total product budget | PCM2902C descriptor is fixed bus-powered `bMaxPower=0x32` = 100 mA. BQ’s SDP result can be 500 mA (it internally distinguishes USB100/USB500), so explicitly clamp to 100 mA for this fixed descriptor rather than using the BQ result as permission. If codec/audio/system cannot stay within it, reduce load or do not operate/charge on this source. |
+| BC1.2 CDP | Codec | Up to 1.5 A source input, subject to board power and voltage/thermal limits | BC1.2 charging port provides data plus charging; BQ’s CDP result is 1.5 A. Preserve codec data after charger-only detection. Verify the codec’s USB function draw remains within its descriptor and account separately for permitted charging current under BC1.2. |
+| BC1.2 DCP | Keep codec disconnected | Up to 1.5 A conservative ceiling | DCP has no USB data host, so codec cannot enumerate. BQ reports 3.25 A for DCP; that device setting is above the conservative BC1.2 port ceiling and must be clamped to ≤1.5 A. |
+| Unknown, non-standard divider, ambiguous or failed detect | Keep codec disconnected; safe fallback | 100 mA maximum (or input HIZ if stable operation is not possible) | Do not infer a 1 A, 2 A, 2.1 A, or 2.4 A grant from proprietary divider patterns; do not infer from adapter label. A recognized, separately specified input mode can later raise the ceiling. |
+| Type-C default current without PD | Codec only after valid Type-C attach/data state | USB default current unless CC/Rp explicitly advertises 1.5 A or 3.0 A; obey that Rp ceiling | Do not use USB-A BC detection to classify Type-C. Type-C advertised current is separate from USB-A data-contact detection. |
+| USB PD | Codec after valid attach; leave BC DPDM/HVDCP negotiation off | No more than accepted PD contract current at that voltage | STUSB4500 autonomously negotiates its configured PDOs; 5 V/9 V contract is a supply contract, not a reason to let BQ repeat HVDCP/MaxCharge signaling. Keep OVP/eFuse and charger limits in force. |
+
+The USB Type-C specification PDF is saved at [`USB_TypeC_Spec_R2.0_2019.pdf`](../datasheets/USB_TypeC_Spec_R2.0_2019.pdf). It distinguishes USB/BC1.2, Type-C Rp current, and USB PD contracts; a Type-C source’s advertised current is not inferred from its nominal adapter wattage. The STUSB4500 datasheet already in the project is [`STUSB4500.pdf`](../datasheets/STUSB4500.pdf); it describes autonomous PDO negotiation/NVM profiles. The codec and charger datasheets already in the project are [`PCM2902C.pdf`](../datasheets/PCM2902C.pdf) and [`BQ25895.pdf`](../datasheets/BQ25895.pdf).
+
+## Sequencing proposal (not implemented)
+
+1. Hardware default: TS3USB221A OE high/disabled through reset and MCU brownout; both external data branches isolated. This prevents early codec traffic while charger policy and data ownership are unknown. Do not claim these resistor defaults exist yet.
+2. **Cold-start caveat:** BQ25895 powers up with `AUTO_DPDM_EN=1` by default and its input current limit register reset to 500 mA. It runs detection before starting the buck converter. With the proposed default-disabled mux, the charger sees isolated D+/D−, can report unknown at 500 mA, and may start before MCU I2C policy is applied. Firmware sequencing after attach therefore cannot by itself guarantee a 100 mA SDP ceiling at first startup. The BQ ILIM-pin hardware ceiling also cannot be set below 500 mA. Resolve this cold-start interval in the hardware architecture (for example, a default-off charger-input enable/isolation arrangement with an independently powered controller, or another verified source-limited startup path) and review the BQ power-up sequence before calling the fallback safe. This remains an open design issue.
+3. Once the MCU has control, keep charging disabled as already intended. Disable BQ25895 `HVDCP_EN`, `MAXC_EN`, `AUTO_DPDM_EN`, and `ICO_EN`; set explicit conservative IINLIM/VINDPM and charge-current targets. This prevents autonomous HVDCP/current-optimization behavior outside a deliberate detection. BQ source-current limitation is still not source entitlement.
+4. For a legacy USB-A candidate only, route the mux to BQ DPDM while codec remains isolated. Run one deliberate BC1.2 detection by setting `FORCE_DPDM` while automatic repeat remains disabled and HVDCP/MaxCharge remain off. Wait for completion and read `VBUS_STAT`/`SDP_STAT`; then leave AUTO_DPDM disabled so it cannot later overwrite the policy. TI documents a 500 ms DCD timeout before its non-standard-adapter phase, so allow for that detection time or safely time out.
+5. Map detected result to a conservative class and overwrite IINLIM with the class ceiling above. In particular, clamp SDP/unknown to 100 mA and DCP to ≤1.5 A, regardless of BQ’s 500 mA/3.25 A detector result. `AUTO_DPDM_EN` disabled means the status/current-limit result remains unchanged until deliberately rerun; clear stale classification on detach/reset.
+6. Only after class and power limit are committed, change the mux to codec for SDP/CDP where a real data host exists. Keep codec branch disconnected for DCP, unknown, and failed detection. If a policy write fails or source disappears, disable charging and return OE high; on detach clear cached grant and classification.
+7. For Type-C, decide current from CC/Rp or the STUSB4500 accepted PD contract and use VBUS voltage/PD status; do not run the USB-A DPDM flow. A reset or MCU fault must not raise current above a safe hardware/software default. Current root schematic does not yet provide MCU status/control wiring for this sequence.
+
+### Important caveats
+
+- BQ25895 D+/D− are currently NC. The mux plus future connections and STM32 firmware are all required; none is captured/implemented here.
+- PCM2902C is currently unconnected, and no evidence shows a configured codec descriptor beyond TI’s fixed 100 mA bus-powered descriptor. The 100 mA limit applies to the product on a normal SDP host; it is not 500 mA merely because the BQ reports USB500.
+- BQ automatic detection includes non-standard divider signatures at 1/2/2.1/2.4 A and DCP at 3.25 A. Those are charger algorithm outputs; an ordinary 5 V / 2 A adapter label is not BC1.2 signaling or a USB current grant.
+- If the mux is powered but OE is low after reset, branch selection is deterministic but may expose codec or charger before policy. Add/verify hardware pull defaults and brownout behavior before implementing firmware. More critically, the BQ25895 automatic 500 mA reset behavior creates a cold-start current window even when the mux is correctly disabled; resolve that with hardware or a proven independently-powered preconfiguration path.
+- Need confirm USB-C port D+/D− orientation/routing and STUSB4500 Type-C current/Rp status reporting before settling the Type-C state machine. The data switch handles one USB data pair and is not the Type-C orientation mux; this connector’s flip routing must already be handled correctly.
+- No electrical simulation, USB compliance test, or hardware measurement was performed. The footprint is only a candidate, with no verified exact STEP.
+
+## Source files and primary references
+
+- Texas Instruments, TS3USB221A Rev. C: `datasheets/TI_TS3USB221A.pdf`; product page https://www.ti.com/product/TS3USB221A .
+- Texas Instruments, BQ25895 Rev. C: `datasheets/BQ25895.pdf`; https://www.ti.com/lit/ds/symlink/bq25895.pdf . Key input-source detection limits are Table 8-3; AUTO_DPDM, FORCE_DPDM, HVDCP/MAXC and ICO descriptions are in Sections 8.2.3–8.2.4.
+- Texas Instruments, PCM2902C: `datasheets/PCM2902C.pdf`; https://www.ti.com/lit/ds/symlink/pcm2900c.pdf . Configuration descriptor Table 4 fixes bMaxPower at 0x32 (100 mA).
+- STMicroelectronics, STUSB4500 Rev. 8: `datasheets/STUSB4500.pdf`; https://www.st.com/resource/en/datasheet/stusb4500.pdf .
+- USB-IF, USB Type-C Cable and Connector Specification R2.0 (Aug. 2019): `datasheets/USB_TypeC_Spec_R2.0_2019.pdf`; https://www.usb.org/sites/default/files/USB%20Type-C%20Spec%20R2.0%20-%20August%202019.pdf .
+- LCSC product listing, TS3USB221ARSER / C128396: https://www.lcsc.com/product-detail/C128396.html . The stock figure is a dated listing observation, not guaranteed inventory.

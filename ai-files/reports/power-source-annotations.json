@@ -1,0 +1,5 @@
+{
+  "#FLG180": "Post-PMOS input is powered by attachedUSBsource whenQpair enabled; annotates switchedsource forERC, not protection or current permission",
+  "#FLG200": "BAT_PACK powered by protectedpack whenSW101closed; externalpack source annotation, not safety guarantee",
+  "BTST21": "Passive floating bootstrap node internally driven, not a separate externally supplied DC power rail"
+}

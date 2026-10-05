@@ -1,0 +1,74 @@
+{
+  "report": "Open-part sourcing: D4 and C103",
+  "snapshot_date": "2026-10-05",
+  "scope": "Research only. No BOM or schematic edits. Prices and stock are LCSC listing snapshots and can change.",
+  "D4": {
+    "selected_candidate": {
+      "manufacturer": "Diodes Incorporated",
+      "mpn": "1N4148W-7-F",
+      "lcsc": "C83528",
+      "package": "SOD-123",
+      "listing": "https://www.lcsc.com/product-detail/C83528.html",
+      "availability_snapshot": {
+        "status": "In stock",
+        "quantity": 231360,
+        "moq": 20,
+        "multiple": 20,
+        "price_usd": {"20": 0.0293, "200": 0.0224, "600": 0.0193, "3000": 0.017, "9000": 0.0161, "21000": 0.0155},
+        "source_crawl": "LCSC product page accessed 2026-10-05; page reports 231360; older cached search results reported higher quantities, so stock is volatile."
+      },
+      "datasheet": {
+        "local_file": "ai-files/datasheets/Diodes_1N4148W-7-F.pdf",
+        "manufacturer_url": "https://www.diodes.com/datasheet/download/1N4148W.pdf",
+        "revision": "DS30086 Rev.31-2, September 2024",
+        "verified": ["1N4148W-7-F orderable in SOD123", "VRRM/VRWM/VR 100 V", "IFM 300 mA", "IFSM 2 A at 1 us, 1 A at 1 s", "PD 400 mW", "TJ -55 to +150 C", "IR max 1 uA at VR=75 V, room temperature", "IR max 50 uA at VR=75 V and TJ=150 C"],
+        "footprint_match": "Diodes datasheet gives SOD123 body D=1.40–1.70 mm and E=2.55–2.85 mm; project PD_D_SOD123 fab outline is 2.8 x 1.8 mm and pads are 0.9 x 1.2 mm at x=±1.65 mm. This is a compatible SOD-123 land pattern; compared with the manufacturer's suggested 0.9 x 0.95 mm pads / 4.05 mm overall span, project pads are 0.25 mm longer and total span 0.15 mm wider. Datasheet polarity is cathode band; PD_DIODE pin 1=K and the project footprint places pad 1 on the left, matching the conventional SOD-123 diode footprint mapping. Verify assembled board orientation against schematic nets.",
+        "application_note": "At the provided 28.4 V / 470 ohm estimate, branch current is about 60 mA before diode drop, below the 300 mA continuous rating. The 100 V reverse rating exceeds 28.4 V. Datasheet leakage is specified at 75 V, not at 28.4 V; at 150 C the 75 V maximum is 50 uA. Actual surge waveform/duty and temperature were not supplied, so pulse thermal qualification remains application-dependent."
+      }
+    }
+  },
+  "C103": {
+    "selected_candidate": {
+      "manufacturer": "YAGEO",
+      "mpn": "CC0603KRX7R9BB473",
+      "lcsc": "C107093",
+      "package": "0603 / 1608",
+      "listing": "https://www.lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_YAGEO-CC0603KRX7R9BB473_C107093.html",
+      "availability_snapshot": {
+        "status": "In stock",
+        "quantity": 1537650,
+        "moq": 50,
+        "multiple": 50,
+        "price_usd": {"50": 0.0077, "500": 0.0058, "1500": 0.005, "4000": 0.0043, "24000": 0.0041, "48000": 0.0039},
+        "source_crawl": "LCSC live page accessed 2026-10-05. Older cached LCSC view showed 703600 stock and different tier prices; use live page as snapshot, availability/pricing may change."
+      },
+      "datasheet": {
+        "local_file": "ai-files/datasheets/YAGEO_C107093_CC0603KRX7R9BB473.pdf",
+        "manufacturer_url": "https://yageogroup.com/download/specsheet/CC0603KRX7R9BB473",
+        "verified": ["47 nF", "50 VDC", "X7R", "+/-10%", "0603/1608; 1.6 x 0.8 x 0.8 mm nominal", "-55 to +125 C"],
+        "footprint_match": "YAGEO body size is 1.6 x 0.8 mm nominal. Project PD_C_0603 uses two pads at x=±0.775 mm, each 0.9 x 0.95 mm, matching the 0603 metric outline and terminal spacing.",
+        "bias_limit": "YAGEO datasheet simulation page contains AC-voltage/frequency response plots but no DC-bias capacitance curve. The final page says the simulations are typical, not a specification. Therefore no guaranteed capacitance retention at BTST-SW bias is established from this datasheet. 50 V rating provides ample voltage-rating headroom for the expected bootstrap differential, but confirm the actual capacitance requirement against TI operating conditions if a guaranteed effective value is needed."
+      },
+      "selection_reason": "Meets the TI-required nominal 47 nF, 0603, X7R, 10 V minimum with a 50 V rating, and is actively listed with current stock and a lower MOQ than the initial CCTC option."
+    },
+    "alternate": {
+      "manufacturer": "CCTC",
+      "mpn": "TCC0603X7R473K500CT",
+      "lcsc": "C282684",
+      "local_datasheet": "ai-files/datasheets/CCTC_LCSC_C282684_TCC0603X7R473K500CT.pdf",
+      "listing": "https://www.lcsc.com/product-detail/C282684.html",
+      "snapshot": {"stock": 56900, "moq": 100, "multiple": 100, "price_usd": {"100": 0.0056, "1000": 0.0045, "4000": 0.0038, "8000": 0.0034, "48000": 0.0031, "100000": 0.003}},
+      "note": "Exact 47 nF, 50 V, X7R, +/-10%, 0603 listing. Its generic CCTC approval sheet specifies X7R temperature class (-55 to +125 C) but does not provide an exact-part DC-bias curve. Regional/cached LCSC snapshots differed; the listed stock/pricing is the .com page snapshot used."
+    },
+    "system_requirement": {
+      "controller": "TI BQ25895",
+      "local_datasheet": "ai-files/datasheets/TI_BQ25895_SLUSC88C.pdf",
+      "manufacturer_url": "https://www.ti.com/lit/ds/symlink/bq25895.pdf",
+      "requirement": "TI datasheet calls for a 0.047 uF capacitor from SW to BTST (bootstrap capacitor). The 50 V candidates exceed the 10 V requested rating."
+    }
+  },
+  "files_added": [
+    "ai-files/datasheets/YAGEO_C107093_CC0603KRX7R9BB473.pdf",
+    "ai-files/reports/open-parts-sourcing-D4-C103.json"
+  ]
+}

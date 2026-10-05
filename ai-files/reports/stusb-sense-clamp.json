@@ -1,0 +1,17 @@
+{
+  "part": "D9 BZT52C12-7-F /C124196",
+  "scope": "Pin-side VBUS_VS_DISCH clamp after R4=3.3k for 5/9-only contracts; not raw VDD protection",
+  "datasheet": "Diodes_BZT52C_ds18004.pdf",
+  "vz_25C_at5mA_V": [
+    11.4,
+    12.7
+  ],
+  "temperature_coefficient_mV_per_C": [
+    6,
+    10
+  ],
+  "conservative_cold_min_at_minus40C_V": 10.75,
+  "conservative_hot_max_at125C_V": 13.7,
+  "maximum_fault_branch_current_estimate_mA": 5.402509947964493,
+  "comment": "Normal 9.45V max below estimated cold knee; 20V fault clipped but still invalid for 9V contract. Component-table arithmetic is not complete dynamic qualification. Raw VDD remains open. Corrected inherited D7 datasheet link to unrelated BZX84 SOT23 series."
+}

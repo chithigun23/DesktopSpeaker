@@ -1,0 +1,309 @@
+{
+  "title": "USB PD and BQ25895 capacitor sourcing review",
+  "checked_utc_date": "2026-10-05",
+  "scope": "Capacitor sourcing and review; this report includes a post-integration active schematic snapshot. No schematic or BOM files were edited during this report update.",
+  "active_values_footprints_checked": {
+    "USB_PD": {
+      "C2": {
+        "value": "100nF X7R 50V",
+        "footprint": "DesktopSpeaker:PD_C_0805"
+      },
+      "C4": {
+        "value": "1uF X7R 50V",
+        "footprint": "DesktopSpeaker:PD_C_0805"
+      },
+      "C5": {
+        "value": "4.7uF X7R 50V",
+        "footprint": "DesktopSpeaker:PD_C_1206",
+        "manufacturer": "Samsung Electro-Mechanics",
+        "mpn": "CL31B475KBHNNNE",
+        "lcsc": "C51205",
+        "snapshot_date": "2026-10-05",
+        "source": "DesktopSpeaker-kicad/USB_PD.kicad_sch"
+      },
+      "C6": {
+        "value": "1uF X7R 50V",
+        "footprint": "DesktopSpeaker:PD_C_0805"
+      }
+    },
+    "Battery_Charger": {
+      "C100": {
+        "value": "2.2uF / 25V",
+        "footprint": "DesktopSpeaker:PD_C_0805"
+      },
+      "C101": {
+        "value": "22uF / 25V",
+        "footprint": "DesktopSpeaker:PD_C_1210"
+      },
+      "C102": {
+        "value": "10uF / 10V",
+        "footprint": "DesktopSpeaker:PD_C_0805"
+      },
+      "C103": {
+        "value": "47nF / 25V",
+        "footprint": "DesktopSpeaker:PD_C_0603"
+      },
+      "C106": {
+        "value": "22uF / 10V",
+        "footprint": "DesktopSpeaker:PD_C_0805"
+      }
+    }
+  },
+  "candidates": [
+    {
+      "refs": "C2",
+      "mpn": "CL21B104KBCNNNC",
+      "manufacturer": "Samsung Electro-Mechanics",
+      "lcsc": "C1711",
+      "package": "0805",
+      "rating": "100nF, 50V, X7R, +/-10%",
+      "status": "Exact fit; suitable low-capacitance decoupler.",
+      "stock_price_snapshot": "854600 shown; $0.0159 at 20+, $0.0124 at 200+",
+      "link": "https://www.lcsc.com/product-detail/C1711.html"
+    },
+    {
+      "refs": "USB_PD C4,C6,C180; other main-reported C1,C3",
+      "mpn": "CL21B105KBFNNNE",
+      "manufacturer": "Samsung Electro-Mechanics",
+      "lcsc": "C28323",
+      "package": "0805",
+      "rating": "1uF, 50V, X7R, +/-10%",
+      "status": "Exact fit.",
+      "stock_price_snapshot": "1363910 shown; $0.0403 at 10+, $0.0309 at 100+",
+      "link": "https://www.lcsc.com/product-detail/C28323.html"
+    },
+    {
+      "refs": "C5",
+      "mpn": "CL31B475KBHNNNE",
+      "manufacturer": "Samsung Electro-Mechanics",
+      "lcsc": "C51205",
+      "package": "1206",
+      "rating": "4.7uF, 50V, X7R, +/-10%",
+      "status": "Selected and integrated for C5. Active schematic snapshot now uses DesktopSpeaker:PD_C_1206, matching Samsung CL31B475KBHNNNE (4.7uF, 50V, X7R, \u00b110%).",
+      "stock_price_snapshot": "2026-10-05 LCSC page snapshot: stock 302170; minimum 10, multiple 10; tier unit prices recorded in ordering_stock_snapshot.",
+      "link": "https://www.lcsc.com/product-detail/C51205.html",
+      "maker_doc": "../datasheets/Samsung_CL31B475KBHNNNE.pdf",
+      "ordering_stock_snapshot": {
+        "checked_date": "2026-10-05",
+        "stock_units": 302170,
+        "minimum_order_quantity": 10,
+        "order_multiple": 10,
+        "unit_price_usd_by_tier": {
+          "10+": 0.0759,
+          "100+": 0.0607,
+          "300+": 0.0529,
+          "2000+": 0.0465,
+          "4000+": 0.0442,
+          "10000+": 0.0427
+        },
+        "source": "https://www.lcsc.com/product-detail/C51205.html",
+        "verification": "LCSC product page explicitly displayed stock, minimum, multiple, and tier prices; time-sensitive snapshot."
+      }
+    },
+    {
+      "refs": "C100",
+      "mpn": "CL21B225KBYNNNE",
+      "manufacturer": "Samsung Electro-Mechanics",
+      "lcsc": "C2762602",
+      "package": "0805",
+      "rating": "2.2uF, 50V, X7R, +/-10%",
+      "status": "Selected for C100. Samsung CL21B225KBYNNNE is a 2.2uF, 50V X7R 0805 part; schematic displayed value remains 2.2uF / 25V as a minimum rating. Exact maker product page and LCSC C2762602 listing are linked; stock/price values are time-sensitive snapshots.",
+      "link": "https://www.lcsc.com/product-detail/C2762602.html",
+      "stock_price_snapshot": "2026-10-05 LCSC page snapshot: stock 73810; minimum 5, multiple 5; tier unit prices recorded in ordering_stock_snapshot.",
+      "ordering_stock_snapshot": {
+        "checked_date": "2026-10-05",
+        "stock_units": 73810,
+        "minimum_order_quantity": 5,
+        "order_multiple": 5,
+        "unit_price_usd_by_tier": {
+          "5+": 0.1052,
+          "50+": 0.083,
+          "150+": 0.0719,
+          "500+": 0.0635,
+          "2000+": 0.0569,
+          "4000+": 0.0535
+        },
+        "source": "https://www.lcsc.com/product-detail/C2762602.html",
+        "verification": "LCSC product page explicitly displayed stock, minimum, multiple, and tier prices; time-sensitive snapshot."
+      }
+    },
+    {
+      "refs": "C101,C108",
+      "mpn": "CL32B226KAJNNNE",
+      "manufacturer": "Samsung Electro-Mechanics",
+      "lcsc": "C309062",
+      "package": "1210",
+      "rating": "22uF, 25V, X7R, +/-10%",
+      "status": "Exact fit and current catalog listing. Manufacturer package is 3.2 x 2.5 x 2.5mm. Samsung's DC-bias data are typical design-reference data, not guaranteed minimum capacitance. For 9V VBUS, qualify effective capacitance from the Samsung DC-bias curve/design simulation against BQ25895 input-capacitance requirement; do not treat 22uF nominal as guaranteed under bias. Installed on C101 and parallel C108 (qty 2 total); total nominal capacitance 44uF. Added parallel branch to address limited typical effective-capacitance margin at 9V. Typicals are not guaranteed; doubled input capacitance increases stored charge and inrush at a given voltage.",
+      "stock_price_snapshot": "2026-10-05 LCSC page snapshot: stock 96346; minimum 1, multiple 1; tier unit prices recorded in ordering_stock_snapshot.",
+      "link": "https://www.lcsc.com/product-detail/C309062.html",
+      "maker_doc": "../datasheets/Samsung_CL32B226KAJNNNE.pdf",
+      "ordering_stock_snapshot": {
+        "checked_date": "2026-10-05",
+        "stock_units": 96346,
+        "minimum_order_quantity": 1,
+        "order_multiple": 1,
+        "unit_price_usd_by_tier": {
+          "1+": 0.3569,
+          "10+": 0.2814,
+          "30+": 0.2446,
+          "100+": 0.2118,
+          "500+": 0.2028,
+          "1000+": 0.1611
+        },
+        "source": "https://www.lcsc.com/product-detail/C309062.html",
+        "verification": "LCSC product page explicitly displayed stock, minimum, multiple, and tier prices; time-sensitive snapshot."
+      }
+    },
+    {
+      "refs": "C102,C109",
+      "mpn": "CL21B106KPQNNNE",
+      "manufacturer": "Samsung Electro-Mechanics",
+      "lcsc": "C32635",
+      "package": "0805",
+      "rating": "10uF, 10V, X7R, +/-10%",
+      "status": "Exact fit nominally. Samsung typical curve at REGN=6V suggests ~3.98uF at 25C before tolerance/temp/aging; after illustrative 0.90 initial and 0.85 temperature factors ~3.04uF. This is materially below 10uF nominal; do not treat the numeric typical as guaranteed. Also evaluated 16V-rated same-value alternative CL21B106KOQNNNE (C95841), which improves typical retention only modestly (~4.33uF at6V; 3.31uF after same factors). Installed on C102 and parallel C109 (qty 2 total); total nominal capacitance 20uF. Parallel branch raises effective REGN capacitance; doubled REGN capacitance increases charging current/charge during startup. Typical curve values remain non-guaranteed.",
+      "stock_price_snapshot": "2026-10-05 LCSC page snapshot: stock 230700; minimum 10, multiple 10; tier unit prices recorded in ordering_stock_snapshot.",
+      "link": "https://www.lcsc.com/product-detail/C32635.html",
+      "maker_doc": "../datasheets/Samsung_CL21B106KPQNNNE.pdf",
+      "ordering_stock_snapshot": {
+        "checked_date": "2026-10-05",
+        "stock_units": 230700,
+        "minimum_order_quantity": 10,
+        "order_multiple": 10,
+        "unit_price_usd_by_tier": {
+          "10+": 0.093,
+          "100+": 0.0752,
+          "300+": 0.0661,
+          "2000+": 0.0501,
+          "4000+": 0.0475,
+          "10000+": 0.0457
+        },
+        "source": "https://www.lcsc.com/product-detail/C32635.html",
+        "verification": "LCSC product page explicitly displayed stock, minimum, multiple, and tier prices; time-sensitive snapshot."
+      }
+    },
+    {
+      "refs": "C103",
+      "mpn": "CL10B473KA8NNNC",
+      "manufacturer": "Samsung Electro-Mechanics",
+      "lcsc": "C913921",
+      "package": "0603",
+      "rating": "47nF, 25V, X7R, +/-10%",
+      "status": "Exact fit; DC-bias loss is not material at this small capacitance relative to rated voltage.",
+      "stock_price_snapshot": "LCSC page/catalog listing found; live quantity and price not captured.",
+      "link": "https://www.lcsc.com/product-detail/C913921.html"
+    },
+    {
+      "refs": "C106",
+      "mpn": "GRM21BZ71A226ME15L",
+      "manufacturer": "Murata",
+      "lcsc": "C907991",
+      "package": "0805",
+      "rating": "22uF, 10V, X7R, +/-20%",
+      "status": "Existing selected candidate. At battery voltage (up to ~4.2V), determine effective capacitance using Murata's characteristic/simulator; nominal 22uF is not guaranteed under DC bias. Data sheet confirms MPN/package/rating; no minimum biased capacitance guarantee identified.",
+      "stock_price_snapshot": "LCSC listing found; live quantity and price not captured.",
+      "link": "https://www.lcsc.com/product-detail/C907991.html",
+      "maker_doc": "../datasheets/Murata_GRM21BZ71A226ME15L_LCSC.pdf"
+    }
+  ],
+  "dc_bias_and_package_evidence": {
+    "C101": "Samsung product page specifies 1210 (3225 metric), dimensions and nominal rating. Its DC-bias graph is identified as LCR measurement data and Samsung explicitly labels page data typical for design reference only. A plotted typical value is not a guaranteed minimum.",
+    "C102": "Samsung maker datasheet confirms 0805 dimensions, rated value and dielectric. Account for typical DC-bias reduction at REGN operating voltage; do not claim guaranteed retention.",
+    "C106": "Murata maker PDF is saved locally; use Murata's Part Number Search / SimSurfing characteristic data at 4.2V to estimate. Candidate not qualified here to a guaranteed minimum effective capacitance.",
+    "C5": "The selected 1206 part is a documented Samsung 4.7uF 50V X7R production part. 0805 4.7uF 50V was not selected because LCSC search surfaced the established 1206 option; larger package is an authorized practical change, footprint must be changed if adopted.",
+    "C101_numeric": "Samsung embedded typical curve at 9.0V is approximately -47.7% capacitance change (52.3% retention; 11.51uF from nominal 22uF). Including the requested illustrative initial tolerance factor 0.90 and temperature factor 0.85 gives ~8.80uF before aging/chart uncertainty, only ~0.60uF / 7.3% above TI BQ25895 suggested 8.2uF for typical 3\u20135A charging. This margin is narrow and not qualified as guaranteed. Two parts are now fitted in parallel (C101 and C108). Nominal branch total is 44uF; this increases startup charge/inrush in proportion to capacitance at the same voltage.",
+    "C102_numeric": "Samsung typical curve at 6V gives approximately -60.2% for CL21B106KPQNNNE 10uF/10V, ~3.98uF biased; 0.90*0.85 illustration yields ~3.04uF. Same-value 16V CL21B106KOQNNNE curve is ~4.33uF at6V, yielding ~3.31uF by the same factors. TI identifies 4.7uF nominal ceramic as the REGN pin description recommendation; the nominal value wording does not establish an effective-capacitance limit, so confirm using TI guidance/bench evaluation. Two parts are now fitted in parallel (C102 and C109), 20uF nominal. This increases REGN startup charge/current; nominal 20uF alone does not establish compliance with TI effective-capacitance guidance.",
+    "C100": "LCSC listing confirms exact Samsung CL21B225KBYNNNE MPN, 0805, 2.2uF, 50V, X7R. A standalone exact MPN manufacturer PDF was not retrievable; the hidden Datasheet field links the exact LCSC part page.",
+    "C180_at_20V": "Samsung exact-family official curve typical at 20V: -30.05% \u0394C, ~0.700uF typical; illustrative 0.90 initial-tolerance \u00d7 0.85 temperature gives ~0.535uF, above 0.1uF before aging/chart uncertainty. See charger-review/samsung_CL21B105_C28323_curve.json; typical only, no guaranteed minimum."
+  },
+  "documents_saved": [
+    "ai-files/datasheets/Samsung_CL32B226KAJNNNE.pdf",
+    "ai-files/datasheets/Samsung_CL21B106KPQNNNE.pdf",
+    "ai-files/datasheets/Murata_GRM21BZ71A226ME15L_LCSC.pdf",
+    "ai-files/datasheets/Samsung_CL31B475KBHNNNE.pdf",
+    "ai-files/datasheets/Samsung_CL21B105KBFNNNE.pdf",
+    "ai-files/reports/charger-review/samsung_CL21B105_C28323_curve.json"
+  ],
+  "limitations": [
+    "LCSC stock/price was not captured for C103 or C106 in this run.",
+    "No effective capacitance values are represented as guaranteed. Verify converter capacitor minima from BQ25895 datasheet and qualify with manufacturer's exact-part bias data at the actual DC operating point.",
+    "C101/C108 and C102/C109 duplicate branches increase input/REGN charging demand; startup inrush cannot be quantified without the applicable ramp and source impedance.",
+    "C100 exact listing verified; a standalone exact MPN PDF could not be obtained in this run, so its symbol Datasheet property points to the exact LCSC listing.",
+    "LCSC stock and unit prices for C51205, C309062, C32635 and C2762602 were explicitly captured from their linked product pages on 2026-10-05; they can change before ordering.",
+    "For the integrated C5, active schematic value remains 4.7uF X7R 50V and footprint is now 1206; this snapshot reflects the current schematic."
+  ],
+  "small_cap_group_reuse": {
+    "CL21B105KBFNNNE": {
+      "lcsc": "C28323",
+      "refs": "USB_PD C4,C6,C180; other main-reported C1,C3",
+      "package": "0805",
+      "rating": "1uF 50V X7R +/-10%",
+      "MOQ": 10,
+      "order_multiple": 10,
+      "snapshot_stock": 1363910,
+      "price_usd": {
+        "10+": 0.0403,
+        "100+": 0.0309,
+        "300+": 0.0261,
+        "2000+": 0.0221
+      },
+      "minimum_requested_uF": 0.1,
+      "conclusion": "C180 is located after Q2 on the eFuse input rail and can see 5/9V normal operation and 20V fault voltage. Exact Samsung typical curve at 20V gives ~0.70uF typical, ~0.535uF after illustrative tolerance and temperature factors, above the 0.1uF local requirement. This remains typical-only and does not account for aging/chart uncertainty or eFuse fault transient behavior; qualify to the actual fault profile.",
+      "vendor_typical_bias_at_20V_delta_percent": -30.0484,
+      "typical_uF_at_20V": 0.6995,
+      "illustrative_0_90_tolerance_0_85_temperature_uF_at_20V": 0.5351,
+      "minimum_requested_uF_at_C180": 0.1
+    },
+    "CL21B104KBCNNNC": {
+      "lcsc": "C1711",
+      "refs": "USB_PD C2; other main-reported C10",
+      "package": "0805",
+      "rating": "100nF 50V X7R +/-10%",
+      "MOQ": 20,
+      "order_multiple": 20,
+      "snapshot_stock": 854600,
+      "price_usd": {
+        "20+": 0.0159,
+        "200+": 0.0124,
+        "600+": 0.0108,
+        "4000+": 0.0084
+      },
+      "vendor_typical_bias_at_5V_delta_percent": 1.88,
+      "conclusion": "suitable 50V part for values displayed with 25V minimum rating; listed LCSC MPN/package match."
+    }
+  },
+  "charger_sheet_revision": {
+    "sheet": "Battery_Charger",
+    "status": "Implemented and reviewed",
+    "added_parallel_caps": [
+      {
+        "ref": "C108",
+        "parallel_with": "C101",
+        "mpn": "CL32B226KAJNNNE",
+        "lcsc": "C309062",
+        "quantity_total_for_position": 2,
+        "net": "PMID to GND",
+        "nominal_branch_total": "44uF"
+      },
+      {
+        "ref": "C109",
+        "parallel_with": "C102",
+        "mpn": "CL21B106KPQNNNE",
+        "lcsc": "C32635",
+        "quantity_total_for_position": 2,
+        "net": "REGN to GND",
+        "nominal_branch_total": "20uF"
+      }
+    ],
+    "assignments": {
+      "C100": "Samsung CL21B225KBYNNNE / C2762602; 2.2uF 50V X7R 0805 part while preserving displayed 2.2uF / 25V minimum",
+      "C101": "Samsung CL32B226KAJNNNE / C309062",
+      "C102": "Samsung CL21B106KPQNNNE / C32635",
+      "C106": "Murata GRM21BZ71A226ME15L / C907991"
+    },
+    "inrush_note": "The input capacitor bank and REGN ceramic bank each double nominal capacitance at those nodes; charging energy and peak charge current can increase depending on startup ramp/source impedance. No numeric inrush estimate is claimed without ramp and source impedance.",
+    "C103": "Unchanged and left without hidden sourcing metadata.",
+    "design_note": "TI BQ25895 \u00a79.2.2.2 describes 8.2uF as suggested for typical 3\u20135A charging; this is a design recommendation, not a guaranteed/mandatory minimum. REGN 4.7uF is a nominal pin-description recommendation, not a strict biased-capacitance minimum."
+  }
+}

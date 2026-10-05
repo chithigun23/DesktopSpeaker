@@ -1,0 +1,39 @@
+{
+  "/": {
+    "total": 326,
+    "types": {
+      "pin_not_connected": 234,
+      "label_dangling": 8,
+      "power_pin_not_driven": 2,
+      "endpoint_off_grid": 78,
+      "lib_symbol_issues": 4
+    }
+  },
+  "/USB_PD/": {
+    "total": 1,
+    "types": {
+      "power_pin_not_driven": 1
+    }
+  },
+  "/Battery_Charger/": {
+    "total": 21,
+    "types": {
+      "pin_to_pin": 21
+    }
+  },
+  "/Fuel_Gauge_Power/": {
+    "total": 10,
+    "types": {
+      "power_pin_not_driven": 2,
+      "pin_to_pin": 8
+    }
+  },
+  "/Bluetooth_Power/": {
+    "total": 0,
+    "types": {}
+  },
+  "/Logic_Audio_Power/": {
+    "total": 0,
+    "types": {}
+  }
+}

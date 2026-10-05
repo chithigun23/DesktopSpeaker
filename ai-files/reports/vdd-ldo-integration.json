@@ -1,0 +1,18 @@
+{
+  "checks": {
+    "retained_groups_equal_except_U19_U11VDD_C5positive": true,
+    "raw_to_ldo_in_enable": true,
+    "ldo_to_pd_and_c5": true,
+    "explicit_ground": true,
+    "raw_not_short_to_output": true
+  },
+  "part": "U19 TPS7B8450QWDRBRQ1/C3751394",
+  "active_scope": "Raw USB only -> fixed5V PD controller VDD; no codec/MCU auxiliary feed yet",
+  "C5": "Existing Samsung4.7uF50V reused atoutput; >=1uF effective/ESR qualification open",
+  "remaining": [
+    "LDO weak5V/dropout and transient",
+    "Sense zener dynamic qualification",
+    "TVS surge/layout maximum",
+    "Low-loss mainpath/source entitlement/coldstart/suspend"
+  ]
+}

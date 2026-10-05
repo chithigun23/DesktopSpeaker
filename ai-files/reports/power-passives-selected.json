@@ -1,0 +1,429 @@
+{
+  "snapshot_date": "2026-10-05",
+  "scope": "Selected LCSC sources for requested low-voltage support passives. Listing stock/prices are snapshots, not order-time guarantees.",
+  "capacitors": [
+    {
+      "refs": [
+        "C120",
+        "C121",
+        "C130",
+        "C131",
+        "C132",
+        "C143",
+        "C151"
+      ],
+      "value": "100nF",
+      "manufacturer": "Samsung Electro-Mechanics",
+      "mpn": "CL10B104KB8NNNC",
+      "lcsc": "C1591",
+      "package": "0603",
+      "rating": "50V, X7R, ±10%",
+      "listing": "https://www.lcsc.com/product-detail/C1591.html",
+      "stock_snapshot": "1,192,600 listed",
+      "price_snapshot": "US$0.0111 at 100 pcs; US$0.0084 at 1,000 pcs",
+      "datasheet": "datasheets/Samsung_MLCC_LCSC_C1591_C1711.pdf",
+      "notes": "Reuses the existing handover lead; listing was rechecked. The handover's prior caveat about conflicting cached C1591 stock/price variants still applies.",
+      "moq_pcs": 100,
+      "order_multiple_pcs": 100,
+      "quoted_tier_qty_pcs": 100,
+      "unit_price_usd_at_tier": 0.0111
+    },
+    {
+      "refs": [
+        "C122",
+        "C123"
+      ],
+      "value": "1uF",
+      "manufacturer": "Taiyo Yuden",
+      "mpn": "LMK107B7105KA-T",
+      "lcsc": "C92806",
+      "package": "0603",
+      "rating": "10V, X7R, ±10%",
+      "listing": "https://www.lcsc.com/es/product-detail/C92806.html",
+      "stock_snapshot": "3,650 listed",
+      "price_snapshot": "US$0.0231 at 50 pcs (listing minimum 50)",
+      "datasheet": "datasheets/TaiyoYuden_LMK107B7105KA-T_specific.pdf",
+      "datasheet_source": "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/8901/LMK107B7105KA-T.pdf",
+      "effective_capacitance_assessment": "TI TPS7A02 requires ≥0.5uF effective output capacitance for stability and recommends 1uF or more for best transient response. Taiyo Yuden's part-specific DC-bias curve shows approximately 0.9uF remains at 3.3V (nominal curve); applying -10% initial tolerance gives approximately 0.81uF before temperature/aging variation. This clears the stability minimum but does not guarantee 1uF effective. Confirm the actual output rail and total capacitance margin.",
+      "moq_pcs": 50,
+      "order_multiple_pcs": 50,
+      "quoted_tier_qty_pcs": 50,
+      "unit_price_usd_at_tier": 0.0231
+    },
+    {
+      "refs": [
+        "C181"
+      ],
+      "value": "22nF",
+      "manufacturer": "Samsung Electro-Mechanics",
+      "mpn": "CL10B223KB8NNNC",
+      "lcsc": "C21122",
+      "package": "0603",
+      "rating": "50V, X7R, ±10%",
+      "listing": "https://www.lcsc.com/product-detail/C21122.html",
+      "stock_snapshot": "316,900 listed",
+      "price_snapshot": "US$0.0084 at 50 pcs; US$0.0065 at 500 pcs; US$0.0055 at 1,500 pcs",
+      "moq_pcs": 50,
+      "order_multiple_pcs": 50,
+      "quoted_tier_qty_pcs": 50,
+      "unit_price_usd_at_tier": 0.0084,
+      "datasheet": "datasheets/Samsung_CL10B223KB8NNNC_C21122.pdf",
+      "datasheet_source": "https://www.lcsc.com/datasheet/C21122.pdf",
+      "manufacturer_specification": "Samsung Electro-Mechanics X7R MLCC catalog covers CL10B223KB8NNN (22nF, 50V, X7R, 0603); trailing C is reel packaging suffix. X7R capacitance temperature characteristic is ±15% from -55°C to +125°C.",
+      "notes": "Selected after system-level dV/dt review accepted X7R temperature variation. Parent owns timing corner calculation."
+    }
+  ],
+  "resistors": [
+    {
+      "refs": [
+        "R140"
+      ],
+      "value": "732k 1%",
+      "manufacturer": "Vishay",
+      "mpn": "CRCW0603732KFKEA",
+      "lcsc": "C2079739",
+      "package": "0603",
+      "rating": "100mW, 100V, ±100ppm/°C",
+      "listing": "https://www.lcsc.com/product-detail/C2079739.html",
+      "stock_snapshot": "2,700 listed",
+      "price_snapshot": "US$0.0048 at 100 pcs",
+      "datasheet": "datasheets/Vishay_CRCW0603_resistors.pdf",
+      "moq_pcs": 100,
+      "order_multiple_pcs": 100,
+      "quoted_tier_qty_pcs": 100,
+      "unit_price_usd_at_tier": 0.0048
+    },
+    {
+      "refs": [
+        "R141",
+        "R142",
+        "R152",
+        "R153",
+        "R154",
+        "R180"
+      ],
+      "value": "100k 1%",
+      "manufacturer": "YAGEO",
+      "mpn": "RC0603FR-07100KL",
+      "lcsc": "C14675",
+      "package": "0603",
+      "rating": "100mW, 75V, ±100ppm/°C",
+      "listing": "https://www.lcsc.com/product-detail/C14675.html",
+      "stock_snapshot": "7,813,400 listed",
+      "price_snapshot": "US$0.0036 at 100 pcs; US$0.0031 at 1,000 pcs",
+      "datasheet": "datasheets/Yageo_RC0603FR_series.pdf",
+      "moq_pcs": 100,
+      "order_multiple_pcs": 100,
+      "quoted_tier_qty_pcs": 100,
+      "unit_price_usd_at_tier": 0.0036
+    },
+    {
+      "refs": [
+        "R150"
+      ],
+      "value": "604k 1%",
+      "manufacturer": "FOJAN",
+      "mpn": "FRC0603F6043TS",
+      "lcsc": "C2933246",
+      "package": "0603",
+      "rating": "100mW; ±1%; 0603 listing key attributes",
+      "listing": "https://www.lcsc.com/product-detail/C2933246.html",
+      "stock_snapshot": "54,400 listed",
+      "price_snapshot": "US$0.0025 at 100 pcs; US$0.0020 at 1,000 pcs",
+      "datasheet": "datasheets/FOJAN_FRC0603_resistors.pdf",
+      "moq_pcs": 100,
+      "order_multiple_pcs": 100,
+      "quoted_tier_qty_pcs": 100,
+      "unit_price_usd_at_tier": 0.0025
+    },
+    {
+      "refs": [
+        "R151"
+      ],
+      "value": "91k 1%",
+      "manufacturer": "YAGEO",
+      "mpn": "AC0603FR-0791KL",
+      "lcsc": "C228098",
+      "package": "0603",
+      "rating": "100mW, 75V, ±100ppm/°C",
+      "listing": "https://www.lcsc.com/product-detail/C228098.html",
+      "stock_snapshot": "700 listed",
+      "price_snapshot": "US$0.0061 at 100 pcs; US$0.0052 at 1,000 pcs",
+      "datasheet": "datasheets/Yageo_AC0603FR-0791KL.pdf",
+      "notes": "Yageo AC-series specification was verified against the exact manufacturer-generated sheet saved at datasheets/Yageo_AC0603FR-0791KL.pdf.",
+      "moq_pcs": 100,
+      "order_multiple_pcs": 100,
+      "quoted_tier_qty_pcs": 100,
+      "unit_price_usd_at_tier": 0.0061,
+      "manufacturer_datasheet_source": "https://www.yageogroup.com/component-documentation/download/specsheet/AC0603FR-0791KL"
+    },
+    {
+      "refs": [
+        "R181"
+      ],
+      "value": "12.1k 1%",
+      "manufacturer": "YAGEO",
+      "mpn": "RC0603FR-0712K1L",
+      "lcsc": "C123417",
+      "package": "0603",
+      "rating": "100mW; ±1%; 0603 listing key attributes",
+      "listing": "https://www.lcsc.com/product-detail/C123417.html",
+      "stock_snapshot": "135,800 listed",
+      "price_snapshot": "US$0.0031 at 100 pcs; US$0.0027 at 1,000 pcs",
+      "datasheet": "datasheets/Yageo_RC0603FR_series.pdf",
+      "moq_pcs": 100,
+      "order_multiple_pcs": 100,
+      "quoted_tier_qty_pcs": 100,
+      "unit_price_usd_at_tier": 0.0031
+    },
+    {
+      "refs": [
+        "R182"
+      ],
+      "value": "5.36k 1%",
+      "manufacturer": "FOJAN",
+      "mpn": "FRC0603F5361TS",
+      "lcsc": "C2930112",
+      "package": "0603",
+      "rating": "100mW, 75V, ±100ppm/°C",
+      "listing": "https://www.lcsc.com/product-detail/C2930112.html",
+      "stock_snapshot": "33,100 listed",
+      "price_snapshot": "US$0.0025 at 100 pcs; US$0.0021 at 1,000 pcs",
+      "datasheet": "datasheets/FOJAN_FRC0603_resistors.pdf",
+      "moq_pcs": 100,
+      "order_multiple_pcs": 100,
+      "quoted_tier_qty_pcs": 100,
+      "unit_price_usd_at_tier": 0.0025
+    }
+  ],
+  "integration_notes": [
+    "The initial R141/R152-R154/R180 100k group also applies to R142, R10, R55 and R107.",
+    "Optional existing resistor references use inexpensive 1% 0603 choices, mostly the same YAGEO RC0603FR series. R100/R101 use SAE 1RC0603F parts; their series sheet is saved.",
+    "All stock, MOQ, multiple and USD tier values are LCSC snapshots captured 2026-10-05; confirm before BOM lock.",
+    "TPS7A02 datasheet is datasheets/TPS7A02.pdf. No schematic edits were made.",
+    "C181 selected as Samsung CL10B223KB8NNNC (LCSC C21122), 22nF 50V X7R 0603, ±10% initial tolerance and ±15% capacitance variation over -55°C to +125°C. Parent owns dV/dt timing corner calculation."
+  ],
+  "source_links": {
+    "tps7a02_requirement": "https://www.ti.com/lit/ds/symlink/tps7a02.pdf",
+    "taiyo_yuden_capacitor_listing": "https://www.lcsc.com/es/product-detail/C92806.html",
+    "samsung_capacitor_listing": "https://www.lcsc.com/product-detail/C1591.html"
+  },
+  "additional_capacitor_sourcing": [],
+  "optional_existing_resistors": [
+    {
+      "refs": [
+        "R1"
+      ],
+      "value": "470Ω 1%",
+      "manufacturer": "YAGEO",
+      "mpn": "RC0603FR-07470RL",
+      "lcsc": "C114669",
+      "package": "0603",
+      "rating": "100mW; ±1%; 0603 listing attributes",
+      "listing": "https://www.lcsc.com/product-detail/C114669.html",
+      "stock_snapshot": "1,090,800 listed",
+      "price_snapshot": "US$0.0025 at 100 pcs; order multiple 100 pcs",
+      "moq_pcs": 100,
+      "order_multiple_pcs": 100,
+      "quoted_tier_qty_pcs": 100,
+      "unit_price_usd_at_tier": 0.0025,
+      "datasheet": "datasheets/Yageo_RC0603FR_series.pdf"
+    },
+    {
+      "refs": [
+        "R2"
+      ],
+      "value": "1kΩ 1%",
+      "manufacturer": "YAGEO",
+      "mpn": "RC0603FR-071KL",
+      "lcsc": "C22548",
+      "package": "0603",
+      "rating": "100mW; ±1%; 0603 listing attributes",
+      "listing": "https://www.lcsc.com/product-detail/C22548.html",
+      "stock_snapshot": "10,309,000 listed",
+      "price_snapshot": "US$0.0037 at 100 pcs; order multiple 100 pcs",
+      "moq_pcs": 100,
+      "order_multiple_pcs": 100,
+      "quoted_tier_qty_pcs": 100,
+      "unit_price_usd_at_tier": 0.0037,
+      "datasheet": "datasheets/Yageo_RC0603FR_series.pdf"
+    },
+    {
+      "refs": [
+        "R6",
+        "R9",
+        "R120",
+        "R121"
+      ],
+      "value": "4.7kΩ 1%",
+      "manufacturer": "YAGEO",
+      "mpn": "RC0603FR-074K7L",
+      "lcsc": "C99782",
+      "package": "0603",
+      "rating": "100mW; ±1%; 0603 listing attributes",
+      "listing": "https://www.lcsc.com/product-detail/C99782.html",
+      "stock_snapshot": "1,575,400 listed",
+      "price_snapshot": "US$0.0011 at 100 pcs; order multiple 100 pcs",
+      "moq_pcs": 100,
+      "order_multiple_pcs": 100,
+      "quoted_tier_qty_pcs": 100,
+      "unit_price_usd_at_tier": 0.0011,
+      "datasheet": "datasheets/Yageo_RC0603FR_series.pdf"
+    },
+    {
+      "refs": [
+        "R10",
+        "R55",
+        "R107"
+      ],
+      "value": "100kΩ 1%",
+      "manufacturer": "YAGEO",
+      "mpn": "RC0603FR-07100KL",
+      "lcsc": "C14675",
+      "package": "0603",
+      "rating": "100mW; ±1%; 0603 listing attributes",
+      "listing": "https://www.lcsc.com/product-detail/C14675.html",
+      "stock_snapshot": "7,813,400 listed",
+      "price_snapshot": "US$0.0036 at 100 pcs; order multiple 100 pcs",
+      "moq_pcs": 100,
+      "order_multiple_pcs": 100,
+      "quoted_tier_qty_pcs": 100,
+      "unit_price_usd_at_tier": 0.0036,
+      "datasheet": "datasheets/Yageo_RC0603FR_series.pdf"
+    },
+    {
+      "refs": [
+        "R11"
+      ],
+      "value": "22kΩ 1%",
+      "manufacturer": "YAGEO",
+      "mpn": "RC0603FR-0722KL",
+      "lcsc": "C114065",
+      "package": "0603",
+      "rating": "100mW; ±1%; 0603 listing attributes",
+      "listing": "https://www.lcsc.com/product-detail/C114065.html",
+      "stock_snapshot": "644,600 listed",
+      "price_snapshot": "US$0.0017 at 100 pcs; order multiple 100 pcs",
+      "moq_pcs": 100,
+      "order_multiple_pcs": 100,
+      "quoted_tier_qty_pcs": 100,
+      "unit_price_usd_at_tier": 0.0017,
+      "datasheet": "datasheets/Yageo_RC0603FR_series.pdf"
+    },
+    {
+      "refs": [
+        "R13"
+      ],
+      "value": "100Ω 1%",
+      "manufacturer": "YAGEO",
+      "mpn": "RC0603FR-07100RL",
+      "lcsc": "C105588",
+      "package": "0603",
+      "rating": "100mW; ±1%; 0603 listing attributes",
+      "listing": "https://www.lcsc.com/product-detail/C105588.html",
+      "stock_snapshot": "2,943,700 listed",
+      "price_snapshot": "US$0.0024 at 100 pcs; order multiple 100 pcs",
+      "moq_pcs": 100,
+      "order_multiple_pcs": 100,
+      "quoted_tier_qty_pcs": 100,
+      "unit_price_usd_at_tier": 0.0024,
+      "datasheet": "datasheets/Yageo_RC0603FR_series.pdf"
+    },
+    {
+      "refs": [
+        "R100"
+      ],
+      "value": "5.23kΩ 1%",
+      "manufacturer": "SAE",
+      "mpn": "1RC0603F5231",
+      "lcsc": "C54531489",
+      "package": "0603",
+      "rating": "100mW; ±1%; 0603 listing attributes",
+      "listing": "https://www.lcsc.com/product-detail/C54531489.html",
+      "stock_snapshot": "9,900 listed",
+      "price_snapshot": "US$0.0020 at 100 pcs; order multiple 100 pcs",
+      "moq_pcs": 100,
+      "order_multiple_pcs": 100,
+      "quoted_tier_qty_pcs": 100,
+      "unit_price_usd_at_tier": 0.002,
+      "datasheet": "datasheets/SAE_1RC0603F_series.pdf"
+    },
+    {
+      "refs": [
+        "R101"
+      ],
+      "value": "30.1kΩ 1%",
+      "manufacturer": "SAE",
+      "mpn": "1RC0603F3012",
+      "lcsc": "C54531365",
+      "package": "0603",
+      "rating": "100mW; ±1%; 0603 listing attributes",
+      "listing": "https://www.lcsc.com/product-detail/C54531365.html",
+      "stock_snapshot": "3,700 listed",
+      "price_snapshot": "US$0.0020 at 100 pcs; order multiple 100 pcs",
+      "moq_pcs": 100,
+      "order_multiple_pcs": 100,
+      "quoted_tier_qty_pcs": 100,
+      "unit_price_usd_at_tier": 0.002,
+      "datasheet": "datasheets/SAE_1RC0603F_series.pdf"
+    },
+    {
+      "refs": [
+        "R102"
+      ],
+      "value": "220Ω 1%",
+      "manufacturer": "YAGEO",
+      "mpn": "RC0603FR-07220RL",
+      "lcsc": "C107696",
+      "package": "0603",
+      "rating": "100mW; ±1%; 0603 listing attributes",
+      "listing": "https://www.lcsc.com/product-detail/C107696.html",
+      "stock_snapshot": "484,600 listed",
+      "price_snapshot": "US$0.0012 at 100 pcs; order multiple 100 pcs",
+      "moq_pcs": 100,
+      "order_multiple_pcs": 100,
+      "quoted_tier_qty_pcs": 100,
+      "unit_price_usd_at_tier": 0.0012,
+      "datasheet": "datasheets/Yageo_RC0603FR_series.pdf"
+    },
+    {
+      "refs": [
+        "R103",
+        "R106"
+      ],
+      "value": "10kΩ 1%",
+      "manufacturer": "YAGEO",
+      "mpn": "RC0603FR-0710KL",
+      "lcsc": "C98220",
+      "package": "0603",
+      "rating": "100mW; ±1%; 0603 listing attributes",
+      "listing": "https://www.lcsc.com/product-detail/C98220.html",
+      "stock_snapshot": "11,102,500 listed",
+      "price_snapshot": "US$0.0035 at 100 pcs; order multiple 100 pcs",
+      "moq_pcs": 100,
+      "order_multiple_pcs": 100,
+      "quoted_tier_qty_pcs": 100,
+      "unit_price_usd_at_tier": 0.0035,
+      "datasheet": "datasheets/Yageo_RC0603FR_series.pdf"
+    },
+    {
+      "refs": [
+        "R122"
+      ],
+      "value": "47kΩ 1%",
+      "manufacturer": "YAGEO",
+      "mpn": "RC0603FR-0747KL",
+      "lcsc": "C105579",
+      "package": "0603",
+      "rating": "100mW; ±1%; 0603 listing attributes",
+      "listing": "https://www.lcsc.com/product-detail/C105579.html",
+      "stock_snapshot": "887,500 listed",
+      "price_snapshot": "US$0.0012 at 100 pcs; order multiple 100 pcs",
+      "moq_pcs": 100,
+      "order_multiple_pcs": 100,
+      "quoted_tier_qty_pcs": 100,
+      "unit_price_usd_at_tier": 0.0012,
+      "datasheet": "datasheets/Yageo_RC0603FR_series.pdf"
+    }
+  ]
+}

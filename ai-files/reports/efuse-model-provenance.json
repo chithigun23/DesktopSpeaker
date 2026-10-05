@@ -1,0 +1,12 @@
+{
+  "origin": "User download ul_TPS26600PWPR.zip via requested DigiKey/Ultra Librarian listing",
+  "sourceFile": "ai-files/candidates/TPS26600-vendor/PWP0016H.stp",
+  "sourceSha256": "911250700b7a45f9408d2523002fe5351627e89a8f939629212d50f4f0300a78",
+  "activeFile": "DesktopSpeaker-kicad/kicad-library/3d/TPS26600PWPR_datasheet_EP.step",
+  "activeSha256": "9077b473e249d1bd723805bd47e00b43316a55b12914390188335397c605f83f",
+  "derivedModel": true,
+  "changes": "Original molded body and 16 lead solids retained. Original EP 2.509x2.91mm at z0.13 replaced by nominal 3x3mm EP, underside z0, height0.28mm. Body/lead coloring assigned.",
+  "datasheet": "https://www.ti.com/lit/ds/symlink/tps2660.pdf",
+  "orientation": "No rotation, scale or offset; pin1 molded marker at native x<0/y>0 aligns footprint upper-left; leads underside z0.",
+  "qualification": "Mechanical visualization, not manufacturer-authenticated exact CAD. EP copper remains3.3x3.3 per land pattern."
+}

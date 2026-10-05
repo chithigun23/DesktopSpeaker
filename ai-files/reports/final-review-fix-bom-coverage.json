@@ -1,0 +1,24 @@
+{
+  "physical_components": 102,
+  "bom_rows": 71,
+  "missing_refs": [],
+  "extra_refs": [],
+  "metadata_mismatches": [],
+  "fitted_usd": "73.7302",
+  "order_usd": "92.6647",
+  "unpriced_refs": [
+    "J4",
+    "J5",
+    "SW100",
+    "SW101",
+    "PACK",
+    "D8"
+  ],
+  "unpriced_physical_refs": [
+    "J4",
+    "J5",
+    "SW100",
+    "SW101",
+    "D8"
+  ]
+}

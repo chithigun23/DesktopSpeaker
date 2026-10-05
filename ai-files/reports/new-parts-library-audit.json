@@ -1,0 +1,541 @@
+[
+  {
+    "mpn": "TYPE-C-31-M-12",
+    "lcsc": "C165948",
+    "symbol_name": "TYPE-C-31-M-12",
+    "symbol_path": "/home/chithi/Desktop/DesktopSpeaker/DesktopSpeaker-kicad/kicad-library/schematic/TYPE-C-31-M-12.kicad_sym",
+    "footprint_name": "TYPE-C-31-M-12",
+    "footprint_path": "/home/chithi/Desktop/DesktopSpeaker/DesktopSpeaker-kicad/kicad-library/footprint/TYPE-C-31-M-12.kicad_mod",
+    "model_path": "/home/chithi/Desktop/DesktopSpeaker/DesktopSpeaker-kicad/kicad-library/3d/TYPE-C-31-M-12.step",
+    "model_source": "https://easyeda.com/api/products/C165948/components",
+    "model_original_name": "USB-C_SMD-TYPE-C-31-M-12_1",
+    "model_original_bbox": [
+      -4.552392200292394,
+      4.5523922002923936,
+      -5.30000000000001,
+      2.6,
+      -0.8829568801169572,
+      3.3323922002923947
+    ],
+    "model_geometry_translation": [
+      0,
+      2.5,
+      0
+    ],
+    "model_transform": "(offset (xyz 0.000 0.000 0.000))\n\t\t(scale (xyz 1 1 1))\n\t\t(rotate (xyz 0 0 180))",
+    "pins": [
+      [
+        "GND",
+        "A1B12"
+      ],
+      [
+        "VBUS",
+        "A4B9"
+      ],
+      [
+        "SBU2",
+        "B8"
+      ],
+      [
+        "CC1",
+        "A5"
+      ],
+      [
+        "DN2",
+        "B7"
+      ],
+      [
+        "DP1",
+        "A6"
+      ],
+      [
+        "DN1",
+        "A7"
+      ],
+      [
+        "DP2",
+        "B6"
+      ],
+      [
+        "SBU1",
+        "A8"
+      ],
+      [
+        "CC2",
+        "B5"
+      ],
+      [
+        "VBUS",
+        "B4A9"
+      ],
+      [
+        "GND",
+        "B1A12"
+      ],
+      [
+        "EH",
+        "4"
+      ],
+      [
+        "EH",
+        "3"
+      ],
+      [
+        "EH",
+        "2"
+      ],
+      [
+        "EH",
+        "1"
+      ]
+    ],
+    "pad_numbers": [
+      "B8",
+      "A5",
+      "B7",
+      "A6",
+      "A7",
+      "B6",
+      "A8",
+      "B5",
+      "A1B12",
+      "B1A12",
+      "B4A9",
+      "A4B9",
+      "2",
+      "1",
+      "4",
+      "3",
+      "\"\"",
+      "\"\""
+    ],
+    "datasheet": "/home/chithi/Desktop/DesktopSpeaker/datasheets/TYPE-C-31-M-12.pdf",
+    "model_final_bbox": [
+      -4.552392200292394,
+      4.552392200292394,
+      -2.8,
+      5.1000000000000005,
+      -0.8829568801169576,
+      3.332392200292394
+    ],
+    "symbol_all_at_bounds": [
+      -6.35,
+      11.43,
+      -34.29,
+      19.05
+    ],
+    "model_download_url": "https://modules.easyeda.com/qAxj6KHrDKw4blvCG8QJPs7Y/617b05f9bba7410b96c001093d8189e4",
+    "datasheet_url": "https://datasheet.lcsc.com/datasheet/pdf/9e56b777c022540fcce7c7f67825f55e.pdf?productCode=C165948",
+    "findings": [
+      "16-contact USB2 connector; combined VBUS/GND pad numbers match manufacturer drawing; separate CC1/CC2 and both DP/DN pairs retained.",
+      "Downloaded raw STEP model uses a different origin from exporter baked WRL; raw tail contacts at y-5.3..-4.45 are translated +2.5 before retained rotation180 to align with footprint pad row y-2.47.",
+      "2 unnumbered positioning holes changed to NPTH."
+    ]
+  },
+  {
+    "mpn": "TS5A23157DGSR",
+    "lcsc": "C11133",
+    "symbol_name": "TS5A23157DGSR",
+    "symbol_path": "/home/chithi/Desktop/DesktopSpeaker/DesktopSpeaker-kicad/kicad-library/schematic/TS5A23157DGSR.kicad_sym",
+    "footprint_name": "TS5A23157DGSR",
+    "footprint_path": "/home/chithi/Desktop/DesktopSpeaker/DesktopSpeaker-kicad/kicad-library/footprint/TS5A23157DGSR.kicad_mod",
+    "model_path": "/home/chithi/Desktop/DesktopSpeaker/DesktopSpeaker-kicad/kicad-library/3d/TS5A23157DGSR.step",
+    "model_source": "https://easyeda.com/api/products/C11133/components",
+    "model_original_name": "MSOP-10_L3.0-W3.0-H1.1-LS5.0-P0.50",
+    "model_original_bbox": [
+      -1.500198293953484,
+      1.500198293953484,
+      -2.4999999999999996,
+      2.4999999999999996,
+      9.2148511043888e-15,
+      1.101
+    ],
+    "model_geometry_translation": [
+      0,
+      0,
+      0
+    ],
+    "model_transform": "(offset (xyz 0.000 0.000 0.000))\n\t\t(scale (xyz 1 1 1))\n\t\t(rotate (xyz 0 0 0))",
+    "pins": [
+      [
+        "IN1",
+        "1"
+      ],
+      [
+        "NO1",
+        "2"
+      ],
+      [
+        "GND",
+        "3"
+      ],
+      [
+        "NO2",
+        "4"
+      ],
+      [
+        "IN2",
+        "5"
+      ],
+      [
+        "COM2",
+        "6"
+      ],
+      [
+        "NC2",
+        "7"
+      ],
+      [
+        "V+",
+        "8"
+      ],
+      [
+        "NC1",
+        "9"
+      ],
+      [
+        "COM1",
+        "10"
+      ]
+    ],
+    "pad_numbers": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "10",
+      "9",
+      "8",
+      "7",
+      "6"
+    ],
+    "datasheet": "/home/chithi/Desktop/DesktopSpeaker/datasheets/TS5A23157.pdf",
+    "model_final_bbox": [
+      -1.500198293953484,
+      1.500198293953484,
+      -2.4999999999999996,
+      2.4999999999999996,
+      9.2148511043888e-15,
+      1.101
+    ],
+    "symbol_all_at_bounds": [
+      -15.24,
+      15.24,
+      -25.4,
+      10.16
+    ],
+    "model_download_url": "https://modules.easyeda.com/qAxj6KHrDKw4blvCG8QJPs7Y/a8ab40c7a7c54773a59b712bf86c7131",
+    "datasheet_url": "https://www.ti.com/lit/ds/symlink/ts5a23157.pdf"
+  },
+  {
+    "mpn": "TPA6132A2RTER",
+    "lcsc": "C69901",
+    "symbol_name": "TPA6132A2RTER",
+    "symbol_path": "/home/chithi/Desktop/DesktopSpeaker/DesktopSpeaker-kicad/kicad-library/schematic/TPA6132A2RTER.kicad_sym",
+    "footprint_name": "TPA6132A2RTER",
+    "footprint_path": "/home/chithi/Desktop/DesktopSpeaker/DesktopSpeaker-kicad/kicad-library/footprint/TPA6132A2RTER.kicad_mod",
+    "model_path": "/home/chithi/Desktop/DesktopSpeaker/DesktopSpeaker-kicad/kicad-library/3d/TPA6132A2RTER.step",
+    "model_source": "https://easyeda.com/api/products/C69901/components",
+    "model_original_name": "WQFN-16_L3.0-W3.0-P0.50-TL-EP1.6",
+    "model_original_bbox": [
+      -1.5010000000000003,
+      1.5010000000000003,
+      -1.5010000000000034,
+      1.5010000000000094,
+      -0.02000000000000001,
+      0.731
+    ],
+    "model_geometry_translation": [
+      0,
+      0,
+      0
+    ],
+    "model_transform": "(offset (xyz 0.000 0.000 0.000))\n\t\t(scale (xyz 1 1 1))\n\t\t(rotate (xyz 0 0 0))",
+    "pins": [
+      [
+        "INL-",
+        "1"
+      ],
+      [
+        "INL+",
+        "2"
+      ],
+      [
+        "INR+",
+        "3"
+      ],
+      [
+        "INR-",
+        "4"
+      ],
+      [
+        "OUTR",
+        "5"
+      ],
+      [
+        "G0",
+        "6"
+      ],
+      [
+        "G1",
+        "7"
+      ],
+      [
+        "HPVSS",
+        "8"
+      ],
+      [
+        "CPN",
+        "9"
+      ],
+      [
+        "PGND",
+        "10"
+      ],
+      [
+        "CPP",
+        "11"
+      ],
+      [
+        "HPVDD",
+        "12"
+      ],
+      [
+        "EN",
+        "13"
+      ],
+      [
+        "VDD",
+        "14"
+      ],
+      [
+        "SGND",
+        "15"
+      ],
+      [
+        "OUTL",
+        "16"
+      ],
+      [
+        "EP",
+        "17"
+      ]
+    ],
+    "pad_numbers": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12",
+      "13",
+      "14",
+      "15",
+      "16",
+      "17"
+    ],
+    "datasheet": "/home/chithi/Desktop/DesktopSpeaker/datasheets/TPA6132A2.pdf",
+    "model_final_bbox": [
+      -1.5010000000000003,
+      1.5010000000000003,
+      -1.5010000000000034,
+      1.5010000000000094,
+      -0.02000000000000001,
+      0.731
+    ],
+    "symbol_all_at_bounds": [
+      -12.7,
+      12.7,
+      -30.48,
+      15.24
+    ],
+    "model_download_url": "https://modules.easyeda.com/qAxj6KHrDKw4blvCG8QJPs7Y/15670b08c1a4478b80e58259b300f053",
+    "datasheet_url": "https://www.ti.com/lit/ds/symlink/tpa6132a2.pdf"
+  },
+  {
+    "mpn": "TPD2E2U06DRLR",
+    "lcsc": "C1972959",
+    "symbol_name": "TPD2E2U06DRLR",
+    "symbol_path": "/home/chithi/Desktop/DesktopSpeaker/DesktopSpeaker-kicad/kicad-library/schematic/TPD2E2U06DRLR.kicad_sym",
+    "footprint_name": "TPD2E2U06DRLR",
+    "footprint_path": "/home/chithi/Desktop/DesktopSpeaker/DesktopSpeaker-kicad/kicad-library/footprint/TPD2E2U06DRLR.kicad_mod",
+    "model_path": "/home/chithi/Desktop/DesktopSpeaker/DesktopSpeaker-kicad/kicad-library/3d/TPD2E2U06DRLR.step",
+    "model_source": "https://easyeda.com/api/products/C1972959/components",
+    "model_original_name": "SOT-553-5_L1.6-W1.2-P0.50-LS1.6-TL-1",
+    "model_original_bbox": [
+      -0.8,
+      0.8,
+      -0.8000000000000002,
+      0.7999999999999999,
+      -0.03,
+      0.601
+    ],
+    "model_geometry_translation": [
+      0,
+      0,
+      0
+    ],
+    "model_transform": "(offset (xyz 0.000 0.000 0.000))\n\t\t(scale (xyz 1 1 1))\n\t\t(rotate (xyz 0 0 0))",
+    "pins": [
+      [
+        "NC",
+        "1"
+      ],
+      [
+        "NC",
+        "2"
+      ],
+      [
+        "IO1",
+        "3"
+      ],
+      [
+        "GND",
+        "4"
+      ],
+      [
+        "IO2",
+        "5"
+      ]
+    ],
+    "pad_numbers": [
+      "4",
+      "2",
+      "5",
+      "3",
+      "1"
+    ],
+    "datasheet": "/home/chithi/Desktop/DesktopSpeaker/datasheets/TPD2E2U06.pdf",
+    "model_final_bbox": [
+      -0.8,
+      0.8,
+      -0.8000000000000002,
+      0.7999999999999999,
+      -0.03,
+      0.601
+    ],
+    "symbol_all_at_bounds": [
+      -8.89,
+      8.89,
+      -22.86,
+      7.62
+    ],
+    "model_download_url": "https://modules.easyeda.com/qAxj6KHrDKw4blvCG8QJPs7Y/ce682da4a06c4a098d062f74e6fe00c1",
+    "datasheet_url": "https://www.ti.com/lit/ds/symlink/tpd2e2u06.pdf"
+  },
+  {
+    "mpn": "PJ-307",
+    "lcsc": "C2939173",
+    "symbol_name": "PJ-307",
+    "symbol_path": "/home/chithi/Desktop/DesktopSpeaker/DesktopSpeaker-kicad/kicad-library/schematic/PJ-307.kicad_sym",
+    "footprint_name": "PJ-307",
+    "footprint_path": "/home/chithi/Desktop/DesktopSpeaker/DesktopSpeaker-kicad/kicad-library/footprint/PJ-307.kicad_mod",
+    "model_path": "/home/chithi/Desktop/DesktopSpeaker/DesktopSpeaker-kicad/kicad-library/3d/PJ-307.step",
+    "model_source": "https://easyeda.com/api/products/C2939173/components",
+    "model_original_name": "AUDIO-TH_PJ-307",
+    "model_geometry_translation": [
+      -6.25,
+      0.005,
+      2.5
+    ],
+    "model_transform": "offset0 scale1 rotate0 (exporter preserved)",
+    "pins": [
+      [
+        "SLEEVE",
+        "1"
+      ],
+      [
+        "RING",
+        "2"
+      ],
+      [
+        "RING_SW",
+        "3"
+      ],
+      [
+        "TIP_SW",
+        "4"
+      ],
+      [
+        "TIP",
+        "5"
+      ]
+    ],
+    "datasheet": "/home/chithi/Desktop/DesktopSpeaker/datasheets/PJ-307.pdf",
+    "findings": [
+      "Manufacturer drawing confirms2/3 and5/4 normally closed pairs.",
+      "Imported footprint mechanical locating-hole X pitch corrected2.5mm to3.5mm from current manufacturer drawing. Electrical pad X separation5.3mm and Y spacing2.5/5mm agrees drawing.",
+      "STEP normalization -6.25,.005,2.5 matches OBJ bbox centering+exporter placement, keeping all footprint transform fields unchanged."
+    ],
+    "model_final_bbox": [
+      -9.05000000000018,
+      5.15,
+      -6.005,
+      6.005,
+      -3.0,
+      5.5
+    ],
+    "symbol_all_at_bounds": [
+      0.0,
+      7.62,
+      -26.67,
+      8.89
+    ],
+    "datasheet_url": "https://datasheet.lcsc.com/datasheet/pdf/da4c88a8c5b09e23368eb46c4fde8463.pdf?productCode=C2939173",
+    "mechanical_correction": {
+      "holes_before": [
+        [
+          -4.75,
+          -5
+        ],
+        [
+          -4.75,
+          5
+        ]
+      ],
+      "holes_after": [
+        [
+          -5.75,
+          -5
+        ],
+        [
+          -5.75,
+          5
+        ]
+      ],
+      "other_holes": [
+        [
+          -2.25,
+          -5
+        ],
+        [
+          -2.25,
+          5
+        ],
+        [
+          2.65,
+          0
+        ]
+      ],
+      "hole_diameter_mm": 1.2,
+      "datasheet_row_pitch_mm": 3.5,
+      "note": "Empty-number positioning holes also changed to NPTH from exporter plated holes."
+    },
+    "symbol_graphical_bounds_mm": [
+      -8.38,
+      7.62,
+      -6.35,
+      3.81
+    ],
+    "symbol_pin_electrical_type": "passive",
+    "source_symbol_name": "PJ-307_C2939173",
+    "model_download_url": "https://modules.easyeda.com/qAxj6KHrDKw4blvCG8QJPs7Y/fbf8285e3a7e48d5b2dc60c280a5d5d9"
+  }
+]

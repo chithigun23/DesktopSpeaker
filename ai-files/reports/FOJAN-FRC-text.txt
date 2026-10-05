@@ -1,0 +1,743 @@
+FRC Series
+Thick Film Chip Resistor
+ 厚膜片式电阻器
+    FRC-Series
+    Thick Film Chip Resistor Product Specifications
+     FRC 系列厚膜片式电阻器规格书
+
+
+
+    厚膜片式电阻器
+    Thick Film Chip Resistor
+    FRC Series
+
+￭ 特点（Features）
+-    体积小，重量轻                            - Miniature and light weight
+
+-    电性能稳定，可靠度高                         - Stable electrical capability and high Reliability
+
+-    符合 RoHS 指令要求                        - Compliant with RoHS directive
+
+-    符合无卤素要求                            - Halogen free requirement
+
+
+
+￭ 应用（Application）
+-    广泛应用于家电、计算机、通讯、工业自动化及消费类电子产品等领域。
+
+-    Widely used in home appliances, computers, communications, industrial automation and
+
+      consumer electronics etc.
+
+
+
+￭ 产品料号（Parts Number Explanation） 示例：FRC1206F1001TS
+
+     F                RC              1206           F               1001               T             S
+                                                                                                                  特殊码
+    公司               产品别              尺寸            公差               字码                包装别           端电极
+
+             RC: Normal               01005     F:±1%           ±5%：               T: 7 inch reel   S: Sn         Blank:
+
+             Others series refer to   0201      G:±2%           3-digits+blank     Q:10 inch reel   C: Cu         none
+
+             Catalogue                0402      J:±5%           102=1KΩ            R:13 inch reel   A: Au
+
+                                      0603                      1R0=1Ω             B:Bulk
+
+                                      0805                      ±1%&Below：
+
+    FOJAN                             1206                      4-digits
+
+                                      1210                      1001=1KΩ
+
+                                      1218                      1R00=1Ω
+
+                                      1812
+
+                                      2010
+
+                                      2512
+
+                                                                                                                   Special
+Company               Type             Size       Tolerance        Resistance         Packaging     Termination
+                                                                                                                    Case
+
+
+
+
+FJ-JS-3001-V3.0/2026.04.25                                 2                                            www.fosan.vip
+  FRC-Series
+  Thick Film Chip Resistor Product Specifications
+  FRC 系列厚膜片式电阻器规格书
+
+
+￭ 电阻结构（Construction）
+
+
+                                                                          结构                           主要材料
+                                                NO.
+                                                                     Construction                 Major material
+
+                                                 1        陶瓷基板 Ceramic substrate                三氧化二铝 Al2O3
+
+                                                 2        导电层 Conductive layer（Top）             银 Ag
+
+                                                 3        侧电极 Side conductive layer             镍铬合金 Ni-Cr
+
+                                                 4        阻体层 Resistive layer                   氧化钌 RuO2
+
+                                                 5        内保护层 Inner protective layer           玻璃 Glass
+
+                                                 6        外保护层 Outer Protective layer           环氧树脂 Epoxy
+
+                                                 7        文字 Marking                            环氧树脂 Epoxy
+
+                                                 8        镍电极 Ni plating layer                  镍 Ni
+
+                                                 9        锡电极 Sn plating layer                  锡 Sn
+
+                                                10        导电层 Conductive layer（Back）            银 Ag
+
+
+
+
+ ￭ 尺寸 (Dimension):
+
+
+
+   尺寸 Dimension
+
+                                                                                                单位（unit）： mm
+
+
+
+    型别（Type）
+                                L           W                    H                     T1                  T2
+   英制          公制
+01005        0402            0.40±0.02   0.20±0.02            0.13±0.03             0.10±0.03          0.10±0.03
+
+ 0201        0603            0.60±0.03   0.30±0.03            0.23±0.03             0.10±0.05          0.15±0.05
+
+ 0402        1005            1.00±0.05   0.50±0.05            0.35±0.05             0.20±0.10          0.25±0.10
+
+ 0603        1608            1.60±0.10   0.80±0.10            0.45±0.10             0.25±0.15          0.25±0.15
+
+ 0805        2012            2.00±0.10   1.25±0.10            0.50±0.10             0.35±0.20          0.40±0.20
+
+ 1206        3216            3.10±0.10   1.60±0.10            0.55±0.10             0.45±0.20          0.45±0.20
+
+ 1210        3225            3.10±0.10   2.50±0.15            0.55±0.10             0.35±0.15          0.50±0.20
+
+ 1812        4532            4.50±0.20   3.10±0.20            0.55±0.10             0.55±0.20          0.70±0.20
+
+ 2010        5025            5.00±0.10   2.50±0.15            0.55±0.10             0.45±0.15          0.50±0.20
+
+ 2512        6432            6.35±0.10   3.10±0.15            0.55±0.10             0.60±0.20          0.90±0.20
+
+
+
+
+FJ-JS-3001-V3.0/2026.04.25                            3                                            www.fosan.vip
+     FRC-Series
+     Thick Film Chip Resistor Product Specifications
+     FRC 系列厚膜片式电阻器规格书
+
+
+￭ 电气特性（Electrical characteristics）
+
+                                                                                                          绝缘耐压
+      型别           70°C 下额定功率                     最大工作电压                    最大过负荷电压
+                                                                                                  Dielectric Withstanding
+      Type       Rated Power at 70°C          Max Working Voltage        Max Overload Voltage
+                                                                                                          Voltage
+
+     01005               1/32W                       15V                         30V                       50V
+
+      0201               1/20W                       25V                         50V                       50V
+
+      0402               1/16W                       50V                        100V                       300V
+
+      0603               1/10W                       75V                        150V                       300V
+
+      0805               1/8W                        150V                       300V                       500V
+
+      1206               1/4W                        200V                       400V                       500V
+
+      1210               1/2W                        200V                       400V                       500V
+
+      1812               3/4W                        200V                       500V                       500V
+
+      2010               3/4W                        200V                       400V                       500V
+
+      2512                1W                         200V                       400V                       500V
+
+
+
+                    零欧姆阻值              零欧姆额定电流             零欧姆最大电流                            阻值范围
+      型别         Value of Jumper                                                         Resistance Range
+                                       Rated Current       Max Current of
+      Type
+                  ±1%        ±5%        of Jumper             Jumper              1%              2%              5%
+
+     01005                   <50mΩ            0.5A                1A           1Ω-10MΩ          1Ω-10MΩ       1Ω-10MΩ
+
+      0201                   <50mΩ            0.5A                1A           1Ω-10MΩ          1Ω-10MΩ       1Ω-10MΩ
+
+      0402      <30mΩ        <50mΩ            1A                  2.5A         1Ω-10MΩ          1Ω-10MΩ       1Ω-10MΩ
+
+      0603      <30mΩ        <50mΩ            1A                  2.5A         1Ω-10MΩ          1Ω-10MΩ       1Ω-10MΩ
+
+      0805      <30mΩ        <50mΩ            2A                  5A           1Ω-10MΩ          1Ω-10MΩ       1Ω-10MΩ
+
+      1206      <30mΩ        <50mΩ            2A                  10A          1Ω-10MΩ          1Ω-10MΩ       1Ω-10MΩ
+
+      1210      <30mΩ        <50mΩ            2A                  10A          1Ω-10MΩ          1Ω-10MΩ       1Ω-10MΩ
+
+      1812      <30mΩ        <50mΩ            2A                  10A          1Ω-10MΩ          1Ω-10MΩ       1Ω-10MΩ
+
+      2010      <30mΩ        <50mΩ            2A                  10A          1Ω-10MΩ          1Ω-10MΩ       1Ω-10MΩ
+
+      2512      <30mΩ        <50mΩ            2A                  10A          1Ω-10MΩ          1Ω-10MΩ       1Ω-10MΩ
+
+备注（Remark）： 额定电压计算公式（The rated voltage is calculated by the following formula）：
+
+E=     RP
+E：额定电压（Rated Voltage） (V)
+
+P：额定功率（Rated Power ） (W)
+
+R：电阻阻值（Resistance          ） (ohm)
+
+如果计算出的电压超过此型别的最大工作电压，则此型别的最大工作电压为此电阻的额定电压。
+In case the value calculated by the formula exceed the maximum working voltage as above table, the maximum working
+voltage shall be regarded as rated voltage.
+
+
+
+
+FJ-JS-3001-V3.0/2026.04.25                                    4                                           www.fosan.vip
+  FRC-Series
+  Thick Film Chip Resistor Product Specifications
+  FRC 系列厚膜片式电阻器规格书
+
+
+￭ 功率衰减曲线（Derating Curve）
+ 使用温度范围
+ Temperature                 -55℃~+125℃(01005/0201)                               -55℃~+155℃（其它）
+ usage range
+
+                 周围温度若超过 70℃至 125℃之间，功率可照下图曲线                         周围温度若超过 70℃至 155℃之间，功率可照下图曲线予
+                 予以修订                                                 以修订
+ 说明
+                 If the ambient temperature exceeds 70°C to 125°C,    If the ambient temperature exceeds 70°C to 155°C,
+ Describe
+                 the power can be revised according to the curve in   the power can be revised according to the curve
+                 the following figure                                 in the following figure
+
+
+
+
+ 功率衰减
+ 曲线图
+ Power
+ Attenuation
+ Curve
+
+
+
+
+￭ 温度系数（Temperature Coefficient）
+                                                                         产品精度和温漂系数（ppm/°C）
+                                                                   Resistance Tolerance and TCR（ppm/°C）
+    型别 Type          阻值范围 Resistance Range
+                                                            ±1%                      ±2%                   ±5%
+
+                              1Ω≤R＜10Ω                      ±400                    ±400                   ±400
+
+      01005                  10Ω≤R＜100Ω                     ±300                    ±300                   ±300
+
+                             100Ω≤R＜10MΩ                    ±200                    ±200                   ±200
+
+                              1Ω≤R＜10Ω                      ±400                    ±400                   ±400
+
+      0201                   10Ω≤R＜1MΩ                      ±200                    ±200                   ±200
+
+                             1MΩ≤R＜10MΩ                     ±200                    ±200                   ±200
+
+                              1Ω≤R＜10Ω                      ±400                    ±400                   ±400
+
+      0402                   10Ω≤R＜1MΩ                      ±100                    ±100                   ±100
+
+                             1MΩ≤R＜10MΩ                     ±100                    ±100                   ±100
+
+                              1Ω≤R＜10Ω                      ±400                    ±400                   ±400
+   0603/0805
+   1206/1210                 10Ω≤R＜1MΩ                      ±100                    ±100                   ±100
+1812/2010/2512
+                             1MΩ≤R＜10MΩ                     ±100                    ±100                   ±100
+
+
+
+
+FJ-JS-3001-V3.0/2026.04.25                                  5                                          www.fosan.vip
+   FRC-Series
+   Thick Film Chip Resistor Product Specifications
+   FRC 系列厚膜片式电阻器规格书
+
+
+￭ 性能（Performance）
+    内容              测试方法                               测试条件                                       规格
+    Item         Test Methods                      Test Conditions                          Specification
+
+                                   TCR=（R-R0 ）/（t-t0）R0 ×106(ppm)
+                                   R0：电阻在室温下的阻值（resistance at room
+温度系数                               temperature）
+Temperature      JIS C 5201 4.8    R: 电阻在 125℃或-55℃下的阻值（resistance at                 As SEPC
+Coefficient                        125℃ or -55℃）
+                                   t0：室温（room temperature）
+                                   t.测试温度（test temperature 125℃ or -55℃）
+
+                                   加载 2.5 倍的额定电压，时间 5 秒后测量试验前后的
+短时间过负荷
+                                   阻值变化率。                                             1%：±(1.0%+0.05Ω)
+Short-time       JIS C 5201 4.13
+                                   Applied 2.5 times of rated voltage for 5 second.
+overload                                                                              2%，5%：±(2.0%+0.05Ω)
+                                   Measure the variation of resistance.
+
+                                   沾助焊剂后浸入锡炉，锡炉温度 245±5℃，时间 3±
+焊锡性                                0.5 秒。                                             上锡面积>95%
+                 JIS C 5201 4.17
+Solderability                      Dip the terminal in a flux and then dip into a
+                                                                                      Soldered are>95%
+                                   soldering bath at 245±5℃ for 3±0.5sec.
+
+                                   沾助焊剂后浸入锡炉，锡炉温度 260±5℃，时间 10
+抗焊锡热
+                                   ±0.5 秒， 测量试验前后的阻值变化率。
+Resist to
+                 JIS C 5201 4.18   Dip the terminal in a flux and then dip into a     ±(1.00% +0.05Ω)
+soldering
+                                   soldering bath at 260±5℃ for 10±0.5sec.
+heat
+                                   Measure the variation of resistance.
+
+                                   电阻本体上加载绝缘耐压 60±5 秒后，测量绝缘阻抗。
+绝缘电阻
+                                   Applied the dielectric withstanding voltage on
+Insulation       JIS C 5201 4.6                                                       >10GΩ
+                                   the center of body for 60±5seconds. Then
+resistance
+                                   measure insulation resistance.
+
+绝缘耐压                                                                                  无击穿、飞溅及可见机械性损伤
+                                   电阻本体上加载绝缘耐压 60±5 秒。
+Dielectric                                                                            No evidence of flash over,
+                 JIS C 5201 4.7    Applied the dielectric withstanding voltage on
+withstanding                                                                          mechanical damage arcing
+                                   the center of body for60±5seconds.
+voltage                                                                               or insulation breakdown
+
+                                   电阻放入温度循环机中，T1 温度：-55±3℃；T2 温
+温度快速变化                             度：155±3℃.125±3℃，放置 30 分钟，共 300 个循
+Rapid                              环。量测试验前后阻值变化率。
+                                                                                      1%：±(1.0%+0.05Ω)
+temperature      JIS C 5201 4.19   Put specimen in a chamber which temperature
+                                                                                      2%，5%：±(2.0%+0.05Ω)
+changes                            can be T1: -55±3℃; T2: 155±3℃/125±3℃,
+                                   30min, repeated 300 cycles. Measure the
+                                   variation of resistance.
+
+                                   25°C~65°C,90%～100%RH, 2.5 小时； 65°C，
+                                   90%～100%RH, 3 小时；65°C~25°C,80%～
+温湿循环                               100%RH,2.5 小时，10 个循环，24±4 小时后测试。
+                 MIL-STD-202                                                          1%：±(1.0%+0.05Ω)
+Moisture                           25°C~65°C,90%～100%RH, 2.5H; 65°C 90%～
+                 METHOD 106
+resistance                         100%RH, 3H; 65°C~25°C，80%～100%RH, 2.5H,            2%，5%：±(2.0%+0.05Ω)
+
+                                   10 cycles, Measurement at 24±4 hours after test
+                                   conclusion.
+
+
+
+
+FJ-JS-3001-V3.0/2026.04.25                                6                                        www.fosan.vip
+   FRC-Series
+   Thick Film Chip Resistor Product Specifications
+   FRC 系列厚膜片式电阻器规格书
+
+    内容              测试方法                               测试条件                                       规格
+    Item         Test Methods                      Test Conditions                           Specification
+
+                                   电阻焊接在测试板上进行弯折，弯折保持时间 20±1
+                                   秒，1206（含） 以下的尺寸弯曲 5+0.2/0 mm; 1206
+                                   以上的尺寸弯曲 2+0.2/0 mm; 量测试验前后阻值变
+                                   化率
+                                   Specimen shall be mounted on test board, then
+                                   bend the board and maintained for 20±1s. the
+                                   distance of bending is 5+0.2/0 mm for resistors
+                                   which size no larger than 1206 or 2+0.2/0 mm
+                                   which size larger than 1206. Measure the
+                                   variation of resistance.
+                                   测试板（test board） 压头（jig）
+
+
+端子弯曲
+Terminal         JIS C 5201 4.33                                                        ±(1.00%+0.05Ω)
+bending
+
+
+
+
+                                   电阻放入恒温恒湿箱，温度 40±2℃，湿度
+                                   90~95 %RH；通电额定电压 1.5 小时，断电 0.5 小时；
+                                   重复通断电至试验时间 1000 +48/-0 小时。 量测试验
+                                   前后阻值变化率。
+耐湿特性                                                                                    1%：±(1.0%+0.05Ω)
+                 JIS C 5201 4.24   Put the specimen in a chamber at 40±2℃
+Humidity
+                                   temperature and 90%～95% relative humidity,           2%，5%：±(2.0%+0.05Ω)
+
+                                   then applied rated voltage for1.5H "ON" and
+                                   0.5H“OFF” repeatedly till total test time is
+                                   1000+48/-0 H. Measure the variation of resistance.
+
+
+                                   电阻放入恒温箱中，温度 70±2℃，ON TIME:1.5H，
+                                   OFF TIME:0.5H，通电额定电压 1000 +24/-0 小时，量
+                                   测试验前后阻值变化率。
+负荷寿命             JIS C 5201                                                             1%：±(1.0%+0.05Ω)
+                                   Put the specimen in a chamber at 70±2℃
+Load life        4.25.1
+                                   temperature, ON TIME:1.5H, OFF TIME:0.5H, and        2%，5%：±(2.0%+0.05Ω)
+
+                                   applied rated voltage for 1000 +24/-0H. Measure
+                                   the variation of resistance.
+
+
+
+
+FJ-JS-3001-V3.0/2026.04.25                                7                                        www.fosan.vip
+  FRC-Series
+  Thick Film Chip Resistor Product Specifications
+  FRC 系列厚膜片式电阻器规格书
+
+
+￭ 本体标识（Marking on the Resistor's Body）
+
+    1.0201 及 0402 因本体太小，本体上无字码标识
+         For 0201 and 0402 size, no marking on the body due to the                              472=47×102=4.7KΩ
+         small size of the resistor
+    2.公差±5%的产品，以三字码标示，前两位表示阻值的有效数字，最后一
+        位表示 10 的乘幂
+        ±5% tolerance product: the marking is 3 digits, the first 2 digits
+                                                                                                10Ω以下标示：5R6=5.6Ω
+        are significant figures of resistance value and the 3rd one
+                                                                                                Below 10Ω: 5R6=5.6Ω
+        denotes the power number of 10, (10X)
+    3.±0.5%, ±1%, ±2%的产品，以四字码标示，前三 位表示阻值的有
+        效数字，最后一位表示 10 的乘幂
+        ±0.5%, ±1%,±2% tolerance product: the marking is 4 digits, the
+                                                                                                4992=499×102=49.9KΩ
+        first 3 digits are significant figures of resistance value and the 4th
+        one denotes the power number of 10, (10X)
+    4.0603 ±1% E96 系列的标准阻值，因电阻本体太小，采用三位代码标
+                                                                                                100Ω以下标示
+        识。
+                                                                                                6R81=6.81Ω
+        Standard E96 series values of 0603 ±1%: due to the small size of
+                                                                                                Below 100Ω: 6R81=6.81Ω
+        the resistor’s body, use 3digits code to indicate the resistance
+        value.
+    5.所有型别，所有精度零欧姆产品，采用 1 位代码标识，即 0
+        All type and tolerance of Jumper products used 1 digit code to                          0Ω=0
+
+        indicate the value,I.e.0
+
+
+￭ 0603±1% E96 系列电阻值代码 Standard E96 Series Resistance Value Code for 0603 ±1% Marking
+
+  代码          阻值        代码            阻值       代码          阻值           代码       阻值      代码        阻值         代码       阻值
+ Code        Value     Code        Value       Code       Value         Code     Value   Code      Value     Code     Value
+
+   01         100        17           147       33          215          49      316      65        464       81       681
+
+   02         102        18           150       34          221          50      324      66        475       82       698
+
+   03         105        19           154       35          226          51      332      67        487       83       715
+
+   04         107        20           158       36          232          52      340      68        499       84       732
+
+   05         110        21           162       37          237          53      348      69        511       85       750
+
+   06         113        22           165       38          243          54      357      70        523       86       768
+
+   07         115        23           169       39          249          55      365      71        536       87       787
+
+   08         118        24           174       40          255          56      374      72        549       88       806
+
+   09         121        25           178       41          261          57      383      73        562       89       825
+
+   10         124        26           182       42          267          58      392      74        576       90       845
+
+   11         127        27           187       43          274          59      402      75        590       91       866
+
+   12         130        28           191       44          280          60      412      76        604       92       887
+
+   13         133        29           196       45          287          61      422      77        619       93       909
+
+   14         137        30           200       46          294          62      432      78        634       94       931
+
+   15         140        31           205       47          301          63      442      79        649       95       953
+
+   16         143        32           210       48          309          64      453      80        665       96       976
+
+
+
+
+FJ-JS-3001-V3.0/2026.04.25                                          8                                        www.fosan.vip
+  FRC-Series
+  Thick Film Chip Resistor Product Specifications
+  FRC 系列厚膜片式电阻器规格书
+
+
+￭0603±1%标记的倍增码 Multiplier Code for 0603 ±1% Marking
+
+
+  代码 Code               Y          X           A         B         C          D        E         F
+
+  指数 Multiplier       10-2        10-1         100       101      102        103      104       105
+
+
+
+阻值标示如下（So the resistance value are marked as the following examples）
+
+
+
+
+                        10D=124×103=124KΩ                      38Y=243×10-2=2.43Ω
+
+
+
+0603 ±1%的产品，在标准 E24 系列中，但不属于 E96 系列，标示与 5%的字码相同，但是在中间字码
+
+下加一条线（Standard E24 and not belong to E96 series values of 0603 ±1%, the marking is the same as 5%
+
+tolerance but marking as underline）
+
+
+
+
+                             331=33×101=330Ω                    560=56×100=56Ω
+
+
+
+
+FJ-JS-3001-V3.0/2026.04.25                           9                                www.fosan.vip
+   FRC-Series
+   Thick Film Chip Resistor Product Specifications
+   FRC 系列厚膜片式电阻器规格书
+
+
+￭ 焊接 （soldering）
+- 建议回流焊曲线（Recommend reflow soldering profile）
+
+
+
+
+- 建议波峰焊曲线（Recommend wave soldering profile）
+
+
+
+
+- 手工焊温度（hand soldering temperature）
+烙铁温度 350±10℃ 3 秒之内，避免烙铁接触电阻本体
+The iron temperature is 350±10℃, hand soldering time less than 3S. Avoid solder iron tip direct
+touch the components body
+
+
+
+
+FJ-JS-3001-V3.0/2026.04.25                                      10                                www.fosan.vip
+   FRC-Series
+   Thick Film Chip Resistor Product Specifications
+   FRC 系列厚膜片式电阻器规格书
+
+
+ ￭ 包装规格（Tapping Specification）
+
+
+
+
+ －卷盘尺寸（Reel dimension）
+            Type                         Size               Unit           A         B           C          F           E
+
+            01005                7”       10K/15K Reel          mm    178±2.0    60.0±1.0    13.5±0.5    11.4±0.1    9.00±0.3
+
+            0201                 7”       10K/15K Reel          mm    178±2.0    60.0±1.0    13.5±0.5    11.4±0.1    9.00±0.3
+
+            0402                 7”       10K/Reel              mm    178±2.0    60.0±1.0    13.5±0.5    11.4±0.1    9.00±0.3
+
+            0402                13”       40K/50K Reel          mm    330±2.0    100.0±1.0   13.5±0.5    11.4±0.1    9.00±0.3
+
+   0603/0805/1206/1210           7”       5K/Reel               mm    178±2.0    60.0±1.0    13.5±0.5    11.4±0.1    9.00±0.3
+
+        0603/0805/1206          10”       10K/Reel              mm    254±2.0    100.0±1.0   13.5±0.5    11.4±0.1    9.00±0.3
+
+        0603/0805/1206          13”       20K/Reel              mm    330±2.0    100.0±1.0   13.5±0.5    11.4±0.1    9.00±0.3
+
+        1812/2010/2512           7”       4K/Reel               mm    178±2.0    60.0±1.0    13.5±0.5    15.4±1.0    13.0±0.3
+
+
+
+ －包装尺寸（packing dimension）
+
+  纸带编带 Paper Taping
+
+
+
+
+ Unit: mm
+
+Dim           A             B            D             F              P0           P1           P2           W              T
+
+01005      0.25±0.02     0.45±0.02    1.50±0.10     3.50±0.05     4.00±0.10     2.00±0.10    2.00±0.05   8.00±0.20     0.31±0.03
+
+0201       0.38±0.05     0.68±0.05    1.50±0.10     3.50±0.05     4.00±0.10     2.00±0.10    2.00±0.05   8.00±0.20     0.42±0.03
+
+0402       0.65±0.10     1.15±0.10    1.50±0.10     3.50±0.05     4.00±0.10     2.00±0.10    2.00±0.05   8.00±0.20     0.42±0.03
+
+0603       1.10±0.10     1.90±0.10    1.50±0.10     3.50±0.05     4.00±0.10     4.00±0.10    2.00±0.05   8.00±0.20     0.60±0.03
+
+0805       1.65±0.20     2.40±0.20    1.50±0.10     3.50±0.05     4.00±0.10     4.00±0.10    2.00±0.05   8.00±0.20     0.75±0.05
+
+1206       1.90±0.20     3.50±0.20    1.50±0.10     3.50±0.05     4.00±0.10     4.00±0.10    2.00±0.05   8.00±0.20     0.75±0.05
+
+1210       2.80±0.20     3.50±0.20    1.50±0.10     3.50±0.05     4.00±0.10     4.00±0.10    2.00±0.05   8.00±0.20     0.75±0.05
+
+
+
+
+ FJ-JS-3001-V3.0/2026.04.25                                      11                                          www.fosan.vip
+   FRC-Series
+   Thick Film Chip Resistor Product Specifications
+   FRC 系列厚膜片式电阻器规格书
+
+塑料带编 Embossed Taping
+
+
+
+
+Unit: mm
+
+Dim        B0            A0             D0               F            P0              P       P1           W             K0
+
+1812   3.52±0.10      5.10±0.10       1.50±0.10     5.50±0.05   4.00±0.10      4.00±0.10   2.00±0.05    12.0±0.10     0.78±0.10
+
+2010   2.75±0.10      5.40±0.10       1.50±0.10     5.50±0.05   4.00±0.10      4.00±0.10   2.00±0.05    12.0±0.10     0.75±0.10
+
+2512   3.35±0.10      6.70±0.10       1.50±0.10     5.50±0.05   4.00±0.10      4.00±0.10   2.00±0.05    12.0±0.10     0.75±0.10
+
+
+￭ 上胶带剥离力测试（Peel force of top cover tape）
+上胶带以 300mm/分钟的速度，沿 165〜180 度角的方向进行剥离，如下图所示。纸带的剥离力范围为 10g〜70g;
+载带的剥离力范围 30〜100g。
+The top cover tape is pulled at a speed of 300 mm/min with the angle between the tape during peel and the direction of
+unreeling maintained at 165 to 180 degree as following picture. The peel force of paper carrier tape shall be 0.1N to 0.7N(10
+to 70 g), the peel force of plastic carrier tape shall be 0.3N to 1N (30 to 100 g).
+
+
+
+
+￭ 建议焊盘尺寸（Recommended Pad Dimensions）
+
+        Land pattern                       Dimensions（mm）
+
+Type                              A                  B                 C
+
+        01005               0.15~0.20             0.50~0.70       0.20~0.25
+
+        0201                0.25~0.30             0.80~1.00       0.30~0.40
+
+        0402                0.50~0.60             1.30~1.60       0.40~0.60
+
+        0603                0.80~1.10             2.00~2.50       0.80~1.00
+
+        0805                1.00~1.40             2.90~3.40       1.00~1.40
+
+        1206                2.00~2.40             4.10~4.60       1.50~1.80
+
+        1210                2.00~2.40             4.10~4.60       2.50~3.00
+
+        1812                2.80~3.30             5.00~6.00       3.00~3.50
+
+        2010                3.40~3.90             5.70~6.50       2.50~3.00
+
+        2512                3.60~4.20             7.60~8.60       3.00~3.50
+
+
+
+
+FJ-JS-3001-V3.0/2026.04.25                                       12                                           www.fosan.vip
+    FRC-Series
+    Thick Film Chip Resistor Product Specifications
+     FRC 系列厚膜片式电阻器规格书
+
+
+￭ 厚膜电阻器使用说明（Chip Resistor Instructions for use）
+
+    本产品在以下特殊环境下应用，性能可能会受到影响：
+    (Application of the products in a special environment can deteriorate product performance)：
+
+
+         1.   高温；
+              High temperature
+         2.   有海风或腐蚀性气体，包括氯气，硫化氢，氨气，二氧化硫，二氧化氮等；
+              Near the sea ,or corrosive gas, such as Cl2,H2S,NH3,SO2,and NO2,etc;
+         3.   各种类型的液体，包括水，油，化学品，有机溶剂的使用；
+              Unverified liquids, such as water,oil,chenical or organic solvent;
+         4.   在用树脂或其他涂层材料密封产品的情况下使用；
+              Unverified resin or paint to cover products;
+         5.   焊接后使用不洁焊剂或使用水或水溶性清洁剂清洗产品
+              Products should be washed with soluble cheaner even if non cleaning flux.
+
+
+
+
+-     储存 / 搬运条件（Storage / Carry conditions）
+
+         1.   储存温度 25±5℃                       Temperature：25±5℃
+         2.   湿度 30%～70%RH                     Humidity：30%～70%RH
+         3.   储存期限：先进先出，2 年                    Storage life：2years FIFO
+         4.   存放和搬运时，请保持盒子的正确方向。严禁跌落在箱体上，否则可能损坏产品电极或本体
+              Please hold box correct orientation when storing and carrying.It is strictly prohibited to fall on the box.
+              otherwise the product electrode or body may be damaged.
+
+
+
+
+FJ-JS-3001-V3.0/2026.04.25                                       13                                             www.fosan.vip
+  FRC-Series
+  Thick Film Chip Resistor Product Specifications
+  FRC 系列厚膜片式电阻器规格书
+
+
+￭ 修订履历（Revision History）
+      版本               修订日期                                   修订内容               版本确认
+     Version        Revision Date                    Revision Description     Version Checked
+
+ FJ-JS-3001-V1.0     2020.12.01     原版 The original version                 魏效振 Xiaozhen Wei
+
+ FJ-JS-3001-V2.0     2025.09.24     版本及格式修订 Version and format revision     魏效振 Xiaozhen Wei
+
+                                    1. 上胶带剥离力由 200 改为 300
+ FJ-JS-3001-V3.0     2026.05.18                                             张莎莎 ShaShaZhang
+                                    2. 增加“建议焊盘尺寸”
+
+
+
+
+FJ-JS-3001-V3.0/2026.04.25                              14                       www.fosan.vip
+

@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="560" viewBox="0 0 960 560">
+<rect width="100%" height="100%" fill="white"/>
+<text x="480" y="30" text-anchor="middle" font-family="sans-serif" font-size="20">Samsung MLCC typical DC-bias curves (maker data)</text>
+<path d="M95 470.0 H900" stroke="#ddd"/>
+<text x="85" y="474.0" text-anchor="end" font-family="sans-serif" font-size="12">-80%</text>
+<path d="M95 425.0 H900" stroke="#ddd"/>
+<text x="85" y="429.0" text-anchor="end" font-family="sans-serif" font-size="12">-70%</text>
+<path d="M95 380.0 H900" stroke="#ddd"/>
+<text x="85" y="384.0" text-anchor="end" font-family="sans-serif" font-size="12">-60%</text>
+<path d="M95 335.0 H900" stroke="#ddd"/>
+<text x="85" y="339.0" text-anchor="end" font-family="sans-serif" font-size="12">-50%</text>
+<path d="M95 290.0 H900" stroke="#ddd"/>
+<text x="85" y="294.0" text-anchor="end" font-family="sans-serif" font-size="12">-40%</text>
+<path d="M95 245.0 H900" stroke="#ddd"/>
+<text x="85" y="249.0" text-anchor="end" font-family="sans-serif" font-size="12">-30%</text>
+<path d="M95 200.0 H900" stroke="#ddd"/>
+<text x="85" y="204.0" text-anchor="end" font-family="sans-serif" font-size="12">-20%</text>
+<path d="M95 155.0 H900" stroke="#ddd"/>
+<text x="85" y="159.0" text-anchor="end" font-family="sans-serif" font-size="12">-10%</text>
+<path d="M95 110.0 H900" stroke="#ddd"/>
+<text x="85" y="114.0" text-anchor="end" font-family="sans-serif" font-size="12">0%</text>
+<path d="M95 65.0 H900" stroke="#ddd"/>
+<text x="85" y="69.0" text-anchor="end" font-family="sans-serif" font-size="12">10%</text>
+<path d="M95.0 65 V470" stroke="#eee"/>
+<text x="95.0" y="492" text-anchor="middle" font-family="sans-serif" font-size="12">0</text>
+<path d="M256.0 65 V470" stroke="#eee"/>
+<text x="256.0" y="492" text-anchor="middle" font-family="sans-serif" font-size="12">5</text>
+<path d="M417.0 65 V470" stroke="#eee"/>
+<text x="417.0" y="492" text-anchor="middle" font-family="sans-serif" font-size="12">10</text>
+<path d="M578.0 65 V470" stroke="#eee"/>
+<text x="578.0" y="492" text-anchor="middle" font-family="sans-serif" font-size="12">15</text>
+<path d="M739.0 65 V470" stroke="#eee"/>
+<text x="739.0" y="492" text-anchor="middle" font-family="sans-serif" font-size="12">20</text>
+<path d="M900.0 65 V470" stroke="#eee"/>
+<text x="900.0" y="492" text-anchor="middle" font-family="sans-serif" font-size="12">25</text>
+<path d="M95.0 110.0 L98.2 107.9 L101.4 105.6 L104.7 103.2 L107.9 100.7 L111.1 98.3 L114.3 96.0 L117.5 94.0 L120.8 92.4 L124.0 91.3 L127.2 90.8 L130.4 90.8 L133.6 91.4 L136.9 92.4 L140.1 93.7 L143.3 95.3 L146.5 97.2 L149.7 99.3 L153.0 101.4 L156.2 103.6 L159.4 105.8 L162.6 108.0 L165.8 110.4 L169.1 112.9 L172.3 115.6 L175.5 118.4 L178.7 121.3 L181.9 124.3 L185.2 127.3 L188.4 130.3 L191.6 133.4 L194.8 136.5 L198.0 139.7 L201.3 143.0 L204.5 146.4 L207.7 149.8 L210.9 153.2 L214.1 156.7 L217.4 160.1 L220.6 163.6 L223.8 167.1 L227.0 170.5 L230.1 173.9 L233.2 177.3 L236.2 180.6 L239.3 184.1 L242.4 187.5 L245.6 191.1 L248.9 194.7 L252.4 198.5 L256.0 202.3 L259.7 206.4 L263.5 210.5 L267.4 214.7 L271.4 219.0 L275.5 223.3 L279.7 227.8 L284.1 232.3 L288.5 236.9 L293.1 241.5 L297.9 246.2 L302.8 251.0 L307.8 255.9 L313.0 260.9 L318.4 266.0 L323.8 271.2 L329.4 276.3 L335.1 281.5 L340.8 286.6 L346.7 291.6 L352.6 296.5 L358.1 301.2 L362.8 305.6 L367.2 309.7 L371.5 313.8 L376.1 318.0 L381.5 322.3 L387.9 326.9 L395.7 331.9 L405.3 337.5 L417.0 343.7 L430.7 350.8 L445.9 358.8 L462.5 367.4 L480.4 376.5 L499.5 385.8 L519.8 395.2 L541.1 404.4 L563.3 413.2 L586.4 421.4 L610.2 428.8 L635.3 435.4 L662.0 441.6 L690.0 447.2 L719.2 452.6 L840.5 472.4 L749.1 457.7 L779.4 462.6 L810.0 467.5 L870.6 477.4 L900.0 482.7" fill="none" stroke="#1565c0" stroke-width="2"/>
+<text x="95" y="520" font-family="sans-serif" font-size="13" fill="#1565c0">CL32B226KAJNNNE</text>
+<path d="M95.0 110.0 L96.6 110.1 L98.2 110.2 L99.8 110.3 L101.4 110.3 L103.0 110.4 L104.7 110.5 L106.3 110.6 L107.9 110.8 L109.5 111.0 L111.1 111.3 L112.6 111.5 L114.1 111.4 L115.4 111.2 L116.8 111.1 L118.1 111.0 L119.6 111.2 L121.2 111.7 L122.9 112.7 L124.9 114.2 L127.2 116.5 L129.7 119.3 L132.5 122.6 L135.5 126.4 L138.7 130.6 L142.0 135.2 L145.4 140.2 L148.9 145.5 L152.4 151.1 L155.9 157.0 L159.4 163.3 L163.0 170.0 L166.7 177.6 L170.5 185.7 L174.3 194.2 L178.2 202.9 L182.1 211.7 L185.9 220.2 L189.6 228.5 L193.1 236.2 L196.4 243.3 L199.5 249.7 L202.4 255.6 L205.2 261.2 L207.8 266.4 L210.4 271.5 L213.0 276.4 L215.5 281.2 L218.2 285.9 L220.9 290.8 L223.8 295.7 L226.8 300.8 L229.8 305.8 L232.8 310.7 L235.9 315.6 L239.0 320.5 L242.2 325.3 L245.5 330.1 L248.9 334.9 L252.4 339.6 L256.0 344.3 L259.7 349.1 L263.5 353.8 L267.4 358.4 L271.4 363.1 L275.5 367.7 L279.7 372.3 L284.1 376.8 L288.5 381.3 L293.1 385.7 L297.9 390.0 L302.8 394.2 L307.8 398.5 L313.0 402.7 L318.4 406.8 L323.8 410.9 L329.4 414.9 L335.1 418.8 L340.8 422.6 L346.7 426.3 L352.6 429.8 L358.1 433.2 L362.8 436.3 L367.2 439.2 L371.5 442.0 L376.1 444.8 L381.5 447.5 L387.9 450.4 L395.7 453.4 L405.3 456.6 L417.0 460.1" fill="none" stroke="#d84315" stroke-width="2"/>
+<text x="355" y="536" font-family="sans-serif" font-size="13" fill="#d84315">CL21B106KPQNNNE</text>
+<path d="M95.0 110.0 L96.6 109.9 L98.2 109.7 L99.8 109.6 L101.4 109.4 L103.0 109.3 L104.7 109.2 L106.3 109.0 L107.9 108.9 L109.5 108.7 L111.1 108.5 L112.6 108.4 L114.1 108.2 L115.4 108.0 L116.8 107.7 L118.1 107.5 L119.6 107.3 L121.2 107.1 L122.9 106.9 L124.9 106.8 L127.2 106.6 L129.7 106.5 L132.5 106.4 L135.5 106.3 L138.7 106.1 L142.0 106.0 L145.4 106.0 L148.9 105.9 L152.4 106.0 L155.9 106.0 L159.4 106.2 L163.0 106.4 L166.7 106.7 L170.5 107.0 L174.3 107.4 L178.2 107.9 L182.1 108.3 L185.9 108.8 L189.6 109.3 L193.1 109.8 L196.4 110.2 L199.5 110.6 L202.4 111.1 L205.2 111.5 L207.8 111.9 L210.4 112.4 L213.0 112.8 L215.5 113.3 L218.2 113.8 L220.9 114.3 L223.8 114.8 L226.8 115.4 L229.8 115.9 L232.8 116.5 L235.9 117.1 L239.0 117.7 L242.2 118.3 L245.5 119.0 L248.9 119.7 L252.4 120.4 L256.0 121.1 L259.7 121.9 L263.5 122.7 L267.4 123.6 L271.4 124.4 L275.5 125.3 L279.7 126.2 L284.1 127.2 L288.5 128.2 L293.1 129.2 L297.9 130.3 L302.8 131.4 L307.8 132.6 L313.0 133.8 L318.4 135.0 L323.8 136.3 L329.4 137.7 L335.1 139.0 L340.8 140.4 L346.7 141.8 L352.6 143.2 L358.1 144.6 L362.8 145.7 L367.2 146.7 L371.5 147.8 L376.1 148.9 L381.5 150.2 L387.9 151.8 L395.7 153.8 L405.3 156.2 L417.0 159.3 L430.7 162.8 L445.9 166.8 L462.5 171.2 L480.4 175.9 L499.5 180.9 L519.8 186.3 L541.1 191.9 L563.3 197.8 L586.4 203.9 L610.2 210.2 L635.1 216.9 L661.5 224.1 L689.0 231.6 L717.6 239.4 L747.1 247.4 L777.1 255.5 L807.7 263.7 L838.4 271.7 L869.3 279.6 L900.0 287.2" fill="none" stroke="#2e7d32" stroke-width="2"/>
+<text x="615" y="552" font-family="sans-serif" font-size="13" fill="#2e7d32">CL21B105KBFNNNE</text>
+<text x="497.5" y="518" text-anchor="middle" font-family="sans-serif" font-size="13">DC bias (V)</text>
+<text transform="translate(25 270) rotate(-90)" text-anchor="middle" font-family="sans-serif" font-size="13">Typical ΔC (%)</text>
+<text x="480" y="555" text-anchor="middle" font-family="sans-serif" font-size="10">Typical reference curves; not guaranteed minimum capacitance. C28323 curve extracted from Samsung official product page.</text>
+</svg>

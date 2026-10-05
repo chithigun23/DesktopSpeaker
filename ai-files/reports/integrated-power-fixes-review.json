@@ -1,0 +1,70 @@
+{
+  "retained_pin_groups_preserved_excluding_intended_replacement_and_power_split": true,
+  "checks": {
+    "efuse_input": true,
+    "efuse_output_charger": true,
+    "ovp_divider": true,
+    "current_limit": true,
+    "gate_zener_cathode": true,
+    "gate_zener_anode": true,
+    "raw_tvs": true,
+    "gauge_sda": true,
+    "gauge_scl": true,
+    "gauge_alert": true,
+    "gauge_bat_supply": true,
+    "ground_configuration": true,
+    "SHDN_intentionally_NC": true
+  },
+  "model_links": {
+    "TS5A3167DBVR": {
+      "paths": [
+        "${KIPRJMOD}/kicad-library/3d/TS5A3167DBVR.step"
+      ],
+      "files_present": true,
+      "has_model": true
+    },
+    "TVS2200DRVR": {
+      "paths": [
+        "${KIPRJMOD}/kicad-library/3d/TVS2200DRVR.step"
+      ],
+      "files_present": true,
+      "has_model": true
+    },
+    "BZT52C12-7-F": {
+      "paths": [
+        "${KIPRJMOD}/kicad-library/3d/BZT52C12-7-F.step"
+      ],
+      "files_present": true,
+      "has_model": true
+    },
+    "SMA6J10A": {
+      "paths": [
+        "${KIPRJMOD}/kicad-library/3d/SMA6J10A.step"
+      ],
+      "files_present": true,
+      "has_model": true
+    },
+    "TPS26600PWPR": {
+      "paths": [],
+      "files_present": true,
+      "has_model": false
+    },
+    "PD_R_1206": {
+      "paths": [
+        "${KIPRJMOD}/kicad-library/3d/PD_R_1206.step"
+      ],
+      "files_present": true,
+      "has_model": true
+    }
+  },
+  "open_models": [
+    "TPS26600PWPR exact PWP0016A thermal-pad geometry"
+  ],
+  "qualification_open": [
+    "PD transition/overshoot and raw TVS maximum-clamp margin",
+    "efuse cable-drop,thermal,inrush/effective-capacitance",
+    "gauge powered-off leakage and BAT brownout",
+    "final passive MPNs and BOM reconciliation"
+  ],
+  "ERC_run": false
+}

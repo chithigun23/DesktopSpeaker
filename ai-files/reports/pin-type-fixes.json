@@ -1,0 +1,46 @@
+{
+  "roles": {
+    "Battery_Charger.kicad_sch": {
+      "1": "power_in",
+      "2": "bidirectional",
+      "3": "bidirectional",
+      "4": "open_collector",
+      "5": "input",
+      "6": "bidirectional",
+      "7": "open_collector",
+      "8": "input",
+      "9": "input",
+      "10": "input",
+      "11": "input",
+      "12": "input",
+      "13": "power_in",
+      "14": "power_in",
+      "15": "power_out",
+      "16": "power_out",
+      "17": "power_in",
+      "18": "power_in",
+      "19": "power_out",
+      "20": "power_out",
+      "21": "passive",
+      "22": "power_out",
+      "23": "power_out",
+      "24": "open_collector",
+      "25": "power_in"
+    },
+    "Fuel_Gauge_Power.kicad_sch": {
+      "1": "power_in",
+      "2": "no_connect",
+      "3": "power_in",
+      "4": "power_in",
+      "5": "open_collector",
+      "6": "input",
+      "7": "input",
+      "8": "bidirectional",
+      "9": "power_in"
+    }
+  },
+  "common_bq_pads": "Native stacks13-14,15-16,17-18,19-20; redundant terminal stubs removed",
+  "physical_connectivity_review_pending": false,
+  "physical_connectivity_result": "Retained non-logic physical pin groups match before-review-fixes.xml; codec rail replacement independently in progress.",
+  "BTST_note": "Floating bootstrap node, not an external DC supply input."
+}

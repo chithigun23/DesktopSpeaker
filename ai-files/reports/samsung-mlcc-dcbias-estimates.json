@@ -1,0 +1,1276 @@
+{
+  "title": "Samsung typical DC-bias curve extraction for selected capacitor candidates",
+  "checked_date": "2026-10-05",
+  "source_note": "Point data copied from embedded exact-family charts on Samsung Electro-Mechanics official product pages. Values are typical curve references, not guaranteed minimums.",
+  "parts": [
+    {
+      "reference": "C101",
+      "mpn": "CL32B226KAJNNNE",
+      "manufacturer_page": "https://product.samsungsem.com/mlcc/CL32B226KAJNNN.do",
+      "chart_test_conditions": {
+        "frequency": "120 Hz",
+        "ac_test": "0.5 Vrms",
+        "dc_bias_v": 9,
+        "temperature_c": 25
+      },
+      "curve_metric": "Delta C (%) vs zero-bias initial capacitance",
+      "typical_curve_at_bias": {
+        "delta_c_percent": -47.7,
+        "retention_percent": 52.3,
+        "nominal_uF": 22,
+        "typical_biased_uF": 11.506
+      },
+      "illustrative_additional_derating": {
+        "initial_tolerance_factor": 0.9,
+        "temperature_factor_assumption": 0.85,
+        "combined_result_uF_before_aging_or_curve_uncertainty": 8.802,
+        "is_guaranteed": false
+      },
+      "curve_points": [
+        {
+          "dc_bias_v": 0.0,
+          "delta_c_percent": 0.0
+        },
+        {
+          "dc_bias_v": 0.1,
+          "delta_c_percent": 0.4611999999999996
+        },
+        {
+          "dc_bias_v": 0.2,
+          "delta_c_percent": 0.9755999999999991
+        },
+        {
+          "dc_bias_v": 0.30000000000000004,
+          "delta_c_percent": 1.5203999999999986
+        },
+        {
+          "dc_bias_v": 0.4,
+          "delta_c_percent": 2.072799999999998
+        },
+        {
+          "dc_bias_v": 0.5,
+          "delta_c_percent": 2.6099999999999977
+        },
+        {
+          "dc_bias_v": 0.6,
+          "delta_c_percent": 3.1091999999999973
+        },
+        {
+          "dc_bias_v": 0.7,
+          "delta_c_percent": 3.5475999999999965
+        },
+        {
+          "dc_bias_v": 0.7999999999999999,
+          "delta_c_percent": 3.9023999999999965
+        },
+        {
+          "dc_bias_v": 0.8999999999999999,
+          "delta_c_percent": 4.150799999999996
+        },
+        {
+          "dc_bias_v": 1.0,
+          "delta_c_percent": 4.269999999999996
+        },
+        {
+          "dc_bias_v": 1.1,
+          "delta_c_percent": 4.257444999999996
+        },
+        {
+          "dc_bias_v": 1.2,
+          "delta_c_percent": 4.135359999999997
+        },
+        {
+          "dc_bias_v": 1.3,
+          "delta_c_percent": 3.9181149999999967
+        },
+        {
+          "dc_bias_v": 1.4,
+          "delta_c_percent": 3.6200799999999975
+        },
+        {
+          "dc_bias_v": 1.5,
+          "delta_c_percent": 3.2556249999999984
+        },
+        {
+          "dc_bias_v": 1.6,
+          "delta_c_percent": 2.8391199999999985
+        },
+        {
+          "dc_bias_v": 1.7,
+          "delta_c_percent": 2.384935
+        },
+        {
+          "dc_bias_v": 1.7999999999999998,
+          "delta_c_percent": 1.9074400000000005
+        },
+        {
+          "dc_bias_v": 1.9,
+          "delta_c_percent": 1.421005000000001
+        },
+        {
+          "dc_bias_v": 2.0,
+          "delta_c_percent": 0.940000000000001
+        },
+        {
+          "dc_bias_v": 2.1,
+          "delta_c_percent": 0.44583500000000154
+        },
+        {
+          "dc_bias_v": 2.2,
+          "delta_c_percent": -0.08671999999999774
+        },
+        {
+          "dc_bias_v": 2.3,
+          "delta_c_percent": -0.6532549999999971
+        },
+        {
+          "dc_bias_v": 2.4,
+          "delta_c_percent": -1.249359999999996
+        },
+        {
+          "dc_bias_v": 2.5,
+          "delta_c_percent": -1.870624999999995
+        },
+        {
+          "dc_bias_v": 2.6,
+          "delta_c_percent": -2.512639999999995
+        },
+        {
+          "dc_bias_v": 2.7,
+          "delta_c_percent": -3.170994999999993
+        },
+        {
+          "dc_bias_v": 2.8,
+          "delta_c_percent": -3.8412799999999927
+        },
+        {
+          "dc_bias_v": 2.9,
+          "delta_c_percent": -4.519084999999993
+        },
+        {
+          "dc_bias_v": 3.0,
+          "delta_c_percent": -5.199999999999994
+        },
+        {
+          "dc_bias_v": 3.1,
+          "delta_c_percent": -5.892109999999995
+        },
+        {
+          "dc_bias_v": 3.2,
+          "delta_c_percent": -6.604479999999996
+        },
+        {
+          "dc_bias_v": 3.3,
+          "delta_c_percent": -7.334169999999998
+        },
+        {
+          "dc_bias_v": 3.4,
+          "delta_c_percent": -8.078240000000001
+        },
+        {
+          "dc_bias_v": 3.5,
+          "delta_c_percent": -8.833750000000002
+        },
+        {
+          "dc_bias_v": 3.6,
+          "delta_c_percent": -9.597760000000005
+        },
+        {
+          "dc_bias_v": 3.7,
+          "delta_c_percent": -10.367330000000006
+        },
+        {
+          "dc_bias_v": 3.8,
+          "delta_c_percent": -11.139520000000006
+        },
+        {
+          "dc_bias_v": 3.9,
+          "delta_c_percent": -11.911390000000006
+        },
+        {
+          "dc_bias_v": 4.0,
+          "delta_c_percent": -12.68000000000001
+        },
+        {
+          "dc_bias_v": 4.098649999999999,
+          "delta_c_percent": -13.440825000000011
+        },
+        {
+          "dc_bias_v": 4.1952,
+          "delta_c_percent": -14.194400000000009
+        },
+        {
+          "dc_bias_v": 4.2905500000000005,
+          "delta_c_percent": -14.94537500000001
+        },
+        {
+          "dc_bias_v": 4.3856,
+          "delta_c_percent": -15.698400000000008
+        },
+        {
+          "dc_bias_v": 4.48125,
+          "delta_c_percent": -16.458125000000006
+        },
+        {
+          "dc_bias_v": 4.578399999999999,
+          "delta_c_percent": -17.229200000000006
+        },
+        {
+          "dc_bias_v": 4.67795,
+          "delta_c_percent": -18.016275000000004
+        },
+        {
+          "dc_bias_v": 4.780799999999999,
+          "delta_c_percent": -18.824000000000005
+        },
+        {
+          "dc_bias_v": 4.88785,
+          "delta_c_percent": -19.657025000000004
+        },
+        {
+          "dc_bias_v": 5.0,
+          "delta_c_percent": -20.52
+        },
+        {
+          "dc_bias_v": 5.11605,
+          "delta_c_percent": -21.411209999999997
+        },
+        {
+          "dc_bias_v": 5.2344,
+          "delta_c_percent": -22.32488
+        },
+        {
+          "dc_bias_v": 5.3553500000000005,
+          "delta_c_percent": -23.259569999999997
+        },
+        {
+          "dc_bias_v": 5.4792,
+          "delta_c_percent": -24.213839999999998
+        },
+        {
+          "dc_bias_v": 5.606249999999999,
+          "delta_c_percent": -25.186249999999998
+        },
+        {
+          "dc_bias_v": 5.7368,
+          "delta_c_percent": -26.175359999999998
+        },
+        {
+          "dc_bias_v": 5.871149999999999,
+          "delta_c_percent": -27.179730000000003
+        },
+        {
+          "dc_bias_v": 6.009600000000001,
+          "delta_c_percent": -28.197919999999996
+        },
+        {
+          "dc_bias_v": 6.15245,
+          "delta_c_percent": -29.228489999999997
+        },
+        {
+          "dc_bias_v": 6.3,
+          "delta_c_percent": -30.27
+        },
+        {
+          "dc_bias_v": 6.452450000000001,
+          "delta_c_percent": -31.333190000000002
+        },
+        {
+          "dc_bias_v": 6.6095999999999995,
+          "delta_c_percent": -32.42552
+        },
+        {
+          "dc_bias_v": 6.77115,
+          "delta_c_percent": -33.54063000000001
+        },
+        {
+          "dc_bias_v": 6.936800000000001,
+          "delta_c_percent": -34.672160000000005
+        },
+        {
+          "dc_bias_v": 7.106249999999999,
+          "delta_c_percent": -35.81375
+        },
+        {
+          "dc_bias_v": 7.279199999999999,
+          "delta_c_percent": -36.95904
+        },
+        {
+          "dc_bias_v": 7.455349999999999,
+          "delta_c_percent": -38.101670000000006
+        },
+        {
+          "dc_bias_v": 7.634399999999999,
+          "delta_c_percent": -39.235279999999996
+        },
+        {
+          "dc_bias_v": 7.816049999999999,
+          "delta_c_percent": -40.35351
+        },
+        {
+          "dc_bias_v": 8.0,
+          "delta_c_percent": -41.45
+        },
+        {
+          "dc_bias_v": 8.16985,
+          "delta_c_percent": -42.48910000000001
+        },
+        {
+          "dc_bias_v": 8.316799999999999,
+          "delta_c_percent": -43.457600000000006
+        },
+        {
+          "dc_bias_v": 8.45195,
+          "delta_c_percent": -44.3828
+        },
+        {
+          "dc_bias_v": 8.5864,
+          "delta_c_percent": -45.29200000000001
+        },
+        {
+          "dc_bias_v": 8.73125,
+          "delta_c_percent": -46.2125
+        },
+        {
+          "dc_bias_v": 8.897599999999999,
+          "delta_c_percent": -47.171600000000005
+        },
+        {
+          "dc_bias_v": 9.096549999999999,
+          "delta_c_percent": -48.1966
+        },
+        {
+          "dc_bias_v": 9.339200000000002,
+          "delta_c_percent": -49.314800000000005
+        },
+        {
+          "dc_bias_v": 9.63665,
+          "delta_c_percent": -50.5535
+        },
+        {
+          "dc_bias_v": 10.0,
+          "delta_c_percent": -51.94
+        },
+        {
+          "dc_bias_v": 10.4245,
+          "delta_c_percent": -53.52053499999999
+        },
+        {
+          "dc_bias_v": 10.896,
+          "delta_c_percent": -55.29248
+        },
+        {
+          "dc_bias_v": 11.411499999999998,
+          "delta_c_percent": -57.209845
+        },
+        {
+          "dc_bias_v": 11.968,
+          "delta_c_percent": -59.226639999999996
+        },
+        {
+          "dc_bias_v": 12.5625,
+          "delta_c_percent": -61.29687499999999
+        },
+        {
+          "dc_bias_v": 13.192,
+          "delta_c_percent": -63.37456
+        },
+        {
+          "dc_bias_v": 13.8535,
+          "delta_c_percent": -65.41370500000001
+        },
+        {
+          "dc_bias_v": 14.543999999999999,
+          "delta_c_percent": -67.36832000000001
+        },
+        {
+          "dc_bias_v": 15.2605,
+          "delta_c_percent": -69.192415
+        },
+        {
+          "dc_bias_v": 16.0,
+          "delta_c_percent": -70.84
+        },
+        {
+          "dc_bias_v": 16.7785,
+          "delta_c_percent": -72.31826000000001
+        },
+        {
+          "dc_bias_v": 17.608,
+          "delta_c_percent": -73.67888
+        },
+        {
+          "dc_bias_v": 18.479499999999998,
+          "delta_c_percent": -74.94262
+        },
+        {
+          "dc_bias_v": 19.384,
+          "delta_c_percent": -76.13024
+        },
+        {
+          "dc_bias_v": 23.151999999999997,
+          "delta_c_percent": -80.53472
+        },
+        {
+          "dc_bias_v": 20.3125,
+          "delta_c_percent": -77.2625
+        },
+        {
+          "dc_bias_v": 21.255999999999997,
+          "delta_c_percent": -78.36016
+        },
+        {
+          "dc_bias_v": 22.2055,
+          "delta_c_percent": -79.44397999999998
+        },
+        {
+          "dc_bias_v": 24.0865,
+          "delta_c_percent": -81.65313999999998
+        },
+        {
+          "dc_bias_v": 25.0,
+          "delta_c_percent": -82.82
+        }
+      ]
+    },
+    {
+      "reference": "C102",
+      "mpn": "CL21B106KPQNNNE",
+      "manufacturer_page": "https://product.samsungsem.com/mlcc/CL21B106KPQNNN.do",
+      "chart_test_conditions": {
+        "frequency": "1 kHz",
+        "ac_test": "1 Vrms",
+        "dc_bias_v": 6,
+        "temperature_c": 25
+      },
+      "curve_metric": "Delta C (%) vs zero-bias initial capacitance",
+      "typical_curve_at_bias": {
+        "delta_c_percent": -60.21,
+        "retention_percent": 39.79,
+        "nominal_uF": 10,
+        "typical_biased_uF": 3.979
+      },
+      "illustrative_additional_derating": {
+        "initial_tolerance_factor": 0.9,
+        "temperature_factor_assumption": 0.85,
+        "combined_result_uF_before_aging_or_curve_uncertainty": 3.044,
+        "is_guaranteed": false
+      },
+      "curve_points": [
+        {
+          "dc_bias_v": 0.0,
+          "delta_c_percent": 0.0
+        },
+        {
+          "dc_bias_v": 0.05,
+          "delta_c_percent": -0.024768335653315106
+        },
+        {
+          "dc_bias_v": 0.1,
+          "delta_c_percent": -0.04350290185996993
+        },
+        {
+          "dc_bias_v": 0.15000000000000002,
+          "delta_c_percent": -0.05878959981139032
+        },
+        {
+          "dc_bias_v": 0.2,
+          "delta_c_percent": -0.07321433069900207
+        },
+        {
+          "dc_bias_v": 0.25,
+          "delta_c_percent": -0.08936299571423108
+        },
+        {
+          "dc_bias_v": 0.3,
+          "delta_c_percent": -0.10982149604850312
+        },
+        {
+          "dc_bias_v": 0.35,
+          "delta_c_percent": -0.13717573289324406
+        },
+        {
+          "dc_bias_v": 0.39999999999999997,
+          "delta_c_percent": -0.1740116074398797
+        },
+        {
+          "dc_bias_v": 0.44999999999999996,
+          "delta_c_percent": -0.2229150208798359
+        },
+        {
+          "dc_bias_v": 0.5,
+          "delta_c_percent": -0.2864718744045386
+        },
+        {
+          "dc_bias_v": 0.5477500000000001,
+          "delta_c_percent": -0.3247693045548152
+        },
+        {
+          "dc_bias_v": 0.592,
+          "delta_c_percent": -0.31295182298816543
+        },
+        {
+          "dc_bias_v": 0.6342500000000001,
+          "delta_c_percent": -0.2761913935710231
+        },
+        {
+          "dc_bias_v": 0.6759999999999999,
+          "delta_c_percent": -0.2396599801698222
+        },
+        {
+          "dc_bias_v": 0.71875,
+          "delta_c_percent": -0.2285295466509969
+        },
+        {
+          "dc_bias_v": 0.764,
+          "delta_c_percent": -0.2679720568809809
+        },
+        {
+          "dc_bias_v": 0.81325,
+          "delta_c_percent": -0.3831594747262077
+        },
+        {
+          "dc_bias_v": 0.868,
+          "delta_c_percent": -0.5992637640531124
+        },
+        {
+          "dc_bias_v": 0.92975,
+          "delta_c_percent": -0.9414568887281276
+        },
+        {
+          "dc_bias_v": 1.0,
+          "delta_c_percent": -1.4349108126176886
+        },
+        {
+          "dc_bias_v": 1.079075,
+          "delta_c_percent": -2.0670797954972038
+        },
+        {
+          "dc_bias_v": 1.1655999999999997,
+          "delta_c_percent": -2.804889722861893
+        },
+        {
+          "dc_bias_v": 1.2585250000000001,
+          "delta_c_percent": -3.6427199971579136
+        },
+        {
+          "dc_bias_v": 1.3568,
+          "delta_c_percent": -4.574950020831414
+        },
+        {
+          "dc_bias_v": 1.4593749999999999,
+          "delta_c_percent": -5.595959196328549
+        },
+        {
+          "dc_bias_v": 1.5652,
+          "delta_c_percent": -6.7001269260954714
+        },
+        {
+          "dc_bias_v": 1.673225,
+          "delta_c_percent": -7.881832612578336
+        },
+        {
+          "dc_bias_v": 1.7824000000000002,
+          "delta_c_percent": -9.13545565822329
+        },
+        {
+          "dc_bias_v": 1.8916749999999996,
+          "delta_c_percent": -10.455375465476493
+        },
+        {
+          "dc_bias_v": 2.0,
+          "delta_c_percent": -11.835971436784094
+        },
+        {
+          "dc_bias_v": 2.110275,
+          "delta_c_percent": -13.342667789515913
+        },
+        {
+          "dc_bias_v": 2.2252,
+          "delta_c_percent": -15.017640078933251
+        },
+        {
+          "dc_bias_v": 2.343425,
+          "delta_c_percent": -16.820394714319473
+        },
+        {
+          "dc_bias_v": 2.4636,
+          "delta_c_percent": -18.710438104957944
+        },
+        {
+          "dc_bias_v": 2.5843749999999996,
+          "delta_c_percent": -20.647276660132043
+        },
+        {
+          "dc_bias_v": 2.7044,
+          "delta_c_percent": -22.59041678912513
+        },
+        {
+          "dc_bias_v": 2.8223249999999998,
+          "delta_c_percent": -24.499364901220574
+        },
+        {
+          "dc_bias_v": 2.9368,
+          "delta_c_percent": -26.33362740570174
+        },
+        {
+          "dc_bias_v": 3.046475,
+          "delta_c_percent": -28.052710711852
+        },
+        {
+          "dc_bias_v": 3.15,
+          "delta_c_percent": -29.61612122895472
+        },
+        {
+          "dc_bias_v": 3.2464749999999998,
+          "delta_c_percent": -31.033951470954015
+        },
+        {
+          "dc_bias_v": 3.3367999999999998,
+          "delta_c_percent": -32.35380174337681
+        },
+        {
+          "dc_bias_v": 3.4223250000000003,
+          "delta_c_percent": -33.59144014288073
+        },
+        {
+          "dc_bias_v": 3.5044,
+          "delta_c_percent": -34.762634766123384
+        },
+        {
+          "dc_bias_v": 3.5843749999999996,
+          "delta_c_percent": -35.883153709762375
+        },
+        {
+          "dc_bias_v": 3.6636,
+          "delta_c_percent": -36.968765070455326
+        },
+        {
+          "dc_bias_v": 3.743425,
+          "delta_c_percent": -38.035236944859854
+        },
+        {
+          "dc_bias_v": 3.8251999999999997,
+          "delta_c_percent": -39.09833742963357
+        },
+        {
+          "dc_bias_v": 3.9102749999999995,
+          "delta_c_percent": -40.17383462143407
+        },
+        {
+          "dc_bias_v": 4.0,
+          "delta_c_percent": -41.27749661691899
+        },
+        {
+          "dc_bias_v": 4.092575,
+          "delta_c_percent": -42.39525086474461
+        },
+        {
+          "dc_bias_v": 4.1856,
+          "delta_c_percent": -43.502927180593574
+        },
+        {
+          "dc_bias_v": 4.279525,
+          "delta_c_percent": -44.601147211663026
+        },
+        {
+          "dc_bias_v": 4.3748000000000005,
+          "delta_c_percent": -45.69053260515007
+        },
+        {
+          "dc_bias_v": 4.471875000000001,
+          "delta_c_percent": -46.77170500825185
+        },
+        {
+          "dc_bias_v": 4.571199999999999,
+          "delta_c_percent": -47.84528606816549
+        },
+        {
+          "dc_bias_v": 4.6732249999999995,
+          "delta_c_percent": -48.911897432088125
+        },
+        {
+          "dc_bias_v": 4.7784,
+          "delta_c_percent": -49.972160747216876
+        },
+        {
+          "dc_bias_v": 4.887174999999999,
+          "delta_c_percent": -51.02669766074888
+        },
+        {
+          "dc_bias_v": 5.0,
+          "delta_c_percent": -52.07612981988126
+        },
+        {
+          "dc_bias_v": 5.11605,
+          "delta_c_percent": -53.12277627418625
+        },
+        {
+          "dc_bias_v": 5.2344,
+          "delta_c_percent": -54.16728071336991
+        },
+        {
+          "dc_bias_v": 5.3553500000000005,
+          "delta_c_percent": -55.20775174483014
+        },
+        {
+          "dc_bias_v": 5.4792,
+          "delta_c_percent": -56.24229797596482
+        },
+        {
+          "dc_bias_v": 5.606249999999999,
+          "delta_c_percent": -57.26902801417182
+        },
+        {
+          "dc_bias_v": 5.7368,
+          "delta_c_percent": -58.286050466849055
+        },
+        {
+          "dc_bias_v": 5.871149999999999,
+          "delta_c_percent": -59.29147394139439
+        },
+        {
+          "dc_bias_v": 6.009600000000001,
+          "delta_c_percent": -60.28340704520573
+        },
+        {
+          "dc_bias_v": 6.15245,
+          "delta_c_percent": -61.25995838568093
+        },
+        {
+          "dc_bias_v": 6.3,
+          "delta_c_percent": -62.21923657021791
+        },
+        {
+          "dc_bias_v": 6.452450000000001,
+          "delta_c_percent": -63.16666550936766
+        },
+        {
+          "dc_bias_v": 6.6095999999999995,
+          "delta_c_percent": -64.10721993094963
+        },
+        {
+          "dc_bias_v": 6.77115,
+          "delta_c_percent": -65.03833466826427
+        },
+        {
+          "dc_bias_v": 6.936800000000001,
+          "delta_c_percent": -65.95744455461212
+        },
+        {
+          "dc_bias_v": 7.106249999999999,
+          "delta_c_percent": -66.86198442329368
+        },
+        {
+          "dc_bias_v": 7.279199999999999,
+          "delta_c_percent": -67.74938910760942
+        },
+        {
+          "dc_bias_v": 7.455349999999999,
+          "delta_c_percent": -68.61709344085986
+        },
+        {
+          "dc_bias_v": 7.634399999999999,
+          "delta_c_percent": -69.46253225634547
+        },
+        {
+          "dc_bias_v": 7.816049999999999,
+          "delta_c_percent": -70.28314038736681
+        },
+        {
+          "dc_bias_v": 8.0,
+          "delta_c_percent": -71.07635266722431
+        },
+        {
+          "dc_bias_v": 8.16985,
+          "delta_c_percent": -71.82200911413335
+        },
+        {
+          "dc_bias_v": 8.316799999999999,
+          "delta_c_percent": -72.51156991108714
+        },
+        {
+          "dc_bias_v": 8.45195,
+          "delta_c_percent": -73.1599001385529
+        },
+        {
+          "dc_bias_v": 8.5864,
+          "delta_c_percent": -73.78186487699794
+        },
+        {
+          "dc_bias_v": 8.73125,
+          "delta_c_percent": -74.39232920688954
+        },
+        {
+          "dc_bias_v": 8.897599999999999,
+          "delta_c_percent": -75.00615820869491
+        },
+        {
+          "dc_bias_v": 9.096549999999999,
+          "delta_c_percent": -75.63821696288139
+        },
+        {
+          "dc_bias_v": 9.339200000000002,
+          "delta_c_percent": -76.3033705499162
+        },
+        {
+          "dc_bias_v": 9.63665,
+          "delta_c_percent": -77.01648405026661
+        },
+        {
+          "dc_bias_v": 10.0,
+          "delta_c_percent": -77.79242254439993
+        }
+      ]
+    },
+    {
+      "reference": "C102 alternate",
+      "mpn": "CL21B106KOQNNNE",
+      "manufacturer_page": "https://product.samsungsem.com/mlcc/CL21B106KOQNNN.do",
+      "chart_test_conditions": {
+        "frequency": "1kHz",
+        "ac_test": "1Vrms",
+        "dc_bias_v": 6,
+        "temperature_c": 25
+      },
+      "curve_metric": "Delta C (%) vs zero-bias initial capacitance",
+      "typical_curve_at_bias": {
+        "delta_c_percent": -56.7,
+        "retention_percent": 43.3,
+        "nominal_uF": 10,
+        "typical_biased_uF": 4.33
+      },
+      "illustrative_additional_derating": {
+        "initial_tolerance_factor": 0.9,
+        "temperature_factor_assumption": 0.85,
+        "combined_result_uF_before_aging_or_curve_uncertainty": 3.312,
+        "is_guaranteed": false
+      },
+      "curve_points": [
+        {
+          "dc_bias_v": 0.0,
+          "delta_c_percent": 0.0
+        },
+        {
+          "dc_bias_v": 0.05,
+          "delta_c_percent": -0.0050248481501942365
+        },
+        {
+          "dc_bias_v": 0.1,
+          "delta_c_percent": 0.001830448663021531
+        },
+        {
+          "dc_bias_v": 0.15000000000000002,
+          "delta_c_percent": 0.015474399741043018
+        },
+        {
+          "dc_bias_v": 0.2,
+          "delta_c_percent": 0.030815514385265926
+        },
+        {
+          "dc_bias_v": 0.25,
+          "delta_c_percent": 0.04276230189708599
+        },
+        {
+          "dc_bias_v": 0.3,
+          "delta_c_percent": 0.046223271577898906
+        },
+        {
+          "dc_bias_v": 0.35,
+          "delta_c_percent": 0.03610693272910037
+        },
+        {
+          "dc_bias_v": 0.39999999999999997,
+          "delta_c_percent": 0.007321794652086211
+        },
+        {
+          "dc_bias_v": 0.44999999999999996,
+          "delta_c_percent": -0.04522363335174806
+        },
+        {
+          "dc_bias_v": 0.5,
+          "delta_c_percent": -0.12662084198100668
+        },
+        {
+          "dc_bias_v": 0.5477500000000001,
+          "delta_c_percent": -0.2037059603826014
+        },
+        {
+          "dc_bias_v": 0.592,
+          "delta_c_percent": -0.25277455143219
+        },
+        {
+          "dc_bias_v": 0.6342500000000001,
+          "delta_c_percent": -0.29310725642149554
+        },
+        {
+          "dc_bias_v": 0.6759999999999999,
+          "delta_c_percent": -0.343984716642241
+        },
+        {
+          "dc_bias_v": 0.71875,
+          "delta_c_percent": -0.4246875733861494
+        },
+        {
+          "dc_bias_v": 0.764,
+          "delta_c_percent": -0.5544964679449437
+        },
+        {
+          "dc_bias_v": 0.81325,
+          "delta_c_percent": -0.7526920416103471
+        },
+        {
+          "dc_bias_v": 0.868,
+          "delta_c_percent": -1.0385549356740826
+        },
+        {
+          "dc_bias_v": 0.92975,
+          "delta_c_percent": -1.431365791427873
+        },
+        {
+          "dc_bias_v": 1.0,
+          "delta_c_percent": -1.9504052501634423
+        },
+        {
+          "dc_bias_v": 1.079075,
+          "delta_c_percent": -2.591318871900338
+        },
+        {
+          "dc_bias_v": 1.1655999999999997,
+          "delta_c_percent": -3.3316927841987445
+        },
+        {
+          "dc_bias_v": 1.2585250000000001,
+          "delta_c_percent": -4.163718479661339
+        },
+        {
+          "dc_bias_v": 1.3568,
+          "delta_c_percent": -5.079587450890799
+        },
+        {
+          "dc_bias_v": 1.4593749999999999,
+          "delta_c_percent": -6.071491190489803
+        },
+        {
+          "dc_bias_v": 1.5652,
+          "delta_c_percent": -7.131621191061025
+        },
+        {
+          "dc_bias_v": 1.673225,
+          "delta_c_percent": -8.252168945207144
+        },
+        {
+          "dc_bias_v": 1.7824000000000002,
+          "delta_c_percent": -9.425325945530835
+        },
+        {
+          "dc_bias_v": 1.8916749999999996,
+          "delta_c_percent": -10.643283684634778
+        },
+        {
+          "dc_bias_v": 2.0,
+          "delta_c_percent": -11.89823365512165
+        },
+        {
+          "dc_bias_v": 2.110275,
+          "delta_c_percent": -13.243387758081214
+        },
+        {
+          "dc_bias_v": 2.2252,
+          "delta_c_percent": -14.716405872160562
+        },
+        {
+          "dc_bias_v": 2.343425,
+          "delta_c_percent": -16.286151456298366
+        },
+        {
+          "dc_bias_v": 2.4636,
+          "delta_c_percent": -17.921487969433297
+        },
+        {
+          "dc_bias_v": 2.5843749999999996,
+          "delta_c_percent": -19.591278870504013
+        },
+        {
+          "dc_bias_v": 2.7044,
+          "delta_c_percent": -21.264387618449202
+        },
+        {
+          "dc_bias_v": 2.8223249999999998,
+          "delta_c_percent": -22.909677672207522
+        },
+        {
+          "dc_bias_v": 2.9368,
+          "delta_c_percent": -24.49601249071765
+        },
+        {
+          "dc_bias_v": 3.046475,
+          "delta_c_percent": -25.992255532918247
+        },
+        {
+          "dc_bias_v": 3.15,
+          "delta_c_percent": -27.367270257747993
+        },
+        {
+          "dc_bias_v": 3.2464749999999998,
+          "delta_c_percent": -28.625907560438446
+        },
+        {
+          "dc_bias_v": 3.3367999999999998,
+          "delta_c_percent": -29.803152129070753
+        },
+        {
+          "dc_bias_v": 3.4223250000000003,
+          "delta_c_percent": -30.913068111857935
+        },
+        {
+          "dc_bias_v": 3.5044,
+          "delta_c_percent": -31.969719657013023
+        },
+        {
+          "dc_bias_v": 3.5843749999999996,
+          "delta_c_percent": -32.987170912749036
+        },
+        {
+          "dc_bias_v": 3.6636,
+          "delta_c_percent": -33.979486027279016
+        },
+        {
+          "dc_bias_v": 3.743425,
+          "delta_c_percent": -34.96072914881599
+        },
+        {
+          "dc_bias_v": 3.8251999999999997,
+          "delta_c_percent": -35.94496442557296
+        },
+        {
+          "dc_bias_v": 3.9102749999999995,
+          "delta_c_percent": -36.946256005763
+        },
+        {
+          "dc_bias_v": 4.0,
+          "delta_c_percent": -37.97866803759909
+        },
+        {
+          "dc_bias_v": 4.092575,
+          "delta_c_percent": -39.030060835126335
+        },
+        {
+          "dc_bias_v": 4.1856,
+          "delta_c_percent": -40.07910508577848
+        },
+        {
+          "dc_bias_v": 4.279525,
+          "delta_c_percent": -41.126080497851575
+        },
+        {
+          "dc_bias_v": 4.3748000000000005,
+          "delta_c_percent": -42.171266779641655
+        },
+        {
+          "dc_bias_v": 4.471875000000001,
+          "delta_c_percent": -43.21494363944477
+        },
+        {
+          "dc_bias_v": 4.571199999999999,
+          "delta_c_percent": -44.257390785556964
+        },
+        {
+          "dc_bias_v": 4.6732249999999995,
+          "delta_c_percent": -45.2988879262743
+        },
+        {
+          "dc_bias_v": 4.7784,
+          "delta_c_percent": -46.33971476989279
+        },
+        {
+          "dc_bias_v": 4.887174999999999,
+          "delta_c_percent": -47.38015102470851
+        },
+        {
+          "dc_bias_v": 5.0,
+          "delta_c_percent": -48.420476399017495
+        },
+        {
+          "dc_bias_v": 5.11605,
+          "delta_c_percent": -49.46417345785969
+        },
+        {
+          "dc_bias_v": 5.2344,
+          "delta_c_percent": -50.512886891728066
+        },
+        {
+          "dc_bias_v": 5.3553500000000005,
+          "delta_c_percent": -51.56413959709819
+        },
+        {
+          "dc_bias_v": 5.4792,
+          "delta_c_percent": -52.61545447044561
+        },
+        {
+          "dc_bias_v": 5.606249999999999,
+          "delta_c_percent": -53.6643544082459
+        },
+        {
+          "dc_bias_v": 5.7368,
+          "delta_c_percent": -54.708362306974614
+        },
+        {
+          "dc_bias_v": 5.871149999999999,
+          "delta_c_percent": -55.74500106310731
+        },
+        {
+          "dc_bias_v": 6.009600000000001,
+          "delta_c_percent": -56.77179357311956
+        },
+        {
+          "dc_bias_v": 6.15245,
+          "delta_c_percent": -57.786262733486915
+        },
+        {
+          "dc_bias_v": 6.3,
+          "delta_c_percent": -58.785931440684955
+        },
+        {
+          "dc_bias_v": 6.452450000000001,
+          "delta_c_percent": -59.77799309138914
+        },
+        {
+          "dc_bias_v": 6.6095999999999995,
+          "delta_c_percent": -60.769012865185296
+        },
+        {
+          "dc_bias_v": 7.279199999999999,
+          "delta_c_percent": -64.65428460811009
+        },
+        {
+          "dc_bias_v": 6.77115,
+          "delta_c_percent": -61.755571332914435
+        },
+        {
+          "dc_bias_v": 6.936800000000001,
+          "delta_c_percent": -62.73424906541759
+        },
+        {
+          "dc_bias_v": 7.106249999999999,
+          "delta_c_percent": -63.70162663353581
+        },
+        {
+          "dc_bias_v": 7.455349999999999,
+          "delta_c_percent": -65.58880355998147
+        },
+        {
+          "dc_bias_v": 7.634399999999999,
+          "delta_c_percent": -66.501764059991
+        },
+        {
+          "dc_bias_v": 7.816049999999999,
+          "delta_c_percent": -67.38974667897969
+        },
+        {
+          "dc_bias_v": 8.0,
+          "delta_c_percent": -68.24933198778855
+        },
+        {
+          "dc_bias_v": 8.16985,
+          "delta_c_percent": -69.0583220041001
+        },
+        {
+          "dc_bias_v": 8.316799999999999,
+          "delta_c_percent": -69.80793059019912
+        },
+        {
+          "dc_bias_v": 8.45195,
+          "delta_c_percent": -70.51485608382998
+        },
+        {
+          "dc_bias_v": 8.5864,
+          "delta_c_percent": -71.19579682273717
+        },
+        {
+          "dc_bias_v": 8.73125,
+          "delta_c_percent": -71.86745114466511
+        },
+        {
+          "dc_bias_v": 8.897599999999999,
+          "delta_c_percent": -72.54651738735824
+        },
+        {
+          "dc_bias_v": 9.096549999999999,
+          "delta_c_percent": -73.24969388856097
+        },
+        {
+          "dc_bias_v": 9.339200000000002,
+          "delta_c_percent": -73.99367898601776
+        },
+        {
+          "dc_bias_v": 9.63665,
+          "delta_c_percent": -74.79517101747305
+        },
+        {
+          "dc_bias_v": 10.0,
+          "delta_c_percent": -75.67086832067125
+        },
+        {
+          "dc_bias_v": 10.437999999999999,
+          "delta_c_percent": -76.62271473181134
+        },
+        {
+          "dc_bias_v": 10.944,
+          "delta_c_percent": -77.63447336519482
+        },
+        {
+          "dc_bias_v": 11.505999999999998,
+          "delta_c_percent": -78.6955714757199
+        },
+        {
+          "dc_bias_v": 12.112,
+          "delta_c_percent": -79.79543631828481
+        },
+        {
+          "dc_bias_v": 12.75,
+          "delta_c_percent": -80.92349514778779
+        },
+        {
+          "dc_bias_v": 13.408,
+          "delta_c_percent": -82.06917521912703
+        },
+        {
+          "dc_bias_v": 14.074,
+          "delta_c_percent": -83.22190378720082
+        },
+        {
+          "dc_bias_v": 14.735999999999999,
+          "delta_c_percent": -84.37110810690734
+        },
+        {
+          "dc_bias_v": 15.382,
+          "delta_c_percent": -85.50621543314482
+        },
+        {
+          "dc_bias_v": 16.0,
+          "delta_c_percent": -86.61665302081153
+        }
+      ]
+    }
+  ],
+  "decision_checks": {
+    "C101_BQ25895_suggested_uF": 8.2,
+    "C101_conservative_estimate_uF": 8.802,
+    "C101_margin_uF": 0.602,
+    "C102_assessment": "At 6V, 10V-rated part: approx 3.98uF typical and approx 3.04uF after illustrative 0.90 initial and 0.85 temperature factors. Samsung 16V same-value part only modestly improves these values (approx 4.33uF typical; 3.31uF derated). TI calls for 4.7uF ceramic at REGN, so validate actual need/effective cap before adoption. Installed C102/C109 pair doubles the illustrative value to about6.09uF; this is not a guaranteed minimum.",
+    "C101_estimate": {
+      "typical_biased_uF": 11.506,
+      "after_tolerance_and_temp_factor_uF": 8.802,
+      "TI_suggested_uF": 8.2,
+      "margin_uF": 0.602,
+      "margin_percent_of_suggestion": 7.34,
+      "aging_and_chart_uncertainty_included": false,
+      "parallel_pair_illustrative_uF": 17.604,
+      "installed_refs": [
+        "C101",
+        "C108"
+      ]
+    }
+  }
+}

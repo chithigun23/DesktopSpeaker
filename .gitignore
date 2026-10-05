@@ -1,0 +1,11 @@
+# Local application state and disposable execution dependencies
+__pycache__/
+*.pyc
+node_modules
+*.kicad_prl
+~*.lck
+*.kicad_sch.lck
+*.kicad_pcb.lck
+
+# Local recovery snapshots; reviewed project history is retained in Git
+ai-files/backups/

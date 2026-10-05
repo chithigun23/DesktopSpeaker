@@ -1,0 +1,48 @@
+{
+  "existing_connectivity_preserved": true,
+  "pin_relations": {
+    "SYS_both_regulator_inputs": true,
+    "5V_SW_to_L2": true,
+    "5V_L2_input": true,
+    "5V_out_caps_feedback": true,
+    "5V_FB_divider": true,
+    "5V_EN_pulldown": true,
+    "5V_ground": true,
+    "BT_inductor_L1": true,
+    "BT_inductor_L2": true,
+    "BT_out_caps_divider_bleeder": true,
+    "BT_FB": true,
+    "BT_EN": true,
+    "BT_MODE": true,
+    "BT_AGND_GND": true,
+    "rails_separate": true
+  },
+  "open_models": [],
+  "model_links": {
+    "TPS61023DRLT": {
+      "paths": [
+        "${KIPRJMOD}/kicad-library/3d/TPS61023DRLT.step"
+      ],
+      "files_present": true
+    },
+    "Bourns_SRN6045TA-1R0Y": {
+      "paths": [
+        "${KIPRJMOD}/kicad-library/3d/Bourns_SRN6045TA-1R0Y.step"
+      ],
+      "files_present": true
+    },
+    "TPS63802DLAR": {
+      "paths": [
+        "${KIPRJMOD}/kicad-library/3d/TPS63802DLAR.step"
+      ],
+      "files_present": true
+    },
+    "Coilcraft_XFL4015-471MEC": {
+      "paths": [
+        "${KIPRJMOD}/kicad-library/3d/Coilcraft_XFL4015-471MEC.step"
+      ],
+      "files_present": true
+    }
+  },
+  "model_import_connectivity_preserved": true
+}

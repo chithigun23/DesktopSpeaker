@@ -1,0 +1,155 @@
+                                                                                                                  Spec Sheet
+                                                                                                                                                                                    CERAMIC CAPACITORS
+
+
+
+
+                                               High Value Multilayer Ceramic Capacitors (High dielectric type)
+
+                                                                                             LMK107B7105KA-T
+
+                                                                                                                                                    Features
+                                                                                                                                                    Item Summary
+
+                                                                                                                                                    10V, X7R, 1μF, ±10%, 0603
+
+                                                                                                                                                    Lifecycle Stage
+
+                                                                                                                                                    Mass Production
+
+                                                                                                                                                    Standard packaging quantity (minimum)
+
+                                                                                                                                                    Taping paper 4000pcs
+
+
+
+
+                                           Products characteristics table                                                                           External Dimensions
+                                           CaseSize (EIA/JIS)                                0603/1608                                                       L             1.6mm ±0.10
+
+                                           Rated Voltage (max)                               10V                                                             W             0.8mm ±0.10
+
+                                                                                                                                                             T             0.8mm ±0.10
+                                           Capacitance                                       1μF
+                                                                                                                                                             e             0.35mm ±0.25
+                                           Capacitance Tolerance                             ±10%
+
+                                           Resistance                                        500 MΩμF
+
+                                           Dielectric Loss Tangent                           5%MAX
+
+                                           Temperature Characteristics (EIA/JIS)             X7R/-
+
+                                           Temperature Range (EIA/JIS)                       -55 to +125℃/-
+
+                                           Capacitance Change (EIA/JIS)                      ±15/-%
+
+                                           RoHS Compliance                                   Yes
+
+                                           Halogen Free                                      Yes
+
+                                           Soldering Method                                  Reflow
+
+
+
+
+                                                                                                                                                                                            2014.10.21
+                                   The data is reference only. Electrical characteristics vary depending on environment or measurement condition.
+                                   TAIYO YUDEN reserves the right to make change to the Date at any time without notice.
+                                   Before making final selection, please check product specification.
+
+
+
+                                                                                                                                                                              http://www.ty-top.com
+
+
+
+Powered by TCPDF (www.tcpdf.org)
+Multi Layer Ceramic Capacitor                                                                              -Electrical Characteristics Data-                       10QA08
+
+                                                                                                                                        RoHS compliance product
+○LMK107B7105KA                                                                                                         LMK107B7105KA
+                                                                                                                       Capacitance Freq.
+10V 1608 X7R 1uF +/-10% t=0.9mmMAX                                                               1000
+
+10V 0603 X7R 1uF +/-10% t=0.035inchMAX
+                                                                                                  100
+
+
+
+
+                                                                             Capacitance[uF] .
+                                                                                                      10
+
+
+
+                                                                                                       1
+
+
+
+                                                                                                   0.1
+                                                                                                     0.001    0.01   0.1      1         10       100   1000 10000
+                                                                                                                           Frequency[MHz]
+
+
+
+                                    LMK107B7105KA                                                                       LMK107B7105KA
+                                     DC Bias Char.                                                                     Impedance,ESR Freq.
+          10                                                                               1000
+                                                                                                                                                             ESR
+            0                                                                                    100
+                                                                                                                                                             Z
+          -10                                                                                     10
+                                                                             Z,ESR[OHM] .
+dC/C[%]
+
+
+
+
+          -20                                                                                         1
+
+          -30                                                                                     0.1
+
+          -40                                                                                    0.01
+
+          -50                                                                          0.001
+                 0          2           4         6        8          10                   0.001             0.01    0.1      1         10       100   1000 10000
+                                  DC Bias Voltage[V]                                                                       Frequency[MHz]
+
+
+
+                                    LMK107B7105KA                                                                      LMK107B7105KA
+                                    Capacitance Temp.                                                                   Ripple Current
+          10                                                                           100
+
+
+
+           0
+                                                                             dTemp.[degreeC] .
+dC/C[%]
+
+
+
+
+          -10                                                                                    10
+
+
+                                                                                                                                                       10KHz
+          -20                                                                                                                                          100KHz
+                                                                                                                                                       1MHz
+
+          -30                                                                                     1
+                -55   -35   -15     5       25   45   65   85   105    125                            0      0.5       1          1.5        2         2.5         3
+                                  Temperature[degreeC]                                                               Ripple Current[Arms]
+
+
+
+
+部品特性は設置環境、測定条件等により変化する場合があります。本データをご使用される際は実際の製品特性に対する参考
+データとしてご活用ください。また、本データは予告無く追加･削除及び変更を行う場合があります。ご注文の際は、納入仕様書の
+ご確認をお願いします。
+
+The data is reference only. Electrical characteristics vary depending on environment or measurement condition.
+TAIYO YUDEN reserves the right to make change to the Date at any time without notice.
+Before making final selection, please check product specification
+

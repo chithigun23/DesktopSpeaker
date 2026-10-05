@@ -1,0 +1,2300 @@
+                                                                                                                                      PCM2900C
+            Burr-Brown Audio
+                                                                                                                                      PCM2902C
+www.ti.com                                                                                                               SBFS039 – SEPTEMBER 2011
+
+                                            Stereo Audio Codec with USB Interface,
+                                         Single-Ended Analog Input/Output, and S/PDIF
+                                                          Check for Samples: PCM2900C, PCM2902C
+
+
+1FEATURES                                                                      •    Stereo DAC:
+• PCM2900C: Without S/PDIF
+234
+                                                                                    – Analog Performance at VBUS = 5 V:
+• PCM2902C: With S/PDIF                                                                – THD+N = 0.005%
+• On-Chip USB Interface:                                                               – SNR = 96 dB
+  – With Full-Speed Transceivers                                                       – Dynamic Range = 93 dB
+  – Fully Compliant with USB 2.0 Specification                                      – Oversampling Digital Filter:
+  – Certified by USB-IF                                                                – Passband Ripple = ±0.1 dB
+  – Partially Programmable Descriptors                                                 – Stop Band Attenuation = –43 dB
+  – USB Adaptive Mode for Playback                                                  – Single-Ended Voltage Output
+  – USB Asynchronous Mode for Record                                                – Analog LPF Included
+  – Bus Powered                                                                •    Multifunctions:
+• 16-Bit Delta-Sigma ADC and DAC                                                    – Human Interface Device (HID) Function:
+• Sampling Rate:                                                                       – Volume and Mute Controls
+  – DAC: 32 kHz, 44.1 kHz, 48 kHz                                                   – Suspend Flag Function
+  – ADC: 8 kHz, 11.025 kHz, 16 kHz, 22.05 kHz,                                 •    28-Pin SSOP Package
+     32 kHz, 44.1 kHz, 48 kHz
+• On-Chip Clock Generator with Single 12-MHz                                   APPLICATIONS
+  Clock Source                                                                 •    USB Audio Speaker
+• Single Power Supply:                                                         •    USB Headset
+  – 5 V Typical (VBUS)                                                         •    USB Monitor
+• Stereo ADC:                                                                  •    USB Audio Interface Box
+  – Analog Performance at VBUS = 5 V:
+     – THD+N = 0.01%                                                           DESCRIPTION
+                                                                               The PCM2900C/2902C are Texas Instruments'
+     – SNR = 89 dB
+                                                                               single-chip, USB, stereo audio codecs with a
+     – Dynamic Range = 89 dB                                                   USB-compliant full-speed protocol controller and
+  – Decimation Digital Filter:                                                 S/PDIF (PCM2902C only). The USB protocol
+                                                                               controller requires no software code. The
+     – Passband Ripple = ±0.05 dB
+                                                                               PCM2900C/2902C employ SpAct™ architecture, TI's
+     – Stop Band Attenuation = –65 dB                                          unique system that recovers the audio clock from
+  – Single-Ended Voltage Input                                                 USB packet data. On-chip analog PLLs with SpAct
+  – Antialiasing Filter Included                                               architecture enable playback and record with low
+                                                                               clock jitter as well as independent playback and
+  – Digital HPF Included                                                       record sampling rates.
+
+
+
+
+1
+
+
+
+
+               Please be aware that an important notice concerning availability, standard warranty, and use in critical applications of Texas
+               Instruments semiconductor products and disclaimers thereto appears at the end of this data sheet.
+2   SpAct is a trademark of Texas Instruments.
+3   System Two, Audio Precision are trademarks of Audio Precision, Inc.
+4   All other trademarks are the property of their respective owners.
+PRODUCTION DATA information is current as of publication date.                                         Copyright © 2011, Texas Instruments Incorporated
+Products conform to specifications per the terms of the Texas
+Instruments standard warranty. Production processing does not
+necessarily include testing of all parameters.
+PCM2900C
+PCM2902C
+SBFS039 – SEPTEMBER 2011                                                                                                             www.ti.com
+
+           This integrated circuit can be damaged by ESD. Texas Instruments recommends that all integrated circuits be handled with
+           appropriate precautions. Failure to observe proper handling and installation procedures can cause damage.
+           ESD damage can range from subtle performance degradation to complete device failure. Precision integrated circuits may be more
+           susceptible to damage because very small parametric changes could cause the device not to meet its published specifications.
+
+                                              PACKAGING/ORDERING INFORMATION (1)
+                                                                     SPECIFIED                                                TRANSPORT
+                                               PACKAGE             TEMPERATURE       PACKAGE             ORDERING               MEDIA,
+      PRODUCT        PACKAGE-LEAD             DESIGNATOR              RANGE          MARKING              NUMBER               QUANTITY
+                                                                                                        PCM2900CDB               Rails, 47
+ PCM2900CDB               SSOP-28                   DB              –25°C to +85°C   PCM2900C                                 Tape and Reel,
+                                                                                                        PCM2900CDBR
+                                                                                                                                  2000
+                                                                                                        PCM2902CDB               Rails, 47
+ PCM2902CDB               SSOP-28                   DB              –25°C to +85°C   PCM2902C                                 Tape and Reel,
+                                                                                                        PCM2902CDBR
+                                                                                                                                  2000
+
+(1)    For the most current package and ordering information, see the Package Option Addendum at the end of this document, or see the
+       device product folder at www.ti.com.
+
+
+
+ABSOLUTE MAXIMUM RATINGS (1)
+Over operating free-air temperature range (unless otherwise noted).
+                                               PARAMETER                                                 PCM2900C/PCM2902C              UNIT
+VBUS       Supply voltage                                                                                       –0.3 to 6.5                  V
+           Ground voltage differences, AGNDC, AGNDP, AGNDX, DGND, DGNDU                                            ±0.1                      V
+                                   SEL0, SEL1, TEST0 (DIN) (2)                                                  –0.3 to 6.5                  V
+           Digital input voltage
+                                   D+, D–, HID0, HID1, HID2, XTI, XTO, TEST1 (DOUT) (2), SSPND            –0.3 to (VDDI + 0.3) < 4           V
+           Analog input            VINL, VINR, VCOM, VOUTR, VOUTL                                        –0.3 to (VCCCI + 0.3) < 4           V
+           voltage                 VCCCI, VCCP1I, VCCP2I, VCCXI, VDDI                                            –0.3 to 4                   V
+           Input current (any pins except supplies)                                                                 ±10                  mA
+           Ambient temperature under bias                                                                      –40 to +125                   °C
+Tstg       Storage temperature                                                                                 –55 to +150                   °C
+TJ         Junction temperature                                                                                    +150                      °C
+           Package temperature (IR reflow, peak)                                                                   +250                      °C
+
+(1)    Stresses beyond those listed under Absolute Maximum Ratings may cause permanent damage to the device. These are stress ratings
+       only, and functional operation of the device at these or any other conditions beyond those indicated is not implied. Exposure to
+       absolute-maximum-rated conditions for extended periods may affect device reliability.
+(2)    TEST0 and TEST1 apply to the PCM2900C; DIN and DOUT apply to the PCM2902C.
+
+THERMAL INFORMATION
+                                                                                             PCM2900C            PCM2902C
+                                                          (1)
+                                     THERMAL METRIC                                              DB                  DB               UNITS
+                                                                                               28 PINS             28 PINS
+θJA              Junction-to-ambient thermal resistance                                          64.5                64.5
+θJCtop           Junction-to-case (top) thermal resistance                                       24.5                24.5
+θJB              Junction-to-board thermal resistance                                            25.4                25.4
+                                                                                                                                      °C/W
+ψJT              Junction-to-top characterization parameter                                      2.0                 2.0
+ψJB              Junction-to-board characterization parameter                                    25.0                25.0
+θJCbot           Junction-to-case (bottom) thermal resistance                                    N/A                 N/A
+
+(1)    For more information about traditional and new thermal metrics, see the IC Package Thermal Metrics application report, SPRA953.
+
+
+
+
+2         Submit Documentation Feedback                                                          Copyright © 2011, Texas Instruments Incorporated
+
+                                                   Product Folder Link(s): PCM2900C PCM2902C
+                                                                                                                        PCM2900C
+                                                                                                                        PCM2902C
+www.ti.com                                                                                                   SBFS039 – SEPTEMBER 2011
+
+ELECTRICAL CHARACTERISTICS
+All specifications at TA = +25°C, VBUS = 5 V, fS = 44.1 kHz, fIN = 1 kHz, and 16-bit data, unless otherwise noted.
+                                                                                               PCM2900C, PCM2902C
+                   PARAMETER                                  TEST CONDITIONS                  MIN         TYP        MAX        UNIT
+DIGITAL INPUT/OUTPUT
+             Host interface                            Apply USB Revision 2.0, full speed
+             Audio data format                         USB isochronous data format
+INPUT LOGIC
+                                 D+, D–                                                          2                      3.3      VDC
+                                 XTI, HID0, HID1,
+             High-level input                                                                  2.52                     3.3      VDC
+VIH                              and HID2
+             voltage
+                                 SEL0, SEL1                                                      2                    5.25       VDC
+                                 DIN (PCM2902C)                                                2.52                   5.25       VDC
+                                 D+, D–                                                                                 0.8      VDC
+                                 XTI, HID0, HID1,
+             Low-level input                                                                                            0.9      VDC
+VIL                              and HID2
+             voltage
+                                 SEL0, SEL1                                                                             0.8      VDC
+                                 DIN (PCM2902C)                                                                         0.9      VDC
+                                 D+, D–, XTI, SEL0,
+                                                                                                                       ±10       μA
+                                 SEL1
+             High-level input
+IIH                              HID0, HID1, and       VIN = 3.3 V
+             voltage                                                                                         50         80       μA
+                                 HID2
+                                 DIN (PCM2902C)                                                              65        100       μA
+                                 D+, D–, XTI, SEL0,
+                                                                                                                       ±10       μA
+                                 SEL1
+             Low-level input
+IIL                              HID0, HID1, and       VIN = 0 V
+             voltage                                                                                                   ±10       μA
+                                 HID2
+                                 DIN (PCM2902C)                                                                        ±10       μA
+OUTPUT LOGIC
+                                 D+, D–                                                         2.8                              VDC
+             High-level          DOUT
+VOH                                                    IOH = –4 mA                              2.8                              VDC
+             output voltage      (PCM2902C)
+                                 SSPND                 IOH = –2 mA                              2.8                              VDC
+                                 D+, D–                                                                                 0.3      VDC
+             Low-level output DOUT
+VOL                                                    IOL = 4 mA                                                       0.5      VDC
+             voltage          (PCM2902C)
+                                 SSPND                 IOL = 2 mA                                                       0.5      VDC
+CLOCK FREQUENCY
+             Input clock frequency, XTI                                                     11.994           12     12.008       MHz
+
+
+
+
+Copyright © 2011, Texas Instruments Incorporated                                                 Submit Documentation Feedback          3
+                                                   Product Folder Link(s): PCM2900C PCM2902C
+PCM2900C
+PCM2902C
+SBFS039 – SEPTEMBER 2011                                                                                                         www.ti.com
+
+ELECTRICAL CHARACTERISTICS (continued)
+All specifications at TA = +25°C, VBUS = 5 V, fS = 44.1 kHz, fIN = 1 kHz, and 16-bit data, unless otherwise noted.
+                                                                                           PCM2900C, PCM2902C
+                  PARAMETER                                  TEST CONDITIONS               MIN             TYP          MAX         UNIT
+ADC CHARACTERISTICS
+            Resolution                                                                                    8, 16                     Bits
+            Audio data channel                                                                             1, 2                   Channel
+ADC Clock Frequency
+fS          Sampling frequency                                                         8, 11.025, 16, 22.05, 32, 44.1, 48           kHz
+ADC DC Accuracy
+                                                                                                                                    % of
+            Gain mismatch, channel-to-channel                                                                ±1             ±5
+                                                                                                                                    FSR
+                                                                                                                                    % of
+            Gain error                                                                                       ±2          ±10
+                                                                                                                                    FSR
+                                                                                                                                    % of
+            Bipolar zero error                                                                               ±0
+                                                                                                                                    FSR
+ADC Dynamic Performance (1)
+                                                     VIN = –1 dB (2), VCCCI = 3.67 V                       0.01          0.02        %
+THD+N       Total harmonic distortion plus noise     VIN = –1 dB (3)                                        0.1                      %
+                                                     VIN = –60 dB                                             5                      %
+            Dynamic range                            A-weighted                             81               89                      dB
+SNR         Signal-to-noise ratio                    A-weighted                             81               89                      dB
+            Channel separation                                                              80               85                      dB
+Analog Input
+            Input voltage                                                                             0.6 VCCCI                     VPP
+            Center voltage                                                                            0.5 VCCCI                      V
+            Input impedance                                                                                  30                      kΩ
+                                                     –3 dB                                                 150                      kHz
+            Antialiasing filter frequency response
+                                                     fIN = 20 kHz                                        –0.08                       dB
+ADC Digital Filter Performance
+            Passband                                                                                                 0.454 fS        Hz
+            Stop band                                                                  0.583 fS                                      Hz
+            Passband ripple                                                                                            ±0.05         dB
+            Stop band attenuation                                                          –65                                       dB
+td          Delay time                                                                                  17.4/fS                      s
+            HPF frequency response                   –3 dB                                        0.078 fS/1000                      Hz
+
+(1)   fIN = 1 kHz, using a System Two™ audio measurement system by Audio Precision™ in RMS mode with 20-kHz LPF, 400-Hz HPF in
+      calculation.
+(2)   Using external voltage regulator for VCCCI (as shown in Table 7 and Figure 37, using with REG103xA-A).
+(3)   Using internal voltage regulator for VCCCI (as shown in Figure 38 and Figure 39).
+
+
+
+
+4        Submit Documentation Feedback                                                     Copyright © 2011, Texas Instruments Incorporated
+
+                                               Product Folder Link(s): PCM2900C PCM2902C
+                                                                                                                          PCM2900C
+                                                                                                                          PCM2902C
+www.ti.com                                                                                                      SBFS039 – SEPTEMBER 2011
+
+ELECTRICAL CHARACTERISTICS (continued)
+All specifications at TA = +25°C, VBUS = 5 V, fS = 44.1 kHz, fIN = 1 kHz, and 16-bit data, unless otherwise noted.
+                                                                                               PCM2900C, PCM2902C
+                   PARAMETER                                   TEST CONDITIONS                 MIN            TYP        MAX      UNIT
+DAC CHARACTERISTICS
+             Resolution                                                                                      8, 16                Bits
+             Audio data channel                                                                                1, 2              Channel
+DAC Clock Frequency
+fS           Sampling frequency                                                                       32, 44.1, 48                kHz
+DAC DC Accuracy
+                                                                                                                                  % of
+             Gain mismatch channel-to-channel                                                                   ±1         ±5
+                                                                                                                                  FSR
+                                                                                                                                  % of
+             Gain error                                                                                         ±2        ±10
+                                                                                                                                  FSR
+                                                                                                                                  % of
+             Bipolar zero error                                                                                 ±2
+                                                                                                                                  FSR
+DAC Dynamic Performance (4)
+                                                       VOUT = 0 dB                                           0.005      0.016      %
+THD+N        Total harmonic distortion plus noise
+                                                       VOUT = –60 dB                                             3                 %
+             Dynamic range                             EIAJ, A-weighted                         87              93                 dB
+SNR          Signal-to-noise ratio                     EIAJ, A-weighted                         90              96                 dB
+             Channel separation                                                                 86              92                 dB
+Analog Output
+VO           Output voltage                                                                              0.6 VCCCI                VPP
+             Center voltage                                                                              0.5 VCCCI                 V
+             Load impedance                            AC coupling                              10                                 kΩ
+                                                       –3 dB                                                   250                kHz
+             LPF frequency response
+                                                       f = 20 kHz                                            –0.03                 dB
+DAC Digital Filter Performance
+             Passband                                                                                                 0.445 fS     Hz
+             Stop band                                                                    0.555 fS                                 Hz
+             Passband ripple                                                                                             ±0.1      dB
+             Stop band attenuation                                                             –43                                 dB
+td           Delay time                                                                                     14.3 fS                 s
+POWER-SUPPLY REQUIREMENTS
+VBUS         Voltage range                                                                     4.35              5       5.25     VDC
+                                                       ADC, DAC operation                                       56         67      mA
+             Supply current                                            (5)
+                                                       Suspend mode                                            250                 μA
+                                                       ADC, DAC operation                                      280        352     mW
+PD           Power dissipation
+                                                       Suspend mode (5)                                       1.25                mW
+VCCCI,
+VCCP1I,
+VCCP2I,      Internal power-supply voltage                                                      3.1            3.3        3.5     VDC
+VCCXI,
+VDDI
+TEMPERATURE RANGE
+             Operating temperature range                                                       –25                        +85      °C
+
+(4)   fOUT = 1 kHz, using a System Two audio measurement system by Audio Precision in RMS mode with 20-kHz LPF, 400-Hz HPF.
+(5)   Under USB suspend state.
+
+
+
+
+Copyright © 2011, Texas Instruments Incorporated                                                 Submit Documentation Feedback             5
+                                                   Product Folder Link(s): PCM2900C PCM2902C
+PCM2900C
+PCM2902C
+SBFS039 – SEPTEMBER 2011                                                                                                                              www.ti.com
+
+                                                               PCM2900C PIN ASSIGNMENTS
+
+                                                                                      DB PACKAGE
+                                                                                         SSOP-28
+                                                                                       (TOP VIEW)
+
+                                                                      D+          1                28     SSPND
+                                                                      D-          2                27     VDDI
+                                                                    VBUS          3                26     DGND
+                                                                DGNDU             4                25     TEST1
+                                                                    HID0          5                24     TEST0
+                                                                    HID1          6                23     VCCXI
+                                                                    HID2          7                22     AGNDX
+                                                                                        PCM2900C
+                                                                    SEL0          8                21     XTI
+                                                                    SEL1          9                20     XTO
+                                                                    VCCCI         10               19     VCCP2I
+                                                                AGNDC             11               18     AGNDP
+                                                                    VINL          12               17     VCCP1I
+                                                                    VINR          13               16     VOUTL
+                                                                    VCOM          14               15     VOUTR
+
+
+
+
+                                                  Table 1. PCM2900C TERMINAL FUNCTIONS
+         TERMINAL
+NAME                NO.   I/O                                                                       DESCRIPTION
+AGNDC               11     –    Analog ground for codec
+AGNDP               18     –    Analog ground for PLL
+AGNDX               22     –    Analog ground for oscillator
+D–                   2    I/O   USB differential input/output minus (1)
+D+                   1    I/O   USB differential input/output plus (1)
+DGND                26     –    Digital ground
+DGNDU                4     –    Digital ground for USB transceiver
+HID0                 5     I    HID key state input (mute), active-high (2)
+HID1                 6     I    HID key state input (volume up), active-high (2)
+HID2                 7     I    HID key state input (volume down), active-high (2)
+SEL0                 8     I    Must be set to high (3)
+SEL1                 9     I    Must be set to high (3)
+SSPND               28     O    Suspend flag, active-low (low: suspend, high: operational)
+TEST0               24     I    Test pin, must be connected to GND
+TEST1               25     O    Test pin, must be left open
+VBUS                 3     –    Connect to USB power (VBUS)
+VCCCI               10     –    Internal analog power supply for codec (4)
+VCCP1I              17     –    Internal analog power supply for PLL (4)
+VCCP2I              19     –    Internal analog power supply for PLL (4)
+VCCXI               23     –    Internal analog power supply for oscillator (4)
+VCOM                14     –    Common for ADC/DAC (VCCCI/2) (4)
+VDDI                27     –    Internal digital power supply (4)
+VINL                12     I    ADC analog input for L-channel
+VINR                13     I    ADC analog input for R-channel
+VOUTL               16     O    DAC analog output for L-channel
+VOUTR               15     O    DAC analog output for R-channel
+XTI                 21     I    Crystal oscillator input (5)
+XTO                 20     O    Crystal oscillator output
+
+(1)     LV-TTL level.
+(2)     3.3-V CMOS-level input with internal pull-down. This pin informs the PC of serviceable control signals such as mute, volume up, or
+        volume down, which have no connection with the internal DAC or ADC directly. See the Interface #3 and End-Points sections.
+(3)     TTL Schmitt trigger, 5-V tolerant.
+(4)     Connect a decoupling capacitor to GND.
+(5)     3.3-V, CMOS-level input.
+
+
+
+
+6          Submit Documentation Feedback                                                                           Copyright © 2011, Texas Instruments Incorporated
+
+                                                            Product Folder Link(s): PCM2900C PCM2902C
+                                                                                                                                          PCM2900C
+                                                                                                                                          PCM2902C
+www.ti.com                                                                                                                     SBFS039 – SEPTEMBER 2011
+
+                                                               PCM2902C PIN ASSIGNMENTS
+
+                                                                                      DB PACKAGE
+                                                                                         SSOP-28
+                                                                                       (TOP VIEW)
+
+                                                                   D+             1                28     SSPND
+                                                                   D-             2                27     VDDI
+                                                                  VBUS            3                26     DGND
+                                                                DGNDU             4                25     DOUT
+                                                                 HID0             5                24     DIN
+                                                                  HID1            6                23     VCCXI
+                                                                 HID2             7                22     AGNDX
+                                                                                        PCM2902C
+                                                                 SEL0             8                21     XTI
+                                                                 SEL1             9                20     XTO
+                                                                 VCCCI            10               19     VCCP2I
+                                                                AGNDC             11               18     AGNDP
+                                                                  VINL            12               17     VCCP1I
+                                                                  VINR            13               16     VOUTL
+                                                                 VCOM             14               15     VOUTR
+
+
+
+
+                                                   Table 2. PCM2902C TERMINAL FUNCTIONS
+         TERMINAL
+NAME                NO.   I/O                                                                       DESCRIPTION
+AGNDC               11     –    Analog ground for codec
+AGNDP               18     –    Analog ground for PLL
+AGNDX               22     –    Analog ground for oscillator
+D–                   2    I/O   USB differential input/output minus (1)
+D+                   1    I/O   USB differential input/output plus (1)
+DGND                26     –    Digital ground
+DGNDU                4     –    Digital ground for USB transceiver
+DIN                 24     I    S/PDIF input (2)
+DOUT                25     O    S/PDIF output
+HID0                 5     I    HID key state input (mute), active high (3)
+HID1                 6     I    HID key state input (volume up), active high (3)
+HID2                 7     I    HID key state input (volume down), active high (3)
+SEL0                 8     I    Must be set to high (4)
+SEL1                 9     I    Must be set to high (4)
+SSPND               28     O    Suspend flag, active-low (low: suspend, high: operational)
+VBUS                 3     –    Connect to USB power (VBUS)
+VCCCI               10     –    Internal analog power supply for codec (5)
+VCCP1I              17     –    Internal analog power supply for PLL (5)
+VCCP2I              19     –    Internal analog power supply for PLL (5)
+VCCXI               23     –    Internal analog power supply for oscillator (5)
+VCOM                14     –    Common for ADC/DAC (VCCCI/2) (5)
+VDDI                27     –    Internal digital power supply
+VINL                12     I    ADC analog input for L-channel
+VINR                13     I    ADC analog input for R-channel
+VOUTL               16     O    DAC analog output for L-channel
+VOUTR               15     O    DAC analog output for R-channel
+XTI                 21     I    Crystal oscillator input (6)
+XTO                 20     O    Crystal oscillator output
+
+(1)     LV-TTL level.
+(2)     3.3-V CMOS-level input with internal pull-down, 5-V tolerant.
+(3)     3.3-V CMOS-level input with internal pull-down. This pin informs the PC of serviceable control signals such as mute, volume up, or
+        volume down, which have no connection with the internal DAC or ADC directly. See the Interface #3 and End-Points sections.
+(4)     TTL Schmitt trigger, 5-V tolerant.
+(5)     Connect a decoupling capacitor to GND.
+(6)     3.3-V, CMOS-level input.
+
+
+
+
+Copyright © 2011, Texas Instruments Incorporated                                                                   Submit Documentation Feedback     7
+                                                            Product Folder Link(s): PCM2900C PCM2902C
+PCM2900C
+PCM2902C
+SBFS039 – SEPTEMBER 2011                                                                                                                    www.ti.com
+
+PCM2900C FUNCTIONAL BLOCK DIAGRAM
+                              VCCCI    VCCP1I    VCCP2I      VCCXI     VDDI        AGNDC       AGNDP      AGNDX           DGND          DGNDU
+
+
+
+
+                                      5-V to 3.3-V Voltage Regulator
+
+
+
+    TEST0                                                                                Power
+                                                                                        Manager                                                 SSPND
+
+    TEST1
+
+                                                                                                                                                VBUS
+
+
+
+     VINL
+                                                                                          ISO-In
+                              ADC                                        FIFO
+                                                                                         End-Point
+     VINR
+
+
+
+
+                                                                                                                USB SIE
+                                                                                                                                                D+
+
+
+
+
+                                                                                                                                 XCVR
+                                                                        Analog                                                                  D-
+                                                                         PLL
+     VCOM                                            Selector                             Control
+                                                                                         End-Point
+                                                                        Analog
+                                                                         PLL
+                                                                                                                                                SEL0
+                                                                                                                                                SEL1
+    VOUTL
+                                                                                          ISO-Out
+                              DAC                                        FIFO
+                                                                                         End-Point
+    VOUTR
+
+
+
+
+                                                                                                                                                HID0
+                                                                                         HID
+                                                                                                                                                HID1
+                                                                                       End-Point
+                                                                                                                                                HID2
+
+
+                                                                                          USB
+                                                                                        Protocol
+                                                                                        Controller
+
+
+
+
+                                                                        96 MHz       Tracker
+                                                          PLL (×8)
+                                                                                     (SpAct)
+
+
+
+
+                     12 MHz
+               XTI              XTO
+
+
+
+
+8           Submit Documentation Feedback                                                            Copyright © 2011, Texas Instruments Incorporated
+
+                                                      Product Folder Link(s): PCM2900C PCM2902C
+                                                                                                                                       PCM2900C
+                                                                                                                                       PCM2902C
+www.ti.com                                                                                                              SBFS039 – SEPTEMBER 2011
+
+PCM2902C FUNCTIONAL BLOCK DIAGRAM
+                            VCCCI    VCCP1I    VCCP2I       VCCXI    VDDI          AGNDC       AGNDP     AGNDX          DGND          DGNDU
+
+
+
+
+                                    5-V to 3.3-V Voltage Regulator
+
+
+                                              Lock
+                                                                                         Power
+                                                                                        Manager                                               SSPND
+
+    DIN             S/PDIF Decoder
+
+                                                                                                                                              VBUS
+
+
+
+    VINL
+                                                                                          ISO-In
+                            ADC                                        FIFO
+                                                                                         End-Point
+   VINR
+
+
+
+
+                                                                                                              USB SIE
+                                                                                                                                              D+
+
+
+
+
+                                                                                                                               XCVR
+                                                                      Analog                                                                  D-
+                                                                       PLL
+   VCOM                                              Selector                             Control
+                                                                                         End-Point
+                                                                      Analog
+                                                                       PLL
+                                                                                                                                              SEL0
+                                                                                                                                              SEL1
+  VOUTL
+                                                                                          ISO-Out
+                            DAC                                        FIFO
+                                                                                         End-Point
+  VOUTR
+
+
+
+
+                                                                                                                                              HID0
+                                                                                         HID
+                                                                                                                                              HID1
+  DOUT               S/PDIF Encoder                                                    End-Point
+                                                                                                                                              HID2
+
+
+                                                                                          USB
+                                                                                        Protocol
+                                                                                        Controller
+
+
+
+
+                                                                      96 MHz         Tracker
+                                                         PLL (×8)
+                                                                                     (SpAct)
+
+
+
+
+                   12 MHz
+            XTI               XTO
+
+
+
+
+Copyright © 2011, Texas Instruments Incorporated                                                       Submit Documentation Feedback                  9
+                                                      Product Folder Link(s): PCM2900C PCM2902C
+PCM2900C
+PCM2902C
+SBFS039 – SEPTEMBER 2011                                                                                                       www.ti.com
+
+PCM2900C/2902C DIAGRAM OF ANALOG FRONT-END (RIGHT CHANNEL)
+
+
+
+
+          4.7 mF
+                               VINR   30 kW
+              +
+
+
+
+
+                          13                         –
+                                                                                 –                          (+)
+                                                     +
+                                                                                 +
+
+                                                                                                            (–)
+                               VCOM                                                                                Delta-Sigma
+                                                                                                                    Modulator
+                          14
+
+          +        (VCCCI/2)
+  10 mF
+                                                                                Reference
+
+
+
+
+10        Submit Documentation Feedback                                                     Copyright © 2011, Texas Instruments Incorporated
+
+                                              Product Folder Link(s): PCM2900C PCM2902C
+                                                                                                                                                                                                                                                      PCM2900C
+                                                                                                                                                                                                                                                      PCM2902C
+www.ti.com                                                                                                                                                                                                                          SBFS039 – SEPTEMBER 2011
+
+                                                                                                             TYPICAL CHARACTERISTICS: ADC
+                          All specifications at TA = +25°C, VBUS = 5 V, fS = 44.1 kHz, fin = 1 kHz, 16-bit data, using REG 103xA-A, unless otherwise
+                                                                                     noted.
+                                                                       TOTAL HARMONIC DISTORTION + NOISE at –1 dB                                                                                         DYNAMIC RANGE and SNR
+                                                                               vs FREE-AIR TEMPERATURE                                                                                                   vs FREE-AIR TEMPERATURE
+                                                                0.01                                                                                                                    95
+                      Total Harmonic Distortion + Noise (%)
+
+
+
+
+                                                                                                                                                         Dynamic Range and SNR (dB)
+                                                              0.009
+                                                                                                                                                                                                                         Dynamic Range
+                                                                                                                                                                                        90
+                                                              0.008
+                                                                                                                                                                                                                    SNR
+                                                              0.007
+                                                                                                                                                                                        85
+                                                              0.006
+
+                                                              0.005
+                                                                                                                                                                                        80
+                                                              0.004
+
+                                                              0.003                                                                                                                     75
+                                                                       -50   -25          0         25        50            75   100                                                         -50   -25         0          25        50           75     100
+                                                                                        Free-Air Temperature (°C)                                                                                          Free-Air Temperature (°C)
+                                                                                                                                   G001                                                                                                                    G002
+
+                                                                                                Figure 1.                                                                                                              Figure 2.
+
+                                                                       TOTAL HARMONIC DISTORTION + NOISE at –1 dB                                                                                        DYNAMIC RANGE and SNR
+                                                                                 vs SUPPLY VOLTAGE                                                                                                         vs SUPPLY VOLTAGE
+                                                               0.01                                                                                                                     95
+ Total Harmonic Distortion + Noise (%)
+
+
+
+
+                                                                                                                                                           Dynamic Range and SNR (dB)
+
+
+
+
+                                                              0.009
+                                                                                                                                                                                                                               Dynamic Range
+                                                                                                                                                                                        90
+                                                              0.008
+                                                                                                                                                                                                                          SNR
+                                                              0.007
+                                                                                                                                                                                        85
+                                                              0.006
+
+                                                              0.005
+                                                                                                                                                                                        80
+                                                              0.004
+
+                                                              0.003                                                                                                                     75
+                                                                        4                 4.5                      5              5.5                                                         4               4.5                       5                5.5
+                                                                                              Supply Voltage (V)                                                                                                   Supply Voltage (V)
+                                                                                                                                       G003                                                                                                                G004
+
+                                                                                                Figure 3.                                                                                                              Figure 4.
+
+                                                                       TOTAL HARMONIC DISTORTION + NOISE at –1 dB                                                                                        DYNAMIC RANGE AND SNR
+                                                                               vs SAMPLING FREQUENCY                                                                                                     vs SAMPLING FREQUENCY
+                                                               0.01                                                                                                                     95
+                    Total Harmonic Distortion + Noise (%)
+
+
+
+
+                                                                                                                                              Dynamic Range and SNR (dB)
+
+
+
+
+                                                              0.009
+                                                                                                                                                                                                                                Dynamic Range
+                                                                                                                                                                                        90
+                                                              0.008
+                                                                                                                                                                                                                                                 SNR
+                                                              0.007
+                                                                                                                                                                                        85
+                                                              0.006
+
+                                                              0.005
+                                                                                                                                                                                        80
+                                                              0.004
+
+                                                              0.003                                                                                                                     75
+                                                                       30          35               40                 45        50                                                           30         35                40               45            50
+                                                                                        Sampling Frequency (kHz)                                                                                              Sampling Frequency (kHz)
+                                                                                                                                   G005                                                                                                                        G006
+
+                                                                                                Figure 5.                                                                                                              Figure 6.
+
+
+Copyright © 2011, Texas Instruments Incorporated                                                                                                                                                                   Submit Documentation Feedback                      11
+                                                                                                                   Product Folder Link(s): PCM2900C PCM2902C
+PCM2900C
+PCM2902C
+SBFS039 – SEPTEMBER 2011                                                                                                                                                                                                  www.ti.com
+
+                                                                                            TYPICAL CHARACTERISTICS: DAC
+        All specifications at TA = +25°C, VBUS = 5 V, fS = 44.1 kHz, fin = 1 kHz, 16-bit data, using REG 103xA-A, unless otherwise
+                                                                   noted.
+                                                     TOTAL HARMONIC DISTORTION + NOISE at 0 dB                                                                              DYNAMIC RANGE AND SNR
+                                                             vs FREE-AIR TEMPERATURE                                                                                       vs FREE-AIR TEMPERATURE
+                                             0.008                                                                                                        98
+     Total Harmonic Distortion + Noise (%)
+
+
+
+
+                                                                                                                                                          97
+
+
+
+
+                                                                                                                             Dynamic Range and SNR (dB)
+                                             0.007                                                                                                                                      SNR
+                                                                                                                                                          96
+
+                                             0.006                                                                                                        95
+
+                                                                                                                                                          94
+                                             0.005                                                                                                        93
+                                                                                                                                                                                              Dynamic Range
+                                                                                                                                                          92
+                                             0.004
+                                                                                                                                                          91
+
+                                             0.003                                                                                                        90
+                                                     -50   -25          0          25        50             75   100                                           -50   -25          0           25       50            75    100
+                                                                      Free-Air Temperature (°C)                                                                                 Free-Air Temperature (°C)
+                                                                                                                    G007                                                                                                      G008
+
+                                                                               Figure 7.                                                                                                  Figure 8.
+
+                                                     TOTAL HARMONIC DISTORTION + NOISE at 0 dB                                                                             DYNAMIC RANGE AND SNR
+                                                               vs SUPPLY VOLTAGE                                                                                             vs SUPPLY VOLTAGE
+                                             0.008                                                                                                        98
+     Total Harmonic Distortion + Noise (%)
+
+
+
+
+                                                                                                                                                          97
+                                                                                                                             Dynamic Range and SNR (dB)
+
+
+
+
+                                             0.007                                                                                                                                                             SNR
+                                                                                                                                                          96
+
+                                             0.006                                                                                                        95
+
+                                                                                                                                                          94                      Dynamic Range
+
+                                             0.005                                                                                                        93
+
+                                                                                                                                                          92
+                                             0.004
+                                                                                                                                                          91
+
+                                             0.003                                                                                                        90
+                                                     4                 4.5                       5                5.5                                          4                 4.5                       5                5.5
+                                                                            Supply Voltage (V)                                                                                        Supply Voltage (V)
+                                                                                                                    G009                                                                                                      G010
+
+                                                                               Figure 9.                                                                                                  Figure 10.
+
+                                                     TOTAL HARMONIC DISTORTION + NOISE at 0 dB                                                                             DYNAMIC RANGE AND SNR
+                                                             vs SAMPLING FREQUENCY                                                                                         vs SAMPLING FREQUENCY
+                                             0.008                                                                                                        98
+     Total Harmonic Distortion + Noise (%)
+
+
+
+
+                                                                                                                                                          97
+                                                                                                                             Dynamic Range and SNR (dB)
+
+
+
+
+                                             0.007                                                                                                                                                    SNR
+                                                                                                                                                          96
+
+                                             0.006                                                                                                        95
+
+                                                                                                                                                          94
+                                             0.005                                                                                                        93
+                                                                                                                                                                                   Dynamic Range
+                                                                                                                                                          92
+                                             0.004
+                                                                                                                                                          91
+
+                                             0.003                                                                                                        90
+                                                     30          35                40                  45         50                                           30          35                 40                45          50
+                                                                      Sampling Frequency (kHz)                                                                                  Sampling Frequency (kHz)
+                                                                                                                    G011                                                                                                      G012
+
+                                                                              Figure 11.                                                                                                  Figure 12.
+
+
+12                                             Submit Documentation Feedback                                                                                                    Copyright © 2011, Texas Instruments Incorporated
+
+                                                                                                     Product Folder Link(s): PCM2900C PCM2902C
+                                                                                                                                                                                                                                                                 PCM2900C
+                                                                                                                                                                                                                                                                 PCM2902C
+www.ti.com                                                                                                                                                                                                                                         SBFS039 – SEPTEMBER 2011
+
+                                                                    TYPICAL CHARACTERISTICS: SUPPLY CURRENT
+                          All specifications at TA = +25°C, VBUS = 5 V, fS = 44.1 kHz, fin = 1 kHz, 16-bit data, using REG 103xA-A, unless otherwise
+                                                                                     noted.
+                                            OPERATIONAL AND SUSPEND SUPPLY CURRENT                                                                                                                                     OPERATIONAL SUPPLY CURRENT
+                                                      vs SUPPLY VOLTAGE                                                                                                                                                  vs SAMPLING FREQUENCY
+                                   70                                                                                                0.3                                                                    70
+ Operational Supply Current (mA)
+
+
+
+
+                                                                                                                                                                          Operational Supply Current (mA)
+                                                                                                                                            Suspend Supply Current (mA)
+                                   60                                                                                                0.28                                                                   60
+                                                      Operational
+
+                                   50                                                                                                0.26                                                                   50
+                                                                                                                                                                                                                                   ADC and DAC
+                                                                                                     Suspend
+                                   40                                                                                                0.24                                                                   40
+
+
+                                   30                                                                                                0.22                                                                   30
+
+
+                                   20                                                                                                0.2                                                                    20
+                                        4      4.25    4.5      4.75                                 5            5.25         5.5                                                                               30         35              40              45      50
+                                                         Supply Voltage (V)                                                                                                                                                      Sampling Frequency (kHz)
+                                                                                                                                 G013                                                                                                                                G014
+
+                                                                Figure 13.                                                                                                                                                                Figure 14.
+
+                                                                                                                               SUSPEND SUPPLY CURRENT
+                                                                                                                               vs FREE-AIR TEMPERATURE
+                                                                                                      0.4
+                                                                       Suspend Supply Current (mA)
+
+
+
+
+                                                                                                     0.35
+                                                                                                                           USB Spec Limit for Device (0.3 mA)
+                                                                                                      0.3
+
+
+                                                                                                     0.25
+
+
+                                                                                                      0.2
+
+
+                                                                                                     0.15
+
+
+                                                                                                      0.1
+                                                                                                            -40          -20         0                           20                        40                     60   80        100
+                                                                                                                                     Free-Air Temperature (°C)
+                                                                                                                                                                                                                                   G015
+                                                                                                                                                         Figure 15.
+
+
+
+
+Copyright © 2011, Texas Instruments Incorporated                                                                                                                                                                                    Submit Documentation Feedback           13
+                                                                                                            Product Folder Link(s): PCM2900C PCM2902C
+PCM2900C
+PCM2902C
+SBFS039 – SEPTEMBER 2011                                                                                                                                                           www.ti.com
+
+      TYPICAL CHARACTERISTICS: ADC DIGITAL DECIMATION FILTER FREQUENCY RESPONSE
+                                All specifications at TA = +25°C, VBUS = 5 V, fS = 44.1 kHz, fin = 1 kHz, 16-bit data, unless otherwise noted.
+                                         OVERALL CHARACTERISTICS                                                                      STOP BAND ATTENUATION
+                            0                                                                                               0
+                                                                                                                          -10
+                          -20
+                                                                                                                          -20
+                          -40
+                                                                                                                          -30
+
+
+
+
+                                                                                                      Amplitude (dB)
+       Amplitude (dB)
+
+
+
+
+                          -60                                                                                             -40
+                          -80                                                                                             -50
+                                                                                                                          -60
+                         -100
+                                                                                                                          -70
+                         -120
+                                                                                                                          -80
+                         -140                                                                                             -90
+                         -160                                                                                            -100
+                                0              8              16              24         32                                     0   0.2            0.4         0.6           0.8       1
+                                                       Frequency (× fS)                                                                            Frequency (× fS)
+                                                                                           G016                                                                                            G017
+
+                                                         Figure 16.                                                                                 Figure 17.
+
+                                                     PASSBAND RIPPLE                                                                TRANSITION-BAND RESPONSE
+                          0.2                                                                                              0
+
+
+                            0                                                                                             -4
+        Amplitude (dB)
+
+
+
+
+                                                                                                        Amplitude (dB)
+
+
+
+
+                         -0.2                                                                                             -8
+
+
+                         -0.4                                                                                            -12
+
+
+                         -0.6                                                                                            -16
+
+
+                         -0.8                                                                                            -20
+                                0        0.1            0.2          0.3           0.4   0.5                                0.46     0.48                0.5            0.52        0.54
+                                                       Frequency (× fS)                                                                           Frequency (× fS)
+                                                                                           G018                                                                                            G019
+
+                                                         Figure 18.                                                                                 Figure 19.
+
+
+
+                  TYPICAL CHARACTERISTICS: ADC DIGITAL HIGH-PASS FILTER FREQUENCY RESPONSE
+                                All specifications at TA = +25°C, VBUS = 5 V, fS = 44.1 kHz, fin = 1 kHz, 16-bit data, unless otherwise noted.
+                                        STOP BAND CHARACTERISTICS                                                                   PASSBAND CHARACTERISTICS
+                           0                                                                                               0
+                          -10
+                          -20                                                                                            -0.2
+                          -30
+ Amplitude (dB)
+
+
+
+
+                                                                                                        Amplitude (dB)
+
+
+
+
+                          -40                                                                                            -0.4
+                          -50
+                          -60                                                                                            -0.6
+                          -70
+                          -80                                                                                            -0.8
+                          -90
+                         -100                                                                                            -1.0
+                                    0          0.1             0.2            0.3         0.4                                   0         1               2              3            4
+                                                      Frequency (× fS/1000)                                                                     Frequency (× fS/1000)
+                                                                                               G020                                                                                        G021
+
+                                                         Figure 20.                                                                                 Figure 21.
+
+
+14                         Submit Documentation Feedback                                                                                      Copyright © 2011, Texas Instruments Incorporated
+
+                                                                           Product Folder Link(s): PCM2900C PCM2902C
+                                                                                                                                                                                                              PCM2900C
+                                                                                                                                                                                                              PCM2902C
+www.ti.com                                                                                                                                                                                    SBFS039 – SEPTEMBER 2011
+
+ TYPICAL CHARACTERISTICS: ADC ANALOG ANTIALIASING FILTER FREQUENCY RESPONSE
+                                  All specifications at TA = +25°C, VBUS = 5 V, fS = 44.1 kHz, fin = 1 kHz, 16-bit data, unless otherwise noted.
+                                          STOP BAND CHARACTERISTICS                                                                                              PASSBAND CHARACTERISTICS
+                              0                                                                                                                0
+
+
+                            -10                                                                                                              -0.2
+          Amplitude (dB)
+
+
+
+
+                                                                                                                            Amplitude (dB)
+                            -20                                                                                                              -0.4
+
+
+                            -30                                                                                                              -0.6
+
+
+                            -40                                                                                                              -0.8
+
+
+                            -50                                                                                                              -1.0
+                                  1          10          100                            1k             10k                                          0.01               0.1              1          10            100
+                                                   Frequency (kHz)                                                                                                              Frequency (kHz)
+                                                                                                           G022                                                                                                    G023
+
+                                                     Figure 22.                                                                                                                     Figure 23.
+
+
+
+                              TYPICAL CHARACTERISTICS: DAC DIGITAL INTERPOLATION FILTER FREQUENCY
+                                                           RESPONSE
+                                  All specifications at TA = +25°C, VBUS = 5 V, fS = 44.1 kHz, fin = 1 kHz, 16-bit data, unless otherwise noted.
+                                             STOP BAND ATTENUATION                                                                                                           PASSBAND RIPPLE
+                             0                                                                                                                0.2
+                            -10
+                            -20                                                                                                                0
+                            -30
+  Amplitude (dB)
+
+
+
+
+                                                                                                                        Amplitude (dB)
+
+
+
+
+                            -40                                                                                                              -0.2
+                            -50
+                            -60                                                                                                              -0.4
+                            -70
+                            -80                                                                                                              -0.6
+                            -90
+                           -100                                                                                                              -0.8
+                                      0        1            2                            3                 4                                         0            0.1           0.2         0.3         0.4      0.5
+                                                     Frequency (× fS)                                                                                                           Frequency (× fS)
+                                                                                                               G024                                                                                                G025
+
+                                                     Figure 24.                                                                                                                     Figure 25.
+
+                                                                                                    TRANSITION-BAND RESPONSE
+                                                                                0
+                                                                               -2
+                                                                               -4
+                                                                               -6
+                                                             Amplitude (dB)
+
+
+
+
+                                                                               -8
+                                                                              -10
+                                                                              -12
+                                                                              -14
+                                                                              -16
+                                                                              -18
+                                                                              -20
+                                                                                 0.46        0.47   0.48   0.49       0.5                    0.51        0.52   0.53     0.54
+                                                                                                               Frequency (× fS)
+                                                                                                                                                                             G026
+                                                                                                                  Figure 26.
+
+
+Copyright © 2011, Texas Instruments Incorporated                                                                                                                             Submit Documentation Feedback                15
+                                                                                    Product Folder Link(s): PCM2900C PCM2902C
+PCM2900C
+PCM2902C
+SBFS039 – SEPTEMBER 2011                                                                                                                                          www.ti.com
+
+                        TYPICAL CHARACTERISTICS: DAC ANALOG FIR FILTER FREQUENCY RESPONSE
+                            All specifications at TA = +25°C, VBUS = 5 V, fS = 44.1 kHz, fin = 1 kHz, 16-bit data, unless otherwise noted.
+                                    STOP BAND CHARACTERISTICS                                                          PASSBAND CHARACTERISTICS
+                       0                                                                                  0.2
+
+
+                      -10                                                                                  0
+     Amplitude (dB)
+
+
+
+
+                                                                                       Amplitude (dB)
+                      -20                                                                                -0.2
+
+
+                      -30                                                                                -0.4
+
+
+                      -40                                                                                -0.6
+
+
+                      -50                                                                                -0.8
+                            0          8           16            24         32                                   0     0.1          0.2        0.3          0.4      0.5
+                                             Frequency (× fS)                                                                      Frequency (× fS)
+                                                                              G027                                                                                     G028
+
+                                               Figure 27.                                                                            Figure 28.
+
+        TYPICAL CHARACTERISTICS: DAC ANALOG LOW-PASS FILTER FREQUENCY RESPONSE
+                            All specifications at TA = +25°C, VBUS = 5 V, fS = 44.1 kHz, fin = 1 kHz, 16-bit data, unless otherwise noted.
+                                    STOP BAND CHARACTERISTICS                                                          PASSBAND CHARACTERISTICS
+                        0                                                                                  0
+
+
+                      -10                                                                                -0.2
+     Amplitude (dB)
+
+
+
+
+                                                                                        Amplitude (dB)
+
+
+
+
+                      -20                                                                                -0.4
+
+
+                      -30                                                                                -0.6
+
+
+                      -40                                                                                -0.8
+
+
+                      -50                                                                                -1.0
+                            1          10          100           1k         10k                                 0.01     0.1              1            10            100
+                                             Frequency (kHz)                                                                       Frequency (kHz)
+                                                                              G029                                                                                     G030
+
+                                               Figure 29.                                                                            Figure 30.
+
+
+
+
+16                     Submit Documentation Feedback                                                                           Copyright © 2011, Texas Instruments Incorporated
+
+                                                                Product Folder Link(s): PCM2900C PCM2902C
+                                                                                                                             PCM2900C
+                                                                                                                             PCM2902C
+www.ti.com                                                                                                        SBFS039 – SEPTEMBER 2011
+
+                                                       DETAILED DESCRIPTION
+
+USB INTERFACE
+Control data and audio data are transferred to the PCM2900C/2902C via D+ (pin 1) and D– (pin 2). All data
+to/from the PCM2900C/2902C are transferred at full speed. The device descriptor contains the information
+described in Table 3.
+
+                                                       Table 3. Device Description
+                   USB revision                                    2.0 compliant
+                   Device class                                    0x00 (device-defined interface level)
+                   Device subclass                                 0x00 (not specified)
+                   Device protocol                                 0x00 (not specified)
+                   Max packet size for end-point 0                 8 bytes
+                   Vendor ID                                       0x08BB
+                   Product ID                                      0x29C0 / 0x29C2
+                   Device release number                           1.0 (0x0100)
+                   Number of configurations                        1
+                   Vendor strings                                  String #1 (see Table 5)
+                   Product strings                                 String #2 (see Table 5)
+                   Serial number                                   Not supported
+
+The configuration descriptor contains the information described in Table 4.
+
+                                                    Table 4. Configuration Descriptor
+                                     Interface                         Four interfaces
+                                                                       0x80 (Bus-powered, no remote
+                                     Power attribute
+                                                                       wakeup)
+                                     Max power                         0x32 (100 mA)
+
+The string descriptor contains the information described in Table 5.
+
+                                                        Table 5. String Descriptor
+                                     #0                0x0409
+                                     #1                BurrBrown from Texas Instruments
+                                     #2                USB AUDIO CODEC
+
+
+
+
+Copyright © 2011, Texas Instruments Incorporated                                                      Submit Documentation Feedback    17
+                                                   Product Folder Link(s): PCM2900C PCM2902C
+PCM2900C
+PCM2902C
+SBFS039 – SEPTEMBER 2011                                                                                                         www.ti.com
+
+DEVICE CONFIGURATION
+Figure 31 illustrates the USB audio function topology. The PCM2900C/2902C has four interfaces. Each interface
+consists of alternative settings.
+
+
+
+
+                  End-Point #0
+
+
+                Default End-Point
+
+
+
+
+                                                                FU
+                  End-Point #2                                                                                              Analog Out
+                    (IF #1)                       IT                                                   OT
+                                                 TID1                                                 TID2
+            Audio Streaming Interface
+                                                                                     UID3
+
+
+
+
+                  End-Point #4                                                                                              Analog In
+                    (IF #2)                       OT                                                   IT
+                                                 TID5                                                 TID4
+            Audio Streaming Interface
+
+
+
+                                                         Standard Audio Control Interface (IF #0)
+
+
+
+                  End-Point #5
+                    (IF #3)
+
+                  HID Interface
+
+
+
+
+                                        Figure 31. USB Audio Function Topology
+
+
+
+
+18     Submit Documentation Feedback                                                          Copyright © 2011, Texas Instruments Incorporated
+
+                                          Product Folder Link(s): PCM2900C PCM2902C
+                                                                                                                      PCM2900C
+                                                                                                                      PCM2902C
+www.ti.com                                                                                                 SBFS039 – SEPTEMBER 2011
+
+Interface #0
+Interface #0 is defined as the control interface. Alternative setting #0 is the only possible setting for interface #0.
+Alternative setting #0 describes the standard audio control interface. The audio control interface consists of a
+single terminal. The PCM2900C/2902C has five terminals:
+• Input terminal (IT #1) for isochronous-out stream
+• Output terminal (OT #2) for audio analog output
+• Feature unit (FU #3) for DAC digital attenuator
+• Input terminal (IT #4) for audio analog input
+• Output terminal (OT #5) for isochronous-in stream
+Input terminal #1 is defined as a USB stream (terminal type 0x0101). Input terminal #1 can accept two-channel
+audio streams consisting of left and right channels. Output terminal #2 is defined as a speaker (terminal type
+0x0301). Input terminal #4 is defined as a line connector (terminal type 0x0603). Output terminal #5 is defined as
+a USB stream (terminal type 0x0101). Output terminal #5 can generate two-channel audio streams composed of
+left and right channel data. Feature unit #3 supports the following sound control features:
+• Volume control
+• Mute control
+The built-in digital volume controller can be manipulated by an audio class specific request from 0 dB to –64 dB
+in 1-dB steps. Changes are made by incrementing or decrementing by one step (1 dB) for every 1/fS time interval
+until the volume level has reached the requested value. Each channel can be set for different values. The master
+volume control is not supported. A request to the master volume is stalled and ignored. The built-in digital mute
+controller can be manipulated by an audio class specific request. A master mute control request is acceptable. A
+request to an individual channel is stalled and ignored.
+
+Interface #1
+Interface #1 is the audio streaming data-out interface. Interface #1 has five alternative settings listed in Table 6.
+Alternative setting #0 is the zero bandwidth setting. All other alternative settings are operational settings.
+
+                                               Table 6. Interface #1 Alternative Settings
+    ALTERNATIVE                                                                                TRANSFER         SAMPLING RATE
+      SETTING                                           DATA FORMAT                              MODE               (kHz)
+           00                                                             Zero Bandwidth
+           01                  16-bit          Stereo          Twos complement (PCM)            Adaptive           32, 44.1, 48
+           02                  16-bit          Mono            Twos complement (PCM)            Adaptive           32, 44.1, 48
+           03                  8-bit           Stereo          Twos complement (PCM)            Adaptive           32, 44.1, 48
+           04                  8-bit           Mono            Twos complement (PCM)            Adaptive           32, 44.1, 48
+
+
+
+
+Copyright © 2011, Texas Instruments Incorporated                                               Submit Documentation Feedback      19
+                                                   Product Folder Link(s): PCM2900C PCM2902C
+PCM2900C
+PCM2902C
+SBFS039 – SEPTEMBER 2011                                                                                                  www.ti.com
+
+Interface #2
+Interface #2 is the audio streaming data-in interface. Interface #2 has the 19 alternative settings listed in Table 7.
+Alternative setting #0 is the zero bandwidth setting. All other alternative settings are operational settings.
+
+                                        Table 7. Interface #2 Alternative Settings
+     ALTERNATIVE                                                                         TRANSFER               SAMPLING RATE
+       SETTING                                   DATA FORMAT                               MODE                     (kHz)
+         00                                                       Zero Bandwidth
+         01                16-bit       Stereo          Twos complement (PCM)           Asynchronous                    48
+         02                16-bit       Mono            Twos complement (PCM)           Asynchronous                    48
+         03                16-bit       Stereo          Twos complement (PCM)           Asynchronous                   44.1
+         04                16-bit       Mono            Twos complement (PCM)           Asynchronous                   44.1
+         05                16-bit       Stereo          Twos complement (PCM)           Asynchronous                    32
+         06                16-bit       Mono            Twos complement (PCM)           Asynchronous                    32
+         07                16-bit       Stereo          Twos complement (PCM)           Asynchronous                   22.05
+         08                16-bit       Mono            Twos complement (PCM)           Asynchronous                   22.05
+         09                16-bit       Stereo          Twos complement (PCM)           Asynchronous                    16
+         0A                16-bit       Mono            Twos complement (PCM)           Asynchronous                    16
+         0B                8-bit        Stereo          Twos complement (PCM)           Asynchronous                    16
+         0C                8-bit        Mono            Twos complement (PCM)           Asynchronous                    16
+         0D                8-bit        Stereo          Twos complement (PCM)           Asynchronous                     8
+         0E                8-bit        Mono            Twos complement (PCM)           Asynchronous                     8
+         0F                16-bit       Stereo          Twos complement (PCM)            Synchronous                  11.025
+         10                16-bit       Mono            Twos complement (PCM)            Synchronous                  11.025
+         11                8-bit        Stereo          Twos complement (PCM)            Synchronous                  11.025
+         12                8-bit        Mono            Twos complement (PCM)            Synchronous                  11.025
+
+Interface #3
+Interface #3 is the interrupt data-in interface. Alternative setting #0 is the only possible setting for interface #3.
+Interface #3 consists of the HID consumer control device and reports the status of three key parameters:
+• Mute (0xE209)
+• Volume up (0xE909)
+• Volume down (0xEA09)
+
+End-Points
+The PCM2900C/2902C has the following four end-points:
+• Control end-point (EP #0)
+• Isochronous-out audio data stream end-point (EP #2)
+• Isochronous-in audio data stream end-point (EP #4)
+• HID end-point (EP #5)
+The control end-point is a default end-point. The control end-point is used to control all functions of the
+PCM2900C/2902C by a standard USB request and an USB audio class-specific request from the host. The
+isochronous-out audio data stream end-point is an audio sink end-point, which receives the PCM audio data. The
+isochronous-out audio data stream end-point accepts the adaptive transfer mode. The isochronous-in audio data
+stream end-point is an audio source end-point, which transmits the PCM audio data. The isochronous-in audio
+data stream end-point uses asynchronous transfer mode. The HID end-point is an interrupt-in end-point. HID
+end-point reports HID0, HID1, and HID2 pin status every 32 ms.
+The human interface device (HID) pins are defined as consumer control devices. The HID function is designed
+as an independent end-point from both isochronous-in and -out end-points. Therefore, the result obtained from
+the HID operation depends on the host software. Typically, the HID function is used as the primary audio-out
+device.
+
+20      Submit Documentation Feedback                                                  Copyright © 2011, Texas Instruments Incorporated
+
+                                           Product Folder Link(s): PCM2900C PCM2902C
+                                                                                                                      PCM2900C
+                                                                                                                      PCM2902C
+www.ti.com                                                                                                 SBFS039 – SEPTEMBER 2011
+
+Clock and Reset
+The PCM2900C/2902C requires a 12-MHz (±500 ppm) clock for the USB and audio functions, which can be
+generated by a built-in crystal oscillator with a 12-MHz crystal resonator. The 12-MHz crystal resonator must be
+connected to XTI (pin 21) and XTO (pin 20) with one high (1-MΩ) resistor and two small capacitors, the
+capacitance of which depends on the load capacitance of the crystal resonator. The external clock can be
+supplied from XTI (pin 21). If the external clock is supplied, XTO (pin 20) must be left open. Because there is no
+clock-disabling signal, it is not recommended to use the external clock supply. SSPND (pin 28) is unable to use
+clock disabling.
+The PCM2900C/2902C has an internal power-on reset circuit, which triggers automatically when VBUS (pin 3)
+exceeds 2.5 V typical (2.7 V to 2.2 V). Approximately 700 μs is required until internal reset release.
+
+Digital Audio Interface (PCM2902C)
+The PCM2902C employs both S/PDIF input and output. Isochronous-out data from the host are encoded to the
+S/PDIF output and the DAC analog output. Input data are selected as either S/PDIF or ADC analog input. When
+the device detects an S/PDIF input and successfully locks the received data, the isochronous-in transfer data
+source is automatically selected from S/PDIF itself; otherwise, the data source is selected to ADC analog input.
+This feature is a customer option. It is the responsibility of the user to implement this feature.
+
+Supported Input/Output Data (PCM2902C)
+The following data formats are accepted by the S/PDIF input and output. All other data formats are unable to use
+S/PDIF.
+• 48-kHz 16-bit stereo
+• 44.1-kHz 16-bit stereo
+• 32-kHz 16-bit stereo
+Any mismatch of the sampling rate between the input S/PDIF signal and the host command is not acceptable.
+Any mismatch of the data format between the input S/PDIF signal and the host command may cause unexpected
+results, with the following exceptions:
+• Recording in monaural format from stereo data input at the same data rate
+• Recording in 8-bit format from 16-bit data input at the same data rate
+A combination of these two conditions is not acceptable.
+For playback, all possible data rate sources are converted to 16-bit stereo format at the same source data rate.
+
+Channel Status Information (PCM2902C)
+The channel status information is fixed as consumer application, PCM mode, copyright, and digital/digital
+converter. All other bits are fixed as 0s except for the sample frequency, which is set automatically according to
+the data received through the USB.
+
+Copyright Management (PCM2902C)
+Isochronous-in data are affected by the serial copy management system (SCMS). When receiving digital audio
+data that are indicated as original data in the control bit, input digital audio data transfer to the host. If the data
+are indicated as first generation or higher, the transferred data are routed to the analog input.
+Digital audio data output is always encoded as original with SCMS control.
+
+
+
+
+Copyright © 2011, Texas Instruments Incorporated                                               Submit Documentation Feedback    21
+                                                   Product Folder Link(s): PCM2900C PCM2902C
+PCM2900C
+PCM2902C
+SBFS039 – SEPTEMBER 2011                                                                                                                               www.ti.com
+
+INTERFACE SEQUENCE
+
+Power On, Attach, and Playback Sequence
+The PCM2900C/2902C is ready for setup when the reset sequence has finished and the USB bus is attached.
+After connection has been established by setup, the PCM2900C/2902C is ready to accept USB audio data.
+While waiting, the audio data (idle state) and analog output are set to bipolar zero (BPZ).
+When receiving the audio data, the PCM2900C/2902C stores the first audio packet, which contains 1-ms audio
+data, into the internal storage buffer. The PCM2900C/2902C starts to play the audio data when detecting the
+next start of frame (SOF) packet, as illustrated in Figure 32.
+
+                                                                                                                                                        5 V (Typ)
+       VBUS (Pin 3)
+                                         2.5 V (Typ)
+
+       0V
+
+                                            Bus Reset           Set Configuration                     First Audio Data         Second Audio Data
+
+             Bus Idle
+     D+/D-
+
+                                                                                                SOF                      SOF                 SOF
+
+
+
+     SSPND
+
+
+
+
+     VOUTL                                                         BPZ
+     VOUTR
+
+
+              700 ms                                             Device Setup                               1 ms
+
+                        Internal Reset
+                                                             Ready for Setup                      Ready for Playback
+
+
+                                                                 Figure 32. Initial Sequence
+
+Play, Stop, and Detach Sequence
+When the host finishes or aborts playback, the PCM2900C/2902C stops playing after the last audio data have
+played, as shown in Figure 33.
+
+      VBUS (Pin 3)
+
+                                     Audio Data               Audio Data            Last Audio Data
+
+
+             D+/D-
+
+                             SOF                       SOF                 SOF                  SOF           SOF
+
+
+
+
+          VOUTL
+          VOUTR
+
+                                           1 ms                                                                                                       Detach
+
+
+                                                  Figure 33. Play, Stop, and Detach Sequence
+
+
+
+
+22       Submit Documentation Feedback                                                                              Copyright © 2011, Texas Instruments Incorporated
+
+                                                         Product Folder Link(s): PCM2900C PCM2902C
+                                                                                                                                PCM2900C
+                                                                                                                                PCM2902C
+www.ti.com                                                                                                            SBFS039 – SEPTEMBER 2011
+
+Record Sequence
+The PCM2900C/2902C starts the audio capture into the internal memory after receiving the SET_INTERFACE
+command, as shown in Figure 34.
+                                                                 Audio Data               Audio Data              Audio Data
+                      SET_INTERFACE                   IN Token                 IN Token                IN Token
+
+
+
+        D+/D-
+
+                   SOF                       SOF                   SOF                     SOF                      SOF
+
+
+
+
+        VINL
+        VINR
+
+                                 1 ms
+
+
+                                                      Figure 34. Record Sequence
+
+Suspend and Resume Sequence
+The PCM2900C/2902C enters the suspend state after it sees a constant idle state on the USB bus
+(approximately 5 ms), as shown in Figure 35. While the PCM2900C/2902C enters the suspend state, SSPND
+flag (pin 28) is asserted. The PCM2900C/2902C wakes up immediately upon detecting a non-idle state on the
+USB bus.
+                                                                   Idle
+          D+/D-
+
+
+
+
+        SSPND
+
+
+
+
+                      Active                  5 ms                            Suspend                             Active
+
+
+                                            Figure 35. Suspend and Resume Sequence
+
+
+
+
+Copyright © 2011, Texas Instruments Incorporated                                                       Submit Documentation Feedback       23
+                                                   Product Folder Link(s): PCM2900C PCM2902C
+PCM2900C
+PCM2902C
+SBFS039 – SEPTEMBER 2011                                                                                                                      www.ti.com
+
+                                                         APPLICATION INFORMATION
+
+PCM2900C TYPICAL CIRCUIT CONNECTION 1
+Figure 36 illustrates a typical circuit connection for a high-performance application. The circuit illustrated is for
+information only. The entire board design should be considered to meet the USB specification as a
+USB-compliant product.
+
+
+
+
+                          1.5 kW × 3                       1.5 kW
+
+
+                                                                                      PCM2900C
+                                                            22 W
+      D+                                                                  1   D+                 SSPND     28
+                                                            22 W                                                                      C3
+      D-                                                                  2   D-                   VDDI    27
+                     2.2 W
+     VBUS                                                                3    VBUS               DGND      26
+                             1 mF
+     GND                                                                  4   DGNDU              TEST1     25
+
+                                                                         5    HID0               TEST0     24
+                                                                                                                            C4
+                                                                         6    HID1                VCCXI    23
+
+                                                                         7    HID2               AGNDX     22
+                                IC1                                                                                  1 MW             C5
+                                                                         8    SEL0                  XTI    21
+                         IN OUT GND ADJ EN
+                                                                                                                                      C6
+                         1      2    3      4     5                      9    SEL1                 XTO     20
+                                                           3.6 V to
+                                                           3.85 V                                                           12 MHz
+                                                                         10   VCCCI               VCCP2I   19
+             C13                                   D1      +                                                                                     MUTE/
+                                                                                                                            C7
+                                                                                                                                                 Power
+                                                                         11   AGNDC              AGNDP     18                                    Down
+               C9                                              C1
+                                                                                                                            C8
+                                                                         12   VINL                VCCP1I   17
+                     +              27 kW       13 kW
+               C10                                                                                                          C11             LPF,
+                                                                              VINR                VOUTL               +
+                                                                         13                                16                               Amp
+                     +                                              C2
+                                                                                                                      +     C12
+                                                                         14   VCOM               VOUTR     15
+                                                                    +
+                                                                                                                                            LPF,
+                                                                                                                                            Amp
+
+
+
+     NOTE: C1, C2: 10 μF
+           C3, C4, C7, C8, C13: 1 μF (These capacitors must be less than 2 μF.)
+           C5, C6: 10 pF to 33 pF (depending on crystal resonator)
+           C9, C10, C11, C12: The capacitance may vary depending on design.
+           IC1: REG103xA-A (TI) or equivalent. Analog performance may vary depending on IC1.
+           D1: Schottky barrier diode (VF ≤ 350 mV at 10 mA, IR ≤ 2 μA at 4 V)
+
+                         Figure 36. Bus-Powered Configuration for High-Performance Application
+
+
+
+
+24          Submit Documentation Feedback                                                                  Copyright © 2011, Texas Instruments Incorporated
+
+                                                        Product Folder Link(s): PCM2900C PCM2902C
+                                                                                                                                      PCM2900C
+                                                                                                                                      PCM2902C
+www.ti.com                                                                                                                SBFS039 – SEPTEMBER 2011
+
+PCM2902C TYPICAL CIRCUIT CONNECTION 1
+Figure 37 illustrates a typical circuit connection for a high-performance application. The circuit illustrated is for
+information only. The entire board design should be considered to meet the USB specification as a
+USB-compliant product.
+
+
+
+
+                         1.5 kW × 3                       1.5 kW
+
+
+                                                                                     PCM2902C
+                                                           22 W
+     D+                                                                  1   D+                 SSPND     28
+                                                           22 W                                                                  C3
+     D-                                                                  2   D-                   VDDI    27
+                    2.2 W
+   VBUS                                                                 3    VBUS               DGND      26
+                            1 mF
+   GND                                                                   4   DGNDU               DOUT     25
+
+                                                                        5    HID0                  DIN    24
+                                                                                                                        C4
+                                                                        6    HID1                VCCXI    23
+
+                                                                        7    HID2               AGNDX     22
+                               IC1                                                                               1 MW            C5
+                                                                        8    SEL0                  XTI    21
+                        IN OUT GND ADJ EN
+                                                                                                                                 C6
+                        1      2    3      4     5                      9    SEL1                 XTO     20
+                                                          3.6 V to
+                                                          3.85 V                                                        12 MHz
+                                                                        10   VCCCI               VCCP2I   19
+          C13                                     D1      +                                                                               MUTE/
+                                                                                                                        C7
+                                                                                                                                          Power
+                                                                        11   AGNDC              AGNDP     18                              Down
+             C9                                               C1
+                                                                                                                        C8
+                                                                        12   VINL                VCCP1I   17
+                    +              27 kW       13 kW
+             C10                                                                                                        C11            LPF,
+                                                                             VINR                VOUTL            +
+                                                                        13                                16                           Amp
+                    +                                              C2
+                                                                                                                  +     C12
+                                                                        14   VCOM               VOUTR     15
+                                                                   +
+                                                                                                                                       LPF,
+                                                                                                                                       Amp
+
+
+
+   NOTE: C1, C2: 10 μF
+         C3, C4, C7, C8, C13: 1 μF (These capacitors must be less than 2 μF.)
+         C5, C6: 10 pF to 33 pF (depending on crystal resonator)
+         C9, C10, C11, C12: The capacitance may vary depending on design.
+         IC1: REG103xA-A (TI) or equivalent. Analog performance may vary depending on IC1.
+         D1: Schottky barrier diode (VF ≤ 350 mV at 10 mA, IR ≤ 2 μA at 4 V)
+
+                        Figure 37. Bus-Powered Configuration for High-Performance Application
+
+
+
+
+Copyright © 2011, Texas Instruments Incorporated                                                           Submit Documentation Feedback          25
+                                                       Product Folder Link(s): PCM2900C PCM2902C
+PCM2900C
+PCM2902C
+SBFS039 – SEPTEMBER 2011                                                                                                         www.ti.com
+
+PCM2900C TYPICAL CIRCUIT CONNECTION 2
+Figure 38 illustrates a typical circuit connection for a simple application. The circuit illustrated is for information
+only. The entire board design should be considered to meet the USB specification as a USB-compliant product.
+
+
+
+
+                         1.5 kW × 4
+
+
+                                                                         PCM2900C
+                                                 22 W
+      D+                                                     1   D+                 SSPND     28
+                                                 22 W                                                                    C3
+      D-                                                     2   D-                   VDDI    27
+                     2.2 W
+     VBUS                                                    3   VBUS               DGND      26
+                         1 mF
+     GND                                                     4   DGNDU              TEST1     25
+
+                                                             5   HID0               TEST0     24
+                                                                                                                         C4
+                                                             6   HID1                VCCXI    23
+
+                                                             7   HID2               AGNDX     22
+                                                                                                        1 MW             C5
+                                                             8   SEL0                  XTI    21
+                                                                                                                         C6
+                                                             9   SEL1                 XTO     20
+                                                    C1                                                         12 MHz    C7
+                                                            10   VCCCI               VCCP2I   19
+                                                    +                                                                               MUTE/
+                                                                                                                                    Power
+                                                            11   AGNDC              AGNDP     18                                    Down
+               C9                                                                                              C8
+                                                            12   VINL                VCCP1I   17
+                     +
+               C10                                                                                             C11             LPF,
+                                                                 VINR                VOUTL               +
+                                                            13                                16                               Amp
+                     +                               C2
+                                                                                                         +     C12
+                                                            14   VCOM               VOUTR     15
+                                                    +
+                                                                                                                               LPF,
+                                                                                                                               Amp
+
+
+
+     NOTE: C1, C2: 10 μF
+           C3, C4, C7, C8: 1 μF (These capacitors must be less than 2 μF.)
+           C5, C6: 10 pF to 33 pF (depending on crystal resonator)
+           C9, C10, C11, C12: The capacitance may vary depending on design.
+           In this case, the analog performance of the ADC may be degraded.
+
+                                            Figure 38. Bus-Powered Configuration
+
+
+
+
+26          Submit Documentation Feedback                                                     Copyright © 2011, Texas Instruments Incorporated
+
+                                             Product Folder Link(s): PCM2900C PCM2902C
+                                                                                                                               PCM2900C
+                                                                                                                               PCM2902C
+www.ti.com                                                                                                         SBFS039 – SEPTEMBER 2011
+
+PCM2902C TYPICAL CIRCUIT CONNECTION 2
+Figure 39 illustrates a typical circuit connection for a simple application. The circuit illustrated is for information
+only. The entire board design should be considered to meet the USB specification as a USB-compliant product.
+
+
+
+
+                        1.5 kW × 4
+
+
+                                                                              PCM2902C
+                                                       22 W
+     D+                                                           1   D+                 SSPND     28
+                                                       22 W                                                               C3
+     D-                                                           2   D-                   VDDI    27
+                    2.2 W
+   VBUS                                                           3   VBUS               DGND      26
+                        1 mF
+   GND                                                            4   DGNDU               DOUT     25
+
+                                                                  5   HID0                  DIN    24
+                                                                                                                          C4
+                                                                  6   HID1                VCCXI    23
+
+                                                                  7   HID2               AGNDX     22
+                                                                                                          1 MW            C5
+                                                                  8   SEL0                  XTI    21
+                                                                                                                          C6
+                                                                  9   SEL1                 XTO     20
+                                                          C1                                                     12 MHz   C7
+                                                                 10   VCCCI               VCCP2I   19
+                                                           +                                                                       MUTE/
+                                                                                                                                   Power
+                                                                 11   AGNDC              AGNDP     18                              Down
+             C9                                                                                                  C8
+                                                                 12   VINL                VCCP1I   17
+                    +
+             C10                                                                                                 C11            LPF,
+                                                                      VINR                VOUTL            +
+                                                                 13                                16                           Amp
+                    +                                      C2
+                                                                                                           +     C12
+                                                                 14   VCOM               VOUTR     15
+                                                           +
+                                                                                                                                LPF,
+                                                                                                                                Amp
+
+
+
+   NOTE: C1, C2: 10 μF
+         C3, C4, C7, C8: 1 μF (These capacitors must be less than 2 μF.)
+         C5, C6: 10 pF to 33 pF (depending on crystal resonator)
+         C9, C10, C11, C12: The capacitance may vary depending on design.
+         In this case, the analog performance of the ADC may be degraded.
+
+                                                   Figure 39. Bus-Powered Configuration
+
+
+OPERATING ENVIRONMENT
+For current information on the PCM2900C/2902C operating environment, see the application report, Updated
+Operating Environments for PCM270X, PCM290X Applications (SLAA374), available for download from the TI
+website.
+
+
+
+
+Copyright © 2011, Texas Instruments Incorporated                                                    Submit Documentation Feedback          27
+                                                    Product Folder Link(s): PCM2900C PCM2902C
+                                                                                                                                                                     PACKAGE OPTION ADDENDUM
+
+       www.ti.com                                                                                                                                                                                                   19-Sep-2026
+
+
+
+
+PACKAGING INFORMATION
+
+       Orderable part number          Status     Material type      Package | Pins      Package qty | Carrier       RoHS             Lead finish/               MSL rating/          Op temp (°C)               Part marking
+                                        (1)            (2)                                                            (3)            Ball material              Peak reflow                                           (6)
+                                                                                                                                          (4)                       (5)
+
+            PCM2900CDB                Active      Production        SSOP (DB) | 28            50 | TUBE              Yes            Call TI | Nipdau     Level-1-260C-UNLIM             -25 to 85                PCM2900C
+          PCM2900CDB.B                Active      Production        SSOP (DB) | 28            50 | TUBE              Yes                Call TI          Level-1-260C-UNLIM             -25 to 85                PCM2900C
+           PCM2900CDBR                Active      Production        SSOP (DB) | 28       2000 | LARGE T&R            Yes               NIPDAU            Level-1-260C-UNLIM             -25 to 85                PCM2900C
+          PCM2900CDBR.B               Active      Production        SSOP (DB) | 28       2000 | LARGE T&R            Yes               NIPDAU            Level-1-260C-UNLIM             -25 to 85                PCM2900C
+         PCM2900CDBRG4                Active      Production        SSOP (DB) | 28       2000 | LARGE T&R            Yes               NIPDAU            Level-1-260C-UNLIM             -25 to 85                PCM2900C
+        PCM2900CDBRG4.B               Active      Production        SSOP (DB) | 28       2000 | LARGE T&R            Yes               NIPDAU            Level-1-260C-UNLIM             -25 to 85                PCM2900C
+            PCM2902CDB                Active      Production        SSOP (DB) | 28            50 | TUBE              Yes            Call TI | Nipdau     Level-1-260C-UNLIM             -25 to 85                PCM2902C
+          PCM2902CDB.B                Active      Production        SSOP (DB) | 28            50 | TUBE              Yes                Call TI          Level-1-260C-UNLIM             -25 to 85                PCM2902C
+           PCM2902CDBR                Active      Production        SSOP (DB) | 28       2000 | LARGE T&R            Yes            Call TI | Nipdau     Level-1-260C-UNLIM             -25 to 85                PCM2902C
+          PCM2902CDBR.B               Active      Production        SSOP (DB) | 28       2000 | LARGE T&R            Yes                Call TI          Level-1-260C-UNLIM             -25 to 85                PCM2902C
+         PCM2902CDBRG4                Active      Production        SSOP (DB) | 28       2000 | LARGE T&R            Yes               NIPDAU            Level-1-260C-UNLIM             -25 to 85                PCM2902C
+        PCM2902CDBRG4.B               Active      Production        SSOP (DB) | 28       2000 | LARGE T&R            Yes               NIPDAU            Level-1-260C-UNLIM             -25 to 85                PCM2902C
+
+(1)
+      Status: For more details on status, see our product life cycle.
+
+(2)
+   Material type: When designated, preproduction parts are prototypes/experimental devices, and are not yet approved or released for full production. Testing and final process, including without limitation quality assurance,
+reliability performance testing, and/or process qualification, may not yet be complete, and this item is subject to further changes or possible discontinuation. If available for ordering, purchases will be subject to an additional
+waiver at checkout, and are intended for early internal evaluation purposes only. These items are sold without warranties of any kind.
+
+(3)
+      RoHS values: Yes, No, RoHS Exempt. See the TI RoHS Statement for additional information and value definition.
+
+(4)
+   Lead finish/Ball material: Parts may have multiple material finish options. Finish options are separated by a vertical ruled line. Lead finish/Ball material values may wrap to two lines if the finish value exceeds the maximum
+column width.
+
+(5)
+  MSL rating/Peak reflow: The moisture sensitivity level ratings and peak solder (reflow) temperatures. In the event that a part has multiple moisture sensitivity ratings, only the lowest level per JEDEC standards is shown.
+Refer to the shipping label for the actual reflow temperature that will be used to mount the part to the printed circuit board.
+
+(6)
+      Part marking: There may be an additional marking, which relates to the logo, the lot trace code information, or the environmental category of the part.
+
+Multiple part markings will be inside parentheses. Only one part marking contained in parentheses and separated by a "~" will appear on a part. If a line is indented then it is a continuation of the previous line and the two
+combined represent the entire part marking for that device.
+
+
+
+                                                                                                          Addendum-Page 1
+                                                                                                                                                                      PACKAGE OPTION ADDENDUM
+
+    www.ti.com                                                                                                                                                                                                   19-Sep-2026
+
+
+
+
+Important Information and Disclaimer:The information provided on this page represents TI's knowledge and belief as of the date that it is provided. TI bases its knowledge and belief on information provided by third parties, and
+makes no representation or warranty as to the accuracy of such information. Efforts are underway to better integrate information from third parties. TI has taken and continues to take reasonable steps to provide representative
+and accurate information but may not have conducted destructive testing or chemical analysis on incoming materials and chemicals. TI and TI suppliers consider certain information to be proprietary, and thus CAS numbers
+and other limited information may not be available for release.
+
+In no event shall TI's liability arising out of such information exceed the total purchase price of the TI part(s) at issue in this document sold by TI to Customer on an annual basis.
+
+
+
+
+                                                                                                          Addendum-Page 2
+                                                                               PACKAGE MATERIALS INFORMATION
+
+www.ti.com                                                                                                                                     10-Aug-2026
+
+
+
+TAPE AND REEL INFORMATION
+
+       REEL DIMENSIONS                                                                      TAPE DIMENSIONS
+                                                                                       K0       P1
+
+
+
+                                                                                                                       B0 W
+                                        Reel
+                                      Diameter
+                                                                                    Cavity           A0
+                                                                A0   Dimension designed to accommodate the component width
+                                                                B0   Dimension designed to accommodate the component length
+                                                                K0   Dimension designed to accommodate the component thickness
+                                                                W    Overall width of the carrier tape
+                                                                P1   Pitch between successive cavity centers
+
+
+                                       Reel Width (W1)
+                              QUADRANT ASSIGNMENTS FOR PIN 1 ORIENTATION IN TAPE
+
+                                                                                                      Sprocket Holes
+
+
+                                                 Q1        Q2          Q1    Q2
+
+                                                 Q3        Q4          Q3    Q4                  User Direction of Feed
+
+
+
+                                                            Pocket Quadrants
+
+
+*All dimensions are nominal
+             Device           Package Package Pins              SPQ       Reel   Reel   A0                   B0         K0     P1     W     Pin1
+                               Type Drawing                             Diameter Width (mm)                 (mm)       (mm)   (mm)   (mm) Quadrant
+                                                                          (mm) W1 (mm)
+    PCM2900CDBRG4              SSOP      DB           28        2000        330.0        16.4        8.45   10.55      2.5    12.0   16.2    Q1
+    PCM2902CDBRG4              SSOP      DB           28        2000        330.0        16.4        8.45   10.55      2.5    12.0   16.2    Q1
+
+
+
+
+                                                                      Pack Materials-Page 1
+                                                                PACKAGE MATERIALS INFORMATION
+
+www.ti.com                                                                                                              10-Aug-2026
+
+
+
+ TAPE AND REEL BOX DIMENSIONS
+
+
+
+
+                                                               Width (mm)
+                                                                              H
+                      W
+
+
+
+
+                                                          L
+
+
+
+
+*All dimensions are nominal
+             Device           Package Type   Package Drawing   Pins         SPQ    Length (mm)   Width (mm)   Height (mm)
+    PCM2900CDBRG4                SSOP              DB           28          2000      353.0        353.0         32.0
+    PCM2902CDBRG4                SSOP              DB           28          2000      353.0        353.0         32.0
+
+
+
+
+                                                        Pack Materials-Page 2
+                                                               PACKAGE MATERIALS INFORMATION
+
+www.ti.com                                                                                                   10-Aug-2026
+
+
+
+TUBE
+
+       T - Tube
+        height                                                     L - Tube length
+
+
+                      W - Tube
+                       width
+
+
+         B - Alignment groove width
+
+*All dimensions are nominal
+             Device           Package Name   Package Type   Pins       SPQ     L (mm)   W (mm)   T (µm)   B (mm)
+      PCM2900CDB                  DB            SSOP         28         50      530      10.5    4000      4.1
+      PCM2900CDB                  DB            SSOP         28         50      530      10.5    4000      4.1
+     PCM2900CDB.B                 DB            SSOP         28         50      530      10.5    4000      4.1
+     PCM2900CDB.B                 DB            SSOP         28         50      530      10.5    4000      4.1
+      PCM2902CDB                  DB            SSOP         28         50      530      10.5    4000      4.1
+      PCM2902CDB                  DB            SSOP         28         50      530      10.5    4000      4.1
+     PCM2902CDB.B                 DB            SSOP         28         50      530      10.5    4000      4.1
+     PCM2902CDB.B                 DB            SSOP         28         50      530      10.5    4000      4.1
+
+
+
+
+                                                       Pack Materials-Page 3
+                                                                                                        PACKAGE OUTLINE
+DB0028A                                                        SCALE 1.500
+                                                                                                        SSOP - 2 mm max height
+                                                                                                                  SMALL OUTLINE PACKAGE
+
+
+
+                                                                                                                    C
+                                   8.2
+                                       TYP
+       A                           7.4
+                                                                                                                0.1 C                  SEATING
+                                       PIN 1 INDEX AREA
+                                                                                                                                       PLANE
+                                                                                    26X 0.65
+                                                                             28
+             1
+
+
+
+
+                                                                                     2X
+     10.5
+                                                                                     8.45
+     9.9
+    NOTE 3
+
+
+
+
+            14
+                                                             15
+                                                                                         0.38
+                                                                                   28X
+                                                                                         0.22
+                                    5.6                                                  0.15   C A B
+                 B
+                                    5.0
+                                   NOTE 4
+
+
+
+
+                                                                                                                                      2 MAX
+                                                      (0.15) TYP                          0.25
+                                SEE DETAIL A                                       GAGE PLANE
+
+
+
+
+                                                                                                         0.95                          0.05 MIN
+                                                                                         0 -8            0.55
+
+                                                                                                                   DETAIL A
+                                                                                                                        A 15
+
+
+
+
+                                                                                                                    TYPICAL
+
+                                                                                                                               4214853/B 03/2018
+
+NOTES:
+
+1. All linear dimensions are in millimeters. Any dimensions in parenthesis are for reference only. Dimensioning and tolerancing
+   per ASME Y14.5M.
+2. This drawing is subject to change without notice.
+3. This dimension does not include mold flash, protrusions, or gate burrs. Mold flash, protrusions, or gate burrs shall not
+   exceed 0.15 mm per side.
+4. This dimension does not include interlead flash. Interlead flash shall not exceed 0.25 mm per side.
+5. Reference JEDEC registration MO-150.
+
+
+
+
+                                                                              www.ti.com
+                                                                                   EXAMPLE BOARD LAYOUT
+DB0028A                                                                                     SSOP - 2 mm max height
+                                                                                                          SMALL OUTLINE PACKAGE
+
+
+
+                                        28X (1.85)                    SYMM
+
+                                  1                                                                        (R0.05) TYP
+
+                      28X (0.45)                                                                     28
+
+
+
+
+                     26X (0.65)
+
+
+                                                                                                          SYMM
+
+
+
+
+                                  14                                                                 15
+
+
+
+                                                                       (7)
+
+
+                                                       LAND PATTERN EXAMPLE
+                                                         EXPOSED METAL SHOWN
+                                                              SCALE: 10X
+
+
+
+              SOLDER MASK                                                     METAL UNDER                 SOLDER MASK
+                                                     METAL
+                  OPENING                                                     SOLDER MASK                 OPENING
+
+
+      EXPOSED METAL                                                                                              EXPOSED METAL
+
+                                       0.07 MAX                                             0.07 MIN
+                                       ALL AROUND                                           ALL AROUND
+
+                           NON-SOLDER MASK                                                  SOLDER MASK
+                               DEFINED                                                        DEFINED
+                             (PREFERRED)
+                                                         SOLDER MASK DETAILS
+                                                             15.000
+
+
+
+
+                                                                                                                 4214853/B 03/2018
+NOTES: (continued)
+
+6. Publication IPC-7351 may have alternate designs.
+7. Solder mask tolerances between and around signal pads can vary based on board fabrication site.
+
+
+
+
+                                                                      www.ti.com
+                                                                               EXAMPLE STENCIL DESIGN
+DB0028A                                                                                      SSOP - 2 mm max height
+                                                                                                           SMALL OUTLINE PACKAGE
+
+
+
+                                       28X (1.85)               SYMM
+                                                                                                            (R0.05) TYP
+                                  1
+                      28X (0.45)                                                                      28
+
+
+
+
+                     26X (0.65)
+
+
+                                                                                                        SYMM
+
+
+
+
+                                  14                                                                  15
+
+
+
+                                                                  (7)
+
+
+
+                                                     SOLDER PASTE EXAMPLE
+                                                    BASED ON 0.125 mm THICK STENCIL
+                                                              SCALE: 10X
+
+
+
+
+                                                                                                                  4214853/B 03/2018
+NOTES: (continued)
+
+8. Laser cutting apertures with trapezoidal walls and rounded corners may offer better paste release. IPC-7525 may have alternate
+   design recommendations.
+9. Board assembly site may have different recommendations for stencil design.
+
+
+
+
+                                                                 www.ti.com
+                                         IMPORTANT NOTICE AND DISCLAIMER
+TI PROVIDES TECHNICAL AND RELIABILITY DATA (INCLUDING DATASHEETS), DESIGN RESOURCES (INCLUDING REFERENCE
+DESIGNS), APPLICATION OR OTHER DESIGN ADVICE, WEB TOOLS, SAFETY INFORMATION, AND OTHER RESOURCES “AS IS”
+AND WITH ALL FAULTS, AND DISCLAIMS ALL WARRANTIES, EXPRESS AND IMPLIED, INCLUDING WITHOUT LIMITATION ANY
+IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NON-INFRINGEMENT OF THIRD
+PARTY INTELLECTUAL PROPERTY RIGHTS.
+These resources are intended for skilled developers designing with TI products. You are solely responsible for (1) selecting the appropriate
+TI products for your application, (2) designing, validating and testing your application, and (3) ensuring your application meets applicable
+standards, and any other safety, security, regulatory or other requirements.
+These resources are subject to change without notice. TI grants you permission to use these resources only for development of an
+application that uses the TI products described in the resource. Other reproduction and display of these resources is prohibited. No license
+is granted to any other TI intellectual property right or to any third party intellectual property right. TI disclaims responsibility for, and you fully
+indemnify TI and its representatives against any claims, damages, costs, losses, and liabilities arising out of your use of these resources.
+TI’s products are provided subject to TI’s Terms of Sale, TI’s General Quality Guidelines, or other applicable terms available either on
+ti.com or provided in conjunction with such TI products. TI’s provision of these resources does not expand or otherwise alter TI’s applicable
+warranties or warranty disclaimers for TI products. Unless TI explicitly designates a product as custom or customer-specified, TI products
+are standard, catalog, general purpose devices.
+TI objects to and rejects any additional or different terms you may propose.
+IMPORTANT NOTICE
+
+                                                Copyright © 2026, Texas Instruments Incorporated
+                                                                Last updated 10/2025
+

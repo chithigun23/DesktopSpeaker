@@ -1,0 +1,51 @@
+{
+  "part": "TPS7B8450QWDRBRQ1",
+  "review_date": "2026-10-05",
+  "datasheet": {
+    "file": "ai-files/datasheets/TPS7B84-Q1.pdf",
+    "source": "Texas Instruments SBVS361B, revised May 2025 (local PDF)",
+    "package": "DRB VSON-8, 3mm x 3mm"
+  },
+  "symbol": {
+    "file": "DesktopSpeaker-kicad/kicad-library/schematic/TPS7B8450QWDRBRQ1.kicad_sym",
+    "unit": "single functional unit; IN/EN left, OUT/NC right, ground pins down",
+    "mapping": {
+      "1": "OUT",
+      "2": "FB/NC; fixed-output variant NC",
+      "3": "NC",
+      "4": "NC",
+      "5": "GND",
+      "6": "NC",
+      "7": "EN",
+      "8": "IN",
+      "9": "EP/thermal pad, connected to GND per datasheet"
+    },
+    "nc_representation": "Pins 2, 3, 4, 6 use no_connect pin type. Ground pin 5 and EP pad 9 are separate same-net power pins.",
+    "placement_update": "Ground pins 5 and 9 moved to x=-5.08mm and +5.08mm; centered reference/value moved below both ground pins to avoid overlap. SVG re-exported successfully."
+  },
+  "footprint": {
+    "file": "DesktopSpeaker-kicad/kicad-library/footprint/TPS7B8450QWDRBRQ1_WSON-8.kicad_mod",
+    "review": "Adjusted perimeter pads to match TI DRB0008J example board land pattern: eight pads, 0.60 x 0.31 mm, 0.50 mm pitch, row span 2.80 mm; centered exposed metal pad 9, 1.60 x 2.00 mm. Four paste windows each 0.60 x 0.80 mm. Earlier pad width 0.25 mm was narrower than TI example 0.31 mm; footprint updated to 0.31 mm."
+  },
+  "model": {
+    "file": "DesktopSpeaker-kicad/kicad-library/3d/TPS7B8450QWDRBRQ1.step",
+    "origin": "Generic KiCad StepUp WSON-8-1EP_3x3mm_P0.5mm_EP1.6x2.0mm model, not TI-origin. FreeCAD 1.0.0 STEP import verified one solid with body bounds 3.00 x 2.98 x 0.82 mm and separate planar exposed-metal bottom face bounds 1.60 x 2.00 mm at z=0. Footprint project-relatively links it."
+  },
+  "electrical_notes": {
+    "fixed_output": "5.0 V",
+    "maximum_current": "150 mA",
+    "recommended_input_range": "3 to 40 V",
+    "dropout": "Fixed-output DRB: 225 mV maximum at 150 mA (VOUT >= 3.3 V); a nominal 5 V input cannot guarantee 5 V output at load.",
+    "output_capacitance": "Recommended 2.2 to 220 uF nominal; effective capacitance >=1 uF required for stability; ESR 0.001 to 2 ohm. X5R/X7R preferred. Account for DC bias, tolerance, temperature and aging.",
+    "input_capacitance": "Not required for stability; typical recommendation 1 uF, min 0.1 uF; >=0.5 uF for robust EMI."
+  },
+  "candidate_c5_review": {
+    "active_bom_identity": "C5 is Samsung CL31B475KBHNNNE, LCSC C51205; 4.7 uF, 50 V, X7R, 1206, +/-10% per BOM evidence. It is not Murata GRM31CR71H475KA12L/C97946.",
+    "assessment": "C5 nominal 4.7 uF is a plausible output-cap candidate, but current project evidence has no exact-part manufacturer bias/temperature curve or guaranteed minimum capacitance, so it cannot be said to guarantee >=1 uF effective at 5 V and operating temperature. Keep C5 unchanged until that minimum is substantiated. Datasheet recommends 2.2 uF or larger nominal."
+  },
+  "validation": {
+    "kicad_cli": "Installed KiCad CLI 10.0.6",
+    "symbol_svg": "Re-exported after text/pin placement update with installed KiCad CLI 10.0.6 to ai-files/reports/vdd-ldo-symbol-svg/TPS7B8450QWDRBRQ1_unit1.svg.",
+    "library_registration": "Candidate only; no shared library tables changed."
+  }
+}

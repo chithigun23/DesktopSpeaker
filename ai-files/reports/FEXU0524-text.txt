@@ -1,0 +1,1794 @@
+                                 深圳市长江微电科技有限公司
+                             SZ CJIANG TECHNOLOGY CO., LTD
+
+
+
+
+           SpecifiStion of Cjiang products
+
+               Customer
+
+
+               Product Name
+
+
+               Customer P/N:
+
+               C iang P/N:
+
+
+
+                          New Released, 口 Revised                            SPEC No：
+
+
+                     REMARK：
+
+
+
+
+                                        Customer Approval Feedback
+
+
+
+
+●深圳市长江微电科技有限公司
+SZ CJIANG TECHNOLOGY CO. , LTD
+ADD： 11 F, International Science and Technology Building, Fuhong Road, Futian District, Shenzhen
+Factory ADD: No.
+TEL: 0755-82529562 FAX:0755-83977004
+http://www.CJIANG.COM.CN
+SALES：E- mail: BOND@ Cjiang. com. cn ；ann@ cjiang. com. cn
+R&D：E-mail：RD@cjiang.com.cn
+
+
+
+
+                       更 多 资 讯, 请 点击 长 江 微 电 官 网 more information, Please click： WWW. CJIANG. COM. CN
+                                         深圳市长江微电科技有限公司
+                                     SZ CJIANG TECHNOLOGY CO., LTD
+
+
+                                                         Version change history
+
+
+     Rev                 Date                               Description                               APPROVED              CHECKED            DRAWN
+
+
+      1.0          2025/3/29         Document formulation                                                BOND                MIKO                Roy
+
+
+      2.0          2025/7/25         New Series                                                          BOND                MIKO                Roy
+
+
+      3.0          2026/2/25         New Series                                                          BOND                MIKO                Roy
+
+                                     1. New customer part number;
+      4.0          2026/8/26         2. Production of black-colored products will                        BOND                MIKO                Roy
+                                        no longer be Srried out.
+
+
+
+
+ Sution :
+    All products listed in this specifiStion are developed, designed and intended for use in general electronics equipment. The products are not
+
+designed or Warranted to meet the requirements of the appliStions listed below, whose performance and/or quality require especially high reliability,
+or whose failure, malfunction or trouble might directly Suse damage to society, person, or property. Please understand that we are not responsible
+for any damage or liability Sused by use of the products in any of the appliStions below. Please contact us for more details if you intend to use our
+products in the following appliStions.
+
+1. Aircraft equipment.
+2. Aerospace equipment.
+3. Undersea equipment.
+
+4. nuclear control equipment.
+5. military equipment.
+
+6. Power plant equipment.
+7. MediSl equipment.
+8. Transportation equipment (automobiles, trains, ships,etc.)
+
+9. Traffic signal equipment.
+10. Disaster prevention / crime prevention equipment.
+11. Data-processing equipment.
+12. AppliStions of similar complexity or with reliability requirements comparable to the appliStions listed in the above.
+Note: This type of product does not currently support ultrasonic welding and ultrasonic cleaning processes. For
+further details, please contact our engineering department.
+
+
+
+
+                                更 多 资 讯, 请 点击 长 江 微 电 官 网 more information, Please click： WWW. CJIANG. COM. CN
+                                  深圳市长江微电科技有限公司
+                               SZ CJIANG TECHNOLOGY CO., LTD
+
+
+1. Features
+ 1.1 Metal material for large current and low loss.
+ 1.2 High performance (Isat) realized by metal dust core.
+ 1.3 Low loss realized with low Rdc.
+ 1.4 Closed magnetic circuit design reduces leakage flux.
+ 1.5 Vinyl thermal spray, better surface compactness.
+ 1.6 Environmental requirements must comply with the QESP-44 document
+ 1.7 100% lead (Pb) free meet RoHS2.0 and Halogen Reach and other legal and regulatory requirements standard.
+
+
+2. Application
+ 2. 1 DC/DC converters.
+ 2.2 Pad、Smart phone.
+ 2.3 Portable gaming devices, Smart wear, Wi-Fi module.
+ 2.4 Notebooks, VR, AR.
+ 2.5 LCD displays, HDDs, DVCs, DSCs, etc.
+ 2.6 Baseband power supply, Amplifier, Power management, Module power supply, Smera power manageme.
+ 2.7 Automotive electronic equipment
+
+
+3. Ordering Procedure
+
+
+                              04     20   S   1R0     M    G      C     *
+                     ①        ②      ③    ④    ⑤      ⑥    ⑦      ⑧     ⑨
+
+
+ ① Series Name                                               ⑥ Tolerance:
+
+ TU-CORE Molding Power Inductors                             K = ±10% M= ±20% N=±30%
+
+ ②External Dimensions(L ×W):                                 ⑦ Coating color:
+
+ 04 =4.10*4.10mm                                               G=Gray
+
+ ③External Dimensions(H):                                    ⑧ Current;
+
+ 20 =2.0mm                                                   S=Routine      B~Z=Special
+
+ ④ Size Tolerance:                                           ⑨ Special Part Number:
+                                                               This special part number or customer-specific
+  S = ±0.2mm
+                                                               specifiStion X, where X denotes any alphabetiSl
+ ⑤ Inductance value:                                           identifier, shall be determined according to the product
+                                                               matrix.
+ 1R0 =1.0uH
+
+
+
+ For customized inductance values beyond standard specifications—or for specialized requirements
+ concerning DC resistance (DCR), saturation current (Isat), and temperature-rise current—please
+ contact our engineering team directly.
+ Email: RD@cjiang.com.cn
+ Alternatively, you may reach our customer service representatives through our official website:
+ www.cjiang.com.cn
+
+
+
+
+                       更 多 资 讯, 请 点击 长 江 微 电 官 网 more information, Please click： WWW. CJIANG. COM. CN
+                             深圳市长江微电科技有限公司
+                          SZ CJIANG TECHNOLOGY CO., LTD
+
+
+4.TU- core FEXU Integrated Inductor（Commercial use）
+
+ 4.1 Shape and Dimensions
+     Outline Dimensions                                          Recommend Land Pattern Dimensions
+
+
+
+
+     Units:mm
+     Series       L            G            W            E             T            A             B      C
+
+   FEXU0412S    4.1±0.2     1.3±0.2      4.1±0.2      1.40±0.2     1.20Max.        4.10          1.10   4.10
+
+   FEXU0415S    4.1±0.2     1.3±0.2      4.1±0.2      1.40±0.2     1.50Max         4.10          1.10   4.10
+
+   FEXU0418S    4.1±0.2     1.3±0.2      4.1±0.2      1.40±0.2     1.80Max         4.10          1.10   4.10
+
+   FEXU0420S    4.1±0.2     1.3±0.2      4.1±0.2      1.40±0.2     2.00Max.        4.10          1.10   4.10
+
+   FEXU0421S    4.1±0.2     1.3±0.2      4.1±0.2      1.40±0.2     2.10Max.        4.10          1.10   4.10
+
+   FEXU0424S    4.1±0.2     1.3±0.2      4.1±0.2      1.40±0.2     2.40Max.        4.10          1.10   4.10
+
+   FEXU0430S    4.1±0.2     1.3±0.2      4.1±0.2      1.40±0.2     3.00Max.        4.10          1.10   4.10
+
+   FEXU0440S    4.1±0.2     1.3±0.2      4.1±0.2      1.40±0.2     4.00Max.        4.10          1.10   4.10
+
+   FEXU0512S    5.2±0.2     2.0±0.2      5.0±0.2      1.60±0.2     1.20Max.        5.50          1.60   5.30
+
+   FEXU0518S    5.2±0.2     2.0±0.2      5.0±0.2      1.60±0.2     1.80Max.        5.50          1.60   5.30
+
+   FEXU0520S    5.2±0.2     2.0±0.2      5.0±0.2      1.60±0.2     2.00Max.        5.50          1.60   5.30
+
+   FEXU0524S    5.2±0.2     2.0±0.2      5.0±0.2      1.60±0.2     2.40Max.        5.50          1.60   5.30
+
+   FEXU0528S    5.2±0.2     2.0±0.2      5.0±0.2      1.60±0.2     2.80Max.        5.50          1.60   5.30
+
+   FEXU0530S    5.2±0.2     2.0±0.2      5.0±0.2      1.60±0.2     3.00Max.        5.50          1.60   5.30
+
+   FEXU0531S    5.2±0.2     2.0±0.2      5.0±0.2      1.60±0.2     3. 10Max.       5.50          1.60   5.30
+
+   FEXU0540S    5.2±0.2     2.0±0.2      5.0±0.2      1.60±0.2     4.00Max.        5.50          1.60   5.30
+
+   FEXU0550S    5.2±0.2     2.0±0.2      5.0±0.2      1.60±0.2     5.00Max.        5.50          1.60   5.30
+
+   FEXU5124S    5.1±0.2     2.0±0.2      5.3±0.2      1.60±0.2     2.40Max.        5.50          1.70   5.70
+
+   FEXU5130S    5.1±0.2     2.0±0.2      5.3±0.2      1.60±0.2     3.00Max.        5.50          1.70   5.70
+
+   FEXU5320S    5.3±0.2     1.9±0.2      5.5±0.2      1.70±0.3     2.00Max.        5.60          1.30   6.00
+
+   FEXU5321S    5.3±0.2     1.9±0.2      5.5±0.2      1.70±0.3     2. 10Max.       5.60          1.30   6.00
+
+   FEXU5324S    5.3±0.2     1.9±0.2      5.5±0.2      1.70±0.3     2.40Max.        5.60          1.30   6.00
+
+   FEXU5330S    5.3±0.2     1.9±0.2      5.5±0.2      1.70±0.3     3.00Max.        5.60          1.30   6.00
+
+   FEXU5350S    5.3±0.2     1.9±0.2      5.5±0.2      1.70±0.3     5.00Max.        5.60          1.30   6.00
+
+   FEXU0630S    6.2±0.2     2.6±0.2      6.0±0.2      1.80±0.2     3.00Max.        6.50          2.00   6.30
+
+   FEXU0631S    6.2±0.2     2.6±0.2      6.0±0.2      1.80±0.2     3. 10Max.       6.50          2.00   6.30
+
+
+                更 多 资 讯, 请 点击 长 江 微 电 官 网 more information, Please click： WWW. CJIANG. COM. CN
+                          深圳市长江微电科技有限公司
+                       SZ CJIANG TECHNOLOGY CO., LTD
+
+FEXU0640S   6.2±0.2     2.6±0.2       6.0±0.2     1.80±0.2     4.00Max.        6.50            2.00   6.30
+
+FEXU0650S   6.2±0.2     2.6±0.2      6.0±0.2      1.80±0.2      5.00Max.       6.50            2.00   6.30
+
+FEXU0660S   6.2±0.2     2.6±0.2      6.0±0.2      1.80±0.2      6.00Max.       6.50            2.00   6.30
+
+FEXU6415S   6.4±0.2     2.4±0.2      6.6±0.2      2.00±0.3      1.50Max.       6.80            2.00   7.00
+
+FEXU6420S   6.4±0.2     2.4±0.2      6.6±0.2      2.00±0.3      2.00Max.       6.80            2.00   7.00
+
+FEXU6424S   6.4±0.2     2.4±0.2      6.6±0.2      2.00±0.3      2.40Max.       6.80            2.00   7.00
+
+FEXU6430S   6.4±0.2     2.4±0.2      6.6±0.2      2.00±0.3      3.00Max.       6.80            2.00   7.00
+
+FEXU6440S   6.4±0.2     2.4±0.2      6.6±0.2      2.00±0.3      4.00Max.       6.80            2.00   7.00
+
+FEXU6450S   6.4±0.2     2.4±0.2      6.6±0.2      2.00±0.3      5.00Max.       6.80            2.00   7.00
+
+FEXU6460S   6.4±0.2     2.4±0.2      6.6±0.2      2.00±0.3      6.00Max.       6.80            2.00   7.00
+
+FEXU0715S   7.2±0.2     2.6±0.2      7.0±0.2      2.30±0.2      1.50Max.       7.50            2.40   7.30
+
+FEXU0720S   7.2±0.2     2.6±0.2      7.0±0.2      2.30±0.2      2.00Max.       7.50            2.40   7.30
+
+FEXU0730S   7.2±0.2     2.6±0.2      7.0±0.2      2.30±0.2      3.00Max.       7.50            2.40   7.30
+
+FEXU0740S   7.2±0.2     2.6±0.2      7.0±0.2      2.30±0.2      4.00Max.       7.50            2.40   7.30
+
+FEXU0750S   7.2±0.2     2.6±0.2      7.0±0.2      2.30±0.2      5.00Max.       7.50            2.40   7.30
+
+FEXU0760S   7.2±0.2     2.6±0.2      7.0±0.2      2.30±0.2      6.00Max.       7.50            2.40   7.30
+
+FEXU0820S   8.2±0.2     2.8±0.2      8.0±0.2      2.70±0.2      2.00Max.       8.50            2.60   8.30
+
+FEXU0822S   8.2±0.2     2.8±0.2      8.0±0.2      2.70±0.2      2.20Max.       8.50            2.60   8.30
+
+FEXU0830S   8.2±0.2     2.8±0.2      8.0±0.2      2.70±0.2      3.00Max.       8.50            2.60   8.30
+
+FEXU0840S   8.2±0.2     2.8±0.2      8.0±0.2      2.70±0.2      4.00Max.       8.50            2.60   8.30
+
+FEXU0850S   8.2±0.2     2.8±0.2      8.0±0.2      2.70±0.2      5.00Max.       8.50            2.60   8.30
+
+FEXU0854S   8.2±0.2     2.8±0.2      8.0±0.2      2.70±0.2      5.40Max.       8.50            2.60   8.30
+
+FEXU0870S   8.2±0.2     2.8±0.2      8.0±0.2      2.70±0.2      7.00Max.       8.50            2.60   8.30
+
+FEXU0960S   9.2±0.2     3.1±0.2      9.0±0.2      2.90±0.2      6.00Max.       9.50            2.90   9.30
+
+FEXU0980S   9.2±0.2     3.1±0.2      9.0±0.2      2.90±0.2      8.00Max.       9.50            2.90   9.30
+
+FEXU1030S   10.2±0.2    3.6±0.2      10.0±0.2     3.30±0.2      3.00Max.       10.50           3.20   10.30
+
+FEXU1040S   10.2±0.2    3.6±0.2      10.0±0.2     3.30±0.2      4.00Max.       10.50           3.20   10.30
+
+FEXU1050S   10.2±0.2    3.6±0.2      10.0±0.2     3.30±0.2      5.00Max.       10.50           3.20   10.30
+
+FEXU1230S   12.2±0.2    4.6±0.2      12.0±0.2     3.80±0.2      3.00Max.       12.50           3.60   12.30
+
+FEXU1260S   12.2±0.2    4.6±0.2      12.0±0.2     3.80±0.2      6.00Max.       12.50           3.60   12.30
+
+FEXU1265S   12.2±0.2    4.6±0.2      12.0±0.2     3.80±0.2      6.50Max.       12.50           3.60   12.30
+
+
+
+
+              更 多 资 讯, 请 点击 长 江 微 电 官 网 more information, Please click： WWW. CJIANG. COM. CN
+                          深圳市长江微电科技有限公司
+                       SZ CJIANG TECHNOLOGY CO., LTD
+
+4.2 SpecifiStions
+   FEXU0412(4.1*4.1*1.2mm)
+
+                                                 Rdc(mΩ)            Heat rating current         Saturation current
+                            L0(µH)
+        P/N                                                             Irms(A)                     Isat(A)
+                         @ (0A) 1MHz
+                                         Typical           Max     Typical       Max           Typical      Max
+
+  FEXU0412SR22MGS            0.22          6.5             7.5       14           13             15          14
+
+  FEXU0412SR47MGD            0.47          7.5             8.5       12           11             11          10
+
+   FEXU0415(4.1*4.1*1.5mm)
+
+                                                 Rdc(mΩ)            Heat rating current         Saturation current
+                            L0(µH)
+        P/N                                                             Irms(A)                     Isat(A)
+                         @ (0A) 1MHz
+                                         Typical           Max     Typical       Max           Typical      Max
+
+  FEXU0415SR10MGS            0.10          1.8             2.2       29           26             30          27
+
+  FEXU0415SR12MGS            0.12          1.9             2.3       17           15             27          25
+
+  FEXU0415SR47MGS            0.47          5.8             7.0       13           12             13          12
+
+  FEXU0415S1R0MGD             1.0          12.5            15        11           10            9.0          8.0
+
+  FEXU0415S1R0MGS             1.0          11.5            13       10.5          9.6           9.0          7.0
+
+  FEXU0415S1R5MGS             1.5           20             23        8.5          7.0           7.0          6.0
+
+   FEXU0418(4.1*4.1*1.8mm)
+
+                                                 Rdc(mΩ)            Heat rating current         Saturation current
+                            L0(µH)
+        P/N                                                             Irms(A)                     Isat(A)
+                         @ (0A) 1MHz
+                                         Typical           Max     Typical       Max           Typical      Max
+
+  FEXU0418SR68MGS            0.68          7.6             8.5      13.0         11.5           13.0         11
+
+   FEXU0420(4.1*4.1*2.0mm)
+
+                                                 Rdc(mΩ)            Heat rating current         Saturation current
+                            L0(µH)
+        P/N                                                             Irms(A)                     Isat(A)
+                         @ (0A) 1MHz
+                                         Typical           Max     Typical       Max           Typical      Max
+
+  FEXU0420SR10MGS            0.10          1.2             1.6       34          30.5            35          30
+
+  FEXU0420SR12MGS            0.12          1.3             1.7       34          30.5            31          29
+
+  FEXU0420SR15MGE            0.15          1.8             2.2      28.5         25.5            28          24
+
+  FEXU0420SR22MGS            0.22          2.0             2.7       20           19             20          19
+
+  FEXU0420SR22MGD            0.22          1.8             2.2       22           20             26          24
+
+  FEXU0420SR33MGD            0.33          3.2             3.85      18          17.5            18          17
+
+  FEXU0420SR33MGB            0.33          2.8             3.3       23          20.5            19          18
+
+  FEXU0420SR47MGB            0.47          4.0             4.8       17           16            15.2         14.2
+
+  FEXU0420SR47MGD            0.47          4.1             4.9       17           16             15          14
+
+  FEXU0420SR47MGG            0.47          4.1             4.5      17.5         16.5           15.5         14.2
+
+  FEXU0420SR56MGS            0.56          4.7             5.6      18.5         16.5            14          13
+
+  FEXU0420SR60MGS            0.60          4.9             5.6      14.5         13.5            14          12.5
+
+              更 多 资 讯, 请 点击 长 江 微 电 官 网 more information, Please click： WWW. CJIANG. COM. CN
+                       深圳市长江微电科技有限公司
+                    SZ CJIANG TECHNOLOGY CO., LTD
+
+
+FEXU0420SR68MGS           0.68          5.5             6.2       14           13             13            12
+
+FEXU0420SR82MGS           0.82          6.8             8.0       13           12             12            11
+
+FEXU0420S1R0MGD           1.0           7.5             9.0      14.0         12.6            11           9.5
+
+FEXU0420S1R2MGS           1.2           10.5            12        10           9.0            10           9.0
+
+FEXU0420S1R5MGS           1.5           13.5            16        8.0          7.0            9.5          8.5
+
+FEXU0420S1R5MGB           1.5           11.5            14        10            9             9             8
+
+FEXU0420S2R2MGS           2.2            19             23        8.0          7.0            8.0          7.0
+
+FEXU0420S3R3MGS           3.3           24              28        8.0          6.5            5.6          4.7
+
+ FEXU0421(4.1*4.1*2.1mm)
+
+                                              Rdc(mΩ)            Heat rating current          Saturation current
+                         L0(µH)
+      P/N                                                            Irms(A)                      Isat(A)
+                      @(0A) 1MHz
+                                      Typical           Max     Typical       Max        Typical          Max
+
+FEXU0421S1R0MGS           1.0           7.5             8.5      12.5         11.5        11.5             11.0
+
+ FEXU0424(4.1*4.1*2.4mm)
+
+                                              Rdc(mΩ)            Heat rating current          Saturation current
+                         L0(µH)
+      P/N                                                            Irms(A)                      Isat(A)
+                      @(0A) 1MHz
+                                      Typical           Max     Typical       Max        Typical          Max
+
+FEXU0424SR10MGS           0.10          1.2             1.6       36           32             40           35
+
+ FEXU0430(4.1*4.1*3.0mm)
+
+                                              Rdc(mΩ)            Heat rating current          Saturation current
+                         L0(µH)
+      P/N                                                            Irms(A)                      Isat(A)
+                      @(0A) 1MHz
+                                      Typical           Max     Typical       Max        Typical          Max
+
+FEXU0430SR12MGS           0.12          1.0             1.2       34          30.5            40           35
+
+FEXU0430SR47MGS           0.47          3.4             4.0       19           17             24           20
+
+FEXU0430SR68MGS           0.68          4.2             5.2       16           14             20           16
+
+FEXU0430S1R5MGS           1.5           9.5             11.3      8.5          7.0        12.5             10.5
+
+FEXU0430S1R8MGS           1.8           13.0            15.0      8.5          7.0        11.5             9.5
+
+FEXU0430S2R2MGS           2.2           14.5            17       7.3           6.5            11           9.0
+
+FEXU0430S3R3MGS           3.3           25              30        6.5          5.5            8.5          7.0
+
+FEXU0430S4R7MGS           4.7           27              32.4      6.6          5.9            7.8          6.5
+
+FEXU0430S5R6MGS           5.6           30              35        6.0          5.0            7.5          6.2
+
+FEXU0430S6R8MGS           6.8           40              48       5.0           4.0            7.0          6.0
+
+ FEXU0440(4.1*4.1*4.0mm)
+
+                                              Rdc(mΩ)            Heat rating current          Saturation current
+                         L0(µH)
+      P/N                                                            Irms(A)                      Isat(A)
+                      @(0A) 1MHz
+                                      Typical           Max     Typical       Max        Typical          Max
+
+FEXU0440S1R5MGS           1.50          7.0             7.9      8.5           7.5        10.0             8.0
+
+
+
+             更 多 资 讯, 请 点击 长 江 微 电 官 网 more information, Please click： WWW. CJIANG. COM. CN
+                       深圳市长江微电科技有限公司
+                    SZ CJIANG TECHNOLOGY CO., LTD
+ FEXU0512(5.2*5.0*1.2mm)
+
+                                              Rdc(mΩ)            Heat rating current         Saturation current
+                         L0(µH)
+      P/N                                                            Irms(A)                     Isat(A)
+                      @ (0A) 1MHz
+                                       Typical          Max     Typical       Max        Typical         Max
+
+FEXU0512SR10MGS           0.10           1.8            2.5       22           20            35           30
+
+FEXU0512SR15MGS           0.15          4.2             5.0       17          15.3           30           26
+
+FEXU0512SR47MGS           0.47          7.0             8.0       13           12            15.0         13.5
+
+FEXU0512S1R0MGS            1.0           16             18        8.5          7.5           9.5          8.5
+
+ FEXU0518(5.2*5.0*1.8mm)
+
+                                              Rdc(mΩ)            Heat rating current         Saturation current
+                         L0(µH)
+      P/N                                                            Irms(A)                     Isat(A)
+                      @ (0A) 1MHz
+                                       Typical          Max     Typical       Max        Typical         Max
+
+FEXU0518SR22MGS           0.22          4.2             5.0       22           20            35           27
+
+ FEXU0520(5.2*5.0*2.0mm)
+
+                                              Rdc(mΩ)            Heat rating current         Saturation current
+                         L0(µH)
+      P/N                                                            Irms(A)                     Isat(A)
+                      @ (0A) 1MHz
+                                       Typical          Max     Typical       Max        Typical         Max
+
+FEXU0520SR33MGS           0.33          3.2             3.7       20           17            24           21
+
+FEXU0520SR68MGS           0.68          4.4             5.5       15           14            20           17
+
+FEXU0520S1R0MGS            1.0          7.0             8.4       14           13            16            14
+
+FEXU0520S1R5MGS            1.5           13             17        13           10            12           10
+
+FEXU0520S2R2MGS           2.2            24             29        7.0          6.5           9.5          8.5
+
+FEXU0520S3R3MGS           3.3            38             43        7             6            10            8
+
+ FEXU0524(5.2*5.0*2.4mm)
+
+                                              Rdc(mΩ)            Heat rating current         Saturation current
+                         L0(µH)
+      P/N                                                            Irms(A)                     Isat(A)
+                      @ (0A) 1MHz
+                                       Typical          Max     Typical       Max        Typical         Max
+
+FEXU0524S2R2MGS           2.2           14.5            16        8.5          7.0           10           8.0
+
+ FEXU0528(5.2*5.0*2.8mm)
+
+                                              Rdc(mΩ)            Heat rating current         Saturation current
+                         L0(µH)
+      P/N                                                            Irms(A)                     Isat(A)
+                      @ (0A) 1MHz
+                                       Typical          Max     Typical       Max        Typical         Max
+
+FEXU0528S1R5MGS            1.5          9.0             11.2      12          10.6           14           12.6
+
+FEXU0528S3R3MGS           3.3            25             30        6.5          5.5           5.7          5.0
+
+ FEXU0530(5.2*5.0*3.0mm)
+
+                                              Rdc(mΩ)            Heat rating current         Saturation current
+                         L0(µH)
+      P/N                                                            Irms(A)                     Isat(A)
+                      @ (0A) 1MHz
+                                       Typical          Max     Typical       Max        Typical         Max
+
+FEXU0530SR13MGS           0.13           1.3            1.5       38           33            52           47
+
+
+
+            更 多 资 讯, 请 点击 长 江 微 电 官 网 more information, Please click： WWW. CJIANG. COM. CN
+                       深圳市长江微电科技有限公司
+                    SZ CJIANG TECHNOLOGY CO., LTD
+
+
+FEXU0530SR15MGS           0.15          1.05            1.45      25           24            43           41
+
+FEXU0530SR16MGS           0.16           1.1            1.5       24           23            42           40
+
+FEXU0530SR22MGS           0.22           1.4            1.65      22           20            36           34
+
+FEXU0530SR30MGS           0.30           1.5            1.8       22           21            29           27
+
+FEXU0530SR33MGS           0.33           1.6            2.0       21           19            28           26
+
+FEXU0530SR47MGS           0.47          2.5             3.0       21           18            26           23
+
+FEXU0530SR56MGS           0.56          3.0             3.6       20           18            24           21
+
+FEXU0530SR68MGS           0.68          3.8             4.6       19           16            21           18.5
+
+FEXU0530S1R0MGS            1.0          6.0             7.6      12.2          10            19           16.5
+
+FEXU0530S1R2MGS            1.2          5.2             6.0       13           11            15           13.5
+
+FEXU0530S2R2MGS           2.2            12             14        10           9.0           12           10
+
+FEXU0530S3R3MGS           3.3            24             27        9.0          8.0           10           9.0
+
+FEXU0530S4R7MGS           4.7            29             32        7.0          6.0           9.0          8.0
+
+FEXU0530S6R8MGS           6.8            37             40        6.0          5.0           8.0          7.0
+
+FEXU0530S100MGS           10.0           59             68        5.0          4.5           5.5          4.5
+
+ FEXU0531(5.2*5.0*3.1mm)
+
+                                              Rdc(mΩ)            Heat rating current         Saturation current
+                         L0(µH)
+      P/N                                                            Irms(A)                     Isat(A)
+                      @(0A) 1MHz
+                                       Typical          Max     Typical       Max        Typical         Max
+
+FEXU0531S1R5MGS            1.5          9.8             11        14          12.6           11           10.6
+
+ FEXU0540(5.2*5.0*4.0mm)
+
+                                              Rdc(mΩ)            Heat rating current         Saturation current
+                         L0(µH)
+      P/N                                                            Irms(A)                     Isat(A)
+                      @(0A) 1MHz
+                                       Typical          Max     Typical       Max        Typical         Max
+
+FEXU0540S1R0MGS            1.0          4.5             5.5       17           15            18           16
+
+FEXU0540S2R2MGS           2.2           9.0             10.5     11.0          9.0           12.5         11.5
+
+FEXU0540S4R7MGS           4.7            32             36        7.0          5.5           8.5          7.0
+
+FEXU0540S6R8MGS           6.8            40             44        7.0          5.0           9.0          7.0
+
+FEXU0540S100MGS           10.0           45             52        5.5          4.5           6.5          5.7
+
+FEXU0540S220MGS           22.0           97             115       3.3          2.5           4.6          4.0
+
+ FEXU0550(5.2*5.0*5.0mm)
+
+                                              Rdc(mΩ)            Heat rating current         Saturation current
+                         L0(µH)
+      P/N                                                            Irms(A)                     Isat(A)
+                      @(0A) 1MHz
+                                       Typical          Max     Typical       Max        Typical         Max
+
+FEXU0550SR68MGS           0.68          3.3             3.8       22           20            28           24
+FEXU0550S6R8MGS           6.80          26              30        7.5          6.0           10.0         8.0
+
+
+
+            更 多 资 讯, 请 点击 长 江 微 电 官 网 more information, Please click： WWW. CJIANG. COM. CN
+                       深圳市长江微电科技有限公司
+                    SZ CJIANG TECHNOLOGY CO., LTD
+
+ FEXU5124(5.1*5.3*2.4mm)
+
+                                              Rdc(mΩ)            Heat rating current         Saturation current
+                         L0(µH)
+      P/N                                                            Irms(A)                     Isat(A)
+                      @ (0A) 1MHz
+                                      Typical           Max     Typical       Max        Typical         Max
+
+FEXU5124SR12MGS           0.12          0.8             0.9       32           30            54           47
+
+FEXU5124SR15MGS           0.15          1.3             1.5      24.5         23.5           48           43
+
+FEXU5124SR22MGS           0.22          1.8             2.0      21.4         20.3           41.1         37
+
+ FEXU5130(5.1*5.3*3.0mm)
+
+                                              Rdc(mΩ)            Heat rating current         Saturation current
+                         L0(µH)
+      P/N                                                            Irms(A)                     Isat(A)
+                      @ (0A) 1MHz
+                                      Typical           Max     Typical       Max        Typical         Max
+
+FEXU5130SR12MGS           0.12          0.80            0.92      37           34            50           45
+
+FEXU5130SR22MGS           0.22          1.30            1.55      33           30            38           32
+
+FEXU5130SR33MGS           0.33          1.8             2.2       29           26            32           28
+
+FEXU5130SR47MGS           0.47          2.5             3.0       24          21.5           29           23
+
+FEXU5130S1R0MGS           1.0           5.0             6.0      17.0         15.5           19.5         17.0
+
+FEXU5130S1R5MGS           1.5           7.5             9.0      12.5         11.0           21.0         18.5
+
+FEXU5130S2R2MGS           2.2           9.8             11.8      12          10.5           12           10.5
+
+FEXU5130S3R3MGS           3.3            14             17       10.0          9.0           10.0         9.0
+
+FEXU5130S4R7MGS           4.7           22              26.4     9.0           8.0           9.0          8.0
+
+ FEXU5320(5.3*5.5*2.0mm)
+
+                                              Rdc(mΩ)            Heat rating current         Saturation current
+                         L0(µH)
+      P/N                                                            Irms(A)                     Isat(A)
+                      @ (0A) 1MHz
+                                      Typical           Max     Typical       Max        Typical         Max
+
+FEXU5320S50NGS            0.05          0.60            0.78      50           40            60           50
+
+ FEXU5321(5.3*5.5*2.1mm)
+
+                                              Rdc(mΩ)            Heat rating current         Saturation current
+                         L0(µH)
+      P/N                                                            Irms(A)                     Isat(A)
+                      @ (0A) 1MHz
+                                      Typical           Max     Typical       Max        Typical         Max
+
+FEXU5321S1R5MGS           1.50          11.5            13.0      12          10.5           14           11
+
+ FEXU5324(5.3*5.5*2.4mm)
+
+                                              Rdc(mΩ)            Heat rating current         Saturation current
+                         L0(µH)
+      P/N                                                            Irms(A)                     Isat(A)
+                      @ (0A) 1MHz
+                                      Typical           Max     Typical       Max        Typical         Max
+
+FEXU5324SR15MGS           0.15          0.95            1.15      27           23            45           41
+
+FEXU5324SR68MGS           0.68          4.2             5.0       16           14            21           18
+
+
+
+            更 多 资 讯, 请 点击 长 江 微 电 官 网 more information, Please click： WWW. CJIANG. COM. CN
+                       深圳市长江微电科技有限公司
+                    SZ CJIANG TECHNOLOGY CO., LTD
+
+ FEXU5330(5.3*5.5*3.0mm)
+
+                                               Rdc(mΩ)           Heat rating current         Saturation current
+                         L0(µH)
+      P/N                                                            Irms(A)                     Isat(A)
+                      @(0A) 1MHz
+                                       Typical           Max    Typical       Max        Typical         Max
+
+FEXU5330SR33MGS           0.33           1.7             2.1      22           18            34           30
+
+FEXU5330SR33MGB           0.33           1.7             2.1      28           26            30           28
+
+FEXU5330SR47MGS           0.47          2.3              2.7      19           16            28           24
+
+FEXU5330SR47MGB           0.47          2.3              2.7      26           24            30           26
+
+FEXU5330SR68MGS           0.68           3.5             4.2      17           14            26           22
+
+FEXU5330S1R0MGS           1.00           5.0             6.0      16           14            19.5         17
+
+FEXU5330S1R5MGS            1.5           7.2             8.6     14.5          13            15           12
+
+FEXU5330S2R2MGS            2.2           10              12       10           8.0           12.5         10
+
+FEXU5330S3R3MGS            3.3          17.5             21       9.0          7.5           11           8.5
+
+ FEXU5340(5.3*5.5*4.0mm)
+
+                                               Rdc(mΩ)           Heat rating current         Saturation current
+                         L0(µH)
+      P/N                                                            Irms(A)                     Isat(A)
+                      @(0A) 1MHz
+                                       Typical           Max    Typical       Max        Typical         Max
+
+FEXU5340S2R2MGS            2.2           7.4             7.9      14           12            14           12
+
+ FEXU5350(5.3*5.5*5.0mm)
+
+                                               Rdc(mΩ)           Heat rating current         Saturation current
+                         L0(µH)
+      P/N                                                            Irms(A)                     Isat(A)
+                      @(0A) 1MHz
+                                       Typical           Max    Typical       Max        Typical         Max
+
+FEXU5350S2R2MGS            2.2           7.0             8.2     13.8         12.5           13.0         11.5
+
+FEXU5350S3R3MGS            3.3          10.0             11.5    11.3         10.0           11.5         10.0
+
+FEXU5350S4R7MGS            4.7          13.5             15.5     9.7          9.0           10.0         8.5
+
+FEXU5350S8R2MGS            8.2          28.5             32.5     6.5          6.1           7.0          6.1
+
+ FEXU0630(6.2*6.0*3.0mm)
+
+                                               Rdc(mΩ)           Heat rating current         Saturation current
+                         L0(µH)
+      P/N                                                            Irms(A)                     Isat(A)
+                      @(0A) 1MHz
+                                       Typical           Max    Typical       Max        Typical         Max
+
+FEXU0630SR15MGS           0.15          1.10             1.35     32           29            55           48
+FEXU0630SR22MGS           0.22           1.4             1.7      25           23            46           42
+FEXU0630SR33MGS           0.33          1.85             2.2      18           16            36           33
+FEXU0630SR56MGS           0.56           2.4             2.9      16           14            28           25
+FEXU0630SR68MGS           0.68           3.8             4.5     15.5          13            27           24
+FEXU0630S1R5MGS            1.5           6.8             7.8      15           12            18           15
+FEXU0630S2R2MGS            2.2           9.5             11.0     12           10            15.0         12.5
+FEXU0630S3R3MGS            3.3          15.5             18       9.0          7.5           13.5         11
+
+
+            更 多 资 讯, 请 点击 长 江 微 电 官 网 more information, Please click： WWW. CJIANG. COM. CN
+                       深圳市长江微电科技有限公司
+                    SZ CJIANG TECHNOLOGY CO., LTD
+
+FEXU0630S4R7MGS           4.7           17              19       8.3           7.0           11           9.5
+
+FEXU0630S5R6MGS           5.6           21              24       6.2           5.3           10           8.0
+
+FEXU0630S100MGS          10.0           49              58       4.3           3.7           6.3          5.5
+
+ FEXU0631(6.2*6.0*3.1mm)
+
+                                              Rdc(mΩ)            Heat rating current         Saturation current
+                        L0(µH)
+      P/N                                                            Irms(A)                     Isat(A)
+                     @(0A) 1MHz
+                                      Typical           Max    Typical        Max       Typical          Max
+
+FEXU0631S2R2MGS           2.2           9.0              10      12.0         11.0           14           12.2
+
+ FEXU0640(6.2*6.0*4.0mm)
+
+                                              Rdc(mΩ)            Heat rating current         Saturation current
+                        L0(µH)
+      P/N                                                            Irms(A)                     Isat(A)
+                     @(0A) 1MHz
+                                      Typical           Max    Typical        Max       Typical          Max
+
+FEXU0640SR15MGS          0.15          1.12             1.32     35            30            65           60
+
+FEXU0640S1R0MGS           1.0           4.5             5.8       16           14            20            18
+
+FEXU0640S2R2MGS           2.2           5.6             7.0      16            14            18            15
+
+FEXU0640S4R7MGS           4.7           15               18      9.5           8.0           10.5         8.5
+
+FEXU0640S100MGS          10.0           35              42       6.2           5.3           9.0          7.5
+
+ FEXU0650(6.2*6.0*5.0mm)
+
+                                              Rdc(mΩ)            Heat rating current         Saturation current
+                        L0(µH)
+      P/N                                                            Irms(A)                     Isat(A)
+                     @(0A) 1MHz
+                                      Typical           Max    Typical        Max       Typical          Max
+
+FEXU0650S1R5MGS           1.5           5.0             6.3       18           16            21            19
+
+FEXU0650S2R2MGS           2.2           6.3             7.0      16            14            19            16
+
+FEXU0650S3R3MGS           3.3           7.2             8.0      13            12            14            12
+
+FEXU0650S4R7MGS           4.7           9.2             10.5     12.5          11            12            10
+
+FEXU0650S8R2MGS           8.2           20              23       10            8.0           7.5          7.0
+
+ FEXU0660(6.2*6.0*6.0mm)
+
+                                             Rdc(mΩ)            Heat rating current          Saturation current
+                        L0(µH)
+      P/N                                                           Irms(A)                      Isat(A)
+                     @(0A) 1MHz
+                                      Typical           Max    Typical        Max       Typical          Max
+
+FEXU0660S1R0MGS           1.0           2.6             3.1      21            18            29           26
+FEXU0660S1R5MGS           1.5           3.4             4.2      18            15            25           21
+FEXU0660S2R2MGS           2.2           4.5             5.4      14.5          13            20           17
+FEXU0660S3R3MGS           3.3           7.0             8.4      13            12            14            13
+FEXU0660S4R7MGS           4.7           9.0             10.8     12.8         11.5           13           11.5
+FEXU0660S6R8MGS           6.8           16              19       11.0          9.5           13           11
+FEXU0660S100MGS          10.0           18              21       8.5           7.3           11.0         9.0
+
+FEXU0660S150MGS          15.0          38.0             43.5     6.0           4.5           5.8          5.0
+
+FEXU0660S220MGS          22.0           52              60       5.0           3.8           5.6          4.8
+
+            更 多 资 讯, 请 点击 长 江 微 电 官 网 more information, Please click： WWW. CJIANG. COM. CN
+                       深圳市长江微电科技有限公司
+                    SZ CJIANG TECHNOLOGY CO., LTD
+ FEXU6415(6.4*6.6*1.5mm)
+
+                                             Rdc(mΩ)            Heat rating current          Saturation current
+                        L0(µH)
+      P/N                                                           Irms(A)                      Isat(A)
+                     @ (0A) 1MHz
+                                      Typical          Max     Typical       Max        Typical          Max
+
+FEXU6415S1R0MGS           1.0          10.5            12.5      12           10             15           12
+
+ FEXU6420(6.4*6.6*2.0mm)
+
+                                             Rdc(mΩ)            Heat rating current          Saturation current
+                        L0(µH)
+      P/N                                                           Irms(A)                      Isat(A)
+                     @ (0A) 1MHz
+                                      Typical          Max     Typical       Max        Typical          Max
+
+FEXU6420SR15MGS          0.15           1.1            1.3       37           32             43           39
+
+ FEXU6421(6.4*6.6*2.1mm)
+
+                                             Rdc(mΩ)            Heat rating current          Saturation current
+                        L0(µH)
+      P/N                                                           Irms(A)                      Isat(A)
+                     @ (0A) 1MHz
+                                      Typical          Max     Typical       Max        Typical          Max
+
+FEXU6421SR33MGS          0.33           2.3            3.0       26           23             30           26
+
+ FEXU6422(6.4*6.6*2.2mm)
+
+                                             Rdc(mΩ)            Heat rating current          Saturation current
+                        L0(µH)
+      P/N                                                           Irms(A)                      Isat(A)
+                     @ (0A) 1MHz
+                                      Typical          Max     Typical       Max        Typical          Max
+
+FEXU6422S3R3MGS           3.3           18             21        11           10             12           10
+
+ FEXU6424(6.4*6.6*2.4mm)
+
+                                             Rdc(mΩ)            Heat rating current          Saturation current
+                        L0(µH)
+      P/N                                                           Irms(A)                      Isat(A)
+                     @ (0A) 1MHz
+                                      Typical          Max     Typical       Max        Typical          Max
+
+FEXU6424SR15MGS          0.15          1.05            1.20      40           37             51           46
+
+FEXU6424SR22MGS          0.22          1.20            1.45     35.0         31.5            35           32
+
+FEXU6424SR33MGS          0.33          2.30            2.70      25           23             35           32
+
+ FEXU6430(6.4*6.6*3.0mm)
+
+                                             Rdc(mΩ)            Heat rating current          Saturation current
+                        L0(µH)
+      P/N                                                           Irms(A)                      Isat(A)
+                     @ (0A) 1MHz
+                                      Typical          Max     Typical       Max        Typical          Max
+
+FEXU6430SR12MGS          0.12          0.70            0.82      42           39             69           63
+
+FEXU6430SR15MGS          0.15          0.75            0.85      45           41             63           56
+
+FEXU6430SR18MGS          0.18          0.95            1.20      36           33             55           50
+
+FEXU6430SR33MGS          0.33           1.6            2.0       32           29             43           38
+
+FEXU6430SR33MGB          0.33           1.7            2.1       30           28             45           40
+
+FEXU6430S1R0MGS           1.0           5.0            6.0       15           13             24           22
+
+FEXU6430S1R5MGS           1.5           6.8            7.5       15.5        14.8            18           16
+
+FEXU6430S2R2MGS           2.2           9.5            12        14           12             16           13.5
+
+
+            更 多 资 讯, 请 点击 长 江 微 电 官 网 more information, Please click： WWW. CJIANG. COM. CN
+                       深圳市长江微电科技有限公司
+                    SZ CJIANG TECHNOLOGY CO., LTD
+
+
+FEXU6430S4R7MGS           4.7            19             23        10           8.5           12           9.5
+
+FEXU6430S6R8MGS           6.8           26              32        8.5          7.5           11           8.0
+
+ FEXU6440(6.4*6.6*4.0mm)
+
+                                              Rdc(mΩ)            Heat rating current         Saturation current
+                         L0(µH)
+      P/N                                                            Irms(A)                     Isat(A)
+                      @(0A) 1MHz
+                                      Typical           Max     Typical       Max        Typical         Max
+
+FEXU6440SR12MGS           0.12          0.63            0.75      45           42            81           77
+
+FEXU6440SR30MGS           0.3           1.35            1.54      36           33            45           40
+
+ FEXU6450(6.4*6.6*5.0mm)
+
+                                              Rdc(mΩ)            Heat rating current         Saturation current
+                         L0(µH)
+      P/N                                                            Irms(A)                     Isat(A)
+                      @(0A) 1MHz
+                                      Typical           Max     Typical       Max        Typical         Max
+
+FEXU6450S2R2MGS           2.2           5.9             7.0       17          15.5           20           17
+
+FEXU6450S6R8MGS           6.8            15             18        9.5          8.5           8.5          7.5
+
+FEXU6450S100MGS           10.0          26.5            32        7.5          6.5           6.7          5.8
+
+ FEXU6460(6.4*6.6*6.0mm)
+
+                                              Rdc(mΩ)            Heat rating current         Saturation current
+                         L0(µH)
+      P/N                                                            Irms(A)                     Isat(A)
+                      @(0A) 1MHz
+                                      Typical           Max     Typical       Max        Typical         Max
+
+FEXU6460S5R6MGS           5.6           12.5            15.0     11.5          10            11.0         9.5
+
+FEXU6460S6R8MGS           6.8            18             20        10            9            9.5          8.5
+
+ FEXU0715(7.2*7.0*1.5mm)
+
+                                              Rdc(mΩ)            Heat rating current         Saturation current
+                         L0(µH)
+      P/N                                                            Irms(A)                     Isat(A)
+                      @(0A) 1MHz
+                                      Typical           Max     Typical       Max        Typical         Max
+
+FEXU0715SR68MGS           0.68           9              10.5      11           10            16           14.5
+
+FEXU0715S2R2MGS           2.2            30             36        5.5          5.0           6.8          6.3
+
+FEXU0715S100MGS           10.0          132             145       3.0          2.5           3.8          3.5
+
+FEXU0720(7.2*7.0*2.0mm)
+
+                                              Rdc(mΩ)            Heat rating current         Saturation current
+                         L0(µH)
+      P/N                                                            Irms(A)                     Isat(A)
+                      @(0A) 1MHz
+                                      Typical           Max     Typical       Max        Typical         Max
+
+FEXU0720S1R5MGS           1.5            11             12        11           10            16           15
+
+FEXU0720S2R2MGS           2.2            12             15        11            9            12           10.5
+
+ FEXU0730(7.2*7.0*3.0mm)
+
+                                              Rdc(mΩ)            Heat rating current         Saturation current
+                         L0(µH)
+      P/N                                                            Irms(A)                     Isat(A)
+                      @(0A) 1MHz
+                                      Typical           Max     Typical       Max        Typical         Max
+
+FEXU0730SR24MGS           0.24          1.1             1.3       35           31            49           46
+
+            更 多 资 讯, 请 点击 长 江 微 电 官 网 more information, Please click： WWW. CJIANG. COM. CN
+                       深圳市长江微电科技有限公司
+                    SZ CJIANG TECHNOLOGY CO., LTD
+
+
+FEXU0730SR47MGS           0.47          2.6             3.2       28           27            33           31
+
+FEXU0730SR68MGS           0.68          3.3             4.0       24           23            28           26
+
+FEXU0730S1R0MGS           1.0           3.8             4.5       20           17            26           21
+
+FEXU0730S1R5MGS           1.5           6.9             8.3       15           12            22            19
+
+FEXU0730S2R2MGS           2.2            11             13        13           10            21            18
+
+FEXU0730S3R3MGS           3.3            13             15        12           9.5           14           12
+
+FEXU0730S4R7MGS           4.7            16             19        10           8.5           12           9.5
+
+FEXU0730S5R6MGS           5.6           22              26       9.0           8.0           10.5         9.0
+
+FEXU0730S8R2MGS           8.2           34              40       6.5           5.5           8.5          7.0
+
+FEXU0730S100MGS           10.0          38              45       6.0           5.0           8.0          6.5
+
+FEXU0730S220MGS           22.0          105             120      3.8           3.3           5.5          4.5
+
+ FEXU0740(7.2*7.0*4.0mm)
+
+                                              Rdc(mΩ)            Heat rating current         Saturation current
+                         L0(µH)
+      P/N                                                            Irms(A)                     Isat(A)
+                     @(0A) 1MHz
+                                      Typical           Max    Typical        Max        Typical         Max
+
+FEXU0740SR22MGS           0.22          0.85            1.05      32           28            50           45
+
+FEXU0740S4R7MGS           4.7            14             16.5     9.0           8.0           14.5         13.5
+
+ FEXU0750(7.2*7.0*5.0mm)
+
+                                              Rdc(mΩ)            Heat rating current         Saturation current
+                         L0(µH)
+      P/N                                                            Irms(A)                     Isat(A)
+                     @(0A) 1MHz
+                                      Typical           Max    Typical        Max        Typical         Max
+
+FEXU0750S1R0MGS           1.0           2.7             3.2       20           19            32           29
+
+FEXU0750S2R2MGS           2.2           5.6             6.6       20           17            26           23
+
+FEXU0750S3R3MGS           3.3           9.0             10.0      15           13            18.5         16
+
+FEXU0750S4R7MGS           4.7           10.5            12.5      13           12            17           14.5
+
+FEXU0750S100MGS            10           22.5            26       9.0           8.0           11           9.0
+
+FEXU0750S220MGS           22.0          55              60.5     5.0           4.5           7.5          6.5
+
+FEXU0750S330MGS           33            90              99       4.0           3.5           6.5          5.5
+
+FEXU0750S470MGS           47            120             140      3.3           3.0           5.3          4.5
+
+ FEXU0760(7.2*7.0*6.0mm)
+
+                                              Rdc(mΩ)            Heat rating current         Saturation current
+                         L0(µH)
+      P/N                                                            Irms(A)                     Isat(A)
+                     @(0A) 1MHz
+                                      Typical           Max    Typical        Max        Typical         Max
+
+FEXU0760S1R5MGS           1.5           3.3             3.8       23           20            28           25
+FEXU0760S2R2MGS           2.2           5.5             6.0       19           17            27           24
+FEXU0760S4R7MGS           4.7           9.0             10.5      13           12            18            16
+FEXU0760S4R7MGB           4.7           7.2             8.0       14           13            16            14
+FEXU0760S4R7MGD           4.7           8.0             9.0       13           12            17            15
+
+            更 多 资 讯, 请 点击 长 江 微 电 官 网 more information, Please click： WWW. CJIANG. COM. CN
+                       深圳市长江微电科技有限公司
+                    SZ CJIANG TECHNOLOGY CO., LTD
+
+FEXU0760S6R8MGS           6.8           14.3            17        9.5           8            15            13
+
+FEXU0760S100MGS           10.0           24             28        8.5          7.5           12.5         10.5
+
+ FEXU0820(8.2*8.0*2.0mm)
+
+                                              Rdc(mΩ)            Heat rating current         Saturation current
+                         L0(µH)
+      P/N                                                            Irms(A)                     Isat(A)
+                      @ (0A) 1MHz
+                                      Typical           Max     Typical       Max        Typical         Max
+
+FEXU0820S2R2MGS           2.2           10.5            12       12.5          11            13            11
+
+FEXU0820S3R3MGS           3.3            18             21        10           8.5           11.5         9.5
+
+ FEXU0822(8.2*8.0*2.2mm)
+
+                                              Rdc(mΩ)            Heat rating current         Saturation current
+                         L0(µH)
+      P/N                                                            Irms(A)                     Isat(A)
+                      @ (0A) 1MHz
+                                      Typical           Max     Typical       Max        Typical         Max
+
+FEXU0822S2R2MGS           2.2           9.6             10.8      14           13            14            13
+
+ FEXU0830(8.2*8.0*3.0mm)
+
+                                              Rdc(mΩ)            Heat rating current         Saturation current
+                         L0(µH)
+      P/N                                                            Irms(A)                     Isat(A)
+                      @ (0A) 1MHz
+                                      Typical           Max     Typical       Max        Typical         Max
+
+FEXU0830S2R2MGS           2.2           6.5             8.0       15           14            21            18
+
+ FEXU0840(8.2*8.0*4.0mm)
+
+                                              Rdc(mΩ)            Heat rating current         Saturation current
+                         L0(µH)
+      P/N                                                            Irms(A)                     Isat(A)
+                      @ (0A) 1MHz
+                                      Typical           Max     Typical       Max        Typical         Max
+
+FEXU0840S1R0MGS           1.0           2.7             3.2       26           24            35           32
+
+FEXU0840S1R5MGS           1.5           4.0             4.8       24           22            33           30
+
+FEXU0840S2R2MGS           2.2           4.8             6.0       22           20            23           21
+
+FEXU0840S4R7MGS           4.7            10             12       13.0         11.5           18            15
+
+FEXU0840S100MGS           10.0           26             30       10.0          8.0           13.0         10.0
+
+FEXU0840S150MGS           15.0           42             50        8.0          6.0           10.0         8.0
+
+ FEXU0850(8.2*8.0*5.0mm)
+
+                                              Rdc(mΩ)            Heat rating current         Saturation current
+                         L0(µH)
+      P/N                                                            Irms(A)                     Isat(A)
+                      @ (0A) 1MHz
+                                      Typical           Max     Typical       Max        Typical         Max
+
+FEXU0850S220MGS           22.0           45             50        7.5          6.5           9.0          7.5
+
+ FEXU0854(8.2*8.0*5.4mm)
+
+                                              Rdc(mΩ)            Heat rating current         Saturation current
+                         L0(µH)
+      P/N                                                            Irms(A)                     Isat(A)
+                      @ (0A) 1MHz
+                                      Typical           Max     Typical       Max        Typical         Max
+
+FEXU0854S1R0MGS           1.0           1.9             2.2       36           32            45           35
+
+FEXU0854S2R2MGS           2.2           4.1             4.7       20           17            30           25
+
+            更 多 资 讯, 请 点击 长 江 微 电 官 网 more information, Please click： WWW. CJIANG. COM. CN
+                       深圳市长江微电科技有限公司
+                    SZ CJIANG TECHNOLOGY CO., LTD
+
+
+FEXU0854S4R7MGS           4.7           7.7             8.5       17           14            20           17
+
+FEXU0854S6R8MGS           6.8            12             15        14           12            17           14
+
+FEXU0854S100MGS           10.0           19             22       11.5          10            13           10
+
+FEXU0854S220MGS           22.0          44              47       7.8           6.8           10.0         8.5
+
+ FEXU0870(8.2*8.0*7.0mm)
+
+                                              Rdc(mΩ)            Heat rating current         Saturation current
+                         L0(µH)
+      P/N                                                            Irms(A)                     Isat(A)
+                      @(0A) 1MHz
+                                      Typical           Max     Typical       Max        Typical         Max
+
+FEXU0870S100MGS           10.0           16             18.5      12           11            16            13
+
+ FEXU0960(9.2*9.0*6.0mm)
+
+                                              Rdc(mΩ)            Heat rating current         Saturation current
+                         L0(µH)
+      P/N                                                            Irms(A)                     Isat(A)
+                      @(0A) 1MHz
+                                      Typical           Max     Typical       Max        Typical         Max
+
+FEXU0960S100MGS           10.0           11             13       10.0          9.0           13           11.5
+
+ FEXU0980(9.2*9.0*8.0mm)
+
+                                              Rdc(mΩ)            Heat rating current         Saturation current
+                         L0(µH)
+      P/N                                                            Irms(A)                     Isat(A)
+                      @(0A) 1MHz
+                                      Typical           Max     Typical       Max        Typical         Max
+
+FEXU0980S100MGS           10.0          8.7             10       14.5          13            15           13
+
+ FEXU1030(10.2*10.0*3.0mm)
+
+                                              Rdc(mΩ)            Heat rating current         Saturation current
+                         L0(µH)
+      P/N                                                            Irms(A)                     Isat(A)
+                      @(0A) 1MHz
+                                      Typical           Max     Typical       Max        Typical         Max
+
+FEXU1030S2R2MGS           2.2           5.5             7.0       18           16            20            18
+
+FEXU1030S3R3MGS           3.3            10             12        16           15            16            15
+
+FEXU1030S4R7MGS           4.7            15             18        13           12            14            13
+
+FEXU1030S4R7MGB           4.7            16             19        12           11            16            14
+
+FEXU1030S6R8MGS           6.8           21              25        11           10            11            10
+
+FEXU1030S100MGS           10.0          33              38       8.0           7.0           10           9.0
+
+ FEXU1040(10.2*10.0*4.0mm)
+
+                                              Rdc(mΩ)            Heat rating current         Saturation current
+                         L0(µH)
+      P/N                                                            Irms(A)                     Isat(A)
+                      @(0A) 1MHz
+                                      Typical           Max     Typical       Max        Typical         Max
+
+FEXU1040SR47MGS           0.47          0.8             1.3       32           30            42           40
+
+FEXU1040S1R0MGS           1.0           2.2             3.0       26           24            32           30
+
+FEXU1040S2R2MGS           2.2           4.7             6.0       17           16            25           23
+
+FEXU1040S3R3MGS           3.3           6.5             7.8       16           15            21            19
+
+FEXU1040S4R7MGS           4.7           10.5            12.5      14           13            19            17
+
+            更 多 资 讯, 请 点击 长 江 微 电 官 网 more information, Please click： WWW. CJIANG. COM. CN
+                        深圳市长江微电科技有限公司
+                     SZ CJIANG TECHNOLOGY CO., LTD
+
+
+FEXU1040S6R8MGS           6.8           13.5            16        12           11             15        14
+
+FEXU1040S100MGS           10.0          16              19.5     11.0          9.0            13        10
+
+FEXU1040S220MGS          22.0           43              51       6.5           5.5        6.5          5.5
+
+ FEXU1050(10.2*10.0*5.0mm)
+
+                                              Rdc(mΩ)            Heat rating current      Saturation current
+                        L0(µH)
+      P/N                                                            Irms(A)                  Isat(A)
+                     @(0A) 1MHz
+                                      Typical           Max    Typical        Max        Typical      Max
+
+FEXU1050S1R0MGS           1.0           1.5             2.2      28            26             34       32
+
+FEXU1050S1R5MGS           1.5           2.1             3.0      28           25.5            32       30
+
+FEXU1050S2R2MGS           2.2           3.5             4.2      28            25             32       29
+
+FEXU1050S3R3MGS           3.3           5.0             6.5       18           17             24       22
+
+FEXU1050S4R7MGS           4.7           6.0             8.0       16           15             21        19
+
+FEXU1050S100MGS           10.0          14.5            17        12           11             15        12
+
+FEXU1050S220MGS          22.0           32              38       9.0           7.5        9.5          8.0
+
+ FEXU1060(10.2*10.0*6.0mm)
+
+                                              Rdc(mΩ)            Heat rating current      Saturation current
+                        L0(µH)
+      P/N                                                            Irms(A)                  Isat(A)
+                     @(0A) 1MHz
+                                      Typical           Max    Typical        Max        Typical      Max
+
+FEXU1060S100MGS           10.0          14              15        14           12             20        16
+
+FEXU1230(12.2*12.0*3.0mm)
+
+                                              Rdc(mΩ)            Heat rating current      Saturation current
+                        L0(µH)
+      P/N                                                            Irms(A)                  Isat(A)
+                     @(0A) 1MHz
+                                      Typical           Max    Typical        Max        Typical      Max
+
+FEXU1230S1R0MGS           1.0           2.4             3.0      28            24             35       32
+
+FEXU1230S1R5MGS           1.5           3.8             4.2      24            21             32       28
+
+FEXU1230S2R2MGS           2.2           5.0             5.5      20            18             28       25
+
+FEXU1240(12.2*12.0*4.0mm)
+
+                                              Rdc(mΩ)            Heat rating current      Saturation current
+                        L0(µH)
+      P/N                                                            Irms(A)                  Isat(A)
+                     @(0A) 1MHz
+                                      Typical           Max    Typical        Max        Typical      Max
+
+FEXU1240S6R8MGS           6.8           8.8             10.0      15           13             20       16
+
+FEXU1250(12.2*12.0*5.0mm)
+
+                                              Rdc(mΩ)            Heat rating current      Saturation current
+                        L0(µH)
+      P/N                                                            Irms(A)                  Isat(A)
+                     @(0A) 1MHz
+                                      TypiSl            Max    TypiSl         Max        TypiSl       Max
+
+FEXU1250S4R7MGD           4.7           4.5             5.0      26            22             25       22
+
+
+             更 多 资 讯, 请 点击 长 江 微 电 官 网 more information, Please click： WWW. CJIANG. COM. CN
+                              深圳市长江微电科技有限公司
+                           SZ CJIANG TECHNOLOGY CO., LTD
+
+   FEXU1260(12.2*12.0*6.0mm)
+
+                                                   Rdc(mΩ)            Heat rating current       Saturation current
+                              L0(µH)
+          P/N                                                             Irms(A)                   Isat(A)
+                           @(0A) 1MHz
+                                           Typical           Max     Typical       Max        Typical       Max
+
+ FEXU1260S100MGS                10            10             12        15           12          15            13
+
+ FEXU1260S220MGS               22.0          22              25        14           12          12            10
+
+   FEXU1265(12.2*12.0*6.5mm)
+
+                                                   Rdc(mΩ)            Heat rating current       Saturation current
+                              L0(µH)
+          P/N                                                             Irms(A)                   Isat(A)
+                           @(0A) 1MHz
+                                           Typical           Max     Typical       Max        Typical       Max
+
+ FEXU1265S3R3MGS               3.3           3.7             4.5       20           18          33           30
+
+
+
+
+Test remarks
+Note 1.：All test data is referenced to 25 ℃ ambient.
+Note 2.：Test Condition:1MHz, 1.0Vrms.
+Note 3.：Irms:DC current (A) that will Suse an approximate △T of 40 ℃ .
+Note 4.：Isat:DC current (A) that will Suse L0 to drop approximately 30%.
+Note 5.： Operating Temperature Range -55℃ to + 125℃ .
+Note 6.：The part temperature (ambient + temp rise) should not exceed 125 under ℃ the worst Sse operating
+   conditions. Circuit design, component placement, PCB trace size and thickness, airflow and other cooling
+   provision all affect the part temperature. Part temperature should be verified in the end appliStion.
+Note 7.：The rated current as listed is either the saturation current or the heating current depending on which
+    value is lower.
+Note 8 ； For the FEXU04-sized inductor, the absolute maximum voltage is 50V DC; for the FEXU05-sized
+    inductor, the absolute maximum voltage is 60V DC; for inductors of sizes FEXU06 and above, the
+    absolute maximum voltage is 70V DC.
+
+
+
+
+                   更 多 资 讯, 请 点击 长 江 微 电 官 网 more information, Please click： WWW. CJIANG. COM. CN
+                                  深圳市长江微电科技有限公司
+                               SZ CJIANG TECHNOLOGY CO., LTD
+
+5. Product test
+  5.1 Reliability
+
+
+  No.       Item             Requirements                     Test Methods and Remarks                   Reference Sample
+                                                                                                                    Size
+
+                        (1) No Sse deformation or   ①Temperature:245± 5℃ .
+        Solderabilit    change in appearance.       ②Solder Composition: Sn/Ag3.0/Cu0.5(Pb-Free).        AEC-Q200
+  1          y                                                                                                         32
+                        (2) Terminal area must      ③Sample immersion tin furnace 5 ±0.5s.                 (J-STD
+                        have 95% min. Solder                                                                 002)
+                        coverage.
+
+                                                    ①Preconditioning：245℃Reflow 3 times
+                                                    ②Inductors shall be subjected to (260+0/-5℃.)℃ for
+                                                    (10±5)s Soldering in the base whit 0.3mm solder.
+                        (1)Strong bond between      ③Aplombelectrode way plus tax X N for (10±1)
+        Adhesion of     the pad and the core,                                                            AEC-Q200
+  2         teral                                   seconds.                                                           32
+                        without come off PCB.                                                              (AEC-
+         electrode
+                                                                                                         Q200-006)
+
+
+
+
+                                                    ①The peak temperature: 260+0/-5℃.
+                                                    ②Reflow:3times.
+                                                    ③ Temperature curve is as below
+                                                                                                         AEC-Q200
+                        (1) No physiSl damage.                                                           (MIL-STD-
+  3     Reflow test                                                                                                    32
+                        (2) ∣ΔL0/L0 ∣≤10%                                                                202 Method
+                                                                                                             210)
+
+
+
+
+                                                    ①Preconditioning: Bake at 125+5℃for 24±0.5H，
+                                                    245℃Reflow 3 times
+                                                    ②Temperature: 125±2℃.
+                                                    ③Time : 1000 hours.
+                                                    ④Measurement at 24±4 hours after test conclusion      AEC-Q200
+           High         (1) No physiSl damage.                                                           (MIL-STD -
+  4                                                                                                                    77
+        temperature     (2) ∣ΔL0/L0 ∣≤10%                                                                202 Method
+                                                                                                             108)
+
+
+
+
+                                                    ①Preconditioning: Bake at 125+5℃for 24±0.5H，
+                                                    245℃Reflow 3 times
+                                                    ②Temperature: -55±2℃ .
+                                                    ③Time : 1000 hours.
+                                                    ④Measurement at 24±4 hours after test conclusion
+           Low          (1) No physiSl damage.                                                            JESD22-
+  5     temperature     (2) ∣ΔL0/L0 ∣≤10%                                                                  A119A
+
+                                                                                                                       77
+
+
+
+
+                                                    ①Preconditioning: Bake at 125+5℃for 24±0.5H，
+                                                    245℃Reflow 3 times
+                                                    ②Repeat 500 cycle as follow :                          MIL-STD
+         Thermal        (1) No physiSl damage.                                                           -202 Method
+  6                                                 (-55±2 ℃ ,30±3minutes) 、(Room temperature, 5
+          shock         (2) ∣ΔL0/L0 ∣≤10%
+                                                    minutes) 、(+125 ±2 ℃ ,30 ±3minutes) 、(Room                107
+                                                    temperature, 5 minutes)
+                                                                                                                       77
+                                                    ③Measurement at 24±4 hours after test conclusion
+
+
+                       更 多 资 讯, 请 点击 长 江 微 电 官 网 more information, Please click： WWW. CJIANG. COM. CN
+                                 深圳市长江微电科技有限公司
+                              SZ CJIANG TECHNOLOGY CO., LTD
+
+
+                                                 ①Solder Composition: Sn/Ag3.0/Cu0.5(Pb-Free).
+     Resistance to    (1) No physiSl damage.                                                               AEC-Q200
+7     Soldering                                  ②Solder Temperature: 260±5℃.                                           32
+         Heat         (2) ∣ΔL0/L0 ∣≤10%                                                                    （MIL-STD-
+                                                 ③Immersion Time: 10±1sec.                                 202 Method
+                                                                                                              210）
+
+
+                                                 ①Preconditioning: Bake at 125+5℃for 24±0.5H，
+                                                 245℃Reflow 3 times
+                                                 ②1000 hours, 85°C/85%RH.
+                                                 ③Unpowered.                                               AEC-Q200
+       Static         (1) No physiSl damage.     ④Measurement at 24±4 hours after test conclusion          (MIL-STD-
+8     Humidity                                                                                                          77
+                      (2) ∣ΔL0/L0 ∣≤10%                                                                    202 Method
+                                                                                                               103)
+
+
+
+
+                                                 ①Preconditioning：245℃Reflow 3 times
+                                                 ②Part mounted on a 100mm*40mm FR4 PCB board,
+                                                 which is 1.6±0.2 mm thick and as a Layer-thickness
+                                                 35 µm ±10 µm.
+                                                 ③Bending speed is 1mm/s.
+                                                 ④ Keeping the P.C Board 2 mm minimum for 60
+                                                 seconds.                                                   AEC-Q200
+                      (1) No physiSl damage.                                                               (AEC-Q200-
+9     Board Flex                                                                                                        30
+                      (2) ∣ΔL0/L0 ∣≤10%                                                                        005)
+
+
+
+
+                                                 ①Preconditioning：245℃Reflow 3 times                       AEC-Q200
+                                                 ②Frequency range : 10~2000Hz.                             (MIL-STD-
+      Vibration       (1) No physiSl damage.
+10                                               ③Amplitude: 1.5mm or 20g.                                 202 Method   32
+                      (2) ∣ΔL0/L0 ∣≤10%
+                                                 ④ Sweep time and duration: 10~2000~10Hz for 20                204)
+                                                 minutes.
+                                                 ⑤ Each four hours in X,Y,Z direction, 12hours in total.
+
+
+
+                                                 ①Preconditioning：245℃Reflow 3 times
+     MechaniSl        (1) No physiSl damage.                                                               AEC-Q200
+11     Shock                                     ②Peak acceleration:100G/S                                 (MIL-STD-    32
+                      (2) ∣ΔL0/L0 ∣≤10%          ③Duration of pulse:6ms                                    202 Method
+                                                 ④3times in each of 6(±X, ±Y, ±Z) axes.                        213)
+
+                                                 ①Preconditioning: Bake at 125+5℃for 24±0.5H，
+       Loading                                   245℃Reflow 3 times                                        AEC-Q200
+                      (1) No physiSl damage.                                                               (MIL-STD-
+12     at High                                   ②Temperature: 85±2℃.                                                   77
+     Temperature      (2) ∣ΔL0/L0 ∣≤10%                                                                    202 Method
+                                                 ③Time : 1000 hours.
+                                                                                                               108)
+                                                 ④Applied Current : Rated current.
+                                                 ⑤Measurement at 24±4 hours after test conclusion
+
+
+
+
+                     更 多 资 讯, 请 点击 长 江 微 电 官 网 more information, Please click： WWW. CJIANG. COM. CN
+                                      深圳市长江微电科技有限公司
+                                   SZ CJIANG TECHNOLOGY CO., LTD
+
+5.2 Soldering Condition
+   (This is for recommendation, please customer perform adjustment according to actual appliStion)
+   Recommend Reflow Soldering Profile ：(solder : Sn96.5 / Ag3 / Cu0.5)
+
+
+
+
+                      Profile Feature                                              Lead (Pb)-Free solder
+
+Preheat：
+
+Temperature Min (Tsmin)                                                    150℃
+
+Temperature Max (Tsmax)                                                   200℃
+
+Time (Tsmin to Tsmax ) (ts)                                               60 -120 seconds
+
+
+Average ramp-up rate：
+
+(Ts max to Tp)                                                            3℃ / second max.
+
+
+Time maintained above :
+
+Temperature (TL)                                                          217℃
+
+Time (tL)                                                                 60-150 seconds
+
+
+Peak Temperature (Tp)                                                     260℃
+
+
+Time within +0 ℃of actual peak Temperature (tp)2                           10 seconds
+            -5
+
+Ramp-down Rate                                                            6℃/second max.
+
+Time 25℃ to Peak Temperature                                              8minutes max.
+
+Allowed Re-flow times : 2 times
+Remark : To avoid discoloration phenomena of chip on terminal electrodes, please use N2 Re-flow furnace .
+
+
+
+
+                          更 多 资 讯, 请 点击 长 江微 电 官 网 more information, Please click： WWW. CJIANG. COM. CN
+                                       深圳市长江微电科技有限公司
+                                    SZ CJIANG TECHNOLOGY CO., LTD
+
+
+ 6. Packing
+  ■ Dimension of plastic taping: (Unit: mm)
+      The following dimensions are related to the actual fit of the machine ，for reference only.
+
+  ■ 4012 -1265 Series
+
+
+
+
+ Series/mm          W               A0            B0           D1        F           K0           P1           T
+                                                                                                                     R/Pcs
+
+ Tolerance          /               /             /          ±0.20     ±0.10          /         ±0.10        ±0.05
+
+  FEXU0412      12.0±0.30       4.40±0.10     4.40±0.10        1.5      5.5      1.30±0.10        8.0         0.30
+
+  FEXU0415      12.0±0.30       4.40±0.10     4.40±0.10        1.5      5.5      1.70±0.10        8.0         0.30    3K
+
+FEXU0418/0420   12.0±0.30       4.40±0.10     4.40±0.10        1.5      5.5      2.20±0.10        8.0         0.30
+
+  FEXU0424      12.0±0.30       4.40±0.10     4.40±0.10        1.5      5.5      2.60±0.10        8.0         0.35   2.5K
+  FEXU0430      12.0±0.30       4.40±0.10     4.40±0.10        1.5      5.5      3.20±0.10        8.0         0.35    2K
+  FEXU0440      12.0±0.30       4.40±0.10     4.40±0.10        1.5      5.5      4.20±0.10        8.0         0.35   1.5K
+  FEXU0512      12.0±0.30       5.20±0.10     5.40±0.10        1.5      5.5      1.45±0.10        8.0         0.35    3K
+  FEXU0518      12.0±0.30       5.20±0.10     5.40±0.10        1.5      5.5       2.0±0.10        8.0         0.35   2.5K
+  FEXU0520      12.0±0.30       5.20±0.10     5.40±0.10        1.5      5.5      2.25±0.10        8.0         0.35
+
+  FEXU0524      12.0±0.30       5.20±0.10     5.40±0.10        1.5      5.5       2.6±0.10        8.0         0.35
+                                                                                                                      2K
+  FEXU0528      12.0±0.30       5.20±0.10     5.40±0.10        1.5      5.5      3.05±0.10        8.0         0.35
+
+  FEXU0530      12.0±0.30       5.20±0.10     5.40±0.10        1.5      5.5      3.25±0.10        8.0         0.35
+
+  FEXU0540      12.0±0.30       5.20±0.10     5.40±0.10        1.5      5.5      4.25±0.10        8.0         0.35   1.5K
+  FEXU0550      12.0±0.30       5.20±0.10     5.40±0.10        1.5      5.5      5.25±0.10        8.0         0.35   1.0K
+  FEXU5124      12.0±0.30       5.60±0.10     5.40±0.10        1.5      5.5       2.6±0.10        6.0         0.35   2.5K
+  FEXU5130      12.0±0.30       5.60±0.10     5.40±0.10        1.5      5.5       3.2±0.10        6.0         0.35   2.0K
+  FEXU5320      16.0±0.30       5.70±0.10     5.50±0.10        1.5      7.5       2.3±0.10        12.0        0.35
+
+  FEXU5321      16.0±0.30       5.70±0.10     5.50±0.10        1.5      7.5       2.3±0.10        12.0        0.35   2.5K
+  FEXU5324      16.0±0.30       5.70±0.10     5.50±0.10        1.5      7.5       2.6±0.10        12.0        0.35
+
+  FEXU5330      16.0±0.30       5.70±0.10     5.50±0.10        1.5      7.5       3.2±0.10        12.0        0.40   2.0K
+  FEXU5340      16.0±0.30       5.70±0.10     5.50±0.10        1.5      7.5      4.2±0.10         12.0        0.40   1.5K
+
+
+
+
+                            更 多 资 讯, 请 点击 长 江 微 电 官 网 more information, Please click： WWW. CJIANG. COM. CN
+                                       深圳市长江微电科技有限公司
+                                    SZ CJIANG TECHNOLOGY CO., LTD
+
+
+  FEXU5350      16.0±0.30        5.70±0.10     5.50±0.10      1.5       7.5      5.2±0.10        12.0       0.40   1.5K
+
+FEXU0630/0631   16.0±0.30        6.20±0.10     6.40±0.10      1.5       7.5      3.35±0.10       12.0       0.35   1.0K
+
+  FEXU0640      16.0±0.30        6.20±0.10     6.40±0.10      1.5       7.5      4.25±0.10       12.0       0.35   1.0K
+
+  FEXU0650      16.0±0.30        6.20±0.10     6.40±0.10      1.5       7.5      5.25±0.10       12.0       0.50   0.8K
+
+  FEXU0660      16.0±0.30        6.20±0.10     6.40±0.10      1.5       7.5      6.25±0.10       12.0       0.50   0.6K
+
+  FEXU6415      16.0±0.30        6.80±0.10     6.60±0.10      1.5       7.5      1.7±0.10        12.0       0.35   2.5K
+
+  FEXU6420      16.0±0.30        6.80±0.10     6.60±0.10      1.5       7.5      2.2±0.10        12.0       0.35    2K
+
+  FEXU6421      16.0±0.30        6.80±0.10     6.60±0.10      1.5       7.5      2.2±0.10        12.0       0.35    2K
+
+  FEXU6422      16.0±0.30        6.80±0.10     6.60±0.10      1.5       7.5      2.4±0.10        12.0       0.35    2K
+
+  FEXU6424      16.0±0.30        6.80±0.10     6.60±0.10      1.5       7.5      2.7±0.10        12.0       0.40   1.5K
+
+  FEXU6430      16.0±0.30        6.80±0.10     6.60±0.10      1.5       7.5      3.2±0.10        12.0       0.35    1K
+
+  FEXU6440      16.0±0.30        6.80±0.10     6.60±0.10      1.5       7.5      4.2±0.10        12.0       0.40    1K
+
+  FEXU6450      16.0±0.30        6.80±0.10     6.60±0.10      1.5       7.5      5.2±0.10        12.0       0.50   0.8K
+
+  FEXU6460      16.0±0.30        6.80±0.10     6.60±0.10      1.5       7.5      6.2±0.10        12.0       0.50   0.6K
+
+  FEXU0715      16.0±0.30        7.20±0.10     7.40±0.10      1.5       7.5      1.7±0.10        12.0       0.40    2K
+
+  FEXU0720      16.0±0.30        7.20±0.10     7.40±0.10      1.5       7.5      2.20±0.10       12.0       0.40   1.5K
+
+  FEXU0730      16.0±0.30        7.20±0.10     7.40±0.10      1.5       7.5      3.20±0.10       12.0       0.40    1K
+
+  FEXU0740      16.0±0.30        7.20±0.10     7.40±0.10      1.5       7.5      4.20±0.10       12.0       0.40    1K
+
+  FEXU0750      16.0±0.30        7.20±0.10     7.40±0.10      1.5       7.5      5.20±0.10       12.0       0.40    1K
+
+  FEXU0760      16.0±0.30        7.20±0.10     7.40±0.10      1.5       7.5      6.20±0.10       12.0       0.50   0.8K
+
+  FEXU0820      24.0±0.30        8.20±0.10     8.40±0.10      1.5       11.5     2.2±0.10        16.0       0.35   1.5K
+
+  FEXU0822      24.0±0.30        8.20±0.10     8.40±0.10      1.5       11.5     2.4±0.10        16.0       0.35   1.5K
+
+  FEXU0830      24.0±0.30        8.20±0.10     8.40±0.10      1.5       11.5     3.2±0.10        16.0       0.4     1K
+
+  FEXU0840      24.0±0.30        8.20±0.10     8.40±0.10      1.5       11.5     4.2±0.10        16.0       0.50    1K
+
+  FEXU0850      24.0±0.30        8.20±0.10     8.40±0.10      1.5       11.5     5.2±0.10        16.0       0.50
+                                                                                                                   0.8K
+  FEXU0854      24.0±0.30        8.20±0.10     8.40±0.10      1.5       11.5     5.6±0.10        16.0       0.50
+
+  FEXU0870      24.0±0.30        8.20±0.10     8.40±0.10      1.5       11.5     7.2±0.10        16.0       0.50   0.5K
+
+  FEXU0960      24.0±0.30        9.20±0.10     9.40±0.10      1.5       11.5     6.2±0.10        16.0       0.50   0.5K
+
+  FEXU0980      24.0±0.30        9.20±0.10     9.40±0.10      1.5       11.5     8.2±0.10        16.0       0.50   0.4K
+
+  FEXU1030      24.0±0.30       10.20±0.10    10.40±0.10      1.5       11.5     3.20±0.10       16.0       0.40    1K
+
+  FEXU1040      24.0±0.30       10.20±0.10    10.40±0.10      1.5       11.5     4.20±0.10       16.0       0.40
+
+  FEXU1050      24.0±0.30       10.20±0.10    10.40±0.10      1.5       11.5     5.20±0.10       16.0       0.40
+                                                                                                                   0.5K
+  FEXU1060      24.0±0.30       10.20±0.10    10.40±0.10      1.5       11.5     6.20±0.10       16.0       0.40
+
+  FEXU1070      24.0±0.30       10.50±0.10    10.50±0.10      1.5       11.5     7.30±0.10       16.0       0.50
+
+  FEXU1080      24.0±0.30       10.50±0.10    10.50±0.10      1.5       11.5     8.30±0.10       16.0       0.50   0.4K
+
+  FEXU1230      24.0±0.30       12.20±0.10    12.40±0.10      1.5       11.5     3.20±0.10       16.0       0.50
+
+  FEXU1240      24.0±0.30       12.20±0.10    12.40±0.10      1.5       11.5     4.20±0.10       16.0       0.50
+
+  FEXU1250      24.0±0.30       12.20±0.10    12.40±0.10      1.5       11.5     5.20±0.10       16.0       0.50   0.5K
+
+  FEXU1260      24.0±0.30       12.20±0.10    12.40±0.10      1.5       11.5     6.20±0.10       16.0       0.50
+
+  FEXU1265      24.0±0.30       12.20±0.10    12.40±0.10      1.5       11.5     6.70±0.10       16.0       0.50
+
+
+
+
+                            更 多 资 讯, 请 点击 长 江微 电 官 网 more information, Please click： WWW. CJIANG. COM. CN
+                                      深圳市长江微电科技有限公司
+                                   SZ CJIANG TECHNOLOGY CO., LTD
+
+■ Dimension of Reel ：(Unit: mm)
+Packing size "W=8mm" using 178mm Reel Packing size "W≥12mm" using 330mm Reel
+
+                A          B           C
+    Type
+               ±2.0       ±2.0        ±2.0
+     All       178         60         13.0
+
+                A          B           C
+    Type
+               ±2.0       ±2.0        ±2.0
+                                                     7. Note
+     All       330         100        13.0
+
+
+
+7. Note
+7.1 Storage Period
+To maintain the solderability of terminal electrodes and to keep the packing material in good condition, product should be used
+within 12 months from the time of delivery. And the solderability of products electrodes may decrease as time passes, so in Sse of
+storage over 12 months,
+solderability shall be checked before actual usage.
+7.2 Storage Conditions
+Store products in a warehouse in compliance with the following condition:
+Temperature：Inductors (product with taping) +15 to +35℃；Humidity：25~70%RH.
+If the product is not used up 24H after opening, desicSnt should be placed in the package and sealed
+7.3 Do not subject products to rapid changes in temperature and humidity.
+7.4 Do not store the products in chemiSl atmosphere such as one containing sulfurous acid gas or alkaline gas, that will
+Suses poor solderability and corrosion of inductors.
+7.5 Do not store products in bulk packaging to prevent collision among inductors which Suses core chipping and wire breakage.
+7.6 Store products on pallets to protect from humidity, dust, etc.
+7.7 Avoid heat shock, vibration, direct sunlight, etc.
+7.8 When designing the PCB, please consider the installation position of the non-magnetic shielded components to avoid
+failures Sused by magnetic interference.
+7.9 Do not place this product near magnets or objects with magnetic force.
+7.10 The product will self-heat (temperature rise) due to power-on, and sufficient margin should be left in thermal design.
+7.11 Mounting density
+If this product is placed near heat-generating products, be sure to implement sufficient heat-dissipating measures. If this product is
+subjected to a signifiSnt amount of heat from other products, this could adversely affect product quality, resulting in a circuit
+malfunction or failure of the
+mounted section. Also, be sure that the product is used in a manner so that the heat that the product is subjected to from other
+products does not exceed the upper limit of the rated operating temperature for the product.
+7.12 Since the static electricity Srried by the human body will be transmitted to the ground wire, please use an anti-static wrist strap.
+7.13 Grease on human hands may lead to decreased solderability. Please avoid direct contact with the terminals.
+7.14 This product refers to the general standard used in audio-visual entertainment, home appliances, computers,office automation,
+communiStions, power modules, LED lighting, measuring equipment.Machine tools, industrial control panels and other
+general electronic equipment. And the general electronicequipment should be used under the usual operation and usage
+methods.
+7.15 When this product is used in ocSsions other than general electronic equipment, such as: Automotive Electronic
+products,medical equipment, military equipment, Aerospace equipment, submarine equipment, etc.please be sure to contact the
+company's sales department,the company will cooperate with customer needs, and negotiate different intended use described in
+this product
+7.16 Reworking with soldering iron
+    ITEM                                                                Requirement
+    Pre-heating                                                         150 °C/approx. 1 min
+    Tip temperature of soldering iron                                   350 °C max.
+    Soldering time                                                      3 s (+1 s, -0 s)
+    Number of reworking operations                                      1 times max.
+    It is recommended to replace the product directly, rework may Suse poor appearance
+7.17 We Snnot warrant against failure Sused by any use of our product that deviates from the intended use as described in
+this product specifiStion.
+7.18 Please approve our product specifiStions or transact the approval sheet for product specifiStions before ordering.
+7.19 Our specifiStion limits the quality of the component as a single unit. Please ensure the component is thoroughly evaluated in your
+appliStion circuit.
+
+
+                          更 多 资 讯, 请 点击 长 江 微 电 官 网 more information, Please click： WWW. CJIANG. COM. CN
+

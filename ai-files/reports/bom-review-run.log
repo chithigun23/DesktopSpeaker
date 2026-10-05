@@ -1,0 +1,5 @@
+{"kind":"workbook","id":"wb/6qchvb","sheets":2,"tables":2}
+{"kind":"sheet","id":"ws/dh9vwr","name":"Selected BOM","index":0,"range":"A1:S85","address":"A1:S85","tables":1}
+{"kind":"table","sheet":"Selected BOM","address":"A1:S85","rows":85,"cols":19,"values":[[null,null,null,null,null,null],["DesktopSpeaker starter LCSC BOM",null,null,null,null,null]],"valuesTruncated":true,"valuesPreviewRows":2,"valuesPreviewCols":6,"valuesPreviewAddress":"A1:F2"}
+{"kind":"sheet","id":"ws/0eeoin","name":"Open selections","index":1,"range":"A1:H19","address":"A1:H19","tables":1}
+{"kind":"notice","message":"Truncated: omitted 1 lines. Increase maxChars, narrow range, or use tableMaxRows/tableMaxCols/tableMaxCellChars."}

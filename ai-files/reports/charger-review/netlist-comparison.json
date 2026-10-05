@@ -1,0 +1,16 @@
+{
+  "tool": "KiCad CLI 10.0.6",
+  "comparison_scope": "Battery_Charger refs C100-C109 and U4 before and after C102/C109 bank relocation; physical pin-to-net equivalence",
+  "physical_pin_net_changes_after_regn_reroute": {},
+  "all_existing_cap_pins_preserved": true,
+  "expected_added_caps": {
+    "C108.1": "Net-(U4-PMID)",
+    "C108.2": "GND",
+    "C109.1": "/Battery_Charger/REGN",
+    "C109.2": "GND"
+  },
+  "pin_net_changes": {},
+  "existing_connections_preserved": true,
+  "C102_and_C109_topology": "REGN joined locally by a short direct wire with REGN label on the shared section; both grounds remain GND",
+  "crossing_cleanup": "C102/C109 bank moved left of VBUS vertical; remote REGN wire across PMID removed."
+}

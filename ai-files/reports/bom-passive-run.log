@@ -1,0 +1,7 @@
+{"kind":"workbook","id":"wb/xzyfg1","sheets":2,"tables":2}
+{"kind":"sheet","id":"ws/4z936g","name":"Selected BOM","index":0,"range":"A1:S88","address":"A1:S88","tables":1}
+{"kind":"table","sheet":"Selected BOM","address":"A1:S88","rows":88,"cols":19,"values":[[null,null,null,null,null,null],["DesktopSpeaker starter LCSC BOM",null,null,null,null,null]],"valuesTruncated":true,"valuesPreviewRows":2,"valuesPreviewCols":6,"valuesPreviewAddress":"A1:F2"}
+{"kind":"sheet","id":"ws/4jjd4a","name":"Open selections","index":1,"range":"A1:H19","address":"A1:H19","tables":1}
+{"kind":"notice","message":"Truncated: omitted 1 lines. Increase maxChars, narrow range, or use tableMaxRows/tableMaxCols/tableMaxCellChars."}
+Inspect result written to file: ai-files/bom/DesktopSpeaker_LCSC_Starter_BOM.xlsx.inspect.ndjson
+Passive BOM totals [ [ 68.7 ], [ 87.96 ] ]

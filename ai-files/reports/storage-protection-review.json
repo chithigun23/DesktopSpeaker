@@ -1,0 +1,40 @@
+{
+  "unchanged_existing_pin_groups_except_intended_storage_edits": true,
+  "intentional_existing_pin_changes": [
+    "J5.1 split from BAT_PACK by SW101",
+    "U4.12 QON changed from NC to wake switch"
+  ],
+  "selected_model_links": {
+    "ESDA25L": {
+      "paths": [
+        "${KIPRJMOD}/kicad-library/3d/ESDA25L.step"
+      ],
+      "files_present": true
+    },
+    "SMBJ10A": {
+      "paths": [
+        "${KIPRJMOD}/kicad-library/3d/SMBJ10A.step"
+      ],
+      "files_present": true
+    },
+    "Bourns_SRN6045TA-2R2Y": {
+      "paths": [
+        "${KIPRJMOD}/kicad-library/3d/Bourns_SRN6045TA-2R2Y.step"
+      ],
+      "files_present": true
+    }
+  },
+  "pin_relations": {
+    "CC1_D5_1": true,
+    "CC2_D5_2": true,
+    "D5_GND3": true,
+    "D6_VBUS_K1": true,
+    "D6_GND_A2": true,
+    "QON_button": true,
+    "button_ground": true,
+    "pack_switch_isolated": true,
+    "switch_board_loads": true,
+    "C107_SYS": true,
+    "C107_GND": true
+  }
+}

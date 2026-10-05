@@ -1,0 +1,506 @@
+{
+  "R1": {
+    "footprint": "DesktopSpeaker:PD_R_0603",
+    "footprint_exists": true,
+    "model_links": [
+      "${KIPRJMOD}/kicad-library/3d/R_0603_1608Metric.step"
+    ],
+    "models_exist": true
+  },
+  "R2": {
+    "footprint": "DesktopSpeaker:PD_R_0603",
+    "footprint_exists": true,
+    "model_links": [
+      "${KIPRJMOD}/kicad-library/3d/R_0603_1608Metric.step"
+    ],
+    "models_exist": true
+  },
+  "R4": {
+    "footprint": "DesktopSpeaker:PD_R_1206",
+    "footprint_exists": true,
+    "model_links": [
+      "${KIPRJMOD}/kicad-library/3d/PD_R_1206.step"
+    ],
+    "models_exist": true
+  },
+  "R55": {
+    "footprint": "DesktopSpeaker:PD_R_0603",
+    "footprint_exists": true,
+    "model_links": [
+      "${KIPRJMOD}/kicad-library/3d/R_0603_1608Metric.step"
+    ],
+    "models_exist": true
+  },
+  "R10": {
+    "footprint": "DesktopSpeaker:PD_R_0603",
+    "footprint_exists": true,
+    "model_links": [
+      "${KIPRJMOD}/kicad-library/3d/R_0603_1608Metric.step"
+    ],
+    "models_exist": true
+  },
+  "R11": {
+    "footprint": "DesktopSpeaker:PD_R_0603",
+    "footprint_exists": true,
+    "model_links": [
+      "${KIPRJMOD}/kicad-library/3d/R_0603_1608Metric.step"
+    ],
+    "models_exist": true
+  },
+  "R13": {
+    "footprint": "DesktopSpeaker:PD_R_0603",
+    "footprint_exists": true,
+    "model_links": [
+      "${KIPRJMOD}/kicad-library/3d/R_0603_1608Metric.step"
+    ],
+    "models_exist": true
+  },
+  "R9": {
+    "footprint": "DesktopSpeaker:PD_R_0603",
+    "footprint_exists": true,
+    "model_links": [
+      "${KIPRJMOD}/kicad-library/3d/R_0603_1608Metric.step"
+    ],
+    "models_exist": true
+  },
+  "R6": {
+    "footprint": "DesktopSpeaker:PD_R_0603",
+    "footprint_exists": true,
+    "model_links": [
+      "${KIPRJMOD}/kicad-library/3d/R_0603_1608Metric.step"
+    ],
+    "models_exist": true
+  },
+  "C1": {
+    "footprint": "DesktopSpeaker:PD_C_0603",
+    "footprint_exists": true,
+    "model_links": [
+      "${KIPRJMOD}/kicad-library/3d/C_0603_1608Metric.step"
+    ],
+    "models_exist": true
+  },
+  "C2": {
+    "footprint": "DesktopSpeaker:PD_C_0805",
+    "footprint_exists": true,
+    "model_links": [
+      "${KIPRJMOD}/kicad-library/3d/C_0805_2012Metric.step"
+    ],
+    "models_exist": true
+  },
+  "C3": {
+    "footprint": "DesktopSpeaker:PD_C_0603",
+    "footprint_exists": true,
+    "model_links": [
+      "${KIPRJMOD}/kicad-library/3d/C_0603_1608Metric.step"
+    ],
+    "models_exist": true
+  },
+  "C4": {
+    "footprint": "DesktopSpeaker:PD_C_0805",
+    "footprint_exists": true,
+    "model_links": [
+      "${KIPRJMOD}/kicad-library/3d/C_0805_2012Metric.step"
+    ],
+    "models_exist": true
+  },
+  "C5": {
+    "footprint": "DesktopSpeaker:PD_C_1206",
+    "footprint_exists": true,
+    "model_links": [
+      "${KIPRJMOD}/kicad-library/3d/PD_C_1206.step"
+    ],
+    "models_exist": true
+  },
+  "C6": {
+    "footprint": "DesktopSpeaker:PD_C_0805",
+    "footprint_exists": true,
+    "model_links": [
+      "${KIPRJMOD}/kicad-library/3d/C_0805_2012Metric.step"
+    ],
+    "models_exist": true
+  },
+  "C10": {
+    "footprint": "DesktopSpeaker:PD_C_0805",
+    "footprint_exists": true,
+    "model_links": [
+      "${KIPRJMOD}/kicad-library/3d/C_0805_2012Metric.step"
+    ],
+    "models_exist": true
+  },
+  "R180": {
+    "footprint": "DesktopSpeaker:PD_R_0603",
+    "footprint_exists": true,
+    "model_links": [
+      "${KIPRJMOD}/kicad-library/3d/R_0603_1608Metric.step"
+    ],
+    "models_exist": true
+  },
+  "R181": {
+    "footprint": "DesktopSpeaker:PD_R_0603",
+    "footprint_exists": true,
+    "model_links": [
+      "${KIPRJMOD}/kicad-library/3d/R_0603_1608Metric.step"
+    ],
+    "models_exist": true
+  },
+  "R182": {
+    "footprint": "DesktopSpeaker:PD_R_0603",
+    "footprint_exists": true,
+    "model_links": [
+      "${KIPRJMOD}/kicad-library/3d/R_0603_1608Metric.step"
+    ],
+    "models_exist": true
+  },
+  "C180": {
+    "footprint": "DesktopSpeaker:PD_C_0805",
+    "footprint_exists": true,
+    "model_links": [
+      "${KIPRJMOD}/kicad-library/3d/C_0805_2012Metric.step"
+    ],
+    "models_exist": true
+  },
+  "C181": {
+    "footprint": "DesktopSpeaker:PD_C_0603",
+    "footprint_exists": true,
+    "model_links": [
+      "${KIPRJMOD}/kicad-library/3d/C_0603_1608Metric.step"
+    ],
+    "models_exist": true
+  },
+  "C122": {
+    "footprint": "DesktopSpeaker:PD_C_0603",
+    "footprint_exists": true,
+    "model_links": [
+      "${KIPRJMOD}/kicad-library/3d/C_0603_1608Metric.step"
+    ],
+    "models_exist": true
+  },
+  "C123": {
+    "footprint": "DesktopSpeaker:PD_C_0603",
+    "footprint_exists": true,
+    "model_links": [
+      "${KIPRJMOD}/kicad-library/3d/C_0603_1608Metric.step"
+    ],
+    "models_exist": true
+  },
+  "C120": {
+    "footprint": "DesktopSpeaker:PD_C_0603",
+    "footprint_exists": true,
+    "model_links": [
+      "${KIPRJMOD}/kicad-library/3d/C_0603_1608Metric.step"
+    ],
+    "models_exist": true
+  },
+  "C121": {
+    "footprint": "DesktopSpeaker:PD_C_0603",
+    "footprint_exists": true,
+    "model_links": [
+      "${KIPRJMOD}/kicad-library/3d/C_0603_1608Metric.step"
+    ],
+    "models_exist": true
+  },
+  "R120": {
+    "footprint": "DesktopSpeaker:PD_R_0603",
+    "footprint_exists": true,
+    "model_links": [
+      "${KIPRJMOD}/kicad-library/3d/R_0603_1608Metric.step"
+    ],
+    "models_exist": true
+  },
+  "R121": {
+    "footprint": "DesktopSpeaker:PD_R_0603",
+    "footprint_exists": true,
+    "model_links": [
+      "${KIPRJMOD}/kicad-library/3d/R_0603_1608Metric.step"
+    ],
+    "models_exist": true
+  },
+  "R122": {
+    "footprint": "DesktopSpeaker:PD_R_0603",
+    "footprint_exists": true,
+    "model_links": [
+      "${KIPRJMOD}/kicad-library/3d/R_0603_1608Metric.step"
+    ],
+    "models_exist": true
+  },
+  "C130": {
+    "footprint": "DesktopSpeaker:PD_C_0603",
+    "footprint_exists": true,
+    "model_links": [
+      "${KIPRJMOD}/kicad-library/3d/C_0603_1608Metric.step"
+    ],
+    "models_exist": true
+  },
+  "C131": {
+    "footprint": "DesktopSpeaker:PD_C_0603",
+    "footprint_exists": true,
+    "model_links": [
+      "${KIPRJMOD}/kicad-library/3d/C_0603_1608Metric.step"
+    ],
+    "models_exist": true
+  },
+  "C132": {
+    "footprint": "DesktopSpeaker:PD_C_0603",
+    "footprint_exists": true,
+    "model_links": [
+      "${KIPRJMOD}/kicad-library/3d/C_0603_1608Metric.step"
+    ],
+    "models_exist": true
+  },
+  "C100": {
+    "footprint": "DesktopSpeaker:PD_C_0805",
+    "footprint_exists": true,
+    "model_links": [
+      "${KIPRJMOD}/kicad-library/3d/C_0805_2012Metric.step"
+    ],
+    "models_exist": true
+  },
+  "C101": {
+    "footprint": "DesktopSpeaker:PD_C_1210",
+    "footprint_exists": true,
+    "model_links": [
+      "${KIPRJMOD}/kicad-library/3d/PD_C_1210.step"
+    ],
+    "models_exist": true
+  },
+  "C108": {
+    "footprint": "DesktopSpeaker:PD_C_1210",
+    "footprint_exists": true,
+    "model_links": [
+      "${KIPRJMOD}/kicad-library/3d/PD_C_1210.step"
+    ],
+    "models_exist": true
+  },
+  "C109": {
+    "footprint": "DesktopSpeaker:PD_C_0805",
+    "footprint_exists": true,
+    "model_links": [
+      "${KIPRJMOD}/kicad-library/3d/C_0805_2012Metric.step"
+    ],
+    "models_exist": true
+  },
+  "C102": {
+    "footprint": "DesktopSpeaker:PD_C_0805",
+    "footprint_exists": true,
+    "model_links": [
+      "${KIPRJMOD}/kicad-library/3d/C_0805_2012Metric.step"
+    ],
+    "models_exist": true
+  },
+  "C104": {
+    "footprint": "DesktopSpeaker:PD_C_0805",
+    "footprint_exists": true,
+    "model_links": [
+      "${KIPRJMOD}/kicad-library/3d/C_0805_2012Metric.step"
+    ],
+    "models_exist": true
+  },
+  "C105": {
+    "footprint": "DesktopSpeaker:PD_C_0805",
+    "footprint_exists": true,
+    "model_links": [
+      "${KIPRJMOD}/kicad-library/3d/C_0805_2012Metric.step"
+    ],
+    "models_exist": true
+  },
+  "C106": {
+    "footprint": "DesktopSpeaker:PD_C_0805",
+    "footprint_exists": true,
+    "model_links": [
+      "${KIPRJMOD}/kicad-library/3d/C_0805_2012Metric.step"
+    ],
+    "models_exist": true
+  },
+  "R100": {
+    "footprint": "DesktopSpeaker:PD_R_0603",
+    "footprint_exists": true,
+    "model_links": [
+      "${KIPRJMOD}/kicad-library/3d/R_0603_1608Metric.step"
+    ],
+    "models_exist": true
+  },
+  "R101": {
+    "footprint": "DesktopSpeaker:PD_R_0603",
+    "footprint_exists": true,
+    "model_links": [
+      "${KIPRJMOD}/kicad-library/3d/R_0603_1608Metric.step"
+    ],
+    "models_exist": true
+  },
+  "R102": {
+    "footprint": "DesktopSpeaker:PD_R_0603",
+    "footprint_exists": true,
+    "model_links": [
+      "${KIPRJMOD}/kicad-library/3d/R_0603_1608Metric.step"
+    ],
+    "models_exist": true
+  },
+  "R103": {
+    "footprint": "DesktopSpeaker:PD_R_0603",
+    "footprint_exists": true,
+    "model_links": [
+      "${KIPRJMOD}/kicad-library/3d/R_0603_1608Metric.step"
+    ],
+    "models_exist": true
+  },
+  "R107": {
+    "footprint": "DesktopSpeaker:PD_R_0603",
+    "footprint_exists": true,
+    "model_links": [
+      "${KIPRJMOD}/kicad-library/3d/R_0603_1608Metric.step"
+    ],
+    "models_exist": true
+  },
+  "R106": {
+    "footprint": "DesktopSpeaker:PD_R_0603",
+    "footprint_exists": true,
+    "model_links": [
+      "${KIPRJMOD}/kicad-library/3d/R_0603_1608Metric.step"
+    ],
+    "models_exist": true
+  },
+  "C107": {
+    "footprint": "DesktopSpeaker:PD_C_0805",
+    "footprint_exists": true,
+    "model_links": [
+      "${KIPRJMOD}/kicad-library/3d/C_0805_2012Metric.step"
+    ],
+    "models_exist": true
+  },
+  "C150": {
+    "footprint": "DesktopSpeaker:PD_C_0805",
+    "footprint_exists": true,
+    "model_links": [
+      "${KIPRJMOD}/kicad-library/3d/C_0805_2012Metric.step"
+    ],
+    "models_exist": true
+  },
+  "C151": {
+    "footprint": "DesktopSpeaker:PD_C_0603",
+    "footprint_exists": true,
+    "model_links": [
+      "${KIPRJMOD}/kicad-library/3d/C_0603_1608Metric.step"
+    ],
+    "models_exist": true
+  },
+  "C152": {
+    "footprint": "DesktopSpeaker:PD_C_0805",
+    "footprint_exists": true,
+    "model_links": [
+      "${KIPRJMOD}/kicad-library/3d/C_0805_2012Metric.step"
+    ],
+    "models_exist": true
+  },
+  "C153": {
+    "footprint": "DesktopSpeaker:PD_C_0805",
+    "footprint_exists": true,
+    "model_links": [
+      "${KIPRJMOD}/kicad-library/3d/C_0805_2012Metric.step"
+    ],
+    "models_exist": true
+  },
+  "C154": {
+    "footprint": "DesktopSpeaker:PD_C_0805",
+    "footprint_exists": true,
+    "model_links": [
+      "${KIPRJMOD}/kicad-library/3d/C_0805_2012Metric.step"
+    ],
+    "models_exist": true
+  },
+  "R150": {
+    "footprint": "DesktopSpeaker:PD_R_0603",
+    "footprint_exists": true,
+    "model_links": [
+      "${KIPRJMOD}/kicad-library/3d/R_0603_1608Metric.step"
+    ],
+    "models_exist": true
+  },
+  "R151": {
+    "footprint": "DesktopSpeaker:PD_R_0603",
+    "footprint_exists": true,
+    "model_links": [
+      "${KIPRJMOD}/kicad-library/3d/R_0603_1608Metric.step"
+    ],
+    "models_exist": true
+  },
+  "R152": {
+    "footprint": "DesktopSpeaker:PD_R_0603",
+    "footprint_exists": true,
+    "model_links": [
+      "${KIPRJMOD}/kicad-library/3d/R_0603_1608Metric.step"
+    ],
+    "models_exist": true
+  },
+  "R153": {
+    "footprint": "DesktopSpeaker:PD_R_0603",
+    "footprint_exists": true,
+    "model_links": [
+      "${KIPRJMOD}/kicad-library/3d/R_0603_1608Metric.step"
+    ],
+    "models_exist": true
+  },
+  "R154": {
+    "footprint": "DesktopSpeaker:PD_R_0603",
+    "footprint_exists": true,
+    "model_links": [
+      "${KIPRJMOD}/kicad-library/3d/R_0603_1608Metric.step"
+    ],
+    "models_exist": true
+  },
+  "C140": {
+    "footprint": "DesktopSpeaker:PD_C_0805",
+    "footprint_exists": true,
+    "model_links": [
+      "${KIPRJMOD}/kicad-library/3d/C_0805_2012Metric.step"
+    ],
+    "models_exist": true
+  },
+  "C141": {
+    "footprint": "DesktopSpeaker:PD_C_0805",
+    "footprint_exists": true,
+    "model_links": [
+      "${KIPRJMOD}/kicad-library/3d/C_0805_2012Metric.step"
+    ],
+    "models_exist": true
+  },
+  "C142": {
+    "footprint": "DesktopSpeaker:PD_C_0805",
+    "footprint_exists": true,
+    "model_links": [
+      "${KIPRJMOD}/kicad-library/3d/C_0805_2012Metric.step"
+    ],
+    "models_exist": true
+  },
+  "C143": {
+    "footprint": "DesktopSpeaker:PD_C_0603",
+    "footprint_exists": true,
+    "model_links": [
+      "${KIPRJMOD}/kicad-library/3d/C_0603_1608Metric.step"
+    ],
+    "models_exist": true
+  },
+  "R140": {
+    "footprint": "DesktopSpeaker:PD_R_0603",
+    "footprint_exists": true,
+    "model_links": [
+      "${KIPRJMOD}/kicad-library/3d/R_0603_1608Metric.step"
+    ],
+    "models_exist": true
+  },
+  "R141": {
+    "footprint": "DesktopSpeaker:PD_R_0603",
+    "footprint_exists": true,
+    "model_links": [
+      "${KIPRJMOD}/kicad-library/3d/R_0603_1608Metric.step"
+    ],
+    "models_exist": true
+  },
+  "R142": {
+    "footprint": "DesktopSpeaker:PD_R_0603",
+    "footprint_exists": true,
+    "model_links": [
+      "${KIPRJMOD}/kicad-library/3d/R_0603_1608Metric.step"
+    ],
+    "models_exist": true
+  }
+}

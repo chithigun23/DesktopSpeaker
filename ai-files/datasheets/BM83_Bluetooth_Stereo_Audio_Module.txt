@@ -1,0 +1,3604 @@
+                                                                                                            BM83
+          BM83 Bluetooth® Stereo Audio Module Data Sheet
+
+
+Introduction
+
+The BM83, based on Microchip’s dual-mode IS2083 system-on-chip (SoC) device, is an RF-certified, fully integrated
+module with high-performing voice and audio post-processing capability for Bluetooth audio applications. Tuning
+for Noise Reduction, Acoustic Echo Cancellation (AEC) and EQ filtering can be customized with an easy-to-use
+GUI Configuration Tool. This flexible platform provides multiple digital and analog audio interfaces including stereo
+microphones, I2S, Line-In and a stereo audio DAC. It supports easy firmware upgrades via UART, USB and Over-the-
+Air (OTA).
+This turn-key solution module is pre-programmed with firmware that enables Bluetooth audio playback for a plug-and-
+play solution, and an audio transceiver solution for A2DP source/sink. Control settings for LED drivers and other
+peripherals can be set via the Configuration Tool. Advanced developers can use the Software Development Kit (SDK)
+to implement their applications.
+Note: Contact your local sales representative for more information about the Software Development Kit (SDK).
+Figure 1. BM83 Module Block Diagram
+
+                                                      PCB ANTENNA                                BM83
+
+
+                                                                                  IS2083BM
+
+
+                                                                             BLUETOOTH              XTAL
+                                                                    DSP
+                                                                            TRANSCEIVER
+                      LINE-IN
+
+
+                        MIC-1               AUDIO
+             (STEREO DIGITAL)               CODEC
+
+                                                                              POWER
+                                                                 CORE       MANAGEMENT
+                                                                               UNIT
+                        MIC-1
+                    (ANALOG)
+
+                        MIC-2
+                    (ANALOG)                 FLASH
+                                                                    ROM           RAM
+                                            MEMORY
+                                                                                                           BAT_IN
+
+                                                                                                           ADAP_IN
+                                                                I/O PORT
+
+
+
+
+                                               I2 C
+                                                                                        RF G
+                                                                                             E
+                                                           RT
+
+
+
+
+                                                                        B
+                                     I 2S
+
+
+
+
+                                                                              O
+
+
+
+
+                                                                                          AC
+                                                                                      TE BU
+                                                                      US
+
+
+
+
+                                                                            PI
+                                                          UA
+
+
+
+
+                                                                            G
+
+
+
+                                                                                    IN DE
+
+
+
+
+© 2021 Microchip Technology Inc.                               Datasheet                                   DS70005402D-page 1
+                                                                                                         BM83
+
+The BM83 module supports the following Bluetooth profiles and codecs:
+  •   Profiles:
+       – Hands-free Profile (HFP) 1.7.2, Headset Profile (HSP) 1.2, Advanced Audio Distribution Profile (A2DP) 1.3,
+            Serial Port Profile (SPP) 1.2, Audio/Video Remote Control Profile (AVRCP) 1.6 and Phone Book Access
+            Profile (PBAP) 1.2
+  •   Codecs:
+       – Advanced Audio Codec (AAC) and Sub-band Coding (SBC)
+
+
+
+Features
+
+  •   Qualified for Bluetooth v5.0 Specification:
+       – HFP 1.7.2, HSP 1.2, A2DP 1.3, SPP 1.2, AVRCP 1.6 and PBAP 1.2
+       – Bluetooth classic (BR/EDR) and Bluetooth Low Energy
+       – General Attribute Profile (GATT) and General Access Profile (GAP)
+       – Bluetooth Low Energy Data Length Extension (DLE) and secure connection
+  •   SDK:
+       – 8051 MCU debugging
+       – 24-bit program counter and data pointer modes
+  •   Multi-Link:
+       – A2DP (maximum 3 devices)
+       – HFP (maximum 1 device)
+  •   Multi-Speaker (MSPK) Solution:
+        – Microchip's proprietary solution to connect a central speaker to one or more peripheral speakers
+        – With MSPK firmware, the BM83 can provide Concert mode and Stereo mode
+  •   Audio Transceiver (AT) Solution:
+        – With AT firmware, the BM83 can work as either an A2DP source (where BM83 is the transmitter) or
+            A2DP/HFP sink (where BM83 is a receiver)
+  •   Audio Interfaces:
+        – Stereo line input
+        – Two analog microphones
+        – One stereo digital microphone
+        – Stereo audio Digital-to-Analog converter (DAC)
+        – Inter-IC (I2S) Sound input/output
+        – I2S Host Clock (MCLK)/reference clock
+  •   USB, UART, and Over-the-Air (OTA) Firmware Upgrade
+  •   Built-In Lithium-Ion and Lithium Polymer Battery Charger (Up to 350 mA Charging Current)
+  •   Compact Surface Mount Module:
+        – 32 mm x 15 mm x 2.5 mm
+        – Castellated surface mount pads
+        – Module shield
+  •   Integrated 3V and 1.8V Configurable Switching Regulator and Low-Dropout (LDO)
+
+RF/Analog
+ • Frequency Spectrum: 2.402 GHz to 2.480 GHz
+ • Receive Sensitivity: -90 dBm (2 Mbps EDR, at 0.01% BER)
+ • Programmable Transmit Output Power:
+     – Up to +10.4 dBm (typical) for Basic Data Rate (BDR)
+     – Up to +9.2 dBm (typical) for Enhanced Data Rate (EDR)
+
+
+
+
+© 2021 Microchip Technology Inc.                        Datasheet                               DS70005402D-page 2
+                                                                                                      BM83
+
+DSP Voice and Audio Processing
+ • 16/32-bit DSP Core with Enhanced 32-Bit Precision, Single Cycle Multiplier
+ • 64 Kbps A-Law, µ-Law Pulse Code Modulation (PCM) or Continuous Variable Slope Delta (CVSD) Modulation
+    for Synchronous Connection-Oriented (SCO) Channel Operation
+ • 8/16 kHz Noise Reduction (NR)
+ • 8/16 kHz Acoustic Echo Cancellation (AEC)
+ • Modified Sub-Band Coding (mSBC) Decoder for Wideband Speech
+ • Packet Loss Concealment (PLC) for SBC and AAC Codecs Only
+
+Audio Codec
+ • SBC and AAC
+ • 20-bit Audio Stereo DAC with Signal-to-Noise Ratio (SNR) 95 dB
+ • 16-bit Audio Stereo Analog-to-Digital Converter (ADC) with SNR 90 dB
+ • 16-bit/24-bit I2S Digital Audio:
+      – 8 kHz, 16 kHz, 44.1 kHz and 48 kHz sampling frequency for SBC and AAC
+
+Peripherals
+ • Successive Approximation Register Analog-to-Digital Converter (SAR ADC) with Dedicated Channels:
+      – Battery voltage detection and adapter voltage detection
+      – Charger thermal protection and ambient temperature detection
+ • UART (With Hardware Flow Control)
+ • USB (Full-Speed USB 1.1 Interface)
+ • Inter-Integrated Circuit (I2C™) Host
+ • One Pulse Width Modulation (PWM) Channel
+ • Two LED Drivers
+ • Up to 18 General Purpose Inputs/Outputs (GPIOs)
+ • 2-wire 8051 MCU Joint Test Action Group (JTAG) Debug
+
+Operating Conditions
+ • Operating Voltage: 3.2V to 4.2V
+ • Operating Temperature: -40°C to +85°C
+
+Compliance
+ • Bluetooth Special Interest Group (SIG) QDID: 134083 (Class1) and 134099 (Class2)
+ • Certified to the United States (FCC), Canada (ISED), Europe (CE), Korea (KCC), Taiwan (NCC) and Japan
+   (MIC) Radio Regulations
+ • RoHS Compliant
+
+Applications
+ • Portable Speaker
+ • Multiple Speakers
+ • Headphones
+
+
+
+
+© 2021 Microchip Technology Inc.                     Datasheet                             DS70005402D-page 3
+                                                                                                                                                                      BM83
+
+Table of Contents
+Introduction.....................................................................................................................................................1
+
+Features......................................................................................................................................................... 2
+
+1.    Quick References....................................................................................................................................6
+      1.1.       Reference Documentation............................................................................................................6
+      1.2.       Design Packages......................................................................................................................... 6
+      1.3.       Acronyms/Abbreviations...............................................................................................................6
+
+2.    Device Overview..................................................................................................................................... 9
+      2.1.       BM83 Module Pin Diagram.........................................................................................................11
+      2.2.       BM83 Module Pin Description.................................................................................................... 12
+
+3.    Audio Subsystem.................................................................................................................................. 15
+      3.1.       Digital Signal Processor............................................................................................................. 15
+      3.2.       Codec......................................................................................................................................... 16
+      3.3.       Auxiliary Port.............................................................................................................................. 34
+      3.4.       Analog Speaker Output.............................................................................................................. 34
+      3.5.       Microphone Inputs......................................................................................................................35
+
+4.    Bluetooth Transceiver........................................................................................................................... 36
+      4.1.       Transmitter................................................................................................................................. 36
+      4.2.       Receiver..................................................................................................................................... 36
+      4.3.       Synthesizer.................................................................................................................................36
+      4.4.       Modulator-Demodulator...........................................................................................................36
+      4.5.       Adaptive Frequency Hopping .................................................................................................... 36
+
+5.    Power Management Unit.......................................................................................................................37
+      5.1.       Power Supply............................................................................................................................. 37
+      5.2.       SAR ADC................................................................................................................................... 38
+      5.3.       LED Drivers................................................................................................................................ 40
+
+6.    Application Information..........................................................................................................................41
+      6.1.       Power On/Off Sequence............................................................................................................ 41
+      6.2.       Reset.......................................................................................................................................... 42
+      6.3.       Configuring and Programming .................................................................................................. 43
+      6.4.       General Purpose I/O Pins.......................................................................................................... 44
+      6.5.       I2S Interface............................................................................................................................... 45
+      6.6.       Host MCU Interface Over UART................................................................................................ 46
+
+7.    PCB Antenna Information..................................................................................................................... 50
+      7.1.       Antenna Radiation Pattern......................................................................................................... 50
+      7.2.       Module Placement Guidelines....................................................................................................53
+
+8.    Physical Dimensions............................................................................................................................. 55
+
+9.    Electrical Specifications........................................................................................................................ 57
+      9.1.       Timing Specifications..................................................................................................................62
+
+
+
+
+© 2021 Microchip Technology Inc.                                                       Datasheet                                                     DS70005402D-page 4
+                                                                                                                                                                    BM83
+
+10. Soldering Recommendations................................................................................................................ 64
+
+11. Ordering Information ............................................................................................................................ 65
+
+12. Appendix A: Regulatory Approval......................................................................................................... 66
+      12.1.     United States..............................................................................................................................66
+      12.2.     Canada.......................................................................................................................................68
+      12.3.     Europe........................................................................................................................................69
+      12.4.     Japan..........................................................................................................................................70
+      12.5.     Korea..........................................................................................................................................71
+      12.6.     Taiwan........................................................................................................................................ 71
+      12.7.     Other Regulatory Information..................................................................................................... 72
+
+13. Document Revision History...................................................................................................................73
+
+The Microchip Website.................................................................................................................................75
+
+Product Change Notification Service............................................................................................................75
+
+Customer Support........................................................................................................................................ 75
+
+Microchip Devices Code Protection Feature................................................................................................ 75
+
+Legal Notice................................................................................................................................................. 76
+
+Trademarks.................................................................................................................................................. 76
+
+Quality Management System....................................................................................................................... 77
+
+Worldwide Sales and Service.......................................................................................................................78
+
+
+
+
+© 2021 Microchip Technology Inc.                                                     Datasheet                                                      DS70005402D-page 5
+                                                                                                            BM83
+                                                                                              Quick References
+
+
+1.    Quick References
+
+1.1   Reference Documentation
+      For further study, refer to the following:
+       • IS2083 Bluetooth® Stereo Audio SoC Data Sheet (DS70005403)
+       • BM83 Bluetooth® Audio Development Board User's Guide (DS50002902)
+       • IS2083 SDK User Guide (DS50002894)
+       • BM83 Host MCU Firmware Development Guide (DS50002896)
+       • IS2083/BM83 Bluetooth® Application Design Guide (DS00003118)
+       • IS2083 SDK Debugger User’s Guide (DS50002892)
+       • IS2083 Reference Design Application Note
+       • IS2083/BM83 Battery Charger Application Note (AN3490)
+       • AN233 Solder Reflow Recommendation Application Note (DS00233)
+      Notes:
+       1. For a complete list of development support tools and documents, visit:
+             – www.microchip.com/BM83
+             – www.microchip.com/IS2083
+       2. Contact your local sales representative for more information about the Software Development Kit (SDK).
+
+
+
+1.2   Design Packages
+      For reference schematics, refer to www.microchip.com/wwwproducts/en/BM83.
+
+
+
+1.3   Acronyms/Abbreviations
+      Table 1-1. Acronyms/Abbreviations
+
+       Acronyms/Abbreviations            Description
+
+       A2DP                              Advanced Audio Distribution Profile
+
+       AAC                               Advanced Audio Codec
+
+       ADC                               Analog-to-Digital Converter
+
+       AEC                               Acoustic Echo Cancellation
+
+       AFH                               Adaptive Frequency Hopping
+
+       ANCS                              Apple Notification Center Service
+
+       API                               Application Programming Interfaces
+
+       AVRCP                             Audio/Video Remote Control Profile
+
+       AW                                Audio Widening
+
+       BDR                               Basic Data Rate
+
+       BER                               Bit Error Rate
+
+       BLE                               Bluetooth Low Energy
+
+       BOM                               Bill of Materials
+
+       BPF                               Band Pass Filter
+
+       BR                                Basic Rate
+
+
+
+
+      © 2021 Microchip Technology Inc.                                         Datasheet           DS70005402D-page 6
+                                                                                               BM83
+                                                                                    Quick References
+
+...........continued
+ Acronyms/Abbreviations            Description
+
+ CVSD                              Continuous Variable Slope Delta
+
+ DAC                               Digital-to-Analog Converter
+
+ DFU                               Device Firmware Upgrade
+
+ DIS                               Device Information Service
+
+ DLE                               Data Length Extension
+
+ DPSK                              Differential Phase Shift Keying
+
+ DQPSK                             Differential Quadrature Phase Shift Keying
+
+ DR                                Receive Data
+
+ DSP                               Digital Signal Processor
+
+ DT                                Transmit Data
+
+ EDR                               Enhanced Data Rate
+
+ EMC                               Electromagnetic Compatibility
+
+ EVB                               Evaluation Board
+
+ FET                               Field Effect Transistor
+
+ GAP                               General Access Profile
+
+ GATT                              General Attribute Profile
+
+ GFSK                              Gaussian Frequency Shift Keying
+
+ GPIO                              General Purpose Input Output
+
+ GUI                               Graphical User Interface
+
+ HFP                               Hands-free Profile
+
+ HPF                               High Pass Filter
+
+ HSP                               Headset Profile
+
+ HW                                Hardware
+
+ I2C                               Inter-Integrated Circuit
+
+ I2S                               Inter-IC Sound
+
+ IC                                Integrated Circuit
+
+ ICSP                              In-Circuit Serial Programming
+
+ IDE                               Integrated Development Environment
+
+ IF                                Intermediate Frequency
+
+ IPE                               Integrated Programming Environment
+
+ JTAG                              Joint Test Action Group
+
+ LDO                               Low-Dropout
+
+ LED                               Light Emitting Diode
+
+ LNA                               Low-Noise Amplifier
+
+ LPA                               Linear Power Amplifier
+
+ LSB                               Least Significant Bit
+
+ MAC                               Medium Access Control
+
+ MB DRC                            Multiband Dynamic Range Compression
+
+ MCLK                              Master Clock
+
+ MCU                               Microcontroller
+
+
+
+
+© 2021 Microchip Technology Inc.                                        Datasheet      DS70005402D-page 7
+                                                                                                BM83
+                                                                                     Quick References
+
+...........continued
+ Acronyms/Abbreviations            Description
+
+ MEMS                              Micro-Electro-Mechanical Systems
+
+ MFB                               Multi-function Button
+
+ Modem                             Modulator-demodulator
+
+ MPA                               Medium Power Amplifier
+
+ mSBC                              Modified Sub-band Coding
+
+ MSPK                              Multi-speaker
+
+ NR                                Noise Reduction
+
+ OTA                               Over-the-Air
+
+ PBAP                              Phone Book Access Profile
+
+ PCB                               Printed Circuit Board
+
+ PCM                               Pulse Code Modulation
+
+ PDM                               Pulse Density Modulation
+
+ PIM                               Plug-in Module
+
+ PLC                               Packet Loss Concealment
+
+ PMU                               Power Management Unit
+
+ POR                               Power-on Reset
+
+ PWM                               Pulse Width Modulation
+
+ RF                                Radio Frequency
+
+ RFS                               Receive Frame Sync
+
+ RoHS                              Restriction of Hazardous Substances
+
+ RSSI                              Received Signal Strength Indicator
+
+ RX                                Receiver
+
+ SAR                               Successive Approximation Register
+
+ SBC                               Sub-band Coding
+
+ SCO                               Synchronous Connection-oriented
+
+ SDK                               Software Development Kit
+
+ SIG                               Special Interest Group
+
+ SNR                               Signal-to-Noise Ratio
+
+ SoC                               System-on-Chip
+
+ SPP                               Serial Port Profile
+
+ SW                                Software
+
+ TX                                Transmitter
+
+ UART                              Universal Asynchronous Receiver-Transmitter
+
+ UI                                User Interface
+
+ USB                               Universal Serial Bus
+
+ VB                                Virtual Bass Enhancement
+
+ VCO                               Voltage-controlled Oscillator
+
+ WDT                               Watchdog Timer
+
+
+
+
+© 2021 Microchip Technology Inc.                                         Datasheet      DS70005402D-page 8
+                                                                                                                                BM83
+                                                                                                            Device Overview
+
+
+2.   Device Overview
+     The BM83 stereo audio module is built around the IS2083BM SoC, which integrates the dual-mode baseband,
+     modem, radio transceiver, PMU, MCU, crystal and a DSP dedicated for audio and voice applications. Users can
+     configure the BM83 module by using the SDK or the IS208x_Config_GUI_Tool (Config Tool).
+     There are two modes of operation:
+       •     Host mode:
+              – Interfaces with an external MCU over UART for application specific system control
+              – The MSPK solution and AT solution can reside on the external MCU
+       •     Embedded mode:
+              – No external MCU involved
+              – BM83 acts as an MCU to control all peripherals to provide various speaker features
+              – Integrates the MSPK and AT solution on the module
+     Simple system control can be implemented using the SDK. DSP parameters such as equalizer settings can be set
+     using the Config Tool.
+     Note: The SDK and Config Tool are available for download at: www.microchip.com/BM83.
+     The following figure illustrates the Embedded mode and Host mode of the BM83 module.
+     Figure 2-1. BM83 Module Application Modes
+
+                               Embedded Mode                                             Host Mode
+
+
+
+
+                                                                                                  UART             Host
+      Smartphone                                                  Smartphone                                       MCU
+                                             I2C
+
+
+
+
+                                                                                                                          I/O
+                          BM83
+
+
+
+                                                                                                             I2C
+                                             I2 S    External                       BM83
+                                                    DSP/Audio                                     MCLK
+      Microphone                                     Amplifier    Microphone                                  External
+                                         MCLK                                                         I2S    DSP/Audio
+                                                                                                              Amplifier
+
+           Line-In                                                  Line-In
+
+
+
+                     Battery    DC Adapter                                     Battery   DC Adapter
+
+
+
+
+     © 2021 Microchip Technology Inc.                            Datasheet                                         DS70005402D-page 9
+                                                                                                         BM83
+                                                                                          Device Overview
+
+The following table provides the features of the BM83 module.
+Table 2-1. BM83 Module Features
+
+ Features                                                         BM83SM1
+
+ SoC                                                              IS2083BM
+ Pin Count                                                        50
+ Dimension                                                        32 mm x 15 mm
+ RF
+ PCB Antenna                                                      Yes
+ TX Power (typical)                                               +11 dBm (Class1) and +1 dBm (Class2)
+ RX Sensitivity                                                   -90 dBm (2 Mbps EDR)
+ Bluetooth Power Class                                            Class 1 and Class 2
+ RF Shield                                                        Yes
+ Audio
+ Audio DAC Output                                                 2-channel
+ DAC (Single-ended) SNR                                           -95 dB
+ DAC (Capless) SNR                                                -95 dB
+ ADC SNR                                                          -90 dB
+ I2S Audio (Input/Output) with Host Clock (MCLK) Output           Yes
+ Analog Auxiliary In                                              Yes
+ Analog Microphone                                                2
+ Stereo Digital Microphone                                        1
+ External Audio Amp Interface                                     Yes
+ Power
+ Battery Input (BAT_IN)                                           3.8V (typ.)
+ DC Adapter Input (ADAP_IN)                                       5.0V (typ.)
+ Integrated BUCK Regulator                                        Yes
+ Battery Charger (350 mA charging current max)                    Yes
+ Peripherals
+ UART (with HW flow control)                                      Yes
+ I2C Host                                                         Yes
+ USB (full speed USB v1.1 interface)                              Yes
+ SAR ADC                                                          2
+ PWM                                                              1
+ LED Driver                                                       2
+ GPIOs                                                            18
+ JTAG Debug Port (8051 MCU)                                       2-wire
+
+
+
+
+© 2021 Microchip Technology Inc.                          Datasheet                          DS70005402D-page 10
+                                                                                                                                                                                        BM83
+                                                                                                                                                                            Device Overview
+
+
+2.1   BM83 Module Pin Diagram
+      The following figure illustrates the pin diagram of the BM83 module.
+      Figure 2-2. BM83 Module Pin Diagram
+
+
+
+
+                    DR1     1                                                                                                                                  50   GND
+                   RFS1     2                                                                                                                                  49   P0_0/UART_TX_IND
+                 SCLK1      3                                                                                                                                  48   P3_7/UART_CTS
+                    DT1     4                                                                                                                                  47   P1_3/TCK_CPU/SDA
+                 MCLK1      5                                                                                                                                  46   P1_2/TDI_CPU/SCL
+                AOHPR       6                                                                                                                                  45   P0_7
+                AOHPM       7                                                                                                                                  44   P0_1
+                 AOHPL      8                                                                                                                                  43   RST_N
+                  MICN2     9                                                                                                                                  42   P2_3
+                  MICP2    10                                                                                                                                  41   P1_6/PWM1
+                     AIR   11
+                                                                             BM83                                                                              40   P0_5
+                     AIL   12                                                                                                                                  39   P2_7
+                  MICN1    13                                                                                                                                  38   P0_3
+                  MICP1    14                                                                                                                                  37   DP
+               MICBIAS     15                                                                                                                                  36   DM
+                    GND    16                                                                                                                                  35   P0_6
+             DMIC_CLK      17                                                                                                                                  34   LED2
+               DMIC1_R     18                                                                                                                                  33   P0_2
+               DMIC1_L     19                                                                                                                                  32   LED1
+                   P3_2    20                                                                                                                                  31   P3_4/UART_RTS
+
+                                         21 22 23 24 25 26 27 28 29 30
+                                         P2_6
+                                                ADAP_IN
+                                                          BAT_IN
+                                                                   SYS_PWR
+                                                                             VDD_IO
+                                                                                      PWR (MFB)
+                                                                                                  SKI1_AMB_DET
+                                                                                                                  SK2_KEY_AD
+                                                                                                                               P8_6/UART_RXD
+                                                                                                                                               P8_5/UART_TXD
+
+
+
+
+      © 2021 Microchip Technology Inc.                                                                           Datasheet                                                      DS70005402D-page 11
+                                                                                                                  BM83
+                                                                                                     Device Overview
+
+
+2.2   BM83 Module Pin Description
+      The following table describes the pin description of the BM83 module.
+      Table 2-2. BM83 Module Pin Description
+
+       Pin          Pin Name               Pin       Description
+       Number                              Type
+       1            DR1                    I         I2S interface: digital left/right data
+       2            RFS1                   I/O       I2S interface: digital left/right clock
+       3            SCLK1                  I/ O      I2S interface: bit clock
+       4            DT1                    O         I2S interface: digital left/right data
+       5            MCLK1                  O         I2S interface: master clock
+       6            AOHPR                  O         R-channel analog headphone output
+       7            AOHPM                  O         Headphone common mode output/sense input
+       8            AOHPL                  O         L-channel analog headphone output
+       9            MICN2                  I         MIC 2 mono differential analog negative input
+       10           MICP2                  I         MIC 2 mono differential analog positive input
+       11           AIR                    I         R-channel single-ended analog input
+       12           AIL                    I         L-channel single-ended analog input
+       13           MICN1                  I         MIC 1 mono differential analog negative input
+       14           MICP1                  I         MIC 1 mono differential analog positive input
+       15           MICBIAS                P         Electric microphone biasing voltage
+
+       16           GND                    P         Ground reference
+       17           DMIC_CLK               O         Digital MIC clock output
+       18           DMIC1_R                I         Digital MIC right input
+       19           DMIC1_L                I         Digital MIC left input
+       20           P3_2                   I/O         •   General purpose I/O port P3_2
+                                                       •   By default, this is configured as AUX_IN DETECT
+
+       21           P2_6                   I/O       General purpose I/O port P2_6
+       22           ADAP_IN                P           •   5V power adapter input
+                                                       •   To charge the battery in the Li-ion battery powered applications
+                                                       •   To be used for USB Device Firmware Upgrade (DFU)
+                                                       •   Otherwise it can be left floating
+
+       23           BAT_IN                 P           •   Power supply input; voltage range: 3.2V to 4.2V
+                                                       •   Source can either be a Li-ion battery or any other power rail on
+                                                           the host board
+
+
+
+
+      © 2021 Microchip Technology Inc.                          Datasheet                               DS70005402D-page 12
+                                                                                                        BM83
+                                                                                          Device Overview
+
+...........continued
+ Pin          Pin Name             Pin    Description
+ Number                            Type
+ 24           SYS_PWR              P       •   System power output derived from the ADAP_IN or BAT_IN
+                                               input
+                                           •   Only for internal use
+                                           •   Do not connect to any other devices
+                                           •   LED1 and LED2 can be connected to SYS_PWR
+
+ 25           VDD_IO               P      I/O power supply, do not connect, for internal use only (connected to
+                                          LDO31_VO)
+ 26           PWR (MFB)            I      Multi-function push button and Power On key
+ 27           SK1_AMB_DET          I      Temperature sense channel 1
+ 28           SK2_KEY_AD           I      Temperature sense channel 2
+ 29           P8_6 / UART_RXD      I/O     •   General purpose I/O port P8_6
+                                           •   UART RX data
+
+ 30           P8_5 / UART_TXD      I/O     •   General purpose I/O port P8_5
+                                           •   UART TX data
+
+ 31           P3_4 / UART_RTS      I/O     •   General purpose I/O port P3_4
+                                           •   System configuration pin (Application mode or Test mode)
+                                           •   UART RTS
+
+ 32           LED1                 I      LED driver 1
+ 33           P0_2                 I/O     •   General purpose I/O port P0_2
+                                           •   By default, this is configured as play/pause button (user
+                                               configurable button)
+
+ 34           LED2                 I      LED driver 2
+ 35           P0_6                 I/O     •   General purpose I/O port P0_6
+
+ 36           DM                   I/O    USB data minus data line
+ 37           DP                   I/O    USB data positive data line
+ 38           P0_3                 I/O     •   General purpose I/O port P0_3
+                                           •   By default, this is configured as reverse button (user
+                                               configurable button)
+
+ 39           P2_7                 I/O     •   General purpose I/O port P2_7
+                                           •   By default, this is configured as volume up button (user
+                                               configurable button)
+
+ 40           P0_5                 I/O     •   General purpose I/O port P0_5
+                                           •   By default, this is configured as volume down button (user
+                                               configurable button)
+
+ 41           P1_6 / PWM1          I/O     •   General purpose I/O port P1_6
+                                           •   PWM1 output
+
+ 42           P2_3                 I/O    General purpose I/O port P2_3
+ 43           RST_N                I      System Reset pin (active-low)
+
+
+
+
+© 2021 Microchip Technology Inc.                   Datasheet                                 DS70005402D-page 13
+                                                                                                         BM83
+                                                                                           Device Overview
+
+...........continued
+ Pin          Pin Name             Pin     Description
+ Number                            Type
+ 44           P0_1                 I/O      •   General purpose I/O port P0_1
+                                            •   By default, this is configured as forward button (user
+                                                configurable button)
+
+ 45           P0_7                 I/O     General purpose I/O port P0_7
+ 46           P1_2 / TDI_CPU / SCL I/O      •   General purpose I/O port P1_2
+                                            •   CPU 2-wire debug data
+                                            •   I2C SCL
+
+ 47           P1_3 / TCK_CPU /     I/O      •   General purpose I/O port P1_3
+              SDA
+                                            •   CPU 2-wire debug clock
+                                            •   I2C SDA
+
+ 48           P3_7 / UART_CTS      I/O      •   General purpose I/O port P3_7
+                                            •   UART CTS
+
+ 49           P0_0 / UART_TX_IND   I/O      •   General purpose I/O port P0_0
+                                            •   By default, this is configured as an external codec reset
+                                                (Embedded mode)
+                                            •   UART_TX_IND (active-high) used to wake-up the host MCU
+                                                (Host mode)
+
+ 50           GND                  P       Ground reference
+
+Note: The BM83 module is pre-configured with Embedded mode (see, 6.4 General Purpose I/O Pins). The GPIOs
+mentioned in the preceding table can be configured using the Config Tool or the SDK.
+
+
+
+
+© 2021 Microchip Technology Inc.                    Datasheet                                 DS70005402D-page 14
+                                                                                                                  BM83
+                                                                                                    Audio Subsystem
+
+
+3.    Audio Subsystem
+      The input and output audios have different stages and each stage can be programmed to vary the gain response
+      characteristics. For microphone, both single-ended inputs and differential inputs are supported. To maintain a high
+      quality signal, a stable bias voltage source to the condenser microphone’s Field-Effect Transistor (FET) is provided.
+      The DC blocking capacitors can be used at both positive and negative sides of an input. Internally, this analog signal
+      is converted to 16-bit, 8 kHz/16 kHz/44.1 kHz/48 kHz linear PCM data.
+      The following figure shows the audio subsystem.
+      Figure 3-1. Audio Subsystem
+
+
+            RSTGEN                       reset                                  Analog Audio Codec
+
+
+            CLKGEN                       clk
+
+
+               CPU                       registers
+
+
+               DSP
+                                         DSP registers
+
+
+
+                                                                                                                  AOHPL
+                                                   DAC                                  Audio
+                        DT0                                                                                       AOHPM
+                                                 Controller                             DAC
+                                                                                                                  AOHPR
+
+
+
+
+              ADC_SDATA                                                                                           AIL
+                                                   ADC
+                                                 Controller                                                       AIR
+                 ADC_LRO
+                                                                                        Audio                     MICN1
+                                                                                        ADC                       MICP1
+                                                                                                                  MICN2
+               DMIC_CLK                  digmic_mclk_out
+                                                                                                                  MICP2
+
+                  DMIC1_L                digmic1_l_data_in
+
+
+                 DMIC1_R                 digmic1_r_data_in                              VREF                      MICBIAS
+
+
+
+
+3.1   Digital Signal Processor
+      The BM83 module integrates a high-performance DSP to provide excellent voice and audio user experience. The
+      advanced speech features, such as AEC and NR are inbuilt. To reduce nonlinear distortion and echo cancellation, an
+
+
+
+
+      © 2021 Microchip Technology Inc.                          Datasheet                               DS70005402D-page 15
+                                                                                                                                       BM83
+                                                                                                                         Audio Subsystem
+
+      outgoing signal level to the speaker is monitored and adjusted to avoid saturation of speaker output or microphone
+      input. Adaptive filtering is also applied to track the echo path impulse in response, to provide an echo free and
+      full-duplex user experience.
+      The embedded noise reduction algorithm helps to extract clean speech signals from the noisy inputs captured by the
+      microphones and improves communication.
+      In addition to NR/AEC function, audio effect functions such as Multiband Dynamic Range Compression (MB-DRC),
+      virtual bass enhancement (VB), and audio widening (AW)), for A2DP audio streaming are also available to enhance
+      the audio quality for various applications. For mono speaker/speakerphone and stereo headset applications, MB-
+      DRC and VB can be enabled to have better audio clarity. For stereo speaker/speakerphone applications, in addition
+      to MB-DRC and VB, AW can be enabled to provide better live audio effect for the users.
+      The following figures illustrate the signal processing flow of speakerphone applications for speech and audio signal
+      processing.
+      Figure 3-2. Speech Signal Processing
+
+                                                                     BM83
+                                                                                                             DSP
+        Antenna                CVSD/A-Law/
+                                                      Far-end                                                                      Audio
+                               μ-Law/MSBC                               Equaliser         HPF          SRC                DAC
+                                                        NR                                                                        Amplifier
+                                 Decoders                                                                                                     Speaker
+
+                   MCU
+                               CVSD/A-Law/
+                                                                      Near-end
+                               μ-Law/MSBC                Equaliser                  AEC     HPF                 SRC       ADC
+                                                                      NR/AES
+                                 Encoders
+                                                                                                   Digital                      Microphones
+                                                Additive                                          MIC Gain
+                                            Background Noise
+
+
+
+
+      Figure 3-3. Audio Signal Processing
+
+                                                                BM83
+
+        Antenna
+                                                                                                DSP
+                                                                                                                           External Audio
+                                                         Line-In                                               ADC
+                                                                                                                              Source
+
+                     MCU          SBC/AAC                 Audio                                                DAC          Audio
+                                                                            Equaliser       SRC               (Speaker     Amplifier
+                                  Decoders                Effect                                                Gain)                   Speaker
+
+
+
+
+      Note:
+       1. The DSP parameters can be configured using the Config Tool.
+
+
+
+3.2   Codec
+      The built-in codec has a high SNR performance and it consists of an ADC, a DAC and an additional analog circuitry.
+      The internal codec supports 20-bit resolution for DAC and 16-bit resolution for ADC.
+        •   Interfaces
+              – Two mono differential or single-ended MIC inputs
+              – One stereo single-ended line input
+              – One stereo single-ended line output
+
+
+
+
+      © 2021 Microchip Technology Inc.                                       Datasheet                                     DS70005402D-page 16
+                                                                                                                   BM83
+                                                                                                     Audio Subsystem
+
+                – One stereo single-ended headphone output (capacitor-less connection)
+          •   Built-in circuit
+                – MIC bias
+                – Reference and biasing circuitry
+          •   Optional digital High Pass Filter (HPF) on ADC path
+          •   Silence detection
+                – To turn off the DSP and audio codec subsystem, if there is no Line-In data after UI configured time stamp.
+          •   Anti-pop function (pop reduction system to reduce audible glitches)
+          •   Sampling rates:
+                – ADC/DAC/I2S: 8 kHz, 16 kHz, 44.1 kHz, and 48 kHz
+        Note: The sampling rates can be selected in the CODEC Setup tab of Config Tool.
+
+3.2.1   DAC Performance
+        The audio graphs in this section are produced in the following conditions:
+         • At room temperature
+         • Using BM83 EVB platform with BM83 module mounted on BM83 Carrier Board
+         • Input signal = 1 kHz sine tone, level sweep across -100 dBv to 6 dBv, frequency sweep across 20 Hz to 20 kHz
+            at 1 Fs input level
+         • Various termination loads (16Ω, 32Ω, 100 kΩ)
+         • Analog gain = -3 dB; digital gain = 0 dB
+         • A-weighting applied, 22K bandwidth.
+        The following figures illustrate the DAC performance.
+
+
+
+
+        © 2021 Microchip Technology Inc.                          Datasheet                              DS70005402D-page 17
+                                                                              BM83
+                                                                   Audio Subsystem
+
+Figure 3-4. Gain Vs. Input Level at Various Loads (Capless Mode)
+
+
+
+
+© 2021 Microchip Technology Inc.                    Datasheet        DS70005402D-page 18
+                                                                                   BM83
+                                                                        Audio Subsystem
+
+Figure 3-5. Gain Vs. Input Level at Various Loads (Single-ended Mode)
+
+
+
+
+Figure 3-6. Gain Vs. Frequency at Various Loads (Capless Mode)
+
+
+
+
+© 2021 Microchip Technology Inc.                    Datasheet             DS70005402D-page 19
+                                                                                 BM83
+                                                                      Audio Subsystem
+
+Figure 3-7. Gain Vs. Frequency at Various Loads (Single-ended Mode)
+
+
+
+
+Figure 3-8. Level Vs. Frequency at Various Loads (Capless Mode)
+
+
+
+
+© 2021 Microchip Technology Inc.                   Datasheet            DS70005402D-page 20
+                                                                                        BM83
+                                                                             Audio Subsystem
+
+Figure 3-9. Level Vs. Frequency at Various Loads (Single-ended Mode)
+
+
+
+
+Figure 3-10. THD Ratio (%) Vs. Input Level at Various Loads (Capless Mode)
+
+
+
+
+© 2021 Microchip Technology Inc.                   Datasheet                   DS70005402D-page 21
+                                                                                         BM83
+                                                                              Audio Subsystem
+
+Figure 3-11. THD Ratio (dB) Vs. Input Level at Various Loads (Capless Mode)
+
+
+
+
+© 2021 Microchip Technology Inc.                    Datasheet                   DS70005402D-page 22
+                                                                                          BM83
+                                                                               Audio Subsystem
+
+Figure 3-12. THD+N Ratio (%) Vs. Input Level at Various Loads (Capless Mode)
+
+
+
+
+© 2021 Microchip Technology Inc.                   Datasheet                     DS70005402D-page 23
+                                                                                           BM83
+                                                                                Audio Subsystem
+
+Figure 3-13. THD+N Ratio (dB) Vs. Input Level at Various Loads (Capless Mode)
+
+
+
+
+© 2021 Microchip Technology Inc.                   Datasheet                      DS70005402D-page 24
+                                                                                                BM83
+                                                                                     Audio Subsystem
+
+Figure 3-14. THD+N Ratio (%) Vs. Input Level at Various Loads (Single-ended mode)
+
+
+
+
+Figure 3-15. THD+N Ratio (dB) Vs. Input Level at Various Loads (Single-ended mode)
+
+
+
+
+© 2021 Microchip Technology Inc.                   Datasheet                           DS70005402D-page 25
+                                                                                           BM83
+                                                                                Audio Subsystem
+
+Figure 3-16. THD+N Ratio (%) Vs. Output Level at Various Loads (Capless Mode)
+
+
+
+
+© 2021 Microchip Technology Inc.                   Datasheet                      DS70005402D-page 26
+                                                                                                BM83
+                                                                                     Audio Subsystem
+
+Figure 3-17. THD+N Ratio (dB) Vs. Output Level at Various Loads (Capless Mode)
+
+
+
+
+Figure 3-18. THD+N Ratio (%) Vs. Output Level at Various Loads (Single-ended mode)
+
+
+
+
+© 2021 Microchip Technology Inc.                   Datasheet                           DS70005402D-page 27
+                                                                                                              BM83
+                                                                                                Audio Subsystem
+
+        Figure 3-19. THD+N Ratio (dB) Vs. Output Level at Various Loads (Single-ended mode)
+
+
+
+
+3.2.2   ADC Performance
+        The audio graphs in this section were produced in the following conditions:
+         • At room temperature
+         • Using BM83 EVB platform with BM83 module mounted on BM83 Carrier Board
+         • Input signal = 1 kHz sine tone, level sweep across -100 dBv to 6 dBv, frequency sweep across 20 Hz to 20 kHz
+            at 1 Fs input level
+         • Analog gain = -3 dB; digital gain = 0 dB
+         • A-weighting applied, 22K bandwidth
+
+
+
+
+        © 2021 Microchip Technology Inc.                      Datasheet                              DS70005402D-page 28
+                                                                               BM83
+                                                                    Audio Subsystem
+
+The following figures illustrate the ADC performance.
+Figure 3-20. Gain Vs. Input Level
+
+
+
+
+Figure 3-21. Gain Vs. Frequency
+
+
+
+
+© 2021 Microchip Technology Inc.                        Datasheet     DS70005402D-page 29
+                                                                   BM83
+                                                        Audio Subsystem
+
+Figure 3-22. Output Level Vs. Input Level
+
+
+
+
+Figure 3-23. Level Vs. Frequency
+
+
+
+
+© 2021 Microchip Technology Inc.            Datasheet     DS70005402D-page 30
+                                                                       BM83
+                                                            Audio Subsystem
+
+Figure 3-24. THD+N Ratio (%) Vs. Input Level
+
+
+
+
+Figure 3-25. THD+N Ratio (dB) Vs. Input Level
+
+
+
+
+© 2021 Microchip Technology Inc.                Datasheet     DS70005402D-page 31
+                                                                        BM83
+                                                             Audio Subsystem
+
+Figure 3-26. THD+N Ratio (%) Vs. Output Level
+
+
+
+
+Figure 3-27. THD+N Ratio (dB) Vs. Output Level
+
+
+
+
+© 2021 Microchip Technology Inc.                 Datasheet     DS70005402D-page 32
+                                                                     BM83
+                                                          Audio Subsystem
+
+Figure 3-28. THD+N Ratio (%) Vs. Frequency
+
+
+
+
+Figure 3-29. THD+N Ratio (dB) Vs. Frequency
+
+
+
+
+© 2021 Microchip Technology Inc.              Datasheet     DS70005402D-page 33
+                                                                                                                     BM83
+                                                                                                      Audio Subsystem
+
+
+3.3   Auxiliary Port
+      The BM83 module supports one analog (Line-In, also called as Aux-In) signal from the external audio source. The
+      analog (Line-In) signal can be processed by the DSP to generate different sound effects (MB-DRC and AW), which
+      can be configured by using the Config Tool.
+
+
+
+3.4   Analog Speaker Output
+      The BM83 module supports the following analog speaker output modes:
+        •   Capless mode – recommended for headphone applications in which capless output connection helps to save
+            the Bill of Materials (BOM) cost by avoiding a large DC blocking capacitor. The following figure illustrates the
+            analog speaker output in Capless mode.
+            Figure 3-30. Analog Speaker Output - Capless Mode
+
+                                                                                  BM83
+                                                                          AOHPR
+
+
+
+                                                                          AOHPM
+
+
+
+
+                                                                          AOHPL
+
+
+                                         16/32Ω Speaker
+
+
+        •   Single-Ended mode – used for driving an external audio amplifier where a DC blocking capacitor is required.
+            The following figure illustrates the analog speaker output in Single-Ended mode.
+            Figure 3-31. Analog Speaker Output - Single-Ended Mode
+
+
+
+                                                                                          BM83
+
+                                                                                    AOHPR
+
+                                                        Audio Amplifier
+                                                                                    AOHPL
+
+
+
+
+      © 2021 Microchip Technology Inc.                            Datasheet                               DS70005402D-page 34
+                                                                                                             BM83
+                                                                                               Audio Subsystem
+
+
+3.5   Microphone Inputs
+      The BM83 module supports up to two analog microphone channels and one stereo digital microphone. The digital
+      microphone interface should only be used for Pulse Density Modulation (PDM) digital microphones (typically, MEMS
+      microphones) up to about 4 MHz of clock frequency.
+      Note: An I2S based digital microphone should use the external I2S port.
+      Note: To avoid saturation in the PDM digital microphone path, Microchip recommends limiting the PDM maximum
+      input level to -6 dBFS.
+
+
+
+
+      © 2021 Microchip Technology Inc.                       Datasheet                             DS70005402D-page 35
+                                                                                                                   BM83
+                                                                                              Bluetooth Transceiver
+
+
+4.    Bluetooth Transceiver
+      The BM83 module is designed and optimized for the Bluetooth 2.4 GHz system. It contains a complete RF
+      Transmitter (TX)/Receiver (RX) section. An internal synthesizer generates a stable clock for synchronizing with
+      another device.
+
+
+
+4.1   Transmitter
+      The IS2083BM device has an internal Medium Power Amplifier (MPA) and a Low Power Amplifier (LPA). The MPA
+      supports up to +11 dBm output power for Bluetooth Class1 applications, and the LPA supports +1 dBm output power
+      for the Class 2 applications. The transmitter performs the I/Q conversion to minimize the frequency drift.
+
+
+
+4.2   Receiver
+        •   The Low-Noise Amplifier (LNA) operates with TR-Combined mode with LPA for single port application. It
+            removes the need for an external TX/RX switch.
+        •   The ADC is used to sample the input analog signal and convert it into a digital signal for demodulator analysis. A
+            channel filter has been integrated into the receiver channel before the ADC, which is used to reduce the external
+            component count and increase the anti-interference capability.
+        •   The image rejection filter is used to reject the image frequency for low-Intermediate Frequency (IF) architecture
+            and to reduce external Band Pass Filter (BPF) component for a super heterodyne architecture.
+        •   Received Signal Strength Indicator (RSSI) signal feedback to the processor is used to control the RF output
+            power to make a good trade-off for effective distance and current consumption.
+
+
+
+4.3   Synthesizer
+      A synthesizer generates a clock for radio transceiver operation. There is a Voltage-Controlled Oscillator (VCO) inside
+      with a tunable internal LC tank that can reduce variation for components. A crystal oscillator with an internal digital
+      trimming circuit provides a stable clock for the synthesizer.
+
+
+
+4.4   Modulator-Demodulator
+        •   For Bluetooth 1.2 specification and below, 1 Mbps is the standard data rate based on the Gaussian Frequency
+            Shift Keying (GFSK) modulation scheme. This BR modem meets BDR requirements of Bluetooth 2.0 with EDR
+            specifications.
+        •   For Bluetooth 2.0 and above specifications, EDR is introduced to provide the data rates of 1/2/3 Mbps.
+        •   For baseband, both BDR and EDR utilize the same 1 MHz symbol rate and 1.6 kHz slot rate.
+        •   For BDR, symbol 1 represents 1-bit. However, each symbol in the payload part of EDR packet represents
+            2/3 bits. This is achieved by using two different modulations – π/4 Differential Quadrature Phase Shift Keying
+            (DQPSK) and 8-Differential Phase Shift Keying (DPSK).
+
+
+
+4.5   Adaptive Frequency Hopping
+      The BM83 module has an AFH function to avoid RF interference. It has an algorithm to check the nearby interference
+      and to choose clear channel for transceiver Bluetooth signal.
+
+
+
+
+      © 2021 Microchip Technology Inc.                           Datasheet                               DS70005402D-page 36
+                                                                                                                            BM83
+                                                                                                        Power Management Unit
+
+
+5.    Power Management Unit
+      The on-chip PMU integrates the battery (lithium-ion and lithium-polymer) charger, and voltage regulator. A power
+      switch is used to switch over the power source between the battery (BAT_IN) and an adapter (ADAP_IN). The PMU
+      provides current to drive two LEDs.
+      The battery charger supports various modes with features listed below:
+       • Charging control using current sensor
+       • User-programmable current regulation
+       • High accuracy voltage regulation
+       • Constant current and constant voltage modes
+       • Stop charging and re-charging modes
+      The following figure illustrates the charging curve of a battery.
+      Figure 5-1. Battery Charging Curve
+
+                                                                                        Stops                               Stop
+          Icharge
+
+
+
+
+                                            Constant Current        Constant Voltage                       Recharge
+                    VBatt
+
+
+
+
+                                                Mode                    Mode           Charging             Mode       Charging (back
+                                                                                       V5 = 0.1V drop                  to re-charge if
+                            Stage   Stage   Stage         Stage
+                              1       2       3             4                                                         voltage drop >V5
+             I4     V4
+
+
+
+
+             I3     V3
+            I5
+
+
+             I2     V2
+
+        I_comp
+
+             I1     V1
+
+
+
+                             T1     T2       T3                T4         T5                                              Time
+
+      Note: For more details on battery charger configuration, refer to the IS2083/BM83 Battery Charger Application Note
+      (AN3490).
+
+
+
+5.1   Power Supply
+      The BM83 module is powered through the BAT_IN input pin. The following figure illustrates the connection from the
+      BAT_IN pin to various other voltage supply pins of the IS2083BM SoC on the BM83 module. The external 5V power
+      adapter can be connected to ADAP_IN in order to charge the battery in battery powered applications or in USB
+      applications. Otherwise the ADAP_IN pin can be left floating if there is no battery utilized at BAT_IN pin.
+
+
+
+
+      © 2021 Microchip Technology Inc.                                 Datasheet                                  DS70005402D-page 37
+                                                                                                                                                           BM83
+                                                                                                                          Power Management Unit
+
+      Figure 5-2. Power Tree Diagram
+
+
+                                                                           1.8V Buck       BK_O
+                                                                           Switching
+                                                                                                               (1.8V)
+                                                                    BK_VDD Regulator      BK_LX                            SAR_VDD
+                                                                            (Buck2)
+
+
+                                                                                                                            VDDA/
+                                                                    LDO31_VIN                                               VDDAO
+                    (3.2 to 4.2V)                                              3V LDO
+          Li-Ion                    BAT_IN
+          Battery                             Power                                 LDO31_VO                                VDD_IO
+                                                     SYS_PWR                                   (3.0 to 3.6V)
+                    (4.5 to 5.5V)             Switch
+                                    ADAP_IN                    (4.2 to 3.2V)
+
+                                                                           1.5V Buck       BK_O
+               5V                                                          Switching                           (1.5V)                          (1.2V)
+             Adapter                                                BK_VDD Regulator      BK_LX                         PMIC_IN      CLDO_O              VDD_CORE
+                                                                            (Buck1)
+                                                                                                                             1.2V LDO
+                                                                                                                                               (1.28V)
+                                                                                                                                     RFLDO_O              VCC_RF
+
+
+
+
+5.2   SAR ADC
+      The BM83 module has a 10-bit Successive Approximation Register (SAR) ADC with ENOB (Effective Number of
+      Bits) of 8-bits; used for battery voltage detection, adapter voltage detection, charger thermal protection, and ambient
+      temperature detection. The input power of the SAR ADC is supplied by the 1.8V output of Buck2. The warning level
+      can be programmed by using the Config Tool or the SDK.
+      The SK1 and SK2 are the ADC channel pins. The SK1 is used for charger thermal protection. The following
+      figure illustrates the suggested circuit and thermistor, Murata NCP15WF104F. The charger thermal protection can
+      avoid battery charge in a restricted temperature range. The upper and lower limits for temperature values can be
+      configured by using the Config Tool.
+
+
+
+
+      © 2021 Microchip Technology Inc.                                              Datasheet                                              DS70005402D-page 38
+                                                                                                            BM83
+                                                                                     Power Management Unit
+
+Figure 5-3. Ambient Detection Circuit
+                                                       VDD_IO
+
+
+
+
+                                                             R1
+                                                             1M/1%
+
+
+                           SK1_AMB_DET
+
+
+                                                 C1
+                                         1 µ F, 16V          R2
+                                                             86.6k/1%
+
+
+
+
+                                                                TR1
+                                                                100k
+                                                                Thermistor: Murata NCP15WF104F
+
+
+
+
+Note: The thermistor must be placed close to the battery in the user application for accurate temperature
+measurements and to enable the thermal shutdown feature.
+The following figures show SK1 and SK2 channel behavior.
+Figure 5-4. SK1 Channel
+
+
+
+
+© 2021 Microchip Technology Inc.                        Datasheet                                DS70005402D-page 39
+                                                                                                            BM83
+                                                                                     Power Management Unit
+
+      Figure 5-5. SK2 Channel
+
+
+
+
+5.3   LED Drivers
+      The BM83 module has two LED drivers to control external LEDs. The LED drivers provide enough sink current
+      (16-step control and 0.35 mA for each step) and the LED can be connected directly to the BM83 module. The LED
+      settings can be configured by using the Config Tool.
+      The following figure illustrates the LED drivers in the BM83 module.
+      Figure 5-6. LED Drivers
+
+
+                                                                     BM83
+
+                                                              SYS_PWR
+
+
+                                                              LED1
+
+
+                                                              LED2
+
+
+
+
+      © 2021 Microchip Technology Inc.                         Datasheet                          DS70005402D-page 40
+                                                                                                             BM83
+                                                                                       Application Information
+
+
+6.    Application Information
+
+
+6.1   Power On/Off Sequence
+      In Embedded mode, the MFB button is used to turn on and turn off the system. For Host mode, refer to 6.6 Host
+      MCU Interface Over UART. The following figure illustrates the system behavior (Embedded mode) upon a MFB press
+      event to turn on and turn off the system.
+      Figure 6-1. Timing Sequence of Power On/Off in Embedded Mode
+
+                BAT_IN
+
+
+            SYS_PWR             Turn On                             Turn Off
+
+
+                   MFB
+
+
+               VDD_IO
+
+                RST_N
+
+
+                    BK1
+
+                   BK2
+
+                 LDO31
+
+
+      The following figure illustrates the system behavior (Embedded mode) upon a MFB press event to turn on the system
+      and then trigger a Reset event.
+      Figure 6-2. Timing Sequence of Power On and Reset Trigger in Embedded Mode
+
+               BAT_IN
+
+           SYS_PWR                       Turn On
+
+
+                  MFB
+
+
+              VDD_IO                                               Reset Trigger
+
+               RST_N
+
+
+                  BK1
+
+                  BK2
+
+               LDO31
+
+
+
+
+      © 2021 Microchip Technology Inc.                       Datasheet                             DS70005402D-page 41
+                                                                                                                    BM83
+                                                                                            Application Information
+
+
+6.2   Reset
+      The Reset logic generates proper sequence to the device during Reset events. The Reset sources include external
+      Reset, power-up Reset, and Watchdog Timer (WDT). The IS2083 SoC provides a WDT to Reset the chip. In addition,
+      it has an integrated Power-on Reset (POR) circuit that resets all circuits to a known Power On state. This action can
+      also be driven by an external Reset signal, which is used to control the device externally by forcing it into a POR
+      state. The following figure illustrates the system behavior upon a RST_N event.
+      Note: The Reset (RST_N) is an active-low signal and can be utilized based on the application needs, otherwise, it
+      can be left floating.
+      Figure 6-3. Timing Sequence of Reset Trigger
+
+             BAT_IN
+
+         SYS_PWR
+
+
+                MFB
+
+
+            VDD_IO
+
+
+             RST_N
+
+                                  0 ms           200 ms
+                 BK1
+
+                 BK2
+
+              LDO31
+
+      Note: RST_N pin has an internal pull-up, thus, RST_N signal will transition to high again upon releasing the RST_N
+      button. This is an expected behavior of RST_N signal.
+      Figure 6-4. Timing Sequence of Power Drop Protection
+
+                                         Power
+                                                          2.93V
+                            SYS_PWR
+                                                              2.7V
+                                                                                 SYS_PWR
+
+
+
+                                                                                  IS2083
+                                                                                                    Reset IC
+                  RST_N from Reset IC                                                 Reset       OUT         VDD
+                                                                                                        GND
+
+
+
+                                                                                MCU Reset
+
+
+      Timing sequence of power drop protection:
+        • It is recommended to use the battery to provide the power supply at BAT_IN.
+        • If an external power source or a power adapter is utilized to provide power to BAT_IN, it is recommended to use
+           a voltage supervisor Integrated Circuit (IC).
+        • The Reset IC output pin, RST_N, must be open drain type and threshold voltage as 2.93V.
+        • The RST_N signal must be fully pulled low before SYS_PWR power drop to 2.7V.
+
+
+
+
+      © 2021 Microchip Technology Inc.                         Datasheet                                DS70005402D-page 42
+                                                                                                                     BM83
+                                                                                              Application Information
+
+
+6.3     Configuring and Programming
+
+6.3.1   Test Mode
+        The BM83 module can be configured by using the Config Tool and the firmware is programmed by using the isUpdate
+        tool. The following table provides the settings for configuring the BM83 module for Test mode or Application mode.
+        Table 6-1. BM83 Module – Test Mode Configuration Settings
+
+         Pins                              Status                          Mode
+
+         P3_4                              Low                             Test mode
+                                           Floating                        Application mode
+
+        Note: The BM83 module provides Test mode, which allows customers to use existing module manufacturing and
+        testing equipment and flow to test the BM83 modules without reinvesting in new test equipment. New customers are
+        encouraged to use the new RF test modes defined for this device.
+        Test mode allows an external UART host to communicate with the BM83 using Bluetooth vendor commands over the
+        UART interface. The host can interface with the driver firmware on the BM83 module to perform TX/RX operations
+        and to collect/report Bit Error Rate (BER) and other RF performance parameters. These values can then be used to
+        accept/reject the device and/or calibrate the module.
+
+6.3.2   2-wire JTAG Debug Interface for SDK User
+        The BM83 (IS2083BM) provides 2-wire JTAG interface for debugging; see the following figure. The target device
+        (IS2083BM) must be powered, and all required signals must be connected. In addition, the interface must be enabled
+        through a special initialization sequence.
+        Note: For more details on 2-wire debugging, refer to the IS2083 SDK User’s Guide and IS2083 SDK Debugger
+        User’s Guide.
+        Figure 6-5. 2-Wire In-Circuit Serial Programming (ICSP) Interface
+
+
+
+
+                                                                  2-Wire                      BM83
+                                   Debugger                                              IS283BM  SoC
+                                                                                           (IS2083BM)
+                                                                 ICSPTM
+
+
+
+
+        This interface uses the following two communication lines to transfer data to and from the BM83 (IS2083BM) device:
+          •   Serial Program Clock (TCK_CPU)
+          •   Serial Program Data (TDI_CPU)
+        These signals are described in the following sections. The following table describes the signals required for the
+        interface.
+        Table 6-2. 2-wire Interface Pin Description
+
+         Pin Name                                   Pin Type      Description
+
+         RST_N                                      I             Reset pin
+         VDD_IO, ADAP_IN, BAT_IN                    P             Power supply pins
+         GND                                        P             Ground pin
+
+
+
+
+        © 2021 Microchip Technology Inc.                          Datasheet                                DS70005402D-page 43
+                                                                                                                       BM83
+                                                                                                Application Information
+
+          ...........continued
+           Pin Name                                 Pin Type          Description
+
+           TCK_CPU                                  I                 Primary programming pin pair: Serial Clock
+           TDI_CPU                                  I/O               Primary programming pin pair: Serial Data
+
+6.3.2.1   Serial Program Clock (TCK_CPU)
+          TCK_CPU is the clock that controls the TAP controller update and the shifting of data through the instruction or
+          selected data registers. TCK_CPU is independent of the processor clock, with respect to both frequency and phase.
+
+6.3.2.2   Serial Program Data (TDI_CPU)
+          TDI_CPU is the data input/output to the instruction or selected data registers and the control signal for the TAP
+          controller. This signal is sampled on the falling edge of TDI_CPU for some TAP controller states.
+
+
+
+6.4       General Purpose I/O Pins
+          The BM83 module provides up to 18 GPIOs that can be configured by using the Config Tool. The following table
+          provides the default I/O functions of the BM83 module.
+          Note: The MFB pin must be configured as the power On/Off key and the remaining pins are user configurable pins.
+          Table 6-3. GPIO Assigned Pins Function(1)
+
+           Pin Name                Function Assigned
+           P0_0                    External codec reset
+           P0_1                    Forward (FWD) button
+           P0_2                    Play or Pause (PLAY/PAUSE) button
+           P0_3                    Reverse (REV) button
+           P0_5                    Volume decrease (VOL_DN) button
+           P0_6                    Available for user configuration
+           P0_7                    Available for user configuration
+           P1_2                    I2C SCL (muxed with 2-wire CPU debug data)
+           P1_3                    I2C SDA (muxed with 2-wire CPU debug clock)
+           P1_6                    PWM
+           P2_3                    Available for user configuration
+           P2_6                    Available for user configuration
+           P2_7                    Volume increase (VOL_UP) button
+           P3_2                    Line-In detect
+           P3_4                    SYS_CFG (muxed with UART_RTS)(2)
+           P3_7                    UART_CTS
+           P8_5                    UART_TXD(3)(4)
+           P8_6                    UART_RXD(3)(4)
+           MFB                     MFB
+
+
+
+
+          © 2021 Microchip Technology Inc.                            Datasheet                              DS70005402D-page 44
+                                                                                                                    BM83
+                                                                                             Application Information
+
+      Notes:
+       1. This table reflects the default IO assignment for the turn-key solution. The GPIOs are user configurable.
+       2. GPIO P3_4 is used to enter Test mode during reset. If the user wants to use this pin to control external
+            peripherals, care must be taken to ensure this pin is not pulled LOW and accidentally enters Test mode.
+       3. Microchip recommends to reserve UART port (P8_5 and P8_6) for Flash download in Test mode during
+            production.
+       4. Currently, GPIOs ports P8_5 and P8_6 APIs (button detect driver) are not implemented.
+
+
+
+6.5   I2S Interface
+      The BM83 module provides an I2S digital audio input, output or input/output interface to connect with the external
+      codec or DSP. It provides 8, 16, 44.1, 48, 88.2 and 96 kHz sampling rates for 16-bit and 24-bit data formats. The
+      following are the BM83 module interface signals:
+        •   MCLK1 – Master Clock (BM83 output)
+        •   SCLK1– Serial/Bit Clock (BM83 input/output)
+        •   DR1 – Receive Data (BM83 input)
+        •   RFS1 – Receive Frame Sync (BM83 input/output)
+        •   DT1 – Transmit Data (BM83 output)
+      Note: The I2S parameters can be configured by using the Config Tool.
+      I2S supports the following modes:
+        • Host mode
+             – The BM83 serves as a host to provide clock and frame synchronous signals for the host/client data
+               synchronizations, as illustrated in the following figures. The MCLK is optional and is not required if the
+               external I2S device can drive its system clock on its own.
+            Figure 6-6. BM83 Module in I2S Host Mode
+
+
+                               External DSP/                                                 BM83
+                                  Codec
+                                               BCLK                                   SCLK1
+                                           DACLRC                                     RFS1
+                                              MCLK                                    MCLK1
+                                           ADCDAT                                     DR1
+                                           DACDAT                                     DT1
+
+
+        •   Client mode
+             – The BM83 serves as a client to receive clock and frame synchronous signals from the external codec or
+                 DSP devices, as illustrated in the following figure.
+
+
+
+
+      © 2021 Microchip Technology Inc.                           Datasheet                                DS70005402D-page 45
+                                                                                                               BM83
+                                                                                           Application Information
+
+                 Figure 6-7. BM83 Module in I2S Client Mode
+
+
+                                External DSP/                                                    BM83
+                                   Codec
+                                                BCLK                                    SCLK1
+
+                                            DACLRC                                      RFS1
+
+                                            ADCDAT                                      DR1
+
+                                            DACDAT                                      DT1
+
+
+
+      Notes:
+       1. Use the Config Tool to configure the BM83 module as a host/client.
+       2. Please refer to the Design guide or Microchip Support for external CODEC selection guidance.
+
+
+
+6.6   Host MCU Interface Over UART
+      The BM83 module supports UART commands, which enable an external MCU to control the BM83 module. The
+      following figure illustrates the UART interface between the BM83 module and an external MCU. An external MCU can
+      control the BM83 module over the UART interface and wake up the module with the MFB and P0_0 pins.
+      Refer to SPKcommandset tool to get a list of functions supported by the BM83 module and how to use the Config
+      Tool for configuring UART and UART command set tool.
+      Figure 6-8. Host MCU Interface Over UART
+
+
+                                   MCU                                                         BM83
+
+                                 MCU_WAKE UP                                     P0_0
+
+
+
+                                         UART_RX                                 UART_TXD
+
+
+                                         UART_TX                                 UART_RXD
+
+
+                                   BT_WAKE UP                                    MFB
+
+
+      Note: For the latest SPKcommandset tool, refer to www.microchip.com/BM83.
+      The following figures illustrate the timing sequences of various UART control signals.
+
+
+
+
+      © 2021 Microchip Technology Inc.                          Datasheet                             DS70005402D-page 46
+                                                                                                                                                                             BM83
+                                                                                                                                          Application Information
+
+Figure 6-9. Timing Sequence of Power On/Off
+                                   1 ms
+
+
+
+
+                                                                                                           ≈
+                                                      ≈
+                                                                                                                                                > 1s
+                      BAT_IN
+
+
+
+
+                                                      ≈
+
+
+
+
+                                                                                                           ≈
+                   SYS_PWR
+
+
+
+
+                                                                                                           ≈
+                                                      ≈
+                                          Power On    idle                                                                                     Power Off   idle
+                                                                          Power On                                      Power On
+                                           /initial
+                    MCU state
+                                                             400 ms                  any
+
+                   PWR (MFB)
+
+
+
+
+                                                      ≈
+
+
+
+
+                                                                                                           ≈
+                                                                        20 ms                                                             2s                          Keep all Bluetooth
+                       RST_N                                                                                                                                          and MCU
+
+
+
+
+                                                      ≈
+
+
+
+
+                                                                                                           ≈ ≈
+                                                                                                                                                                      connection to
+                                                                                            UART                 MCU sends power                                      low level
+   MCU sends UART command                                                                  Command               Off UART Command
+                (UART_RX)
+                                                      ≈
+
+
+
+
+                                                                                                           ≈
+ Bluetooth response UART state                                        Power On ACK                   ACK                            ACK
+                    (UART_TX)
+                                                      ≈
+
+
+
+
+Figure 6-10. Timing Sequence of RX Indication After Power On State
+
+                            Wake-up Bluetooth® leave 32 kHz
+                            mode                                                                                    MFB pulse must be longer than the
+                                                                                                                    UART command slot time
+
+
+
+
+                                 PWR (MFB)
+ MCU sends UART command
+                                                                                                              UART
+                                                                                                             Command
+                                                                                2 ms 2 ms
+
+
+                                                                      1 ms
+
+
+
+
+© 2021 Microchip Technology Inc.                                                             Datasheet                                                            DS70005402D-page 47
+                                                                                                                                      BM83
+                                                                                                     Application Information
+
+Figure 6-11. Timing Sequence of Power Off State
+
+ BM83 sends power Off ACK
+
+
+                 BAT_IN +4V
+
+
+
+                  PWR (MFB)
+
+          MCU sends RST_N
+
+
+                      BK_OUT
+
+
+                   LDO31_VO
+
+
+
+                    UART Bus
+
+
+
+
+                                                      2s      1s
+Timing sequence of power Off state:
+  • For a byte write: 0.01 ms x 32 clock x 2 = 640 μs.
+  • It is recommended to have ramp-down time more than 640 μs during the power Off sequence to ensure safe
+     operation of the device.
+Figure 6-12. Timing Sequence of Power On (NACK)
+
+                                       1 ms
+                                                      ≈
+
+
+
+
+                                                                                                                                            ≈
+                             BAT_IN
+                                                      ≈
+
+
+
+
+                                                                                                                                            ≈
+                          SYS_PWR
+                                                      ≈
+
+
+
+
+                                                                                                                                            ≈
+                                          Power On/
+                                                       idle                        Power On
+                                            Initial
+                           MCU state
+                                                                   400 ms                 200 ms                    any
+
+                         PWR (MFB)
+                                                                                                                                            ≈≈
+                                                      ≈
+
+
+
+
+                  BK_OUT/LDO31_VO                                    10 ms
+                                                      ≈
+
+
+
+
+                                                                                                                                            ≈
+
+
+                                                                       20 ms
+                             RST_N
+                                                      ≈
+
+
+
+
+                                                                                                                                            ≈
+
+
+
+
+                                                                                                                           UART
+                                                                                                                          Command
+           MCU sends UART command
+                                                      ≈
+
+
+
+
+                                                                                                                                            ≈
+
+
+
+
+                                                                                  NACK               Power On ACK                     ACK
+            BM83 response UART state
+                                                      ≈
+
+
+
+
+                                                                                              Wait
+                                                                                                      Retry, if ACK is not received
+
+
+                                                           Set “Power On Directly” boot                 Maximum: 5 times (1s)
+
+
+
+
+© 2021 Microchip Technology Inc.                                   Datasheet                                          DS70005402D-page 48
+                                                                                                   BM83
+                                                                               Application Information
+
+Figure 6-13. Reset Timing Sequence in No Response From Module to Host MCU
+
+
+
+
+              PWR (MFB)
+             MCU sends
+          UART command
+                                               UART
+                                              Command       If no
+                                                          response
+            BM83 UART
+                                                          UART
+                                                         Command
+
+
+
+                    Reset
+
+                                        5000 ms
+                                                                     5000 ms
+
+
+                                   5000 ms                                 5000 ms
+
+                                                                                5000 ms
+
+If the BM83 module does not respond to the host MCU’s UART command, the MCU re-sends the UART command. If
+the BM83 module does not respond within 5 secs, the MCU forces the system to reset.
+
+
+
+
+© 2021 Microchip Technology Inc.                        Datasheet                         DS70005402D-page 49
+                                                                                                                BM83
+                                                                                        PCB Antenna Information
+
+
+7.    PCB Antenna Information
+      The BM83 module is integrated with a PCB antenna. This chapter provides the radiation pattern, its orientation, and
+      characteristics.
+
+
+
+7.1   Antenna Radiation Pattern
+      The following figure illustrates the 3D radiation pattern of the PCB antenna at 2438 MHz.
+      Figure 7-1. PCB Antenna 3D Radiation Pattern At 2438 MHz(1)
+
+
+
+
+        1.   The preceding figure illustrates the typical radiation pattern with BM83 module on the 45 mm x 45 mm BM83
+             Carrier Board.
+
+
+
+
+      © 2021 Microchip Technology Inc.                         Datasheet                              DS70005402D-page 50
+                                                                                                       BM83
+                                                                                     PCB Antenna Information
+
+The following figure illustrates the module orientation for antenna radiation pattern.
+Figure 7-2. Module Orientation for Radiation Pattern
+
+
+
+
+© 2021 Microchip Technology Inc.                           Datasheet                          DS70005402D-page 51
+                                                                                                        BM83
+                                                                               PCB Antenna Information
+
+Figure 7-3. Polar Plots(1)
+
+
+
+
+  1.   The preceding figure illustrates the typical radiation pattern with BM83 module on the 45 mm x 45 mm BM83
+       Carrier Board.
+The following table provides the characteristics of PCB antenna with BM83 Module mounted on BM83 Carrier Board,
+plugged into BM83 EVB.
+Table 7-1. BM83 PCB Antenna Characteristics
+
+ Parameter                                       Value
+ Frequency                                       2400 MHz to 2480 MHz
+ Peak Gain                                       3.5 dBi
+ Efficiency                                      80%
+
+
+
+
+© 2021 Microchip Technology Inc.                           Datasheet                          DS70005402D-page 52
+                                                                                                               BM83
+                                                                                      PCB Antenna Information
+
+
+7.2   Module Placement Guidelines
+      For a Bluetooth-enabled product, the antenna placement affects the overall performance of the system. The antenna
+      requires free space to radiate RF signals and it must not be surrounded by the ground plane. It is recommended that
+      the areas underneath the antenna on the host PCB must not contain copper on the top, inner, or bottom layers, as
+      illustrated in the following figure.
+      Figure 7-4. Recommended Keep-out Area for PCB Antenna
+
+
+
+
+      A low-impedance ground plane ensures the best radio performance (best range, lowest noise). The ground plane
+      can be extended beyond the minimum recommendation as required for the main Printed Circuit Board (PCB)
+      Electromagnetic Compatibility (EMC) noise reduction. For the best range performance, keep all external metal at
+      least 15 mm away from the on-board PCB trace antenna.
+      The following figure illustrates the example of recommended placement of the BM83 module on a host board for the
+      best RF performance.
+      Figure 7-5. Recommended Module Placement
+
+
+
+
+      The application board provides a continuous ground plane equal to or greater than the module dimension below the
+      module PCB. Trace routing is not recommended on the application board top layer underneath the module. Bigger
+      ground plane is recommended for better antenna range performance. The reference radiation pattern data provided
+      above uses a BM83 Carrier Board with a dimension of 45 mm x 45 mm. The following figure illustrates the ground
+      plane placement of BM83 module on the host board. The BM83 FCC/ISED certification requires the host board to
+      provide a continuous ground plane with minimum size equal to the BM83 module dimension directly beneath the
+
+
+
+
+      © 2021 Microchip Technology Inc.                        Datasheet                              DS70005402D-page 53
+                                                                                                                  BM83
+                                                                                         PCB Antenna Information
+
+module (16mmx19mm ). Provide ground plane with distributed via stitching. Avoid trace routing directly under the
+module. A small cut out can be provided on the host PCB below the module RF test point in order to solder pig tail
+SMA cable and perform conducted RF measurements.
+Figure 7-6. Ground Plane on Host Application Board
+
+                                  Top View                                             Bottom View
+
+
+
+                              No PCB area                                          Module Antenna area
+
+
+                     1                                      50
+                     2                                      49
+                     3                                      48
+                     4                                      47
+                     5                                      46
+                     6                                      45
+                     7                                      44
+                     8                                      43
+                                                                                    RF Test Pad
+                     9
+                     10
+                                                            42
+                                                            41
+                                                                 GND
+                     11
+                                      BM83                  40
+                     12                                     39
+                     13                                     38                            GND
+                     14                                     37
+                     15                                     36
+                     16                                     35
+                     17                                     34
+                     18                                     33
+                     19                                     32
+                     20                                     31
+
+                            21 22 23 24 25 26 27 28 29 30
+
+
+
+
+                          No copper, No component, and Keep-out area
+
+
+
+
+© 2021 Microchip Technology Inc.                                       Datasheet                         DS70005402D-page 54
+                                                                                                                                                        BM83
+                                                                                                                                Physical Dimensions
+
+
+8.   Physical Dimensions
+     The following figures illustrate the PCB dimension and the recommended PCB footprint of the BM83 module.
+     Figure 8-1. BM83 Module PCB Dimension
+
+                            TopView                            Side View                                          Bot t om View
+
+
+
+
+                                                                                                                                     11.62
+                                           14.50
+
+
+
+
+                                                                                                                   2.45
+                                                                                                                   3.50
+                                                                                                                   4.03
+                                                                                                                   4.87
+                        0.50
+
+
+
+
+                                                                                                                                     12
+                                                                                                              0
+                    0
+
+
+
+
+          32
+                                                    P CB ANT
+
+
+
+
+                                                                                                                               51
+                                                                                                                               52
+          26                                                                                                                                                 26
+                                                                                                                                                     Sh eid Mou n t in g
+                                                                                                                                                     H ole
+           22                                            22
+                        1                                                                                                                57
+        20.90                             50                                            20.90                                                                20.90
+        19.90                                                                                                                                                19.90
+        18.90                                                                                                                                                18.90
+        17.90                                                                                                                                                17.90
+        16.90                                                                                                                            58                  16.90
+        15.90                                                                                                                                                15.90
+
+
+
+
+                                                                                                       0.60
+        14.90                                                                                                                                                14.90
+        13.90                                                                                                              53                                13.90
+        12.90                                                                                                                                                12.90
+        11.90                                                                                                       56                                       11.90
+        10.90                                                                                                                       59                       10.90
+         9.90                                                                                                                                                9.90
+         8.90                                                                                                                                                8.90
+         7.90                                                                                                             54                                 7.90
+
+
+                                                                                                       1
+         6.90                                                                                                                                                6.90
+         5.90                                                                                                                                                5.90
+         4.90                                                                                                      55                                        4.90
+         3.90                                                                                                                                                3.90
+         2.90                                                                                                                                                2.90
+         1.90                                                                                                                                                1.90
+                                                        0.50
+           0                                               0                                0                                                                0
+
+
+
+                                                                              S h ie ld Mo u n tin g
+                                                                              Ho le
+                                                                 2.5
+
+                                                                       0.6
+                                                                         0
+
+
+
+
+                                                                                                              15
+
+
+                                                                                                                   12
+                                                                                                                   11
+                                                                                                                   10
+                                                                                                                    9
+                                                                                                                    8
+                                                                                                                    7
+                                                                                                                    6
+                                                                                                                    5
+                                                                                                                    4
+                                                                                                                    3
+
+
+                                                                                                                                              0
+                    0
+
+
+                                3
+                                4
+                                5
+                                6
+                                7
+                                8
+                                9
+                               10
+                               11
+                               12
+
+
+                                               15
+
+
+
+
+                                                                                                                   1.20
+
+
+
+
+                                                                                                              1
+       Dim en sion s a r e in Millim et er s
+                                                                                                0.60
+                                                                                                       0.50
+
+
+
+
+       Toler a n ces:
+       P CB Th ickn ess:±0.6 mm                                                             Pad Details
+
+       N ot e:     P CB dim en sion s: X: 15.0 m m , Y: 32.0 m m a n d t oler a n ces: 0.25 m m .
+                  Pins 51-59 (except 56 and 57) are used only for testing purpose.
+                  Pins 56-57 are GND pads. It is recommended to have these pads included in
+                  the module footprint on the host board.
+
+
+
+
+     © 2021 Microchip Technology Inc.                                        Datasheet                                                        DS70005402D-page 55
+                                                                                                  BM83
+                                                                                    Physical Dimensions
+
+Figure 8-2. Recommended PCB Footprint
+
+
+
+
+                                                13.90
+                        4.21
+
+
+
+                                    8.90
+                    0
+       32
+
+
+
+
+       26
+            1.50
+            0.50
+
+    20.58                      57                        20.90
+                                                         19.90
+                                                         18.90
+       18                                                17.90
+                                                         16.90
+                               GND PADs                  15.90
+                                                         14.90
+                                                         13.90
+                                                         12.90
+                                                         11.90
+    10.47                                  56            10.90
+                                                         9.90
+                                                         8.90
+                                                         7.90
+             0.60
+
+
+
+
+                                                         6.90
+                                                         5.90
+                                                         4.90
+                                                         3.90
+             1
+
+
+
+
+                                                         2.90
+                                                         1.90
+        0                                                0
+                                                                           0.76
+
+
+
+
+                                                                 2.79
+                            3
+                            4
+                            5
+                            6
+                            7
+                            8
+                            9
+                           10
+                           11
+                           12
+                        12.27
+                    0
+
+
+
+
+                                                    15
+
+
+
+
+                                                                          1.78
+
+
+
+
+            Note: Dim en sion s a r e in Millim et er s
+
+
+
+
+© 2021 Microchip Technology Inc.                                        Datasheet        DS70005402D-page 56
+                                                                                                                     BM83
+                                                                                            Electrical Specifications
+
+
+9.   Electrical Specifications
+     This section provides an overview of the BM83 stereo audio module electrical characteristics. The following table
+     provides the absolute maximum ratings for the BM83 module.
+     Table 9-1. Absolute Maximum Ratings
+
+      Parameter                                                       Min.          Typ.          Max.          Unit
+      Ambient temperature under bias                                  -40           —             +85           °C
+      Storage temperature                                             -40           —             +150          °C
+      Battery input voltage (BAT_IN)                                  —             —             +4.3          V
+      Adapter input voltage (ADAP_IN)                                 —             —             +7            V
+      Maximum output current sink by any I/O pin                      —             —             12            mA
+      Maximum output current sourced by any I/O pin                   —             —             12            mA
+
+
+                      Stresses listed in the preceding table cause permanent damage to the device. This is a stress rating only.
+            CAUTION
+                      The functional operation of the device at those or any other conditions and those indicated in the operation
+                      listings of this specification are not implied. Exposure to maximum rating conditions for extended periods
+                      affects device reliability.
+
+
+     The following tables provide the recommended operating conditions and the electrical specifications of the BM83
+     module.
+     Table 9-2. Recommended Operating Conditions (1)
+
+      Parameter                                                       Min.          Typ.          Max.          Unit
+      Battery input voltage (BAT_IN)                                  3.2           3.8           4.2           V
+      Adapter input voltage (ADAP_IN)(2)                              4.5           5             5.5           V
+      Operation temperature (TOPERATION)                              -40           +25           +85           ºC
+
+       1.     The recommended operating condition tables reflect a typical voltage usage for the device.
+       2.     ADAP_IN is recommended to be used to charge the battery in battery-powered applications and/or
+              applications with USB functionality; otherwise, ADAP_IN can be left floating.
+     Table 9-3. I/O and Reset Level (1)
+
+      Parameter                                                       Min.          Typ.          Max.          Unit
+      I/O supply voltage (VDD_IO)                                     3.0           3.3           3.6           V
+      I/O voltage levels
+      VIL input logic levels low                                      0             —             0.8           V
+      VIH input logic levels high                                     2.0           —             3.6           V
+      VOL output logic levels low                                     —             —             0.4           V
+      VOH output logic levels high                                    2.4           —             —             V
+      RST_N                                Input low to high          —             —             1.87          V
+                                           threshold point
+                                           Input high to low          1.25          —             —             V
+                                           threshold point
+
+
+
+
+     © 2021 Microchip Technology Inc.                            Datasheet                                DS70005402D-page 57
+                                                                                                           BM83
+                                                                                    Electrical Specifications
+
+...........continued
+ Parameter                                                       Min.      Typ.         Max.        Unit
+ Threshold voltage                                               —         1.6          —           V
+
+  1.   These parameters are characterized, but not tested on production device.
+Table 9-4. Battery Charger (1)
+
+ Parameter                                                       Min.      Typ.         Max.        Unit
+ Adapter input voltage (ADAP_IN)                                 4.6(2)    5.0          5.5         V
+ Supply current to charger only                                  —         3            4.5         mA
+ Maximum battery fast charge        Headroom(3) > 0.7V           —         350          —           mA
+ current                            (ADAP_IN = 5V)
+                                    Headroom = 0.3V to 0.7V —              175(4)       —           mA
+                                    (ADAP_IN = 4.5V)
+ Trickle charge voltage threshold                                —         3            —           V
+ Battery charge termination current (% of fast charge            —         10           —           %
+ current)
+
+  1.   These parameters are characterized, but not tested on production devices.
+  2.   More time is required to get the battery fully charged when ADAP_IN = 4.5V.
+  3.   Headroom = VADAP_IN – VBAT_IN.
+  4.   When VADAP_IN – VBAT_IN > 2V, the maximum fast charge current is 175 mA for thermal protection.
+Table 9-5. SAR ADC Operating Conditions
+
+ Parameter                          Condition                Min.         Typ.         Max.         Unit
+ Shutdown current (IOFF)            PDI_ADC = 1              —            —            1            μA
+ Resolution                         —                        —            10           —            bits
+ Effective Number of Bits (ENOB) —                           7            8            —            bits
+ SAR core clock (FCLOCK)            —                        —            0.5          1            MHz
+ Conversion time per channel        10 FCLOCK cycles         10           20           —            μs
+ (TCONV)
+ Offset error (EOFFSET)             —                        -5           —            +5           %
+ Gain error (EGAIN)                 —                        —            —            +1           %
+ ADC SAR core power-up (tPU)        PDI_ADC transitions      —            —            500          ns
+                                    from 1 to 0
+ Input voltage range (VIN)          Channel 8 (SK2 Pin)      0.25         —            1.4          V
+                                    Channel 9 (SK1 Pin)      0.25         —            1.4          V
+                                    Channel 10 (OTP)         0.25         —            1.4          V
+                                    Channel 11 (ADAP_IN      2.25         —            12.6         V
+                                    Pin)
+                                    Channel 12 (BAT_IN       1.0          —            5.6          V
+                                    Pin)
+
+
+
+
+© 2021 Microchip Technology Inc.                          Datasheet                            DS70005402D-page 58
+                                                                                                             BM83
+                                                                                     Electrical Specifications
+
+Table 9-6. LED Driver (1)
+
+ Parameter                                                    Min.          Typ.         Max.          Unit
+ Open-drain voltage                                           —             —            3.6           V
+ Programmable current range                                   0             —            5.25          mA
+ Intensity control                                            —             16           —             step
+ Current step                                                 —             0.35         —             mA
+ Power-down open-drain current                                —             —            1             μA
+ Shutdown current                                             —             —            1             μA
+
+  1.   These parameters are characterized, but not tested on production devices.
+Table 9-7. Audio Codec Analog-to-Digital Converter (1,4)
+
+ Parameter (Condition)                                        Min.          Typ.         Max.          Unit
+ Resolution                                                   —             —            16            Bit
+ Output sample rate                                           8             —            48            kHz
+ SNR ratio(2) (at MIC or Line-In)                             —             91           —             dB
+ Digital gain                                                 -54           —            4.85          dB
+ Digital gain resolution                                      —             2 to 6       —             dB
+ MIC boost gain                                               —             20           —             dB
+ Analog gain                                                  —             —            60            dB
+ Analog gain resolution                                       —             2.0          —             dB
+ Input full-scale at maximum gain (differential)              —             4            —             mV/rms
+ Input full-scale at minimum gain (differential)              —             800          —             mV/rms
+ 3 dB bandwidth                                               —             20           —             kHz
+ Microphone mode (input impedance)                            —             24           —             kΩ
+ THD+N ratio(3)                                               —             0.04         —             %
+ THD+N ratio(3)                                               —             -68          —             dB
+
+  1.   These parameters are characterized, but not tested on production devices.
+  2.   T = 25°C, VDD = 1.8V, 1 kHz sine wave input, bandwidth = 20 Hz to 20 kHz.
+  3.   fin = 1 kHz sine tone, analog gain = -3 dB, digital gain = 0 dB, bandwidth = 22K, A-weighted, sweep across
+       -100 dBv to 6 dBv.
+  4.   Measurements performed on the BM83 EVB platform.
+Table 9-8. Audio Codec Digital-to-Analog Converter(1,5)
+
+ Parameter (Condition)                                        Min.          Typ.         Max.          Unit
+ Over-sampling rate                                           —             128          —             fs
+ Resolution                                                   16            —            20            Bit
+ Output sample rate                                           8             —            48            kHz
+ SNR ratio(2)(at Capless mode) for 48 kHz                     —             95           —             dB
+ SNR(2)(at Single-ended mode) for 48 kHz                      —             95           —             dB
+
+
+
+
+© 2021 Microchip Technology Inc.                         Datasheet                               DS70005402D-page 59
+                                                                                                            BM83
+                                                                                     Electrical Specifications
+
+...........continued
+ Parameter (Condition)                                           Min.       Typ.         Max.          Unit
+ Digital gain                                                    -54        —            4.85          dB
+ Digital gain resolution                                         —          2 to 6       —             dB
+ Analog gain                                                     -28        —            3             dB
+ Analog gain resolution                                          —          1            —             dB
+ Output voltage full-scale swing (AVDD = 1.8V)                   495        742.5        —             mV/rms
+ Maximum output power (16Ω load)                                 —          34.5         —             mW
+ Maximum output power (32Ω load)                                 —          17.2         —             mW
+ Allowed load                         Resistive                  16         —            —             Ω
+                                      Capacitive                 —          —            500           pF
+ THD Ratio (3)                                                   0.15       0.02         0.05          %
+ THD Ratio (3)                                                   -75        -70          -65           dB
+ THD+N Ratio (3)                                                 0.03       0.04         0.05          %
+ THD+N Ratio (3)                                                 -72        -70          -65           dB
+ SNR ratio (at 16Ω load) (4)                                     —          95           —             dB
+
+  1.   These parameters are characterized, but not tested on production devices.
+  2.   T = 25°C, VDD = 1.8V, 1 kHz sine wave input, bandwidth = 20 Hz to 20 kHz.
+  3.   fin=1 kHz sine tone, analog gain = -3 dB, digital gain = 0 dB, bandwidth = 22K, A-weighting applied, sweep
+       across -100 dBv to 6 dBv level, with various loads (16Ω, 32Ω, 100 kΩ)
+  4.   fin = 1 kHz, bandwidth = 20 Hz to 20 kHz, A-weighted, -1 dBFS signal, load =16Ω.
+  5.   Measurements performed on the BM83 EVB platform.
+Table 9-9. Transmitter Section Class 1 (MPA Configuration) for BDR and EDR(1,4)
+
+ Parameter(2,3)                    Bluetooth Specification       Min.       Typ.         Max.          Unit
+ Transmit power BDR                0 to 20                       —          10.4         —             dBm
+ Transmit power EDR 2M             0 to 20                       —          9.2          —             dBm
+ Transmit power EDR 3M             0 to 20                       —          9.2          —             dBm
+
+  1.   These parameters are characterized, but not tested on production devices.
+  2.   The RF transmit power is the average power measured for the mid-channel (Channel 39).
+  3.   The RF transmit power is calibrated during production using the MP tool and MT8852 Bluetooth test
+       equipment.
+  4.   Test condition: VCC_RF = 1.28V, temperature +25ºC.
+Table 9-10. Transmitter Section Class 2 (LPA Configuration) for BDR and EDR (1,4)
+
+ Parameter(2,3)                    Bluetooth Specification       Min.       Typ.         Max.          Unit
+ Transmit power BDR                -6 to 4                       —          2            —             dBm
+ Transmit power EDR 2M             -6 to 4                       —          0.5          —             dBm
+ Transmit power EDR 3M             -6 to 4                       —          0.5          —             dBm
+
+  1.   These parameters are characterized, but not tested on production devices.
+  2.   The RF transmit power is the average power measured for the mid-channel (Channel 39).
+
+
+
+
+© 2021 Microchip Technology Inc.                             Datasheet                           DS70005402D-page 60
+                                                                                                           BM83
+                                                                                    Electrical Specifications
+
+  3.   The RF transmit power is calibrated during production using the MP tool and MT8852 Bluetooth test
+       equipment.
+  4.   Test condition: VCC_RF = 1.28V, temperature +25ºC.
+Table 9-11. Receiver Section for BDR/EDR/Bluetooth Low Energy(1,2)
+
+ Parameter                    Bluetooth               Modulation      Min.         Typ.    Max.         Unit
+                              Specification
+ Sensitivity at 0.1% BER      ≤-70                    GFSK            —            -88     —            dBm
+ Sensitivity at 0.01%         ≤-70                    π/4 DQPSK       —            -90     —            dBm
+ BER
+                              ≤-70                    8 DPSK          —            -84     —            dBm
+ Sensitivity at 0.1% BER      ≤-70                    Bluetooth Low   —            -92     —            dBm
+                                                      Energy
+
+  1.   These parameters are characterized, but not tested on production devices.
+  2.   Test condition: VCC_RF = 1.28V with temperature +25ºC.
+Table 9-12. BM83 System Current Consumption(1,2,3,6,7,8)
+
+ Modes           Condition                     Role            Packet Type     Current (Typ.)      Unit
+ A2DP mode       Internal codec, iOS Central   Peripheral      2DH5/3DH5       12.05               mA
+                 Internal codec, Android™      Central         3DH5            12.32               mA
+                 Peripheral
+ Sniff mode(4)   Internal codec, Bluetooth     Peripheral      DM1             548                 µA
+                 Low Energy disabled
+                                               Central         2DH1/3DH1       555                 µA
+                 Internal codec, Bluetooth     Peripheral      DM1             832                 µA
+                 Low Energy enabled
+                                               Central         2DH1/3DH1       863                 µA
+ SCO/eSCO        Mute at both far end and      Peripheral      2EV3            14.1                mA
+ connection      near end
+                                               Central         2EV3            13.94               mA
+ Inquiry Scan    Bluetooth Low Energy          ─               ─               1.35                mA
+                 disabled
+                 Bluetooth Low Energy          ─               ─               1.70                mA
+                 enabled
+ Standby         System off                    Peripheral      ─               2.81                µA
+ mode
+                                               Central         ─               2.85                µA
+
+
+
+
+© 2021 Microchip Technology Inc.                          Datasheet                             DS70005402D-page 61
+                                                                                                                         BM83
+                                                                                                Electrical Specifications
+
+      ...........continued
+       Modes            Condition                          Role           Packet Type         Current (Typ.)      Unit
+       RF modes(5)      Continuous TX mode                 Modulation     ─                   59                  mA
+                                                           OFF, PL0
+                                                           Modulation     ─                   30                  mA
+                                                           ON, PL0
+                                                           Modulation     ─                   35.5                mA
+                                                           OFF, PL2
+                                                           Modulation     ─                   22                  mA
+                                                           ON, PL2
+                        Continuous RX mode                 Packet count   ─                   49                  mA
+                                                           disable
+                                                           Packet count   ─                   38.5                mA
+                                                           enable
+
+        1.    VBAT_IN = 3.8V; current measured across BAT_IN.
+        2.    BM83 module (mounted on BM83 Carrier Board) configured in standalone mode (internal codec) with SBC,
+              used for measurements; no LEDs, no speaker load.
+                     ®
+        3.    iPhone 6 (iOS v12.2) and OnePlus6 (Android Oxygen version 9.0.3) used for measurements.
+        4.    Auto-unsniff mode is disabled. Sniff interval is 500 ms by default; observed time to enter sniff mode is
+              approximately 20 secs.
+        5.    RF TX power is set to 10 dBm.
+        6.    Current measurements average over a period of 120 secs.
+        7.    Distance between DUT (BM83) and Bluetooth source (smartphone) is 30 cms.
+        8.    All measurements are taken inside a shield room.
+
+
+
+9.1   Timing Specifications
+      The following figures illustrate the timing diagram of the IS2083BM/BM83 in I2S and PCM modes.
+      Figure 9-1. Timing Diagram for I2S Modes (Host/Client)
+
+                                                                          1/fs
+
+
+         SCLK1
+
+
+             RFS1
+                                            Left channel                                 Right channel
+
+
+
+
+       DR1/DT1                  Bn-1 Bn-2                 B1 B0                  Bn-1 Bn-2           B1 Bn
+
+                                            Word length
+
+
+
+
+      © 2021 Microchip Technology Inc.                              Datasheet                                  DS70005402D-page 62
+                                                                                                                BM83
+                                                                                         Electrical Specifications
+
+Figure 9-2. Timing Diagram for PCM Modes (Host/Client)
+
+                                                                      1/fs
+
+
+       SCLK1
+
+
+        RFS1
+                                      Left channel                Right channel
+
+    DR1/DT1                  Bn-1 Bn-2           B1 Bn Bn-1 Bn-2              B1 Bn
+
+                                      Word length
+
+The following figure illustrates the timing diagram of the audio interface.
+Figure 9-3. Audio Interface Timing Diagram
+
+                                   tSCLKCH           tSCLKCL
+
+
+
+ SCLK1                             tSCLKCY
+
+
+
+   RFS1
+                                                                     tRFSH         tRFSSU
+
+
+       DR1
+                                                                      tDH
+
+
+The following table provides the timing specifications of the audio interface.
+Table 9-13. Audio Interface Timing Specifications (1)
+
+ Parameter                                             Symbol       Min.          Typ.        Max.         Unit
+ SCLK1 duty ratio                                      dSCLK        —             50          —            %
+ SCLK1 cycle time                                      tSCLKCY      50            —           —            ns
+ SCLK1 pulse width high                                tSCLKCH      20            —           —            ns
+ SCLK1 pulse width low                                 tSCLKCL      20            —           —            ns
+ RFS1 setup time to SCLK1 rising edge                  tRFSSU       10            —           —            ns
+ RFS1 hold time from SCLK1 rising edge                 tRFSH        10            —           —            ns
+ DR1 hold time from SCLK1 rising edge                  tDH          10            —           —            ns
+
+  1.    Test Conditions: Client mode, fs = 48 kHz, 24-bit data and SCLK1 period = 256 fs.
+
+
+
+
+© 2021 Microchip Technology Inc.                                Datasheet                            DS70005402D-page 63
+                                                                                                                        BM83
+                                                                                         Soldering Recommendations
+
+
+10.   Soldering Recommendations
+      The BM83 module can be soldered to the host board using standard leaded and lead-free solder reflow profiles. The
+      BM83 module is assembled using a standard lead-free reflow profile, IPC/JEDEC J-STD-020.
+      To avoid the damage to the module, it is mandatory to follow the recommendations as listed:
+        •   Refer to AN233 Solder Reflow Recommendation Application Note for the soldering reflow recommendations.
+        •   Do not exceed peak temperature (TP) of +260ºC.
+        •   Use no-clean flux solder paste.
+        •   Do not wash the module as moisture can be trapped under the shield.
+        •   Use only one flow. If the PCB requires multiple flows, apply the module on the final flow.
+      The following figure illustrates the reflow profile of the BM83 module.
+      Figure 10-1. Reflow Profile
+
+
+                                                                             Peak: +260°C (+5/0°C tolerance)
+
+                                              Slope:
+                                              +1 to +2°C/sec max.
+                                              (+217°C to peak)
+                                                                                             Ramp down rate:
+                                                                                             +3°C/sec max.
+                                +217°C
+
+
+                                  Preheat : +150 to +200°C
+
+
+
+
+                                                                           20 to 40 sec
+
+
+
+
+                                                 60 to 180 sec           60 to 150 sec
+                             +25°C
+
+                                                                                                   Time (sec)
+
+
+
+
+      © 2021 Microchip Technology Inc.                              Datasheet                                  DS70005402D-page 64
+                                                                                                                BM83
+                                                                                             Ordering Information
+
+
+11.   Ordering Information
+      The following table provides the BM83 module ordering information.
+      Table 11-1. BM83 Module Ordering Information
+
+       Module         Microchip IC         Description                       Regulatory               Part Number
+                                                                             Certification
+       BM83           IS2083BM-232         Bluetooth 5.0 stereo audio        FCC, ISED, CE, MIC,      BM83SM1-00AA,
+                                           module, Class 1 with shield       KCC, NCC                 BM83SM1-00AB,
+                                                                                                      BM83SM1-00TA
+
+      Note: The BM83 module can be purchased through a Microchip representative. Visit www.microchip.com/BM83 for
+      details on different variants offered, along with their current pricing and a list of distributors for the product.
+
+
+
+
+      © 2021 Microchip Technology Inc.                        Datasheet                               DS70005402D-page 65
+                                                                                                                       BM83
+                                                                                 Appendix A: Regulatory Approval
+
+
+12.      Appendix A: Regulatory Approval
+         The BM83 module(1) has received regulatory approval for the following countries:
+          • Bluetooth Special Interest Group (SIG) QDID:
+              – BM83 with Class 1(2) : 134083
+              – BM83 (3) : 134099
+          • United States/FCC ID: 2ADHKBM83SM1
+          • Canada/ISED:
+              – IC: 20266-BM83SM1
+              – HVIN: BM83SM1
+          • Europe/CE
+          • Japan/MIC: 005-102168
+          • Korea/KCC: R-C-mcp-BM83SM1
+          • Taiwan/NCC: CCAN19LP0730T1
+             Notes:
+              1. Module variants (test report covers all the variants)
+                    – BM83SM1with shield-can. FCC/ISED certificate is applicable only for BM83SM1.
+                    – BM83AM1 without shield-can. BM83 AM1 is not for sale. FCC/ISED and CE test reports cover
+                       BM83AM1.
+              2. QDID for Class1 power level for BM83SM1, BM83AM1
+              3. QDID for Class2 power level for BM83SM1, BM83AM1
+
+
+
+12.1     United States
+         The BM83 module has received Federal Communications Commission (FCC) CFR47 Telecommunications, Part
+         15 Subpart C “Intentional Radiators” single-modular approval in accordance with Part 15.212 Modular Transmitter
+         approval. Single-modular transmitter approval is defined as a complete RF transmission sub-assembly, designed to
+         be incorporated into another device, that must demonstrate compliance with FCC rules and policies independent of
+         any host. A transmitter with a modular grant can be installed in different end-use products (referred to as a host,
+         host product, or host device) by the grantee or other equipment manufacturer, then the host product may not require
+         additional testing or equipment authorization for the transmitter function provided by that specific module or limited
+         module device.
+         The user must comply with all of the instructions provided by the Grantee, which indicate installation and/or operating
+         conditions necessary for compliance.
+         A host product itself is required to comply with all other applicable FCC equipment authorization regulations,
+         requirements, and equipment functions that are not associated with the transmitter module portion. For example,
+         compliance must be demonstrated: to regulations for other transmitter components within a host product; to
+         requirements for unintentional radiators (Part 15 Subpart B), such as digital devices, computer peripherals, radio
+         receivers, etc.; and to additional authorization requirements for the non-transmitter functions on the transmitter
+         module (i.e., Suppliers Declaration of Conformity (SDoC) or certification) as appropriate (e.g., Bluetooth and Wi-Fi
+         transmitter modules may also contain digital logic functions).
+
+12.1.1   Labeling and User Information Requirements
+         The BM83 module has been labeled with its own FCC ID number, and if the FCC ID is not visible when the module is
+         installed inside another device, then the outside of the finished product into which the module is installed must display
+         a label referring to the enclosed module. This exterior label must use the following wording:
+
+
+
+
+         © 2021 Microchip Technology Inc.                          Datasheet                                 DS70005402D-page 66
+                                                                                                                          BM83
+                                                                                    Appendix A: Regulatory Approval
+
+          Contains Transmitter Module FCC ID: 2ADHKBM83SM1
+          or
+          Contains FCC ID: 2ADHKBM83SM1
+          This device complies with Part 15 of the FCC Rules. Operation is subject to the following two conditions:
+          (1) this device may not cause harmful interference, and (2) this device must accept any interference
+          received, including interference that may cause undesired operation.
+
+         The user's manual for the finished product must include the following statement:
+
+          This equipment has been tested and found to comply with the limits for a Class B digital device, pursuant to part
+          15 of the FCC Rules. These limits are designed to provide reasonable protection against harmful interference in a
+          residential installation. This equipment generates, uses and can radiate radio frequency energy, and if not installed
+          and used in accordance with the instructions, may cause harmful interference to radio communications. However,
+          there is no guarantee that interference will not occur in a particular installation. If this equipment does cause harmful
+          interference to radio or television reception, which can be determined by turning the equipment off and on, the user
+          is encouraged to try to correct the interference by one or more of the following measures:
+               •   Reorient or relocate the receiving antenna
+               •   Increase the separation between the equipment and receiver
+               •   Connect the equipment into an outlet on a circuit different from that to which the receiver is connected
+               •   Consult the dealer or an experienced radio/TV technician for help
+
+         Additional information on labeling and user information requirements for Part 15 devices can be found in KDB
+         Publication 784748, which is available at the FCC Office of Engineering and Technology (OET) Laboratory Division
+         Knowledge Database (KDB) apps.fcc.gov/oetcf/kdb/index.cfm.
+
+12.1.2   RF Exposure
+
+          All transmitters regulated by FCC must comply with RF exposure requirements. KDB 447498 General RF Exposure
+          Guidance provides guidance in determining whether proposed or existing transmitting facilities, operations
+          or devices comply with limits for human exposure to Radio Frequency (RF) fields adopted by the Federal
+          Communications Commission (FCC).
+          From the FCC Grant: Output power listed is conducted. This grant is valid only when the module is sold to OEM
+          integrators and must be installed by the OEM or OEM integrators. This transmitter is restricted for use with the
+          specific antenna(s) tested in this application for Certification and must not be co-located or operating in conjunction
+          with any other antenna or transmitters within a host device, except in accordance with FCC multi-transmitter product
+          procedures.
+          BM83: These modules are approved for installation into mobile or/and portable host platforms.
+
+
+12.1.3   Approved Antennas
+         To maintain modular approval in the United States, only the antenna types that have been tested shall be used. It
+         is permissible to use different antenna, provided the same antenna type, antenna gain (equal to or less than), with
+         similar in-band and out-of band characteristics (refer to specification sheet for cutoff frequencies).
+         For BM83, the approval is received using the antenna listed in Table 7-1.
+
+12.1.4   Helpful Web Sites
+           •       Federal Communications Commission (FCC): www.fcc.gov.
+           •       FCC Office of Engineering and Technology (OET) Laboratory Division Knowledge Database (KDB) apps.fcc.gov/
+                   oetcf/kdb/index.cfm.
+
+
+
+
+         © 2021 Microchip Technology Inc.                              Datasheet                                DS70005402D-page 67
+                                                                                                                     BM83
+                                                                               Appendix A: Regulatory Approval
+
+
+12.2     Canada
+         The BM83 module has been certified for use in Canada under Innovation, Science and Economic Development
+         Canada (ISED, formerly Industry Canada) Radio Standards Procedure (RSP) RSP-100, Radio Standards
+         Specification (RSS) RSS-Gen and RSS-247. Modular approval permits the installation of a module in a host device
+         without the need to recertify the device.
+
+12.2.1   Labeling and User Information Requirements
+         Labeling Requirements (from RSP-100 - Issue 12, Section 5): The host product shall be properly labeled to identify
+         the module within the host device.
+         The Innovation, Science and Economic Development Canada certification label of a module shall be clearly visible
+         at all times when installed in the host device; otherwise, the host product must be labeled to display the Innovation,
+         Science and Economic Development Canada certification number of the module, preceded by the word “Contains” or
+         similar wording expressing the same meaning, as follows:
+
+
+          Contains IC: 20266-BM83SM1
+
+         User Manual Notice for License-Exempt Radio Apparatus (from Section 8.4 RSS-Gen, Issue 5, March 2019): User
+         manuals for license-exempt radio apparatus shall contain the following or equivalent notice in a conspicuous location
+         in the user manual or alternatively on the device or both:
+
+          This device contains license-exempt transmitter(s)/receiver(s) that comply with Innovation, Science and
+          Economic Development Canada’s license-exempt RSS(s). Operation is subject to the following two
+          conditions:
+          (1) This device may not cause interference;
+          (2) This device must accept any interference, including interference that may cause undesired operation of
+          the device.
+          L’émetteur/récepteur exempt de licence contenu dans le présent appareil est conforme aux CNR
+          d’Innovation, Sciences et Développement économique Canada applicables aux appareils radio exempts
+          de licence. L’exploitation est autorisée aux deux conditions suivantes:
+          1. L’appareil ne doit pas produire de brouillage;
+          2. L’appareil doit accepter tout brouillage radioélectrique subi, même si le brouillage est susceptible d’en
+          compromettre le fonctionnement.
+
+         Transmitter Antenna (From Section 6.8 RSS-GEN, Issue 5, March 2019): User manuals, for transmitters shall display
+         the following notice in a conspicuous location:
+
+          This radio transmitter [IC: 20266-BM83SM1] has been approved by Innovation, Science and Economic
+          Development Canada to operate with the antenna types listed below, with the maximum permissible gain
+          indicated. Antenna types not included in this list that have a gain greater than the maximum gain indicated
+          for any type listed are strictly prohibited for use with this device.
+          Le présent émetteur radio [IC: 20266-BM83SM1] a été approuvé par Innovation, Sciences et Développement
+          économique Canada pour fonctionner avec les types d'antenne énumérés cidessous et ayant un gain
+          admissible maximal. Les types d'antenne non inclus dans cette liste, et dont le gain est supérieur au
+          gain maximal indiqué pour tout type figurant sur la liste, sont strictement interdits pour l'exploitation de
+          l'émetteur.
+
+         Immediately following the above notice, the manufacturer shall provide a list of all antenna types approved for use
+         with the transmitter, indicating the maximum permissible antenna gain (in dBi) and required impedance for each.
+
+
+
+
+         © 2021 Microchip Technology Inc.                         Datasheet                                DS70005402D-page 68
+                                                                                                                            BM83
+                                                                                   Appendix A: Regulatory Approval
+
+12.2.2   RF Exposure
+
+          All transmitters regulated by Innovation, Science and Economic Development Canada (ISED) must comply with RF
+          exposure requirements listed in RSS-102 - Radio Frequency (RF) Exposure Compliance of Radiocommunication
+          Apparatus (All Frequency Bands).
+          This transmitter is restricted for use with a specific antenna tested in this application for certification, and must not
+          be co-located or operating in conjunction with any other antenna or transmitters within a host device, except in
+          accordance with Canada multi-transmitter product procedures.
+          BM83: The device operates at an output power level which is within the ISED SAR test exemption limits at any user
+          distance.
+
+
+12.2.3   Approved Antennas
+         For BM83, the approval is received using the antenna listed in Table 7-1.
+
+12.2.4   Helpful Web Sites
+         Innovation, Science and Economic Development Canada (ISED): www.ic.gc.ca/.
+
+
+
+12.3     Europe
+         The BM83 is a Radio Equipment Directive (RED) assessed radio module that is CE marked and has been
+         manufactured and tested with the intention of being integrated into a final product.
+         The BM83 module has been tested to RED 2014/53/EU Essential Requirements mentioned in the following European
+         Compliance table.
+         Table 12-1. European Compliance Information
+
+          Certification                            Standard                                                     Article
+          Safety                                   EN 62368
+                                                                                                                          3.1a
+          Health                                   EN 62311
+                                                   EN 301 489-1
+          EMC                                                                                                             3.1b
+                                                   EN 301 489-17
+          Radio                                    EN 300 328                                                             3.2
+
+         The ETSI provides guidance on modular devices in the “Guide to the application of harmonised standards
+         covering articles 3.1b and 3.2 of the RED 2014/53/EU (RED) to multi-radio and combined radio and non-
+         radio equipment” document available at http://www.etsi.org/deliver/etsi_eg/203300_203399/20 3367/01.01.01_60/
+         eg_203367v010101p.pdf.
+         Note: To maintain conformance to the standards listed in the preceding European Compliance table, the module
+         shall be installed in accordance with the installation instructions in this data sheet and shall not be modified. When
+         integrating a radio module into a completed product, the integrator becomes the manufacturer of the final product and
+         is therefore responsible for demonstrating compliance of the final product with the essential requirements against the
+         RED.
+
+12.3.1   Labeling and User Information Requirements
+         The label on the final product that contains the BM83 module must follow CE marking requirements.
+
+12.3.2   Conformity Assessment
+         From ETSI Guidance Note EG 203367, section 6.1, when non-radio products are combined with a radio product:
+         If the manufacturer of the combined equipment installs the radio product in a host non-radio product in equivalent
+         assessment conditions (i.e. host equivalent to the one used for the assessment of the radio product) and according to
+         the installation instructions for the radio product, then no additional assessment of the combined equipment against
+         article 3.2 of the RED is required.
+
+
+
+
+         © 2021 Microchip Technology Inc.                             Datasheet                                 DS70005402D-page 69
+                                                                                                                        BM83
+                                                                                 Appendix A: Regulatory Approval
+
+12.3.2.1 Simplified EU Declaration of Conformity
+         Hereby, Microchip Technology Inc. declares that the radio equipment type BM83 is in compliance with Directive
+         2014/53/EU.
+         The full text of the EU declaration of conformity, for this product, is available at www.microchip.com/wwwproducts/en/
+         BM83 (available under Documents > Certifications).
+
+12.3.3   Approved Antennas
+         For BM83, the approval is received using the antenna listed in Table 7-1.
+
+12.3.4   Helpful Websites
+         A document that can be used as a starting point in understanding the use of Short Range Devices (SRD) in Europe is
+         the European Radio Communications Committee (ERC) Recommendation 70-03 E, which can be downloaded from
+         the European Communications Committee (ECC) at: http://www.ecodocdb.dk/.
+         Additional helpful web sites are:
+           •   Radio Equipment Directive (2014/53/EU):
+               https://ec.europa.eu/growth/single-market/european-standards/harmonised-standards/red_en
+           •   European Conference of Postal and Telecommunications Administrations (CEPT):
+               http://www.cept.org
+           •   European Telecommunications Standards Institute (ETSI):
+               http://www.etsi.org
+           •   The Radio Equipment Directive Compliance Association (REDCA):
+               http://www.redca.eu/
+
+
+
+12.4     Japan
+         The BM83 module has received type certification and is labeled with its own technical conformity mark and
+         certification number as required to conform to the technical standards regulated by the Ministry of Internal Affairs
+         and Communications (MIC) of Japan pursuant to the Radio Act of Japan.
+         Integration of this module into a final product does not require additional radio certification provided installation
+         instructions are followed and no modifications of the module are allowed. Additional testing may be required:
+           • If the host product is subject to electrical appliance safety (for example, powered from an AC mains), the
+               host product may require Product Safety Electrical Appliance and Material (PSE) testing. The integrator should
+               contact their conformance laboratory to determine if this testing is required
+           • There is an voluntary Electromagnetic Compatibility (EMC) test for the host product administered by VCCI:
+               www.vcci.jp/vcci_e/index.html
+
+12.4.1   Labeling and User Information Requirements
+         The label on the final product which contains the BM83 module must follow Japan marking requirements. The
+         integrator of the module should refer to the labeling requirements for Japan available at the Ministry of Internal Affairs
+         and Communications (MIC) website.
+         For the BM83 module, due to a limited module size, the technical conformity logo and ID is displayed in the data
+         sheet and/or packaging and cannot be displayed on the module label. The final product in which this module is being
+         used must have a label referring to the type certified module inside:
+
+          For the BM83 module, due to a limited module size, the technical conformity logo and ID is displayed in the data
+          sheet and/or packaging and cannot be displayed on the module label. The final product in which this module is
+          being used must have a label referring to the type certified module inside:
+
+
+
+
+         © 2021 Microchip Technology Inc.                           Datasheet                                 DS70005402D-page 70
+                                                                                                                          BM83
+                                                                                   Appendix A: Regulatory Approval
+
+
+
+
+                                      005-102168
+
+
+12.4.2   Helpful Web Sites
+           •   Ministry of Internal Affairs and Communications (MIC): www.tele.soumu.go.jp/e/index.htm.
+           •   Association of Radio Industries and Businesses (ARIB): www.arib.or.jp/english/.
+
+
+
+12.5     Korea
+         The BM83 module has received certification of conformity in accordance with the Radio Waves Act. Integration of this
+         module into a final product does not require additional radio certification provided installation instructions are followed
+         and no modifications of the module are allowed.
+
+12.5.1   Labeling and User Information Requirements
+         The label on the final product which contains the BM83 module must follow KC marking requirements. The
+         integrator of the module should refer to the labeling requirements for Korea available on the Korea Communications
+         Commission (KCC) website.
+
+          The BM83 module is labeled with its own KC mark. The final product requires the KC mark and certificate number
+          of the module:
+
+
+
+                    R-C-mcp-BM83SM1
+
+
+
+12.5.2   Helpful Websites
+           •   Korea Communications Commission (KCC): www.kcc.go.kr.
+           •   National Radio Research Agency (RRA): rra.go.kr.
+
+
+
+12.6     Taiwan
+         The BM83 module has received compliance approval in accordance with the Telecommunications Act. Customers
+         seeking to use the compliance approval in their product should contact Microchip Technology sales or distribution
+         partners to obtain a Letter of Authority.
+         Integration of this module into a final product does not require additional radio certification provided installation
+         instructions are followed and no modifications of the module are allowed.
+
+12.6.1   Labeling and User Information Requirements
+
+          For the BM83 module, due to the limited module size, the NCC mark and ID are displayed in the data sheet only
+          and cannot be displayed on the module label:
+
+
+
+
+         © 2021 Microchip Technology Inc.                            Datasheet                                  DS70005402D-page 71
+                                                                                                                          BM83
+                                                                                   Appendix A: Regulatory Approval
+
+
+
+
+                             CCAN19LP0730T1
+
+
+
+
+         The user's manual should contain following warning (for RF device) in traditional Chinese:
+         注意 !
+         依據 低功率電波輻射性電機管理辦法
+         第十二條 經型式認證合格之低功率射頻電機，非經許 可，
+         公司、商號或使用者均不得擅自變更頻率、加大功率或 變更原設計
+         之特性及功能。
+         第十四條 低功率射頻電機之使用不得影響飛航安全及 干擾合法通信；
+         經發現有干擾現象時，應立即停用，並改善至無干擾時 方得繼續使用。
+         前項合法通信，指依電信規定作業之無線電信。
+         低功率射頻電機須忍受合法通信或工業、科學及醫療用 電波輻射性
+         電機設備之干擾。
+
+12.6.2   Helpful Web Sites
+         National Communications Commission (NCC): www.ncc.gov.tw
+
+
+
+12.7     Other Regulatory Information
+           •   For information about other countries' jurisdictions not covered here, refer to the specific product listed in the
+               www.microchip.com/wwwproducts/en/BM83 (available under Documents > Certifications).
+           •   If the customer needs another regulatory jurisdiction certification or to recertify the module for other reasons,
+               contact Microchip for the required utilities and documentation.
+
+
+
+
+         © 2021 Microchip Technology Inc.                             Datasheet                                 DS70005402D-page 72
+                                                                                                                    BM83
+                                                                                          Document Revision History
+
+
+13.   Document Revision History
+       Revision      Date           Section                         Description
+
+       D             05/2021        Document                        Minor edits.
+                                    12.1.3 Approved Antennas        Added Approved Antennas section for United States
+                                                                    Regulatory Approval
+                                    12.2.1 Labeling and User        Minor edits for Canada Regulatory Approval
+                                    Information Requirements
+                                    12.2.3 Approved Antennas        Added Approved Antennas section for Canada
+                                                                    Regulatory Approval
+                                    12.3 Europe                     Replaced with latest version with minor edits
+                                    12.7 Other Regulatory           Updated
+                                    Information
+                                    Introduction                    Updated HFP details
+                                    Features                         •   Updated HFP details
+                                                                     •   Updated with the new terminologies. For more
+                                                                         details, see the below note
+
+                                    6.5 I2S Interface                •   Added Notes
+                                                                     •   Updated with the new terminologies. For more
+                                                                         details, see the below note
+
+                                    2. Device Overview              Updated with the new terminologies. For more details,
+                                                                    see the below note
+                                    9. Electrical Specifications    Updated with the new terminologies. For more details,
+                                                                    see the below note
+                                    9.1 Timing Specifications       Updated with the new terminologies. For more details,
+                                                                    see the below note
+       C             07/2020        Document                        Minor edits.
+                                    Introduction                    Updated with minor edits
+                                    Features                         •   Added MSPK and AT solution
+                                                                     •   Updated with minor edits
+
+                                    2. Device Overview              Updated mode of operations
+                                    11. Ordering Information        Updated part number and regulatory certification
+                                    5. Power Management Unit        Updated Figure 5-1.
+                                    8. Physical Dimensions          Updated Figure 8-2.
+                                    12. Appendix A: Regulatory      Updated certification ids for Japan, Korea and Taiwan
+                                    Approval
+
+
+
+
+      © 2021 Microchip Technology Inc.                             Datasheet                              DS70005402D-page 73
+                                                                                                              BM83
+                                                                                  Document Revision History
+
+...........continued
+ Revision      Date           Section                         Description
+
+ B             09/2019        Document                        Minor edits.
+                              2.2 BM83 Module Pin             Updated descriptions of Pin# 20, 31, and 49 in Table 2-2.
+                              Description
+                              5. Power Management Unit         •   Removed Reviving and Pre-charging mode related
+                                                                   information.
+                                                               •   Updated Figure 5-1.
+
+                              5.2 SAR ADC                      •   Changed the section title to SAR ADC from Battery
+                                                                   Voltage Monitoring and combined Ambient Detection
+                                                                   Section.
+                                                               •   Updated contents.
+
+                              6. Application Information       •   Reorganized sections in this chapter.
+                                                               •   Added 6.1 Power On/Off Sequence section.
+                                                               •   Updated 6.2 Reset section.
+                                                               •   Updated Table 6-3.
+                                                               •   Updated Figure 6-9 and 6.6 Host MCU Interface
+                                                                   Over UART.
+
+                              9. Electrical Specifications    Added Table 9-5.
+ A             07/2019        Document                        Initial Revision
+
+Note: Microchip is aware that some terminologies used in the technical documents and existing software codes of
+this product are outdated and unsuitable. This document may use these new terminologies, which may or may not
+reflect on the source codes, software GUIs, and the documents referenced within this document. The following table
+shows the relevant terminology changes made in this document.
+Table 13-1. Terminology Related Changes
+
+ Old Terminology                          New Terminology                         Section
+ Master speaker                           Central speaker                         Features is updated with the new
+                                                                                  terminology.
+ Slave speaker                            Peripheral speaker
+ I2S Master                               I2S Host
+ I2S Master                               I2S Host                                2. Device Overview is updated with
+                                                                                  the new terminology.
+ Master                                   Host                                    6.5 I2S Interface is updated with the
+                                                                                  new terminology.
+ Slave                                    Client
+ Master                                   Central                                 9. Electrical Specifications is
+                                                                                  updated with the new terminology.
+ Slave                                    Peripheral
+ Master                                   Host                                    9.1 Timing Specifications is updated
+                                                                                  with the new terminology.
+ Slave                                    Client
+
+
+
+
+© 2021 Microchip Technology Inc.                             Datasheet                              DS70005402D-page 74
+                                                                                                                BM83
+
+The Microchip Website
+
+Microchip provides online support via our website at www.microchip.com/. This website is used to make files and
+information easily available to customers. Some of the content available includes:
+  •   Product Support – Data sheets and errata, application notes and sample programs, design resources, user’s
+      guides and hardware support documents, latest software releases and archived software
+  •   General Technical Support – Frequently Asked Questions (FAQs), technical support requests, online
+      discussion groups, Microchip design partner program member listing
+  •   Business of Microchip – Product selector and ordering guides, latest Microchip press releases, listing of
+      seminars and events, listings of Microchip sales offices, distributors and factory representatives
+
+
+
+Product Change Notification Service
+
+Microchip’s product change notification service helps keep customers current on Microchip products. Subscribers will
+receive email notification whenever there are changes, updates, revisions or errata related to a specified product
+family or development tool of interest.
+To register, go to www.microchip.com/pcn and follow the registration instructions.
+
+
+
+Customer Support
+
+Users of Microchip products can receive assistance through several channels:
+  •   Distributor or Representative
+  •   Local Sales Office
+  •   Embedded Solutions Engineer (ESE)
+  •   Technical Support
+Customers should contact their distributor, representative or ESE for support. Local sales offices are also available to
+help customers. A listing of sales offices and locations is included in this document.
+Technical support is available through the website at: www.microchip.com/support
+
+
+
+Microchip Devices Code Protection Feature
+
+Note the following details of the code protection feature on Microchip devices:
+  •   Microchip products meet the specifications contained in their particular Microchip Data Sheet.
+  •   Microchip believes that its family of products is secure when used in the intended manner and under normal
+      conditions.
+  •   There are dishonest and possibly illegal methods being used in attempts to breach the code protection features
+      of the Microchip devices. We believe that these methods require using the Microchip products in a manner
+      outside the operating specifications contained in Microchip’s Data Sheets. Attempts to breach these code
+      protection features, most likely, cannot be accomplished without violating Microchip’s intellectual property rights.
+  •   Microchip is willing to work with any customer who is concerned about the integrity of its code.
+  •   Neither Microchip nor any other semiconductor manufacturer can guarantee the security of its code. Code
+      protection does not mean that we are guaranteeing the product is “unbreakable.” Code protection is constantly
+      evolving. We at Microchip are committed to continuously improving the code protection features of our products.
+      Attempts to break Microchip’s code protection feature may be a violation of the Digital Millennium Copyright Act.
+      If such acts allow unauthorized access to your software or other copyrighted work, you may have a right to sue
+      for relief under that Act.
+
+
+
+
+© 2021 Microchip Technology Inc.                            Datasheet                                DS70005402D-page 75
+                                                                                                              BM83
+
+Legal Notice
+Information contained in this publication is provided for the sole purpose of designing with and using Microchip
+products. Information regarding device applications and the like is provided only for your convenience and may be
+superseded by updates. It is your responsibility to ensure that your application meets with your specifications.
+THIS INFORMATION IS PROVIDED BY MICROCHIP “AS IS”. MICROCHIP MAKES NO REPRESENTATIONS
+OR WARRANTIES OF ANY KIND WHETHER EXPRESS OR IMPLIED, WRITTEN OR ORAL, STATUTORY
+OR OTHERWISE, RELATED TO THE INFORMATION INCLUDING BUT NOT LIMITED TO ANY IMPLIED
+WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS FOR A PARTICULAR PURPOSE
+OR WARRANTIES RELATED TO ITS CONDITION, QUALITY, OR PERFORMANCE.
+IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, INCIDENTAL OR
+CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND WHATSOEVER RELATED TO THE
+INFORMATION OR ITS USE, HOWEVER CAUSED, EVEN IF MICROCHIP HAS BEEN ADVISED OF THE
+POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE FULLEST EXTENT ALLOWED BY LAW,
+MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN ANY WAY RELATED TO THE INFORMATION OR ITS USE
+WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY, THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR
+THE INFORMATION. Use of Microchip devices in life support and/or safety applications is entirely at the buyer’s risk,
+and the buyer agrees to defend, indemnify and hold harmless Microchip from any and all damages, claims, suits, or
+expenses resulting from such use. No licenses are conveyed, implicitly or otherwise, under any Microchip intellectual
+property rights unless otherwise stated.
+
+
+Trademarks
+The Microchip name and logo, the Microchip logo, Adaptec, AnyRate, AVR, AVR logo, AVR Freaks, BesTime,
+BitCloud, chipKIT, chipKIT logo, CryptoMemory, CryptoRF, dsPIC, FlashFlex, flexPWR, HELDO, IGLOO, JukeBlox,
+KeeLoq, Kleer, LANCheck, LinkMD, maXStylus, maXTouch, MediaLB, megaAVR, Microsemi, Microsemi logo,
+MOST, MOST logo, MPLAB, OptoLyzer, PackeTime, PIC, picoPower, PICSTART, PIC32 logo, PolarFire, Prochip
+Designer, QTouch, SAM-BA, SenGenuity, SpyNIC, SST, SST Logo, SuperFlash, Symmetricom, SyncServer,
+Tachyon, TimeSource, tinyAVR, UNI/O, Vectron, and XMEGA are registered trademarks of Microchip Technology
+Incorporated in the U.S.A. and other countries.
+AgileSwitch, APT, ClockWorks, The Embedded Control Solutions Company, EtherSynch, FlashTec, Hyper Speed
+Control, HyperLight Load, IntelliMOS, Libero, motorBench, mTouch, Powermite 3, Precision Edge, ProASIC,
+ProASIC Plus, ProASIC Plus logo, Quiet-Wire, SmartFusion, SyncWorld, Temux, TimeCesium, TimeHub, TimePictra,
+TimeProvider, WinPath, and ZL are registered trademarks of Microchip Technology Incorporated in the U.S.A.
+Adjacent Key Suppression, AKS, Analog-for-the-Digital Age, Any Capacitor, AnyIn, AnyOut, Augmented Switching,
+BlueSky, BodyCom, CodeGuard, CryptoAuthentication, CryptoAutomotive, CryptoCompanion, CryptoController,
+dsPICDEM, dsPICDEM.net, Dynamic Average Matching, DAM, ECAN, Espresso T1S, EtherGREEN, IdealBridge,
+In-Circuit Serial Programming, ICSP, INICnet, Intelligent Paralleling, Inter-Chip Connectivity, JitterBlocker, maxCrypto,
+maxView, memBrain, Mindi, MiWi, MPASM, MPF, MPLAB Certified logo, MPLIB, MPLINK, MultiTRAK, NetDetach,
+Omniscient Code Generation, PICDEM, PICDEM.net, PICkit, PICtail, PowerSmart, PureSilicon, QMatrix, REAL ICE,
+Ripple Blocker, RTAX, RTG4, SAM-ICE, Serial Quad I/O, simpleMAP, SimpliPHY, SmartBuffer, SMART-I.S., storClad,
+SQI, SuperSwitcher, SuperSwitcher II, Switchtec, SynchroPHY, Total Endurance, TSHARC, USBCheck, VariSense,
+VectorBlox, VeriPHY, ViewSpan, WiperLock, XpressConnect, and ZENA are trademarks of Microchip Technology
+Incorporated in the U.S.A. and other countries.
+SQTP is a service mark of Microchip Technology Incorporated in the U.S.A.
+The Adaptec logo, Frequency on Demand, Silicon Storage Technology, and Symmcom are registered trademarks of
+Microchip Technology Inc. in other countries.
+GestIC is a registered trademark of Microchip Technology Germany II GmbH & Co. KG, a subsidiary of Microchip
+Technology Inc., in other countries.
+All other trademarks mentioned herein are property of their respective companies.
+© 2021, Microchip Technology Incorporated, Printed in the U.S.A., All Rights Reserved.
+
+ISBN: 978-1-5224-8059-4
+
+
+
+
+© 2021 Microchip Technology Inc.                           Datasheet                                DS70005402D-page 76
+                                                                                                       BM83
+
+Quality Management System
+For information regarding Microchip’s Quality Management Systems, please visit www.microchip.com/quality.
+
+
+
+
+© 2021 Microchip Technology Inc.                       Datasheet                             DS70005402D-page 77
+                                   Worldwide Sales and Service
+ AMERICAS                          ASIA/PACIFIC             ASIA/PACIFIC              EUROPE
+ Corporate Office                  Australia - Sydney       India - Bangalore         Austria - Wels
+ 2355 West Chandler Blvd.          Tel: 61-2-9868-6733      Tel: 91-80-3090-4444      Tel: 43-7242-2244-39
+ Chandler, AZ 85224-6199           China - Beijing          India - New Delhi         Fax: 43-7242-2244-393
+ Tel: 480-792-7200                 Tel: 86-10-8569-7000     Tel: 91-11-4160-8631      Denmark - Copenhagen
+ Fax: 480-792-7277                 China - Chengdu          India - Pune              Tel: 45-4485-5910
+ Technical Support:                Tel: 86-28-8665-5511     Tel: 91-20-4121-0141      Fax: 45-4485-2829
+ www.microchip.com/support         China - Chongqing        Japan - Osaka             Finland - Espoo
+ Web Address:                      Tel: 86-23-8980-9588     Tel: 81-6-6152-7160       Tel: 358-9-4520-820
+ www.microchip.com                 China - Dongguan         Japan - Tokyo             France - Paris
+ Atlanta                           Tel: 86-769-8702-9880    Tel: 81-3-6880- 3770      Tel: 33-1-69-53-63-20
+ Duluth, GA                        China - Guangzhou        Korea - Daegu             Fax: 33-1-69-30-90-79
+ Tel: 678-957-9614                 Tel: 86-20-8755-8029     Tel: 82-53-744-4301       Germany - Garching
+ Fax: 678-957-1455                 China - Hangzhou         Korea - Seoul             Tel: 49-8931-9700
+ Austin, TX                        Tel: 86-571-8792-8115    Tel: 82-2-554-7200        Germany - Haan
+ Tel: 512-257-3370                 China - Hong Kong SAR    Malaysia - Kuala Lumpur   Tel: 49-2129-3766400
+ Boston                            Tel: 852-2943-5100       Tel: 60-3-7651-7906       Germany - Heilbronn
+ Westborough, MA                   China - Nanjing          Malaysia - Penang         Tel: 49-7131-72400
+ Tel: 774-760-0087                 Tel: 86-25-8473-2460     Tel: 60-4-227-8870        Germany - Karlsruhe
+ Fax: 774-760-0088                 China - Qingdao          Philippines - Manila      Tel: 49-721-625370
+ Chicago                           Tel: 86-532-8502-7355    Tel: 63-2-634-9065        Germany - Munich
+ Itasca, IL                        China - Shanghai         Singapore                 Tel: 49-89-627-144-0
+ Tel: 630-285-0071                 Tel: 86-21-3326-8000     Tel: 65-6334-8870         Fax: 49-89-627-144-44
+ Fax: 630-285-0075                 China - Shenyang         Taiwan - Hsin Chu         Germany - Rosenheim
+ Dallas                            Tel: 86-24-2334-2829     Tel: 886-3-577-8366       Tel: 49-8031-354-560
+ Addison, TX                       China - Shenzhen         Taiwan - Kaohsiung        Israel - Ra’anana
+ Tel: 972-818-7423                 Tel: 86-755-8864-2200    Tel: 886-7-213-7830       Tel: 972-9-744-7705
+ Fax: 972-818-2924                 China - Suzhou           Taiwan - Taipei           Italy - Milan
+ Detroit                           Tel: 86-186-6233-1526    Tel: 886-2-2508-8600      Tel: 39-0331-742611
+ Novi, MI                          China - Wuhan            Thailand - Bangkok        Fax: 39-0331-466781
+ Tel: 248-848-4000                 Tel: 86-27-5980-5300     Tel: 66-2-694-1351        Italy - Padova
+ Houston, TX                       China - Xian             Vietnam - Ho Chi Minh     Tel: 39-049-7625286
+ Tel: 281-894-5983                 Tel: 86-29-8833-7252     Tel: 84-28-5448-2100      Netherlands - Drunen
+ Indianapolis                      China - Xiamen                                     Tel: 31-416-690399
+ Noblesville, IN                   Tel: 86-592-2388138                                Fax: 31-416-690340
+ Tel: 317-773-8323                 China - Zhuhai                                     Norway - Trondheim
+ Fax: 317-773-5453                 Tel: 86-756-3210040                                Tel: 47-72884388
+ Tel: 317-536-2380                                                                    Poland - Warsaw
+ Los Angeles                                                                          Tel: 48-22-3325737
+ Mission Viejo, CA                                                                    Romania - Bucharest
+ Tel: 949-462-9523                                                                    Tel: 40-21-407-87-50
+ Fax: 949-462-9608                                                                    Spain - Madrid
+ Tel: 951-273-7800                                                                    Tel: 34-91-708-08-90
+ Raleigh, NC                                                                          Fax: 34-91-708-08-91
+ Tel: 919-844-7510                                                                    Sweden - Gothenberg
+ New York, NY                                                                         Tel: 46-31-704-60-40
+ Tel: 631-435-6000                                                                    Sweden - Stockholm
+ San Jose, CA                                                                         Tel: 46-8-5090-4654
+ Tel: 408-735-9110                                                                    UK - Wokingham
+ Tel: 408-436-4270                                                                    Tel: 44-118-921-5800
+ Canada - Toronto                                                                     Fax: 44-118-921-5820
+ Tel: 905-695-1980
+ Fax: 905-695-2078
+
+
+
+
+© 2021 Microchip Technology Inc.                           Datasheet                           DS70005402D-page 78
+

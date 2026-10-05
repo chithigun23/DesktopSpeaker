@@ -1,0 +1,40 @@
+{
+  "scope": "Logic_Audio_Power child sheet only; no root/shared libraries, BOM tables, or downstream audio wiring edited",
+  "decision": {
+    "u14": "Texas Instruments TPS63802DLAR, replacing TPS61023DRLT",
+    "input": "SYS_RAW on VIN; SYS_RAW on MODE selects forced PWM while enabled; R142 100k holds EN default low",
+    "setpoint": "R14078.7k1% SAE1RC0603F7872 C54531588; R1419.1k1% YageoRC0603FR-079K1L C114639. Same nominal4.82418V ratio, lowerFBbiaserror.",
+    "inductor": "L2 changed to 0.47uH and connected only between U14 L1/L2 switch pins; parent to normalize hidden sourcing metadata to match shared Coilcraft XFL4015 used at L3",
+    "output": "existing C141/C142 22uF bank retained"
+  },
+  "bounds": {
+    "converter_datasheet": "https://www.ti.com/lit/ds/symlink/tps63802.pdf",
+    "feedback_pwm_accuracy": "\u00b11% over datasheet operating conditions",
+    "feedback_input_bias": "max 100nA at VFB=500mV",
+    "feedback_calc": "Main finalDCcalculation4.60004257\u20135.05868952V including1%reference/resistors,100ppm/C100Cdrift,andconservative\u00b1100nAFBbias. Uppermargin191.31mV, lower250.04mV. No startup/ripple/dynamic guarantee.",
+    "coil": "TPS63802 datasheet specifies 0.37\u20130.57uH application range; XFL4015 nominal 0.47uH is the existing L3 part. Datasheet boost peak current limit minimum is 4A; buck-boost minimum is 5A for VIN\u22652.5V. Thermal/layout and load-step performance are not established by this schematic review.",
+    "capacitors": "TI recommends 22uF nominal output capacitance and notes 20% tolerance/DC-bias effective-capacitance reductions up to 50% in its application combination table. Existing two 22uF capacitors retained; no part-specific effective-capacitance curve/guarantee reviewed in this task.",
+    "startup_mode": "TI TPS63802 datasheet specifies startup in forced PFM until the first switching cycle, even when MODE requests forced PWM; the schematic note now states PWM after soft-start."
+  },
+  "schematic_changes": [
+    "U14 symbol/cache/footprint changed to TPS63802DLAR; reference U14 and position retained",
+    "L2 value changed from 1uH to 0.47uH and rotated/routed horizontally between switch pins 9 and 7",
+    "R140 now78.7k1% after lower-impedance divider refinement",
+    "R141 now9.1k1% after lower-impedance divider refinement",
+    "MODE pin tied to SYS_RAW, PG pin explicitly NC, AGND/GND pins tied to project GND",
+    "Existing SYS_RAW, 5V_LOGIC_EN, 5V_LOGIC, divider and decoupling nets preserved; no MCU/audio load wiring added"
+  ],
+  "verification": {
+    "kicad_cli": "10.0.6 / Eeschema 10.0.6-rc2",
+    "physical_netlist": "before/after kicadxml under this report directory; affected refs U14, L2, R140\u2013R142, C140\u2013C143 compared. Expected connectivity changes are U14 pin remap, L2 to switch-node pair, and ground for pins 3/8. Other passive groups retained.",
+    "render": "logic.pdf and logic.png rendered from Logic_Audio_Power.kicad_sch and visually inspected",
+    "erc_or_tests": "not run",
+    "integration": "Main corrected ground wire midpoint junction, removed redundant global GND label and inherited old-converter terminal stubs; all child power pages ERC-clean after integration."
+  },
+  "parent_normalization_needed": [],
+  "open_qualification": [
+    "Measure or simulate output ripple and startup/load-step overshoot; during startup the device temporarily uses PFM. Steady DC calculation alone is not proof of PCM2902C rail compliance.",
+    "Confirm effective C141/C142 capacitance at approximately 4.82V, temperature, aging and tolerance",
+    "Confirm 500mA reserved load behavior at minimum SYS_RAW after thermal/layout review"
+  ]
+}

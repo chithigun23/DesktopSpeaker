@@ -1,0 +1,40 @@
+{
+  "date": "2026-10-05",
+  "newPhysicalReference": "U19",
+  "manufacturer": "Texas Instruments",
+  "mpn": "TPS7B8450QWDRBRQ1",
+  "lcsc": "C3751394",
+  "function": "Fixed 5.0V, 150mA, 40V input LDO supplying USB-PD VDD from raw PD VBUS",
+  "lcscSnapshot": {
+    "accessed": "2026-10-05",
+    "stockPcs": 1,
+    "unitPriceUsd": 1.3452,
+    "priceTierQty": 1,
+    "moqPcs": 1,
+    "multiplePcs": 1,
+    "standardPackPcs": 3000,
+    "source": "https://www.lcsc.com/product-detail/C3751394.html",
+    "note": "One unit shown in stock, one-piece purchase accepted; recheck at purchase."
+  },
+  "datasheet": "../datasheets/TPS7B84-Q1.pdf",
+  "fittedSubtotalUsd": 75.08,
+  "fittedSubtotalExactUsd": 75.0754,
+  "orderSubtotalUsd": 94.01,
+  "orderSubtotalExactUsd": 94.0099,
+  "bomPhysicalRows": 72,
+  "openQualifications": [
+    "Raw PD surge/transient coordination at U19 input remains unverified.",
+    "Regulator dropout/output level at minimum 5V input and thermal dissipation remain open.",
+    "C5 must retain TI-required effective capacitance at worst DC bias, tolerance and temperature; verify minimum."
+  ],
+  "formulaScan": {
+    "matches": 0,
+    "summary": "Cell search matched 0 entries.",
+    "notice": "Formula error scan completed with no matches."
+  },
+  "render": {
+    "parts": "vdd-ldo-bom-parts.png",
+    "openSelections": "vdd-ldo-open-selections.png",
+    "totals": "vdd-ldo-bom-totals.png"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "retained_physical_pin_groups_equal": true,
+  "ignored_intended_changed_refs": [
+    "U14",
+    "L2",
+    "D9"
+  ],
+  "D9_cat_U11_18": true,
+  "D9_anode_ground": true
+}

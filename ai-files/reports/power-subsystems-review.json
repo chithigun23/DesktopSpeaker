@@ -1,0 +1,52 @@
+{
+  "stage": "partial charger and gauge implementation; no production signoff",
+  "manual_pin_net_review": {
+    "PD_to_charger": true,
+    "SYS_to_AO": true,
+    "BAT_to_gauge": true,
+    "SCL_isolated": true,
+    "SDA_isolated": true,
+    "bus_separate_from_BAT": true,
+    "charge_enable": true,
+    "TS_to_pack": true
+  },
+  "model_link_inventory": {
+    "TPS7A0230PDBVR": {
+      "models": [
+        "${KIPRJMOD}/kicad-library/3d/TPS7A0230PDBVR.step"
+      ],
+      "files_present": true
+    },
+    "TMUX1511PWR": {
+      "models": [
+        "${KIPRJMOD}/kicad-library/3d/TMUX1511PWR.step"
+      ],
+      "files_present": true
+    },
+    "2N7002": {
+      "models": [
+        "${KIPRJMOD}/kicad-library/3d/2N7002.step"
+      ],
+      "files_present": true
+    },
+    "JST_B3P_VH_1x03_P3.96mm_Vertical": {
+      "models": [
+        "${KIPRJMOD}/kicad-library/3d/JST_B3P-VH.step"
+      ],
+      "files_present": true
+    },
+    "PD_C_1210": {
+      "models": [
+        "${KIPRJMOD}/kicad-library/3d/PD_C_1210.step"
+      ],
+      "files_present": true
+    }
+  },
+  "remaining": [
+    "Battery pack/protection/NTC curve and mating harness",
+    "Capacitor MPNs/effective capacitance",
+    "Final standby budget, storage/wake and switched 5 V/audio rails",
+    "MCU hookup/firmware charge and source policy",
+    "SW100/SW101 part and footprint selections; DC switch ratings"
+  ]
+}

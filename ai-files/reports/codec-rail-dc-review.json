@@ -1,0 +1,19 @@
+{
+  "nominal_v": 4.824175824175824,
+  "conservative_dc_min_v": 4.600042568829799,
+  "conservative_dc_max_v": 5.058689523418912,
+  "resistor_initial_tolerance": 0.01,
+  "tcr_ppm_per_C": 100,
+  "temperature_delta_from25_C": 100,
+  "TCR_scope": "Verified selected SAE/YAGEO series \u00b1100ppm/C; -40 to125C covered by worst100C delta from25C",
+  "reference_accuracy_PWM": 0.01,
+  "FB_bias_conservative_signed_A": 1e-07,
+  "remaining_low_margin_v": 0.2500425688297989,
+  "remaining_high_margin_v": 0.19131047658108802,
+  "dynamic_qualification_pending": true,
+  "limitations": "DC-only, no startup/overshoot/ripple guarantee; forced PWM required; component effective capacitance/thermal/load qualifications remain",
+  "R140_ohm": 78700,
+  "R141_ohm": 9100,
+  "nominal_feedback_current_uA": 54.94505494505494,
+  "storage_note": "Divider powered only when output rail active; converter output disconnect and default-disabled EN retained"
+}

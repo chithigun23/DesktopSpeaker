@@ -1,0 +1,100 @@
+                                                   Multi Layer Ceramic Capacitor (MLCC)
+1. Model : CL21B106KPQNNNE
+
+2. Description
+                                                                    Size             Thickness    Temperature                                  Capacitance            Capacitance                Voltage
+                                 Part no.
+                                                                (inch(mm))             (mm)       charateristics                                 value               tolerance(%)                 (V)
+                   CL21B106KPQNNNE                               0805/2012           1.25mm           X7R                                         10uF                    ± 10 %                     10
+
+3. Characteristics data
+
+1) Frequency characteristics                                                                        2) Temperature characteristics of capacitance(TCC)
+                             Network Analyzer 8753E, 100Hz to 6GHz                                                                       Agilent E4980A, 1kHz, 1.0Vrms
+
+                                                   Impedance |Z|, ESR
+                   1000                                                                                                                  20
+
+                    100                                                                                                                   0
+                                 |Z|
+  |Z|, ESR [Ohm]
+
+
+
+
+                     10                                                                                                              -20
+
+                         1                                                                                          ∆C(%)            -40
+
+                     0.1         ESR                                                                                                 -60
+
+                    0.01                                                                                                             -80
+
+                   0.001                                                                                                            -100
+                       0.0001 0.001             0.01     0.1    1         10   100   1000 10000                                               -55 -35 -15        5   25    45       65   85   105 125
+                                                       Frequency [MHz]
+                                                                                                                                                                 Temperature (°C)
+
+3) DC Bias characteristics (Agilent E4980A, 1kHz, 1.0Vrms)                                         4) Bias TCC characteristics (Agilent E4980A, 1kHz, 1.0Vrms, 5Vdc)
+
+                    20
+                                                                                                                                         20
+                     0
+                                                                                                                                         0
+                    -20
+                                                                                                                                     -20
+  ∆C(%)
+
+
+
+
+                    -40
+                                                                                                                   ∆C(%)
+
+
+
+
+                                                                                                                                     -40
+                    -60
+                                                                                                                                     -60
+                    -80                                                                                                              -80
+
+                   -100                                                                                                             -100
+                             0              2             4          6          8        10                                                   -55 -35 -15        5   25    45       65   85   105 125
+                                                         DC Voltage (V)                                                                                          Temperature (℃)
+
+5) AC voltage characteristics (Agilent 4284A, 1kHz)                                                 6) Ripple Current
+
+                                                                                                                                   100
+                    40
+                    30
+                                                                                                           Temperature Rise (oC)
+
+
+
+
+                    20
+                    10
+  ∆C(%)
+
+
+
+
+                                                                                                                                   10
+                     0
+                   -10                                                                                                                                                                        10kHz
+                                                                                                                                                                                              100kHz
+                   -20
+                                                                                                                                                                                              500kHz
+                   -30                                                                                                                                                                        1000kHz
+                   -40                                                                                                              1
+                          0.0          0.5               1.0        1.5        2.0       2.5                                             0         1         2       3          4        5       6        7
+
+                                                       AC Voltage (Vrms)                                                                                     Ripple Current (Arms)
+
+
+
+                     Any data in this sheet are subject to change, modify or discontinue without notice.
+                     The data sheets include the typical data for design reference only. If there is any question
+                     regarding the data sheets, please contact our sales personnel or application engineers.
+

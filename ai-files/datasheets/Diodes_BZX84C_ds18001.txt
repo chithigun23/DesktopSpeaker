@@ -1,0 +1,368 @@
+                                                                                                                     BZX84C2V4 - BZX84C51
+                                                                                                      350mW SURFACE MOUNT ZENER DIODE
+
+Features                                                                              Mechanical Data
+    Planar Die Construction                                                             Case: SOT23
+    350mW Power Dissipation                                                             Case Material: Molded Plastic.
+    Zener Voltages from 2.4V - 51V                                                       UL Flammability Classification Rating 94V-0
+    Ideally Suited for Automated Assembly Processes                                     Moisture Sensitivity: Level 1 per J-STD-020
+    Totally Lead-Free & Fully RoHS Compliant (Notes 1 & 2)                              Terminals: Matte Tin Finish Annealed over Alloy 42 Leadframe
+    Halogen and Antimony Free. “Green” Device (Note 3)                                   (Lead Free Plating). Solderable per MIL-STD-202, Method 208
+    Qualified to AEC-Q101 Standards for High Reliability                                Polarity: See Diagram
+                                                                                         Weight: 0.008 grams (Approximate)
+
+
+
+
+                                                             SOT23
+
+
+
+
+                                                          Top View                          Device Schematic
+
+
+Ordering Information (Note 5)
+                 Part Number                                   Compliance                               Case                             Packaging
+              (Type Number)-7-F                                 Standard                               SOT23                         3,000/Tape & Reel
+             (Type Number)Q-7-F                                Automotive                              SOT23                         3,000/Tape & Reel
+             (Type Number)-13-F                                 Standard                               SOT23                         10,000/Tape & Reel
+            (Type Number)Q-13-F                                Automotive                              SOT23                         10,000/Tape & Reel
+*For (Type Number), please see the Electrical Characteristics Table. Example: 6.2V Zener = BZX84C6V2-7-F.
+Notes:     1. No purposely added lead. Fully EU Directive 2002/95/EC (RoHS), 2011/65/EU (RoHS 2) & 2015/863/EU (RoHS 3).compliant.
+           2. See https://www.diodes.com/quality/lead-free/ for more information about Diodes Incorporated’s definitions of Halogen- and Antimony-free, "Green" and
+              Lead-free.
+           3. Halogen- and Antimony-free "Green” products are defined as those which contain <900ppm bromine, <900ppm chlorine (<1500ppm total Br + Cl) and
+              <1000ppm antimony compounds.
+           4. BZX84C2V4-BZX84C39 products manufactured with Date Code OW (week 42, 2009) and newer are built with Green Molding Compound. BZX84C2V4-
+              BZX84C39 products manufactured prior to Date Code OW are built with Non-Green Molding Compound and may contain Halogens or Sb2O3 Fire
+              Retardants. BZX84C43-BZX84C51 products manufactured with Date Code V9 (week 33, 2008) and newer are built with Green Molding Compound.
+              BZX84C43-BZX84C51 products manufactured prior to Date Code V9 are built with Non-Green Molding Compound and may contain Halogens or Sb2O3
+              Fire Retardants.
+           5. For packaging details, go to our website at http://www.diodes.com/products/packages.html.
+
+
+
+
+Marking Information
+
+
+                                  xx = Product Type Marking Code                                                   xx = Product Type Marking Code
+                                       (See Electrical Characteristics Table)                                           (See Electrical Characteristics Table)
+                       YM
+
+
+
+
+            Kxx                   YM = Date Code Marking for Shanghai                                              YM = Date Code Marking for Chengdu
+                                                                                                          YM
+
+
+
+
+                                  Assembly / Test site                                        Kxx                  Assembly / Test site
+                                  Y = Year (ex: Z = 2012)                                                          Y = Year (ex: Z = 2012)
+                                  M = Month (ex: 9 = September)                                                    M = Month (ex: 9 = September)
+
+
+
+Date Code Key
+  Year     1998         …      2008    2009     2010    2011     2012    2013     2014    2015     2016    2017    2018     2019    2020    2021     2022
+  Code       J          …       V       W        X       Y        Z       A        B       C        D       E       F        G       H        I        J
+    Month        Jan         Feb          Mar          Apr         May          Jun          Jul          Aug        Sep           Oct        Nov           Dec
+    Code          1           2            3            4           5            6            7            8          9             O          N             D
+
+
+
+
+BZX84C2V4 - BZX84C51                                                        1 of 5                                                                  February 2018
+Document number: DS18001 Rev. 33 - 2                                    www.diodes.com                                                           © Diodes Incorporated
+                                                                                                               BZX84C2V4 - BZX84C51
+
+Maximum Ratings (@TA = +25°C, unless otherwise specified.)
+                          Characteristic                                           Symbol                     Value                             Unit
+Forward Voltage                                       @ IF = 10mA                    VF                        0.9                               V
+
+
+
+Thermal Characteristics
+                         Characteristic                                            Symbol                     Value                             Unit
+Power Dissipation (Note 6)                                                           PD                        300                              mW
+Power Dissipation (Note 7)                                                           PD                        350                               mW
+Thermal Resistance, Junction to Ambient Air (Note 6)                                RθJA                       417                              °C/W
+Thermal Resistance, Junction to Ambient Air (Note 7)                                RθJA                       357                              °C/W
+Operating and Storage Temperature Range                                            TJ, TSTG                -65 to +150                           °C
+
+
+
+Electrical Characteristics (@TA = +25°C, unless otherwise specified.)
+                                        Zener Voltage                          Maximum Zener               Maximum Reverse               Temperature
+                                           Range                                 Impedance                     Current                    Coefficient
+   Type        Marking                    (Note 8)                                f = 1KHz                     (Note 8)                  @ IZT mV/C
+  Number        Code
+                                       VZ @ IZT                  IZT     ZZT @ IZT            ZZK @ IZK       IR         VR
+                                                                                                                                        Min              Max
+                           Nom (V)      Min (V)    Max (V)     (mA)          ()              ()   (mA)    (µA)         (V)
+ BZX84C2V4        ZB          2.4         2.2        2.6        5.0         100            600      1.0      50           1.0           -3.5               0
+ BZX84C2V7        ZC          2.7         2.5        2.9        5.0         100            600      1.0      20           1.0           -3.5               0
+ BZX84C3V0        ZD          3.0         2.8        3.2        5.0         95             600      1.0      10           1.0           -3.5               0
+ BZX84C3V3        ZE          3.3         3.1        3.5        5.0         95             600      1.0      5.0          1.0           -3.5               0
+ BZX84C3V6        ZF          3.6         3.4        3.8        5.0         90             600      1.0      5.0          1.0           -3.5               0
+ BZX84C3V9        ZG          3.9         3.7        4.1        5.0         90             600      1.0      3.0          1.0           -3.5               0
+ BZX84C4V3        ZH          4.3         4.0        4.6        5.0         90             600      1.0      3.0          1.0           -3.5               0
+ BZX84C4V7        Z1          4.7         4.4        5.0        5.0         80             500      1.0      3.0          2.0           -3.5              0.2
+ BZX84C5V1        Z2          5.1         4.8        5.4        5.0         60             480      1.0      2.0          2.0           -2.7              1.2
+ BZX84C5V6        Z3          5.6         5.2        6.0        5.0         40             400      1.0      1.0          2.0           -2.0              2.5
+ BZX84C6V2        Z4          6.2         5.8        6.6        5.0         10             150      1.0      3.0          4.0            0.4              3.7
+ BZX84C6V8        Z5          6.8         6.4        7.2        5.0         15             80       1.0      2.0          4.0            1.2              4.5
+ BZX84C7V5        Z6          7.5         7.0        7.9        5.0         15             80       1.0      1.0          5.0            2.5              5.3
+ BZX84C8V2        Z7          8.2         7.7        8.7        5.0         15             80       1.0      0.7          5.0            3.2              6.2
+ BZX84C9V1        Z8          9.1         8.5        9.6        5.0         15             100      1.0      0.5          6.0            3.8              7.0
+  BZX84C10        Z9          10          9.4        10.6       5.0         20             150      1.0      0.2          7.0            4.5              8.0
+  BZX84C11        Y1          11         10.4        11.6       5.0         20             150      1.0      0.1          8.0            5.4              9.0
+  BZX84C12        Y2          12         11.4        12.7       5.0         25             150      1.0      0.1          8.0            6.0             10.0
+  BZX84C13        Y3          13         12.4        14.1       5.0         30             170      1.0      0.1          8.0            7.0             11.0
+  BZX84C15        Y4          15         13.8        15.6       5.0         30             200      1.0      0.1         10.5            9.2             13.0
+  BZX84C16        Y5          16         15.3        17.1       5.0         40             200      1.0      0.1         11.2           10.4             14.0
+  BZX84C18        Y6          18         16.8        19.1       5.0         45             225      1.0      0.1         12.6           12.4             16.0
+  BZX84C20        Y7          20         18.8        21.2       5.0         55             225      1.0      0.1         14.0           14.4             18.0
+  BZX84C22        Y8          22         20.8        23.3       5.0         55             250      1.0      0.1         15.4           16.4               -
+  BZX84C24        Y9          24         22.8        25.6       5.0         70             250      1.0      0.1         16.8           18.4               -
+  BZX84C27        YA          27         25.1        28.9       2.0         80             300      0.5      0.1         18.9           21.4               -
+  BZX84C30        YB          30         28.0        32.0       2.0         80             300      0.5      0.1         21.0           24.4               -
+  BZX84C33        YC          33         31.0        35.0       2.0         80             325      0.5      0.1         23.1           27.4               -
+  BZX84C36        YD          36         34.0        38.0       2.0         90             350      0.5      0.1         25.2           30.4               -
+  BZX84C39        YE          39         37.0        41.0       2.0         130            350      0.5      0.1         27.3           33.4               -
+  BZX84C43        YF          43         40.0        46.0       2.0         150            375      0.5      0.1         30.1           37.6               -
+  BZX84C47        YG          47         44.0        50.0       2.0         170            375      0.5      0.1         32.9           42.0               -
+  BZX84C51        YH          51         48.0        54.0       2.0         180            400      0.5      0.1         35.7           46.6               -
+Notes:    6. Device mounted on FR-4 PC board with recommended pad layout, which can be found on our website at http://www.diodes.com.
+          7. Valid provided the terminals are kept at ambient temperature.
+          8. Short duration pulse test used to minimize self-heating effect.
+
+BZX84C2V4 - BZX84C51                                                   2 of 5                                                                    February 2018
+Document number: DS18001 Rev. 33 - 2                               www.diodes.com                                                              © Diodes Incorporated
+                                                                                                                                                                                                            BZX84C2V4 - BZX84C51
+
+                                         500                                                                                                                           50
+            PD, POWER DISSIPATION (mW)
+
+
+                                         400                                                                                                                           40
+
+
+
+
+                                                                                                                                        IZ, ZENER CURRENT (mA)
+                                         300                                                                                                                           30
+
+                                                         Note 6
+                                                                                   Note 7
+                                         200                                                                                                                           20
+
+
+
+                                         100                                                                                                                           10
+
+
+
+                                           0                                                                                                                                    0
+                                               0                                100                                       200                                                        0     1        2 3    4    5   6       8     9 10
+                                                                                                                                                                                                                        7
+                                                                     TA, Ambient Temperature, (°C)
+                                                                                                                                                                                                    VZ, ZENER VOLTAGE (V)
+                                                                      Fig. 1 Power Derating Curve
+                                                                                                                                                                                         Fig. 2 Typical Zener Breakdown Characteristics
+
+                                         30                                                                                                                                     10
+                                                   Tj = 25°C      C10                                                                                                                                                    C47
+                                                                                                                                                                                          TJ = 25°C
+                                                                                                                                                                                                                   C43     C51
+                                                                      C12
+                                                                                                                                                                                 8
+                                                                                                                                            IZ, ZENER CURRENT (mA)
+              IZ, ZENER CURRENT (mA)
+
+
+
+
+                                                                            C15
+                                         20
+                                                                                                                                                                                 6
+
+                                                                                  C18
+                                                                                                        Test current IZ
+                                                                                                             2mA                                                                 4
+                                                                                          C22
+                                         10                                                                                                                                               Test Current IZ
+                                                                                                  C27
+                                                   Test current IZ                                                                                                                             2mA
+                                                        5mA                                              C33      C36
+                                                                                                                                                                                 2
+                                                                                                                     C39
+
+
+
+
+                                           0                                                                                                                                     0
+                                                                                                                                                                                     0         10    20     30     40   50     60      70
+                                               0            10           20        30            40                                                                                                 VZ, ZENER VOLTAGE (V)
+                                                              V Z, ZENER VOLTAGE (V)                                                                                                     Fig. 4 Typical Zener Breakdown Characteristics
+                                                   Fig. 3 Typical Zener Breakdown Characteristics
+
+              1,000                                                                                                                                                100
+                                                                                                            TJ = 25°C
+     CT, TOTAL CAPACITANCE (pF)
+
+
+
+
+                                                                                                                                                   CT, TOTAL CAPACITANCE (pF)
+
+
+
+
+                                                                      VR = 1V
+
+                                                        VR = 2V
+
+
+
+
+                                  100                                                                                                                                           10
+                                                                                        VR = 1V
+
+
+
+
+                                                                            VR = 2V
+
+
+
+
+                                         10                                                                                                                                      1
+                                           1                          10                     100                                                                                     10                                            100
+                                                     VZ, NOMINAL ZENER VOLTAGE (V)                                                                                                          VZ, NOMINAL ZENER VOLTAGE (V)
+                                         Fig. 5 Typical Total Capacitance vs. Nominal Zener Voltage                                                                             Fig. 6 Typical Total Capacitance vs. Nominal Zener Voltage
+
+
+
+BZX84C2V4 - BZX84C51                                                                                                            3 of 5                                                                                             February 2018
+Document number: DS18001 Rev. 33 - 2                                                                                        www.diodes.com                                                                                       © Diodes Incorporated
+                                                                                                  BZX84C2V4 - BZX84C51
+
+
+Package Outline Dimensions
+Please see http://www.diodes.com/package-outlines.html for the latest version.
+
+
+                                                               All 7°
+                                    H
+                                                                             GAUGE PLANE                 SOT23
+                                                                                 0.25         Dim      Min   Max    Typ
+                                                 J                                             A      0.37   0.51   0.40
+         K1    K
+                                                                                               B      1.20   1.40   1.30
+                                                                                               C      2.30   2.50   2.40
+                                                                                    a
+                                                                                               D      0.89   1.03 0.915
+                                    A            M
+                                                                                               F      0.45   0.60 0.535
+                                                           L                            L1     G      1.78   2.05   1.83
+                                                                                               H      2.80   3.00   2.90
+                                                                                                J     0.013 0.10    0.05
+                                                                                               K      0.890 1.00 0.975
+           C       B                                                                          K1      0.903 1.10 1.025
+                                                                                               L      0.45   0.61   0.55
+                                                                                               L1     0.25   0.55   0.40
+                                                                                               M      0.085 0.150 0.110
+                                        D                                                       a       0°    8°     --
+                                                                                                 All Dimensions in mm
+                            F       G
+
+
+
+
+Suggested Pad Layout
+Please see http://www.diodes.com/package-outlines.html for the latest version.
+
+
+
+
+                                Y
+                                                                                             Dimensions   Value (in mm)
+                                                                                                 C             2.0
+                                                                                                 X             0.8
+                       Y1                              C
+                                                                                                 X1           1.35
+                                                                                                 Y             0.9
+                                                                                                 Y1            2.9
+
+
+
+                                X           X1
+
+
+
+
+ BZX84C2V4 - BZX84C51                                                       4 of 5                                           February 2018
+ Document number: DS18001 Rev. 33 - 2                                   www.diodes.com                                     © Diodes Incorporated
+                                                                                                         BZX84C2V4 - BZX84C51
+
+
+
+                                                              IMPORTANT NOTICE
+
+DIODES INCORPORATED MAKES NO WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, WITH REGARDS TO THIS DOCUMENT,
+INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+(AND THEIR EQUIVALENTS UNDER THE LAWS OF ANY JURISDICTION).
+
+Diodes Incorporated and its subsidiaries reserve the right to make modifications, enhancements, improvements, corrections or other changes
+without further notice to this document and any product described herein. Diodes Incorporated does not assume any liability arising out of the
+application or use of this document or any product described herein; neither does Diodes Incorporated convey any license under its patent or
+trademark rights, nor the rights of others. Any Customer or user of this document or products described herein in such applications shall assume
+all risks of such use and will agree to hold Diodes Incorporated and all the companies whose products are represented on Diodes Incorporated
+website, harmless against all damages.
+
+Diodes Incorporated does not warrant or accept any liability whatsoever in respect of any products purchased through unauthorized sales channel.
+Should Customers purchase or use Diodes Incorporated products for any unintended or unauthorized application, Customers shall indemnify and
+hold Diodes Incorporated and its representatives harmless against all claims, damages, expenses, and attorney fees arising out of, directly or
+indirectly, any claim of personal injury or death associated with such unintended or unauthorized application.
+
+Products described herein may be covered by one or more United States, international or foreign patents pending. Product names and markings
+noted herein may also be covered by one or more United States, international or foreign trademarks.
+
+This document is written in English but may be translated into multiple languages for reference. Only the English version of this document is the
+final and determinative format released by Diodes Incorporated.
+
+                                                                 LIFE SUPPORT
+
+Diodes Incorporated products are specifically not authorized for use as critical components in life support devices or systems without the express
+written approval of the Chief Executive Officer of Diodes Incorporated. As used herein:
+
+A. Life support devices or systems are devices or systems which:
+
+          1. are intended to implant into the body, or
+
+          2. support or sustain life and whose failure to perform when properly used in accordance with instructions for use provided in the
+             labeling can be reasonably expected to result in significant injury to the user.
+
+B. A critical component is any component in a life support device or system whose failure to perform can be reasonably expected to cause the
+   failure of the life support device or to affect its safety or effectiveness.
+
+Customers represent that they have all necessary expertise in the safety and regulatory ramifications of their life support devices or systems, and
+acknowledge and agree that they are solely responsible for all legal, regulatory and safety-related requirements concerning their products and any
+use of Diodes Incorporated products in such safety-critical, life support devices or systems, notwithstanding any devices- or systems-related
+information or support that may be provided by Diodes Incorporated. Further, Customers must fully indemnify Diodes Incorporated and its
+representatives against any damages arising out of the use of Diodes Incorporated products in such safety-critical, life support devices or systems.
+
+Copyright © 2018, Diodes Incorporated
+
+www.diodes.com
+
+
+
+
+BZX84C2V4 - BZX84C51                                                5 of 5                                                           February 2018
+Document number: DS18001 Rev. 33 - 2                            www.diodes.com                                                    © Diodes Incorporated
+

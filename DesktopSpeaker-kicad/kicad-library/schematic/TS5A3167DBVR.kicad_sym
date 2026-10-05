@@ -1,0 +1,25 @@
+(kicad_symbol_lib
+  (version 20231120)
+  (generator "kicad_symbol_editor")
+  (symbol "TS5A3167DBVR"
+    (pin_names (offset 1.016))
+    (exclude_from_sim no) (in_bom yes) (on_board yes)
+    (property "Reference" "U" (at 0 -12.7 0) (effects (font (size 1.27 1.27))))
+    (property "Value" "TS5A3167DBVR" (at 0 -15.24 0) (effects (font (size 1.27 1.27))))
+    (property "Footprint" "DesktopSpeaker:TS5A3167DBVR" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes)))
+    (property "Datasheet" "https://www.ti.com/lit/ds/symlink/ts5a3167.pdf" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes)))
+    (property "Description" "1:1 bidirectional analog switch; active-low, powered-off isolation, SOT-23-5" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes)))
+    (property "MPN" "TS5A3167DBVR" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes)))
+    (property "LCSC" "C128416" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes)))
+    (symbol "TS5A3167DBVR_0_1"
+      (rectangle (start -7.62 6.35) (end 7.62 -6.35) (stroke (width 0.254) (type default)) (fill (type background)))
+    )
+    (symbol "TS5A3167DBVR_1_1"
+      (pin bidirectional line (at -12.7 0 0) (length 5.08) (name "NC" (effects (font (size 1.0 1.0)))) (number "1" (effects (font (size 1.0 1.0)))))
+      (pin bidirectional line (at 12.7 0 180) (length 5.08) (name "COM" (effects (font (size 1.0 1.0)))) (number "2" (effects (font (size 1.0 1.0)))))
+      (pin power_in line (at 0 -10.16 90) (length 3.81) (name "GND" (effects (font (size 1.0 1.0)))) (number "3" (effects (font (size 1.0 1.0)))))
+      (pin input line (at -12.7 -2.54 0) (length 5.08) (name "IN" (effects (font (size 1.0 1.0)))) (number "4" (effects (font (size 1.0 1.0)))))
+      (pin power_in line (at 0 10.16 270) (length 3.81) (name "VCC" (effects (font (size 1.0 1.0)))) (number "5" (effects (font (size 1.0 1.0)))))
+    )
+  )
+)

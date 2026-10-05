@@ -1,0 +1,244 @@
+{
+  "fetched_utc_date": "2026-10-02",
+  "STUSB4500QTR": {
+    "manufacturer": "STMicroelectronics",
+    "mpn": "STUSB4500QTR",
+    "lcsc_id": "C2678061",
+    "package": "QFN-24-EP 4x4 mm",
+    "lcsc_stock_observations": {
+      "stock_units_page_open": "4447",
+      "price_usd_1_plus": "1.8317",
+      "prices_usd": {
+        "10+": 1.4908,
+        "30+": 1.3447,
+        "100+": 1.1624,
+        "1000+": 1.0325,
+        "2000+": 1.0163
+      },
+      "note": "Stock indexed inconsistently elsewhere (1798 and 5628); volatile/unverified at purchase."
+    },
+    "lcsc_url": "https://www.lcsc.com/product-detail/USB-ICs_STMicroelectronics_C2678061.html",
+    "st_product_url": "https://www.st.com/en/interfaces-and-transceivers/stusb4500.html",
+    "datasheet_path": "/home/chithi/Desktop/DesktopSpeaker/datasheets/STUSB4500.pdf",
+    "datasheet_official_url": "https://www.st.com/resource/en/datasheet/stusb4500.pdf",
+    "datasheet_local_revision": "DS12499 rev3 hosted by SparkFun mirror; current ST rev8 was web-verified but direct download timed out",
+    "symbol_path": "/home/chithi/Desktop/DesktopSpeaker/DesktopSpeaker-kicad/kicad-library/schematic/STUSB4500QTR.kicad_sym",
+    "footprint_path": "/home/chithi/Desktop/DesktopSpeaker/DesktopSpeaker-kicad/kicad-library/footprint/STUSB4500QTR.kicad_mod",
+    "step_path": "/home/chithi/Desktop/DesktopSpeaker/DesktopSpeaker-kicad/kicad-library/3d/STUSB4500QTR.step",
+    "step_source": "JLCEDA/EasyEDA Official Library via LCSC C2678061 (EasyEDA converter); STEP model source file is SolidWorks 2021, dated 2024-07-22",
+    "step_bbox_mm": [
+      [
+        -2.010000000000005,
+        2.0100000000000153
+      ],
+      [
+        -2.0100000000000007,
+        2.01000000000001
+      ],
+      [
+        0.0,
+        0.9201
+      ]
+    ],
+    "package_datasheet_mm": [
+      4.0,
+      4.0
+    ],
+    "pins": [
+      [
+        1,
+        "CC1DB"
+      ],
+      [
+        2,
+        "CC1"
+      ],
+      [
+        3,
+        "NC"
+      ],
+      [
+        4,
+        "CC2"
+      ],
+      [
+        5,
+        "CC2DB"
+      ],
+      [
+        6,
+        "RESET"
+      ],
+      [
+        7,
+        "SCL"
+      ],
+      [
+        8,
+        "SDA"
+      ],
+      [
+        9,
+        "DISCH"
+      ],
+      [
+        10,
+        "GND"
+      ],
+      [
+        11,
+        "ATTACH"
+      ],
+      [
+        12,
+        "ADDR0"
+      ],
+      [
+        13,
+        "ADDR1"
+      ],
+      [
+        14,
+        "POWER_OK3"
+      ],
+      [
+        15,
+        "GPIO"
+      ],
+      [
+        16,
+        "VBUS_EN_SNK"
+      ],
+      [
+        17,
+        "A_B_SIDE"
+      ],
+      [
+        18,
+        "VBUS_VS_DISCH"
+      ],
+      [
+        19,
+        "ALERT"
+      ],
+      [
+        20,
+        "POWER_OK2"
+      ],
+      [
+        21,
+        "VREG_1V2"
+      ],
+      [
+        22,
+        "VSYS"
+      ],
+      [
+        23,
+        "VREG_2V7"
+      ],
+      [
+        24,
+        "VDD"
+      ],
+      [
+        "EP",
+        "GND"
+      ]
+    ]
+  },
+  "STL9P3LLH6": {
+    "manufacturer": "STMicroelectronics",
+    "mpn": "STL9P3LLH6",
+    "lcsc_id": "C2969828",
+    "package": "PowerFLAT 3.3x3.3 (8-pin, thermal pad tied to drain pad 5)",
+    "lcsc_stock_observations": {
+      "opened_product_page_units": "1891",
+      "indexed_recent_locale_units": "2051",
+      "price_usd_1_plus_page": "1.0781",
+      "note": "Current LCSC listing identifies ST exact SKU C2969828; counts vary by page snapshot and must be treated volatile."
+    },
+    "lcsc_url": "https://www.lcsc.com/product-detail/MOSFETs_STMicroelectronics-STL9P3LLH6_C2969828.html",
+    "st_product_url": "https://www.st.com/en/power-transistors/stl9p3llh6.html",
+    "datasheet_path": "/home/chithi/Desktop/DesktopSpeaker/datasheets/STL9P3LLH6.pdf",
+    "datasheet_official_url": "https://www.st.com/resource/en/datasheet/stl9p3llh6.pdf",
+    "datasheet_local_revision": "DS10145 rev3 (Feb 2018), ST-authored PDF mirror; validated against official ST-hosted current PDF content",
+    "absolute_ratings": {
+      "VDS": -30,
+      "VGS": "\u00b120 V",
+      "ID": -9,
+      "RDSon_max_mohm": 15
+    },
+    "pins": [
+      [
+        "S",
+        1
+      ],
+      [
+        "S",
+        2
+      ],
+      [
+        "S",
+        3
+      ],
+      [
+        "G",
+        4
+      ],
+      [
+        "D",
+        5
+      ],
+      [
+        "D",
+        6
+      ],
+      [
+        "D",
+        7
+      ],
+      [
+        "D",
+        8
+      ]
+    ],
+    "symbol_path": "/home/chithi/Desktop/DesktopSpeaker/DesktopSpeaker-kicad/kicad-library/schematic/STL9P3LLH6.kicad_sym",
+    "footprint_path": "/home/chithi/Desktop/DesktopSpeaker/DesktopSpeaker-kicad/kicad-library/footprint/STL9P3LLH6.kicad_mod",
+    "step_path": "/home/chithi/Desktop/DesktopSpeaker/DesktopSpeaker-kicad/kicad-library/3d/STL9P3LLH6.step",
+    "footprint_origin": "JLCEDA/EasyEDA Official Library for LCSC C2969828 via easyeda2kicad. The imported generic package included thermal pad 9; re-numbered the exposed pad and its two side tabs to pad 5 (drain). The official ST datasheet shows physical pins 1-8 and drain group 5-8; its recommended footprint has the exposed thermal land. No pin 9 was added to the schematic symbol.",
+    "step_origin": "STEP AP214 from JLCEDA/EasyEDA part library, SolidWorks 2018, file label WILLSEMI_WNM3057XXXX; used as a generic package solid only after comparing dimensional envelope to ST mechanical limits.",
+    "step_bbox_mm": [
+      [
+        -1.7249999999999992,
+        1.7249999999999992
+      ],
+      [
+        -1.6500000000000137,
+        1.650000000000021
+      ],
+      [
+        -0.013713062316588724,
+        0.81
+      ]
+    ],
+    "st_package_limits_mm": {
+      "width": [
+        3.1,
+        3.5
+      ],
+      "length": [
+        3.1,
+        3.5
+      ],
+      "height": [
+        0.7,
+        0.9
+      ]
+    },
+    "source_caution": "Converter selected a library package alias from another maker. Its STEP dimensions are within ST package tolerance, but do not represent a vendor-specific top marking.",
+    "footprint_extra_pads": {
+      "pad5_duplicates": "The exposed thermal land is represented by copper pad number 5 (same net as the manufacturer drain pin 5). ST numbers only pins 1-8; there is no separate symbol pin 9."
+    }
+  }
+}

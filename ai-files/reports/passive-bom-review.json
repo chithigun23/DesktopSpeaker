@@ -1,0 +1,8 @@
+{
+  "missing_active_references": [],
+  "fit_sum_rounded": 68.7,
+  "order_sum_rounded": 87.96,
+  "duplicate_mpn_order_issues": [],
+  "exported_formula_errors": [],
+  "coverage_netlist": "power-passives-final.xml"
+}
