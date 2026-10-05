@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-05",
+  "scope": "Candidate-only correction; no active library or project assets registered.",
+  "source": "ai-files/datasheets/CSD17579Q3A.pdf, printed page 9, section 7.3 Q3A Recommended Stencil Pattern (TI SLPS527A).",
+  "package_datum": "TI package centerline is local X=0; candidate F.Fab body outline and side-pad array are centered on this origin. The exposed drain-land anchor at X=+0.3275 mm is offset and is not the package centerline.",
+  "drawing_dimensions_mm": {
+    "left_aperture_center_from_package_centerline": -0.208,
+    "aperture_column_pitch": 0.905,
+    "right_aperture_center_from_package_centerline": 0.697,
+    "aperture_size": [
+      0.705,
+      1.125
+    ],
+    "row_centers_y": [
+      -0.6625,
+      0.6625
+    ],
+    "row_pitch": 1.325
+  },
+  "previous_x_centers_mm": [
+    -0.125,
+    0.78
+  ],
+  "corrected_x_centers_mm": [
+    -0.208,
+    0.697
+  ],
+  "change_mm": -0.083,
+  "unchanged_geometry": "Aperture column pitch, aperture size, row centers/pitch, copper land anchors and physical pad numbering are unchanged.",
+  "assets_updated": [
+    "ai-files/candidates/CSD17579Q3A_DNH0008A.kicad_mod",
+    "ai-files/candidates/CSD17579Q3A-footprint-preview.kicad_pcb",
+    "ai-files/reports/bq25792-library-review.json"
+  ],
+  "validation": "KiCad 10.0.6 CLI reloaded and exported the corrected preview board to SVG. Rendered preview visually inspected. No DRC or active-board edits performed.",
+  "preview": "ai-files/reports/CSD17579Q3A_footprint_zoom.svg"
+}

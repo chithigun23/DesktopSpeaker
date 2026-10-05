@@ -39,4 +39,5 @@
   (lib (name "TPS7B8450QWDRBRQ1") (type "KiCad") (uri "${KIPRJMOD}/kicad-library/schematic/TPS7B8450QWDRBRQ1.kicad_sym") (options "") (descr "Raw USB PD VDD LDO"))
   (lib (name "BQ25792RQMR") (type "KiCad") (uri "${KIPRJMOD}/kicad-library/schematic/BQ25792RQMR.kicad_sym") (options "") (descr "5-20V capable 1S buck-boost charger"))
   (lib (name "TPS2116DRLR") (type "KiCad") (uri "${KIPRJMOD}/kicad-library/schematic/TPS2116DRLR.kicad_sym") (options "") (descr "USB and battery logic priority mux"))
+  (lib (name "CSD17579Q3A") (type "KiCad") (uri "${KIPRJMOD}/kicad-library/schematic/CSD17579Q3A.kicad_sym") (options "") (descr "External charger ship FET, TI DNH0008A"))
 )

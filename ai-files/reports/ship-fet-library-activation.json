@@ -1,0 +1,13 @@
+{
+  "native_pin_stacks_verified": {
+    "4": "G",
+    "[1-3]": "S",
+    "[5-9]": "D"
+  },
+  "pads_1_to_9_verified": true,
+  "TI_copper_anchor_verified": true,
+  "TI_stencil_windows_verified": true,
+  "TI_STEP_hash_verified": true,
+  "model_alignment_evidence": "csd17579-step-parts.json",
+  "active_placement": false
+}

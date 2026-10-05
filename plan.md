@@ -257,3 +257,5 @@ Fresh review found15 expected power net relations correct,101 component refs cov
 ### Auxiliary logic integration (2026-10-05)
 
 U20 TPS2116DRLR now selects U19 USB_AUX_5V or SYS_RAW into U12. R124/R125 180k/100k set nominal 2.8 V priority threshold; C124/C125 bypass the inputs. Preserve SYS_RAW below 5.5 V recommended maximum (6 V absolute); replacement charger must enforce the selected 1S configuration. Fast input collapse with alternate supply below 2.5 V needs switchover/BOR qualification. The physical gauge, storage switches and other power circuits are unchanged. Active USB PD/charger remains 5/9 V only pending reviewed TPS25730D/BQ25792 integration.
+
+Replacement sink-bulk correction: TPS25730 datasheet table6.4 specifies47uF nominal and100uF maximum, with no47uF minimum. Use the charger shared input bank; remove extra33uF polymer placeholder. Verify converter effective capacitance minima, shared maximum and startup/transient behavior rather than adding unneeded bulk.
