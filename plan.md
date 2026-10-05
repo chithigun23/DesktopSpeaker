@@ -329,3 +329,7 @@ Quick mechanical envelope review: `ai-files/reports/mechanical-fit-rough-2026-10
 ## Hand-solder passive repackage (2026-10-06)
 - [x] Policy: all resistors/capacitors on hand-solder footprints, 0402 by default; 0805 only for large or high-voltage capacitors (10/22/4.7 uF, 50 V 1 uF, 0.68 uF filter, C265). 262 passives repackaged, netlist identical, ERC 19, BOM merged by MPN. Details and FLAGS (X5R derating on VBUS/PMID/PVDD, unverified MPNs/LCSC codes): `ai-files/reports/passive-repackage-2026-10-06.md`.
 - [ ] Open before ordering: verify stock/LCSC codes of the new 0402/0805 MPNs; decide extra parallel capacitors on VBUS/PMID/PVDD at layout.
+
+## PCB layout (2026-10-06, user-authorised: placement only)
+- [x] `DesktopSpeaker-kicad/DesktopSpeaker.kicad_pcb`: 114 x 92 mm, 322 parts top side, 4 M3 holes, BM83 antenna keepout, no routing/zones. Method/rules/DRC/open concerns: `ai-files/reports/pcb-placement-2026-10-06.md`; regenerate with `ai-files/helpers/build_pcb.sh`, check with `pcb_check.sh`. CAD rebuilt from the layout (0 unintended overlaps).
+- [ ] Review placement, then routing/stackup/planes, test points, silk slots for 5 refs, footprint clearance fixes (J1/U11/U19/SW100) are NOT started.

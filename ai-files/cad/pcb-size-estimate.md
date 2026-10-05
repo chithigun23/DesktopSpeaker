@@ -1,3 +1,5 @@
+> SUPERSEDED 2026-10-06: the real placement is 114 x 92 mm (`../reports/pcb-placement-2026-10-06.md`); the CAD now reads `../pcb/layout.json`. Text below is the original estimate.
+
 # PCB size estimate (2026-10-06) - ESTIMATE, no PCB layout exists
 
 Method (script `pcb_estimate.py`, input `work/net.xml` = `kicad-cli sch export netlist` of the root sheet):

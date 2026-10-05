@@ -32,6 +32,14 @@ P = dict(
     pcb_w=100.0, pcb_d=66.0, pcb_t=1.6, pcb_cx=0.0, pcb_cy=123.5, pcb_hole=(47.0, 29.5), standoff=5.0,
     grille_t=0.8, hole_d=2.0, hole_pitch=3.0,
 )
+# PCB placement from the KiCad board generator (ai-files/helpers/build_pcb.py -> ai-files/pcb/layout.json); falls back to the estimate
+LJ = None
+if os.path.exists(ROOT + 'ai-files/pcb/layout.json'):
+    LJ = json.load(open(ROOT + 'ai-files/pcb/layout.json'))
+    P.update(pcb_w=LJ['board']['w'], pcb_d=LJ['board']['d'], pcb_cy=LJ['board']['centre_cad_y'])
+P['pcb_holes'] = [(h['u'], h['v']) for h in LJ['holes']] if LJ else [(a * 47.0, b * 29.5) for a, b in ((1, 1), (1, -1), (-1, 1), (-1, -1))]
+def PL(ref, key, default=None):
+    return LJ['parts'][ref][key] if LJ and ref in LJ['parts'] else default
 Wd, Hd, Dd, t = P['W'], P['H'], P['D'], P['wall']
 YB = Dd - t                                   # rear end of the shell (lid sits at YB..Dd)
 ZB_IN, ZT_IN = t, Hd - t
@@ -72,9 +80,8 @@ for i in range(4):
     r = P['w_bc'] / 2
     sites.append(dict(kind='woof', name='WoofScrew_%d' % (i + 1), p=V(P['woof_cx'] + r * math.cos(ang), P['woof_cy'] + r * math.sin(ang), t + P['ring_t']),
                       axis=V(0, 0, -1), head_off=P['w_flange_t'], pilot=6.5, stack='flange'))
-hx, hy = P['pcb_hole']
-for i, (a, b) in enumerate(((1, 1), (1, -1), (-1, 1), (-1, -1))):
-    sites.append(dict(kind='pcb', name='PcbScrew_%d' % (i + 1), p=V(P['pcb_cx'] + a * hx, P['pcb_cy'] + b * hy, RB + P['boss_h']),
+for i, (hu, hv) in enumerate(P['pcb_holes']):
+    sites.append(dict(kind='pcb', name='PcbScrew_%d' % (i + 1), p=V(P['pcb_cx'] + hu, P['pcb_cy'] + hv, RB + P['boss_h']),
                       axis=V(0, 0, -1), head_off=P['standoff'] + P['pcb_t'], pilot=6.5, stack='pcb'))
 lid_pts = [(-74, 7.5), (74, 7.5), (-74, 92.5), (74, 92.5), (0, 92.5), (-50, 7.5), (50, 7.5)]
 for i, (x, z) in enumerate(lid_pts):
@@ -189,11 +196,12 @@ P['pcb_cy'] = pcy
 for s in sites:
     if s['kind'] == 'pcb':
         pass
-board = box(pcx - P['pcb_w'] / 2, pcx + P['pcb_w'] / 2, pcy - P['pcb_d'] / 2, pcy + P['pcb_d'] / 2, PCB_BOT, PCB_TOP)
+BU0, BU1 = (LJ['board']['u0'], LJ['board']['u1']) if LJ else (-P['pcb_w'] / 2, P['pcb_w'] / 2)   # u = CAD X (layout frame origin = enclosure centre)
+board = box(pcx + BU0, pcx + BU1, pcy - P['pcb_d'] / 2, pcy + P['pcb_d'] / 2, PCB_BOT, PCB_TOP)
 for s in sites:
     if s['kind'] == 'pcb':
         board = board.cut(cyl(1.6, 3, V(s['p'].x, s['p'].y, PCB_BOT - 1)))
-add('PCB_estimated_100x66x1.6', 'pcb', board, (0.05, 0.35, 0.15))
+add('PCB_%gx%gx1.6' % (P['pcb_w'], P['pcb_d']), 'pcb', board, (0.05, 0.35, 0.15))
 
 YF_USB, YF_JACK = 158.5, 156.6
 placed = {}
@@ -220,6 +228,8 @@ LAYOUT = [
     ('L1', 26.0, -5.0, 0.0), ('L2', 26.0, 6.0, 0.0), ('L3', 33.0, 6.0, 0.0), ('U4', 26.0, 14.0, 0.0), ('U11', 33.0, 14.0, 0.0),
     ('J4', 40.0, 17.0, 0.0), ('J6', 45.5, 17.0, 0.0), ('J8', 36.0, 25.0, 0.0),
 ]
+if LJ:
+    LAYOUT = [(ref, PL(ref, 'cy_u', u), PL(ref, 'cy_v', v), float(PL(ref, 'rot', yaw))) for ref, u, v, yaw in LAYOUT]
 standin_pcb = []
 for ref, u, v, yaw in LAYOUT:
     fp = nl.get(ref, '')
@@ -233,12 +243,12 @@ for ref, u, v, yaw in LAYOUT:
 
 # connectors with raw-origin placement (pads/edge assumptions documented in README)
 j1 = fp_oriented(nl['J1'], ignore_rotz=True)
-j1 = tr(j1, V(pcx - 18.0, YF_USB - 5.1, PCB_TOP)); placed['J1'] = j1
+j1 = tr(j1, V(pcx + PL('J1', 'origin_u', -18.0), pcy + PL('J1', 'origin_v', YF_USB - 5.1 - pcy), PCB_TOP)); placed['J1'] = j1
 add('PCB_J1_USB-C', 'pcb_parts', j1, (0.7, 0.7, 0.75))
-for ref, u in (('J2', -2.0), ('J3', 14.0)):
+for ref, u in (('J2', PL('J2', 'origin_u', -2.0)), ('J3', PL('J3', 'origin_u', 14.0))):
     j = fp_oriented(nl[ref], ignore_rotz=True)
     j = tr(j, V(0, 0, 0), Rot(-90, 0, 0))                    # raw -X (jack bore side) -> +Y (rear)
-    j = tr(j, V(pcx + u, YF_JACK - 9.1, PCB_TOP)); placed[ref] = j
+    j = tr(j, V(pcx + u, pcy + PL(ref, 'origin_v', YF_JACK - 9.1 - pcy), PCB_TOP)); placed[ref] = j
     add('PCB_%s_3.5mm_jack' % ref, 'pcb_parts', j, (0.1, 0.1, 0.1))
 
 # parametric stand-ins (no STEP in library): J5 Micro-Fit, J9-J11 JST VH 2-pos, SW100 tact switch
@@ -247,11 +257,15 @@ def sbox(ref, u, v, du, dv, dz, label, color):
     placed[ref] = s; standin_pcb.append(ref)
     add('PCB_%s_%s' % (ref, label), 'pcb_parts', s, color)
     return s
-sbox('J5', 46.0, 3.0, 11.0, 13.66, 9.0, 'MicroFit3_standin', (0.9, 0.9, 0.85))
+def rdim(ref, dflt):
+    r = PL(ref, 'rect')
+    return (r[2] - r[0], r[3] - r[1]) if r else dflt
+sbox('J5', PL('J5', 'cy_u', 46.0), PL('J5', 'cy_v', 3.0), rdim('J5', (11.0, 13.66))[0], rdim('J5', (11.0, 13.66))[1], 9.0, 'MicroFit3_standin', (0.9, 0.9, 0.85))
 for ref, v in (('J9', -27.0), ('J10', -17.5), ('J11', -8.0)):
-    sbox(ref, -38.0, v, 9.27, 9.5, 10.9, 'JST_B2P-VH_standin', (0.95, 0.95, 0.9))
-sbox('SW100', 30.0, 30.0, 4.6, 5.0, 3.5, 'tact_standin', (0.3, 0.3, 0.3))
-plunger = cyl(1.25, 159.0 - 156.5 + 0.0, V(pcx + 30.0, 156.5, PCB_TOP + 1.75), V(0, 1, 0))
+    sbox(ref, PL(ref, 'cy_u', -38.0), PL(ref, 'cy_v', v), 9.27, 9.5, 10.9, 'JST_B2P-VH_standin', (0.95, 0.95, 0.9))
+SW_U = PL('SW100', 'origin_u', 30.0)
+sbox('SW100', SW_U, PL('SW100', 'cy_v', 30.0), 4.6, 5.0, 3.5, 'tact_standin', (0.3, 0.3, 0.3))
+plunger = cyl(1.25, 159.0 - 156.5 + 0.0, V(pcx + SW_U, 156.5, PCB_TOP + 1.75), V(0, 1, 0))
 add('PCB_SW100_plunger', 'pcb_parts', plunger, (0.8, 0.1, 0.1))
 
 # ------------------------------------------------------------------ SW101 rocker (panel mount, stand-in) and speaker-wire/battery harness (schematic)
@@ -260,7 +274,8 @@ rocker = fuse([cyl(9.8, 22.0, V(rx, YB - 19.0 + 0.0, rz), V(0, 1, 0)).cut(Part.m
                cyl(11.5, 1.5, V(rx, Dd, rz), V(0, 1, 0))])
 add('SW101_rocker_D20_standin', 'hardware', rocker, (0.6, 0.1, 0.1))
 hz = bz
-hp = [(pcx + 53.0, pcy + 3.0, PCB_TOP + 4.5), (66.0, pcy + 3.0, PCB_TOP + 4.5), (66.0, pcy + 3.0, hz), (66.0, by, hz), (39.0, by, hz)]
+J5U, J5V = PL('J5', 'cy_u', 46.0), PL('J5', 'cy_v', 3.0)
+hp = [(pcx + (PL('J5', 'rect')[2] + 2.0 if LJ else J5U + 3.0), pcy + J5V, PCB_TOP + 4.5), (66.0, pcy + J5V, PCB_TOP + 4.5), (66.0, pcy + J5V, hz), (66.0, by, hz), (39.0, by, hz)]
 hs = []
 for a, b in zip(hp[:-1], hp[1:]):
     d = V(b[0] - a[0], b[1] - a[1], b[2] - a[2]); L = d.Length
@@ -277,7 +292,7 @@ lcuts.append(box((bb.XMin + bb.XMax) / 2 - 5.1, (bb.XMin + bb.XMax) / 2 + 5.1, Y
 for ref in ('J2', 'J3'):
     bb = placed[ref].BoundBox
     lcuts.append(cyl(4.2, t + 2, V((bb.XMin + bb.XMax) / 2, YB - 1, PCB_TOP + 2.5), V(0, 1, 0)))
-lcuts.append(cyl(2.5, t + 2, V(pcx + 30.0, YB - 1, PCB_TOP + 1.75), V(0, 1, 0)))
+lcuts.append(cyl(2.5, t + 2, V(pcx + SW_U, YB - 1, PCB_TOP + 1.75), V(0, 1, 0)))
 lcuts.append(cyl(10.1, t + 2, V(rx, YB - 1, rz), V(0, 1, 0)))
 lid = box(-Wd / 2, Wd / 2, YB, Dd, 0, Hd).cut(fuse(lcuts))
 add('Lid_rear', 'lid', lid, (0.35, 0.37, 0.42))

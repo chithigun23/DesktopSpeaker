@@ -38,7 +38,7 @@ Pilot holes are modelled at 4.6 mm (= insert OD) so inserts show no overlap; rea
 - KiCad STEP positions: footprint model offset/rotation were applied; models were then re-centred in the layout. Connector rear-edge overhang (USB-C 2 mm past the board edge, jacks flush) is an assumption.
 
 ## Assumptions and unresolved
-- **PCB 100 x 66 mm is an estimate**; positions of all parts are an illustration of zones, not a layout.
+- PCB size and the positions of the modelled parts now come from the KiCad placement (`ai-files/pcb/layout.json`, 114 x 92 mm); rerun `helpers/build_pcb.sh` before this build when the board changes.
 - **Tang Band W3-2052SC**: no maker drawing or STEP. Flange 82.6 x 4 mm, aperture 70, hole pattern 4 x 3.5 on a 77 mm circle, magnet 40 dia, cone/basket frustum are all assumptions. Request the drawing before cutting.
 - ND65 depth 48 mm (44.75 behind the flange) drives the 160 mm depth; the maker STEP is dated 2025-11-20.
 - **Pack**: 2P 21700 (2 x Samsung 50S 5 Ah) with a protection board is chosen; PCM/protection board (4-5 A+ continuous, ideally 10+ A for headroom), 10k NTC, holder/cradle, and the Samsung datasheet (50S rated about 9.8 A continuous per cell, from memory, verify) are not sourced. Cells are cylinders; wrap and PCM allowance = 3 mm PCM + 1 mm gaps. J5 stays (Micro-Fit 3 pin; harness drawn schematically from J5 to the PCM end).
