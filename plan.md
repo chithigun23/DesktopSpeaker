@@ -56,7 +56,7 @@ Updated: 2026-10-05. Use this checklist with `AGENTS.md` and `ai-files/HANDOVER.
 
 ## 4. MCU, controls and configuration — PARTIAL
 
-- [x] Connect the STM32G031K8T6 (U3, moved to child sheet `MCU.kicad_sch`, symbol pins regrouped by function) supply/grounds, decoupling (C160 100nF, C161 4.7uF), NRST 100nF (C162), BOOT0/SWCLK pull-down (R160) and SWD header J6 (1 SWDIO, 2 SWCLK, 3 NRST, 4 3V_AO, 5 GND).
+- [x] Connect the STM32G031K8T6 (U3, moved to child sheet `MCU.kicad_sch`, symbol pins regrouped by function) supply/grounds, decoupling (C160 100nF, C161 4.7uF), NRST 100nF (C162), BOOT0/SWCLK pull-down (R160) and SWD connectors: J7 Tag-Connect TC2030-IDC (legged footprint; 1 3V_AO, 2 SWDIO, 3 NRST, 4 SWCLK, 5 GND, 6 SWO unused) and J6 4-pin 2.54 mm header (1 SWDIO, 2 SWCLK, 3 NRST, 4 GND), see 2026-10-06 SWD update.
 - [x] Connect MCU to the captured power blocks only: CTRL_SDA/SCL (I2C1 PB7/PB6), PDCTRL_SDA/SCL (I2C2 PA12/PA11), CHG_ENABLE, CHG_SYS_ENABLE, CHG_INT, GAUGE_ALRT_N, PD_PLUG_EVENT, PD_SINK_EN, BT_PWR_EN, BT_FORCE_PWM, 5V_LOGIC_EN. Allocation and rationale: `ai-files/reports/mcu-pin-allocation.md`. All other MCU pins are no-connect (reserved list in that report).
 - [ ] Check pin allocation and voltage domains for amplifiers, Bluetooth UART and controls (reserved pins only: PA2/PA3 UART, PA4/PA5 selects, PA6/PA7 amp PDN/FAULT, PA1 button ladder, PB0 headphone detect, PB1 USB-source detect). GPIO budget is tight; third I2C bus for audio has no hardware instance left (bit-bang on PB3/PB4 or share CTRL).
 - [ ] Define buttons, indicators, volume/source control and battery display requirements. QON sense needs a new Battery_Charger port (no net exists today).
@@ -299,3 +299,7 @@ Quick mechanical envelope review: `ai-files/reports/mechanical-fit-rough-2026-10
 
 ## USB audio sheet capture (2026-10-06)
 - [x] `USB_Audio.kicad_sch` added (root page 8, right of Logic_Audio_Power). U2 reference/UUID preserved. ERC 222 -> 193 (root pin_not_connected -37, label_dangling +2 for the open USB_AUDIO_L/R stubs, endpoint_off_grid +7 at J1 stubs); USB_Audio sheet 0. New parts BOM-listed; unverified prices/LCSC gaps recorded.
+
+## SWD connectors and crystal caps (2026-10-06)
+- [x] J6 1x5 replaced by J6 (1x4 header, footprint `PinHeader_1x04_P2.54mm_Vertical` + stock STEP in `3d/`, Ckmtw B-2100S04P-A110 / C124378 price unverified) and new J7 (`Tag-Connect_TC2030-IDC-FP_2x03_P1.27mm_Vertical`, legged, no 3D, not in BOM). SWDIO/SWCLK/NRST joined by labels; PB3/SWO left no-connect (PB3 reserved for later use). ERC stays 193; SWD net pin groups verified. Helper `replace_swd_connectors.py`.
+- [x] USB_Audio C177/C178 22 pF -> 33 pF C0G (CL10C330JB8NNNC, C1663; ~19.5 pF effective vs 20 pF crystal). LCSC added: R170 C112307, R171/R172 C107701 (stock/price unverified). BOM updated via `update_swd_usbaudio_bom.mjs`.

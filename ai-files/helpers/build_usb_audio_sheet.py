@@ -129,7 +129,7 @@ def cap(ref, val, fp, mpn, mfr, lcsc, a, horizontal=False):
 SAM = 'Samsung Electro-Mechanics'
 C1U = ('1uF', 'DesktopSpeaker:PD_C_0805', 'CL21B105KBFNNNE', SAM, 'C28323')
 C10U = ('10uF', 'DesktopSpeaker:PD_C_0805', 'CL21B106KPQNNNE', SAM, 'C32635')
-C22P = ('22pF', 'DesktopSpeaker:PD_C_0603', 'CL10C220JB8NNNC', SAM, 'C1653')
+C22P = ('33pF', 'DesktopSpeaker:PD_C_0603', 'CL10C330JB8NNNC', SAM, 'C1663')
 C47U = ('4.7uF', 'DesktopSpeaker:PD_C_1206', 'CL31B475KBHNNNE', SAM, 'C51205')
 RYAG = lambda mpn, lcsc: (mpn, 'YAGEO', lcsc)
 
@@ -152,13 +152,13 @@ yn = 33.02
 wire((-22.86, 22.86), (-22.86, yn)); wire((-22.86, yn), (-33.02, yn)); junc((-33.02, yn))
 wire((-33.02, yn), (-36.83, yn)); wire((-44.45, yn), (LP, yn))
 hlabel('5V_LOGIC', 'input', (LP, yn), 'left bottom')
-res('R170', '2.2', *RYAG('RC0603FR-072R2L', ''), (-40.64, yn), True)
+res('R170', '2.2', *RYAG('RC0603FR-072R2L', 'C112307'), (-40.64, yn), True)
 cap('C170', *C1U, (-33.02, yn - 3.81)); gnd((-33.02, yn - 7.62))
 # ---- USB data: 22R series, 1.5k D+ pull-up to VDDI (datasheet fig. 39: no internal pull-up)
 for ref, y in (('R172', 17.78), ('R171', 10.16)):
     wire((XL, y), (-38.1, y)); wire((-45.72, y), (LP, y))
-res('R172', '22', 'RC0603FR-0722RL', 'YAGEO', '', (-41.91, 17.78), True)
-res('R171', '22', 'RC0603FR-0722RL', 'YAGEO', '', (-41.91, 10.16), True)
+res('R172', '22', 'RC0603FR-0722RL', 'YAGEO', 'C107701', (-41.91, 17.78), True)
+res('R171', '22', 'RC0603FR-0722RL', 'YAGEO', 'C107701', (-41.91, 10.16), True)
 hlabel('USB_DN', 'bidirectional', (LP, 17.78), 'left bottom')
 hlabel('USB_DP', 'bidirectional', (LP, 10.16), 'left bottom')
 xn = -45.72

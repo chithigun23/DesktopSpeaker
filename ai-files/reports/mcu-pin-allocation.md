@@ -7,7 +7,7 @@
 - VDD range 1.7-3.6 V (power scheme fig. quotes 1.55 V). The 3V_AO rail (U12 TPS7A0230, 3.0 V nominal, USB-priority or pack input) fits; below about 3.0 V input it sags but stays in range. The LQFP32 has one VDD/VDDA pin (4) and one VSS/VSSA pin (5): VDDA = VDD and VREF+ is internal, so ADC reference is the sagging 3V_AO (use VREFINT calibration). Datasheet fig. 13: 100 nF plus 4.7 uF at VDD/VDDA, close to the pin.
 - NRST (pin 6): internal pull-up (no external pull-up needed), 100 nF to GND per fig. 24, wired to the SWD header. NRST_MODE option must stay "reset input" (PF2 is otherwise a GPIO).
 - BOOT0 is PA14-BOOT0, shared with SWCLK. Factory option nBOOT_SEL=1 ignores the pin (boots flash; empty flash falls into the ROM loader). 100 k pull-down kept on the line so a later nBOOT_SEL=0 boots flash by default; entering the bootloader then needs the header/option bytes (no jumper captured).
-- SWD header J6, 1x5 2.54 mm: 1 3V_AO (VTref), 2 SWDIO (PA13), 3 GND, 4 SWCLK (PA14), 5 NRST. Firmware must not remap PA13/PA14 or enter a mode that disables SWD without a startup delay.
+- SWD: J7 Tag-Connect TC2030-IDC (1 3V_AO, 2 SWDIO PA13, 3 NRST, 4 SWCLK PA14, 5 GND, 6 SWO nc) and J6 4-pin 2.54 mm header (1 SWDIO, 2 SWCLK, 3 NRST, 4 GND). Firmware must not remap PA13/PA14 or enter a mode that disables SWD without a startup delay.
 - PA11/PA12: LQFP32 bonds PA11 (22) and PA12 (23) as real pins and PA9/PA10 on pins 19/21. SYSCFG PA11_RMP/PA12_RMP must stay 0 (the [PA9]/[PA10] bracket is the small-package remap).
 
 ## Allocation (captured now)
