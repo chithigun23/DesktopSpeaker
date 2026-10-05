@@ -1,0 +1,2351 @@
+{
+ "C260": {
+  "old_fp": "PD_C_0603",
+  "old_mpn": "CL10B104KB8NNNC",
+  "value": "100nF",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Murata",
+  "mpn": "GRM155R71H104KE14D",
+  "lcsc": "C77020"
+ },
+ "C261": {
+  "old_fp": "PD_C_0805",
+  "old_mpn": "GRM21BZ71A226ME15L",
+  "value": "22uF 10V",
+  "fp": "C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+  "mfr": "Murata",
+  "mpn": "GRM21BZ71A226ME15L",
+  "lcsc": "C907991"
+ },
+ "C262": {
+  "old_fp": "PD_C_0805",
+  "old_mpn": "GRM21BZ71A226ME15L",
+  "value": "22uF 10V",
+  "fp": "C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+  "mfr": "Murata",
+  "mpn": "GRM21BZ71A226ME15L",
+  "lcsc": "C907991"
+ },
+ "C263": {
+  "old_fp": "PD_C_0805",
+  "old_mpn": "GRM21BZ71A226ME15L",
+  "value": "22uF 10V",
+  "fp": "C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+  "mfr": "Murata",
+  "mpn": "GRM21BZ71A226ME15L",
+  "lcsc": "C907991"
+ },
+ "C264": {
+  "old_fp": "PD_C_0805",
+  "old_mpn": "GRM21BZ71A226ME15L",
+  "value": "22uF 10V",
+  "fp": "C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+  "mfr": "Murata",
+  "mpn": "GRM21BZ71A226ME15L",
+  "lcsc": "C907991"
+ },
+ "R252": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-07301KL",
+  "value": "301k",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-07301KL",
+  "lcsc": ""
+ },
+ "C267": {
+  "old_fp": "PD_C_0603",
+  "old_mpn": "CL10B104KB8NNNC",
+  "value": "100nF",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Murata",
+  "mpn": "GRM155R71H104KE14D",
+  "lcsc": "C77020"
+ },
+ "R255": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-07100KL",
+  "value": "100k",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-07100KL",
+  "lcsc": "C60491"
+ },
+ "R256": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-070RL",
+  "value": "0R DNP",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-070RL",
+  "lcsc": ""
+ },
+ "C265": {
+  "old_fp": "PD_C_0805",
+  "old_mpn": "CL21B225KAFNNNE",
+  "value": "2.2uF",
+  "fp": "C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL21B225KAFNNNE",
+  "lcsc": "C19110"
+ },
+ "R250": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-07499KL",
+  "value": "499k",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-07499KL",
+  "lcsc": ""
+ },
+ "R251": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-0756KL",
+  "value": "56k",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-0756KL",
+  "lcsc": ""
+ },
+ "C270": {
+  "old_fp": "PD_C_0805",
+  "old_mpn": "CL21B105KBFNNNE",
+  "value": "1uF",
+  "fp": "C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL21B105KBFNNNE",
+  "lcsc": "C28323"
+ },
+ "C271": {
+  "old_fp": "PD_C_1210",
+  "old_mpn": "CL32B226KAJNNNE",
+  "value": "22uF 25V",
+  "fp": "C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL21A226MAQNNNE",
+  "lcsc": ""
+ },
+ "C272": {
+  "old_fp": "PD_C_1210",
+  "old_mpn": "CL32B226KAJNNNE",
+  "value": "22uF 25V",
+  "fp": "C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL21A226MAQNNNE",
+  "lcsc": ""
+ },
+ "C273": {
+  "old_fp": "PD_C_1210",
+  "old_mpn": "CL32B226KAJNNNE",
+  "value": "22uF 25V",
+  "fp": "C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL21A226MAQNNNE",
+  "lcsc": ""
+ },
+ "C274": {
+  "old_fp": "PD_C_1210",
+  "old_mpn": "CL32B226KAJNNNE",
+  "value": "22uF 25V",
+  "fp": "C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL21A226MAQNNNE",
+  "lcsc": ""
+ },
+ "R254": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-0782KL",
+  "value": "82k",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-0782KL",
+  "lcsc": ""
+ },
+ "C268": {
+  "old_fp": "PD_C_0603",
+  "old_mpn": "CL10B682KB8NNNC",
+  "value": "6.8nF",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Murata",
+  "mpn": "GRM155R71H682KA01D",
+  "lcsc": ""
+ },
+ "C269": {
+  "old_fp": "PD_C_0603",
+  "old_mpn": "CL10C470JB8NNNC",
+  "value": "47pF",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Murata",
+  "mpn": "GRM1555C1H470JA01D",
+  "lcsc": ""
+ },
+ "R253": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-07150KL",
+  "value": "150k",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-07150KL",
+  "lcsc": ""
+ },
+ "C266": {
+  "old_fp": "PD_C_0603",
+  "old_mpn": "CC0603KRX7R9BB473",
+  "value": "47nF",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Murata",
+  "mpn": "GRM155R71H473KA12D",
+  "lcsc": ""
+ },
+ "R257": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-071KL",
+  "value": "1k",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-071KL",
+  "lcsc": ""
+ },
+ "R259": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-07100KL",
+  "value": "100k",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-07100KL",
+  "lcsc": "C60491"
+ },
+ "R260": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-070RL",
+  "value": "0R",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-070RL",
+  "lcsc": ""
+ },
+ "C280": {
+  "old_fp": "PD_C_0603",
+  "old_mpn": "CL10A475KO8NNNC",
+  "value": "4.7uF",
+  "fp": "C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL21A475KAQNNNE",
+  "lcsc": ""
+ },
+ "C281": {
+  "old_fp": "PD_C_0603",
+  "old_mpn": "CL10B104KB8NNNC",
+  "value": "100nF",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Murata",
+  "mpn": "GRM155R71H104KE14D",
+  "lcsc": "C77020"
+ },
+ "C276": {
+  "old_fp": "PD_C_0603",
+  "old_mpn": "CL10B104KB8NNNC",
+  "value": "100nF",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Murata",
+  "mpn": "GRM155R71H104KE14D",
+  "lcsc": "C77020"
+ },
+ "C277": {
+  "old_fp": "PD_C_1210",
+  "old_mpn": "CL32B226KAJNNNE",
+  "value": "22uF 25V",
+  "fp": "C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL21A226MAQNNNE",
+  "lcsc": ""
+ },
+ "C278": {
+  "old_fp": "PD_C_0603",
+  "old_mpn": "CL10B104KB8NNNC",
+  "value": "100nF",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Murata",
+  "mpn": "GRM155R71H104KE14D",
+  "lcsc": "C77020"
+ },
+ "C279": {
+  "old_fp": "PD_C_1210",
+  "old_mpn": "CL32B226KAJNNNE",
+  "value": "22uF 25V",
+  "fp": "C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL21A226MAQNNNE",
+  "lcsc": ""
+ },
+ "C282": {
+  "old_fp": "PD_C_0805",
+  "old_mpn": "CL21B105KBFNNNE",
+  "value": "1uF",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL05A105KO5NNNC",
+  "lcsc": "C29266"
+ },
+ "C283": {
+  "old_fp": "PD_C_0805",
+  "old_mpn": "CL21B105KBFNNNE",
+  "value": "1uF",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL05A105KO5NNNC",
+  "lcsc": "C29266"
+ },
+ "C284": {
+  "old_fp": "PD_C_0805",
+  "old_mpn": "CL21B105KBFNNNE",
+  "value": "1uF",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL05A105KO5NNNC",
+  "lcsc": "C29266"
+ },
+ "C285": {
+  "old_fp": "PD_C_0603",
+  "old_mpn": "CL10B474KA8NNNC",
+  "value": "0.47uF",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL05B474KO5NNNC",
+  "lcsc": ""
+ },
+ "C286": {
+  "old_fp": "PD_C_0603",
+  "old_mpn": "CL10B474KA8NNNC",
+  "value": "0.47uF",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL05B474KO5NNNC",
+  "lcsc": ""
+ },
+ "C287": {
+  "old_fp": "PD_C_0603",
+  "old_mpn": "CL10B474KA8NNNC",
+  "value": "0.47uF",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL05B474KO5NNNC",
+  "lcsc": ""
+ },
+ "C288": {
+  "old_fp": "PD_C_0603",
+  "old_mpn": "CL10B474KA8NNNC",
+  "value": "0.47uF",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL05B474KO5NNNC",
+  "lcsc": ""
+ },
+ "C302": {
+  "old_fp": "PD_C_0805",
+  "old_mpn": "CL21B684KBFVPNE",
+  "value": "0.68uF 50V",
+  "fp": "C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL21B684KBFVPNE",
+  "lcsc": "C472832"
+ },
+ "C303": {
+  "old_fp": "PD_C_0805",
+  "old_mpn": "CL21B684KBFVPNE",
+  "value": "0.68uF 50V",
+  "fp": "C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL21B684KBFVPNE",
+  "lcsc": "C472832"
+ },
+ "C304": {
+  "old_fp": "PD_C_0805",
+  "old_mpn": "CL21B684KBFVPNE",
+  "value": "0.68uF 50V",
+  "fp": "C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL21B684KBFVPNE",
+  "lcsc": "C472832"
+ },
+ "C305": {
+  "old_fp": "PD_C_0805",
+  "old_mpn": "CL21B684KBFVPNE",
+  "value": "0.68uF 50V",
+  "fp": "C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL21B684KBFVPNE",
+  "lcsc": "C472832"
+ },
+ "R258": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-071KL",
+  "value": "1k",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-071KL",
+  "lcsc": ""
+ },
+ "R261": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-071KL",
+  "value": "1k",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-071KL",
+  "lcsc": ""
+ },
+ "C293": {
+  "old_fp": "PD_C_0603",
+  "old_mpn": "CL10A475KO8NNNC",
+  "value": "4.7uF",
+  "fp": "C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL21A475KAQNNNE",
+  "lcsc": ""
+ },
+ "C294": {
+  "old_fp": "PD_C_0603",
+  "old_mpn": "CL10B104KB8NNNC",
+  "value": "100nF",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Murata",
+  "mpn": "GRM155R71H104KE14D",
+  "lcsc": "C77020"
+ },
+ "C289": {
+  "old_fp": "PD_C_0603",
+  "old_mpn": "CL10B104KB8NNNC",
+  "value": "100nF",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Murata",
+  "mpn": "GRM155R71H104KE14D",
+  "lcsc": "C77020"
+ },
+ "C290": {
+  "old_fp": "PD_C_1210",
+  "old_mpn": "CL32B226KAJNNNE",
+  "value": "22uF 25V",
+  "fp": "C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL21A226MAQNNNE",
+  "lcsc": ""
+ },
+ "C291": {
+  "old_fp": "PD_C_0603",
+  "old_mpn": "CL10B104KB8NNNC",
+  "value": "100nF",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Murata",
+  "mpn": "GRM155R71H104KE14D",
+  "lcsc": "C77020"
+ },
+ "C292": {
+  "old_fp": "PD_C_1210",
+  "old_mpn": "CL32B226KAJNNNE",
+  "value": "22uF 25V",
+  "fp": "C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL21A226MAQNNNE",
+  "lcsc": ""
+ },
+ "C295": {
+  "old_fp": "PD_C_0805",
+  "old_mpn": "CL21B105KBFNNNE",
+  "value": "1uF",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL05A105KO5NNNC",
+  "lcsc": "C29266"
+ },
+ "C296": {
+  "old_fp": "PD_C_0805",
+  "old_mpn": "CL21B105KBFNNNE",
+  "value": "1uF",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL05A105KO5NNNC",
+  "lcsc": "C29266"
+ },
+ "C297": {
+  "old_fp": "PD_C_0805",
+  "old_mpn": "CL21B105KBFNNNE",
+  "value": "1uF",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL05A105KO5NNNC",
+  "lcsc": "C29266"
+ },
+ "C298": {
+  "old_fp": "PD_C_0603",
+  "old_mpn": "CL10B474KA8NNNC",
+  "value": "0.47uF",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL05B474KO5NNNC",
+  "lcsc": ""
+ },
+ "C299": {
+  "old_fp": "PD_C_0603",
+  "old_mpn": "CL10B474KA8NNNC",
+  "value": "0.47uF",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL05B474KO5NNNC",
+  "lcsc": ""
+ },
+ "C300": {
+  "old_fp": "PD_C_0603",
+  "old_mpn": "CL10B474KA8NNNC",
+  "value": "0.47uF",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL05B474KO5NNNC",
+  "lcsc": ""
+ },
+ "C301": {
+  "old_fp": "PD_C_0603",
+  "old_mpn": "CL10B474KA8NNNC",
+  "value": "0.47uF",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL05B474KO5NNNC",
+  "lcsc": ""
+ },
+ "C306": {
+  "old_fp": "PD_C_0805",
+  "old_mpn": "CL21B684KBFVPNE",
+  "value": "0.68uF 50V",
+  "fp": "C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL21B684KBFVPNE",
+  "lcsc": "C472832"
+ },
+ "C307": {
+  "old_fp": "PD_C_0805",
+  "old_mpn": "CL21B684KBFVPNE",
+  "value": "0.68uF 50V",
+  "fp": "C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL21B684KBFVPNE",
+  "lcsc": "C472832"
+ },
+ "R262": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-0710KL",
+  "value": "10k",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-0710KL",
+  "lcsc": "C60490"
+ },
+ "C100": {
+  "old_fp": "PD_C_1210",
+  "old_mpn": "CL32B106KBJNNNE",
+  "value": "10uF / 50V",
+  "fp": "C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+  "mfr": "Murata",
+  "mpn": "GRM21BR61H106KE43L",
+  "lcsc": ""
+ },
+ "C111": {
+  "old_fp": "PD_C_1210",
+  "old_mpn": "CL32B106KBJNNNE",
+  "value": "10uF / 50V",
+  "fp": "C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+  "mfr": "Murata",
+  "mpn": "GRM21BR61H106KE43L",
+  "lcsc": ""
+ },
+ "C113": {
+  "old_fp": "PD_C_0402",
+  "old_mpn": "GRM155R71H104KE14D",
+  "value": "0.1uF / 50V",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Murata",
+  "mpn": "GRM155R71H104KE14D",
+  "lcsc": "C77020"
+ },
+ "C101": {
+  "old_fp": "PD_C_1210",
+  "old_mpn": "CL32B106KBJNNNE",
+  "value": "10uF / 50V",
+  "fp": "C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+  "mfr": "Murata",
+  "mpn": "GRM21BR61H106KE43L",
+  "lcsc": ""
+ },
+ "C108": {
+  "old_fp": "PD_C_1210",
+  "old_mpn": "CL32B106KBJNNNE",
+  "value": "10uF / 50V",
+  "fp": "C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+  "mfr": "Murata",
+  "mpn": "GRM21BR61H106KE43L",
+  "lcsc": ""
+ },
+ "C112": {
+  "old_fp": "PD_C_1210",
+  "old_mpn": "CL32B106KBJNNNE",
+  "value": "10uF / 50V",
+  "fp": "C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+  "mfr": "Murata",
+  "mpn": "GRM21BR61H106KE43L",
+  "lcsc": ""
+ },
+ "C114": {
+  "old_fp": "PD_C_0402",
+  "old_mpn": "GRM155R71H104KE14D",
+  "value": "0.1uF / 50V",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Murata",
+  "mpn": "GRM155R71H104KE14D",
+  "lcsc": "C77020"
+ },
+ "C115": {
+  "old_fp": "PD_C_0402",
+  "old_mpn": "GRM155R71H104KE14D",
+  "value": "0.1uF / 50V",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Murata",
+  "mpn": "GRM155R71H104KE14D",
+  "lcsc": "C77020"
+ },
+ "C102": {
+  "old_fp": "PD_C_0805",
+  "old_mpn": "CL21B106KPQNNNE",
+  "value": "10uF / 10V",
+  "fp": "C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL21B106KPQNNNE",
+  "lcsc": "C32635"
+ },
+ "C109": {
+  "old_fp": "PD_C_0805",
+  "old_mpn": "CL21B106KPQNNNE",
+  "value": "10uF / 10V",
+  "fp": "C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL21B106KPQNNNE",
+  "lcsc": "C32635"
+ },
+ "C103": {
+  "old_fp": "PD_C_0603",
+  "old_mpn": "CC0603KRX7R9BB473",
+  "value": "47nF / 50V",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Murata",
+  "mpn": "GRM155R71H473KA12D",
+  "lcsc": ""
+ },
+ "C110": {
+  "old_fp": "PD_C_0603",
+  "old_mpn": "CC0603KRX7R9BB473",
+  "value": "47nF / 50V",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Murata",
+  "mpn": "GRM155R71H473KA12D",
+  "lcsc": ""
+ },
+ "C104": {
+  "old_fp": "PD_C_0805",
+  "old_mpn": "GRM21BZ71A226ME15L",
+  "value": "22uF / 10V",
+  "fp": "C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+  "mfr": "Murata",
+  "mpn": "GRM21BZ71A226ME15L",
+  "lcsc": "C907991"
+ },
+ "C105": {
+  "old_fp": "PD_C_0805",
+  "old_mpn": "GRM21BZ71A226ME15L",
+  "value": "22uF / 10V",
+  "fp": "C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+  "mfr": "Murata",
+  "mpn": "GRM21BZ71A226ME15L",
+  "lcsc": "C907991"
+ },
+ "C107": {
+  "old_fp": "PD_C_0805",
+  "old_mpn": "GRM21BZ71A226ME15L",
+  "value": "22uF / 10V",
+  "fp": "C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+  "mfr": "Murata",
+  "mpn": "GRM21BZ71A226ME15L",
+  "lcsc": "C907991"
+ },
+ "C106": {
+  "old_fp": "PD_C_0805",
+  "old_mpn": "GRM21BZ71A226ME15L",
+  "value": "22uF / 10V",
+  "fp": "C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+  "mfr": "Murata",
+  "mpn": "GRM21BZ71A226ME15L",
+  "lcsc": "C907991"
+ },
+ "R112": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-07100RL",
+  "value": "100R",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-07100RL",
+  "lcsc": ""
+ },
+ "R102": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-074K7L",
+  "value": "4.7k",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-074K7L",
+  "lcsc": ""
+ },
+ "R100": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "1RC0603F5231",
+  "value": "5.23k",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-075K23L",
+  "lcsc": ""
+ },
+ "R101": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "1RC0603F3012",
+  "value": "30.1k",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-0730K1L",
+  "lcsc": ""
+ },
+ "R108": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-07180KL",
+  "value": "180k",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-07180KL",
+  "lcsc": ""
+ },
+ "R109": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-07100KL",
+  "value": "100k",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-07100KL",
+  "lcsc": "C60491"
+ },
+ "R110": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-07100KL",
+  "value": "100k",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-07100KL",
+  "lcsc": "C60491"
+ },
+ "R111": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-07100KL",
+  "value": "100k",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-07100KL",
+  "lcsc": "C60491"
+ },
+ "R103": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-07100KL",
+  "value": "100k",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-07100KL",
+  "lcsc": "C60491"
+ },
+ "R107": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-07100KL",
+  "value": "100k",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-07100KL",
+  "lcsc": "C60491"
+ },
+ "R106": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-0710KL",
+  "value": "10k",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-0710KL",
+  "lcsc": "C60490"
+ },
+ "R113": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-07100KL",
+  "value": "100k",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-07100KL",
+  "lcsc": "C60491"
+ },
+ "C190": {
+  "old_fp": "PD_C_0805",
+  "old_mpn": "CL21B106KPQNNNE",
+  "value": "10uF",
+  "fp": "C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL21B106KPQNNNE",
+  "lcsc": "C32635"
+ },
+ "C191": {
+  "old_fp": "PD_C_0603",
+  "old_mpn": "CL10B104KB8NNNC",
+  "value": "100nF",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Murata",
+  "mpn": "GRM155R71H104KE14D",
+  "lcsc": "C77020"
+ },
+ "R185": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-071KL",
+  "value": "1k",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-071KL",
+  "lcsc": ""
+ },
+ "R182": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-0710KL",
+  "value": "10k",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-0710KL",
+  "lcsc": "C60490"
+ },
+ "R183": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-0710KL",
+  "value": "10k",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-0710KL",
+  "lcsc": "C60490"
+ },
+ "R184": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-07100KL",
+  "value": "100k",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-07100KL",
+  "lcsc": "C60491"
+ },
+ "R186": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-071KL",
+  "value": "1k",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-071KL",
+  "lcsc": ""
+ },
+ "R187": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-071KL",
+  "value": "1k",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-071KL",
+  "lcsc": ""
+ },
+ "C194": {
+  "old_fp": "PD_C_1206",
+  "old_mpn": "CL31B475KBHNNNE",
+  "value": "4.7uF",
+  "fp": "C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL21A475KAQNNNE",
+  "lcsc": ""
+ },
+ "R180": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-07100KL",
+  "value": "100k",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-07100KL",
+  "lcsc": "C60491"
+ },
+ "C195": {
+  "old_fp": "PD_C_1206",
+  "old_mpn": "CL31B475KBHNNNE",
+  "value": "4.7uF",
+  "fp": "C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL21A475KAQNNNE",
+  "lcsc": ""
+ },
+ "R181": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-07100KL",
+  "value": "100k",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-07100KL",
+  "lcsc": "C60491"
+ },
+ "C192": {
+  "old_fp": "PD_C_0805",
+  "old_mpn": "CL21B105KBFNNNE",
+  "value": "1uF",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL05A105KO5NNNC",
+  "lcsc": "C29266"
+ },
+ "C193": {
+  "old_fp": "PD_C_0805",
+  "old_mpn": "CL21B105KBFNNNE",
+  "value": "1uF",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL05A105KO5NNNC",
+  "lcsc": "C29266"
+ },
+ "C150": {
+  "old_fp": "PD_C_0805",
+  "old_mpn": "GRM21BZ71A226ME15L",
+  "value": "22uF 10V X7R",
+  "fp": "C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+  "mfr": "Murata",
+  "mpn": "GRM21BZ71A226ME15L",
+  "lcsc": "C907991"
+ },
+ "C151": {
+  "old_fp": "PD_C_0603",
+  "old_mpn": "CL10B104KB8NNNC",
+  "value": "100nF 10V X7R",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Murata",
+  "mpn": "GRM155R71H104KE14D",
+  "lcsc": "C77020"
+ },
+ "C152": {
+  "old_fp": "PD_C_0805",
+  "old_mpn": "GRM21BZ71A226ME15L",
+  "value": "22uF 10V X7R",
+  "fp": "C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+  "mfr": "Murata",
+  "mpn": "GRM21BZ71A226ME15L",
+  "lcsc": "C907991"
+ },
+ "C153": {
+  "old_fp": "PD_C_0805",
+  "old_mpn": "GRM21BZ71A226ME15L",
+  "value": "22uF 10V X7R",
+  "fp": "C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+  "mfr": "Murata",
+  "mpn": "GRM21BZ71A226ME15L",
+  "lcsc": "C907991"
+ },
+ "C154": {
+  "old_fp": "PD_C_0805",
+  "old_mpn": "GRM21BZ71A226ME15L",
+  "value": "22uF 10V X7R",
+  "fp": "C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+  "mfr": "Murata",
+  "mpn": "GRM21BZ71A226ME15L",
+  "lcsc": "C907991"
+ },
+ "R150": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "FRC0603F6043TS",
+  "value": "604k 1%",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-07604KL",
+  "lcsc": ""
+ },
+ "R151": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "AC0603FR-0791KL",
+  "value": "91k 1%",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-0791KL",
+  "lcsc": ""
+ },
+ "R152": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-07100KL",
+  "value": "100k",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-07100KL",
+  "lcsc": "C60491"
+ },
+ "R153": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-07100KL",
+  "value": "100k",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-07100KL",
+  "lcsc": "C60491"
+ },
+ "R154": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-07100KL",
+  "value": "100k",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-07100KL",
+  "lcsc": "C60491"
+ },
+ "C122": {
+  "old_fp": "PD_C_0603",
+  "old_mpn": "LMK107B7105KA-T",
+  "value": "1uF X7R 10V",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL05A105KO5NNNC",
+  "lcsc": "C29266"
+ },
+ "C123": {
+  "old_fp": "PD_C_0603",
+  "old_mpn": "LMK107B7105KA-T",
+  "value": "1uF X7R 10V",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL05A105KO5NNNC",
+  "lcsc": "C29266"
+ },
+ "C120": {
+  "old_fp": "PD_C_0603",
+  "old_mpn": "CL10B104KB8NNNC",
+  "value": "100nF X7R 10V",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Murata",
+  "mpn": "GRM155R71H104KE14D",
+  "lcsc": "C77020"
+ },
+ "C121": {
+  "old_fp": "PD_C_0603",
+  "old_mpn": "CL10B104KB8NNNC",
+  "value": "100nF X7R 10V",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Murata",
+  "mpn": "GRM155R71H104KE14D",
+  "lcsc": "C77020"
+ },
+ "R120": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-074K7L",
+  "value": "4.7k",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-074K7L",
+  "lcsc": ""
+ },
+ "R121": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-074K7L",
+  "value": "4.7k",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-074K7L",
+  "lcsc": ""
+ },
+ "R122": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-0747KL",
+  "value": "47k",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-0747KL",
+  "lcsc": ""
+ },
+ "C130": {
+  "old_fp": "PD_C_0603",
+  "old_mpn": "CL10B104KB8NNNC",
+  "value": "100nF",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Murata",
+  "mpn": "GRM155R71H104KE14D",
+  "lcsc": "C77020"
+ },
+ "C131": {
+  "old_fp": "PD_C_0603",
+  "old_mpn": "CL10B104KB8NNNC",
+  "value": "100nF",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Murata",
+  "mpn": "GRM155R71H104KE14D",
+  "lcsc": "C77020"
+ },
+ "C132": {
+  "old_fp": "PD_C_0603",
+  "old_mpn": "CL10B104KB8NNNC",
+  "value": "100nF",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Murata",
+  "mpn": "GRM155R71H104KE14D",
+  "lcsc": "C77020"
+ },
+ "C124": {
+  "old_fp": "PD_C_0603",
+  "old_mpn": "LMK107B7105KA-T",
+  "value": "1uF X7R 10V",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL05A105KO5NNNC",
+  "lcsc": "C29266"
+ },
+ "C125": {
+  "old_fp": "PD_C_0603",
+  "old_mpn": "LMK107B7105KA-T",
+  "value": "1uF X7R 10V",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL05A105KO5NNNC",
+  "lcsc": "C29266"
+ },
+ "R124": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-07180KL",
+  "value": "180k",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-07180KL",
+  "lcsc": ""
+ },
+ "R125": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-07100KL",
+  "value": "100k",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-07100KL",
+  "lcsc": "C60491"
+ },
+ "R126": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-071ML",
+  "value": "1M",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-071ML",
+  "lcsc": ""
+ },
+ "R127": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-071ML",
+  "value": "1M",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-071ML",
+  "lcsc": ""
+ },
+ "C126": {
+  "old_fp": "PD_C_0603",
+  "old_mpn": "CL10B104KB8NNNC",
+  "value": "100nF",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Murata",
+  "mpn": "GRM155R71H104KE14D",
+  "lcsc": "C77020"
+ },
+ "C230": {
+  "old_fp": "PD_C_0805",
+  "old_mpn": "CL21B105KBFNNNE",
+  "value": "1uF",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL05A105KO5NNNC",
+  "lcsc": "C29266"
+ },
+ "R220": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-07100KL",
+  "value": "100k",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-07100KL",
+  "lcsc": "C60491"
+ },
+ "R226": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-071KL",
+  "value": "1k",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-071KL",
+  "lcsc": ""
+ },
+ "C231": {
+  "old_fp": "PD_C_0805",
+  "old_mpn": "CL21B105KBFNNNE",
+  "value": "1uF",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL05A105KO5NNNC",
+  "lcsc": "C29266"
+ },
+ "R221": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-07100KL",
+  "value": "100k",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-07100KL",
+  "lcsc": "C60491"
+ },
+ "R227": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-071KL",
+  "value": "1k",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-071KL",
+  "lcsc": ""
+ },
+ "C232": {
+  "old_fp": "PD_C_0805",
+  "old_mpn": "CL21B105KBFNNNE",
+  "value": "1uF",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL05A105KO5NNNC",
+  "lcsc": "C29266"
+ },
+ "R222": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-07100KL",
+  "value": "100k",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-07100KL",
+  "lcsc": "C60491"
+ },
+ "R228": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-071KL",
+  "value": "1k",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-071KL",
+  "lcsc": ""
+ },
+ "C233": {
+  "old_fp": "PD_C_0805",
+  "old_mpn": "CL21B105KBFNNNE",
+  "value": "1uF",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL05A105KO5NNNC",
+  "lcsc": "C29266"
+ },
+ "R223": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-07100KL",
+  "value": "100k",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-07100KL",
+  "lcsc": "C60491"
+ },
+ "R229": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-071KL",
+  "value": "1k",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-071KL",
+  "lcsc": ""
+ },
+ "C234": {
+  "old_fp": "PD_C_0805",
+  "old_mpn": "CL21B105KBFNNNE",
+  "value": "1uF",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL05A105KO5NNNC",
+  "lcsc": "C29266"
+ },
+ "R224": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-07100KL",
+  "value": "100k",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-07100KL",
+  "lcsc": "C60491"
+ },
+ "R230": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-071KL",
+  "value": "1k",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-071KL",
+  "lcsc": ""
+ },
+ "C235": {
+  "old_fp": "PD_C_0805",
+  "old_mpn": "CL21B105KBFNNNE",
+  "value": "1uF",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL05A105KO5NNNC",
+  "lcsc": "C29266"
+ },
+ "R225": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-07100KL",
+  "value": "100k",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-07100KL",
+  "lcsc": "C60491"
+ },
+ "R231": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-071KL",
+  "value": "1k",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-071KL",
+  "lcsc": ""
+ },
+ "C237": {
+  "old_fp": "PD_C_0603",
+  "old_mpn": "CL10B104KB8NNNC",
+  "value": "100nF",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Murata",
+  "mpn": "GRM155R71H104KE14D",
+  "lcsc": "C77020"
+ },
+ "C238": {
+  "old_fp": "PD_C_0603",
+  "old_mpn": "CL10B104KB8NNNC",
+  "value": "100nF",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Murata",
+  "mpn": "GRM155R71H104KE14D",
+  "lcsc": "C77020"
+ },
+ "C239": {
+  "old_fp": "PD_C_0805",
+  "old_mpn": "CL21B105KBFNNNE",
+  "value": "1uF",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL05A105KO5NNNC",
+  "lcsc": "C29266"
+ },
+ "C240": {
+  "old_fp": "PD_C_0805",
+  "old_mpn": "CL21B105KBFNNNE",
+  "value": "1uF",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL05A105KO5NNNC",
+  "lcsc": "C29266"
+ },
+ "C241": {
+  "old_fp": "PD_C_0805",
+  "old_mpn": "CL21B105KBFNNNE",
+  "value": "1uF",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL05A105KO5NNNC",
+  "lcsc": "C29266"
+ },
+ "C242": {
+  "old_fp": "PD_C_0603",
+  "old_mpn": "CL10B104KB8NNNC",
+  "value": "100nF",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Murata",
+  "mpn": "GRM155R71H104KE14D",
+  "lcsc": "C77020"
+ },
+ "C243": {
+  "old_fp": "PD_C_0805",
+  "old_mpn": "CL21B225KAFNNNE",
+  "value": "2.2uF",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL05A225KP5NNNC",
+  "lcsc": ""
+ },
+ "C244": {
+  "old_fp": "PD_C_0805",
+  "old_mpn": "CL21B225KAFNNNE",
+  "value": "2.2uF",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL05A225KP5NNNC",
+  "lcsc": ""
+ },
+ "C245": {
+  "old_fp": "PD_C_0805",
+  "old_mpn": "CL21B105KBFNNNE",
+  "value": "1uF",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL05A105KO5NNNC",
+  "lcsc": "C29266"
+ },
+ "R239": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-07100KL",
+  "value": "100k",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-07100KL",
+  "lcsc": "C60491"
+ },
+ "R240": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-071KL",
+  "value": "1k",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-071KL",
+  "lcsc": ""
+ },
+ "R243": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-0710KL",
+  "value": "10k",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-0710KL",
+  "lcsc": "C60490"
+ },
+ "R244": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-0710KL",
+  "value": "10k",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-0710KL",
+  "lcsc": "C60490"
+ },
+ "R241": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-071ML",
+  "value": "1M",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-071ML",
+  "lcsc": ""
+ },
+ "C246": {
+  "old_fp": "PD_C_0603",
+  "old_mpn": "CL10B104KB8NNNC",
+  "value": "100nF",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Murata",
+  "mpn": "GRM155R71H104KE14D",
+  "lcsc": "C77020"
+ },
+ "R242": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-0710KL",
+  "value": "10k",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-0710KL",
+  "lcsc": "C60490"
+ },
+ "R232": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-0747KL",
+  "value": "47k",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-0747KL",
+  "lcsc": ""
+ },
+ "R233": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-0747KL",
+  "value": "47k",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-0747KL",
+  "lcsc": ""
+ },
+ "C236": {
+  "old_fp": "PD_C_1206",
+  "old_mpn": "CL31B475KBHNNNE",
+  "value": "4.7uF",
+  "fp": "C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL21A475KAQNNNE",
+  "lcsc": ""
+ },
+ "R234": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-07100KL",
+  "value": "100k",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-07100KL",
+  "lcsc": "C60491"
+ },
+ "R235": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-07100KL",
+  "value": "100k",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-07100KL",
+  "lcsc": "C60491"
+ },
+ "R236": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-07100KL",
+  "value": "100k",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-07100KL",
+  "lcsc": "C60491"
+ },
+ "R237": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-07100KL",
+  "value": "100k",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-07100KL",
+  "lcsc": "C60491"
+ },
+ "R238": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-07100KL",
+  "value": "100k",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-07100KL",
+  "lcsc": "C60491"
+ },
+ "C140": {
+  "old_fp": "PD_C_0805",
+  "old_mpn": "GRM21BZ71A226ME15L",
+  "value": "22uF 10V X7R",
+  "fp": "C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+  "mfr": "Murata",
+  "mpn": "GRM21BZ71A226ME15L",
+  "lcsc": "C907991"
+ },
+ "C141": {
+  "old_fp": "PD_C_0805",
+  "old_mpn": "GRM21BZ71A226ME15L",
+  "value": "22uF 10V X7R",
+  "fp": "C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+  "mfr": "Murata",
+  "mpn": "GRM21BZ71A226ME15L",
+  "lcsc": "C907991"
+ },
+ "C142": {
+  "old_fp": "PD_C_0805",
+  "old_mpn": "GRM21BZ71A226ME15L",
+  "value": "22uF 10V X7R",
+  "fp": "C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+  "mfr": "Murata",
+  "mpn": "GRM21BZ71A226ME15L",
+  "lcsc": "C907991"
+ },
+ "C143": {
+  "old_fp": "PD_C_0603",
+  "old_mpn": "CL10B104KB8NNNC",
+  "value": "100nF 10V X7R",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Murata",
+  "mpn": "GRM155R71H104KE14D",
+  "lcsc": "C77020"
+ },
+ "R140": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "1RC0603F7872",
+  "value": "78.7k 1%",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-0778K7L",
+  "lcsc": ""
+ },
+ "R141": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-079K1L",
+  "value": "9.1k 1%",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-079K1L",
+  "lcsc": ""
+ },
+ "R142": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-07100KL",
+  "value": "100k",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-07100KL",
+  "lcsc": "C60491"
+ },
+ "C162": {
+  "old_fp": "PD_C_0603",
+  "old_mpn": "CL10B104KB8NNNC",
+  "value": "100nF",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Murata",
+  "mpn": "GRM155R71H104KE14D",
+  "lcsc": "C77020"
+ },
+ "C160": {
+  "old_fp": "PD_C_0603",
+  "old_mpn": "CL10B104KB8NNNC",
+  "value": "100nF",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Murata",
+  "mpn": "GRM155R71H104KE14D",
+  "lcsc": "C77020"
+ },
+ "C161": {
+  "old_fp": "PD_C_0603",
+  "old_mpn": "CL10A475KO8NNNC",
+  "value": "4.7uF",
+  "fp": "C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL21A475KAQNNNE",
+  "lcsc": ""
+ },
+ "R160": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-07100KL",
+  "value": "100k",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-07100KL",
+  "lcsc": "C60491"
+ },
+ "C163": {
+  "old_fp": "PD_C_0603",
+  "old_mpn": "CL10B104KB8NNNC",
+  "value": "100nF",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Murata",
+  "mpn": "GRM155R71H104KE14D",
+  "lcsc": "C77020"
+ },
+ "C164": {
+  "old_fp": "PD_C_0603",
+  "old_mpn": "CL10A105KB8NNNC",
+  "value": "1uF",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL05A105KO5NNNC",
+  "lcsc": "C29266"
+ },
+ "C200": {
+  "old_fp": "PD_C_0805",
+  "old_mpn": "CL21B225KAFNNNE",
+  "value": "2.2uF",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL05A225KP5NNNC",
+  "lcsc": ""
+ },
+ "R200": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-07100RL",
+  "value": "100",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-07100RL",
+  "lcsc": ""
+ },
+ "C206": {
+  "old_fp": "PD_C_0603",
+  "old_mpn": "GRM1885C1H103JA01D",
+  "value": "10nF C0G",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Murata",
+  "mpn": "GRM1555C1H103JA01D",
+  "lcsc": ""
+ },
+ "C201": {
+  "old_fp": "PD_C_0805",
+  "old_mpn": "CL21B225KAFNNNE",
+  "value": "2.2uF",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL05A225KP5NNNC",
+  "lcsc": ""
+ },
+ "R201": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-07100RL",
+  "value": "100",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-07100RL",
+  "lcsc": ""
+ },
+ "C207": {
+  "old_fp": "PD_C_0603",
+  "old_mpn": "GRM1885C1H103JA01D",
+  "value": "10nF C0G",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Murata",
+  "mpn": "GRM1555C1H103JA01D",
+  "lcsc": ""
+ },
+ "C202": {
+  "old_fp": "PD_C_0805",
+  "old_mpn": "CL21B225KAFNNNE",
+  "value": "2.2uF",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL05A225KP5NNNC",
+  "lcsc": ""
+ },
+ "R202": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-07100RL",
+  "value": "100",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-07100RL",
+  "lcsc": ""
+ },
+ "C208": {
+  "old_fp": "PD_C_0603",
+  "old_mpn": "GRM1885C1H103JA01D",
+  "value": "10nF C0G",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Murata",
+  "mpn": "GRM1555C1H103JA01D",
+  "lcsc": ""
+ },
+ "C203": {
+  "old_fp": "PD_C_0805",
+  "old_mpn": "CL21B225KAFNNNE",
+  "value": "2.2uF",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL05A225KP5NNNC",
+  "lcsc": ""
+ },
+ "R203": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-07100RL",
+  "value": "100",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-07100RL",
+  "lcsc": ""
+ },
+ "C209": {
+  "old_fp": "PD_C_0603",
+  "old_mpn": "GRM1885C1H103JA01D",
+  "value": "10nF C0G",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Murata",
+  "mpn": "GRM1555C1H103JA01D",
+  "lcsc": ""
+ },
+ "C204": {
+  "old_fp": "PD_C_0805",
+  "old_mpn": "CL21B225KAFNNNE",
+  "value": "2.2uF",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL05A225KP5NNNC",
+  "lcsc": ""
+ },
+ "R204": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-07100RL",
+  "value": "100",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-07100RL",
+  "lcsc": ""
+ },
+ "C210": {
+  "old_fp": "PD_C_0603",
+  "old_mpn": "GRM1885C1H103JA01D",
+  "value": "10nF C0G",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Murata",
+  "mpn": "GRM1555C1H103JA01D",
+  "lcsc": ""
+ },
+ "C205": {
+  "old_fp": "PD_C_0805",
+  "old_mpn": "CL21B225KAFNNNE",
+  "value": "2.2uF",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL05A225KP5NNNC",
+  "lcsc": ""
+ },
+ "R205": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-07100RL",
+  "value": "100",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-07100RL",
+  "lcsc": ""
+ },
+ "C211": {
+  "old_fp": "PD_C_0603",
+  "old_mpn": "GRM1885C1H103JA01D",
+  "value": "10nF C0G",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Murata",
+  "mpn": "GRM1555C1H103JA01D",
+  "lcsc": ""
+ },
+ "C212": {
+  "old_fp": "PD_C_0805",
+  "old_mpn": "CL21B105KBFNNNE",
+  "value": "1uF",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL05A105KO5NNNC",
+  "lcsc": "C29266"
+ },
+ "C213": {
+  "old_fp": "PD_C_0603",
+  "old_mpn": "CL10B104KB8NNNC",
+  "value": "100nF",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Murata",
+  "mpn": "GRM155R71H104KE14D",
+  "lcsc": "C77020"
+ },
+ "C214": {
+  "old_fp": "PD_C_0805",
+  "old_mpn": "CL21B106KPQNNNE",
+  "value": "10uF",
+  "fp": "C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL21B106KPQNNNE",
+  "lcsc": "C32635"
+ },
+ "C221": {
+  "old_fp": "PD_C_0805",
+  "old_mpn": "CL21B105KBFNNNE",
+  "value": "1uF",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL05A105KO5NNNC",
+  "lcsc": "C29266"
+ },
+ "C222": {
+  "old_fp": "PD_C_0805",
+  "old_mpn": "CL21B105KBFNNNE",
+  "value": "1uF",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL05A105KO5NNNC",
+  "lcsc": "C29266"
+ },
+ "C223": {
+  "old_fp": "PD_C_0805",
+  "old_mpn": "CL21B106KPQNNNE",
+  "value": "10uF",
+  "fp": "C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL21B106KPQNNNE",
+  "lcsc": "C32635"
+ },
+ "C224": {
+  "old_fp": "PD_C_0805",
+  "old_mpn": "CL21B105KBFNNNE",
+  "value": "1uF",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL05A105KO5NNNC",
+  "lcsc": "C29266"
+ },
+ "R212": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-07100KL",
+  "value": "100k",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-07100KL",
+  "lcsc": "C60491"
+ },
+ "C225": {
+  "old_fp": "PD_C_0805",
+  "old_mpn": "CL21B105KBFNNNE",
+  "value": "1uF",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL05A105KO5NNNC",
+  "lcsc": "C29266"
+ },
+ "FB200": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "BLM18AG601SN1D",
+  "value": "BLM18AG601SN1D",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Murata",
+  "mpn": "BLM15AG601SN1D",
+  "lcsc": ""
+ },
+ "C215": {
+  "old_fp": "PD_C_0603",
+  "old_mpn": "CL10B104KB8NNNC",
+  "value": "100nF",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Murata",
+  "mpn": "GRM155R71H104KE14D",
+  "lcsc": "C77020"
+ },
+ "C216": {
+  "old_fp": "PD_C_0805",
+  "old_mpn": "CL21B106KPQNNNE",
+  "value": "10uF",
+  "fp": "C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL21B106KPQNNNE",
+  "lcsc": "C32635"
+ },
+ "C217": {
+  "old_fp": "PD_C_0603",
+  "old_mpn": "CL10B104KB8NNNC",
+  "value": "100nF",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Murata",
+  "mpn": "GRM155R71H104KE14D",
+  "lcsc": "C77020"
+ },
+ "C218": {
+  "old_fp": "PD_C_0805",
+  "old_mpn": "CL21B106KPQNNNE",
+  "value": "10uF",
+  "fp": "C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL21B106KPQNNNE",
+  "lcsc": "C32635"
+ },
+ "C219": {
+  "old_fp": "PD_C_0603",
+  "old_mpn": "CL10B104KB8NNNC",
+  "value": "100nF",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Murata",
+  "mpn": "GRM155R71H104KE14D",
+  "lcsc": "C77020"
+ },
+ "C220": {
+  "old_fp": "PD_C_0805",
+  "old_mpn": "CL21B105KBFNNNE",
+  "value": "1uF",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL05A105KO5NNNC",
+  "lcsc": "C29266"
+ },
+ "R206": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-0733RL",
+  "value": "33",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-0733RL",
+  "lcsc": ""
+ },
+ "R207": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-0733RL",
+  "value": "33",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-0733RL",
+  "lcsc": ""
+ },
+ "R208": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-0733RL",
+  "value": "33",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-0733RL",
+  "lcsc": ""
+ },
+ "R209": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-072K2L",
+  "value": "2.2k",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-072K2L",
+  "lcsc": ""
+ },
+ "R210": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-072K2L",
+  "value": "2.2k",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-072K2L",
+  "lcsc": ""
+ },
+ "R211": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-07100KL",
+  "value": "100k",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-07100KL",
+  "lcsc": "C60491"
+ },
+ "C226": {
+  "old_fp": "PD_C_0603",
+  "old_mpn": "CL10C220JB8NNNC",
+  "value": "22pF C0G",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Murata",
+  "mpn": "GRM1555C1H220JA01D",
+  "lcsc": ""
+ },
+ "C227": {
+  "old_fp": "PD_C_0603",
+  "old_mpn": "CL10C220JB8NNNC",
+  "value": "22pF C0G",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Murata",
+  "mpn": "GRM1555C1H220JA01D",
+  "lcsc": ""
+ },
+ "R170": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-072R2L",
+  "value": "2.2",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-072R2L",
+  "lcsc": ""
+ },
+ "C170": {
+  "old_fp": "PD_C_0805",
+  "old_mpn": "CL21B105KBFNNNE",
+  "value": "1uF",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL05A105KO5NNNC",
+  "lcsc": "C29266"
+ },
+ "R172": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-0722RL",
+  "value": "22",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-0722RL",
+  "lcsc": ""
+ },
+ "R171": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-0722RL",
+  "value": "22",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-0722RL",
+  "lcsc": ""
+ },
+ "R173": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-071K5L",
+  "value": "1.5k",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-071K5L",
+  "lcsc": "C114759"
+ },
+ "C171": {
+  "old_fp": "PD_C_0805",
+  "old_mpn": "CL21B105KBFNNNE",
+  "value": "1uF",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL05A105KO5NNNC",
+  "lcsc": "C29266"
+ },
+ "C175": {
+  "old_fp": "PD_C_0805",
+  "old_mpn": "CL21B106KPQNNNE",
+  "value": "10uF",
+  "fp": "C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL21B106KPQNNNE",
+  "lcsc": "C32635"
+ },
+ "C176": {
+  "old_fp": "PD_C_0805",
+  "old_mpn": "CL21B106KPQNNNE",
+  "value": "10uF",
+  "fp": "C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL21B106KPQNNNE",
+  "lcsc": "C32635"
+ },
+ "C172": {
+  "old_fp": "PD_C_0805",
+  "old_mpn": "CL21B105KBFNNNE",
+  "value": "1uF",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL05A105KO5NNNC",
+  "lcsc": "C29266"
+ },
+ "C173": {
+  "old_fp": "PD_C_0805",
+  "old_mpn": "CL21B105KBFNNNE",
+  "value": "1uF",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL05A105KO5NNNC",
+  "lcsc": "C29266"
+ },
+ "C174": {
+  "old_fp": "PD_C_0805",
+  "old_mpn": "CL21B105KBFNNNE",
+  "value": "1uF",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL05A105KO5NNNC",
+  "lcsc": "C29266"
+ },
+ "C177": {
+  "old_fp": "PD_C_0603",
+  "old_mpn": "CL10C330JB8NNNC",
+  "value": "33pF",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Murata",
+  "mpn": "GRM1555C1H330JA01D",
+  "lcsc": ""
+ },
+ "R174": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-071ML",
+  "value": "1M",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-071ML",
+  "lcsc": ""
+ },
+ "C178": {
+  "old_fp": "PD_C_0603",
+  "old_mpn": "CL10C330JB8NNNC",
+  "value": "33pF",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Murata",
+  "mpn": "GRM1555C1H330JA01D",
+  "lcsc": ""
+ },
+ "C186": {
+  "old_fp": "PD_C_1206",
+  "old_mpn": "CL31B475KBHNNNE",
+  "value": "4.7uF",
+  "fp": "C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL21A475KAQNNNE",
+  "lcsc": ""
+ },
+ "R175": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-07100KL",
+  "value": "100k",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-07100KL",
+  "lcsc": "C60491"
+ },
+ "C187": {
+  "old_fp": "PD_C_1206",
+  "old_mpn": "CL31B475KBHNNNE",
+  "value": "4.7uF",
+  "fp": "C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL21A475KAQNNNE",
+  "lcsc": ""
+ },
+ "R176": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-07100KL",
+  "value": "100k",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-07100KL",
+  "lcsc": "C60491"
+ },
+ "C2": {
+  "old_fp": "PD_C_1210",
+  "old_mpn": "CL32B475KBUYNNE",
+  "value": "4.7uF X7R 50V",
+  "fp": "C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+  "mfr": "TDK",
+  "mpn": "C2012X7R1H475K125AC",
+  "lcsc": ""
+ },
+ "C6": {
+  "old_fp": "PD_C_0805",
+  "old_mpn": "GRM21BZ71A226ME15L",
+  "value": "22uF X7R 10V",
+  "fp": "C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+  "mfr": "Murata",
+  "mpn": "GRM21BZ71A226ME15L",
+  "lcsc": "C907991"
+ },
+ "C181": {
+  "old_fp": "PD_C_0805",
+  "old_mpn": "CL21B106KPQNNNE",
+  "value": "10uF X7R 10V",
+  "fp": "C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL21B106KPQNNNE",
+  "lcsc": "C32635"
+ },
+ "C185": {
+  "old_fp": "PD_C_0805",
+  "old_mpn": "CL21B106KPQNNNE",
+  "value": "10uF X7R 10V CVIN_3V3",
+  "fp": "C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL21B106KPQNNNE",
+  "lcsc": "C32635"
+ },
+ "C182": {
+  "old_fp": "PD_C_0603",
+  "old_mpn": "CL10C331JB8NNNC",
+  "value": "330pF C0G CC1 filter",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Murata",
+  "mpn": "GRM1555C1H331JA01D",
+  "lcsc": ""
+ },
+ "C183": {
+  "old_fp": "PD_C_0603",
+  "old_mpn": "CL10C331JB8NNNC",
+  "value": "330pF C0G CC2 filter",
+  "fp": "C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+  "mfr": "Murata",
+  "mpn": "GRM1555C1H331JA01D",
+  "lcsc": ""
+ },
+ "C184": {
+  "old_fp": "PD_C_0805",
+  "old_mpn": "CL21B105KBFNNNE",
+  "value": "1uF X7R 50V",
+  "fp": "C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+  "mfr": "Samsung Electro-Mechanics",
+  "mpn": "CL21B105KBFNNNE",
+  "lcsc": "C28323"
+ },
+ "C5": {
+  "old_fp": "PD_C_1206",
+  "old_mpn": null,
+  "value": "4.7uF X7R 50V",
+  "fp": "C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+  "mfr": "TDK",
+  "mpn": "C2012X7R1H475K125AC",
+  "lcsc": ""
+ },
+ "R10": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-07200KL",
+  "value": "200k 1%",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-07200KL",
+  "lcsc": ""
+ },
+ "R11": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-0710KL",
+  "value": "10k 1%",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-0710KL",
+  "lcsc": "C60490"
+ },
+ "R12": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-07100KL",
+  "value": "100k 1%",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-07100KL",
+  "lcsc": "C60491"
+ },
+ "R13": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-0710KL",
+  "value": "10k 1%",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-0710KL",
+  "lcsc": "C60490"
+ },
+ "R14": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-0710KL",
+  "value": "10k 1%",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-0710KL",
+  "lcsc": "C60490"
+ },
+ "R15": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-0710KL",
+  "value": "10k 1%",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-0710KL",
+  "lcsc": "C60490"
+ },
+ "R16": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-07100KL",
+  "value": "100k 1%",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-07100KL",
+  "lcsc": "C60491"
+ },
+ "R17": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-07100KL",
+  "value": "100k 1%",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-07100KL",
+  "lcsc": "C60491"
+ },
+ "R18": {
+  "old_fp": "PD_R_0603",
+  "old_mpn": "RC0603FR-0710KL",
+  "value": "10k 1%",
+  "fp": "R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+  "mfr": "Yageo",
+  "mpn": "RC0402FR-0710KL",
+  "lcsc": "C60490"
+ }
+}
