@@ -59,7 +59,7 @@ PGA gains (SLAS831D: -12 to +12 dB in 1 dB steps; full scale 2.1 Vrms single-end
 - **U6 (stereo BTL):** channel A = front L, channel B = front R. Assumes 4 Ω full-range drivers of 2-2.5 in, about 10 W each.
 - **U7 (PBTL mono):** woofer, 4 Ω, 3-4 in, about 20 W, downward-firing. TAS5825M PBTL allows loads down to 1.6 Ω. A 2 Ω woofer is deliberately avoided: it would double the current.
 - **PBTL wiring:** pre-filter, as in TI's PBTL curves (two outputs merged before the inductors, so two inductors instead of four). Set DAMP_PBTL in register 0x02 bit 2. PBTL takes the left I2S frame, so the U7 DSP mixer must form (L+R)/2.
-- **VERIFY before capture:** the exact pin pairing (planned OUT_A+‖OUT_B+ and OUT_A-‖OUT_B-) must be checked against SLASEH7F Fig. 156 or the EVM, because the PDF text is font-garbled.
+- **VERIFIED 2026-10-06 (rendered SLASEH7F Fig. 159, page 86):** the pairing is OUT_A+ (2) with OUT_A- (30) to inductor 1 and OUT_B+ (23) with OUT_B- (27) to inductor 2, each BST pin to its merged node by 0.47 uF. The earlier plan (A+ with B+) was wrong and is superseded.
 - **PBTL limits:** cycle-by-cycle current limiting is not available in PBTL (9.5.3.3.1). Overcurrent shutdown still works.
 - **Firmware rule:** U7 must have DAMP_PBTL = 1 written before it ever leaves Hi-Z.
 - **Woofer drive:** U7 is stereo-fed and mono-mixed, so the woofer needs no SDOUT link (10.2.6: "the subwoofer amplifier can accept the same digital input").

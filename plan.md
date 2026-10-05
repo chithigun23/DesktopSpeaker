@@ -102,15 +102,15 @@ Updated: 2026-10-05. Use this checklist with `AGENTS.md` and `ai-files/HANDOVER.
 - [x] Input/output protection, coupling: PESD5V0S2BT on each jack, 1 uF AC coupling, 1 k series.
 - [ ] Open: verify PESD5V0S2BT pin 3 common and stock (LCSC C5380400 is a DOWO listing), PJ-307 mapping against the part, HP_DET behaviour with the real jack, TPA6132A2 click/pop timing on the bench, amplifiers (section 9) not started.
 
-## 9. Amplifier supply and three-driver audio output
+## 9. Amplifier supply and three-driver audio output - CAPTURED, unverified on hardware (2026-10-06)
 
-- [ ] Select the amplifier boost supply. A single-cell battery cannot directly meet TAS5825M power-stage minimum voltage; TPS61088 is only a candidate so far.
-- [ ] Define battery versus 5 V / 2 A source power limits, amplifier rail and charging priority.
-- [ ] Connect both TAS5825M devices, decoupling, clocks, digital audio, control/address pins and output networks from the datasheet.
-- [ ] Allocate channels for front left, front right and woofer; confirm whether woofer channel bridging is supported and appropriate before using it.
-- [ ] Select driver impedances/power ratings, crossover/DSP and loudness limits to suit battery life and enclosure volume.
-- [ ] Define mute/fault/shutdown sequence and amplifier idle current policy.
-- [ ] Add speaker connectors and any required protection/filter components.
+- [x] Amplifier boost supply: U25 TPS61088RHLR from SYS_RAW to PVDD_AMP 11.9 V (499k/56k, RFREQ 301k about 494 kHz, ILIM 150k = 7.9 A typ / 6.6 A min, 2.2 uH Isat 19.6 A). Equations checked against the Chinese LCSC edition of the datasheet (English PDF blocked); COMP network calculated only.
+- [x] Battery versus 5 V / 2 A power limits and charging priority: see `reports/audio-chain-architecture.md` section 3 (U25 fed from SYS_RAW, AGL firmware ceilings).
+- [x] Both TAS5825M captured on `Amplifiers.kicad_sch`: PVDD/DVDD/regulator/bootstrap capacitors, ADR 0R (U6, 0x4C) and 1k (U7, 0x4D), shared AMP_PDN, GPIO0 FAULTZ wired-OR, I2S and audio I2C ports, MCU AMP_PDN/AMP_BOOST_EN/AMP_FAULT_N connected.
+- [x] Channels: U6 stereo BTL (J9 FRONT_L, J10 FRONT_R), U7 mono PBTL (J11 WOOFER). **PBTL pairing verified from the rendered SLASEH7F Fig. 159 (page 86): OUT_A+ (2) with OUT_A- (30) to one inductor, OUT_B+ (23) with OUT_B- (27) to the other. This corrects the earlier plan (A+ with B+).**
+- [ ] Open: driver impedances/power ratings, crossover/DSP and loudness limits; mute/fault/shutdown firmware sequence; bench check of boost compensation, PFM acoustics and the 22 uH inductors.
+- [x] Speaker connectors (JST B2P-VH) and 22 uH + 0.68 uF output filters added.
+- [ ] Open parts: LCSC codes for the 22 uH (Sunlord MWSA1265S-220MT) and 2.2 uH (Coilcraft XAL7070-222MEC, not at LCSC) inductors, 0.47 uF 25 V, 6.8 nF, 47 pF, 100 uF polymer, boost resistors and 0R; TPS61088 footprint pads are from the EasyEDA package (verify against TI RHL0020A); no 3D model on the VH connector; reference range extended to C300-C307.
 
 ## 10. Integration, BOM and schematic review
 

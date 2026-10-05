@@ -47,4 +47,8 @@
   (lib (name "TPS7A2033PDBVR") (type "KiCad") (uri "${KIPRJMOD}/kicad-library/schematic/TPS7A2033PDBVR.kicad_sym") (options "") (descr "Texas Instruments TPS7A2033 LDO"))
   (lib (name "TPS22917DBVR") (type "KiCad") (uri "${KIPRJMOD}/kicad-library/schematic/TPS22917DBVR.kicad_sym") (options "") (descr "Texas Instruments TPS22917 load switch"))
   (lib (name "PESD5V0S2BT") (type "KiCad") (uri "${KIPRJMOD}/kicad-library/schematic/PESD5V0S2BT.kicad_sym") (options "") (descr "Nexperia PESD5V0S2BT ESD diode"))
+  (lib (name "TPS61088RHLR") (type "KiCad") (uri "${KIPRJMOD}/kicad-library/schematic/TPS61088RHLR.kicad_sym") (options "") (descr "Texas Instruments TPS61088 boost converter"))
+  (lib (name "PD_L") (type "KiCad") (uri "${KIPRJMOD}/kicad-library/schematic/PD_L.kicad_sym") (options "") (descr "Generic inductor"))
+  (lib (name "PD_CP") (type "KiCad") (uri "${KIPRJMOD}/kicad-library/schematic/PD_CP.kicad_sym") (options "") (descr "Generic polarized capacitor"))
+  (lib (name "JST_B2P_VH") (type "KiCad") (uri "${KIPRJMOD}/kicad-library/schematic/JST_B2P_VH.kicad_sym") (options "") (descr "JST B2P-VH 2-pin VH header"))
 )
