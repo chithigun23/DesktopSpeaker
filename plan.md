@@ -318,3 +318,10 @@ Quick mechanical envelope review: `ai-files/reports/mechanical-fit-rough-2026-10
 ## Final consistency sweep (2026-10-06, not committed)
 - Open items: see "Final open-items list" at the end of `ai-files/HANDOVER.md`.
 - Sweep results: 321 references, no duplicates; BOM covers all (R256 DNP inside the R260 row, PACK is external); D6 MPN property corrected to TVS2200DRVR; stray note rows removed from the BOM; CHG_VIO_3V0 is a dangling port with nothing behind it in Battery_Charger (BQ25792 has no VIO pin).
+
+
+## Mechanical CAD (2026-10-06, not committed)
+- [x] Internal CAD built under `ai-files/cad/` (README there): FCStd + STEP assembly, renders, interference check (0 unintended overlaps in 107 solids), chamber volumes, mechanical BOM.
+- [x] Pack decision: LP1260100 pouch rejected (3 A continuous). Pack choice now: 2P 21700 (2 x Samsung 50S 5 Ah) with protection board (4-5 A+ continuous capability; PCM and 10k NTC still to be sourced); J5 stays.
+- [x] Enclosure 163 x 100 x 160 mm (+15 mm feet), 2 ND65-4 front, W3-2052SC down, sealed woofer chamber 0.506 L net, main chamber 1.436 L net; PCB estimate 100 x 66 mm (area method in `ai-files/cad/pcb-size-estimate.md`, about 5 300 mm2 courtyard sum x 2.0 / two sides + 15 %).
+- [ ] Open: Tang Band drawing (flange thickness/hole pattern/cutout/magnet), ND65 aperture 59.5 and 11 mm pad vs M3x10 (or switch to M3x6), PCM/NTC/holder sourcing, real PCB layout, grommets for woofer wires, J5/SW100/SW101/JST VH models, connector overhang on the real footprints.

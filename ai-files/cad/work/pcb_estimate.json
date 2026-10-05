@@ -1,0 +1,2582 @@
+{
+ "rows": [
+  {
+   "ref": "D1",
+   "fp": "DesktopSpeaker:TPD2E2U06DRLR",
+   "w": 1.67,
+   "h": 1.83,
+   "a": 3.06,
+   "src": "courtyard"
+  },
+  {
+   "ref": "J1",
+   "fp": "DesktopSpeaker:TYPE-C-31-M-12",
+   "w": 8.97,
+   "h": 7.85,
+   "a": 70.41,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C2",
+   "fp": "DesktopSpeaker:PD_C_1210",
+   "w": 4.6,
+   "h": 3.2,
+   "a": 14.72,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C5",
+   "fp": "DesktopSpeaker:PD_C_1206",
+   "w": 4.6,
+   "h": 2.3,
+   "a": 10.58,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C6",
+   "fp": "DesktopSpeaker:PD_C_0805",
+   "w": 3.4,
+   "h": 1.96,
+   "a": 6.66,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C181",
+   "fp": "DesktopSpeaker:PD_C_0805",
+   "w": 3.4,
+   "h": 1.96,
+   "a": 6.66,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C182",
+   "fp": "DesktopSpeaker:PD_C_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C183",
+   "fp": "DesktopSpeaker:PD_C_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C184",
+   "fp": "DesktopSpeaker:PD_C_0805",
+   "w": 3.4,
+   "h": 1.96,
+   "a": 6.66,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C185",
+   "fp": "DesktopSpeaker:PD_C_0805",
+   "w": 3.4,
+   "h": 1.96,
+   "a": 6.66,
+   "src": "courtyard"
+  },
+  {
+   "ref": "D5",
+   "fp": "DesktopSpeaker:ESDA25L",
+   "w": 3.86,
+   "h": 3.4,
+   "a": 13.12,
+   "src": "courtyard"
+  },
+  {
+   "ref": "D6",
+   "fp": "DesktopSpeaker:TVS2200DRVR",
+   "w": 2.66,
+   "h": 2.56,
+   "a": 6.81,
+   "src": "courtyard"
+  },
+  {
+   "ref": "D7",
+   "fp": "DesktopSpeaker:PD_D_SOD123",
+   "w": 4.71,
+   "h": 2.3,
+   "a": 10.83,
+   "src": "courtyard"
+  },
+  {
+   "ref": "J4",
+   "fp": "DesktopSpeaker:PD_SERVICE_HDR",
+   "w": 3.54,
+   "h": 11.16,
+   "a": 39.51,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R10",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R11",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R12",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R13",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R14",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R15",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R16",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R17",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R18",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "U11",
+   "fp": "DesktopSpeaker:TPS25730D",
+   "w": 6.9,
+   "h": 4.9,
+   "a": 33.81,
+   "src": "courtyard"
+  },
+  {
+   "ref": "U19",
+   "fp": "DesktopSpeaker:TPS7B8450QWDRBRQ1_WSON-8",
+   "w": 4.13,
+   "h": 3.5,
+   "a": 14.46,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C100",
+   "fp": "DesktopSpeaker:PD_C_1210",
+   "w": 4.6,
+   "h": 3.2,
+   "a": 14.72,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C101",
+   "fp": "DesktopSpeaker:PD_C_1210",
+   "w": 4.6,
+   "h": 3.2,
+   "a": 14.72,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C102",
+   "fp": "DesktopSpeaker:PD_C_0805",
+   "w": 3.4,
+   "h": 1.96,
+   "a": 6.66,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C103",
+   "fp": "DesktopSpeaker:PD_C_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C104",
+   "fp": "DesktopSpeaker:PD_C_0805",
+   "w": 3.4,
+   "h": 1.96,
+   "a": 6.66,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C105",
+   "fp": "DesktopSpeaker:PD_C_0805",
+   "w": 3.4,
+   "h": 1.96,
+   "a": 6.66,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C106",
+   "fp": "DesktopSpeaker:PD_C_0805",
+   "w": 3.4,
+   "h": 1.96,
+   "a": 6.66,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C107",
+   "fp": "DesktopSpeaker:PD_C_0805",
+   "w": 3.4,
+   "h": 1.96,
+   "a": 6.66,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C108",
+   "fp": "DesktopSpeaker:PD_C_1210",
+   "w": 4.6,
+   "h": 3.2,
+   "a": 14.72,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C109",
+   "fp": "DesktopSpeaker:PD_C_0805",
+   "w": 3.4,
+   "h": 1.96,
+   "a": 6.66,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C110",
+   "fp": "DesktopSpeaker:PD_C_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C111",
+   "fp": "DesktopSpeaker:PD_C_1210",
+   "w": 4.6,
+   "h": 3.2,
+   "a": 14.72,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C112",
+   "fp": "DesktopSpeaker:PD_C_1210",
+   "w": 4.6,
+   "h": 3.2,
+   "a": 14.72,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C113",
+   "fp": "DesktopSpeaker:PD_C_0402",
+   "w": 1.86,
+   "h": 0.94,
+   "a": 1.75,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C114",
+   "fp": "DesktopSpeaker:PD_C_0402",
+   "w": 1.86,
+   "h": 0.94,
+   "a": 1.75,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C115",
+   "fp": "DesktopSpeaker:PD_C_0402",
+   "w": 1.86,
+   "h": 0.94,
+   "a": 1.75,
+   "src": "courtyard"
+  },
+  {
+   "ref": "J5",
+   "fp": "DesktopSpeaker:Molex_Micro-Fit_3.0_43650-0300_1x03_P3.00mm_Horizontal",
+   "w": 13.66,
+   "h": 10.91,
+   "a": 149.03,
+   "src": "courtyard"
+  },
+  {
+   "ref": "L1",
+   "fp": "DesktopSpeaker:Bourns_SRN6045TA-2R2Y",
+   "w": 7.0,
+   "h": 6.5,
+   "a": 45.5,
+   "src": "courtyard"
+  },
+  {
+   "ref": "Q100",
+   "fp": "DesktopSpeaker:2N7002",
+   "w": 3.86,
+   "h": 3.4,
+   "a": 13.12,
+   "src": "courtyard"
+  },
+  {
+   "ref": "Q101",
+   "fp": "DesktopSpeaker:2N7002",
+   "w": 3.86,
+   "h": 3.4,
+   "a": 13.12,
+   "src": "courtyard"
+  },
+  {
+   "ref": "Q102",
+   "fp": "DesktopSpeaker:2N7002",
+   "w": 3.86,
+   "h": 3.4,
+   "a": 13.12,
+   "src": "courtyard"
+  },
+  {
+   "ref": "Q103",
+   "fp": "DesktopSpeaker:CSD17579Q3A_DNH0008A",
+   "w": 4.23,
+   "h": 3.86,
+   "a": 16.33,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R100",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R101",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R102",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R103",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R106",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R107",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R108",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R109",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R110",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R111",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R112",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R113",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "SW100",
+   "fp": "DesktopSpeaker:TE_1977066-1_Tact_RA_SMD",
+   "w": 5.0,
+   "h": 7.4,
+   "a": 37.0,
+   "src": "courtyard"
+  },
+  {
+   "ref": "SW101",
+   "fp": "DesktopSpeaker:SHOUHAN_KCD1-201-R_Rocker_D20_Panel",
+   "w": 20.0,
+   "h": 20.0,
+   "a": 400.0,
+   "src": "courtyard"
+  },
+  {
+   "ref": "U4",
+   "fp": "DesktopSpeaker:BQ25792RQMR",
+   "w": 5.24,
+   "h": 4.9,
+   "a": 25.68,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C120",
+   "fp": "DesktopSpeaker:PD_C_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C121",
+   "fp": "DesktopSpeaker:PD_C_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C122",
+   "fp": "DesktopSpeaker:PD_C_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C123",
+   "fp": "DesktopSpeaker:PD_C_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C124",
+   "fp": "DesktopSpeaker:PD_C_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C125",
+   "fp": "DesktopSpeaker:PD_C_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C126",
+   "fp": "DesktopSpeaker:PD_C_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C130",
+   "fp": "DesktopSpeaker:PD_C_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C131",
+   "fp": "DesktopSpeaker:PD_C_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C132",
+   "fp": "DesktopSpeaker:PD_C_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "Q104",
+   "fp": "DesktopSpeaker:2N7002",
+   "w": 3.86,
+   "h": 3.4,
+   "a": 13.12,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R120",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R121",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R122",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R124",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R125",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R126",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R127",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "U5",
+   "fp": "DesktopSpeaker:MAX17048G+T10",
+   "w": 2.16,
+   "h": 2.51,
+   "a": 5.42,
+   "src": "courtyard"
+  },
+  {
+   "ref": "U12",
+   "fp": "DesktopSpeaker:TPS7A0230PDBVR",
+   "w": 4.1,
+   "h": 3.54,
+   "a": 14.51,
+   "src": "courtyard"
+  },
+  {
+   "ref": "U13",
+   "fp": "DesktopSpeaker:TS5A3167DBVR",
+   "w": 4.1,
+   "h": 3.54,
+   "a": 14.51,
+   "src": "courtyard"
+  },
+  {
+   "ref": "U16",
+   "fp": "DesktopSpeaker:TS5A3167DBVR",
+   "w": 4.1,
+   "h": 3.54,
+   "a": 14.51,
+   "src": "courtyard"
+  },
+  {
+   "ref": "U17",
+   "fp": "DesktopSpeaker:TS5A3167DBVR",
+   "w": 4.1,
+   "h": 3.54,
+   "a": 14.51,
+   "src": "courtyard"
+  },
+  {
+   "ref": "U20",
+   "fp": "DesktopSpeaker:TPS2116DRLR",
+   "w": 2.64,
+   "h": 2.74,
+   "a": 7.23,
+   "src": "courtyard"
+  },
+  {
+   "ref": "U21",
+   "fp": "DesktopSpeaker:TPS3839G33DBZR",
+   "w": 3.86,
+   "h": 3.4,
+   "a": 13.12,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C150",
+   "fp": "DesktopSpeaker:PD_C_0805",
+   "w": 3.4,
+   "h": 1.96,
+   "a": 6.66,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C151",
+   "fp": "DesktopSpeaker:PD_C_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C152",
+   "fp": "DesktopSpeaker:PD_C_0805",
+   "w": 3.4,
+   "h": 1.96,
+   "a": 6.66,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C153",
+   "fp": "DesktopSpeaker:PD_C_0805",
+   "w": 3.4,
+   "h": 1.96,
+   "a": 6.66,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C154",
+   "fp": "DesktopSpeaker:PD_C_0805",
+   "w": 3.4,
+   "h": 1.96,
+   "a": 6.66,
+   "src": "courtyard"
+  },
+  {
+   "ref": "L3",
+   "fp": "DesktopSpeaker:Coilcraft_XFL4015-471MEC",
+   "w": 4.6,
+   "h": 4.6,
+   "a": 21.16,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R150",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R151",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R152",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R153",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R154",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "U15",
+   "fp": "DesktopSpeaker:TPS63802DLAR",
+   "w": 3.4,
+   "h": 3.7,
+   "a": 12.58,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C140",
+   "fp": "DesktopSpeaker:PD_C_0805",
+   "w": 3.4,
+   "h": 1.96,
+   "a": 6.66,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C141",
+   "fp": "DesktopSpeaker:PD_C_0805",
+   "w": 3.4,
+   "h": 1.96,
+   "a": 6.66,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C142",
+   "fp": "DesktopSpeaker:PD_C_0805",
+   "w": 3.4,
+   "h": 1.96,
+   "a": 6.66,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C143",
+   "fp": "DesktopSpeaker:PD_C_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "L2",
+   "fp": "DesktopSpeaker:Coilcraft_XFL4015-471MEC",
+   "w": 4.6,
+   "h": 4.6,
+   "a": 21.16,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R140",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R141",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R142",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "U14",
+   "fp": "DesktopSpeaker:TPS63802DLAR",
+   "w": 3.4,
+   "h": 3.7,
+   "a": 12.58,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C160",
+   "fp": "DesktopSpeaker:PD_C_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C161",
+   "fp": "DesktopSpeaker:PD_C_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C162",
+   "fp": "DesktopSpeaker:PD_C_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C163",
+   "fp": "DesktopSpeaker:PD_C_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C164",
+   "fp": "DesktopSpeaker:PD_C_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "J6",
+   "fp": "DesktopSpeaker:PinHeader_1x04_P2.54mm_Vertical",
+   "w": 3.54,
+   "h": 11.16,
+   "a": 39.51,
+   "src": "courtyard"
+  },
+  {
+   "ref": "J7",
+   "fp": "DesktopSpeaker:Tag-Connect_TC2030-IDC-FP_2x03_P1.27mm_Vertical",
+   "w": 8.0,
+   "h": 8.5,
+   "a": 68.0,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R160",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "U3",
+   "fp": "DesktopSpeaker:STM32G071RBT6",
+   "w": 13.4,
+   "h": 13.4,
+   "a": 179.56,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C170",
+   "fp": "DesktopSpeaker:PD_C_0805",
+   "w": 3.4,
+   "h": 1.96,
+   "a": 6.66,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C171",
+   "fp": "DesktopSpeaker:PD_C_0805",
+   "w": 3.4,
+   "h": 1.96,
+   "a": 6.66,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C172",
+   "fp": "DesktopSpeaker:PD_C_0805",
+   "w": 3.4,
+   "h": 1.96,
+   "a": 6.66,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C173",
+   "fp": "DesktopSpeaker:PD_C_0805",
+   "w": 3.4,
+   "h": 1.96,
+   "a": 6.66,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C174",
+   "fp": "DesktopSpeaker:PD_C_0805",
+   "w": 3.4,
+   "h": 1.96,
+   "a": 6.66,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C175",
+   "fp": "DesktopSpeaker:PD_C_0805",
+   "w": 3.4,
+   "h": 1.96,
+   "a": 6.66,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C176",
+   "fp": "DesktopSpeaker:PD_C_0805",
+   "w": 3.4,
+   "h": 1.96,
+   "a": 6.66,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C177",
+   "fp": "DesktopSpeaker:PD_C_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C178",
+   "fp": "DesktopSpeaker:PD_C_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C186",
+   "fp": "DesktopSpeaker:PD_C_1206",
+   "w": 4.6,
+   "h": 2.3,
+   "a": 10.58,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C187",
+   "fp": "DesktopSpeaker:PD_C_1206",
+   "w": 4.6,
+   "h": 2.3,
+   "a": 10.58,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R170",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R171",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R172",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R173",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R174",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R175",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R176",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "U2",
+   "fp": "DesktopSpeaker:PCM2902CDBR",
+   "w": 10.2,
+   "h": 6.93,
+   "a": 70.69,
+   "src": "courtyard"
+  },
+  {
+   "ref": "Y170",
+   "fp": "DesktopSpeaker:Crystal_SMD_3225-4Pin_3.2x2.5mm",
+   "w": 4.2,
+   "h": 3.5,
+   "a": 14.7,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C190",
+   "fp": "DesktopSpeaker:PD_C_0805",
+   "w": 3.4,
+   "h": 1.96,
+   "a": 6.66,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C191",
+   "fp": "DesktopSpeaker:PD_C_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C192",
+   "fp": "DesktopSpeaker:PD_C_0805",
+   "w": 3.4,
+   "h": 1.96,
+   "a": 6.66,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C193",
+   "fp": "DesktopSpeaker:PD_C_0805",
+   "w": 3.4,
+   "h": 1.96,
+   "a": 6.66,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C194",
+   "fp": "DesktopSpeaker:PD_C_1206",
+   "w": 4.6,
+   "h": 2.3,
+   "a": 10.58,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C195",
+   "fp": "DesktopSpeaker:PD_C_1206",
+   "w": 4.6,
+   "h": 2.3,
+   "a": 10.58,
+   "src": "courtyard"
+  },
+  {
+   "ref": "J8",
+   "fp": "DesktopSpeaker:PinHeader_1x05_P2.54mm_Vertical",
+   "w": 3.54,
+   "h": 13.7,
+   "a": 48.5,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R180",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R181",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R182",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R183",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R184",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R185",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R186",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R187",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "U1",
+   "fp": "DesktopSpeaker:BM83SM1-00TA",
+   "w": 15.88,
+   "h": 32.0,
+   "a": 508.16,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C200",
+   "fp": "DesktopSpeaker:PD_C_0805",
+   "w": 3.4,
+   "h": 1.96,
+   "a": 6.66,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C201",
+   "fp": "DesktopSpeaker:PD_C_0805",
+   "w": 3.4,
+   "h": 1.96,
+   "a": 6.66,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C202",
+   "fp": "DesktopSpeaker:PD_C_0805",
+   "w": 3.4,
+   "h": 1.96,
+   "a": 6.66,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C203",
+   "fp": "DesktopSpeaker:PD_C_0805",
+   "w": 3.4,
+   "h": 1.96,
+   "a": 6.66,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C204",
+   "fp": "DesktopSpeaker:PD_C_0805",
+   "w": 3.4,
+   "h": 1.96,
+   "a": 6.66,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C205",
+   "fp": "DesktopSpeaker:PD_C_0805",
+   "w": 3.4,
+   "h": 1.96,
+   "a": 6.66,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C206",
+   "fp": "DesktopSpeaker:PD_C_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C207",
+   "fp": "DesktopSpeaker:PD_C_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C208",
+   "fp": "DesktopSpeaker:PD_C_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C209",
+   "fp": "DesktopSpeaker:PD_C_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C210",
+   "fp": "DesktopSpeaker:PD_C_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C211",
+   "fp": "DesktopSpeaker:PD_C_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C212",
+   "fp": "DesktopSpeaker:PD_C_0805",
+   "w": 3.4,
+   "h": 1.96,
+   "a": 6.66,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C213",
+   "fp": "DesktopSpeaker:PD_C_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C214",
+   "fp": "DesktopSpeaker:PD_C_0805",
+   "w": 3.4,
+   "h": 1.96,
+   "a": 6.66,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C215",
+   "fp": "DesktopSpeaker:PD_C_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C216",
+   "fp": "DesktopSpeaker:PD_C_0805",
+   "w": 3.4,
+   "h": 1.96,
+   "a": 6.66,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C217",
+   "fp": "DesktopSpeaker:PD_C_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C218",
+   "fp": "DesktopSpeaker:PD_C_0805",
+   "w": 3.4,
+   "h": 1.96,
+   "a": 6.66,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C219",
+   "fp": "DesktopSpeaker:PD_C_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C220",
+   "fp": "DesktopSpeaker:PD_C_0805",
+   "w": 3.4,
+   "h": 1.96,
+   "a": 6.66,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C221",
+   "fp": "DesktopSpeaker:PD_C_0805",
+   "w": 3.4,
+   "h": 1.96,
+   "a": 6.66,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C222",
+   "fp": "DesktopSpeaker:PD_C_0805",
+   "w": 3.4,
+   "h": 1.96,
+   "a": 6.66,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C223",
+   "fp": "DesktopSpeaker:PD_C_0805",
+   "w": 3.4,
+   "h": 1.96,
+   "a": 6.66,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C224",
+   "fp": "DesktopSpeaker:PD_C_0805",
+   "w": 3.4,
+   "h": 1.96,
+   "a": 6.66,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C225",
+   "fp": "DesktopSpeaker:PD_C_0805",
+   "w": 3.4,
+   "h": 1.96,
+   "a": 6.66,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C226",
+   "fp": "DesktopSpeaker:PD_C_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C227",
+   "fp": "DesktopSpeaker:PD_C_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "FB200",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R200",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R201",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R202",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R203",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R204",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R205",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R206",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R207",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R208",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R209",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R210",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R211",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R212",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "U22",
+   "fp": "DesktopSpeaker:TPS7A2033PDBVR",
+   "w": 4.1,
+   "h": 3.54,
+   "a": 14.51,
+   "src": "courtyard"
+  },
+  {
+   "ref": "U23",
+   "fp": "DesktopSpeaker:TPS22917DBVR",
+   "w": 4.1,
+   "h": 3.54,
+   "a": 14.51,
+   "src": "courtyard"
+  },
+  {
+   "ref": "U24",
+   "fp": "DesktopSpeaker:PCM1862DBTR",
+   "w": 7.7,
+   "h": 8.39,
+   "a": 64.6,
+   "src": "courtyard"
+  },
+  {
+   "ref": "Y200",
+   "fp": "DesktopSpeaker:Crystal_SMD_3225-4Pin_3.2x2.5mm",
+   "w": 4.2,
+   "h": 3.5,
+   "a": 14.7,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C230",
+   "fp": "DesktopSpeaker:PD_C_0805",
+   "w": 3.4,
+   "h": 1.96,
+   "a": 6.66,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C231",
+   "fp": "DesktopSpeaker:PD_C_0805",
+   "w": 3.4,
+   "h": 1.96,
+   "a": 6.66,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C232",
+   "fp": "DesktopSpeaker:PD_C_0805",
+   "w": 3.4,
+   "h": 1.96,
+   "a": 6.66,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C233",
+   "fp": "DesktopSpeaker:PD_C_0805",
+   "w": 3.4,
+   "h": 1.96,
+   "a": 6.66,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C234",
+   "fp": "DesktopSpeaker:PD_C_0805",
+   "w": 3.4,
+   "h": 1.96,
+   "a": 6.66,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C235",
+   "fp": "DesktopSpeaker:PD_C_0805",
+   "w": 3.4,
+   "h": 1.96,
+   "a": 6.66,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C236",
+   "fp": "DesktopSpeaker:PD_C_1206",
+   "w": 4.6,
+   "h": 2.3,
+   "a": 10.58,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C237",
+   "fp": "DesktopSpeaker:PD_C_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C238",
+   "fp": "DesktopSpeaker:PD_C_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C239",
+   "fp": "DesktopSpeaker:PD_C_0805",
+   "w": 3.4,
+   "h": 1.96,
+   "a": 6.66,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C240",
+   "fp": "DesktopSpeaker:PD_C_0805",
+   "w": 3.4,
+   "h": 1.96,
+   "a": 6.66,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C241",
+   "fp": "DesktopSpeaker:PD_C_0805",
+   "w": 3.4,
+   "h": 1.96,
+   "a": 6.66,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C242",
+   "fp": "DesktopSpeaker:PD_C_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C243",
+   "fp": "DesktopSpeaker:PD_C_0805",
+   "w": 3.4,
+   "h": 1.96,
+   "a": 6.66,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C244",
+   "fp": "DesktopSpeaker:PD_C_0805",
+   "w": 3.4,
+   "h": 1.96,
+   "a": 6.66,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C245",
+   "fp": "DesktopSpeaker:PD_C_0805",
+   "w": 3.4,
+   "h": 1.96,
+   "a": 6.66,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C246",
+   "fp": "DesktopSpeaker:PD_C_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "D200",
+   "fp": "DesktopSpeaker:PESD5V0S2BT",
+   "w": 3.86,
+   "h": 3.4,
+   "a": 13.12,
+   "src": "courtyard"
+  },
+  {
+   "ref": "D201",
+   "fp": "DesktopSpeaker:PESD5V0S2BT",
+   "w": 3.86,
+   "h": 3.4,
+   "a": 13.12,
+   "src": "courtyard"
+  },
+  {
+   "ref": "J2",
+   "fp": "DesktopSpeaker:PJ-307",
+   "w": 14.2,
+   "h": 12.0,
+   "a": 170.4,
+   "src": "courtyard"
+  },
+  {
+   "ref": "J3",
+   "fp": "DesktopSpeaker:PJ-307",
+   "w": 14.2,
+   "h": 12.0,
+   "a": 170.4,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R220",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R221",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R222",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R223",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R224",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R225",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R226",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R227",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R228",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R229",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R230",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R231",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R232",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R233",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R234",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R235",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R236",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R237",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R238",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R239",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R240",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R241",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R242",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R243",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R244",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "U8",
+   "fp": "DesktopSpeaker:TS5A23157DGSR",
+   "w": 3.16,
+   "h": 4.29,
+   "a": 13.56,
+   "src": "courtyard"
+  },
+  {
+   "ref": "U9",
+   "fp": "DesktopSpeaker:TS5A23157DGSR",
+   "w": 3.16,
+   "h": 4.29,
+   "a": 13.56,
+   "src": "courtyard"
+  },
+  {
+   "ref": "U10",
+   "fp": "DesktopSpeaker:TPA6132A2RTER",
+   "w": 3.95,
+   "h": 3.44,
+   "a": 13.59,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C260",
+   "fp": "DesktopSpeaker:PD_C_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C261",
+   "fp": "DesktopSpeaker:PD_C_0805",
+   "w": 3.4,
+   "h": 1.96,
+   "a": 6.66,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C262",
+   "fp": "DesktopSpeaker:PD_C_0805",
+   "w": 3.4,
+   "h": 1.96,
+   "a": 6.66,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C263",
+   "fp": "DesktopSpeaker:PD_C_0805",
+   "w": 3.4,
+   "h": 1.96,
+   "a": 6.66,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C264",
+   "fp": "DesktopSpeaker:PD_C_0805",
+   "w": 3.4,
+   "h": 1.96,
+   "a": 6.66,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C265",
+   "fp": "DesktopSpeaker:PD_C_0805",
+   "w": 3.4,
+   "h": 1.96,
+   "a": 6.66,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C266",
+   "fp": "DesktopSpeaker:PD_C_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C267",
+   "fp": "DesktopSpeaker:PD_C_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C268",
+   "fp": "DesktopSpeaker:PD_C_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C269",
+   "fp": "DesktopSpeaker:PD_C_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C270",
+   "fp": "DesktopSpeaker:PD_C_0805",
+   "w": 3.4,
+   "h": 1.96,
+   "a": 6.66,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C271",
+   "fp": "DesktopSpeaker:PD_C_1210",
+   "w": 4.6,
+   "h": 3.2,
+   "a": 14.72,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C272",
+   "fp": "DesktopSpeaker:PD_C_1210",
+   "w": 4.6,
+   "h": 3.2,
+   "a": 14.72,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C273",
+   "fp": "DesktopSpeaker:PD_C_1210",
+   "w": 4.6,
+   "h": 3.2,
+   "a": 14.72,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C274",
+   "fp": "DesktopSpeaker:PD_C_1210",
+   "w": 4.6,
+   "h": 3.2,
+   "a": 14.72,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C275",
+   "fp": "DesktopSpeaker:CP_Elec_8x10",
+   "w": 10.75,
+   "h": 8.8,
+   "a": 94.6,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C276",
+   "fp": "DesktopSpeaker:PD_C_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C277",
+   "fp": "DesktopSpeaker:PD_C_1210",
+   "w": 4.6,
+   "h": 3.2,
+   "a": 14.72,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C278",
+   "fp": "DesktopSpeaker:PD_C_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C279",
+   "fp": "DesktopSpeaker:PD_C_1210",
+   "w": 4.6,
+   "h": 3.2,
+   "a": 14.72,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C280",
+   "fp": "DesktopSpeaker:PD_C_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C281",
+   "fp": "DesktopSpeaker:PD_C_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C282",
+   "fp": "DesktopSpeaker:PD_C_0805",
+   "w": 3.4,
+   "h": 1.96,
+   "a": 6.66,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C283",
+   "fp": "DesktopSpeaker:PD_C_0805",
+   "w": 3.4,
+   "h": 1.96,
+   "a": 6.66,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C284",
+   "fp": "DesktopSpeaker:PD_C_0805",
+   "w": 3.4,
+   "h": 1.96,
+   "a": 6.66,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C285",
+   "fp": "DesktopSpeaker:PD_C_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C286",
+   "fp": "DesktopSpeaker:PD_C_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C287",
+   "fp": "DesktopSpeaker:PD_C_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C288",
+   "fp": "DesktopSpeaker:PD_C_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C289",
+   "fp": "DesktopSpeaker:PD_C_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C290",
+   "fp": "DesktopSpeaker:PD_C_1210",
+   "w": 4.6,
+   "h": 3.2,
+   "a": 14.72,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C291",
+   "fp": "DesktopSpeaker:PD_C_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C292",
+   "fp": "DesktopSpeaker:PD_C_1210",
+   "w": 4.6,
+   "h": 3.2,
+   "a": 14.72,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C293",
+   "fp": "DesktopSpeaker:PD_C_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C294",
+   "fp": "DesktopSpeaker:PD_C_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C295",
+   "fp": "DesktopSpeaker:PD_C_0805",
+   "w": 3.4,
+   "h": 1.96,
+   "a": 6.66,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C296",
+   "fp": "DesktopSpeaker:PD_C_0805",
+   "w": 3.4,
+   "h": 1.96,
+   "a": 6.66,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C297",
+   "fp": "DesktopSpeaker:PD_C_0805",
+   "w": 3.4,
+   "h": 1.96,
+   "a": 6.66,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C298",
+   "fp": "DesktopSpeaker:PD_C_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C299",
+   "fp": "DesktopSpeaker:PD_C_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C300",
+   "fp": "DesktopSpeaker:PD_C_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C301",
+   "fp": "DesktopSpeaker:PD_C_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C302",
+   "fp": "DesktopSpeaker:PD_C_0805",
+   "w": 3.4,
+   "h": 1.96,
+   "a": 6.66,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C303",
+   "fp": "DesktopSpeaker:PD_C_0805",
+   "w": 3.4,
+   "h": 1.96,
+   "a": 6.66,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C304",
+   "fp": "DesktopSpeaker:PD_C_0805",
+   "w": 3.4,
+   "h": 1.96,
+   "a": 6.66,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C305",
+   "fp": "DesktopSpeaker:PD_C_0805",
+   "w": 3.4,
+   "h": 1.96,
+   "a": 6.66,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C306",
+   "fp": "DesktopSpeaker:PD_C_0805",
+   "w": 3.4,
+   "h": 1.96,
+   "a": 6.66,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C307",
+   "fp": "DesktopSpeaker:PD_C_0805",
+   "w": 3.4,
+   "h": 1.96,
+   "a": 6.66,
+   "src": "courtyard"
+  },
+  {
+   "ref": "J9",
+   "fp": "DesktopSpeaker:JST_B2P_VH_1x02_P3.96mm_Vertical",
+   "w": 9.27,
+   "h": 9.5,
+   "a": 88.06,
+   "src": "courtyard"
+  },
+  {
+   "ref": "J10",
+   "fp": "DesktopSpeaker:JST_B2P_VH_1x02_P3.96mm_Vertical",
+   "w": 9.27,
+   "h": 9.5,
+   "a": 88.06,
+   "src": "courtyard"
+  },
+  {
+   "ref": "J11",
+   "fp": "DesktopSpeaker:JST_B2P_VH_1x02_P3.96mm_Vertical",
+   "w": 9.27,
+   "h": 9.5,
+   "a": 88.06,
+   "src": "courtyard"
+  },
+  {
+   "ref": "L200",
+   "fp": "DesktopSpeaker:L_Coilcraft_XAL7070-XXX",
+   "w": 8.2,
+   "h": 8.5,
+   "a": 69.7,
+   "src": "courtyard"
+  },
+  {
+   "ref": "L201",
+   "fp": "DesktopSpeaker:L_Sunlord_MWSA1265S",
+   "w": 15.0,
+   "h": 13.1,
+   "a": 196.5,
+   "src": "courtyard"
+  },
+  {
+   "ref": "L202",
+   "fp": "DesktopSpeaker:L_Sunlord_MWSA1265S",
+   "w": 15.0,
+   "h": 13.1,
+   "a": 196.5,
+   "src": "courtyard"
+  },
+  {
+   "ref": "L203",
+   "fp": "DesktopSpeaker:L_Sunlord_MWSA1265S",
+   "w": 15.0,
+   "h": 13.1,
+   "a": 196.5,
+   "src": "courtyard"
+  },
+  {
+   "ref": "L204",
+   "fp": "DesktopSpeaker:L_Sunlord_MWSA1265S",
+   "w": 15.0,
+   "h": 13.1,
+   "a": 196.5,
+   "src": "courtyard"
+  },
+  {
+   "ref": "L205",
+   "fp": "DesktopSpeaker:L_Sunlord_MWSA1265S",
+   "w": 15.0,
+   "h": 13.1,
+   "a": 196.5,
+   "src": "courtyard"
+  },
+  {
+   "ref": "L206",
+   "fp": "DesktopSpeaker:L_Sunlord_MWSA1265S",
+   "w": 15.0,
+   "h": 13.1,
+   "a": 196.5,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R250",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R251",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R252",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R253",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R254",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R255",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R256",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R257",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R258",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R259",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R260",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R261",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "R262",
+   "fp": "DesktopSpeaker:PD_R_0603",
+   "w": 2.96,
+   "h": 1.46,
+   "a": 4.32,
+   "src": "courtyard"
+  },
+  {
+   "ref": "U6",
+   "fp": "DesktopSpeaker:TAS5825MRHBR",
+   "w": 5.54,
+   "h": 5.16,
+   "a": 28.59,
+   "src": "courtyard"
+  },
+  {
+   "ref": "U7",
+   "fp": "DesktopSpeaker:TAS5825MRHBR",
+   "w": 5.54,
+   "h": 5.16,
+   "a": 28.59,
+   "src": "courtyard"
+  },
+  {
+   "ref": "U25",
+   "fp": "DesktopSpeaker:TPS61088RHLR",
+   "w": 5.6,
+   "h": 4.6,
+   "a": 25.76,
+   "src": "courtyard"
+  }
+ ],
+ "missing": [],
+ "total": 5678.72
+}
