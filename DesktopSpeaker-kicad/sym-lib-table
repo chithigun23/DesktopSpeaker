@@ -2,6 +2,7 @@
   (version 7)
   (lib (name "BM83SM1-00TA") (type "KiCad") (uri "${KIPRJMOD}/kicad-library/schematic/BM83SM1-00TA.kicad_sym") (options "") (descr "Microchip BM83 Bluetooth audio module"))
   (lib (name "STM32G031K8T6") (type "KiCad") (uri "${KIPRJMOD}/kicad-library/schematic/STM32G031K8T6.kicad_sym") (options "") (descr "STMicroelectronics STM32G031 MCU"))
+  (lib (name "STM32G071RBT6") (type "KiCad") (uri "${KIPRJMOD}/kicad-library/schematic/STM32G071RBT6.kicad_sym") (options "") (descr "STMicroelectronics STM32G071 MCU"))
   (lib (name "BQ25895RTWR") (type "KiCad") (uri "${KIPRJMOD}/kicad-library/schematic/BQ25895RTWR.kicad_sym") (options "") (descr "Texas Instruments BQ25895 charger"))
   (lib (name "MAX17048G+T10") (type "KiCad") (uri "${KIPRJMOD}/kicad-library/schematic/MAX17048G+T10.kicad_sym") (options "") (descr "Analog Devices MAX17048 fuel gauge"))
   (lib (name "PCM2902CDBR") (type "KiCad") (uri "${KIPRJMOD}/kicad-library/schematic/PCM2902CDBR.kicad_sym") (options "") (descr "Texas Instruments PCM2902 USB audio codec"))

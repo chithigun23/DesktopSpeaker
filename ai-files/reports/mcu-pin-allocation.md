@@ -1,72 +1,88 @@
-# MCU pin allocation (STM32G031K8T6, LQFP32)
+# MCU pin allocation (STM32G071RBT6, LQFP64)
 
-2026-10-06. Planning plus capture brief. Datasheet DS12992 Rev 1 (`datasheets/STM32G031x4_x6_x8.pdf`) Table 12/13. The placed MCU reference is **U3** (not U1). No firmware or hardware test is claimed.
+2026-10-06. U3 changed from STM32G031K8T6 (LQFP32) to **STM32G071RBT6 (LQFP64 10 x 10 mm, LCSC C432213)** as decided in `audio-chain-architecture.md` section 5. Datasheet DS12232 Rev 2 (`datasheets/STM32G071x8_xB.pdf`, Table 12 pin table, Tables 13/14 alternate functions). Reference **U3** and its root instance are unchanged. No firmware or hardware test is claimed. Symbol `kicad-library/schematic/STM32G071RBT6.kicad_sym` (pin names and numbers from Table 12), footprint `STM32G071RBT6.kicad_mod` (stock KiCad LQFP-64_10x10mm_P0.5mm, 64 pads, 0.5 mm pitch, pad span 11.35 mm, 1.55 x 0.3 mm pads, pin 1 top-left), STEP `3d/STM32G071RBT6.step` (stock KiCad model, 12 x 12 mm over leads, 1.5 mm high). The G031 library files stay in the library but are no longer used by any sheet.
 
 ## Supply, reset, boot, debug
 
-- VDD range 1.7-3.6 V (power scheme fig. quotes 1.55 V). The 3V_AO rail (U12 TPS7A0230, 3.0 V nominal, USB-priority or pack input) fits; below about 3.0 V input it sags but stays in range. The LQFP32 has one VDD/VDDA pin (4) and one VSS/VSSA pin (5): VDDA = VDD and VREF+ is internal, so ADC reference is the sagging 3V_AO (use VREFINT calibration). Datasheet fig. 13: 100 nF plus 4.7 uF at VDD/VDDA, close to the pin.
-- NRST (pin 6): internal pull-up (no external pull-up needed), 100 nF to GND per fig. 24, wired to the SWD header. NRST_MODE option must stay "reset input" (PF2 is otherwise a GPIO).
-- BOOT0 is PA14-BOOT0, shared with SWCLK. Factory option nBOOT_SEL=1 ignores the pin (boots flash; empty flash falls into the ROM loader). 100 k pull-down kept on the line so a later nBOOT_SEL=0 boots flash by default; entering the bootloader then needs the header/option bytes (no jumper captured).
-- SWD: J7 Tag-Connect TC2030-IDC (1 3V_AO, 2 SWDIO PA13, 3 NRST, 4 SWCLK PA14, 5 GND, 6 SWO nc) and J6 4-pin 2.54 mm header (1 SWDIO, 2 SWCLK, 3 NRST, 4 GND). Firmware must not remap PA13/PA14 or enter a mode that disables SWD without a startup delay.
-- PA11/PA12: LQFP32 bonds PA11 (22) and PA12 (23) as real pins and PA9/PA10 on pins 19/21. SYSCFG PA11_RMP/PA12_RMP must stay 0 (the [PA9]/[PA10] bracket is the small-package remap).
+- VDD 1.7-3.6 V. LQFP64 has **one** VDD/VDDA pin (8) and one VSS/VSSA pin (9), plus VBAT (6) and VREF+ (7). All are fed from 3V_AO (U12 TPS7A0230, 3.0 V nominal, USB-priority or pack input); the supply sags with the pack, so ADC readings need VREFINT calibration. Single pins: nothing to stack natively (the power pins are electrically distinct pads).
+- Decoupling (DS12232 fig. 13): VDD/VDDA 100 nF (C160) + 4.7 uF (C161); VREF+ 100 nF (C163) + 1 uF (C164) with VREFBUF off and VREF+ tied to VDDA (the datasheet allows VREF+ = VDDA when VDDA is 2.0 V or more; below that VREF+ must equal VDDA, which it does). VBAT tied directly to VDD (no backup cell, LSE and RTC unused). PC14/PC15 are used as GPIO (no crystal planned).
+- NRST (12, PF2-NRST): internal pull-up, 100 nF (C162) to GND, wired to J6/J7. NRST_MODE option must stay "reset input".
+- BOOT0 is PA14-BOOT0 (46) shared with SWCLK. nBOOT_SEL=1 ignores the pin. R160 100 k pull-down kept on the SWCLK line.
+- SWD: PA13 SWDIO (45), PA14 SWCLK (46). J7 TC2030-IDC (1 3V_AO, 2 SWDIO, 3 NRST, 4 SWCLK, 5 GND, 6 SWO nc) and J6 4-pin header unchanged. PA13/PA14 must not be remapped. SWO (PB3) is not available because PB3 is BT_MFB.
+- PA11/PA12 (pins 43/44) are named PA11[PA9] / PA12[PA10]: SYSCFG PA11_RMP/PA12_RMP must stay 0 (default).
 
-## Allocation (captured now)
+## Allocation (captured: nets exist on the sheet)
 
 | Signal | Dir (MCU) | Pin | Function / notes |
 |---|---|---|---|
-| CTRL_SDA, CTRL_SCL | bidir | PB7 (31), PB6 (30) | I2C1 AF6, FT_f. Bus: BQ25792 0x6B, MAX17048 0x36 (behind gauge isolation switches). Pull-ups R120/R121 4.7 k to 3V_AO already in Fuel_Gauge_Power: not duplicated. |
-| PDCTRL_SDA, PDCTRL_SCL | bidir | PA12 (23), PA11 (22) | I2C2 AF6, FT_f; only I2C2 location on LQFP32. TPS25730D 0x20. |
-| CHG_ENABLE | out | PC6 (20) | R107 100 k pull-down (net reaches Q100 gate): reset keeps charge off. High = enabled. |
-| CHG_SYS_ENABLE | out | PA10 (21) | R111 100 k pull-down to Q102 gate: reset keeps ILIM_HIZ asserted (conversion off). |
-| CHG_INT | in | PC15 (3) | BQ INT, open-drain, R106 10 k to 3V_AO. Edge/EXTI. |
-| GAUGE_ALRT_N | in | PA0 (7, WKUP1) | MAX17048 ALRT through isolation switch U17, R122 47 k to 3V_AO. WKUP1 allows standby wake. |
-| PD_PLUG_EVENT | in | PC14 (2) | TPS25730D open-drain, R16 100 k to LDO_3V3 (1 = attached; 0 when VBUS absent). EXTI wake from Stop. |
-| PD_SINK_EN | in | PB9 (1) | TPS25730D open-drain, R17 100 k to LDO_3V3 (0 = sink path enabled). Status only. |
-| BT_PWR_EN | out | PA8 (18) | U15 EN, R152 100 k pull-down. |
-| BT_FORCE_PWM | out | PA9 (19) | U15 MODE, R153 100 k pull-down (default PFM). |
-| BT_UART_TX | out | PA2 (9) | USART2_TX AF1 to BM83 P8_6 RXD via R182 10 k (Bluetooth sheet). Drive low before BT_PWR_EN goes low. Pin moved to the right side of the symbol. |
-| BT_UART_RX | in | PA3 (10) | USART2_RX AF1 (or LPUART1_RX) from BM83 P8_5 TXD via R186 1 k. FT_ea, 5 V tolerant. |
-| BT_MFB | out | PB3 (27) | BM83 PWR(MFB) wake/power key via R183 10 k, R184 100 k pull-down on the module side. Costs the SWO option (J7 pin 6 was already nc). |
-| BT_RST_N | out | PB4 (28) | BM83 RST_N via R185 1 k; drive open-drain (low only), module has the pull-up. |
-| BT_TX_IND | in | PB8 (32) | BM83 P0_0 UART_TX_IND (Host mode) via R187 1 k; EXTI wake. Pin moved to the left side of the symbol. FT_f. Firmware enables internal pull-down. |
-| 5V_LOGIC_EN | out | PB5 (29) | U14 EN, R142 100 k pull-down. U14 MODE is hard-tied to SYS_RAW (no MCU mode pin). |
+| CTRL_SDA | bidir | PB7 (61) | I2C1_SDA AF6, FT_fa. Pull-ups R120/R121 on Fuel_Gauge_Power (3V_AO). |
+| CTRL_SCL | bidir | PB6 (60) | I2C1_SCL AF6, FT_fa. BQ25792 0x6B, MAX17048 0x36 (behind isolation switches). |
+| PDCTRL_SDA | bidir | PA12 (44) | **Software (bit-banged) I2C**, open-drain output, FT_f. Pull-ups R14/R15 10 k to LDO_3V3 on the PD sheet. TPS25730D 0x20. |
+| PDCTRL_SCL | bidir | PA11 (43) | Same; FT_f. Keep both pins analog/input no-pull until PD_PLUG_EVENT = 1 (the pull-ups exist only with VBUS). |
+| CHG_ENABLE | out | PC6 (38) | R107 100 k pull-down, High = charge enabled. |
+| CHG_SYS_ENABLE | out | PA10 (42) | R111 100 k pull-down: reset keeps ILIM_HIZ asserted. |
+| CHG_INT | in | PC15 (5) | BQ INT, open-drain, R106 10 k to 3V_AO. EXTI. |
+| GAUGE_ALRT_N | in | PA0 (17, WKUP1) | MAX17048 ALRT via U17, R122 47 k to 3V_AO. Standby wake. |
+| PD_PLUG_EVENT | in | PC14 (4) | TPS25730D open-drain, R16 100 k to LDO_3V3. EXTI wake from Stop. |
+| PD_SINK_EN | in | PB9 (63) | TPS25730D open-drain, R17 100 k to LDO_3V3. Status only. |
+| CHG_QON_SENSE | in | PC13 (3, WKUP2) | New. See QON section. |
+| BT_PWR_EN | out | PA8 (36) | U15 EN, R152 100 k pull-down. |
+| BT_FORCE_PWM | out | PA9 (37) | U15 MODE, R153 100 k pull-down. |
+| 5V_LOGIC_EN | out | PB5 (59) | U14 EN, R142 100 k pull-down. |
+| BT_UART_TX | out | PA2 (19) | USART2_TX AF1 to BM83 via R182. Drive low before BT_PWR_EN goes low. |
+| BT_UART_RX | in | PA3 (20) | USART2_RX AF1 from BM83 via R186. |
+| BT_MFB | out | PB3 (57) | BM83 MFB via R183 (R184 100 k pull-down on the module side). |
+| BT_RST_N | out | PB4 (58) | BM83 RST_N via R185; drive open-drain (low only). |
+| BT_TX_IND | in | PB8 (62) | BM83 P0_0 via R187; EXTI wake; internal pull-down in firmware. |
 
-Verified against the child sheets: port names/directions above match `USB_PD`, `Battery_Charger`, `Fuel_Gauge_Power`, `Bluetooth_Power` and `Logic_Audio_Power` hierarchical labels and the baseline netlist.
+All captured pins are 5 V tolerant FT variants. Pin moves versus the G031 are numbering only; every non-MCU pin group of each net is unchanged (netlist compared).
 
-## Voltage domains and I2C choices
+## Reserved for sections 7-9 and open sections (labelled no-connect on the MCU sheet)
 
-- PDCTRL pull-ups (R14/R15 10 k) go to LDO_3V3 (3.3 V, present only with VBUS). Keep them there: pulling to 3V_AO would back-feed the TPS25730D with its LDO off. FT_f pins tolerate 3.3 V at VDD = 3.0 V (abs max VDD+4.0 V, input spec min(VDD+3.6, 5.5)); the MCU only pulls low. VIL 0.3 VDD (0.9 V) vs TPS25730D VOL is acceptable but check at bring-up.
-- Unpowered behaviour: no VBUS means LDO_3V3 is off, both PD lines float and the TPS25730D is dead. Firmware should keep I2C2 disabled (pins analog or input no-pull) until PD_PLUG_EVENT = 1; the pull-ups only exist while the PD chip is present. 3V_AO is up whenever VBUS is (U20 USB-priority), so LDO_3V3 pulling the pins with VDD = 0 should not occur except in the first ms of attach (still <= 4 V).
-- PD_PLUG_EVENT and PD_SINK_EN are driven 0 to 3.3 V: inside the same FT limit.
-- The gauge CTRL bus is isolated below the 3.08 V supervisor threshold (U21/Q104): expect NACKs from the MAX17048 when 3V_AO sags.
-- 2N7002 gates (Q100/Q102) at 3.0 V are at a marginal enhancement level; the loads are 100 k pull-ups so acceptable. At VDD below about 2.5 V enables may fail to assert: safe state is OFF.
+| Signal | Dir | Pin | Notes |
+|---|---|---|---|
+| AUD_SDA / AUD_SCL | bidir | PB11 (31) / PB10 (30) | **Hardware I2C2 AF6** (I2C2_SDA / I2C2_SCL), FT_fa. Pull-ups 2.2 k to 3V3_AUDIO on Source_Select_ADC. PB13/PB14 would also be I2C2 AF6 but are used for LEDs. |
+| AMP_PDN | out | PA6 (23) | Shared U6/U7 PDN. 100 k pull-down (arch doc). |
+| AMP_BOOST_EN | out | PA7 (24) | U25 EN, 100 k pull-down. |
+| CODEC_PWR_EN | out | PC7 (39) | U23 ON, 100 k pull-down. |
+| HP_SEL_A, HP_SEL_B | out | PC0 (13), PC1 (14) | TS5A23157 selects, 100 k pull-downs (USB default). |
+| HP_EN | out | PC2 (15) | TPA6132A2 EN, 100 k pull-down. |
+| HP_G0, HP_G1 | out | PC3 (16), PA4 (21) | TPA6132A2 gain, 100 k pull-downs. PA4 is TT_a (not 5 V tolerant): fine as an output. |
+| AMP_FAULT_N | in | PC4 (25) | Open-drain wired-OR, pull-up to 3V3_AUDIO (FT_a, 3.3 V on a 3.0 V VDD is inside the FT limit). EXTI. |
+| ADC_INT | in | PC5 (26) | PCM1862 INTA (100 k pull-down). Optional. |
+| HP_DET | in | PB1 (28) | J2 switched tip, pull-up to 3V3_AUDIO via 1 k. EXTI. |
+| AUX_DET | in | PB2 (29) | J3 switched tip via 10 k, 1 M to 3V_AO. EXTI. |
+| USB_SRC_DET | in | PB0 (27) | ADC_IN8 (analog). |
+| BTN_ADC | in | PA1 (18) | ADC_IN1, resistor-ladder buttons. |
+| LED_R, LED_G, LED_B | out | PB13 (33), PB14 (34), PB15 (35) | TIM1_CH1N/CH2N/CH3N AF2 PWM (set MOE). |
+| USB_DATA_SEL, USB_DATA_OE_N | out | PD0 (50), PD1 (51) | TS3USB221A; OE_N needs an external pull-up (disabled by default), SEL a pull-down. |
+| CODEC_SSPND | out | PD2 (52) | PCM2902C suspend status/control. |
+| USB_HID_MUTE, USB_HID_VOLUP, USB_HID_VOLDN | out | PD3 (53), PD4 (54), PD5 (55) | PCM2902C HID0/HID1/HID2 drive, pull-downs. |
 
-## Safe reset states
+Spare GPIO (13, unlabelled no-connect): PA5 (22), PA15 (47), PB12 (32), PC8 (48), PC9 (49), PC10 (64), PC11 (1), PC12 (2), PD6 (56), PD8 (40), PD9 (41), PF0 (10), PF1 (11). Budget: 60 I/O = 21 captured + NRST + 25 reserved + 13 spare.
 
-All GPIO are floating inputs in reset (and SWD pins keep SWD function). The external pull-downs R107, R111, R142, R152, R153 define OFF for every captured output: no pin needs an MCU-defined state at reset. Firmware order: drive all five outputs low (push-pull) before enabling I2C traffic, per replacement-power-control-contract.md. Inputs have external pull-ups already.
+## Constraints checked
 
-## Reserved for later (left no-connect on the sheet)
+- **SWD/BOOT0**: PA13/PA14 reserved for SWD, BOOT0 on PA14 as before (nBOOT_SEL=1 ignores it).
+- **ADC**: BTN_ADC PA1 (ADC_IN1) and USB_SRC_DET PB0 (ADC_IN8) are ADC channels; PA0-PA7, PB0-PB2, PB10-PB12, PC4/PC5 are FT_a/TT_a analog-capable if more are needed. ADC reference is the sagging VDDA.
+- **FT tolerance**: every input from a 3.3 V domain (LDO_3V3 PD lines, 3V3_AUDIO lines, QON about 3.6-3.8 V) lands on an FT pin (5.5 V limit; absolute maximum VDD + 4.0 V). The only TT pin used is PA4, an output. The MCU only pulls low on I2C lines.
+- **Alternate functions** (Tables 13/14): I2C1 SCL/SDA PB6/PB7 AF6; I2C2 SCL/SDA PB10/PB11 AF6; USART2 TX/RX PA2/PA3 AF1; TIM1_CH1N/2N/3N on PB13/14/15 AF2; WKUP1 PA0, WKUP2 PC13 (Table 12 additional functions).
+- **Wake**: GAUGE_ALRT_N (PA0, WKUP1), CHG_QON_SENSE (PC13, WKUP2); other EXTI inputs wake from Stop only.
+- **Safe reset states**: every GPIO is a floating input in reset (SWD pins keep SWD). Captured outputs have external 100 k pull-downs (R107, R111, R142, R152, R153): OFF in reset. Every reserved output must get a pull-down (OE_N: pull-up) when captured, as in the architecture doc; no pin needs an MCU-defined state at reset. Firmware: no audio-domain line driven high before 3V3_AUDIO is up.
+- **PD bus is software I2C**: the TPS25730D is rare, low-rate status traffic; I2C2 hardware is reserved for the audio bus (DSP coefficient loading).
 
-| Pin | Reserved use | Note |
-|---|---|---|
-| PA4 (11), PA5 (12) | codec / source selects for TS5A23157 (x2) | |
-| PA6 (13), PA7 (14) | amp PDN / FAULT (two TAS5825M; may need more) | |
-| PA1 (8) | volume/source button ADC ladder | analog |
-| PB0 (15) | headphone detect | ADC_IN8 |
-| PB1 (16) | USB-A source-detect placeholder | ADC_IN9 |
-| PB2 (17) | spare / amp mute | |
-| PB6/PB7 alt | spare (I2C1 alternates) | |
-| PA15 (26), PB2 (17), PB8 now used | PA15: LEDs; audio I2C needs two pins: PB2 + PA15 (or share CTRL) | PB3/PB4 now BT_MFB/BT_RST_N, PB8 BT_TX_IND |
-| PC14/15 | if LSE ever needed they are used by CHG_INT/PD_PLUG_EVENT now: no crystal planned | |
+## Voltage domains and I2C notes (carried over)
 
-The budget is tight: 29 GPIO, 17 captured or fixed (SWD included), about 17 wanted later. Audio I2C (TAS5825M x2, PCM1862) has no hardware instance left (I2C1 = CTRL, I2C2 = PD): use a bit-banged bus on PB3/PB4 or share CTRL after isolating powered-off parts. Open question for the user.
+- PDCTRL pull-ups go to LDO_3V3 (present only with VBUS). Pulling to 3V_AO would back-feed the TPS25730D with its LDO off. VIL = 0.3 VDD (0.9 V) versus TPS25730D VOL: check at bring-up.
+- No VBUS means LDO_3V3 is off, both PD lines float and the TPS25730D is dead: keep the software bus idle until PD_PLUG_EVENT = 1. 3V_AO is up whenever VBUS is, so a pull-up with VDD = 0 occurs only briefly at attach.
+- The CTRL bus is isolated below the 3.08 V supervisor threshold: expect NACKs from the MAX17048 when 3V_AO sags.
+- 2N7002 gates (Q100/Q102) at 3.0 V are marginal; the loads are 100 k pull-ups so acceptable. At VDD below about 2.5 V enables may fail to assert: safe state is OFF.
+
+## CHG_QON_SENSE (new)
+
+BQ25792 QON (pin 12, DI): internal pull-up through about 200 k to a typical 3.6-3.8 V with VBUS and VBAT above 5 V (3.2 V typical otherwise); VIH 1.3 V, VIL 0.4 V; low for tSM_EXIT (15 ms or 1 s) wakes from ship mode, 10 s low resets system power. SW100 pulls it to GND. The sense taps the QON net with **R113 100 k in series** into an MCU input, which is high impedance (nA leakage, internal pull-up disabled): the BQ pin sees an additional 100 k only on an input of at most 100 nA, so the pull-up voltage and logic thresholds are not disturbed. No divider or diode is needed: the pin is a pure input at 3.6-3.8 V, inside the FT limit of PC13 (FT, 5.5 V). Polarity: high when idle, low while the button is pressed (active-low). The signal exists on both the Battery_Charger hierarchy (output port) and the MCU sheet (input, PC13/WKUP2) and is wired in the root through matching labels. Idle level in ship mode is not characterised here: verify at bring-up.
 
 ## Not captured (no net exists)
 
-- QON/button sense: SW100 drives only BQ QON inside Battery_Charger; there is no port. A future `CHG_QON_SENSE` port plus a divider/open-drain buffer would be needed. No pin assigned beyond the button ladder.
-- USB-source detection: no net exists; PB1 reserved.
+- USB-source detection: PB0 reserved, no net yet.
 - Remaining PD outputs (CAP_MIS, PLUG_FLIP, DBG_ACC) are no-connect on the PD sheet.
-
-## Bluetooth update (2026-10-06)
-
-BM83 nets captured in `Bluetooth.kicad_sch`: BT_UART_TX (PA2), BT_UART_RX (PA3), BT_MFB (PB3), BT_RST_N (PB4), BT_TX_IND (PB8). The MCU symbol swapped PA2 and PB8 positions so outputs stay right and inputs left; MCU ports: left BT_TX_IND, BT_UART_RX; right BT_MFB, BT_RST_N, BT_UART_TX. Power-off ACK is a UART message (no pin). GPIO budget is now 5 tighter: spare PB2, PA15 (LEDs), PB1/PB0/PA1 analogue, PA4-PA7. Open: audio I2C pins.

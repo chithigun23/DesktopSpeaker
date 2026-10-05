@@ -59,7 +59,7 @@ Desktop stereo speaker with two front drivers and a downward-facing woofer; USB-
 | --- | --- | --- |
 | U1 | BM83SM1-00TA Bluetooth audio module | C6752723 |
 | U2 | PCM2902CDBR USB audio codec | C2651869 |
-| U3 | STM32G031K8T6 MCU | C432203 |
+| U3 | STM32G071RBT6 MCU (was STM32G031K8T6 C432203) | C432213 |
 | U4 | BQ25895RTWR charger | C80200 |
 | U5 | MAX17048G+T10 fuel gauge | C2682616 |
 | U6, U7 | TAS5825MRHBR amplifiers | C471049 |
@@ -436,3 +436,10 @@ Quick mechanical envelope review: `ai-files/reports/mechanical-fit-rough-2026-10
 - MCU.kicad_sch (U3 PA2/PA3/PB3/PB4/PB8 now BT_UART_TX/RX, BT_MFB, BT_RST_N, BT_TX_IND; PA2 and PB8 symbol positions swapped; ports added to the MCU sheet block, which grew upward). `mcu-pin-allocation.md` updated; audio I2C pins remain an open question.
 - Decisions, power-off sequence, J8 programming header, antenna keep-out and qualification: `reports/bluetooth-notes.md`. Single-ended 4.7 uF audio out; 10k/1k series resistors for back-power; no flow control. New parts R180-R187, C190-C195, J8 in BOM (R185-R187 C22548 and J8 prices unverified; capacitor values unverified vs Microchip hardware guide). Helpers: `helpers/build_bluetooth_sheet.py`, `helpers/add_bluetooth_bom.mjs` (guarded).
 - Verification: ERC 193 -> 139 (root pin_not_connected 165->113, power_pin_not_driven 2->0, endpoint_off_grid 19->18, label_dangling 3->4: 3V8_BT stub resolved, BT_AUDIO_L/R open; Bluetooth/MCU sheets 0). Existing multi-pin net groups preserved (netlist compare); 3V8_BT and GND only grew. U1 pins 1-50, 56, 57 names match datasheet table 2-2.
+
+## MCU swap to STM32G071RBT6 (2026-10-06, not committed)
+- U3 is now STM32G071RBT6 (LQFP64, C432213; reason: about 46 GPIO needed, see `reports/audio-chain-architecture.md` section 5). New library files `STM32G071RBT6.kicad_sym` (one component, added to sym-lib-table; pins from DS12232 Table 12, grouped by function; VBAT/VREF+/VDD top, VSS bottom, no stackable pads), `footprint/STM32G071RBT6.kicad_mod` and `3d/STM32G071RBT6.step` (copied flat from stock KiCad LQFP-64_10x10mm_P0.5mm; 64 pads, 0.5 mm pitch, pad span 11.35 mm; STEP 12 x 12 x 1.5 mm). Old G031 library files kept but unused. Datasheet: `datasheets/STM32G071x8_xB.pdf` (ST site blocked; LCSC-hosted copy of DS12232 Rev 2).
+- MCU.kicad_sch re-pinned; U3 reference/UUID/root instance kept. Allocation, constraints, reserved signals and reset states: `reports/mcu-pin-allocation.md` (rewritten). Decisions: PD bus = software I2C on PA12/PA11; audio I2C2 reserved on PB11/PB10 (AF6); LEDs on PB13-15 (TIM1 CHxN); QON sense PC13 (WKUP2); GAUGE_ALRT_N PA0 (WKUP1). VREF+ 100nF + 1uF (C163/C164), VBAT = VDD.
+- New signal `CHG_QON_SENSE`: R113 100k from the BQ25792 QON net (Battery_Charger) to a new output port, root labels to the MCU input. QON is a high-impedance logic input with internal pull-up (3.6-3.8 V typical), so a 100k series tap is safe without a divider.
+- Verification: ERC 139 -> 139 (identical by sheet and type; MCU sheet 0). Netlist compare: every previous MCU net keeps its non-MCU pin groups (only U3 pin numbers change); QON net gains R113. Helpers: `helpers/swap_mcu_g071.py` (one-shot, refuses re-run; a few post-fixes were applied by hand: J7 pin 6 no-connect, NRST cap and notes moved), `helpers/update_bom_g071.mjs` (guarded), `helpers/netgroups_pins.py` (netlist parser). BOM: U3 row updated (price/stock from the architecture-doc snapshot, unverified), C163, C164 (LCSC C15849 unverified), R113 added.
+
