@@ -173,7 +173,7 @@
 (text "COMMON-SOURCE REVERSE-BLOCKING PMOS SWITCH" (at 205.74 31.75 0) (effects (font (size 1.65 1.65)) (justify left bottom)) (uuid "619237bf-64b7-47a6-acfc-eb3be5e8d512"))
 (text "RAW-VBUS LDO / PD VDD; C5 EFFECTIVE-CAP REVIEW OPEN" (at 88.9 257.81 0) (effects (font (size 1.4 1.4)) (justify left bottom)) (uuid "9d568fcd-54fd-4ef9-9342-0cbe16d635fb"))
 (text "USB-PRESENT I2C SERVICE" (at 280.67 174.625 0) (effects (font (size 1.4 1.4)) (justify left bottom)) (uuid "e534971d-32ad-465b-b795-b04caf59d843"))
-(text "Program and read back a 5 V / 9 V-only NVM profile before hardware use. Disable the factory 15 V and 20 V PDOs." (at 39.37 264.16 0) (effects (font (size 1.1 1.1)) (justify left bottom)) (uuid "11ebd962-5ec4-4b5d-ac4c-47a6aabd80fb"))
+(text "5-20 V redesign in progress. Present charger/protection supports 5/9 V only; restrict NVM until the new power path is integrated." (at 39.37 264.16 0) (effects (font (size 1.1 1.1)) (justify left bottom)) (uuid "11ebd962-5ec4-4b5d-ac4c-47a6aabd80fb"))
 (text "J4 uses external 3.3 V logic power; disconnect the programmer when USB VBUS is absent." (at 280.67 224.79 0) (effects (font (size 1.0 1.0)) (justify left bottom)) (uuid "14446b48-c50a-4804-863d-48db5ccfb88f"))
 (sheet_instances (path "/" (page "1")))
 (embedded_fonts no)

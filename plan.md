@@ -244,3 +244,9 @@ Fresh review found15 expected power net relations correct,101 component refs cov
 - [ ] Redesign input cutoff, FETs and TVS/clamp coordination for normal 20 V plus tolerances/transients. The present D9 12 V sense clamp and D8 10 V TVS are incompatible with normal 20 V operation.
 - [ ] Review STUSB4500 three-PDO limits and controller policy against requested source compatibility; EPR support is not implied by accepting common 20 V PD.
 - [ ] Update child-sheet capture, libraries/BOM, power budget, preview and configuration warning together after reviewed integration.
+
+### Reviewed charger direction
+
+- [x] Select BQ25792RQMR / C2862876 for the replacement design: native 3.6–24 V input, 1S power path and buck-boost headroom on weak 5 V supplies. No extra pre-buck stage. BQ25672 is also voltage-compatible, but its observed price is higher with no cited standby benefit.
+- [ ] Finish BQ25792 library/package/model review and child-sheet capture; retain source-aware default-disabled charge and add the explicitly required external ship FET. The active schematic still uses BQ25895 until integration.
+- [ ] Resolve PD controller choice: STUSB4500 plus MCU runtime profiles versus TPS25730 automatic fixed-PDO matching/integrated low-loss path. Check current-status interface, legacy policy and surge margins before choosing.

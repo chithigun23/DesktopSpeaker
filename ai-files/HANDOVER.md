@@ -327,3 +327,17 @@ Final U19 BOM reconciliation: `reports/vdd-ldo-bom-coverage.json` confirms103phy
 ## New voltage-range requirement
 
 User requests actual operation from PD voltages up to20V rather than merely survival of unexpected15/20V. Coordinator judgment favors comparing a native high-voltage1S power-path charger against extra pre-buck conversion. Independent charger and frontend reviews are underway; reportfiles `reports/5-20v-charger-selection.md` and `reports/5-20v-pd-front-end-review.md`. Existing 11V cutoff, D8 10V TVS, D9 12V sense clamp and BQ25895 remain active; therefore existing NVM warning remains valid until integrated hardware supports20V. U19 protectsPDVDD but does not make charger/sense/output protection compatible with20V. EPR28/36/48V optional scope question pending; proceed independent5–20V evaluation.
+
+### Git checkpoint
+
+Reviewed captured power-subsystem project/library assets, BOM, preview, helpers and evidence were committed and pushed to `origin/main` as `4d29246` (2026-10-05). Branch and remote were checked; no force push. Execution caches, dependency symlinks and local recovery backups are ignored. New 5–20 V research remains separate from the active 5/9 V circuit until reviewed integration.
+
+### Coordinator charger selection
+
+BQ25792RQMR / C2862876 is selected for the replacement design, pending library/capture review. LCSC research snapshot4970stock/$2.0489 at1+. Native3.6–24Vinput/1S NVDC and buck-boost weak5Vheadroom avoid additionalpre-buckstage. BQ25672also supports3.6–24V (originalagent6Vexclusion was corrected againstprimarySection7.3); its observed$4.4266 price is higher and quotedstandby is similar, so no benefit warrants it here. BQ25792requires externalSDRVshipNFET for dependableelectronicbatteryoff; do not relyonlyoninternalBATFET. This choice does not yet alter activeU4/BOM. Standby tableconditions8V/TJ<85C not guaranteed1Sbudget.
+
+PDcontrollerselection remains underreview: TPS25730D autonomousrange matching/integratedlowRDS mayremoveST+PMOS+eFuse+U19 andavoidfirmwareprofilecoldboot dependency; verifyI2C TypeC/PDcurrentstatus andnonPDcurrentpolicy plusrawTVSmarginbeforecommitment. ST4500only3staticPDOs cancoverallcommonvoltagesonlyviaMCUruntimeprofileadjustment. Do notclaimstatic5/9/20matches15/12sources.
+
+### 5–20 V planning Git checkpoint
+
+Commit message: `Record 5-20V redesign direction and retain active hardware limits`. Includes the reviewed plan, design-selection notes and matching schematic/preview warning. No electrical connections were changed in this checkpoint. Candidate libraries and draft research stay outside this checkpoint while their review continues. Git add/commit/push is required at subsequent reviewed milestones, per AGENTS.md.
