@@ -1,0 +1,66 @@
+{
+  "date": "2026-10-05",
+  "scope": "Sourcing recommendation only; no schematic, active library or BOM edits.",
+  "use": "Shared five-cap 10uF bank for VBUS x2 and PMID x3; required effective minima at 21V are VBUS >=2uF and PMID >=4uF.",
+  "selected_candidate": {
+    "manufacturer": "Samsung Electro-Mechanics",
+    "mpn": "CL32B106KBJNNNE",
+    "lcsc": "C138687",
+    "spec": "10uF, \u00b110%, 50VDC, X7R (-55 to +125C), 1210/3225; maker nominal dimensions 3.20\u00b10.30 x 2.50\u00b10.20 x 2.50\u00b10.20mm.",
+    "listing_snapshot": {
+      "observed": "2026-10-05",
+      "stock_pcs": 183897,
+      "minimum_pcs": 1,
+      "multiple_pcs": 1,
+      "unit_usd_at_1plus": 0.1571,
+      "five_piece_estimate_usd": 0.7855,
+      "source": "https://www.lcsc.com/product-detail/C138687.html",
+      "caveat": "Volatile LCSC listing snapshot; recheck price and stock before purchase."
+    },
+    "datasheet_and_curve": {
+      "official_page": "https://product.samsungsem.com/mlcc/CL32B106KBJNNN.do",
+      "official_component_library_snapshot": "ai-files/reports/Samsung_CL32B106KBJNNN_component_library.html",
+      "curve_json": "ai-files/reports/Samsung_CL32B106KBJNNN_DCBias_25C_1kHz.json",
+      "typical_at_21V_uF": 5.0424893346859445,
+      "curve_interpolation_delta_percent": -49.57510665314056,
+      "maker_conditions": "25C, 1Vrms, 1kHz",
+      "estimate_after_minus10pct_initial_capacitance_and_minus15pct_X7R_temperature_corner_uF_each": 3.8575043410347476,
+      "banks_at_estimate_uF": {
+        "VBUS_2_parts": 7.715008682069495,
+        "PMID_3_parts": 11.572513023104243
+      },
+      "assessment": "About 3.86uF/part estimated after simple initial-tolerance and X7R-limit derating; totals about 7.72uF VBUS and 11.57uF PMID at 21V, above the requested 2uF/4uF minima. The underlying DC-bias curve is typical only; validate measured effective capacitance/ripple and aging/temperature in the final design."
+    },
+    "package_assets": {
+      "footprint": "Existing project DesktopSpeaker:PD_C_1210, geometry identical to installed KiCad Capacitor_SMD:C_1210_3225Metric (1210 / 3225 metric).",
+      "body_model": "Existing project model DesktopSpeaker-kicad/kicad-library/3d/PD_C_1210.step. SHA-256 matches installed official KiCad C_1210_3225Metric.step exactly. FreeCAD 1.0.0 validated one solid, bounds 3.2 x 2.5 x 2.5 mm. Generic standard package model, not Samsung-specific geometry.",
+      "step_sha256": "f8510481c5044113cf49b0fa6dd54ddab9224508bd6808e1afab8ef0cefdefc9",
+      "model_bounds_mm": {
+        "x": 3.2,
+        "y": 2.5,
+        "z": 2.5
+      }
+    },
+    "why_selected": "Lower-cost source than the comparable Murata 1210 10uF/50V X7R at the current LCSC snapshot, with 1-piece MOQ and large displayed stock; same footprint and package body model."
+  },
+  "comparison": {
+    "manufacturer": "Murata",
+    "mpn": "GRM32ER71H106KA12L",
+    "lcsc": "C77102",
+    "spec": "10uF \u00b110%, 50V X7R, 1210.",
+    "listing_snapshot": {
+      "source": "https://www.lcsc.com/product-detail/C77102.html",
+      "observed_stock_pcs": 48910,
+      "minimum_pcs": 5,
+      "unit_usd_at_5plus": 0.3304,
+      "five_piece_estimate_usd": 1.652,
+      "caveat": "Volatile listing snapshot; recheck before purchase."
+    }
+  },
+  "charger_reference": "Local TI BQ25792 Rev C datasheet \u00a710.2.2.2 shows 2 x 10uF VBUS and 3 x 10uF PMID bank. Root-provided effective minima 2uF and 4uF are carried as design requirements.",
+  "unresolved": [
+    "The source curve is typical, not a manufacturer-guaranteed capacitance minimum at 21V.",
+    "Confirm aging, real operating temperature, applied ripple and assembly/lot margin during design qualification.",
+    "This is sourcing evidence only; active charger replacement drafts and BOM remain untouched."
+  ]
+}

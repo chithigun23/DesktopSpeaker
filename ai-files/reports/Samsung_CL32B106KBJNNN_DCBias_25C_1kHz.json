@@ -1,0 +1,829 @@
+{
+  "part_family": "CL32B106KBJNNN",
+  "specific_part": "CL32B106KBJNNNE",
+  "source_url": "https://weblib.samsungsem.com/mlcc/mlcc-ec-data-sheet.do?partNumber=CL32B106KBJNNN",
+  "chart": "DCBias",
+  "test_conditions": {
+    "temperature_C": 25,
+    "AC_voltage_Vrms": 1,
+    "frequency_Hz": 1000
+  },
+  "curve_type": "manufacturer typical design-reference data; not guaranteed minimum",
+  "interpolated_at_21V": {
+    "delta_capacitance_percent": -49.57510665314056,
+    "effective_uF_from_10uF_nominal": 5.0424893346859445
+  },
+  "conservative_estimate_after_initial_tolerance_and_X7R_limit": {
+    "formula": "Ctyp(21V) * 0.90 * 0.85",
+    "per_part_uF": 3.8575043410347476,
+    "quantity_2_uF": 7.715008682069495,
+    "quantity_3_uF": 11.572513023104243
+  },
+  "points": [
+    {
+      "vdc": 0.0,
+      "delta_c_percent": 0.0,
+      "effective_uF_from_10uF_nominal": 10.0
+    },
+    {
+      "vdc": 0.05,
+      "delta_c_percent": 0.04495021534756581,
+      "effective_uF_from_10uF_nominal": 10.004495021534757
+    },
+    {
+      "vdc": 0.1,
+      "delta_c_percent": 0.09138517112026939,
+      "effective_uF_from_10uF_nominal": 10.009138517112026
+    },
+    {
+      "vdc": 0.15000000000000002,
+      "delta_c_percent": 0.1386685499930517,
+      "effective_uF_from_10uF_nominal": 10.013866854999305
+    },
+    {
+      "vdc": 0.2,
+      "delta_c_percent": 0.18616403464085368,
+      "effective_uF_from_10uF_nominal": 10.018616403464085
+    },
+    {
+      "vdc": 0.25,
+      "delta_c_percent": 0.23323530773861628,
+      "effective_uF_from_10uF_nominal": 10.023323530773862
+    },
+    {
+      "vdc": 0.3,
+      "delta_c_percent": 0.27924605196128055,
+      "effective_uF_from_10uF_nominal": 10.027924605196128
+    },
+    {
+      "vdc": 0.35,
+      "delta_c_percent": 0.32355994998378723,
+      "effective_uF_from_10uF_nominal": 10.03235599499838
+    },
+    {
+      "vdc": 0.39999999999999997,
+      "delta_c_percent": 0.3655406844810775,
+      "effective_uF_from_10uF_nominal": 10.036554068448106
+    },
+    {
+      "vdc": 0.44999999999999996,
+      "delta_c_percent": 0.4045519381280922,
+      "effective_uF_from_10uF_nominal": 10.040455193812809
+    },
+    {
+      "vdc": 0.5,
+      "delta_c_percent": 0.4399573935997724,
+      "effective_uF_from_10uF_nominal": 10.043995739359977
+    },
+    {
+      "vdc": 0.5477500000000001,
+      "delta_c_percent": 0.47520075950538937,
+      "effective_uF_from_10uF_nominal": 10.047520075950537
+    },
+    {
+      "vdc": 0.592,
+      "delta_c_percent": 0.5128550919279331,
+      "effective_uF_from_10uF_nominal": 10.051285509192793
+    },
+    {
+      "vdc": 0.6342500000000001,
+      "delta_c_percent": 0.5509780947529221,
+      "effective_uF_from_10uF_nominal": 10.055097809475292
+    },
+    {
+      "vdc": 0.6759999999999999,
+      "delta_c_percent": 0.5876274718658748,
+      "effective_uF_from_10uF_nominal": 10.058762747186588
+    },
+    {
+      "vdc": 0.71875,
+      "delta_c_percent": 0.6208609271523094,
+      "effective_uF_from_10uF_nominal": 10.06208609271523
+    },
+    {
+      "vdc": 0.764,
+      "delta_c_percent": 0.648736164497745,
+      "effective_uF_from_10uF_nominal": 10.064873616449773
+    },
+    {
+      "vdc": 0.81325,
+      "delta_c_percent": 0.6693108877876995,
+      "effective_uF_from_10uF_nominal": 10.06693108877877
+    },
+    {
+      "vdc": 0.868,
+      "delta_c_percent": 0.6806428009076919,
+      "effective_uF_from_10uF_nominal": 10.06806428009077
+    },
+    {
+      "vdc": 0.92975,
+      "delta_c_percent": 0.6807896077432403,
+      "effective_uF_from_10uF_nominal": 10.068078960774326
+    },
+    {
+      "vdc": 1.0,
+      "delta_c_percent": 0.6678090121798633,
+      "effective_uF_from_10uF_nominal": 10.066780901217987
+    },
+    {
+      "vdc": 1.079075,
+      "delta_c_percent": 0.6449409530866389,
+      "effective_uF_from_10uF_nominal": 10.064494095308664
+    },
+    {
+      "vdc": 1.1655999999999997,
+      "delta_c_percent": 0.6159996295095543,
+      "effective_uF_from_10uF_nominal": 10.061599962950956
+    },
+    {
+      "vdc": 1.2585250000000001,
+      "delta_c_percent": 0.5799041355994916,
+      "effective_uF_from_10uF_nominal": 10.05799041355995
+    },
+    {
+      "vdc": 1.3568,
+      "delta_c_percent": 0.535573565507333,
+      "effective_uF_from_10uF_nominal": 10.053557356550733
+    },
+    {
+      "vdc": 1.4593749999999999,
+      "delta_c_percent": 0.48192701338396055,
+      "effective_uF_from_10uF_nominal": 10.048192701338397
+    },
+    {
+      "vdc": 1.5652,
+      "delta_c_percent": 0.4178835733802566,
+      "effective_uF_from_10uF_nominal": 10.041788357338026
+    },
+    {
+      "vdc": 1.673225,
+      "delta_c_percent": 0.34236233964710344,
+      "effective_uF_from_10uF_nominal": 10.03423623396471
+    },
+    {
+      "vdc": 1.7824000000000002,
+      "delta_c_percent": 0.254282406335383,
+      "effective_uF_from_10uF_nominal": 10.025428240633538
+    },
+    {
+      "vdc": 1.8916749999999996,
+      "delta_c_percent": 0.15256286759597754,
+      "effective_uF_from_10uF_nominal": 10.015256286759598
+    },
+    {
+      "vdc": 2.0,
+      "delta_c_percent": 0.0361228175797693,
+      "effective_uF_from_10uF_nominal": 10.003612281757977
+    },
+    {
+      "vdc": 2.110275,
+      "delta_c_percent": -0.09968045199833414,
+      "effective_uF_from_10uF_nominal": 9.990031954800166
+    },
+    {
+      "vdc": 2.2252,
+      "delta_c_percent": -0.25630528411985437,
+      "effective_uF_from_10uF_nominal": 9.974369471588014
+    },
+    {
+      "vdc": 2.343425,
+      "delta_c_percent": -0.4300560366785533,
+      "effective_uF_from_10uF_nominal": 9.956994396332146
+    },
+    {
+      "vdc": 2.4636,
+      "delta_c_percent": -0.617237067568193,
+      "effective_uF_from_10uF_nominal": 9.938276293243181
+    },
+    {
+      "vdc": 2.5843749999999996,
+      "delta_c_percent": -0.8141527346825349,
+      "effective_uF_from_10uF_nominal": 9.918584726531746
+    },
+    {
+      "vdc": 2.7044,
+      "delta_c_percent": -1.0171073959153412,
+      "effective_uF_from_10uF_nominal": 9.898289260408466
+    },
+    {
+      "vdc": 2.8223249999999998,
+      "delta_c_percent": -1.222405409160374,
+      "effective_uF_from_10uF_nominal": 9.877759459083963
+    },
+    {
+      "vdc": 2.9368,
+      "delta_c_percent": -1.4263511323113949,
+      "effective_uF_from_10uF_nominal": 9.85736488676886
+    },
+    {
+      "vdc": 3.046475,
+      "delta_c_percent": -1.625248923262166,
+      "effective_uF_from_10uF_nominal": 9.837475107673782
+    },
+    {
+      "vdc": 3.15,
+      "delta_c_percent": -1.815403139906449,
+      "effective_uF_from_10uF_nominal": 9.818459686009355
+    },
+    {
+      "vdc": 3.2464749999999998,
+      "delta_c_percent": -1.9972342888899162,
+      "effective_uF_from_10uF_nominal": 9.80027657111101
+    },
+    {
+      "vdc": 3.3367999999999998,
+      "delta_c_percent": -2.1748085027555217,
+      "effective_uF_from_10uF_nominal": 9.782519149724449
+    },
+    {
+      "vdc": 3.4223250000000003,
+      "delta_c_percent": -2.349898578242949,
+      "effective_uF_from_10uF_nominal": 9.765010142175704
+    },
+    {
+      "vdc": 3.5044,
+      "delta_c_percent": -2.5242773120918827,
+      "effective_uF_from_10uF_nominal": 9.747572268790812
+    },
+    {
+      "vdc": 3.5843749999999996,
+      "delta_c_percent": -2.6997175010420067,
+      "effective_uF_from_10uF_nominal": 9.730028249895799
+    },
+    {
+      "vdc": 3.6636,
+      "delta_c_percent": -2.8779919418330047,
+      "effective_uF_from_10uF_nominal": 9.7122008058167
+    },
+    {
+      "vdc": 3.743425,
+      "delta_c_percent": -3.0608734312045613,
+      "effective_uF_from_10uF_nominal": 9.693912656879544
+    },
+    {
+      "vdc": 3.8251999999999997,
+      "delta_c_percent": -3.250134765896361,
+      "effective_uF_from_10uF_nominal": 9.674986523410364
+    },
+    {
+      "vdc": 3.9102749999999995,
+      "delta_c_percent": -3.447548742648086,
+      "effective_uF_from_10uF_nominal": 9.655245125735192
+    },
+    {
+      "vdc": 4.0,
+      "delta_c_percent": -3.654888158199422,
+      "effective_uF_from_10uF_nominal": 9.634511184180058
+    },
+    {
+      "vdc": 4.092575,
+      "delta_c_percent": -3.868743805863016,
+      "effective_uF_from_10uF_nominal": 9.613125619413697
+    },
+    {
+      "vdc": 4.1856,
+      "delta_c_percent": -4.085383226045482,
+      "effective_uF_from_10uF_nominal": 9.591461677395452
+    },
+    {
+      "vdc": 4.279525,
+      "delta_c_percent": -4.306094336127451,
+      "effective_uF_from_10uF_nominal": 9.569390566387256
+    },
+    {
+      "vdc": 4.3748000000000005,
+      "delta_c_percent": -4.5321650534895594,
+      "effective_uF_from_10uF_nominal": 9.546783494651045
+    },
+    {
+      "vdc": 4.471875000000001,
+      "delta_c_percent": -4.764883295512435,
+      "effective_uF_from_10uF_nominal": 9.523511670448757
+    },
+    {
+      "vdc": 4.571199999999999,
+      "delta_c_percent": -5.005536979576713,
+      "effective_uF_from_10uF_nominal": 9.49944630204233
+    },
+    {
+      "vdc": 4.6732249999999995,
+      "delta_c_percent": -5.255414023063027,
+      "effective_uF_from_10uF_nominal": 9.474458597693697
+    },
+    {
+      "vdc": 4.7784,
+      "delta_c_percent": -5.515802343352008,
+      "effective_uF_from_10uF_nominal": 9.448419765664799
+    },
+    {
+      "vdc": 4.887174999999999,
+      "delta_c_percent": -5.787989857824289,
+      "effective_uF_from_10uF_nominal": 9.421201014217571
+    },
+    {
+      "vdc": 5.0,
+      "delta_c_percent": -6.073264483860505,
+      "effective_uF_from_10uF_nominal": 9.39267355161395
+    },
+    {
+      "vdc": 5.11605,
+      "delta_c_percent": -6.369016208956601,
+      "effective_uF_from_10uF_nominal": 9.36309837910434
+    },
+    {
+      "vdc": 5.2344,
+      "delta_c_percent": -6.672459408141523,
+      "effective_uF_from_10uF_nominal": 9.332754059185849
+    },
+    {
+      "vdc": 5.3553500000000005,
+      "delta_c_percent": -6.984618580095399,
+      "effective_uF_from_10uF_nominal": 9.30153814199046
+    },
+    {
+      "vdc": 5.4792,
+      "delta_c_percent": -7.306518223498354,
+      "effective_uF_from_10uF_nominal": 9.269348177650166
+    },
+    {
+      "vdc": 5.606249999999999,
+      "delta_c_percent": -7.639182837030519,
+      "effective_uF_from_10uF_nominal": 9.236081716296948
+    },
+    {
+      "vdc": 5.7368,
+      "delta_c_percent": -7.983636919372021,
+      "effective_uF_from_10uF_nominal": 9.201636308062799
+    },
+    {
+      "vdc": 5.871149999999999,
+      "delta_c_percent": -8.340904969202985,
+      "effective_uF_from_10uF_nominal": 9.165909503079702
+    },
+    {
+      "vdc": 6.009600000000001,
+      "delta_c_percent": -8.712011485203544,
+      "effective_uF_from_10uF_nominal": 9.128798851479646
+    },
+    {
+      "vdc": 6.15245,
+      "delta_c_percent": -9.09798096605382,
+      "effective_uF_from_10uF_nominal": 9.090201903394618
+    },
+    {
+      "vdc": 6.3,
+      "delta_c_percent": -9.499837910433943,
+      "effective_uF_from_10uF_nominal": 9.050016208956606
+    },
+    {
+      "vdc": 6.452450000000001,
+      "delta_c_percent": -9.91816611864957,
+      "effective_uF_from_10uF_nominal": 9.008183388135043
+    },
+    {
+      "vdc": 6.6095999999999995,
+      "delta_c_percent": -10.35222748112815,
+      "effective_uF_from_10uF_nominal": 8.964777251887185
+    },
+    {
+      "vdc": 6.77115,
+      "delta_c_percent": -10.801063631732513,
+      "effective_uF_from_10uF_nominal": 8.91989363682675
+    },
+    {
+      "vdc": 6.936800000000001,
+      "delta_c_percent": -11.263716204325483,
+      "effective_uF_from_10uF_nominal": 8.873628379567451
+    },
+    {
+      "vdc": 7.106249999999999,
+      "delta_c_percent": -11.739226832769887,
+      "effective_uF_from_10uF_nominal": 8.826077316723012
+    },
+    {
+      "vdc": 7.279199999999999,
+      "delta_c_percent": -12.22663715092855,
+      "effective_uF_from_10uF_nominal": 8.777336284907145
+    },
+    {
+      "vdc": 7.455349999999999,
+      "delta_c_percent": -12.724988792664297,
+      "effective_uF_from_10uF_nominal": 8.72750112073357
+    },
+    {
+      "vdc": 7.634399999999999,
+      "delta_c_percent": -13.233323391839958,
+      "effective_uF_from_10uF_nominal": 8.676667660816005
+    },
+    {
+      "vdc": 7.816049999999999,
+      "delta_c_percent": -13.750682582318353,
+      "effective_uF_from_10uF_nominal": 8.624931741768165
+    },
+    {
+      "vdc": 8.0,
+      "delta_c_percent": -14.27610799796231,
+      "effective_uF_from_10uF_nominal": 8.57238920020377
+    },
+    {
+      "vdc": 8.16985,
+      "delta_c_percent": -14.763907794192571,
+      "effective_uF_from_10uF_nominal": 8.523609220580743
+    },
+    {
+      "vdc": 8.316799999999999,
+      "delta_c_percent": -15.18969147408883,
+      "effective_uF_from_10uF_nominal": 8.481030852591116
+    },
+    {
+      "vdc": 8.45195,
+      "delta_c_percent": -15.584452693002367,
+      "effective_uF_from_10uF_nominal": 8.441554730699764
+    },
+    {
+      "vdc": 8.5864,
+      "delta_c_percent": -15.979185106284447,
+      "effective_uF_from_10uF_nominal": 8.402081489371556
+    },
+    {
+      "vdc": 8.73125,
+      "delta_c_percent": -16.404882369286348,
+      "effective_uF_from_10uF_nominal": 8.359511763071366
+    },
+    {
+      "vdc": 8.897599999999999,
+      "delta_c_percent": -16.89253813735933,
+      "effective_uF_from_10uF_nominal": 8.310746186264065
+    },
+    {
+      "vdc": 9.096549999999999,
+      "delta_c_percent": -17.473146065854674,
+      "effective_uF_from_10uF_nominal": 8.252685393414533
+    },
+    {
+      "vdc": 9.339200000000002,
+      "delta_c_percent": -18.177699810123652,
+      "effective_uF_from_10uF_nominal": 8.182230018987635
+    },
+    {
+      "vdc": 9.63665,
+      "delta_c_percent": -19.037193025517524,
+      "effective_uF_from_10uF_nominal": 8.096280697448249
+    },
+    {
+      "vdc": 10.0,
+      "delta_c_percent": -20.08261936738758,
+      "effective_uF_from_10uF_nominal": 7.991738063261242
+    },
+    {
+      "vdc": 10.447000000000001,
+      "delta_c_percent": -21.371092668920483,
+      "effective_uF_from_10uF_nominal": 7.862890733107952
+    },
+    {
+      "vdc": 10.976,
+      "delta_c_percent": -22.902201268929744,
+      "effective_uF_from_10uF_nominal": 7.709779873107026
+    },
+    {
+      "vdc": 11.568999999999999,
+      "delta_c_percent": -24.620650581206874,
+      "effective_uF_from_10uF_nominal": 7.537934941879313
+    },
+    {
+      "vdc": 12.208,
+      "delta_c_percent": -26.47114601954337,
+      "effective_uF_from_10uF_nominal": 7.352885398045663
+    },
+    {
+      "vdc": 12.875,
+      "delta_c_percent": -28.398392997730742,
+      "effective_uF_from_10uF_nominal": 7.160160700226925
+    },
+    {
+      "vdc": 13.552,
+      "delta_c_percent": -30.347096929560507,
+      "effective_uF_from_10uF_nominal": 6.96529030704395
+    },
+    {
+      "vdc": 14.221,
+      "delta_c_percent": -32.26196322882415,
+      "effective_uF_from_10uF_nominal": 6.773803677117584
+    },
+    {
+      "vdc": 14.863999999999999,
+      "delta_c_percent": -34.0876973093132,
+      "effective_uF_from_10uF_nominal": 6.59123026906868
+    },
+    {
+      "vdc": 15.463,
+      "delta_c_percent": -35.76900458481914,
+      "effective_uF_from_10uF_nominal": 6.423099541518086
+    },
+    {
+      "vdc": 16.0,
+      "delta_c_percent": -37.25059046913351,
+      "effective_uF_from_10uF_nominal": 6.274940953086649
+    },
+    {
+      "vdc": 16.4765,
+      "delta_c_percent": -38.54571564858982,
+      "effective_uF_from_10uF_nominal": 6.145428435141018
+    },
+    {
+      "vdc": 16.912,
+      "delta_c_percent": -39.719089704996996,
+      "effective_uF_from_10uF_nominal": 6.0280910295003
+    },
+    {
+      "vdc": 17.3155,
+      "delta_c_percent": -40.7925913953596,
+      "effective_uF_from_10uF_nominal": 5.92074086046404
+    },
+    {
+      "vdc": 17.696,
+      "delta_c_percent": -41.788099476682255,
+      "effective_uF_from_10uF_nominal": 5.821190052331775
+    },
+    {
+      "vdc": 18.0625,
+      "delta_c_percent": -42.72749270596953,
+      "effective_uF_from_10uF_nominal": 5.727250729403046
+    },
+    {
+      "vdc": 18.424000000000003,
+      "delta_c_percent": -43.632649840226,
+      "effective_uF_from_10uF_nominal": 5.6367350159774
+    },
+    {
+      "vdc": 18.789499999999997,
+      "delta_c_percent": -44.52544963645626,
+      "effective_uF_from_10uF_nominal": 5.547455036354374
+    },
+    {
+      "vdc": 19.168,
+      "delta_c_percent": -45.427770851664896,
+      "effective_uF_from_10uF_nominal": 5.45722291483351
+    },
+    {
+      "vdc": 19.5685,
+      "delta_c_percent": -46.361492242856485,
+      "effective_uF_from_10uF_nominal": 5.363850775714352
+    },
+    {
+      "vdc": 20.0,
+      "delta_c_percent": -47.34849256703561,
+      "effective_uF_from_10uF_nominal": 5.265150743296438
+    },
+    {
+      "vdc": 20.459500000000002,
+      "delta_c_percent": -48.38211369425277,
+      "effective_uF_from_10uF_nominal": 5.161788630574723
+    },
+    {
+      "vdc": 20.935999999999996,
+      "delta_c_percent": -49.43596758208678,
+      "effective_uF_from_10uF_nominal": 5.056403241791322
+    },
+    {
+      "vdc": 21.4265,
+      "delta_c_percent": -50.50233811883481,
+      "effective_uF_from_10uF_nominal": 4.949766188116519
+    },
+    {
+      "vdc": 21.928,
+      "delta_c_percent": -51.57350919279396,
+      "effective_uF_from_10uF_nominal": 4.842649080720603
+    },
+    {
+      "vdc": 22.4375,
+      "delta_c_percent": -52.641764692261376,
+      "effective_uF_from_10uF_nominal": 4.735823530773863
+    },
+    {
+      "vdc": 22.951999999999998,
+      "delta_c_percent": -53.6993885055342,
+      "effective_uF_from_10uF_nominal": 4.630061149446579
+    },
+    {
+      "vdc": 23.4685,
+      "delta_c_percent": -54.738664520909545,
+      "effective_uF_from_10uF_nominal": 4.526133547909046
+    },
+    {
+      "vdc": 23.984,
+      "delta_c_percent": -55.75187662668457,
+      "effective_uF_from_10uF_nominal": 4.424812337331543
+    },
+    {
+      "vdc": 24.4955,
+      "delta_c_percent": -56.73130871115639,
+      "effective_uF_from_10uF_nominal": 4.326869128884361
+    },
+    {
+      "vdc": 25.0,
+      "delta_c_percent": -57.66924466262214,
+      "effective_uF_from_10uF_nominal": 4.233075533737786
+    },
+    {
+      "vdc": 25.5,
+      "delta_c_percent": -58.57010017135182,
+      "effective_uF_from_10uF_nominal": 4.142989982864819
+    },
+    {
+      "vdc": 26.0,
+      "delta_c_percent": -59.44433029222433,
+      "effective_uF_from_10uF_nominal": 4.055566970777567
+    },
+    {
+      "vdc": 26.5,
+      "delta_c_percent": -60.29327796045013,
+      "effective_uF_from_10uF_nominal": 3.9706722039549867
+    },
+    {
+      "vdc": 27.0,
+      "delta_c_percent": -61.11828611123974,
+      "effective_uF_from_10uF_nominal": 3.8881713888760263
+    },
+    {
+      "vdc": 27.5,
+      "delta_c_percent": -61.92069767980363,
+      "effective_uF_from_10uF_nominal": 3.807930232019637
+    },
+    {
+      "vdc": 28.0,
+      "delta_c_percent": -62.70185560135227,
+      "effective_uF_from_10uF_nominal": 3.7298144398647723
+    },
+    {
+      "vdc": 28.5,
+      "delta_c_percent": -63.46310281109618,
+      "effective_uF_from_10uF_nominal": 3.6536897188903827
+    },
+    {
+      "vdc": 29.0,
+      "delta_c_percent": -64.2057822442458,
+      "effective_uF_from_10uF_nominal": 3.57942177557542
+    },
+    {
+      "vdc": 29.5,
+      "delta_c_percent": -64.93123683601165,
+      "effective_uF_from_10uF_nominal": 3.506876316398835
+    },
+    {
+      "vdc": 30.0,
+      "delta_c_percent": -65.64080952160421,
+      "effective_uF_from_10uF_nominal": 3.4359190478395787
+    },
+    {
+      "vdc": 30.5,
+      "delta_c_percent": -66.33058403186217,
+      "effective_uF_from_10uF_nominal": 3.366941596813783
+    },
+    {
+      "vdc": 31.0,
+      "delta_c_percent": -66.9969919881443,
+      "effective_uF_from_10uF_nominal": 3.3003008011855695
+    },
+    {
+      "vdc": 31.5,
+      "delta_c_percent": -67.64189816144119,
+      "effective_uF_from_10uF_nominal": 3.2358101838558806
+    },
+    {
+      "vdc": 32.0,
+      "delta_c_percent": -68.26716732274348,
+      "effective_uF_from_10uF_nominal": 3.173283267725653
+    },
+    {
+      "vdc": 32.5,
+      "delta_c_percent": -68.87466424304172,
+      "effective_uF_from_10uF_nominal": 3.1125335756958283
+    },
+    {
+      "vdc": 33.0,
+      "delta_c_percent": -69.46625369332654,
+      "effective_uF_from_10uF_nominal": 3.0533746306673457
+    },
+    {
+      "vdc": 34.5,
+      "delta_c_percent": -71.1642249340064,
+      "effective_uF_from_10uF_nominal": 2.8835775065993596
+    },
+    {
+      "vdc": 33.5,
+      "delta_c_percent": -70.04380044458851,
+      "effective_uF_from_10uF_nominal": 2.995619955541149
+    },
+    {
+      "vdc": 34.0,
+      "delta_c_percent": -70.60916926781827,
+      "effective_uF_from_10uF_nominal": 2.939083073218173
+    },
+    {
+      "vdc": 35.0,
+      "delta_c_percent": -71.71083221414347,
+      "effective_uF_from_10uF_nominal": 2.828916778585654
+    },
+    {
+      "vdc": 35.4775,
+      "delta_c_percent": -72.23373227434816,
+      "effective_uF_from_10uF_nominal": 2.7766267725651836
+    },
+    {
+      "vdc": 35.92,
+      "delta_c_percent": -72.72251414810354,
+      "effective_uF_from_10uF_nominal": 2.7277485851896452
+    },
+    {
+      "vdc": 36.3425,
+      "delta_c_percent": -73.18631440744684,
+      "effective_uF_from_10uF_nominal": 2.681368559255316
+    },
+    {
+      "vdc": 36.76,
+      "delta_c_percent": -73.63426962441531,
+      "effective_uF_from_10uF_nominal": 2.6365730375584695
+    },
+    {
+      "vdc": 37.1875,
+      "delta_c_percent": -74.07551637104618,
+      "effective_uF_from_10uF_nominal": 2.5924483628953823
+    },
+    {
+      "vdc": 37.64,
+      "delta_c_percent": -74.51919121937665,
+      "effective_uF_from_10uF_nominal": 2.5480808780623354
+    },
+    {
+      "vdc": 38.1325,
+      "delta_c_percent": -74.97443074144398,
+      "effective_uF_from_10uF_nominal": 2.5025569258556013
+    },
+    {
+      "vdc": 38.68,
+      "delta_c_percent": -75.45037150928542,
+      "effective_uF_from_10uF_nominal": 2.454962849071458
+    },
+    {
+      "vdc": 39.2975,
+      "delta_c_percent": -75.95615009493817,
+      "effective_uF_from_10uF_nominal": 2.404384990506183
+    },
+    {
+      "vdc": 40.0,
+      "delta_c_percent": -76.50090307043949,
+      "effective_uF_from_10uF_nominal": 2.34990969295605
+    },
+    {
+      "vdc": 40.7975,
+      "delta_c_percent": -77.0849617005511,
+      "effective_uF_from_10uF_nominal": 2.2915038299448898
+    },
+    {
+      "vdc": 41.68,
+      "delta_c_percent": -77.69903505765757,
+      "effective_uF_from_10uF_nominal": 2.2300964942342425
+    },
+    {
+      "vdc": 42.6325,
+      "delta_c_percent": -78.33782642523039,
+      "effective_uF_from_10uF_nominal": 2.1662173574769605
+    },
+    {
+      "vdc": 43.64,
+      "delta_c_percent": -78.99603908674108,
+      "effective_uF_from_10uF_nominal": 2.1003960913258926
+    },
+    {
+      "vdc": 44.6875,
+      "delta_c_percent": -79.66837632566109,
+      "effective_uF_from_10uF_nominal": 2.0331623674338917
+    },
+    {
+      "vdc": 45.76,
+      "delta_c_percent": -80.34954142546195,
+      "effective_uF_from_10uF_nominal": 1.9650458574538054
+    },
+    {
+      "vdc": 46.8425,
+      "delta_c_percent": -81.03423766961515,
+      "effective_uF_from_10uF_nominal": 1.896576233038485
+    },
+    {
+      "vdc": 47.92,
+      "delta_c_percent": -81.71716834159217,
+      "effective_uF_from_10uF_nominal": 1.8282831658407828
+    },
+    {
+      "vdc": 48.9775,
+      "delta_c_percent": -82.39303672486453,
+      "effective_uF_from_10uF_nominal": 1.7606963275135468
+    },
+    {
+      "vdc": 50.0,
+      "delta_c_percent": -83.05654610290372,
+      "effective_uF_from_10uF_nominal": 1.6943453897096272
+    }
+  ]
+}
