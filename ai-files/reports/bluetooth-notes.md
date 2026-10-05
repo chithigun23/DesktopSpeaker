@@ -1,0 +1,32 @@
+# Bluetooth (BM83SM1-00TA) sheet notes
+
+2026-10-06. Sheet `DesktopSpeaker-kicad/Bluetooth.kicad_sch` (U1, root page 9). Source: Microchip BM83 datasheet DS70005402D (`datasheets/BM83_Bluetooth_Stereo_Audio_Module.pdf/.txt`). Microchip's hardware design guide / EVB schematic was not available offline (one web search found only the datasheet), so values marked "unverified" are my choices. No hardware test is claimed.
+
+## Decisions
+
+- **Supply**: BAT_IN (3.2-4.2 V, abs max 4.3 V) from 3V8_BT (U15 TPS63802, 3.819 V nominal). C190 10 uF + C191 100 nF at the pin (unverified; U15 output caps are on the power sheet). SYS_PWR (24) and VDD_IO (25, 3.0-3.6 V, "do not connect, internal use") are module outputs: only a 1 uF each (C192/C193, unverified), no other load. ADAP_IN (22) unused: internal charger (BQ25792 charges the pack) and USB DFU not used.
+- **Ground**: pads 16, 50, 56, 57 are one native stack pin on the symbol (removes the inherited undriven-ground ERC). Pads 51-55, 58, 59 are test pads, not in the library footprint.
+- **Control mode**: Host MCU over UART (datasheet 6.6): MCU TX to P8_6 RXD (pin 29), module P8_5 TXD (30) to MCU RX, MFB (26) = wake/power key, P0_0 (49) = UART_TX_IND (active high, wakes the MCU). The module must be configured for Host mode with the Config Tool (not Embedded default; P0_0 default is "external codec reset"). 
+- **Levels**: module I/O VIH 2.0 V, VIL 0.8 V, VOH 2.4 V, VOL 0.4 V at VDD_IO 3.0-3.6 V; MCU VDD 3.0 V nominal (sags with 3V_AO). 3.0 V MCU highs clear 2.0 V; module 3.3 V highs go into FT (5 V tolerant) PA3 (FT_ea) and PB8 (FT_f). No level shifter. Unverified: MFB threshold (datasheet gives none; EVB schematic needed).
+- **Back-power when 3V8_BT is off** (module VDD_IO 0 V while 3V_AO is up): MCU->module lines have 10 k (UART RXD, MFB) series resistors, RST_N 1 k (driven open-drain low only, so it never sources into the module), module->MCU lines 1 k (limits injection if 3V_AO collapses first). 100 k pull-down R184 keeps MFB low. Residual leak with a pin high and the module off is below about 0.25 mA per line; firmware must drive PA2/PB3 low (PB4 hi-Z) before BT_PWR_EN goes low, and not drive them high until the rail is up. A buffer would have to run from the 3.8 V rail (over the 3.6 V input limit), so it was not used.
+- **Audio**: DAC output in single-ended mode (datasheet fig. 3-31, "driving an external audio amplifier, DC blocking capacitor required"): AOHPL (8)/AOHPR (6) each through 4.7 uF (C194/C195, 1206 X7R, DC-bias loss unverified) with 100 k bleed to ground (R180/R181, HPF about 0.34 Hz) to ports BT_AUDIO_L/R. Full scale 495-742 mV rms, THD about 0.02 %, load >= 16 ohm, <= 500 pF. Capless mode (AOHPM common-mode sense) is for 16/32 ohm headphones only and needs the sense pin; not used (AOHPM no-connect). Single-ended chosen because the next stage is a high-impedance mux/ADC/amp input. Analogue gain can be set -28..+3 dB in the Config Tool. No I2S (clock/format coupling to PCM2902C not needed).
+- **Unused pins**: all no-connect (I2S DR1/RFS1/SCLK1/DT1/MCLK1, AIL/AIR, MICs, MICBIAS, DMIC, LED1/LED2, SK1/SK2, USB DP/DM, GPIO P0_x/P1_x/P2_x/P3_2, P3_7 CTS, P3_4 RTS, I2C/2-wire debug P1_2/P1_3). Default button functions (P0_1/2/3/5, P2_7) are therefore inactive/not pressed; LEDs may be added later from SYS_PWR (LED pins are current sinks).
+- **Programming/test decision**: a header is required. Firmware is flashed with isUpdate and the module configured with the Config Tool through the UART in Test mode (P3_4 low at reset; "reserve P8_5/P8_6 for flash download in production"). J8 (1x5, 2.54 mm): 1 RST_N, 2 P3_4/SYS_CFG, 3 UART_RXD (adapter TX), 4 UART_TXD (adapter RX), 5 GND, wired to the module side of the series resistors. Procedure: hold the MCU in reset (NRST via SWD header) so PA2/PA3 are hi-Z, enable 3V8_BT (BT_PWR_EN high; needs a bring-up firmware or a temporary jumper from 3V_AO to the R152/U15 EN node), strap P3_4 low, pulse RST_N, flash/config. P3_4 floats in application mode (internal pull-up assumed, unverified). The USB DFU path (ADAP_IN + DP/DM) and the 2-wire debug interface (P1_2/P1_3, SDK users only) are not provided.
+- **Crystal**: none; the module has its own.
+- **Antenna**: integrated PCB antenna (3.5 dBi, 2400-2480 MHz). For the later PCB/enclosure: no copper (any layer), components or traces under the antenna end; the host board needs a continuous ground plane at least module size (FCC/ISED: 16 x 19 mm under the module, via-stitched, no routing under it on top layer); keep all metal at least 15 mm from the trace antenna; optional small cut-out under the module RF test pad. Place the module at a board edge with the antenna overhanging. No layout done.
+
+## Power-on / power-off sequence (firmware contract, datasheet figs 6-9, 6-11, 6-12)
+
+1. Power on: BT_PWR_EN high (U15 enable, wait for 3V8_BT); MCU keeps BT_MFB/BT_UART_TX low, BT_RST_N hi-Z. Pulse BT_MFB high (about 400 ms in fig. 6-9), release RST_N (about 20 ms), send the UART Power-On command, expect Power-On ACK; retry up to 5 times in 1 s (fig. 6-12 shows a NACK/"Power On Directly" boot path).
+2. Running: BT_TX_IND (P0_0) high means the module will send UART; MFB pulse wakes it from 32 kHz mode (pulse longer than the UART command slot).
+3. Power off: send the UART Power-Off command, wait for the ACK, keep all MCU-to-module lines low, then pull BT_RST_N low (it must be fully low before SYS_PWR falls to 2.7 V), then drop BT_PWR_EN. Ramp-down of 3V8_BT should be longer than 640 us (byte write 0.01 ms x 32 x 2); verify U15 discharge. If no ACK within 5 s, force reset (fig. 6-13).
+4. Wake/reconnect behaviour (auto-reconnect, last paired device) is Config Tool/firmware configuration, not hardware.
+
+## Qualification items
+
+- Measure powered-off back-power (3V8_BT decay and any residual voltage) with firmware states wrong and right.
+- Confirm MFB electrical levels/polarity and idle state, UART baud and flow control (CTS/RTS no-connect, no flow control) against the EVB schematic or Microchip support.
+- Confirm 10 uF/100 nF/1 uF capacitor values with Microchip's hardware design guide; check 3V8_BT droop on 500 mA Class-1 TX bursts.
+- Measure DAC DC offset/level into the source-select and amplifier input; reconsider 4.7 uF value after DC-bias derating.
+- FCC/ISED modular approval host conditions (ground plane, keep-out), Bluetooth/CE listing as a product, RF performance with the enclosure and speakers.
+- BM83 firmware licensing/Host-mode UART command set (SPKcommandset, Config Tool) bring-up.

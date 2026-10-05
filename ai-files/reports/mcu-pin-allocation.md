@@ -24,6 +24,11 @@
 | PD_SINK_EN | in | PB9 (1) | TPS25730D open-drain, R17 100 k to LDO_3V3 (0 = sink path enabled). Status only. |
 | BT_PWR_EN | out | PA8 (18) | U15 EN, R152 100 k pull-down. |
 | BT_FORCE_PWM | out | PA9 (19) | U15 MODE, R153 100 k pull-down (default PFM). |
+| BT_UART_TX | out | PA2 (9) | USART2_TX AF1 to BM83 P8_6 RXD via R182 10 k (Bluetooth sheet). Drive low before BT_PWR_EN goes low. Pin moved to the right side of the symbol. |
+| BT_UART_RX | in | PA3 (10) | USART2_RX AF1 (or LPUART1_RX) from BM83 P8_5 TXD via R186 1 k. FT_ea, 5 V tolerant. |
+| BT_MFB | out | PB3 (27) | BM83 PWR(MFB) wake/power key via R183 10 k, R184 100 k pull-down on the module side. Costs the SWO option (J7 pin 6 was already nc). |
+| BT_RST_N | out | PB4 (28) | BM83 RST_N via R185 1 k; drive open-drain (low only), module has the pull-up. |
+| BT_TX_IND | in | PB8 (32) | BM83 P0_0 UART_TX_IND (Host mode) via R187 1 k; EXTI wake. Pin moved to the left side of the symbol. FT_f. Firmware enables internal pull-down. |
 | 5V_LOGIC_EN | out | PB5 (29) | U14 EN, R142 100 k pull-down. U14 MODE is hard-tied to SYS_RAW (no MCU mode pin). |
 
 Verified against the child sheets: port names/directions above match `USB_PD`, `Battery_Charger`, `Fuel_Gauge_Power`, `Bluetooth_Power` and `Logic_Audio_Power` hierarchical labels and the baseline netlist.
@@ -44,15 +49,14 @@ All GPIO are floating inputs in reset (and SWD pins keep SWD function). The exte
 
 | Pin | Reserved use | Note |
 |---|---|---|
-| PA2 (9), PA3 (10) | UART to BM83 (USART2 AF1; LPUART1 AF6 allows 9.6-115 k wake in Stop) | digital use of ADC pins |
 | PA4 (11), PA5 (12) | codec / source selects for TS5A23157 (x2) | |
 | PA6 (13), PA7 (14) | amp PDN / FAULT (two TAS5825M; may need more) | |
 | PA1 (8) | volume/source button ADC ladder | analog |
 | PB0 (15) | headphone detect | ADC_IN8 |
 | PB1 (16) | USB-A source-detect placeholder | ADC_IN9 |
 | PB2 (17) | spare / amp mute | |
-| PB6/PB7 alt, PB8 (32) | spare (I2C1 alternates) | |
-| PA15 (26), PB3 (27), PB4 (28) | LEDs, BM83 reset/MFB, software I2C for audio bus | |
+| PB6/PB7 alt | spare (I2C1 alternates) | |
+| PA15 (26), PB2 (17), PB8 now used | PA15: LEDs; audio I2C needs two pins: PB2 + PA15 (or share CTRL) | PB3/PB4 now BT_MFB/BT_RST_N, PB8 BT_TX_IND |
 | PC14/15 | if LSE ever needed they are used by CHG_INT/PD_PLUG_EVENT now: no crystal planned | |
 
 The budget is tight: 29 GPIO, 17 captured or fixed (SWD included), about 17 wanted later. Audio I2C (TAS5825M x2, PCM1862) has no hardware instance left (I2C1 = CTRL, I2C2 = PD): use a bit-banged bus on PB3/PB4 or share CTRL after isolating powered-off parts. Open question for the user.
@@ -62,3 +66,7 @@ The budget is tight: 29 GPIO, 17 captured or fixed (SWD included), about 17 want
 - QON/button sense: SW100 drives only BQ QON inside Battery_Charger; there is no port. A future `CHG_QON_SENSE` port plus a divider/open-drain buffer would be needed. No pin assigned beyond the button ladder.
 - USB-source detection: no net exists; PB1 reserved.
 - Remaining PD outputs (CAP_MIS, PLUG_FLIP, DBG_ACC) are no-connect on the PD sheet.
+
+## Bluetooth update (2026-10-06)
+
+BM83 nets captured in `Bluetooth.kicad_sch`: BT_UART_TX (PA2), BT_UART_RX (PA3), BT_MFB (PB3), BT_RST_N (PB4), BT_TX_IND (PB8). The MCU symbol swapped PA2 and PB8 positions so outputs stay right and inputs left; MCU ports: left BT_TX_IND, BT_UART_RX; right BT_MFB, BT_RST_N, BT_UART_TX. Power-off ACK is a UART message (no pin). GPIO budget is now 5 tighter: spare PB2, PA15 (LEDs), PB1/PB0/PA1 analogue, PA4-PA7. Open: audio I2C pins.

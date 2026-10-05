@@ -73,12 +73,14 @@ Updated: 2026-10-05. Use this checklist with `AGENTS.md` and `ai-files/HANDOVER.
 - [ ] Source-selection mux, SSPND/HID/MCU connections, crystal/ceramic qualification, LCSC codes for R170/R171/R172, 100 mA/suspend budget handling (5V_LOGIC_EN sequencing).
 - [ ] Check USB data operation under 5 V fallback, PD operation and battery/rail transitions.
 
-## 6. Bluetooth audio
+## 6. Bluetooth audio — CAPTURED, qualification open (2026-10-06)
 
-- [ ] Connect the currently selected BM83SM1-00TA module, supplies, decoupling, controls and programming requirements.
-- [ ] Choose analogue or digital audio interface and define levels/clocks with the rest of the audio chain.
-- [ ] Define power switching, wake/reconnect behaviour and prevention of signal-pin back-powering.
-- [ ] Record antenna clearance requirements for later PCB/enclosure work.
+- [x] `Bluetooth.kicad_sch` (root page 9, above Battery_Charger). U1 BM83SM1-00TA moved from root (reference/value/UUID kept); BAT_IN from 3V8_BT with C190 10 uF + C191 100 nF; SYS_PWR/VDD_IO are outputs with 1 uF each (C192/C193), nothing else loads them; ADAP_IN, I2S, mics, LEDs, buttons, USB, I2C unused (no-connect). Symbol regrouped, GND pads 16/50/56/57 a native stack.
+- [x] Audio: analogue single-ended DAC out (AOHPL/AOHPR), 4.7 uF + 100k bleed, ports BT_AUDIO_L/R (open stubs until the source-select sheet). Capless mode rejected (needs AOHPM sense, only for 16/32 ohm headphones). No I2S.
+- [x] Control: Host-mode UART PA2/PA3 (BT_UART_TX/BT_UART_RX), BT_MFB on PB3, BT_RST_N on PB4 (open-drain low), BT_TX_IND (module P0_0) on PB8. 10k/1k series resistors limit back-power; 100k MFB pull-down. No module pin reports power-off: the ACK is a UART message. Details/sequence/qualification: `ai-files/reports/bluetooth-notes.md`.
+- [x] J8 5-pin test/programming header (RST_N, P3_4 test-mode strap, UART RXD/TXD, GND): datasheet reserves UART P8_5/P8_6 for flash download and Config Tool in Test mode; USB DFU path (ADAP_IN + DP/DM) not provided.
+- [x] Antenna: integrated PCB antenna kept; keep-out/ground-plane rules recorded for the later PCB (no layout).
+- [ ] Open: confirm MFB VIH/idle polarity, BM83 SYS_PWR/VDD_IO capacitor values against Microchip hardware design guide/EVB schematic, Host-mode Config Tool setup (UART baud, TX_IND), FCC/ISED host-board ground plane, RF test pad cut-out, powered-off signal isolation measurement. ERC 193 -> 139 (see HANDOVER).
 - [ ] If revisiting ESP32, explicitly select a device supporting the required Bluetooth audio profile; compare audio capability and power before changing the BOM.
 
 ## 7. Source selection and analogue-to-digital conversion

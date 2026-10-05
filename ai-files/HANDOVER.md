@@ -1,6 +1,6 @@
 # Desktop Speaker handover
 
-Updated 2026-10-05. The current KiCad schematics are the source of truth. Update this file in place; keep future AI exports, reports and helpers under `ai-files/` instead of creating additional notes around the project.
+Updated 2026-10-06. The current KiCad schematics are the source of truth. Update this file in place; keep future AI exports, reports and helpers under `ai-files/` instead of creating additional notes around the project.
 
 ## Current continuation summary
 
@@ -430,3 +430,9 @@ Quick mechanical envelope review: `ai-files/reports/mechanical-fit-rough-2026-10
 - Finding: baseline root J1 ground/shield was on a root-local `/GND` net separate from global GND; the new D1 ground symbol now joins them.
 - Verification: ERC 222 -> 193 (see plan); existing nets keep their pin groups except the intended 5V_LOGIC (+R170) and GND (+new grounds, +J1 merge). Not committed.
 - SWD update (2026-10-06, not committed): MCU sheet J6 is now a 1x4 2.54 mm header (1 SWDIO 2 SWCLK 3 NRST 4 GND) and J7 a Tag-Connect TC2030-IDC legged footprint (1 3V_AO 2 SWDIO 3 NRST 4 SWCLK 5 GND 6 SWO nc; PB3 stays reserved). Both footprints and the 1x04 STEP are copied from stock KiCad libs into the flat project folders. USB_Audio C177/C178 are 33 pF (~19.5 pF effective for the 20 pF crystal); R170/R171/R172 now carry LCSC C112307/C107701. ERC unchanged at 193.
+
+## Bluetooth sheet capture (2026-10-06, not committed)
+- New child sheet `DesktopSpeaker-kicad/Bluetooth.kicad_sch` (page 9, root above Battery_Charger). U1 BM83SM1-00TA moved from root (ref/value/UUID kept); `BM83SM1-00TA.kicad_sym` regrouped with native types and GND pads 16/50/56/57 as one stack. Ports in: 3V8_BT, BT_RST_N, BT_UART_TX, BT_MFB; out: BT_UART_RX, BT_TX_IND, BT_AUDIO_L/R (open stubs, source-select sheet later).
+- MCU.kicad_sch (U3 PA2/PA3/PB3/PB4/PB8 now BT_UART_TX/RX, BT_MFB, BT_RST_N, BT_TX_IND; PA2 and PB8 symbol positions swapped; ports added to the MCU sheet block, which grew upward). `mcu-pin-allocation.md` updated; audio I2C pins remain an open question.
+- Decisions, power-off sequence, J8 programming header, antenna keep-out and qualification: `reports/bluetooth-notes.md`. Single-ended 4.7 uF audio out; 10k/1k series resistors for back-power; no flow control. New parts R180-R187, C190-C195, J8 in BOM (R185-R187 C22548 and J8 prices unverified; capacitor values unverified vs Microchip hardware guide). Helpers: `helpers/build_bluetooth_sheet.py`, `helpers/add_bluetooth_bom.mjs` (guarded).
+- Verification: ERC 193 -> 139 (root pin_not_connected 165->113, power_pin_not_driven 2->0, endpoint_off_grid 19->18, label_dangling 3->4: 3V8_BT stub resolved, BT_AUDIO_L/R open; Bluetooth/MCU sheets 0). Existing multi-pin net groups preserved (netlist compare); 3V8_BT and GND only grew. U1 pins 1-50, 56, 57 names match datasheet table 2-2.
