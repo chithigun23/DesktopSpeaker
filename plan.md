@@ -333,3 +333,9 @@ Quick mechanical envelope review: `ai-files/reports/mechanical-fit-rough-2026-10
 ## PCB layout (2026-10-06, user-authorised: placement only)
 - [x] `DesktopSpeaker-kicad/DesktopSpeaker.kicad_pcb`: 114 x 92 mm, 322 parts top side, 4 M3 holes, BM83 antenna keepout, no routing/zones. Method/rules/DRC/open concerns: `ai-files/reports/pcb-placement-2026-10-06.md`; regenerate with `ai-files/helpers/build_pcb.sh`, check with `pcb_check.sh`. CAD rebuilt from the layout (0 unintended overlaps).
 - [ ] Review placement, then routing/stackup/planes, test points, silk slots for 5 refs, footprint clearance fixes (J1/U11/U19/SW100) are NOT started.
+
+## Low-risk BOM reduction (2026-10-06)
+- [x] Removed C185, C113-C115, C121, C143, C151, C163, C164, C242, R260 (U6 ADR now tied directly to GND). ERC 19 unchanged; netlist pin groups unchanged apart from the removed pins and U6 pin 8 on GND. BOM subtotal US$74.38 fitted / US$83.57 order (partial). Preview refreshed.
+- [x] Kept after datasheet check: C126 (U21 TPS3839 VDD bypass), R12, R18, C184.
+- [ ] Deferred pending bench: M1 USB/BT bias merge, ADC anti-alias C206-C211, PVDD caps C279/C292, low-med items (C131/C132, C154, C263/C264, C222/C223, R122).
+- [ ] PCB still has the 11 removed footprints; remove them in the layout redo.
