@@ -64,12 +64,13 @@ Updated: 2026-10-05. Use this checklist with `AGENTS.md` and `ai-files/HANDOVER.
 - [ ] Document startup/shutdown sequencing, fault handling and external-power charge policy (see `reports/replacement-power-control-contract.md`).
 - [ ] Resolve any MCU/Bluetooth architecture change explicitly before replacing the currently selected parts.
 
-## 5. USB audio and connector data path
+## 5. USB audio and connector data path — PARTIAL
 
-- [ ] Connect PCM2902C supplies/grounds, decoupling, clock and required configuration from its datasheet.
-- [ ] Wire USB-C USB 2.0 data contacts correctly and connect D1 data protection.
-- [ ] Finalize USB shield/ground arrangement and any required data-path supporting components.
-- [ ] Define codec analogue signal levels, coupling/bias and routing into the source-selection path.
+- [x] Connect PCM2902C (U2, moved to child sheet `USB_Audio.kicad_sch`, root page 8) supplies/grounds, decoupling, 12 MHz crystal (Y170, R174, C177/C178), SEL0/SEL1 high, D+ 1.5 k pull-up and 22 R series resistors, VCOM/VCCCI bypass. Supply is `5V_LOGIC` through R170 2.2 R / C170 1 uF. See `ai-files/reports/usb-audio-notes.md`.
+- [x] Wire USB-C D+/D- (J1 A6/B6, A7/B7) through D1 to the sheet ports USB_DP/USB_DN. Tap point for the later source-detect mux noted in the root; mux not added.
+- [x] Shield: EH pins direct to GND (no RC). Note: this also joins the previously isolated root-local J1 `/GND` net to system GND.
+- [x] Codec output: 4.7 uF coupling + 100 k bleed to ports `USB_AUDIO_L/R` (about 2 Vpp, 1.65 V DC before coupling). Not connected to any mux yet.
+- [ ] Source-selection mux, SSPND/HID/MCU connections, crystal/ceramic qualification, LCSC codes for R170/R171/R172, 100 mA/suspend budget handling (5V_LOGIC_EN sequencing).
 - [ ] Check USB data operation under 5 V fallback, PD operation and battery/rail transitions.
 
 ## 6. Bluetooth audio
@@ -295,3 +296,6 @@ Quick mechanical envelope review: `ai-files/reports/mechanical-fit-rough-2026-10
 
 ## MCU sheet capture (2026-10-06)
 - [x] `MCU.kicad_sch` added (root page 7, right of Fuel_Gauge_Power). U3 reference/UUID preserved (the placed MCU is U3, not U1). TAS5825M U6/U7 moved up in the root to clear the sheet. New parts C160-C162, R160, J6 added to the BOM (unverified prices). ERC 260 -> 222 (fewer root pin_not_connected and label_dangling); MCU sheet adds 0.
+
+## USB audio sheet capture (2026-10-06)
+- [x] `USB_Audio.kicad_sch` added (root page 8, right of Logic_Audio_Power). U2 reference/UUID preserved. ERC 222 -> 193 (root pin_not_connected -37, label_dangling +2 for the open USB_AUDIO_L/R stubs, endpoint_off_grid +7 at J1 stubs); USB_Audio sheet 0. New parts BOM-listed; unverified prices/LCSC gaps recorded.
