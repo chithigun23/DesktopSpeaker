@@ -210,7 +210,7 @@ for ref,x,val in [('C100',115,'10uF / 50V')]:
     path((x,95.19),(x,88.9)); label('VBUS_PD',x,88.9); path((x,102.81),(x,110)); gnd(x,110)
 new_cap('C111','10uF / 50V',140,99,template='C103',footprint='DesktopSpeaker:PD_C_1210')
 path((140,95.19),(140,88.9)); label('VBUS_PD',140,88.9); path((140,102.81),(140,110)); gnd(140,110)
-new_cap('C113','0.1uF / 50V',165,99,footprint='DesktopSpeaker:PD_C_0603')
+new_cap('C113','0.1uF / 50V',165,99,footprint='DesktopSpeaker:PD_C_0402')
 path((165,95.19),(165,88.9)); label('VBUS_PD',165,88.9); path((165,102.81),(165,110)); gnd(165,110)
 pmid=P('29')
 for ref,x in [('C101',270),('C108',292)]:
@@ -220,7 +220,8 @@ for ref,x in [('C101',270),('C108',292)]:
     path((x,95.19),(x,89.0)); label('PMID',x,89.0); path((x,102.81),(x,110)); gnd(x,110)
 new_cap('C112','10uF / 35V',314,99,template='C103',footprint='DesktopSpeaker:PD_C_1210')
 path((314,95.19),(314,89.0)); label('PMID',314,89.0); path((314,102.81),(314,110)); gnd(314,110)
-new_cap('C114','0.1uF / 50V',336,99,footprint='DesktopSpeaker:PD_C_0603')
+new_cap('C114','0.1uF / 50V',336,99,footprint='DesktopSpeaker:PD_C_0402')
+new_cap('C115','0.1uF / 50V',350,99,footprint='DesktopSpeaker:PD_C_0402')  # SYS bypass at U4 pin 25
 path((336,95.19),(336,89.0)); label('PMID',336,89.0); path((336,102.81),(336,110)); gnd(336,110)
 path(pmid,(260,pmid[1])); label('PMID',260,pmid[1])
 
@@ -433,12 +434,12 @@ for cap,x,bt,sw in (('C103',335.28,'BTST1','SW1'),('C110',355.6,'BTST2','SW2')):
     stub(t[0],t[1],0,-2.54,bt,'left'); stub(b[0],b[1],0,2.54,sw,'left')
 
 # ---- SYS output ------------------------------------------------------------------------
-SYS_Y=P4('25')[1]; scx=[330.2,350.52,370.84]
-sy=P4('25'); hrail(SYS_Y,[sy[0]]+scx+[391.16])
+SYS_Y=P4('25')[1]; scx=[325.12,345.44,365.76,386.08]
+sy=P4('25'); hrail(SYS_Y,[sy[0]]+scx+[398.78])
 for x in scx: junction(x,SYS_Y)
-for ref,x in zip(('C104','C105','C107'),scx):
+for ref,x in zip(('C115','C104','C105','C107'),scx):
     place(ref,x,SYS_Y+3.81); gnd(*pin(ref,'2'))
-port('SYS_RAW',391.16,SYS_Y,'output','right')
+port("SYS_RAW",398.78,SYS_Y,'output','right')
 
 # ---- Battery path: BAT -> external ship FET Q103 (source on BAT, drain to pack) -------------
 place('Q103',271.78,137.16,mirror='x',txt=None)
@@ -469,8 +470,8 @@ hrail(GY,[a2[0],g[0],a1[0]]); junction(g[0],GY); gnd(g[0],GY)
 nc(*P4('1'))                         # STAT unused
 
 # ---- Left host interface ports (straight) ------------------------------------------------------
-for name,n,shape in (('CHG_DP_RAW','6','bidirectional'),('CHG_DM_RAW','7','bidirectional'),
-                     ('CHG_SCL','14','bidirectional'),('CHG_SDA','15','bidirectional')):
+nc(*P4('6')); nc(*P4('7'))            # D+/D- unconnected; AUTO_INDET_EN=0
+for name,n,shape in (('CHG_SCL','14','bidirectional'),('CHG_SDA','15','bidirectional')):
     p=P4(n); port(name,38.1,p[1],shape); path((38.1,p[1]),p)
 LX=198.12
 for n,name in (('13','CE_N'),('16','TS_SENSE'),('17','ILIM_HIZ'),('20','PROG'),('21','CHG_INT')):
@@ -504,7 +505,7 @@ place('R111',121.92,212.09); port('CHG_SYS_ENABLE',38.1,q2g[1],'input')
 path((38.1,q2g[1]),q2g); junction(121.92,q2g[1]); path(pin('R111','1'),(121.92,q2g[1])); gnd(*pin('R111','2'))
 
 # ---- CE default-off (charge disabled unless CHG_ENABLE is driven high) ---------------------------------
-place('R103',87.63,170.18); r=pin('R103','1'); stub(r[0],r[1],0,-2.54,'REGN','left')
+set_prop(getinst('R103'),'Value','100k'); place('R103',87.63,170.18); r=pin('R103','1'); stub(r[0],r[1],0,-2.54,'REGN','left')
 place('Q100',85.09,187.96)
 q0d,q0s,q0g=pin('Q100','3'),pin('Q100','2'),pin('Q100','1')
 path(pin('R103','2'),q0d); label('CE_N',87.63,177.8,'right'); gnd(*q0s)
@@ -523,7 +524,7 @@ for i,t in enumerate([
  'Startup: keep ILIM_HIZ clamped (Q101) through POR; clear EN_EXTILIM, program/read back IINDPM and 1S limits before enabling SYS. Verify reset/watchdog recovery.',
  'Set REG14.SFET_PRESENT=1 and read back before SDRV ship control; POR default 0 locks SDRV_CTRL. MCU reset/REG_RST requires reconfiguration.',
  'R102 4.7k = 1S/750kHz PROG. L1 2.2uH/6A and input MLCCs are provisional: qualify 20V surge/DC-bias, load current, ripple, efficiency and thermal limits.',
- 'I2C pull-ups (10k to logic rail) and CHG_VIO_3V0 level are host-side; D+/D- stay raw for later source-selection mux.']):
+ 'I2C pull-ups (10k to logic rail) and CHG_VIO_3V0 level are host-side; D+/D- unconnected (no-connect); set AUTO_INDET_EN=0, HVDCP_EN=0.']):
     note(t,38.1,232.0+5.08*i,1.0)
 
 # Coordinator-approved provisional Samsung 10uF/50V 1210 for the five-cap
@@ -539,8 +540,10 @@ for ref in ('C100','C111','C101','C108','C112'):
 # Reuse already-selected passive mappings where the new candidate values match.
 metadata={
  'C110':('YAGEO','CC0603KRX7R9BB473','C107093','https://www.yageo.com/upload/media/product/productspec/capacitor/CC0603KRX7R9BB473.pdf'),
- 'C113':('Samsung Electro-Mechanics','CL21B104KBCNNNC','C1711','https://product.samsungsem.com/mlcc/CL21B104KBCNNNC.do'),
- 'C114':('Samsung Electro-Mechanics','CL21B104KBCNNNC','C1711','https://product.samsungsem.com/mlcc/CL21B104KBCNNNC.do'),
+ 'C113':('Murata','GRM155R71H104KE14D','C77020','https://www.murata.com/en-us/products/productdetail?partno=GRM155R71H104KE14D%23'),
+ 'C114':('Murata','GRM155R71H104KE14D','C77020','https://www.murata.com/en-us/products/productdetail?partno=GRM155R71H104KE14D%23'),
+ 'C115':('Murata','GRM155R71H104KE14D','C77020','https://www.murata.com/en-us/products/productdetail?partno=GRM155R71H104KE14D%23'),
+ 'R103':('YAGEO','RC0603FR-07100KL','C14675','${KIPRJMOD}/../ai-files/datasheets/Yageo_RC0603FR_series.pdf'),
  'R108':('YAGEO','RC0603FR-07180KL','C123419','${KIPRJMOD}/../ai-files/datasheets/Yageo_RC0603FR_series.pdf'),
  'R109':('YAGEO','RC0603FR-07100KL','C14675','${KIPRJMOD}/../ai-files/datasheets/Yageo_RC0603FR_series.pdf'),
  'R110':('YAGEO','RC0603FR-07100KL','C14675','${KIPRJMOD}/../ai-files/datasheets/Yageo_RC0603FR_series.pdf'),

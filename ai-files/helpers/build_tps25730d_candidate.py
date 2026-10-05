@@ -27,12 +27,13 @@ def tps_symbol():
     # Inputs and digital signals on left; y is local symbol (positive is upward on page).
     left=[('CC1','28','bidirectional',20.32),('CC2','29','bidirectional',15.24),('SDA','8','bidirectional',10.16),('SCL','9','bidirectional',5.08),('ADC1','2','input',0),('ADC2','3','input',-5.08),('ADC3','5','input',-10.16),('ADC4','7','input',-15.24),('FAULT','18','input',-20.32)]
     for n,num,t,y in left:pins.append(pin(n,num,t,'L',y))
-    right=[('CAP_MIS','6','open_collector',20.32),('SINK_EN','19','open_collector',15.24),('EVENT','37','open_collector',10.16),('FLIP','13','open_collector',5.08),('DBG_ACC','10','open_collector',0),('RESERVED','[26-27,36]','passive',-5.08),('DRAIN','15','passive',-10.16),('DRAIN','30','passive',-15.24),('DRAIN','40','passive',-20.32)]
+    right=[('CAP_MIS','6','open_collector',20.32),('SINK_EN','19','open_collector',15.24),('EVENT','37','open_collector',10.16),('FLIP','13','open_collector',5.08),('DBG_ACC','10','open_collector',0),('RESERVED','[26-27]','passive',-5.08),('DRAIN','15','passive',-10.16),('DRAIN','30','passive',-15.24),('DRAIN','40','passive',-20.32)]
     for n,num,t,y in right:pins.append(pin(n,num,t,'R',y))
     # The datasheet identifies these pads as electrically common; native stacks retain physical pin numbers.
     top=[('VBUS_IN','[23-25]','power_in',-22.86),('VBUS','[32-33]','power_in',-13.97),('LDO_3V3','1','power_out',-5.08),('LDO_1V5','4','power_out',5.08),('VIN_3V3','38','power_in',13.97),('PPHV','[20-22]','power_out',22.86)]
     for n,num,t,x in top:pins.append(pin(n,num,t,'T',30.48,x))
     pins.append(pin('GND','[11-12,14,16-17,31,34-35,39]','power_in','B',-30.48,-22.86))
+    pins.append(pin('RESERVED','36','passive','B',-30.48,-17.78))
     lib=[S('symbol'),'TPS25730DREFR',[S('pin_numbers')],[S('pin_names'),[S('offset'),1.27]],[S('in_bom'),S('yes')],[S('on_board'),S('yes')],
         lp('Reference','U',0,0,-27.94),lp('Value','TPS25730DREFR',1,0,-30.48),lp('Footprint','TPS25730D:Texas_REF0038A_WQFN-38-2EP_6x4mm_P0.4',2,0,0,True),lp('Datasheet','${KIPRJMOD}/../ai-files/datasheets/TPS25730.pdf',3,0,0,True),lp('Manufacturer','Texas Instruments',4,0,0,True),lp('MPN','TPS25730DREFR',5,0,0,True),lp('LCSC Part','C22438973',6,0,0,True),lp('Description','USB Type-C sink PD controller, integrated 7A path, WQFN-38 REF0038A',7,0,0,True),
         [S('symbol'),'TPS25730DREFR_0_1',[S('rectangle'),[S('start'),-25.4,25.4],[S('end'),25.4,-25.4],[S('stroke'),[S('width'),0.254],[S('type'),S('default')]],[S('fill'),[S('type'),S('background')]]]],
@@ -76,7 +77,7 @@ def text(s,x,y,size=1.27):return [S('text'),s,[S('at'),x,y,0],[S('effects'),[S('
 
 base=sx.loads(Path('DesktopSpeaker-kicad/USB_PD.kicad_sch').read_text())
 oldlibs=one(base,'lib_symbols')
-need=['PD_C:PD_C','PD_R:PD_R','PD_SERVICE_HDR:PD_SERVICE_HDR','TVS2200DRVR:TVS2200DRVR','ESDA25L:ESDA25L','TPS7B8450QWDRBRQ1:TPS7B8450QWDRBRQ1','power:GND']
+need=['PD_C:PD_C','PD_R:PD_R','PD_DIODE:PD_DIODE','PD_SERVICE_HDR:PD_SERVICE_HDR','TVS2200DRVR:TVS2200DRVR','ESDA25L:ESDA25L','TPS7B8450QWDRBRQ1:TPS7B8450QWDRBRQ1','power:GND']
 cache=[mk_cache(oldlibs,n) for n in need]
 tps=tps_symbol(); tps[1]='TPS25730DREFR:TPS25730DREFR'
 # Add all cached symbols by their instance lib ids and the newly designed IC.
@@ -101,15 +102,15 @@ def add(libid,ref,val,x,y,fp='',datasheet='',mfr='',mpn='',lcsc=''):
 add('TVS2200DRVR:TVS2200DRVR','D6','TVS2200DRVR',110.49,100.33,'DesktopSpeaker:TVS2200DRVR','${KIPRJMOD}/../ai-files/datasheets/TVS2200.pdf','Texas Instruments','TVS2200')
 add('ESDA25L:ESDA25L','D5','ESDA25L',139.70,121.92,'DesktopSpeaker:ESDA25L','${KIPRJMOD}/../ai-files/datasheets/ESDAL-ST.pdf','STMicroelectronics','ESDA25L','C95343')
 for ref,val,x,y,fp in [
- ('C2','1uF X7R 50V CVBUS',198.12,82.55,'DesktopSpeaker:PD_C_1210'),
- ('C6','10uF X7R 10V',215.90,82.55,'DesktopSpeaker:PD_C_0805'),
+ ('C2','4.7uF X7R 50V',198.12,82.55,'DesktopSpeaker:PD_C_1210'),
+ ('C6','22uF X7R 10V',215.90,82.55,'DesktopSpeaker:PD_C_0805'),
  ('C181','10uF X7R 10V',226.06,82.55,'DesktopSpeaker:PD_C_0805'),
  ('C185','10uF X7R 10V CVIN_3V3',234.95,82.55,'DesktopSpeaker:PD_C_0805'),
  ('C182','330pF C0G CC1 filter',166.37,123.19,'DesktopSpeaker:PD_C_0603'),
  ('C183','330pF C0G CC2 filter',186.69,125.73,'DesktopSpeaker:PD_C_0603'),
  ('C184','1uF X7R 50V',91.44,208.28,'DesktopSpeaker:PD_C_0805'),
  ('C5','4.7uF X7R 50V',134.62,208.28,'DesktopSpeaker:PD_C_1206')]:add('PD_C:PD_C',ref,val,x,y,fp)
-for ref,val,x,y in [('R10','200k 1%',149.86,129.54),('R11','10k 1%',149.86,142.24),('R12','100k 1%',265.43,95.25),('R13','10k 1%',182.88,151.13)]:add('PD_R:PD_R',ref,val,x,y,'DesktopSpeaker:PD_R_0603')
+for ref,val,x,y in [('R10','200k 1%',149.86,129.54),('R11','10k 1%',149.86,142.24),('R12','100k 1%',265.43,95.25),('R13','10k 1%',182.88,151.13),('R14','10k 1%',62.23,139.7),('R15','10k 1%',80.01,139.7),('R16','100k 1%',222.25,99.06),('R17','100k 1%',212.09,78.74),('R18','10k 1%',152.4,139.7)]:add('PD_R:PD_R',ref,val,x,y,'DesktopSpeaker:PD_R_0603')
 # Populate only exact known purchasing matches; leave R10 unselected (200k has no
 # matching BOM record). Capacitor curves still need effective-value qualification.
 def purchasing(ref, manufacturer, mpn, lcsc, datasheet=''):
@@ -117,12 +118,17 @@ def purchasing(ref, manufacturer, mpn, lcsc, datasheet=''):
     at=one(inst,'at')
     for n,v in [('Manufacturer',manufacturer),('MPN',mpn),('LCSC Part',lcsc),('LCSC',lcsc)]: inst.append(prop(n,v,at[1],at[2],True))
     if datasheet: inst.append(prop('Datasheet',datasheet,at[1],at[2],True))
-for ref in ('C6','C181','C185'):
+for ref in ('C181','C185'):
     purchasing(ref,'Samsung Electro-Mechanics','CL21B106KPQNNNE','C32635','${KIPRJMOD}/../ai-files/datasheets/Samsung_CL21B106KPQNNNE.pdf')
+purchasing('C2','Samsung Electro-Mechanics','CL32B475KBUYNNE','C170099','https://product.samsungsem.com/mlcc/CL32B475KBUYNN.do')
+purchasing('C6','Murata','GRM21BZ71A226ME15L','C907991')
+for r in ('R14','R15','R18'): purchasing(r,'YAGEO','RC0603FR-0710KL','C98220','${KIPRJMOD}/../ai-files/datasheets/Yageo_RC0603FR_series.pdf')
+for r in ('R16','R17'): purchasing(r,'YAGEO','RC0603FR-07100KL','C14675','${KIPRJMOD}/../ai-files/datasheets/Yageo_RC0603FR_series.pdf')
 purchasing('C184','Samsung Electro-Mechanics','CL21B105KBFNNNE','C28323','https://www.lcsc.com/datasheet/C28323.pdf')
 purchasing('R11','YAGEO','RC0603FR-0710KL','C98220','${KIPRJMOD}/../ai-files/datasheets/Yageo_RC0603FR_series.pdf')
 purchasing('R12','YAGEO','RC0603FR-07100KL','C14675','${KIPRJMOD}/../ai-files/datasheets/Yageo_RC0603FR_series.pdf')
 purchasing('R13','YAGEO','RC0603FR-0710KL','C98220','${KIPRJMOD}/../ai-files/datasheets/Yageo_RC0603FR_series.pdf')
+add('PD_DIODE:PD_DIODE','D7','1N5819HW',134.62,66.04,'DesktopSpeaker:PD_D_SOD123','','Diodes Incorporated','1N5819HW-7-F','C82544')
 add('PD_SERVICE_HDR:PD_SERVICE_HDR','J4','I2C service',64.77,246.38,'DesktopSpeaker:PD_SERVICE_HDR')
 
 # ---- Readable redraw: explicit placement on the 1.27 mm grid, no net crossings. ----
@@ -145,10 +151,14 @@ def place(ref,x,y,rot=0,ref_at=None,val_at=None,just='left'):
 place('U11',170.18,101.6,ref_at=(170.18,129.54),val_at=(170.18,132.08),just=None)
 place('U19',96.52,165.1,ref_at=(96.52,189.23),val_at=(96.52,191.77),just=None)
 place('D6',88.9,68.58,ref_at=(95.25,67.31),val_at=(95.25,69.85))
+place('D7',134.62,66.04,270,ref_at=(138.43,64.77),val_at=(138.43,67.31))
+for pp in bykey('D7'):
+    if k(pp)=='property' and pp[1] in ('Reference','Value'): one(pp,'at')[3]=90  # symbol rotated 270; keep text horizontal
 place('D5',91.44,116.84,ref_at=(97.79,115.57),val_at=(97.79,118.11))
 for r,(x,y) in {'C2':(114.3,67.31),'C6':(170.18,54.61),'C181':(195.58,54.61),'C185':(220.98,54.61),'R12':(255.27,54.61),
                 'C182':(50.8,110.49),'C183':(50.8,123.19),'C184':(71.12,173.99),'C5':(124.46,161.29),
                 'R10':(116.84,113.03),'R11':(116.84,120.65)}.items(): place(r,x,y)
+for r,(x,y) in {'R14':(62.23,139.7),'R15':(80.01,139.7),'R16':(222.25,99.06),'R17':(212.09,78.74),'R18':(152.4,139.7)}.items(): place(r,x,y)
 place('R13',129.54,125.73,180,ref_at=(133.35,124.46),val_at=(133.35,127.0),just='right')
 place('J4',48.26,182.88,ref_at=(52.07,180.34),val_at=(52.07,182.88))
 for i in items[:]:pass
@@ -165,7 +175,8 @@ def junc(x,y):sch.append([S('junction'),[S('at'),x,y],[S('diameter'),0],[S('colo
 HL('USB_VBUS',40.64,60.96,'input','right')
 W((40.64,60.96),(88.9,60.96),(114.3,60.96),(147.32,60.96),(156.21,60.96),(156.21,71.12))
 W((147.32,60.96),(147.32,71.12)); W((88.9,60.96),(88.9,64.77)); W((114.3,60.96),(114.3,63.5))
-J(88.9,60.96);J(114.3,60.96);J(147.32,60.96)
+J(88.9,60.96);J(114.3,60.96);J(147.32,60.96);J(134.62,60.96)
+W((134.62,60.96),(134.62,62.23)); G(134.62,69.85)
 G(114.3,71.12); G(88.9,72.39); W((88.9,72.39),(91.44,72.39))
 # Left-hand interface ports (inputs/bidirectional).
 for n,y,sh in [('USB_CC1',81.28,'input'),('USB_CC2',86.36,'input'),('PDCTRL_SDA',91.44,'bidirectional'),('PDCTRL_SCL',96.52,'bidirectional')]:
@@ -186,8 +197,16 @@ for x,n in [(170.18,'LDO_3V3'),(195.58,'LDO_1V5')]:
 W((220.98,50.8),(220.98,48.26)); LBL('VIN_LOW',220.98,48.26,'left'); G(220.98,58.42)
 W((220.98,50.8),(255.27,50.8)); J(220.98,50.8); G(255.27,58.42)
 # Right-hand status outputs, reserved pins grounded, drains intentionally no-connect.
-for n,y in [('PD_CAP_MIS',81.28),('PD_SINK_EN',86.36),('PD_PLUG_EVENT',91.44),('PD_PLUG_FLIP',96.52),('PD_DBG_ACC',101.6)]:
+for n,y in [('PD_SINK_EN',86.36),('PD_PLUG_EVENT',91.44)]:
     W((200.66,y),(234.95,y)); HL(n,234.95,y,'output','left')
+for y in (81.28,96.52,101.6): NC(200.66,y)  # CAP_MIS, FLIP, DBG_ACC unused
+# 100k open-drain pull-ups to LDO_3V3
+W((212.09,86.36),(212.09,82.55)); J(212.09,86.36); W((212.09,74.93),(212.09,72.39)); LBL('LDO_3V3',212.09,72.39,'left')
+W((222.25,91.44),(222.25,95.25)); J(222.25,91.44); W((222.25,102.87),(222.25,105.41)); LBL('LDO_3V3',222.25,105.41,'left')
+# I2C pull-ups (remote sections share the port net names) and RESERVED pin 36 via 10k
+for x,n in ((62.23,'PDCTRL_SDA'),(80.01,'PDCTRL_SCL')):
+    W((x,135.89),(x,133.35)); LBL('LDO_3V3',x,133.35,'left'); W((x,143.51),(x,146.05)); LBL(n,x,146.05,'left')
+W((152.4,132.08),(152.4,135.89)); G(152.4,143.51)
 W((200.66,106.68),(203.2,106.68)); G(203.2,106.68)
 for y in (111.76,116.84,121.92):NC(200.66,y)
 G(147.32,132.08)
@@ -202,7 +221,7 @@ W((109.22,157.48),(124.46,157.48),(139.7,157.48)); J(124.46,157.48); HL('USB_AUX
 for y in (162.56,167.64,170.18,172.72):NC(109.22,y)
 W((91.44,180.34),(91.44,182.88),(96.52,182.88),(101.6,182.88),(101.6,180.34)); J(96.52,182.88); G(96.52,182.88)
 # Service header.
-for y,n in [(180.34,'3V_AO'),(182.88,'PDCTRL_SCL'),(185.42,'PDCTRL_SDA')]:
+for y,n in [(180.34,'LDO_3V3'),(182.88,'PDCTRL_SCL'),(185.42,'PDCTRL_SDA')]:
     W((43.18,y),(38.1,y)); LBL(n,38.1,y,'right')
 W((43.18,187.96),(40.64,187.96)); G(40.64,187.96)
 notes=[
@@ -211,7 +230,7 @@ notes=[
 'Enforce 100mA SDP attach policy; implement USB suspend separately.',
 'TVS2200 clamp max exceeds 28V abs max; qualify controller-pin transients.',
 'Validate shared ~50uF bank bias and ramps; details: ai-files/reports/5-20v-pd-front-end-review.md.']
-for i,n in enumerate(notes):sch.append(text(n,150.0,146.0+i*3.8,1.0))
+for i,n in enumerate(notes):sch.append(text(n,160.0,156.0+i*3.8,1.0))
 
 # Add candidate metadata while preserving the original USB_PD child sheet UUID and U11 symbol UUID.
 Path('ai-files/candidates/TPS25730D_USB_PD_candidate.kicad_sch').write_text('('+sx.dumps(sch[0])+'\n'+'\n'.join(sx.dumps(a) for a in sch[1:])+')\n')
