@@ -2,7 +2,7 @@
 	(version "E")
 	(design
 		(source "/home/chithi/Desktop/DesktopSpeaker/ai-files/candidates/Battery_Charger.kicad_sch")
-		(date "2026-10-05T18:46:45")
+		(date "2026-10-05T23:27:55")
 		(tool "Eeschema 10.0.6-rc2")
 		(sheet
 			(number "1")
@@ -97,7 +97,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ai-files/candidates/Battery_Charger.kicad_sch")
+				(value "Battery_Charger.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -169,7 +169,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ai-files/candidates/Battery_Charger.kicad_sch")
+				(value "Battery_Charger.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -241,7 +241,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ai-files/candidates/Battery_Charger.kicad_sch")
+				(value "Battery_Charger.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -319,7 +319,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ai-files/candidates/Battery_Charger.kicad_sch")
+				(value "Battery_Charger.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -391,7 +391,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ai-files/candidates/Battery_Charger.kicad_sch")
+				(value "Battery_Charger.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -463,7 +463,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ai-files/candidates/Battery_Charger.kicad_sch")
+				(value "Battery_Charger.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -535,7 +535,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ai-files/candidates/Battery_Charger.kicad_sch")
+				(value "Battery_Charger.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -607,7 +607,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ai-files/candidates/Battery_Charger.kicad_sch")
+				(value "Battery_Charger.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -679,7 +679,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ai-files/candidates/Battery_Charger.kicad_sch")
+				(value "Battery_Charger.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -751,7 +751,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ai-files/candidates/Battery_Charger.kicad_sch")
+				(value "Battery_Charger.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -829,7 +829,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ai-files/candidates/Battery_Charger.kicad_sch")
+				(value "Battery_Charger.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -843,7 +843,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "8d40eabf-778b-4614-b516-07f973a6bb75")
+			(tstamps "890cc656-6cd8-493c-8bed-3255409a7e4f")
 			(units
 				(unit
 					(name "A")
@@ -907,7 +907,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ai-files/candidates/Battery_Charger.kicad_sch")
+				(value "Battery_Charger.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -921,7 +921,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "28bc0801-fefd-4cce-83c7-70f80d663bcb")
+			(tstamps "38540c91-47fe-4b15-bf7e-28bef595e150")
 			(units
 				(unit
 					(name "A")
@@ -985,7 +985,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ai-files/candidates/Battery_Charger.kicad_sch")
+				(value "Battery_Charger.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -999,7 +999,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "3cb69532-4ef1-4f50-81ce-55249b28f44e")
+			(tstamps "fa163d85-0a5e-40b7-9512-d59b70f347ab")
 			(units
 				(unit
 					(name "A")
@@ -1063,7 +1063,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ai-files/candidates/Battery_Charger.kicad_sch")
+				(value "Battery_Charger.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -1077,7 +1077,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "bc8deebb-adfc-48f0-a437-085e6cf94339")
+			(tstamps "ef034245-e2c4-4160-8ca8-4fc1d4898d5a")
 			(units
 				(unit
 					(name "A")
@@ -1141,7 +1141,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ai-files/candidates/Battery_Charger.kicad_sch")
+				(value "Battery_Charger.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -1155,7 +1155,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "87e82904-18e4-43ef-9216-3b44f1df3a67")
+			(tstamps "b55cb8c4-bf41-42c4-a6b0-a87b6e1078eb")
 			(units
 				(unit
 					(name "A")
@@ -1195,7 +1195,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ai-files/candidates/Battery_Charger.kicad_sch")
+				(value "Battery_Charger.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -1270,7 +1270,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ai-files/candidates/Battery_Charger.kicad_sch")
+				(value "Battery_Charger.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -1324,13 +1324,13 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ai-files/candidates/Battery_Charger.kicad_sch")
+				(value "Battery_Charger.kicad_sch")
 			)
 			(sheetpath
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "88a4de57-2bf6-4ad8-848f-14706e4b2cab")
+			(tstamps "a3116865-d377-4b3d-ac54-49e846b54d9c")
 			(units
 				(unit
 					(name "A")
@@ -1391,13 +1391,13 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ai-files/candidates/Battery_Charger.kicad_sch")
+				(value "Battery_Charger.kicad_sch")
 			)
 			(sheetpath
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "c00e3d72-4d4c-49c1-a184-297a4d5fb97d")
+			(tstamps "08ed2526-80f4-4ba6-abd5-5549cff1868f")
 			(units
 				(unit
 					(name "A")
@@ -1458,13 +1458,13 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ai-files/candidates/Battery_Charger.kicad_sch")
+				(value "Battery_Charger.kicad_sch")
 			)
 			(sheetpath
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "8603ab4b-05ef-45fe-8ae0-4b974c81e119")
+			(tstamps "267b7e04-dd0f-405a-b0c5-087321d68230")
 			(units
 				(unit
 					(name "A")
@@ -1525,7 +1525,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ai-files/candidates/Battery_Charger.kicad_sch")
+				(value "Battery_Charger.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -1535,7 +1535,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "bb5dcdb7-5a27-463a-a617-265ea805fab2")
+			(tstamps "bdc40c1a-2cf6-4287-9308-53caf3624d6b")
 			(units
 				(unit
 					(name "A")
@@ -1614,7 +1614,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ai-files/candidates/Battery_Charger.kicad_sch")
+				(value "Battery_Charger.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -1686,7 +1686,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ai-files/candidates/Battery_Charger.kicad_sch")
+				(value "Battery_Charger.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -1758,7 +1758,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ai-files/candidates/Battery_Charger.kicad_sch")
+				(value "Battery_Charger.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -1830,7 +1830,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ai-files/candidates/Battery_Charger.kicad_sch")
+				(value "Battery_Charger.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -1902,7 +1902,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ai-files/candidates/Battery_Charger.kicad_sch")
+				(value "Battery_Charger.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -1974,7 +1974,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ai-files/candidates/Battery_Charger.kicad_sch")
+				(value "Battery_Charger.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -2046,7 +2046,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ai-files/candidates/Battery_Charger.kicad_sch")
+				(value "Battery_Charger.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -2060,7 +2060,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "d17d31dd-a155-461d-921c-40b5da6880b3")
+			(tstamps "22d3ecb2-6762-4841-a469-b2be7d69e646")
 			(units
 				(unit
 					(name "A")
@@ -2118,7 +2118,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ai-files/candidates/Battery_Charger.kicad_sch")
+				(value "Battery_Charger.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -2132,7 +2132,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "11628700-2637-49b7-b293-bb35da695230")
+			(tstamps "1abab15f-1f9b-4b3e-aeff-4e5452935473")
 			(units
 				(unit
 					(name "A")
@@ -2190,7 +2190,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ai-files/candidates/Battery_Charger.kicad_sch")
+				(value "Battery_Charger.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -2204,7 +2204,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "e3a8295a-79a4-45f6-ba41-4b69c9820c7f")
+			(tstamps "b93c2a7c-a1b0-4eec-89eb-86630bf8b974")
 			(units
 				(unit
 					(name "A")
@@ -2262,7 +2262,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ai-files/candidates/Battery_Charger.kicad_sch")
+				(value "Battery_Charger.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -2276,7 +2276,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "6e32aa32-6b8b-4f05-ad41-907accb58dcd")
+			(tstamps "684ce583-87fd-4ed3-b093-7f2091422c71")
 			(units
 				(unit
 					(name "A")
@@ -2334,7 +2334,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ai-files/candidates/Battery_Charger.kicad_sch")
+				(value "Battery_Charger.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -2348,7 +2348,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "700a6c9d-af34-42b9-ac26-9d3f7f4cfc14")
+			(tstamps "f1697fd6-7550-4341-a67a-6c8a1b712808")
 			(units
 				(unit
 					(name "A")
@@ -2388,7 +2388,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ai-files/candidates/Battery_Charger.kicad_sch")
+				(value "Battery_Charger.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -2398,7 +2398,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "46906771-4d9a-4361-a677-15bdfefba667")
+			(tstamps "4dbd012b-0f61-4c1f-9f9d-5ca6d6f2bbe8")
 			(units
 				(unit
 					(name "A")
@@ -2438,7 +2438,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ai-files/candidates/Battery_Charger.kicad_sch")
+				(value "Battery_Charger.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -2506,7 +2506,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ai-files/candidates/Battery_Charger.kicad_sch")
+				(value "Battery_Charger.kicad_sch")
 			)
 			(sheetpath
 				(names "/")
@@ -2527,16 +2527,13 @@
 							(num "7")
 						)
 						(pin
-							(num "12")
-						)
-						(pin
-							(num "13")
-						)
-						(pin
 							(num "14")
 						)
 						(pin
 							(num "15")
+						)
+						(pin
+							(num "13")
 						)
 						(pin
 							(num "16")
@@ -2551,19 +2548,28 @@
 							(num "21")
 						)
 						(pin
+							(num "12")
+						)
+						(pin
 							(num "2")
 						)
 						(pin
 							(num "3")
 						)
 						(pin
-							(num "8")
-						)
-						(pin
-							(num "9")
+							(num "10")
 						)
 						(pin
 							(num "27")
+						)
+						(pin
+							(num "8")
+						)
+						(pin
+							(num "11")
+						)
+						(pin
+							(num "9")
 						)
 						(pin
 							(num "29")
@@ -2593,16 +2599,10 @@
 							(num "23")
 						)
 						(pin
-							(num "18")
-						)
-						(pin
 							(num "24")
 						)
 						(pin
-							(num "11")
-						)
-						(pin
-							(num "10")
+							(num "18")
 						)
 					)
 				)
@@ -2673,7 +2673,7 @@
 			(pins
 				(pin
 					(num "1")
-					(name "STAT")
+					(name "~{STAT}")
 					(type "open_collector")
 				)
 				(pin
@@ -2708,12 +2708,12 @@
 				)
 				(pin
 					(num "10")
-					(name "ACD2")
+					(name "ACDRV2")
 					(type "passive")
 				)
 				(pin
 					(num "11")
-					(name "ACD1")
+					(name "ACDRV1")
 					(type "passive")
 				)
 				(pin
@@ -2743,7 +2743,7 @@
 				)
 				(pin
 					(num "17")
-					(name "HIZ/ILIM")
+					(name "ILIM_HIZ")
 					(type "input")
 				)
 				(pin
@@ -3100,17 +3100,41 @@
 	(nets
 		(net
 			(code "1")
-			(name "/BATP_SENSE")
+			(name "/BAT_INT")
 			(class "Default")
 			(node
-				(ref "R112")
+				(ref "C106")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "Q103")
+				(pin "1")
+				(pinfunction "S_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "Q103")
 				(pin "2")
+				(pinfunction "S_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "Q103")
+				(pin "3")
+				(pinfunction "S_3")
 				(pintype "passive")
 			)
 			(node
 				(ref "U4")
-				(pin "18")
-				(pinfunction "BATP_18")
+				(pin "22")
+				(pinfunction "BAT_22")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U4")
+				(pin "23")
+				(pinfunction "BAT_23")
 				(pintype "power_in")
 			)
 		)
@@ -3118,18 +3142,6 @@
 			(code "2")
 			(name "/BAT_PACK")
 			(class "Default")
-			(node
-				(ref "J5")
-				(pin "1")
-				(pinfunction "Pin_1_1")
-				(pintype "passive")
-			)
-			(node
-				(ref "J5")
-				(pin "2")
-				(pinfunction "Pin_2_2")
-				(pintype "passive")
-			)
 			(node
 				(ref "Q103")
 				(pin "5")
@@ -3161,16 +3173,6 @@
 				(pintype "passive")
 			)
 			(node
-				(ref "R100")
-				(pin "2")
-				(pintype "passive")
-			)
-			(node
-				(ref "R101")
-				(pin "1")
-				(pintype "passive")
-			)
-			(node
 				(ref "R112")
 				(pin "1")
 				(pintype "passive")
@@ -3181,31 +3183,52 @@
 				(pinfunction "A_1")
 				(pintype "passive")
 			)
+		)
+		(net
+			(code "3")
+			(name "/BTST1")
+			(class "Default")
 			(node
-				(ref "SW101")
-				(pin "2")
-				(pinfunction "B_2")
+				(ref "C103")
+				(pin "1")
 				(pintype "passive")
 			)
 			(node
 				(ref "U4")
-				(pin "16")
-				(pinfunction "TS_16")
-				(pintype "input")
+				(pin "4")
+				(pinfunction "BTST1_4")
+				(pintype "passive")
 			)
 		)
 		(net
-			(code "3")
-			(name "/CE_N")
+			(code "4")
+			(name "/BTST2")
 			(class "Default")
 			(node
-				(ref "R103")
-				(pin "2")
+				(ref "C110")
+				(pin "1")
 				(pintype "passive")
 			)
 			(node
-				(ref "R106")
-				(pin "1")
+				(ref "U4")
+				(pin "19")
+				(pinfunction "BTST2_19")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "5")
+			(name "/CE_N")
+			(class "Default")
+			(node
+				(ref "Q100")
+				(pin "3")
+				(pinfunction "D_3")
+				(pintype "passive")
+			)
+			(node
+				(ref "R103")
+				(pin "2")
 				(pintype "passive")
 			)
 			(node
@@ -3216,7 +3239,7 @@
 			)
 		)
 		(net
-			(code "4")
+			(code "6")
 			(name "/CHG_DM_RAW")
 			(class "Default")
 			(node
@@ -3227,7 +3250,7 @@
 			)
 		)
 		(net
-			(code "5")
+			(code "7")
 			(name "/CHG_DP_RAW")
 			(class "Default")
 			(node
@@ -3238,7 +3261,7 @@
 			)
 		)
 		(net
-			(code "6")
+			(code "8")
 			(name "/CHG_ENABLE")
 			(class "Default")
 			(node
@@ -3254,7 +3277,7 @@
 			)
 		)
 		(net
-			(code "7")
+			(code "9")
 			(name "/CHG_INT")
 			(class "Default")
 			(node
@@ -3270,7 +3293,7 @@
 			)
 		)
 		(net
-			(code "8")
+			(code "10")
 			(name "/CHG_SCL")
 			(class "Default")
 			(node
@@ -3281,7 +3304,7 @@
 			)
 		)
 		(net
-			(code "9")
+			(code "11")
 			(name "/CHG_SDA")
 			(class "Default")
 			(node
@@ -3292,7 +3315,7 @@
 			)
 		)
 		(net
-			(code "10")
+			(code "12")
 			(name "/CHG_SYS_ENABLE")
 			(class "Default")
 			(node
@@ -3308,38 +3331,122 @@
 			)
 		)
 		(net
-			(code "11")
-			(name "/Q101_GATE")
+			(code "13")
+			(name "/CHG_VIO_3V0")
+			(class "Default")
+			(node
+				(ref "R106")
+				(pin "1")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "14")
+			(name "/ILIM_HIZ")
 			(class "Default")
 			(node
 				(ref "Q101")
-				(pin "1")
-				(pinfunction "G_1")
-				(pintype "input")
-			)
-			(node
-				(ref "Q102")
 				(pin "3")
 				(pinfunction "D_3")
 				(pintype "passive")
 			)
 			(node
-				(ref "R110")
+				(ref "R108")
 				(pin "2")
 				(pintype "passive")
 			)
-		)
-		(net
-			(code "12")
-			(name "/REGN")
-			(class "Default")
 			(node
-				(ref "R100")
+				(ref "R109")
 				(pin "1")
 				(pintype "passive")
 			)
 			(node
+				(ref "U4")
+				(pin "17")
+				(pinfunction "ILIM_HIZ_17")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "15")
+			(name "/PACK_RAW")
+			(class "Default")
+			(node
+				(ref "J5")
+				(pin "1")
+				(pinfunction "Pin_1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "SW101")
+				(pin "2")
+				(pinfunction "B_2")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "16")
+			(name "/PMID")
+			(class "Default")
+			(node
+				(ref "C101")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "C108")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "C112")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "C114")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U4")
+				(pin "29")
+				(pinfunction "PMID_29")
+				(pintype "power_out")
+			)
+		)
+		(net
+			(code "17")
+			(name "/PROG")
+			(class "Default")
+			(node
 				(ref "R102")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U4")
+				(pin "20")
+				(pinfunction "PROG_20")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "18")
+			(name "/REGN")
+			(class "Default")
+			(node
+				(ref "C102")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "C109")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R100")
 				(pin "1")
 				(pintype "passive")
 			)
@@ -3360,13 +3467,57 @@
 			)
 			(node
 				(ref "U4")
-				(pin "20")
-				(pinfunction "PROG_20")
-				(pintype "input")
+				(pin "5")
+				(pinfunction "REGN_5")
+				(pintype "power_out")
 			)
 		)
 		(net
-			(code "13")
+			(code "19")
+			(name "/SW1")
+			(class "Default")
+			(node
+				(ref "C103")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "L1")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U4")
+				(pin "28")
+				(pinfunction "SW1_28")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "20")
+			(name "/SW2")
+			(class "Default")
+			(node
+				(ref "C110")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "L1")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U4")
+				(pin "26")
+				(pinfunction "SW2_26")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "21")
 			(name "/SYS_RAW")
 			(class "Default")
 			(node
@@ -3380,31 +3531,8 @@
 				(pintype "passive")
 			)
 			(node
-				(ref "C106")
-				(pin "1")
-				(pintype "passive")
-			)
-			(node
 				(ref "C107")
 				(pin "1")
-				(pintype "passive")
-			)
-			(node
-				(ref "Q103")
-				(pin "1")
-				(pinfunction "S_1")
-				(pintype "passive")
-			)
-			(node
-				(ref "Q103")
-				(pin "2")
-				(pinfunction "S_2")
-				(pintype "passive")
-			)
-			(node
-				(ref "Q103")
-				(pin "3")
-				(pinfunction "S_3")
 				(pintype "passive")
 			)
 			(node
@@ -3413,21 +3541,36 @@
 				(pinfunction "SYS_25")
 				(pintype "power_out")
 			)
+		)
+		(net
+			(code "22")
+			(name "/TS_SENSE")
+			(class "Default")
 			(node
-				(ref "U4")
-				(pin "22")
-				(pinfunction "BAT_22")
-				(pintype "power_in")
+				(ref "J5")
+				(pin "2")
+				(pinfunction "Pin_2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R100")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R101")
+				(pin "1")
+				(pintype "passive")
 			)
 			(node
 				(ref "U4")
-				(pin "23")
-				(pinfunction "BAT_23")
-				(pintype "power_in")
+				(pin "16")
+				(pinfunction "TS_16")
+				(pintype "input")
 			)
 		)
 		(net
-			(code "14")
+			(code "23")
 			(name "/VBUS_PD")
 			(class "Default")
 			(node
@@ -3447,6 +3590,18 @@
 			)
 			(node
 				(ref "U4")
+				(pin "8")
+				(pinfunction "VAC2_8")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U4")
+				(pin "9")
+				(pinfunction "VAC1_9")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U4")
 				(pin "2")
 				(pinfunction "VBUS_2")
 				(pintype "power_in")
@@ -3459,7 +3614,7 @@
 			)
 		)
 		(net
-			(code "15")
+			(code "24")
 			(name "GND")
 			(class "Default")
 			(node
@@ -3585,13 +3740,13 @@
 			(node
 				(ref "U4")
 				(pin "10")
-				(pinfunction "ACD2_10")
+				(pinfunction "ACDRV2_10")
 				(pintype "passive")
 			)
 			(node
 				(ref "U4")
 				(pin "11")
-				(pinfunction "ACD1_11")
+				(pinfunction "ACDRV1_11")
 				(pintype "passive")
 			)
 			(node
@@ -3602,34 +3757,29 @@
 			)
 		)
 		(net
-			(code "16")
-			(name "Net-(Q101-D)")
+			(code "25")
+			(name "Net-(Q101-G)")
 			(class "Default")
 			(node
 				(ref "Q101")
+				(pin "1")
+				(pinfunction "G_1")
+				(pintype "input")
+			)
+			(node
+				(ref "Q102")
 				(pin "3")
 				(pinfunction "D_3")
 				(pintype "passive")
 			)
 			(node
-				(ref "R108")
+				(ref "R110")
 				(pin "2")
 				(pintype "passive")
 			)
-			(node
-				(ref "R109")
-				(pin "1")
-				(pintype "passive")
-			)
-			(node
-				(ref "U4")
-				(pin "17")
-				(pinfunction "HIZ/ILIM_17")
-				(pintype "input")
-			)
 		)
 		(net
-			(code "17")
+			(code "26")
 			(name "Net-(Q103-G)")
 			(class "Default")
 			(node
@@ -3646,70 +3796,23 @@
 			)
 		)
 		(net
-			(code "18")
-			(name "Net-(U4-BTST1)")
+			(code "27")
+			(name "Net-(U4-BATP)")
 			(class "Default")
 			(node
-				(ref "C103")
-				(pin "1")
+				(ref "R112")
+				(pin "2")
 				(pintype "passive")
 			)
 			(node
 				(ref "U4")
-				(pin "4")
-				(pinfunction "BTST1_4")
-				(pintype "passive")
+				(pin "18")
+				(pinfunction "BATP_18")
+				(pintype "power_in")
 			)
 		)
 		(net
-			(code "19")
-			(name "Net-(U4-BTST2)")
-			(class "Default")
-			(node
-				(ref "C110")
-				(pin "1")
-				(pintype "passive")
-			)
-			(node
-				(ref "U4")
-				(pin "19")
-				(pinfunction "BTST2_19")
-				(pintype "passive")
-			)
-		)
-		(net
-			(code "20")
-			(name "Net-(U4-PMID)")
-			(class "Default")
-			(node
-				(ref "C101")
-				(pin "1")
-				(pintype "passive")
-			)
-			(node
-				(ref "C108")
-				(pin "1")
-				(pintype "passive")
-			)
-			(node
-				(ref "C112")
-				(pin "1")
-				(pintype "passive")
-			)
-			(node
-				(ref "C114")
-				(pin "1")
-				(pintype "passive")
-			)
-			(node
-				(ref "U4")
-				(pin "29")
-				(pinfunction "PMID_29")
-				(pintype "power_out")
-			)
-		)
-		(net
-			(code "21")
+			(code "28")
 			(name "Net-(U4-QON)")
 			(class "Default")
 			(node
@@ -3726,112 +3829,14 @@
 			)
 		)
 		(net
-			(code "22")
-			(name "Net-(U4-REGN)")
-			(class "Default")
-			(node
-				(ref "C102")
-				(pin "1")
-				(pintype "passive")
-			)
-			(node
-				(ref "C109")
-				(pin "1")
-				(pintype "passive")
-			)
-			(node
-				(ref "U4")
-				(pin "5")
-				(pinfunction "REGN_5")
-				(pintype "power_out")
-			)
-		)
-		(net
-			(code "23")
-			(name "Net-(U4-SW1)")
-			(class "Default")
-			(node
-				(ref "C103")
-				(pin "2")
-				(pintype "passive")
-			)
-			(node
-				(ref "L1")
-				(pin "1")
-				(pinfunction "1_1")
-				(pintype "passive")
-			)
-			(node
-				(ref "U4")
-				(pin "28")
-				(pinfunction "SW1_28")
-				(pintype "passive")
-			)
-		)
-		(net
-			(code "24")
-			(name "Net-(U4-SW2)")
-			(class "Default")
-			(node
-				(ref "C110")
-				(pin "2")
-				(pintype "passive")
-			)
-			(node
-				(ref "L1")
-				(pin "2")
-				(pinfunction "2_2")
-				(pintype "passive")
-			)
-			(node
-				(ref "U4")
-				(pin "26")
-				(pinfunction "SW2_26")
-				(pintype "passive")
-			)
-		)
-		(net
-			(code "25")
-			(name "unconnected-(Q100-D-Pad3)")
-			(class "Default")
-			(node
-				(ref "Q100")
-				(pin "3")
-				(pinfunction "D_3")
-				(pintype "passive")
-			)
-		)
-		(net
-			(code "26")
-			(name "unconnected-(U4-STAT-Pad1)")
+			(code "29")
+			(name "unconnected-(U4-~{STAT}-Pad1)")
 			(class "Default")
 			(node
 				(ref "U4")
 				(pin "1")
-				(pinfunction "STAT_1")
+				(pinfunction "~{STAT}_1")
 				(pintype "open_collector+no_connect")
-			)
-		)
-		(net
-			(code "27")
-			(name "unconnected-(U4-VAC1-Pad9)")
-			(class "Default")
-			(node
-				(ref "U4")
-				(pin "9")
-				(pinfunction "VAC1_9")
-				(pintype "power_in")
-			)
-		)
-		(net
-			(code "28")
-			(name "unconnected-(U4-VAC2-Pad8)")
-			(class "Default")
-			(node
-				(ref "U4")
-				(pin "8")
-				(pinfunction "VAC2_8")
-				(pintype "power_in")
 			)
 		)
 	)

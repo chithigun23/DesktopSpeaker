@@ -7,7 +7,7 @@ Updated: 2026-10-05. Use this checklist with `AGENTS.md` and `ai-files/HANDOVER.
 - Two front-facing stereo drivers and one downward-facing woofer; front on the enclosure's long side.
 - Approximate footprint: two Samsung S22 Ultras; height approximately half a phone length. Size may change to improve acoustics and battery life.
 - USB-C audio/power, Bluetooth and 3.5 mm auxiliary input; switched 3.5 mm headphone output.
-- Battery operation and operation directly from external power. User now requests actual operation across common 5–20 V USB PD contracts, alongside traditional 5 V / 2 A adapter support. EPR 28/36/48 V scope is awaiting clarification. Actual allowed current depends on source/cable capability; fallback to 5 V does not grant 2 A.
+- Battery operation and operation directly from external power. User now requests actual operation across common 5–20 V USB PD contracts, alongside traditional 5 V / 2 A adapter support. User decided (2026-10-05): support standard 5/9/15/20 V PD only; EPR 28/36/48 V is out of scope. Actual allowed current depends on source/cable capability; fallback to 5 V does not grant 2 A.
 - Prioritize battery life, low standby/storage current and battery longevity when usually plugged in.
 - Target a protected 1S pack around 10 Ah. Enclosure dimensions and acoustic volume drive selection; weight is not a concern and a heavier enclosure is welcome if acoustics benefit.
 - Use automatic USB-A source detection with a conservative fallback; a 2 A label alone does not grant USB host current.

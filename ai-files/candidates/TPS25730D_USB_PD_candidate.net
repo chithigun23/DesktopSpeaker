@@ -2,7 +2,7 @@
 	(version "E")
 	(design
 		(source "/home/chithi/Desktop/DesktopSpeaker/ai-files/candidates/TPS25730D_USB_PD_candidate.kicad_sch")
-		(date "2026-10-05T18:44:21")
+		(date "2026-10-05T23:22:34")
 		(tool "Eeschema 10.0.6-rc2")
 		(sheet
 			(number "1")
@@ -79,7 +79,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ai-files/candidates/TPS25730D_USB_PD_candidate.kicad_sch")
+				(value "TPS25730D_USB_PD_candidate.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -93,7 +93,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "3f61d201-6e84-4b51-8d3f-eb991cc58832")
+			(tstamps "15f24dce-2515-4471-ac7d-f0689d7502b0")
 			(units
 				(unit
 					(name "A")
@@ -133,7 +133,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ai-files/candidates/TPS25730D_USB_PD_candidate.kicad_sch")
+				(value "TPS25730D_USB_PD_candidate.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -147,7 +147,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "5c679866-52d5-4e42-9755-2e4da2f38949")
+			(tstamps "37403806-ae80-494a-9f1d-74cedb01c6dc")
 			(units
 				(unit
 					(name "A")
@@ -211,7 +211,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ai-files/candidates/TPS25730D_USB_PD_candidate.kicad_sch")
+				(value "TPS25730D_USB_PD_candidate.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -225,7 +225,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "b6f7a35b-e50b-4c83-9f5a-4678f0db0129")
+			(tstamps "cde9cef4-6afb-4100-b71e-7ca84c8ca4de")
 			(units
 				(unit
 					(name "A")
@@ -289,7 +289,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ai-files/candidates/TPS25730D_USB_PD_candidate.kicad_sch")
+				(value "TPS25730D_USB_PD_candidate.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -303,7 +303,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "adc51714-9eaa-4ff0-b122-d18f213da514")
+			(tstamps "8bd307a1-e1a4-4814-b530-68ef02ee37f3")
 			(units
 				(unit
 					(name "A")
@@ -343,7 +343,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ai-files/candidates/TPS25730D_USB_PD_candidate.kicad_sch")
+				(value "TPS25730D_USB_PD_candidate.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -357,7 +357,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "072b6c18-f712-4e6c-849b-8b6213801b35")
+			(tstamps "31083944-f40f-43c2-8728-380d87bfd690")
 			(units
 				(unit
 					(name "A")
@@ -397,7 +397,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ai-files/candidates/TPS25730D_USB_PD_candidate.kicad_sch")
+				(value "TPS25730D_USB_PD_candidate.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -411,7 +411,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "9d9e2ea8-2166-49d8-8c36-3d0fca8f1993")
+			(tstamps "49dfcd35-a4d7-4dd9-810c-84294c136eba")
 			(units
 				(unit
 					(name "A")
@@ -475,7 +475,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ai-files/candidates/TPS25730D_USB_PD_candidate.kicad_sch")
+				(value "TPS25730D_USB_PD_candidate.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -489,7 +489,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "8a48251b-a6a6-4d4e-bfa8-f5e654d965bc")
+			(tstamps "62710dd0-b8b7-4db5-bfcc-ad92f9d4910c")
 			(units
 				(unit
 					(name "A")
@@ -553,7 +553,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ai-files/candidates/TPS25730D_USB_PD_candidate.kicad_sch")
+				(value "TPS25730D_USB_PD_candidate.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -567,7 +567,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "84f02e01-2faf-43b0-a3a3-012cc28a5284")
+			(tstamps "c1d4f994-6ada-40b2-a243-9df5aded0d90")
 			(units
 				(unit
 					(name "A")
@@ -625,13 +625,13 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ai-files/candidates/TPS25730D_USB_PD_candidate.kicad_sch")
+				(value "TPS25730D_USB_PD_candidate.kicad_sch")
 			)
 			(sheetpath
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "246605c3-c99e-4974-8000-9de19d18baaf")
+			(tstamps "2be5bc1c-aadc-4ce8-8a06-3dd57d9c3289")
 			(units
 				(unit
 					(name "A")
@@ -686,13 +686,13 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ai-files/candidates/TPS25730D_USB_PD_candidate.kicad_sch")
+				(value "TPS25730D_USB_PD_candidate.kicad_sch")
 			)
 			(sheetpath
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "3efea84b-6bf7-45e1-9aaa-8df6d2a9ca48")
+			(tstamps "fd8cb80b-14de-4041-906b-008f955b3e5c")
 			(units
 				(unit
 					(name "A")
@@ -747,7 +747,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ai-files/candidates/TPS25730D_USB_PD_candidate.kicad_sch")
+				(value "TPS25730D_USB_PD_candidate.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -761,7 +761,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "0658e68f-b776-4a04-9c1d-dddf684a6ff9")
+			(tstamps "b3bdada2-c7d8-4c27-8708-3c213414b667")
 			(units
 				(unit
 					(name "A")
@@ -807,7 +807,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ai-files/candidates/TPS25730D_USB_PD_candidate.kicad_sch")
+				(value "TPS25730D_USB_PD_candidate.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -821,7 +821,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "f8912c92-4d1f-47d6-bf7f-24dfdee7fca2")
+			(tstamps "220a9837-d783-4f12-bb24-5b45d941b199")
 			(units
 				(unit
 					(name "A")
@@ -885,7 +885,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ai-files/candidates/TPS25730D_USB_PD_candidate.kicad_sch")
+				(value "TPS25730D_USB_PD_candidate.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -899,7 +899,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "b65a3ea3-8297-40a1-a8b2-f0a80cfc2864")
+			(tstamps "1323aac4-d017-409a-b710-71ad62de0161")
 			(units
 				(unit
 					(name "A")
@@ -963,7 +963,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ai-files/candidates/TPS25730D_USB_PD_candidate.kicad_sch")
+				(value "TPS25730D_USB_PD_candidate.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -977,7 +977,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "eb01fbe8-8751-41c1-9e33-93327e7c07f0")
+			(tstamps "46d10560-f998-468b-a000-86d95d4bc686")
 			(units
 				(unit
 					(name "A")
@@ -1041,7 +1041,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ai-files/candidates/TPS25730D_USB_PD_candidate.kicad_sch")
+				(value "TPS25730D_USB_PD_candidate.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -1055,7 +1055,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "d50e1186-7942-4702-859e-8e5b65e11399")
+			(tstamps "6b4dc09f-81cd-4d07-bb01-7b616cf4d285")
 			(units
 				(unit
 					(name "A")
@@ -1113,7 +1113,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ai-files/candidates/TPS25730D_USB_PD_candidate.kicad_sch")
+				(value "TPS25730D_USB_PD_candidate.kicad_sch")
 			)
 			(sheetpath
 				(names "/")
@@ -1291,7 +1291,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "ai-files/candidates/TPS25730D_USB_PD_candidate.kicad_sch")
+				(value "TPS25730D_USB_PD_candidate.kicad_sch")
 			)
 			(sheetpath
 				(names "/")
@@ -1850,120 +1850,23 @@
 		)
 		(net
 			(code "2")
-			(name "/ADC4_DIV")
+			(name "/LDO_1V5")
 			(class "Default")
 			(node
+				(ref "C181")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
 				(ref "U11")
-				(pin "7")
-				(pinfunction "ADC4_7")
-				(pintype "input")
+				(pin "4")
+				(pinfunction "LDO_1V5_4")
+				(pintype "power_out")
 			)
 		)
 		(net
 			(code "3")
-			(name "/PDCTRL_SCL")
-			(class "Default")
-			(node
-				(ref "C182")
-				(pin "1")
-				(pintype "passive")
-			)
-			(node
-				(ref "D5")
-				(pin "1")
-				(pinfunction "CC1/K1_1")
-				(pintype "passive")
-			)
-			(node
-				(ref "J4")
-				(pin "2")
-				(pinfunction "Pin_2_2")
-				(pintype "passive")
-			)
-			(node
-				(ref "J4")
-				(pin "3")
-				(pinfunction "Pin_3_3")
-				(pintype "passive")
-			)
-			(node
-				(ref "U11")
-				(pin "28")
-				(pinfunction "CC1_28")
-				(pintype "bidirectional")
-			)
-			(node
-				(ref "U11")
-				(pin "8")
-				(pinfunction "SDA_8")
-				(pintype "bidirectional")
-			)
-			(node
-				(ref "U11")
-				(pin "9")
-				(pinfunction "SCL_9")
-				(pintype "bidirectional")
-			)
-		)
-		(net
-			(code "4")
-			(name "/PD_CAP_MIS")
-			(class "Default")
-			(node
-				(ref "U11")
-				(pin "6")
-				(pinfunction "CAP_MIS_6")
-				(pintype "open_collector")
-			)
-			(node
-				(ref "U11")
-				(pin "20")
-				(pinfunction "PPHV_20")
-				(pintype "power_out")
-			)
-			(node
-				(ref "U11")
-				(pin "21")
-				(pinfunction "PPHV_21")
-				(pintype "power_out")
-			)
-			(node
-				(ref "U11")
-				(pin "22")
-				(pinfunction "PPHV_22")
-				(pintype "power_out")
-			)
-		)
-		(net
-			(code "5")
-			(name "/PD_DBG_ACC")
-			(class "Default")
-			(node
-				(ref "U11")
-				(pin "10")
-				(pinfunction "DBG_ACC_10")
-				(pintype "open_collector")
-			)
-		)
-		(net
-			(code "6")
-			(name "/PD_FAULT_IN")
-			(class "Default")
-			(node
-				(ref "R13")
-				(pin "2")
-				(pintype "passive")
-			)
-			(node
-				(ref "U11")
-				(pin "18")
-				(pinfunction "FAULT_18")
-				(pintype "input")
-			)
-		)
-		(net
-			(code "7")
-			(name "/PD_LDO_3V3")
+			(name "/LDO_3V3")
 			(class "Default")
 			(node
 				(ref "C6")
@@ -1991,6 +1894,62 @@
 				(pin "3")
 				(pinfunction "ADC2_3")
 				(pintype "input")
+			)
+		)
+		(net
+			(code "4")
+			(name "/PDCTRL_SCL")
+			(class "Default")
+			(node
+				(ref "J4")
+				(pin "2")
+				(pinfunction "Pin_2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U11")
+				(pin "9")
+				(pinfunction "SCL_9")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "5")
+			(name "/PDCTRL_SDA")
+			(class "Default")
+			(node
+				(ref "J4")
+				(pin "3")
+				(pinfunction "Pin_3_3")
+				(pintype "passive")
+			)
+			(node
+				(ref "U11")
+				(pin "8")
+				(pinfunction "SDA_8")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "6")
+			(name "/PD_CAP_MIS")
+			(class "Default")
+			(node
+				(ref "U11")
+				(pin "6")
+				(pinfunction "CAP_MIS_6")
+				(pintype "open_collector")
+			)
+		)
+		(net
+			(code "7")
+			(name "/PD_DBG_ACC")
+			(class "Default")
+			(node
+				(ref "U11")
+				(pin "10")
+				(pinfunction "DBG_ACC_10")
+				(pintype "open_collector")
 			)
 		)
 		(net
@@ -2044,6 +2003,28 @@
 		)
 		(net
 			(code "12")
+			(name "/USB_CC1")
+			(class "Default")
+			(node
+				(ref "C182")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "D5")
+				(pin "1")
+				(pinfunction "CC1/K1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U11")
+				(pin "28")
+				(pinfunction "CC1_28")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "13")
 			(name "/USB_CC2")
 			(class "Default")
 			(node
@@ -2065,7 +2046,7 @@
 			)
 		)
 		(net
-			(code "13")
+			(code "14")
 			(name "/USB_VBUS")
 			(class "Default")
 			(node
@@ -2140,8 +2121,31 @@
 			)
 		)
 		(net
-			(code "14")
-			(name "/VIN_3V3_LOW")
+			(code "15")
+			(name "/VBUS_PD")
+			(class "Default")
+			(node
+				(ref "U11")
+				(pin "20")
+				(pinfunction "PPHV_20")
+				(pintype "power_out")
+			)
+			(node
+				(ref "U11")
+				(pin "21")
+				(pinfunction "PPHV_21")
+				(pintype "power_out")
+			)
+			(node
+				(ref "U11")
+				(pin "22")
+				(pinfunction "PPHV_22")
+				(pintype "power_out")
+			)
+		)
+		(net
+			(code "16")
+			(name "/VIN_LOW")
 			(class "Default")
 			(node
 				(ref "C185")
@@ -2161,7 +2165,7 @@
 			)
 		)
 		(net
-			(code "15")
+			(code "17")
 			(name "GND")
 			(class "Default")
 			(node
@@ -2252,6 +2256,18 @@
 			)
 			(node
 				(ref "U11")
+				(pin "2")
+				(pinfunction "ADC1_2")
+				(pintype "input")
+			)
+			(node
+				(ref "U11")
+				(pin "5")
+				(pinfunction "ADC3_5")
+				(pintype "input")
+			)
+			(node
+				(ref "U11")
 				(pin "11")
 				(pinfunction "GND_11")
 				(pintype "power_in")
@@ -2305,6 +2321,24 @@
 				(pintype "power_in")
 			)
 			(node
+				(ref "U11")
+				(pin "26")
+				(pinfunction "RESERVED_26")
+				(pintype "passive")
+			)
+			(node
+				(ref "U11")
+				(pin "27")
+				(pinfunction "RESERVED_27")
+				(pintype "passive")
+			)
+			(node
+				(ref "U11")
+				(pin "36")
+				(pinfunction "RESERVED_36")
+				(pintype "passive")
+			)
+			(node
 				(ref "U19")
 				(pin "5")
 				(pinfunction "GND_5")
@@ -2318,8 +2352,8 @@
 			)
 		)
 		(net
-			(code "16")
-			(name "Net-(R10-Pad2)")
+			(code "18")
+			(name "Net-(U11-ADC4)")
 			(class "Default")
 			(node
 				(ref "R10")
@@ -2331,42 +2365,26 @@
 				(pin "1")
 				(pintype "passive")
 			)
-		)
-		(net
-			(code "17")
-			(name "Net-(U11-LDO_1V5)")
-			(class "Default")
-			(node
-				(ref "C181")
-				(pin "1")
-				(pintype "passive")
-			)
 			(node
 				(ref "U11")
-				(pin "4")
-				(pinfunction "LDO_1V5_4")
-				(pintype "power_out")
-			)
-		)
-		(net
-			(code "18")
-			(name "unconnected-(U11-ADC1-Pad2)")
-			(class "Default")
-			(node
-				(ref "U11")
-				(pin "2")
-				(pinfunction "ADC1_2")
+				(pin "7")
+				(pinfunction "ADC4_7")
 				(pintype "input")
 			)
 		)
 		(net
 			(code "19")
-			(name "unconnected-(U11-ADC3-Pad5)")
+			(name "Net-(U11-FAULT)")
 			(class "Default")
 			(node
+				(ref "R13")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
 				(ref "U11")
-				(pin "5")
-				(pinfunction "ADC3_5")
+				(pin "18")
+				(pinfunction "FAULT_18")
 				(pintype "input")
 			)
 		)
@@ -2405,29 +2423,6 @@
 		)
 		(net
 			(code "23")
-			(name "unconnected-(U11-RESERVED-Pad26)")
-			(class "Default")
-			(node
-				(ref "U11")
-				(pin "26")
-				(pinfunction "RESERVED_26")
-				(pintype "passive")
-			)
-			(node
-				(ref "U11")
-				(pin "27")
-				(pinfunction "RESERVED_27")
-				(pintype "passive")
-			)
-			(node
-				(ref "U11")
-				(pin "36")
-				(pinfunction "RESERVED_36")
-				(pintype "passive")
-			)
-		)
-		(net
-			(code "24")
 			(name "unconnected-(U19-NC-Pad2)")
 			(class "Default")
 			(node
@@ -2438,7 +2433,7 @@
 			)
 		)
 		(net
-			(code "25")
+			(code "24")
 			(name "unconnected-(U19-NC-Pad3)")
 			(class "Default")
 			(node
@@ -2449,7 +2444,7 @@
 			)
 		)
 		(net
-			(code "26")
+			(code "25")
 			(name "unconnected-(U19-NC-Pad4)")
 			(class "Default")
 			(node
@@ -2460,7 +2455,7 @@
 			)
 		)
 		(net
-			(code "27")
+			(code "26")
 			(name "unconnected-(U19-NC-Pad6)")
 			(class "Default")
 			(node

@@ -70,6 +70,7 @@ def ground(x,y,ref=None):
         if k(p)=='property' and p[1]=='Reference':one(p,'effects').append([S('hide'),S('yes')])
         if k(p)=='in_bom':p[1]=S('no')
         if k(p)=='on_board':p[1]=S('no')
+        if k(p)=='property' and p[1]=='Value': one(p,'at')[1:3]=[x,round(y+3.81,2)]
     return a
 def text(s,x,y,size=1.27):return [S('text'),s,[S('at'),x,y,0],[S('effects'),[S('font'),[S('size'),size,size]],[S('justify'),S('left'),S('bottom')]],[S('uuid'),uid()]]
 
@@ -123,99 +124,94 @@ purchasing('R11','YAGEO','RC0603FR-0710KL','C98220','${KIPRJMOD}/../ai-files/dat
 purchasing('R12','YAGEO','RC0603FR-07100KL','C14675','${KIPRJMOD}/../ai-files/datasheets/Yageo_RC0603FR_series.pdf')
 purchasing('R13','YAGEO','RC0603FR-0710KL','C98220','${KIPRJMOD}/../ai-files/datasheets/Yageo_RC0603FR_series.pdf')
 add('PD_SERVICE_HDR:PD_SERVICE_HDR','J4','I2C service',64.77,246.38,'DesktopSpeaker:PD_SERVICE_HDR')
-def locate(i,refxy,valxy):
-    for a in i:
-        if k(a)=='property' and a[1] in ('Reference','Value'):one(a,'at')[1:3]=refxy if a[1]=='Reference' else valxy
-locate(items[0],(220.98,165.10),(220.98,167.64));locate(items[1],(110.49,218.44),(110.49,220.98))
-for i in items[2:]:
-    ref=next((a[2] for a in i if k(a)=='property' and a[1]=='Reference'),'');at=one(i,'at')
-    if ref in ('C2','C6','C181','C185'):
-        dx={'C2':(5.08,-7.62),'C6':(-1.27,-10.16),'C181':(3.81,10.16),'C185':(7.62,-7.62)}[ref]
-        locate(i,(at[1]+dx[0],at[2]+dx[1]),(at[1]+dx[0],at[2]+dx[1]+2.54))
-    elif ref=='J4':locate(i,(72.39,241.3),(72.39,243.84))
-    else:locate(i,(at[1]+6.35,at[2]-1.27),(at[1]+6.35,at[2]+1.27))
+
+# ---- Readable redraw: explicit placement on the 1.27 mm grid, no net crossings. ----
+def bykey(ref):
+    return next(i for i in items if any(k(p)=='property' and p[1]=='Reference' and p[2]==ref for p in i))
+def setprop(i,name,x,y,just=None):
+    for p in i:
+        if k(p)=='property' and p[1]==name:
+            one(p,'at')[1:3]=[round(x,2),round(y,2)]
+            if just:
+                eff=one(p,'effects')
+                eff.append([S('justify'),S(just)])
+def place(ref,x,y,rot=0,ref_at=None,val_at=None,just='left'):
+    i=bykey(ref); at=one(i,'at'); at[1:4]=[x,y,rot]
+    ref_at=ref_at or (x+3.81,y-1.27); val_at=val_at or (x+3.81,y+1.27)
+    setprop(i,'Reference',*ref_at,just); setprop(i,'Value',*val_at,just)
+    for p in i:
+        if k(p)=='property' and p[1] not in ('Reference','Value'): one(p,'at')[1:3]=[x,y]
+# ICs: ref/value centred below the body. Passives/diodes/connector: text to the right.
+place('U11',170.18,101.6,ref_at=(170.18,129.54),val_at=(170.18,132.08),just=None)
+place('U19',96.52,165.1,ref_at=(96.52,189.23),val_at=(96.52,191.77),just=None)
+place('D6',88.9,68.58,ref_at=(95.25,67.31),val_at=(95.25,69.85))
+place('D5',91.44,116.84,ref_at=(97.79,115.57),val_at=(97.79,118.11))
+for r,(x,y) in {'C2':(114.3,67.31),'C6':(170.18,54.61),'C181':(195.58,54.61),'C185':(220.98,54.61),'R12':(255.27,54.61),
+                'C182':(50.8,110.49),'C183':(50.8,123.19),'C184':(71.12,173.99),'C5':(124.46,161.29),
+                'R10':(116.84,113.03),'R11':(116.84,120.65)}.items(): place(r,x,y)
+place('R13',129.54,125.73,180,ref_at=(133.35,124.46),val_at=(133.35,127.0),just='right')
+place('J4',48.26,182.88,ref_at=(52.07,180.34),val_at=(52.07,182.88))
+for i in items[:]:pass
 sch.extend(items)
-def stub(x1,y1,x2,y2,name,shape=None):
-    sch.append(wire((x1,y1),(x2,y2)));just='right' if x2<x1 else 'left'
-    sch.append(hlabel(name,x2,y2,shape,just) if shape else local_label(name,x2,y2,just))
+def W(*pts):
+    for a,b in zip(pts,pts[1:]):sch.append(wire(a,b))
+def J(x,y):junc(x,y)
+def G(x,y):sch.append(ground(x,y))
+def LBL(n,x,y,j='left'):sch.append(local_label(n,x,y,j))
+def HL(n,x,y,shape,j):sch.append(hlabel(n,x,y,shape,j))
+def NC(x,y):sch.append([S('no_connect'),[S('at'),x,y],[S('uuid'),uid()]])
 def junc(x,y):sch.append([S('junction'),[S('at'),x,y],[S('diameter'),0],[S('color'),0,0,0,0],[S('uuid'),uid()]])
-# Raw VBUS input rail to D6, C2 and the two raw controller pin groups.
-stub(110.49,95.25,74.93,95.25,'USB_VBUS','input')
-sch.append(wire((110.49,96.52),(110.49,95.25)));sch.append(wire((110.49,95.25),(198.12,95.25)))
-sch.append(wire((198.12,109.22),(198.12,95.25)));sch.append(wire((207.01,109.22),(207.01,95.25)));sch.append(wire((198.12,95.25),(207.01,95.25)))
-sch.append(wire((198.12,78.74),(198.12,95.25)));sch.append(wire((198.12,86.36),(198.12,90.17)));sch.append(ground(198.12,90.17))
-# D6 ground stack plus the exposed pad, all joined at the local ground point.
-sch.append(wire((113.03,104.14),(110.49,104.14)));sch.append(ground(110.49,104.14))
-# Direct bypass from each upper functional supply pin. VIN_3V3 is deliberately held low.
-for x in (215.90,226.06,234.95):sch.append(wire((x,109.22),(x,78.74)))
-for x in (215.90,226.06,234.95):
-    sch.append(wire((x,86.36),(x,90.17)));sch.append(ground(x,90.17))
-sch.append(local_label('PD_LDO_3V3',215.90,100.33))
-sch.append(wire((234.95,95.25),(265.43,95.25)));junc(265.43,95.25);sch.append(local_label('VIN_3V3_LOW',234.95,95.25))
-sch.append(wire((265.43,91.44),(265.43,95.25)));sch.append(local_label('VIN_3V3_LOW',265.43,91.44));sch.append(wire((265.43,99.06),(265.43,102.87)));sch.append(ground(265.43,102.87))
-# Managed power output and common grounds.
-stub(243.84,109.22,285.75,109.22,'VBUS_PD','output')
-sch.append(wire((198.12,152.40),(198.12,158.75)));sch.append(ground(198.12,158.75))
-# Connector-to-controller CC wires pass directly through the protected region; D5 is a shunt clamp.
-stub(104.14,119.38,73.66,119.38,'USB_CC1','input');sch.append(wire((104.14,119.38),(195.58,119.38)))
-stub(104.14,121.92,73.66,121.92,'USB_CC2','input');sch.append(wire((104.14,121.92),(195.58,121.92)))
-# D5 pin1 lands on CC1; pin2 rises to CC2. Filter capacitor tops land on each trace.
-sch.append(wire((134.62,124.46),(134.62,121.92)));junc(134.62,119.38);junc(134.62,121.92)
-junc(166.37,119.38);sch.append(wire((166.37,127.0),(166.37,130.81)));sch.append(ground(166.37,130.81))
-junc(186.69,121.92);sch.append(wire((186.69,129.54),(186.69,133.35)));sch.append(ground(186.69,133.35))
-sch.append(ground(139.70,129.54))
-# Type-C control, ADC straps and adjacent divider.
-stub(195.58,124.46,151.13,124.46,'PDCTRL_SDA','bidirectional');stub(195.58,127.0,151.13,127.0,'PDCTRL_SCL','bidirectional')
-stub(195.58,132.08,180.34,132.08,'PD_LDO_3V3')
-sch.append(wire((195.58,137.16),(160.02,137.16)));sch.append(wire((160.02,137.16),(160.02,138.43)));sch.append(wire((160.02,138.43),(149.86,138.43)))
-sch.append(wire((149.86,133.35),(149.86,138.43)));sch.append(local_label('PD_LDO_3V3',149.86,125.73));sch.append(wire((149.86,146.05),(149.86,149.86)));sch.append(ground(149.86,149.86))
-# FAULT_IN gets a 10k pullup to controller LDO_3V3; status outputs face right.
-stub(195.58,139.70,184.15,139.70,'PD_FAULT_IN');sch.append(local_label('PD_LDO_3V3',182.88,147.32));sch.append(wire((182.88,154.94),(182.88,158.75)));sch.append(local_label('PD_FAULT_IN',182.88,158.75))
-# U19 is raw-connector auxiliary 5V only; both bypasses are wired at its pins.
-stub(97.79,203.20,82.55,203.20,'USB_VBUS');stub(97.79,213.36,82.55,213.36,'USB_VBUS')
-sch.append(wire((123.19,200.66),(138.43,200.66)));sch.append(hlabel('USB_AUX_5V',138.43,200.66,'output','left'))
-sch.append(wire((91.44,204.47),(91.44,203.20)));sch.append(wire((91.44,203.20),(97.79,203.20)));sch.append(wire((91.44,212.09),(91.44,215.90)));sch.append(ground(91.44,215.90))
-sch.append(wire((134.62,204.47),(134.62,200.66)));sch.append(wire((134.62,212.09),(134.62,215.90)));sch.append(ground(134.62,215.90));junc(134.62,200.66)
-sch.append(wire((105.41,223.52),(105.41,229.87)));sch.append(wire((105.41,229.87),(93.98,229.87)));sch.append(wire((93.98,229.87),(93.98,237.49)));sch.append(ground(93.98,237.49))
-sch.append(wire((115.57,223.52),(115.57,229.87)));sch.append(wire((115.57,229.87),(125.73,229.87)));sch.append(wire((125.73,229.87),(125.73,237.49)));sch.append(ground(125.73,237.49))
-for y,n in [(243.84,'3V_AO'),(246.38,'PDCTRL_SCL'),(248.92,'PDCTRL_SDA')]:stub(59.69,y,49.53,y,n)
-sch.append(wire((59.69,251.46),(52.07,251.46)));sch.append(ground(52.07,251.46))
-# Five concise open gates; details and primary evidence are in the candidate review report.
+# Raw USB rail: input port -> D6, C2, VBUS_IN drop, VBUS drop (one port label for the whole section).
+HL('USB_VBUS',40.64,60.96,'input','right')
+W((40.64,60.96),(88.9,60.96),(114.3,60.96),(147.32,60.96),(156.21,60.96),(156.21,71.12))
+W((147.32,60.96),(147.32,71.12)); W((88.9,60.96),(88.9,64.77)); W((114.3,60.96),(114.3,63.5))
+J(88.9,60.96);J(114.3,60.96);J(147.32,60.96)
+G(114.3,71.12); G(88.9,72.39); W((88.9,72.39),(91.44,72.39))
+# Left-hand interface ports (inputs/bidirectional).
+for n,y,sh in [('USB_CC1',81.28,'input'),('USB_CC2',86.36,'input'),('PDCTRL_SDA',91.44,'bidirectional'),('PDCTRL_SCL',96.52,'bidirectional')]:
+    W((110.49,y),(139.7,y)); HL(n,110.49,y,sh,'right')
+# ADC straps: ADCIN1/3 to GND (code 0), ADCIN2 to LDO_3V3 (code 7), ADCIN4 via 200k/10k divider (code 1).
+G(139.7,101.6); G(139.7,111.76)
+W((139.7,106.68),(134.62,106.68)); LBL('LDO_3V3',134.62,106.68,'right')
+W((139.7,116.84),(116.84,116.84)); J(116.84,116.84)
+W((116.84,109.22),(116.84,104.14)); LBL('LDO_3V3',116.84,104.14,'left'); G(116.84,124.46)
+# FAULT_IN pull-up (R13 rotated: pin 2 on FAULT_IN, pin 1 to LDO_3V3).
+W((139.7,121.92),(129.54,121.92)); W((129.54,129.54),(129.54,132.08)); LBL('LDO_3V3',129.54,132.08,'left')
+# Top supply pins: bypass sections are remote and share the label with the pin stub.
+for x,n in [(165.1,'LDO_3V3'),(175.26,'LDO_1V5'),(184.15,'VIN_LOW')]:
+    W((x,71.12),(x,68.58)); LBL(n,x,68.58,'left')
+W((193.04,71.12),(193.04,68.58),(234.95,68.58)); HL('VBUS_PD',234.95,68.58,'output','left')
+for x,n in [(170.18,'LDO_3V3'),(195.58,'LDO_1V5')]:
+    W((x,50.8),(x,48.26)); LBL(n,x,48.26,'left'); G(x,58.42)
+W((220.98,50.8),(220.98,48.26)); LBL('VIN_LOW',220.98,48.26,'left'); G(220.98,58.42)
+W((220.98,50.8),(255.27,50.8)); J(220.98,50.8); G(255.27,58.42)
+# Right-hand status outputs, reserved pins grounded, drains intentionally no-connect.
+for n,y in [('PD_CAP_MIS',81.28),('PD_SINK_EN',86.36),('PD_PLUG_EVENT',91.44),('PD_PLUG_FLIP',96.52),('PD_DBG_ACC',101.6)]:
+    W((200.66,y),(234.95,y)); HL(n,234.95,y,'output','left')
+W((200.66,106.68),(203.2,106.68)); G(203.2,106.68)
+for y in (111.76,116.84,121.92):NC(200.66,y)
+G(147.32,132.08)
+# CC clamp/filter block (remote sections share USB_CC1/USB_CC2 labels).
+G(91.44,124.46)
+W((86.36,114.3),(80.01,114.3),(80.01,106.68),(50.8,106.68),(45.72,106.68)); J(50.8,106.68); LBL('USB_CC1',45.72,106.68,'right'); G(50.8,114.3)
+W((86.36,119.38),(50.8,119.38),(45.72,119.38)); J(50.8,119.38); LBL('USB_CC2',45.72,119.38,'right'); G(50.8,127.0)
+# U19 raw-VBUS auxiliary LDO.
+W((83.82,160.02),(71.12,160.02),(66.04,160.02)); LBL('USB_VBUS',66.04,160.02,'right')
+W((71.12,160.02),(71.12,170.18),(83.82,170.18)); J(71.12,160.02); J(71.12,170.18); G(71.12,177.8)
+W((109.22,157.48),(124.46,157.48),(139.7,157.48)); J(124.46,157.48); HL('USB_AUX_5V',139.7,157.48,'output','left'); G(124.46,165.1)
+for y in (162.56,167.64,170.18,172.72):NC(109.22,y)
+W((91.44,180.34),(91.44,182.88),(96.52,182.88),(101.6,182.88),(101.6,180.34)); J(96.52,182.88); G(96.52,182.88)
+# Service header.
+for y,n in [(180.34,'3V_AO'),(182.88,'PDCTRL_SCL'),(185.42,'PDCTRL_SDA')]:
+    W((43.18,y),(38.1,y)); LBL(n,38.1,y,'right')
+W((43.18,187.96),(40.64,187.96)); G(40.64,187.96)
 notes=[
-'5–20V SPR; ADCIN2=7 selects maximum per TI EVM Guide.',
+'5-20V SPR; ADCIN2=7 selects maximum per TI EVM Guide.',
 'Read accepted PDO/RDO before raising charger/load limits; 5V default is not 2A permission.',
 'Enforce 100mA SDP attach policy; implement USB suspend separately.',
 'TVS2200 clamp max exceeds 28V abs max; qualify controller-pin transients.',
-'Validate shared ~50uF bank bias and ramps; details: ai-files/reports/5-20v-pd-front-end-review.md.'
-]
-for i,n in enumerate(notes):sch.append(text(n,145.0,126.0+i*4.2,1.0))
-
-# Side-bank labels bridge the longer-spacing functional pinfield to the existing
-# short, routed signal sections. Grounds and intentional drain N/Cs remain explicit.
-for name,y in [('USB_CC1',109.22),('USB_CC2',114.30),('PDCTRL_SDA',119.38),('PDCTRL_SCL',124.46),('PD_LDO_3V3',134.62),('ADC4_DIV',144.78),('PD_FAULT_IN',149.86)]:
-    sch.append(wire((190.50,y),(184.15,y)))
-    sch.append(hlabel(name,184.15,y,'input' if name.startswith('USB_CC') else ('bidirectional' if name.startswith('PDCTRL_') else 'input'),'right'))
-ground(190.50,129.54);ground(190.50,139.70)
-for name,y in [('PD_CAP_MIS',109.22),('PD_SINK_EN',114.30),('PD_PLUG_EVENT',119.38),('PD_PLUG_FLIP',124.46),('PD_DBG_ACC',129.54)]:
-    sch.append(wire((251.46,y),(257.81,y)))
-    sch.append(hlabel(name,257.81,y,'output','left'))
-ground(251.46,134.62)
-for y in (139.70,144.78,149.86):sch.append([S('no_connect'),[S('at'),251.46,y],[S('uuid'),uid()]])
-sch.append(wire((190.50,134.62),(184.15,134.62)));sch.append(local_label('PD_LDO_3V3',184.15,134.62,'right'))
-sch.append(wire((190.50,144.78),(184.15,144.78)));sch.append(local_label('ADC4_DIV',184.15,144.78,'right'))
-# Side stubs to the established traces are short and orthogonal where the nets
-# were already routed. Top bypass and shared ground rows connect directly.
-for x in (198.12,207.01,215.90,226.06,234.95,243.84):sch.append(wire((x,99.06),(x,109.22)))
-sch.append(wire((198.12,158.75),(198.12,160.02)))
-
-# Move the A4 landscape sheet down to fit the lower connector block.
-def translate_sheet_y(node):
-    if not isinstance(node,list): return
-    if node and k(node)=='lib_symbols': return
-    if k(node) in ('at','xy','start','end') and len(node)>=3 and isinstance(node[2],(int,float)):
-        node[2]=round(node[2]-50,4)
-    for child in node:translate_sheet_y(child)
-translate_sheet_y(sch)
+'Validate shared ~50uF bank bias and ramps; details: ai-files/reports/5-20v-pd-front-end-review.md.']
+for i,n in enumerate(notes):sch.append(text(n,150.0,146.0+i*3.8,1.0))
 
 # Add candidate metadata while preserving the original USB_PD child sheet UUID and U11 symbol UUID.
 Path('ai-files/candidates/TPS25730D_USB_PD_candidate.kicad_sch').write_text('('+sx.dumps(sch[0])+'\n'+'\n'.join(sx.dumps(a) for a in sch[1:])+')\n')
