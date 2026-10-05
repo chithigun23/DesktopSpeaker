@@ -408,3 +408,11 @@ Quick mechanical envelope review: `ai-files/reports/mechanical-fit-rough-2026-10
 - Inherited candidate ERC (not new defects): U11 pin 38 VIN_3V3 and U4 BAT/BATP (BAT_INT, behind Q103) report power_pin_not_driven.
 - BOM: obsolete rows replaced, candidate-fix rows merged ('Candidate fixes' sheet removed), partial subtotals 67.28 fitted / 83.81 order USD. U4, U11, Q103, R10, C182, C183 are unpriced/unverified. Script: helpers/integrate_tps_bq_candidates.py, helpers/integrate_tps_bq_bom.mjs.
 - Remaining: section D qualification list in the opus review report. Not committed.
+
+
+## Pack connector and switch selection (2026-10-06)
+- J5 = Molex 43650-0300 (LCSC C503478, Micro-Fit 3.0 3-pos right-angle, 8.5 A/contact; pins 1/2/3 = PACK+/TS/GND), footprint `Molex_Micro-Fit_3.0_43650-0300_1x03_P3.00mm_Horizontal` copied from the KiCad stock library; no STEP downloaded (stock KiCad 3D source not reachable). Note the LCSC-linked datasheet file is an LXW 5 A clone drawing; the LCSC listing states Molex 8.5 A. Mating housing 43645-0300 and crimps not yet in BOM.
+- SW100 = TE 1977066-1 (LCSC C2972219 confirmed, 2009 in stock, US$0.6291 at 2026-10-06). Footprint `TE_1977066-1_Tact_RA_SMD` is a DRAFT from the TE drawing (land dims approximated); circuit: pins 1+3 common (footprint pad 1 x2), pin 2 other contact (pad 2). No STEP; verify land pattern and enclosure plunger before layout.
+- SW101 = SHOU HAN KCD1-201-R (LCSC C5884429), 20 mm round SPST rocker, datasheet rating 10 A @12 VDC, 6 A 250 VAC. LCSC stock 0 at 2026-10-06; the datasheet drawing shows 3 terminals at 7 mm pitch (4.7 mm tabs): outer terminals assumed switched (symbol 1/2 -> pads 1/3, pad 2 NC), UNVERIFIED by continuity. Rating is below the assumed 15-20 A peak; treat as service/transport disconnect or add current limiting. Footprint `SHOUHAN_KCD1-201-R_Rocker_D20_Panel`, no STEP.
+- Pack itself remains PENDING (datasheet needed; not selected). Charge current recommendation: default 0.2-0.3C (2-3 A), gentle 0.1C; from a 5 V/2 A source limit to ~0.5-1 A charge. Peak discharge 15-20 A is an unverified assumption.
+- BOM rows J5/SW100/SW101 filled; prices are unverified listing snapshots. Datasheets in ai-files/datasheets: Molex_43650-0300_C503478.pdf, TE_1977066-1_datasheet.pdf, SHOU_HAN_KCD1-201-R_C5884429.pdf. ERC unchanged at 260; netlist unchanged.
