@@ -2,7 +2,7 @@
 <export version="E">
   <design>
     <source>/home/chithi/Desktop/DesktopSpeaker/DesktopSpeaker-kicad/DesktopSpeaker.kicad_sch</source>
-    <date>2026-10-05T18:27:07</date>
+    <date>2026-10-05T18:41:04</date>
     <tool>Eeschema 10.0.6-rc2</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -2168,11 +2168,17 @@
       <value>2N7002</value>
       <footprint>DesktopSpeaker:2N7002</footprint>
       <fields>
+        <field name="MPN">2N7002,215</field>
+        <field name="Manufacturer">Nexperia</field>
+        <field name="LCSC">C65189</field>
         <field name="Footprint">DesktopSpeaker:2N7002</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="2N7002" part="2N7002" description="Nexperia 60V 300mA N-channel MOSFET; SOT-23"/>
+      <property name="MPN" value="2N7002,215"/>
+      <property name="Manufacturer" value="Nexperia"/>
+      <property name="LCSC" value="C65189"/>
       <property name="Sheetname" value="Battery_Charger"/>
       <property name="Sheetfile" value="Battery_Charger.kicad_sch"/>
       <sheetpath names="/Battery_Charger/" tstamps="/a7066d55-4393-49f1-9dcb-c2e9f1db9549/"/>

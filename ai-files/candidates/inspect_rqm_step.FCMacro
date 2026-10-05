@@ -1,0 +1,16 @@
+import FreeCAD as App, Part, json, os
+path=os.path.abspath('ai-files/candidates/RQM0029A.stp')
+shape=Part.Shape()
+shape.read(path)
+bb=shape.BoundBox
+result={
+ 'step':path,
+ 'is_valid':shape.isValid(),
+ 'solids':len(shape.Solids),
+ 'faces':len(shape.Faces),
+ 'edges':len(shape.Edges),
+ 'bbox_mm':{'xmin':bb.XMin,'xmax':bb.XMax,'ymin':bb.YMin,'ymax':bb.YMax,'zmin':bb.ZMin,'zmax':bb.ZMax,'x':bb.XLength,'y':bb.YLength,'z':bb.ZLength},
+ 'volume_mm3':shape.Volume
+}
+with open('ai-files/reports/bq25792-step-inspection.json','w') as f: json.dump(result,f,indent=2)
+print(json.dumps(result))

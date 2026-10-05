@@ -1,0 +1,11 @@
+{
+  "candidate_only": true,
+  "all_29_U4_pins_reviewed": true,
+  "expected_groups": 29,
+  "findings": [],
+  "uncovered_physical_pins": [],
+  "missing_physical_pins": [],
+  "physical_connectivity_pass": true,
+  "style_approved": false,
+  "active_integration_approved": false
+}

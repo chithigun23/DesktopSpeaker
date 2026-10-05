@@ -1,0 +1,20 @@
+{
+  "source": "/home/chithi/.local/share/flatpak/runtime/org.kicad.KiCad.Library.Packages3D/x86_64/beta/dea563e605c33133d67186ee2c0e13f523783d384aec223a80053bc95fe99ba4/files/3dmodels/Capacitor_SMD.3dshapes/C_1210_3225Metric.step",
+  "valid": true,
+  "solids": 1,
+  "x_mm": [
+    -1.6,
+    1.6,
+    3.2
+  ],
+  "y_mm": [
+    -1.25,
+    1.25,
+    2.5
+  ],
+  "z_mm": [
+    0.0,
+    2.5,
+    2.5
+  ]
+}

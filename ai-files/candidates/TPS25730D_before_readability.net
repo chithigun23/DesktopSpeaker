@@ -1,0 +1,2365 @@
+(export
+	(version "E")
+	(design
+		(source "/home/chithi/Desktop/DesktopSpeaker/ai-files/candidates/TPS25730D_USB_PD_candidate.kicad_sch")
+		(date "2026-10-05T17:06:41")
+		(tool "Eeschema 10.0.6-rc2")
+		(sheet
+			(number "1")
+			(name "/")
+			(tstamps "/")
+			(title_block
+				(title "USB-C PD 5–20 V SPR — TPS25730D candidate")
+				(company)
+				(rev "prototype review")
+				(date)
+				(source "TPS25730D_USB_PD_candidate.kicad_sch")
+				(comment
+					(number "1")
+					(value "")
+				)
+				(comment
+					(number "2")
+					(value "")
+				)
+				(comment
+					(number "3")
+					(value "")
+				)
+				(comment
+					(number "4")
+					(value "")
+				)
+				(comment
+					(number "5")
+					(value "")
+				)
+				(comment
+					(number "6")
+					(value "")
+				)
+				(comment
+					(number "7")
+					(value "")
+				)
+				(comment
+					(number "8")
+					(value "")
+				)
+				(comment
+					(number "9")
+					(value "")
+				)
+			)
+		)
+	)
+	(components
+		(comp
+			(ref "C2")
+			(value "1uF X7R 50V CVBUS")
+			(footprint "DesktopSpeaker:PD_C_1210")
+			(fields
+				(field
+					(name "Footprint") "DesktopSpeaker:PD_C_1210")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "PD_C")
+				(part "PD_C")
+				(description "Unpolarized capacitor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "ai-files/candidates/TPS25730D_USB_PD_candidate.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "cap capacitor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "36058055-bd18-4f44-b71b-3aec4e8f9013")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C5")
+			(value "4.7uF X7R 50V")
+			(footprint "DesktopSpeaker:PD_C_1206")
+			(fields
+				(field
+					(name "Footprint") "DesktopSpeaker:PD_C_1206")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "PD_C")
+				(part "PD_C")
+				(description "Unpolarized capacitor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "ai-files/candidates/TPS25730D_USB_PD_candidate.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "cap capacitor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "89da5247-3899-4c9d-a077-d0be74b72d4c")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C6")
+			(value "10uF X7R 10V")
+			(footprint "DesktopSpeaker:PD_C_0805")
+			(fields
+				(field
+					(name "Footprint") "DesktopSpeaker:PD_C_0805")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "PD_C")
+				(part "PD_C")
+				(description "Unpolarized capacitor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "ai-files/candidates/TPS25730D_USB_PD_candidate.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "cap capacitor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "8240eecd-5fe7-421c-89e0-a56e0d9d5472")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C180")
+			(value "33uF polymer 35V candidate; MPN TBD")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "PD_C")
+				(part "PD_C")
+				(description "Unpolarized capacitor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "ai-files/candidates/TPS25730D_USB_PD_candidate.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "cap capacitor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "86ca5cbf-1c24-42b8-b386-2932e7da1658")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C181")
+			(value "10uF X7R 6.3V (effective value TBD)")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "PD_C")
+				(part "PD_C")
+				(description "Unpolarized capacitor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "ai-files/candidates/TPS25730D_USB_PD_candidate.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "cap capacitor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "347974ab-d389-4361-b8a6-0670d755e387")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C182")
+			(value "330pF C0G CC1 filter")
+			(footprint "DesktopSpeaker:PD_C_0603")
+			(fields
+				(field
+					(name "Footprint") "DesktopSpeaker:PD_C_0603")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "PD_C")
+				(part "PD_C")
+				(description "Unpolarized capacitor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "ai-files/candidates/TPS25730D_USB_PD_candidate.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "cap capacitor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "23ce9b86-d6b6-4f5c-a9cf-e696def8b2fc")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C183")
+			(value "330pF C0G CC2 filter")
+			(footprint "DesktopSpeaker:PD_C_0603")
+			(fields
+				(field
+					(name "Footprint") "DesktopSpeaker:PD_C_0603")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "PD_C")
+				(part "PD_C")
+				(description "Unpolarized capacitor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "ai-files/candidates/TPS25730D_USB_PD_candidate.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "cap capacitor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "a33b4247-fa23-4a9d-b7b0-098b0ce17dc4")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C184")
+			(value "1uF X7R 50V")
+			(footprint "DesktopSpeaker:PD_C_0603")
+			(fields
+				(field
+					(name "Footprint") "DesktopSpeaker:PD_C_0603")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "PD_C")
+				(part "PD_C")
+				(description "Unpolarized capacitor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "ai-files/candidates/TPS25730D_USB_PD_candidate.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "cap capacitor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "bd334f66-eeb8-49ba-ada8-b999531d678f")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C185")
+			(value "10uF X7R 6.3V CVIN_3V3")
+			(footprint "DesktopSpeaker:PD_C_0805")
+			(fields
+				(field
+					(name "Footprint") "DesktopSpeaker:PD_C_0805")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "PD_C")
+				(part "PD_C")
+				(description "Unpolarized capacitor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "ai-files/candidates/TPS25730D_USB_PD_candidate.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "cap capacitor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "dd43e355-14dd-41d9-9f6b-ab298af25258")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "D5")
+			(value "ESDA25L")
+			(footprint "DesktopSpeaker:ESDA25L")
+			(datasheet "${KIPRJMOD}/../ai-files/datasheets/ESDAL-ST.pdf")
+			(fields
+				(field
+					(name "Manufacturer") "STMicroelectronics")
+				(field
+					(name "MPN") "ESDA25L")
+				(field
+					(name "LCSC Part") "C95343")
+				(field
+					(name "Footprint") "DesktopSpeaker:ESDA25L")
+				(field
+					(name "Datasheet") "${KIPRJMOD}/../ai-files/datasheets/ESDAL-ST.pdf")
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "ESDA25L")
+				(part "ESDA25L")
+				(description "")
+			)
+			(property
+				(name "Manufacturer")
+				(value "STMicroelectronics")
+			)
+			(property
+				(name "MPN")
+				(value "ESDA25L")
+			)
+			(property
+				(name "LCSC Part")
+				(value "C95343")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "ai-files/candidates/TPS25730D_USB_PD_candidate.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "196bd6b3-35f4-4864-a116-e5b358273f4b")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "D6")
+			(value "TVS2200DRVR")
+			(footprint "DesktopSpeaker:TVS2200DRVR")
+			(datasheet "${KIPRJMOD}/../ai-files/datasheets/TVS2200.pdf")
+			(fields
+				(field
+					(name "Manufacturer") "Texas Instruments")
+				(field
+					(name "MPN") "TVS2200")
+				(field
+					(name "Footprint") "DesktopSpeaker:TVS2200DRVR")
+				(field
+					(name "Datasheet") "${KIPRJMOD}/../ai-files/datasheets/TVS2200.pdf")
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "TVS2200DRVR")
+				(part "TVS2200DRVR")
+				(description "")
+			)
+			(property
+				(name "Manufacturer")
+				(value "Texas Instruments")
+			)
+			(property
+				(name "MPN")
+				(value "TVS2200")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "ai-files/candidates/TPS25730D_USB_PD_candidate.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "1c82ef1a-5605-417c-9478-c7d172b18a92")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "4")
+						)
+						(pin
+							(num "5")
+						)
+						(pin
+							(num "6")
+						)
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "7")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "J4")
+			(value "I2C service")
+			(footprint "DesktopSpeaker:PD_SERVICE_HDR")
+			(fields
+				(field
+					(name "Footprint") "DesktopSpeaker:PD_SERVICE_HDR")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "PD_SERVICE_HDR")
+				(part "PD_SERVICE_HDR")
+				(description "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "ai-files/candidates/TPS25730D_USB_PD_candidate.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "connector")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "Connector*:*_1x??_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "683f1ece-926c-4c9f-81ee-c3db17bcbbef")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "4")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R10")
+			(value "200k 1%")
+			(footprint "DesktopSpeaker:PD_R_0603")
+			(fields
+				(field
+					(name "Footprint") "DesktopSpeaker:PD_R_0603")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "PD_R")
+				(part "PD_R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "ai-files/candidates/TPS25730D_USB_PD_candidate.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "4ad861bb-3754-4fdb-a2c0-cd0ea83c082a")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R11")
+			(value "10k 1%")
+			(footprint "DesktopSpeaker:PD_R_0603")
+			(fields
+				(field
+					(name "Footprint") "DesktopSpeaker:PD_R_0603")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "PD_R")
+				(part "PD_R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "ai-files/candidates/TPS25730D_USB_PD_candidate.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "af5a2fb6-9b41-43c0-89ba-1954ace674a2")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R12")
+			(value "100k 1%")
+			(footprint "DesktopSpeaker:PD_R_0603")
+			(fields
+				(field
+					(name "Footprint") "DesktopSpeaker:PD_R_0603")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "PD_R")
+				(part "PD_R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "ai-files/candidates/TPS25730D_USB_PD_candidate.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "c8db1de6-8b66-4955-95ca-4cd97e4d5c93")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R13")
+			(value "10k 1%")
+			(footprint "DesktopSpeaker:PD_R_0603")
+			(fields
+				(field
+					(name "Footprint") "DesktopSpeaker:PD_R_0603")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "PD_R")
+				(part "PD_R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "ai-files/candidates/TPS25730D_USB_PD_candidate.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "9f6fa8da-ded5-4ca3-8778-96a17c83193c")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "U11")
+			(value "TPS25730DREFR")
+			(footprint "TPS25730D:Texas_REF0038A_WQFN-38-2EP_6x4mm_P0.4")
+			(datasheet "${KIPRJMOD}/../ai-files/datasheets/TPS25730.pdf")
+			(fields
+				(field
+					(name "Manufacturer") "Texas Instruments")
+				(field
+					(name "MPN") "TPS25730DREFR")
+				(field
+					(name "LCSC Part") "C22438973")
+				(field
+					(name "Footprint") "TPS25730D:Texas_REF0038A_WQFN-38-2EP_6x4mm_P0.4")
+				(field
+					(name "Datasheet") "${KIPRJMOD}/../ai-files/datasheets/TPS25730.pdf")
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "TPS25730DREFR")
+				(part "TPS25730DREFR")
+				(description "USB Type-C sink PD controller, integrated 7A path, WQFN-38 REF0038A")
+			)
+			(property
+				(name "Manufacturer")
+				(value "Texas Instruments")
+			)
+			(property
+				(name "MPN")
+				(value "TPS25730DREFR")
+			)
+			(property
+				(name "LCSC Part")
+				(value "C22438973")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "ai-files/candidates/TPS25730D_USB_PD_candidate.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "ecd93b6c-1e07-45ba-9154-e32777f2a513")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "28")
+						)
+						(pin
+							(num "29")
+						)
+						(pin
+							(num "8")
+						)
+						(pin
+							(num "9")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "5")
+						)
+						(pin
+							(num "7")
+						)
+						(pin
+							(num "6")
+						)
+						(pin
+							(num "19")
+						)
+						(pin
+							(num "37")
+						)
+						(pin
+							(num "18")
+						)
+						(pin
+							(num "13")
+						)
+						(pin
+							(num "10")
+						)
+						(pin
+							(num "23")
+						)
+						(pin
+							(num "24")
+						)
+						(pin
+							(num "25")
+						)
+						(pin
+							(num "20")
+						)
+						(pin
+							(num "21")
+						)
+						(pin
+							(num "22")
+						)
+						(pin
+							(num "32")
+						)
+						(pin
+							(num "33")
+						)
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "38")
+						)
+						(pin
+							(num "4")
+						)
+						(pin
+							(num "26")
+						)
+						(pin
+							(num "27")
+						)
+						(pin
+							(num "36")
+						)
+						(pin
+							(num "15")
+						)
+						(pin
+							(num "30")
+						)
+						(pin
+							(num "40")
+						)
+						(pin
+							(num "11")
+						)
+						(pin
+							(num "12")
+						)
+						(pin
+							(num "14")
+						)
+						(pin
+							(num "16")
+						)
+						(pin
+							(num "17")
+						)
+						(pin
+							(num "31")
+						)
+						(pin
+							(num "34")
+						)
+						(pin
+							(num "35")
+						)
+						(pin
+							(num "39")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "U19")
+			(value "TPS7B8450QWDRBRQ1")
+			(footprint "DesktopSpeaker:TPS7B8450QWDRBRQ1_WSON-8")
+			(datasheet "${KIPRJMOD}/../ai-files/datasheets/TPS7B84-Q1.pdf")
+			(fields
+				(field
+					(name "Manufacturer") "Texas Instruments")
+				(field
+					(name "MPN") "TPS7B8450QWDRBRQ1")
+				(field
+					(name "LCSC Part") "C3751394")
+				(field
+					(name "Footprint") "DesktopSpeaker:TPS7B8450QWDRBRQ1_WSON-8")
+				(field
+					(name "Datasheet") "${KIPRJMOD}/../ai-files/datasheets/TPS7B84-Q1.pdf")
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "TPS7B8450QWDRBRQ1")
+				(part "TPS7B8450QWDRBRQ1")
+				(description "Fixed 5.0 V, 150 mA automotive LDO, WSON-8 DRB with exposed thermal pad")
+			)
+			(property
+				(name "Manufacturer")
+				(value "Texas Instruments")
+			)
+			(property
+				(name "MPN")
+				(value "TPS7B8450QWDRBRQ1")
+			)
+			(property
+				(name "LCSC Part")
+				(value "C3751394")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "ai-files/candidates/TPS25730D_USB_PD_candidate.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "ac643c15-fe69-4939-8ad4-e3db8227e829")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "8")
+						)
+						(pin
+							(num "7")
+						)
+						(pin
+							(num "5")
+						)
+						(pin
+							(num "9")
+						)
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "4")
+						)
+						(pin
+							(num "6")
+						)
+					)
+				)
+			)
+		)
+	)
+	(groups)
+	(variants)
+	(libparts
+		(libpart
+			(lib "ESDA25L")
+			(part "ESDA25L")
+			(docs "../ai-files/datasheets/ESDAL-ST.pdf")
+			(fields
+				(field
+					(name "Reference") "D")
+				(field
+					(name "Value") "ESDA25L")
+				(field
+					(name "Footprint") "DesktopSpeaker:ESDA25L")
+				(field
+					(name "Datasheet") "../ai-files/datasheets/ESDAL-ST.pdf")
+				(field
+					(name "Description")
+				)
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "CC1/K1")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "CC2/K2")
+					(type "passive")
+				)
+				(pin
+					(num "3")
+					(name "GND/A")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "PD_C")
+			(part "PD_C")
+			(description "Unpolarized capacitor")
+			(footprints
+				(fp "C_*")
+			)
+			(fields
+				(field
+					(name "Reference") "C")
+				(field
+					(name "Value") "C")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Unpolarized capacitor")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "PD_R")
+			(part "PD_R")
+			(description "Resistor")
+			(footprints
+				(fp "R_*")
+			)
+			(fields
+				(field
+					(name "Reference") "R")
+				(field
+					(name "Value") "R")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Resistor")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "PD_SERVICE_HDR")
+			(part "PD_SERVICE_HDR")
+			(description "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)")
+			(footprints
+				(fp "Connector*:*_1x??_*")
+			)
+			(fields
+				(field
+					(name "Reference") "J")
+				(field
+					(name "Value") "PD_SERVICE_HDR")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "Pin_1")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "Pin_2")
+					(type "passive")
+				)
+				(pin
+					(num "3")
+					(name "Pin_3")
+					(type "passive")
+				)
+				(pin
+					(num "4")
+					(name "Pin_4")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "TPS25730DREFR")
+			(part "TPS25730DREFR")
+			(description "USB Type-C sink PD controller, integrated 7A path, WQFN-38 REF0038A")
+			(docs "${KIPRJMOD}/../ai-files/datasheets/TPS25730.pdf")
+			(fields
+				(field
+					(name "Reference") "U")
+				(field
+					(name "Value") "TPS25730DREFR")
+				(field
+					(name "Footprint") "TPS25730D:Texas_REF0038A_WQFN-38-2EP_6x4mm_P0.4")
+				(field
+					(name "Datasheet") "${KIPRJMOD}/../ai-files/datasheets/TPS25730.pdf")
+				(field
+					(name "Description") "USB Type-C sink PD controller, integrated 7A path, WQFN-38 REF0038A")
+				(field
+					(name "Manufacturer") "Texas Instruments")
+				(field
+					(name "MPN") "TPS25730DREFR")
+				(field
+					(name "LCSC Part") "C22438973")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "LDO_3V3")
+					(type "power_out")
+				)
+				(pin
+					(num "2")
+					(name "ADCIN1")
+					(type "input")
+				)
+				(pin
+					(num "3")
+					(name "ADCIN2")
+					(type "input")
+				)
+				(pin
+					(num "4")
+					(name "LDO_1V5")
+					(type "power_out")
+				)
+				(pin
+					(num "5")
+					(name "ADCIN3")
+					(type "input")
+				)
+				(pin
+					(num "6")
+					(name "CAP_MIS")
+					(type "open_collector")
+				)
+				(pin
+					(num "7")
+					(name "ADCIN4")
+					(type "input")
+				)
+				(pin
+					(num "8")
+					(name "PDCTRL_SDA")
+					(type "bidirectional")
+				)
+				(pin
+					(num "9")
+					(name "PDCTRL_SCL")
+					(type "bidirectional")
+				)
+				(pin
+					(num "10")
+					(name "DBG_ACC")
+					(type "open_collector")
+				)
+				(pin
+					(num "13")
+					(name "PLUG_FLIP")
+					(type "open_collector")
+				)
+				(pin
+					(num "15")
+					(name "DRAIN_15")
+					(type "passive")
+				)
+				(pin
+					(num "18")
+					(name "FAULT_IN")
+					(type "input")
+				)
+				(pin
+					(num "19")
+					(name "SINK_EN")
+					(type "open_collector")
+				)
+				(pin
+					(num "28")
+					(name "CC1")
+					(type "bidirectional")
+				)
+				(pin
+					(num "29")
+					(name "CC2")
+					(type "bidirectional")
+				)
+				(pin
+					(num "30")
+					(name "DRAIN_30")
+					(type "passive")
+				)
+				(pin
+					(num "37")
+					(name "PLUG_EVENT")
+					(type "open_collector")
+				)
+				(pin
+					(num "38")
+					(name "VIN_3V3")
+					(type "power_in")
+				)
+				(pin
+					(num "40")
+					(name "DRAIN_40")
+					(type "passive")
+				)
+				(pin
+					(num "11")
+					(name "GND")
+					(type "power_in")
+				)
+				(pin
+					(num "12")
+					(name "GND")
+					(type "power_in")
+				)
+				(pin
+					(num "14")
+					(name "GND")
+					(type "power_in")
+				)
+				(pin
+					(num "16")
+					(name "GND")
+					(type "power_in")
+				)
+				(pin
+					(num "17")
+					(name "GND")
+					(type "power_in")
+				)
+				(pin
+					(num "31")
+					(name "GND")
+					(type "power_in")
+				)
+				(pin
+					(num "34")
+					(name "GND")
+					(type "power_in")
+				)
+				(pin
+					(num "35")
+					(name "GND")
+					(type "power_in")
+				)
+				(pin
+					(num "39")
+					(name "GND")
+					(type "power_in")
+				)
+				(pin
+					(num "20")
+					(name "PPHV")
+					(type "power_out")
+				)
+				(pin
+					(num "21")
+					(name "PPHV")
+					(type "power_out")
+				)
+				(pin
+					(num "22")
+					(name "PPHV")
+					(type "power_out")
+				)
+				(pin
+					(num "23")
+					(name "VBUS_IN")
+					(type "power_in")
+				)
+				(pin
+					(num "24")
+					(name "VBUS_IN")
+					(type "power_in")
+				)
+				(pin
+					(num "25")
+					(name "VBUS_IN")
+					(type "power_in")
+				)
+				(pin
+					(num "26")
+					(name "RESERVED")
+					(type "passive")
+				)
+				(pin
+					(num "27")
+					(name "RESERVED")
+					(type "passive")
+				)
+				(pin
+					(num "36")
+					(name "RESERVED")
+					(type "passive")
+				)
+				(pin
+					(num "32")
+					(name "VBUS")
+					(type "power_in")
+				)
+				(pin
+					(num "33")
+					(name "VBUS")
+					(type "power_in")
+				)
+			)
+		)
+		(libpart
+			(lib "TPS7B8450QWDRBRQ1")
+			(part "TPS7B8450QWDRBRQ1")
+			(description "Fixed 5.0 V, 150 mA automotive LDO, WSON-8 DRB with exposed thermal pad")
+			(docs "../ai-files/datasheets/TPS7B84-Q1.pdf")
+			(fields
+				(field
+					(name "Reference") "U")
+				(field
+					(name "Value") "TPS7B8450QWDRBRQ1")
+				(field
+					(name "Footprint") "DesktopSpeaker:TPS7B8450QWDRBRQ1_WSON-8")
+				(field
+					(name "Datasheet") "../ai-files/datasheets/TPS7B84-Q1.pdf")
+				(field
+					(name "Description") "Fixed 5.0 V, 150 mA automotive LDO, WSON-8 DRB with exposed thermal pad")
+				(field
+					(name "Manufacturer") "Texas Instruments")
+				(field
+					(name "MPN") "TPS7B8450QWDRBRQ1")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "OUT")
+					(type "power_out")
+				)
+				(pin
+					(num "2")
+					(name "NC")
+					(type "no_connect")
+				)
+				(pin
+					(num "3")
+					(name "NC")
+					(type "no_connect")
+				)
+				(pin
+					(num "4")
+					(name "NC")
+					(type "no_connect")
+				)
+				(pin
+					(num "5")
+					(name "GND")
+					(type "power_in")
+				)
+				(pin
+					(num "6")
+					(name "NC")
+					(type "no_connect")
+				)
+				(pin
+					(num "7")
+					(name "EN")
+					(type "input")
+				)
+				(pin
+					(num "8")
+					(name "IN")
+					(type "power_in")
+				)
+				(pin
+					(num "9")
+					(name "EP")
+					(type "power_in")
+				)
+			)
+		)
+		(libpart
+			(lib "TVS2200DRVR")
+			(part "TVS2200DRVR")
+			(docs "https://www.ti.com/lit/ds/symlink/tvs2200.pdf")
+			(fields
+				(field
+					(name "Reference") "T")
+				(field
+					(name "Value") "TVS2200DRVR")
+				(field
+					(name "Footprint") "DesktopSpeaker:TVS2200DRVR")
+				(field
+					(name "Datasheet") "https://www.ti.com/lit/ds/symlink/tvs2200.pdf")
+				(field
+					(name "Description")
+				)
+			)
+			(pins
+				(pin
+					(num "7")
+					(name "EP")
+					(type "passive")
+				)
+				(pin
+					(num "1")
+					(name "GND")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "GND")
+					(type "passive")
+				)
+				(pin
+					(num "3")
+					(name "GND")
+					(type "passive")
+				)
+				(pin
+					(num "4")
+					(name "IN")
+					(type "passive")
+				)
+				(pin
+					(num "5")
+					(name "IN")
+					(type "passive")
+				)
+				(pin
+					(num "6")
+					(name "IN")
+					(type "passive")
+				)
+			)
+		)
+	)
+	(libraries)
+	(nets
+		(net
+			(code "1")
+			(name "/3V_AO")
+			(class "Default")
+			(node
+				(ref "J4")
+				(pin "1")
+				(pinfunction "Pin_1_1")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "2")
+			(name "/PDCTRL_SCL")
+			(class "Default")
+			(node
+				(ref "J4")
+				(pin "2")
+				(pinfunction "Pin_2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U11")
+				(pin "9")
+				(pinfunction "PDCTRL_SCL_9")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "3")
+			(name "/PDCTRL_SDA")
+			(class "Default")
+			(node
+				(ref "J4")
+				(pin "3")
+				(pinfunction "Pin_3_3")
+				(pintype "passive")
+			)
+			(node
+				(ref "U11")
+				(pin "8")
+				(pinfunction "PDCTRL_SDA_8")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "4")
+			(name "/PD_ADCIN4_DIV")
+			(class "Default")
+			(node
+				(ref "R10")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R11")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U11")
+				(pin "7")
+				(pinfunction "ADCIN4_7")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "5")
+			(name "/PD_CAP_MIS")
+			(class "Default")
+			(node
+				(ref "U11")
+				(pin "6")
+				(pinfunction "CAP_MIS_6")
+				(pintype "open_collector")
+			)
+		)
+		(net
+			(code "6")
+			(name "/PD_FAULT_IN")
+			(class "Default")
+			(node
+				(ref "R13")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U11")
+				(pin "18")
+				(pinfunction "FAULT_IN_18")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "7")
+			(name "/PD_LDO_1V5")
+			(class "Default")
+			(node
+				(ref "C181")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U11")
+				(pin "4")
+				(pinfunction "LDO_1V5_4")
+				(pintype "power_out")
+			)
+		)
+		(net
+			(code "8")
+			(name "/PD_LDO_3V3")
+			(class "Default")
+			(node
+				(ref "C6")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R10")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R13")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U11")
+				(pin "1")
+				(pinfunction "LDO_3V3_1")
+				(pintype "power_out")
+			)
+			(node
+				(ref "U11")
+				(pin "3")
+				(pinfunction "ADCIN2_3")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "9")
+			(name "/PD_PLUG_EVENT")
+			(class "Default")
+			(node
+				(ref "U11")
+				(pin "37")
+				(pinfunction "PLUG_EVENT_37")
+				(pintype "open_collector")
+			)
+		)
+		(net
+			(code "10")
+			(name "/PD_SINK_EN")
+			(class "Default")
+			(node
+				(ref "U11")
+				(pin "19")
+				(pinfunction "SINK_EN_19")
+				(pintype "open_collector")
+			)
+		)
+		(net
+			(code "11")
+			(name "/USB_AUX_5V")
+			(class "Default")
+			(node
+				(ref "C5")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U19")
+				(pin "1")
+				(pinfunction "OUT_1")
+				(pintype "power_out")
+			)
+		)
+		(net
+			(code "12")
+			(name "/USB_CC1")
+			(class "Default")
+			(node
+				(ref "C182")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "D5")
+				(pin "1")
+				(pinfunction "CC1/K1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U11")
+				(pin "28")
+				(pinfunction "CC1_28")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "13")
+			(name "/USB_CC2")
+			(class "Default")
+			(node
+				(ref "C183")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "D5")
+				(pin "2")
+				(pinfunction "CC2/K2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U11")
+				(pin "29")
+				(pinfunction "CC2_29")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "14")
+			(name "/USB_VBUS")
+			(class "Default")
+			(node
+				(ref "C184")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "C2")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "D6")
+				(pin "4")
+				(pinfunction "IN_4")
+				(pintype "passive")
+			)
+			(node
+				(ref "D6")
+				(pin "5")
+				(pinfunction "IN_5")
+				(pintype "passive")
+			)
+			(node
+				(ref "D6")
+				(pin "6")
+				(pinfunction "IN_6")
+				(pintype "passive")
+			)
+			(node
+				(ref "U11")
+				(pin "23")
+				(pinfunction "VBUS_IN_23")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U11")
+				(pin "24")
+				(pinfunction "VBUS_IN_24")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U11")
+				(pin "25")
+				(pinfunction "VBUS_IN_25")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U11")
+				(pin "32")
+				(pinfunction "VBUS_32")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U11")
+				(pin "33")
+				(pinfunction "VBUS_33")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U19")
+				(pin "7")
+				(pinfunction "EN_7")
+				(pintype "input")
+			)
+			(node
+				(ref "U19")
+				(pin "8")
+				(pinfunction "IN_8")
+				(pintype "power_in")
+			)
+		)
+		(net
+			(code "15")
+			(name "/VBUS_PD")
+			(class "Default")
+			(node
+				(ref "C180")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U11")
+				(pin "20")
+				(pinfunction "PPHV_20")
+				(pintype "power_out")
+			)
+			(node
+				(ref "U11")
+				(pin "21")
+				(pinfunction "PPHV_21")
+				(pintype "power_out")
+			)
+			(node
+				(ref "U11")
+				(pin "22")
+				(pinfunction "PPHV_22")
+				(pintype "power_out")
+			)
+		)
+		(net
+			(code "16")
+			(name "/VIN_3V3_LOW")
+			(class "Default")
+			(node
+				(ref "C185")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R12")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U11")
+				(pin "38")
+				(pinfunction "VIN_3V3_38")
+				(pintype "power_in")
+			)
+		)
+		(net
+			(code "17")
+			(name "GND")
+			(class "Default")
+			(node
+				(ref "C180")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C181")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C182")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C183")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C184")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C185")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C2")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C5")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C6")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "D5")
+				(pin "3")
+				(pinfunction "GND/A_3")
+				(pintype "passive")
+			)
+			(node
+				(ref "D6")
+				(pin "7")
+				(pinfunction "EP_7")
+				(pintype "passive")
+			)
+			(node
+				(ref "D6")
+				(pin "1")
+				(pinfunction "GND_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "D6")
+				(pin "2")
+				(pinfunction "GND_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "D6")
+				(pin "3")
+				(pinfunction "GND_3")
+				(pintype "passive")
+			)
+			(node
+				(ref "J4")
+				(pin "4")
+				(pinfunction "Pin_4_4")
+				(pintype "passive")
+			)
+			(node
+				(ref "R11")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R12")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U11")
+				(pin "2")
+				(pinfunction "ADCIN1_2")
+				(pintype "input")
+			)
+			(node
+				(ref "U11")
+				(pin "5")
+				(pinfunction "ADCIN3_5")
+				(pintype "input")
+			)
+			(node
+				(ref "U11")
+				(pin "11")
+				(pinfunction "GND_11")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U11")
+				(pin "12")
+				(pinfunction "GND_12")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U11")
+				(pin "14")
+				(pinfunction "GND_14")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U11")
+				(pin "16")
+				(pinfunction "GND_16")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U11")
+				(pin "17")
+				(pinfunction "GND_17")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U11")
+				(pin "31")
+				(pinfunction "GND_31")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U11")
+				(pin "34")
+				(pinfunction "GND_34")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U11")
+				(pin "35")
+				(pinfunction "GND_35")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U11")
+				(pin "39")
+				(pinfunction "GND_39")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U11")
+				(pin "26")
+				(pinfunction "RESERVED_26")
+				(pintype "passive")
+			)
+			(node
+				(ref "U11")
+				(pin "27")
+				(pinfunction "RESERVED_27")
+				(pintype "passive")
+			)
+			(node
+				(ref "U11")
+				(pin "36")
+				(pinfunction "RESERVED_36")
+				(pintype "passive")
+			)
+			(node
+				(ref "U19")
+				(pin "5")
+				(pinfunction "GND_5")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U19")
+				(pin "9")
+				(pinfunction "EP_9")
+				(pintype "power_in")
+			)
+		)
+		(net
+			(code "18")
+			(name "unconnected-(U11-DBG_ACC-Pad10)")
+			(class "Default")
+			(node
+				(ref "U11")
+				(pin "10")
+				(pinfunction "DBG_ACC_10")
+				(pintype "open_collector+no_connect")
+			)
+		)
+		(net
+			(code "19")
+			(name "unconnected-(U11-DRAIN_15-Pad15)")
+			(class "Default")
+			(node
+				(ref "U11")
+				(pin "15")
+				(pinfunction "DRAIN_15_15")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "20")
+			(name "unconnected-(U11-DRAIN_30-Pad30)")
+			(class "Default")
+			(node
+				(ref "U11")
+				(pin "30")
+				(pinfunction "DRAIN_30_30")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "21")
+			(name "unconnected-(U11-DRAIN_40-Pad40)")
+			(class "Default")
+			(node
+				(ref "U11")
+				(pin "40")
+				(pinfunction "DRAIN_40_40")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "22")
+			(name "unconnected-(U11-PLUG_FLIP-Pad13)")
+			(class "Default")
+			(node
+				(ref "U11")
+				(pin "13")
+				(pinfunction "PLUG_FLIP_13")
+				(pintype "open_collector+no_connect")
+			)
+		)
+		(net
+			(code "23")
+			(name "unconnected-(U19-NC-Pad2)")
+			(class "Default")
+			(node
+				(ref "U19")
+				(pin "2")
+				(pinfunction "NC_2")
+				(pintype "no_connect")
+			)
+		)
+		(net
+			(code "24")
+			(name "unconnected-(U19-NC-Pad3)")
+			(class "Default")
+			(node
+				(ref "U19")
+				(pin "3")
+				(pinfunction "NC_3")
+				(pintype "no_connect")
+			)
+		)
+		(net
+			(code "25")
+			(name "unconnected-(U19-NC-Pad4)")
+			(class "Default")
+			(node
+				(ref "U19")
+				(pin "4")
+				(pinfunction "NC_4")
+				(pintype "no_connect")
+			)
+		)
+		(net
+			(code "26")
+			(name "unconnected-(U19-NC-Pad6)")
+			(class "Default")
+			(node
+				(ref "U19")
+				(pin "6")
+				(pinfunction "NC_6")
+				(pintype "no_connect")
+			)
+		)
+	)
+)

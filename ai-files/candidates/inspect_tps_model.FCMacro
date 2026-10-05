@@ -1,0 +1,4 @@
+import FreeCAD as App, Part, os, json
+p=os.path.abspath('ai-files/candidates/TPS2116DRLR.step');s=Part.Shape();s.read(p);b=s.BoundBox
+r={'is_valid':s.isValid(),'solids':len(s.Solids),'faces':len(s.Faces),'bbox_mm':{'x':b.XLength,'y':b.YLength,'z':b.ZLength,'min':[b.XMin,b.YMin,b.ZMin],'max':[b.XMax,b.YMax,b.ZMax]},'volume_mm3':s.Volume}
+json.dump(r,open('ai-files/reports/tps2116-model-inspection.json','w'),indent=2); print(json.dumps(r))

@@ -1,0 +1,2228 @@
+(export
+	(version "E")
+	(design
+		(source "/home/chithi/Desktop/DesktopSpeaker/ai-files/candidates/Fuel_Gauge_Power.kicad_sch")
+		(date "2026-10-05T17:04:35")
+		(tool "Eeschema 10.0.6-rc2")
+		(sheet
+			(number "1")
+			(name "/")
+			(tstamps "/")
+			(title_block
+				(title "Fuel gauge and low-current power")
+				(company)
+				(rev "0.1")
+				(date)
+				(source "Fuel_Gauge_Power.kicad_sch")
+				(comment
+					(number "1")
+					(value "")
+				)
+				(comment
+					(number "2")
+					(value "")
+				)
+				(comment
+					(number "3")
+					(value "")
+				)
+				(comment
+					(number "4")
+					(value "")
+				)
+				(comment
+					(number "5")
+					(value "")
+				)
+				(comment
+					(number "6")
+					(value "")
+				)
+				(comment
+					(number "7")
+					(value "")
+				)
+				(comment
+					(number "8")
+					(value "")
+				)
+				(comment
+					(number "9")
+					(value "")
+				)
+			)
+		)
+	)
+	(components
+		(comp
+			(ref "C120")
+			(value "100nF X7R 10V")
+			(footprint "DesktopSpeaker:PD_C_0603")
+			(datasheet "${KIPRJMOD}/../ai-files/datasheets/Samsung_MLCC_LCSC_C1591_C1711.pdf")
+			(fields
+				(field
+					(name "MPN") "CL10B104KB8NNNC")
+				(field
+					(name "Manufacturer") "Samsung Electro-Mechanics")
+				(field
+					(name "LCSC") "C1591")
+				(field
+					(name "Footprint") "DesktopSpeaker:PD_C_0603")
+				(field
+					(name "Datasheet") "${KIPRJMOD}/../ai-files/datasheets/Samsung_MLCC_LCSC_C1591_C1711.pdf")
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "PD_C")
+				(part "PD_C")
+				(description "Unpolarized capacitor")
+			)
+			(property
+				(name "MPN")
+				(value "CL10B104KB8NNNC")
+			)
+			(property
+				(name "Manufacturer")
+				(value "Samsung Electro-Mechanics")
+			)
+			(property
+				(name "LCSC")
+				(value "C1591")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "ai-files/candidates/Fuel_Gauge_Power.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "cap capacitor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "7c8b17c2-e089-4061-9685-305e29094cad")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C121")
+			(value "100nF X7R 10V")
+			(footprint "DesktopSpeaker:PD_C_0603")
+			(datasheet "${KIPRJMOD}/../ai-files/datasheets/Samsung_MLCC_LCSC_C1591_C1711.pdf")
+			(fields
+				(field
+					(name "MPN") "CL10B104KB8NNNC")
+				(field
+					(name "Manufacturer") "Samsung Electro-Mechanics")
+				(field
+					(name "LCSC") "C1591")
+				(field
+					(name "Footprint") "DesktopSpeaker:PD_C_0603")
+				(field
+					(name "Datasheet") "${KIPRJMOD}/../ai-files/datasheets/Samsung_MLCC_LCSC_C1591_C1711.pdf")
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "PD_C")
+				(part "PD_C")
+				(description "Unpolarized capacitor")
+			)
+			(property
+				(name "MPN")
+				(value "CL10B104KB8NNNC")
+			)
+			(property
+				(name "Manufacturer")
+				(value "Samsung Electro-Mechanics")
+			)
+			(property
+				(name "LCSC")
+				(value "C1591")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "ai-files/candidates/Fuel_Gauge_Power.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "cap capacitor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "722af05b-7fd4-43b7-adf9-df3702e0259f")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C122")
+			(value "1uF X7R 10V")
+			(footprint "DesktopSpeaker:PD_C_0603")
+			(datasheet "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/8901/LMK107B7105KA-T.pdf")
+			(fields
+				(field
+					(name "MPN") "LMK107B7105KA-T")
+				(field
+					(name "Manufacturer") "Taiyo Yuden")
+				(field
+					(name "LCSC") "C92806")
+				(field
+					(name "Footprint") "DesktopSpeaker:PD_C_0603")
+				(field
+					(name "Datasheet") "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/8901/LMK107B7105KA-T.pdf")
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "PD_C")
+				(part "PD_C")
+				(description "Unpolarized capacitor")
+			)
+			(property
+				(name "MPN")
+				(value "LMK107B7105KA-T")
+			)
+			(property
+				(name "Manufacturer")
+				(value "Taiyo Yuden")
+			)
+			(property
+				(name "LCSC")
+				(value "C92806")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "ai-files/candidates/Fuel_Gauge_Power.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "cap capacitor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "d0e49de2-3b6b-4a2f-a0dd-6776b910867f")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C123")
+			(value "1uF X7R 10V")
+			(footprint "DesktopSpeaker:PD_C_0603")
+			(datasheet "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/8901/LMK107B7105KA-T.pdf")
+			(fields
+				(field
+					(name "MPN") "LMK107B7105KA-T")
+				(field
+					(name "Manufacturer") "Taiyo Yuden")
+				(field
+					(name "LCSC") "C92806")
+				(field
+					(name "Footprint") "DesktopSpeaker:PD_C_0603")
+				(field
+					(name "Datasheet") "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/8901/LMK107B7105KA-T.pdf")
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "PD_C")
+				(part "PD_C")
+				(description "Unpolarized capacitor")
+			)
+			(property
+				(name "MPN")
+				(value "LMK107B7105KA-T")
+			)
+			(property
+				(name "Manufacturer")
+				(value "Taiyo Yuden")
+			)
+			(property
+				(name "LCSC")
+				(value "C92806")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "ai-files/candidates/Fuel_Gauge_Power.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "cap capacitor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "1fa35517-26df-4d7c-980c-0ab80da3bc0e")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C124")
+			(value "1uF X7R 10V")
+			(footprint "DesktopSpeaker:PD_C_0603")
+			(datasheet "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/8901/LMK107B7105KA-T.pdf")
+			(fields
+				(field
+					(name "MPN") "LMK107B7105KA-T")
+				(field
+					(name "Manufacturer") "Taiyo Yuden")
+				(field
+					(name "LCSC") "C92806")
+				(field
+					(name "Footprint") "DesktopSpeaker:PD_C_0603")
+				(field
+					(name "Datasheet") "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/8901/LMK107B7105KA-T.pdf")
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "PD_C")
+				(part "PD_C")
+				(description "Unpolarized capacitor")
+			)
+			(property
+				(name "MPN")
+				(value "LMK107B7105KA-T")
+			)
+			(property
+				(name "Manufacturer")
+				(value "Taiyo Yuden")
+			)
+			(property
+				(name "LCSC")
+				(value "C92806")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "ai-files/candidates/Fuel_Gauge_Power.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "cap capacitor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "4b260c4a-6b57-40f0-86a5-e83e47d88cce")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C125")
+			(value "1uF X7R 10V")
+			(footprint "DesktopSpeaker:PD_C_0603")
+			(datasheet "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/8901/LMK107B7105KA-T.pdf")
+			(fields
+				(field
+					(name "MPN") "LMK107B7105KA-T")
+				(field
+					(name "Manufacturer") "Taiyo Yuden")
+				(field
+					(name "LCSC") "C92806")
+				(field
+					(name "Footprint") "DesktopSpeaker:PD_C_0603")
+				(field
+					(name "Datasheet") "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/8901/LMK107B7105KA-T.pdf")
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "PD_C")
+				(part "PD_C")
+				(description "Unpolarized capacitor")
+			)
+			(property
+				(name "MPN")
+				(value "LMK107B7105KA-T")
+			)
+			(property
+				(name "Manufacturer")
+				(value "Taiyo Yuden")
+			)
+			(property
+				(name "LCSC")
+				(value "C92806")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "ai-files/candidates/Fuel_Gauge_Power.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "cap capacitor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "38293146-6598-4e8a-b297-05f29aa3054c")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C130")
+			(value "100nF")
+			(footprint "DesktopSpeaker:PD_C_0603")
+			(datasheet "${KIPRJMOD}/../ai-files/datasheets/Samsung_MLCC_LCSC_C1591_C1711.pdf")
+			(fields
+				(field
+					(name "MPN") "CL10B104KB8NNNC")
+				(field
+					(name "Manufacturer") "Samsung Electro-Mechanics")
+				(field
+					(name "LCSC") "C1591")
+				(field
+					(name "Footprint") "DesktopSpeaker:PD_C_0603")
+				(field
+					(name "Datasheet") "${KIPRJMOD}/../ai-files/datasheets/Samsung_MLCC_LCSC_C1591_C1711.pdf")
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "PD_C")
+				(part "PD_C")
+				(description "Unpolarized capacitor")
+			)
+			(property
+				(name "MPN")
+				(value "CL10B104KB8NNNC")
+			)
+			(property
+				(name "Manufacturer")
+				(value "Samsung Electro-Mechanics")
+			)
+			(property
+				(name "LCSC")
+				(value "C1591")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "ai-files/candidates/Fuel_Gauge_Power.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "cap capacitor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "fd9a64de-7687-4dde-b90a-b21763474e59")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C131")
+			(value "100nF")
+			(footprint "DesktopSpeaker:PD_C_0603")
+			(datasheet "${KIPRJMOD}/../ai-files/datasheets/Samsung_MLCC_LCSC_C1591_C1711.pdf")
+			(fields
+				(field
+					(name "MPN") "CL10B104KB8NNNC")
+				(field
+					(name "Manufacturer") "Samsung Electro-Mechanics")
+				(field
+					(name "LCSC") "C1591")
+				(field
+					(name "Footprint") "DesktopSpeaker:PD_C_0603")
+				(field
+					(name "Datasheet") "${KIPRJMOD}/../ai-files/datasheets/Samsung_MLCC_LCSC_C1591_C1711.pdf")
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "PD_C")
+				(part "PD_C")
+				(description "Unpolarized capacitor")
+			)
+			(property
+				(name "MPN")
+				(value "CL10B104KB8NNNC")
+			)
+			(property
+				(name "Manufacturer")
+				(value "Samsung Electro-Mechanics")
+			)
+			(property
+				(name "LCSC")
+				(value "C1591")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "ai-files/candidates/Fuel_Gauge_Power.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "cap capacitor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "3f12cfd0-b370-4704-990d-537755023c76")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C132")
+			(value "100nF")
+			(footprint "DesktopSpeaker:PD_C_0603")
+			(datasheet "${KIPRJMOD}/../ai-files/datasheets/Samsung_MLCC_LCSC_C1591_C1711.pdf")
+			(fields
+				(field
+					(name "MPN") "CL10B104KB8NNNC")
+				(field
+					(name "Manufacturer") "Samsung Electro-Mechanics")
+				(field
+					(name "LCSC") "C1591")
+				(field
+					(name "Footprint") "DesktopSpeaker:PD_C_0603")
+				(field
+					(name "Datasheet") "${KIPRJMOD}/../ai-files/datasheets/Samsung_MLCC_LCSC_C1591_C1711.pdf")
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "PD_C")
+				(part "PD_C")
+				(description "Unpolarized capacitor")
+			)
+			(property
+				(name "MPN")
+				(value "CL10B104KB8NNNC")
+			)
+			(property
+				(name "Manufacturer")
+				(value "Samsung Electro-Mechanics")
+			)
+			(property
+				(name "LCSC")
+				(value "C1591")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "ai-files/candidates/Fuel_Gauge_Power.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "cap capacitor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "f224b6df-6edf-4ac2-8712-123b5be21e90")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R120")
+			(value "4.7k")
+			(footprint "DesktopSpeaker:PD_R_0603")
+			(datasheet "${KIPRJMOD}/../ai-files/datasheets/Yageo_RC0603FR_series.pdf")
+			(fields
+				(field
+					(name "MPN") "RC0603FR-074K7L")
+				(field
+					(name "Manufacturer") "YAGEO")
+				(field
+					(name "LCSC") "C99782")
+				(field
+					(name "Footprint") "DesktopSpeaker:PD_R_0603")
+				(field
+					(name "Datasheet") "${KIPRJMOD}/../ai-files/datasheets/Yageo_RC0603FR_series.pdf")
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "PD_R")
+				(part "PD_R")
+				(description "Resistor")
+			)
+			(property
+				(name "MPN")
+				(value "RC0603FR-074K7L")
+			)
+			(property
+				(name "Manufacturer")
+				(value "YAGEO")
+			)
+			(property
+				(name "LCSC")
+				(value "C99782")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "ai-files/candidates/Fuel_Gauge_Power.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "13a23450-b233-47ab-9f9f-2d06c80494b1")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R121")
+			(value "4.7k")
+			(footprint "DesktopSpeaker:PD_R_0603")
+			(datasheet "${KIPRJMOD}/../ai-files/datasheets/Yageo_RC0603FR_series.pdf")
+			(fields
+				(field
+					(name "MPN") "RC0603FR-074K7L")
+				(field
+					(name "Manufacturer") "YAGEO")
+				(field
+					(name "LCSC") "C99782")
+				(field
+					(name "Footprint") "DesktopSpeaker:PD_R_0603")
+				(field
+					(name "Datasheet") "${KIPRJMOD}/../ai-files/datasheets/Yageo_RC0603FR_series.pdf")
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "PD_R")
+				(part "PD_R")
+				(description "Resistor")
+			)
+			(property
+				(name "MPN")
+				(value "RC0603FR-074K7L")
+			)
+			(property
+				(name "Manufacturer")
+				(value "YAGEO")
+			)
+			(property
+				(name "LCSC")
+				(value "C99782")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "ai-files/candidates/Fuel_Gauge_Power.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "474b520a-ade8-4d4b-aa1b-a6129da5ad32")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R122")
+			(value "47k")
+			(footprint "DesktopSpeaker:PD_R_0603")
+			(datasheet "${KIPRJMOD}/../ai-files/datasheets/Yageo_RC0603FR_series.pdf")
+			(fields
+				(field
+					(name "MPN") "RC0603FR-0747KL")
+				(field
+					(name "Manufacturer") "YAGEO")
+				(field
+					(name "LCSC") "C105579")
+				(field
+					(name "Footprint") "DesktopSpeaker:PD_R_0603")
+				(field
+					(name "Datasheet") "${KIPRJMOD}/../ai-files/datasheets/Yageo_RC0603FR_series.pdf")
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "PD_R")
+				(part "PD_R")
+				(description "Resistor")
+			)
+			(property
+				(name "MPN")
+				(value "RC0603FR-0747KL")
+			)
+			(property
+				(name "Manufacturer")
+				(value "YAGEO")
+			)
+			(property
+				(name "LCSC")
+				(value "C105579")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "ai-files/candidates/Fuel_Gauge_Power.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "65718700-bb77-4233-87c0-927905bfc7d5")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R124")
+			(value "180k")
+			(footprint "DesktopSpeaker:PD_R_0603")
+			(fields
+				(field
+					(name "Footprint") "DesktopSpeaker:PD_R_0603")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "PD_R")
+				(part "PD_R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "ai-files/candidates/Fuel_Gauge_Power.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "772aa8a3-2d4f-40d6-80af-7e313dc48b07")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R125")
+			(value "100k")
+			(footprint "DesktopSpeaker:PD_R_0603")
+			(fields
+				(field
+					(name "Footprint") "DesktopSpeaker:PD_R_0603")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "PD_R")
+				(part "PD_R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "ai-files/candidates/Fuel_Gauge_Power.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "60819f35-6d6a-4d03-b737-7afc9b5fdcc6")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "U5")
+			(value "MAX17048G+T10")
+			(footprint "DesktopSpeaker:MAX17048G+T10")
+			(datasheet "https://www.lcsc.com/datasheet/C2682616.pdf")
+			(fields
+				(field
+					(name "MPN") "MAX17048G+T10")
+				(field
+					(name "LCSC Part") "C2682616")
+				(field
+					(name "Manufacturer") "Analog Devices")
+				(field
+					(name "Footprint") "DesktopSpeaker:MAX17048G+T10")
+				(field
+					(name "Datasheet") "https://www.lcsc.com/datasheet/C2682616.pdf")
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "MAX17048G+T10")
+				(part "MAX17048G+T10")
+				(description "")
+			)
+			(property
+				(name "MPN")
+				(value "MAX17048G+T10")
+			)
+			(property
+				(name "LCSC Part")
+				(value "C2682616")
+			)
+			(property
+				(name "Manufacturer")
+				(value "Analog Devices")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "ai-files/candidates/Fuel_Gauge_Power.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "Battery Management ICs")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "b90bd223-2723-4871-9ac7-4253288894c8")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "4")
+						)
+						(pin
+							(num "9")
+						)
+						(pin
+							(num "8")
+						)
+						(pin
+							(num "7")
+						)
+						(pin
+							(num "6")
+						)
+						(pin
+							(num "5")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "U12")
+			(value "TPS7A0230PDBVR")
+			(footprint "DesktopSpeaker:TPS7A0230PDBVR")
+			(datasheet "https://www.ti.com/lit/ds/symlink/tps7a02.pdf")
+			(fields
+				(field
+					(name "MPN") "TPS7A0230PDBVR")
+				(field
+					(name "LCSC") "C3747031")
+				(field
+					(name "Footprint") "DesktopSpeaker:TPS7A0230PDBVR")
+				(field
+					(name "Datasheet") "https://www.ti.com/lit/ds/symlink/tps7a02.pdf")
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "TPS7A0230PDBVR")
+				(part "TPS7A0230PDBVR")
+				(description "TPS7A0230PDBVR")
+			)
+			(property
+				(name "MPN")
+				(value "TPS7A0230PDBVR")
+			)
+			(property
+				(name "LCSC")
+				(value "C3747031")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "ai-files/candidates/Fuel_Gauge_Power.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "cb962e16-089a-4732-a77f-d535cdfd5bbc")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "5")
+						)
+						(pin
+							(num "4")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "U13")
+			(value "TS5A3167DBVR")
+			(footprint "DesktopSpeaker:TS5A3167DBVR")
+			(datasheet "https://www.ti.com/lit/ds/symlink/ts5a3167.pdf")
+			(fields
+				(field
+					(name "MPN") "TS5A3167DBVR")
+				(field
+					(name "LCSC") "C128416")
+				(field
+					(name "Footprint") "DesktopSpeaker:TS5A3167DBVR")
+				(field
+					(name "Datasheet") "https://www.ti.com/lit/ds/symlink/ts5a3167.pdf")
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "TS5A3167DBVR")
+				(part "TS5A3167DBVR")
+				(description "1:1 bidirectional analog switch; active-low, powered-off isolation, SOT-23-5")
+			)
+			(property
+				(name "MPN")
+				(value "TS5A3167DBVR")
+			)
+			(property
+				(name "LCSC")
+				(value "C128416")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "ai-files/candidates/Fuel_Gauge_Power.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "155effd4-6074-47bd-8d83-923224b87662")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "4")
+						)
+						(pin
+							(num "5")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "U16")
+			(value "TS5A3167DBVR")
+			(footprint "DesktopSpeaker:TS5A3167DBVR")
+			(datasheet "https://www.ti.com/lit/ds/symlink/ts5a3167.pdf")
+			(fields
+				(field
+					(name "MPN") "TS5A3167DBVR")
+				(field
+					(name "LCSC") "C128416")
+				(field
+					(name "Footprint") "DesktopSpeaker:TS5A3167DBVR")
+				(field
+					(name "Datasheet") "https://www.ti.com/lit/ds/symlink/ts5a3167.pdf")
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "TS5A3167DBVR")
+				(part "TS5A3167DBVR")
+				(description "1:1 bidirectional analog switch; active-low, powered-off isolation, SOT-23-5")
+			)
+			(property
+				(name "MPN")
+				(value "TS5A3167DBVR")
+			)
+			(property
+				(name "LCSC")
+				(value "C128416")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "ai-files/candidates/Fuel_Gauge_Power.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "58f6df78-4108-4b03-96a1-f6de42008511")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "4")
+						)
+						(pin
+							(num "5")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "U17")
+			(value "TS5A3167DBVR")
+			(footprint "DesktopSpeaker:TS5A3167DBVR")
+			(datasheet "https://www.ti.com/lit/ds/symlink/ts5a3167.pdf")
+			(fields
+				(field
+					(name "MPN") "TS5A3167DBVR")
+				(field
+					(name "LCSC") "C128416")
+				(field
+					(name "Footprint") "DesktopSpeaker:TS5A3167DBVR")
+				(field
+					(name "Datasheet") "https://www.ti.com/lit/ds/symlink/ts5a3167.pdf")
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "TS5A3167DBVR")
+				(part "TS5A3167DBVR")
+				(description "1:1 bidirectional analog switch; active-low, powered-off isolation, SOT-23-5")
+			)
+			(property
+				(name "MPN")
+				(value "TS5A3167DBVR")
+			)
+			(property
+				(name "LCSC")
+				(value "C128416")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "ai-files/candidates/Fuel_Gauge_Power.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "86cc5b6a-c26b-4820-ba66-6744dc495d5c")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "4")
+						)
+						(pin
+							(num "5")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "U20")
+			(value "TPS2116DRLR")
+			(footprint "DesktopSpeaker:TPS2116DRLR")
+			(datasheet "${KIPRJMOD}/../ai-files/datasheets/TPS2116.pdf")
+			(fields
+				(field
+					(name "Manufacturer") "Texas Instruments")
+				(field
+					(name "MPN") "TPS2116DRLR")
+				(field
+					(name "LCSC") "C3235557")
+				(field
+					(name "Footprint") "DesktopSpeaker:TPS2116DRLR")
+				(field
+					(name "Datasheet") "${KIPRJMOD}/../ai-files/datasheets/TPS2116.pdf")
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "TPS2116DRLR")
+				(part "TPS2116DRLR")
+				(description "2 Channels Power Mux with Manual and Priority Switchover, 1.6-5.5V Input Voltage, 2.5A Output Current, Ron 40 mOhm, SOT-5X3 8-pin priority power mux")
+			)
+			(property
+				(name "Manufacturer")
+				(value "Texas Instruments")
+			)
+			(property
+				(name "MPN")
+				(value "TPS2116DRLR")
+			)
+			(property
+				(name "LCSC")
+				(value "C3235557")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "ai-files/candidates/Fuel_Gauge_Power.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "Texas-Instruments power-mux switchover")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "SOT?5?3*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "e756450c-4a6c-4fcc-9abf-19b5fbef153f")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "4")
+						)
+						(pin
+							(num "6")
+						)
+						(pin
+							(num "5")
+						)
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "7")
+						)
+						(pin
+							(num "8")
+						)
+					)
+				)
+			)
+		)
+	)
+	(groups)
+	(variants)
+	(libparts
+		(libpart
+			(lib "MAX17048G+T10")
+			(part "MAX17048G+T10")
+			(docs "https://www.lcsc.com/datasheet/C2682616.pdf")
+			(fields
+				(field
+					(name "Reference") "U")
+				(field
+					(name "Value") "MAX17048G+T10")
+				(field
+					(name "Footprint") "DesktopSpeaker:MAX17048G+T10")
+				(field
+					(name "Datasheet") "https://www.lcsc.com/datasheet/C2682616.pdf")
+				(field
+					(name "Description")
+				)
+				(field
+					(name "Manufacturer") "ADI(亚德诺)/MAXIM(美信)")
+				(field
+					(name "MPN") "MAX17048G+T10")
+				(field
+					(name "LCSC Part") "C2682616")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "CTG")
+					(type "power_in")
+				)
+				(pin
+					(num "2")
+					(name "CELL")
+					(type "no_connect")
+				)
+				(pin
+					(num "3")
+					(name "VDD")
+					(type "power_in")
+				)
+				(pin
+					(num "4")
+					(name "GND")
+					(type "power_in")
+				)
+				(pin
+					(num "5")
+					(name "~{ALRT}")
+					(type "open_collector")
+				)
+				(pin
+					(num "6")
+					(name "QSTRT")
+					(type "input")
+				)
+				(pin
+					(num "7")
+					(name "SCL")
+					(type "input")
+				)
+				(pin
+					(num "8")
+					(name "SDA")
+					(type "bidirectional")
+				)
+				(pin
+					(num "9")
+					(name "EP")
+					(type "power_in")
+				)
+			)
+		)
+		(libpart
+			(lib "PD_C")
+			(part "PD_C")
+			(description "Unpolarized capacitor")
+			(footprints
+				(fp "C_*")
+			)
+			(fields
+				(field
+					(name "Reference") "C")
+				(field
+					(name "Value") "C")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Unpolarized capacitor")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "PD_R")
+			(part "PD_R")
+			(description "Resistor")
+			(footprints
+				(fp "R_*")
+			)
+			(fields
+				(field
+					(name "Reference") "R")
+				(field
+					(name "Value") "R")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Resistor")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "TPS2116DRLR")
+			(part "TPS2116DRLR")
+			(description "2 Channels Power Mux with Manual and Priority Switchover, 1.6-5.5V Input Voltage, 2.5A Output Current, Ron 40 mOhm, SOT-5X3 8-pin priority power mux")
+			(docs "../ai-files/datasheets/TPS2116.pdf")
+			(footprints
+				(fp "SOT?5?3*")
+			)
+			(fields
+				(field
+					(name "Reference") "U")
+				(field
+					(name "Value") "TPS2116DRLR")
+				(field
+					(name "Footprint") "DesktopSpeaker:TPS2116DRLR")
+				(field
+					(name "Datasheet") "../ai-files/datasheets/TPS2116.pdf")
+				(field
+					(name "Description") "2 Channels Power Mux with Manual and Priority Switchover, 1.6-5.5V Input Voltage, 2.5A Output Current, Ron 40 mOhm, SOT-5X3 8-pin priority power mux")
+				(field
+					(name "Manufacturer") "Texas Instruments")
+				(field
+					(name "MPN") "TPS2116DRLR")
+				(field
+					(name "LCSC Part") "C3235557")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "GND")
+					(type "power_in")
+				)
+				(pin
+					(num "3")
+					(name "VIN1")
+					(type "power_in")
+				)
+				(pin
+					(num "4")
+					(name "PR1")
+					(type "input")
+				)
+				(pin
+					(num "5")
+					(name "MODE")
+					(type "input")
+				)
+				(pin
+					(num "6")
+					(name "VIN2")
+					(type "power_in")
+				)
+				(pin
+					(num "8")
+					(name "ST")
+					(type "open_collector")
+				)
+				(pin
+					(num "2")
+					(name "VOUT")
+					(type "power_out")
+				)
+				(pin
+					(num "7")
+					(name "VOUT")
+					(type "power_out")
+				)
+			)
+		)
+		(libpart
+			(lib "TPS7A0230PDBVR")
+			(part "TPS7A0230PDBVR")
+			(description "TPS7A0230PDBVR")
+			(docs "https://www.ti.com/lit/ds/symlink/tps7a02.pdf")
+			(fields
+				(field
+					(name "Reference") "U")
+				(field
+					(name "Value") "TPS7A0230PDBVR")
+				(field
+					(name "Footprint") "DesktopSpeaker:TPS7A0230PDBVR")
+				(field
+					(name "Datasheet") "https://www.ti.com/lit/ds/symlink/tps7a02.pdf")
+				(field
+					(name "Description") "TPS7A0230PDBVR")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "IN")
+					(type "power_in")
+				)
+				(pin
+					(num "2")
+					(name "GND")
+					(type "power_in")
+				)
+				(pin
+					(num "3")
+					(name "EN")
+					(type "input")
+				)
+				(pin
+					(num "4")
+					(name "NC")
+					(type "no_connect")
+				)
+				(pin
+					(num "5")
+					(name "OUT")
+					(type "power_out")
+				)
+			)
+		)
+		(libpart
+			(lib "TS5A3167DBVR")
+			(part "TS5A3167DBVR")
+			(description "1:1 bidirectional analog switch; active-low, powered-off isolation, SOT-23-5")
+			(docs "https://www.ti.com/lit/ds/symlink/ts5a3167.pdf")
+			(fields
+				(field
+					(name "Reference") "U")
+				(field
+					(name "Value") "TS5A3167DBVR")
+				(field
+					(name "Footprint") "DesktopSpeaker:TS5A3167DBVR")
+				(field
+					(name "Datasheet") "https://www.ti.com/lit/ds/symlink/ts5a3167.pdf")
+				(field
+					(name "Description") "1:1 bidirectional analog switch; active-low, powered-off isolation, SOT-23-5")
+				(field
+					(name "MPN") "TS5A3167DBVR")
+				(field
+					(name "LCSC") "C128416")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "NC")
+					(type "bidirectional")
+				)
+				(pin
+					(num "2")
+					(name "COM")
+					(type "bidirectional")
+				)
+				(pin
+					(num "3")
+					(name "GND")
+					(type "power_in")
+				)
+				(pin
+					(num "4")
+					(name "IN")
+					(type "input")
+				)
+				(pin
+					(num "5")
+					(name "VCC")
+					(type "power_in")
+				)
+			)
+		)
+	)
+	(libraries)
+	(nets
+		(net
+			(code "1")
+			(name "/3V_AO")
+			(class "Default")
+			(node
+				(ref "C123")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R120")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R121")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R122")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U12")
+				(pin "5")
+				(pinfunction "OUT_5")
+				(pintype "power_out")
+			)
+		)
+		(net
+			(code "2")
+			(name "/BAT_PACK")
+			(class "Default")
+			(node
+				(ref "C120")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "C121")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "C130")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "C131")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "C132")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U13")
+				(pin "5")
+				(pinfunction "VCC_5")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U16")
+				(pin "5")
+				(pinfunction "VCC_5")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U17")
+				(pin "5")
+				(pinfunction "VCC_5")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U5")
+				(pin "3")
+				(pinfunction "VDD_3")
+				(pintype "power_in")
+			)
+		)
+		(net
+			(code "3")
+			(name "/GAUGE_ALRT_N")
+			(class "Default")
+			(node
+				(ref "R122")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U17")
+				(pin "2")
+				(pinfunction "COM_2")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "4")
+			(name "/GAUGE_SCL")
+			(class "Default")
+			(node
+				(ref "R120")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U16")
+				(pin "2")
+				(pinfunction "COM_2")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "5")
+			(name "/GAUGE_SDA")
+			(class "Default")
+			(node
+				(ref "R121")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U13")
+				(pin "2")
+				(pinfunction "COM_2")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "6")
+			(name "/SYS_RAW")
+			(class "Default")
+			(node
+				(ref "C125")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U20")
+				(pin "6")
+				(pinfunction "VIN2_6")
+				(pintype "power_in")
+			)
+		)
+		(net
+			(code "7")
+			(name "/USB_AUX_5V")
+			(class "Default")
+			(node
+				(ref "C124")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R124")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U20")
+				(pin "3")
+				(pinfunction "VIN1_3")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U20")
+				(pin "5")
+				(pinfunction "MODE_5")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "8")
+			(name "GND")
+			(class "Default")
+			(node
+				(ref "C120")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C121")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C122")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C123")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C124")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C125")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C130")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C131")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C132")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R125")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U12")
+				(pin "2")
+				(pinfunction "GND_2")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U13")
+				(pin "3")
+				(pinfunction "GND_3")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U13")
+				(pin "4")
+				(pinfunction "IN_4")
+				(pintype "input")
+			)
+			(node
+				(ref "U16")
+				(pin "3")
+				(pinfunction "GND_3")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U16")
+				(pin "4")
+				(pinfunction "IN_4")
+				(pintype "input")
+			)
+			(node
+				(ref "U17")
+				(pin "3")
+				(pinfunction "GND_3")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U17")
+				(pin "4")
+				(pinfunction "IN_4")
+				(pintype "input")
+			)
+			(node
+				(ref "U20")
+				(pin "1")
+				(pinfunction "GND_1")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U5")
+				(pin "1")
+				(pinfunction "CTG_1")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U5")
+				(pin "4")
+				(pinfunction "GND_4")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U5")
+				(pin "6")
+				(pinfunction "QSTRT_6")
+				(pintype "input")
+			)
+			(node
+				(ref "U5")
+				(pin "9")
+				(pinfunction "EP_9")
+				(pintype "power_in")
+			)
+		)
+		(net
+			(code "9")
+			(name "Net-(U12-EN)")
+			(class "Default")
+			(node
+				(ref "C122")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U12")
+				(pin "1")
+				(pinfunction "IN_1")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U12")
+				(pin "3")
+				(pinfunction "EN_3")
+				(pintype "input")
+			)
+			(node
+				(ref "U20")
+				(pin "2")
+				(pinfunction "VOUT_2")
+				(pintype "power_out")
+			)
+			(node
+				(ref "U20")
+				(pin "7")
+				(pinfunction "VOUT_7")
+				(pintype "power_out")
+			)
+		)
+		(net
+			(code "10")
+			(name "Net-(U13-NC)")
+			(class "Default")
+			(node
+				(ref "U13")
+				(pin "1")
+				(pinfunction "NC_1")
+				(pintype "bidirectional")
+			)
+			(node
+				(ref "U5")
+				(pin "8")
+				(pinfunction "SDA_8")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "11")
+			(name "Net-(U16-NC)")
+			(class "Default")
+			(node
+				(ref "U16")
+				(pin "1")
+				(pinfunction "NC_1")
+				(pintype "bidirectional")
+			)
+			(node
+				(ref "U5")
+				(pin "7")
+				(pinfunction "SCL_7")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "12")
+			(name "Net-(U17-NC)")
+			(class "Default")
+			(node
+				(ref "U17")
+				(pin "1")
+				(pinfunction "NC_1")
+				(pintype "bidirectional")
+			)
+			(node
+				(ref "U5")
+				(pin "5")
+				(pinfunction "~{ALRT}_5")
+				(pintype "open_collector")
+			)
+		)
+		(net
+			(code "13")
+			(name "Net-(U20-PR1)")
+			(class "Default")
+			(node
+				(ref "R124")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R125")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U20")
+				(pin "4")
+				(pinfunction "PR1_4")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "14")
+			(name "unconnected-(U5-CELL-Pad2)")
+			(class "Default")
+			(node
+				(ref "U5")
+				(pin "2")
+				(pinfunction "CELL_2")
+				(pintype "no_connect")
+			)
+		)
+		(net
+			(code "15")
+			(name "unconnected-(U12-NC-Pad4)")
+			(class "Default")
+			(node
+				(ref "U12")
+				(pin "4")
+				(pinfunction "NC_4")
+				(pintype "no_connect")
+			)
+		)
+		(net
+			(code "16")
+			(name "unconnected-(U20-ST-Pad8)")
+			(class "Default")
+			(node
+				(ref "U20")
+				(pin "8")
+				(pinfunction "ST_8")
+				(pintype "open_collector+no_connect")
+			)
+		)
+	)
+)

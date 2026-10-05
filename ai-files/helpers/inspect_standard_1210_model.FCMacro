@@ -1,0 +1,10 @@
+import FreeCAD as App
+import Part
+import json
+p='/home/chithi/.local/share/flatpak/runtime/org.kicad.KiCad.Library.Packages3D/x86_64/beta/dea563e605c33133d67186ee2c0e13f523783d384aec223a80053bc95fe99ba4/files/3dmodels/Capacitor_SMD.3dshapes/C_1210_3225Metric.step'
+s=Part.Shape()
+s.read(p)
+b=s.BoundBox
+out={'source':p,'valid':s.isValid(),'solids':len(s.Solids),'x_mm':[b.XMin,b.XMax,b.XLength],'y_mm':[b.YMin,b.YMax,b.YLength],'z_mm':[b.ZMin,b.ZMax,b.ZLength]}
+open('/home/chithi/Desktop/DesktopSpeaker/ai-files/reports/standard-1210-model-bounds.json','w').write(json.dumps(out,indent=2)+'\n')
+App.closeDocument(App.ActiveDocument.Name) if App.ActiveDocument else None

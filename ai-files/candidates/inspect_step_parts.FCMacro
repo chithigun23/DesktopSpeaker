@@ -1,0 +1,9 @@
+import FreeCAD as App, Part, json, os
+for file,out in [('RQM0029A.stp','bq25792-step-parts.json'),('DNH0008A.stp','csd17579-step-parts.json')]:
+ p=os.path.abspath('ai-files/candidates/'+file); s=Part.Shape(); s.read(p)
+ arr=[]
+ for i,x in enumerate(s.Solids):
+  b=x.BoundBox; c=x.CenterOfMass
+  arr.append({'i':i,'bbox':[round(b.XMin,4),round(b.XMax,4),round(b.YMin,4),round(b.YMax,4),round(b.ZMin,4),round(b.ZMax,4)],'center':[round(c.x,4),round(c.y,4),round(c.z,4)],'vol':round(x.Volume,6)})
+ json.dump({'file':file,'solids':arr},open('ai-files/reports/'+out,'w'),indent=2)
+ print(file,len(arr))

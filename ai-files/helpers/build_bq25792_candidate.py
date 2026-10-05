@@ -30,6 +30,29 @@ def eff(size=1.0, just=None, hide=False):
 
 src=load(open(SRC)); source_lib=one(src,'lib_symbols')
 part=load(open(PART)); u4lib=copy.deepcopy(one(part,'symbol')); u4lib[1]='BQ25792RQMR:BQ25792RQMR'
+# Preserve visible functional names and pin numbers, with a compact readable font.
+for sub in allof(u4lib,'symbol'):
+    if str(sub[1]).endswith('_1_1'):
+        for pin in allof(sub,'pin'):
+            number=str(one(pin,'number')[1])
+            top_x={'[2-3]':-20.32,'8':-10.16,'9':0.0,'29':10.16,'5':20.32}.get(number)
+            if top_x is not None:
+                one(pin,'at')[1]=top_x
+            name=one(pin,'name')
+            short_names={'~{STAT}':'STAT','ILIM_HIZ':'HIZ/ILIM','ACDRV1':'ACD1','ACDRV2':'ACD2'}
+            if name[1] in short_names: name[1]=short_names[name[1]]
+            if str(one(pin,'number')[1]) in ('1','6','7','12','13','14','15','16','17','20','21','25','[22-23]','18','28','4','26','19','24','11','10'):
+                one(pin,'at')[1]=(-27.94 if float(one(pin,'at')[1])<0 else 27.94)
+    if str(sub[1]).endswith('_0_1'):
+        rect=next((v for v in allof(sub,'rectangle')),None)
+        if rect: one(rect,'start')[1:3]=[-25.4,15.24]; one(rect,'end')[1:3]=[25.4,-15.24]
+        circ=next((v for v in allof(sub,'circle')),None)
+        if circ: one(circ,'center')[1:3]=[-24.13,13.97]
+    for pin in allof(sub,'pin'):
+        for propname in ('name','number'):
+            prop=one(pin,propname)
+            size=one(one(prop,'effects'),'font')
+            one(size,'size')[1:]=[0.75,0.75]
 lib_symbols=[S('lib_symbols'),u4lib]
 needed=('PD_R:PD_R','PD_C:PD_C','Device:L','Connector_Generic:Conn_01x03',
         '2N7002:2N7002','power:GND','Switch:SW_Push','Switch:SW_SPST')
@@ -259,7 +282,10 @@ path((351.81,212),(356,212)); label('BATP_SENSE',356,212)
 # 1S PROG setup; R102 repurposed from the retired old-charger ILIM resistor.
 prog=P('20'); passive('R102',164,214,value='4.7k')
 for p in allof(obj_by_ref['R102'],'property'):
-    if p[1] in ('MPN','LCSC Part','LCSC','Manufacturer','Datasheet'): p[2]=''
+    if p[1]=='MPN': p[2]='RC0603FR-074K7L'
+    elif p[1] in ('LCSC Part','LCSC'): p[2]='C99782'
+    elif p[1]=='Manufacturer': p[2]='YAGEO'
+    elif p[1]=='Datasheet': p[2]='${KIPRJMOD}/../ai-files/datasheets/Yageo_RC0603FR_series.pdf'
 path(prog,(prog[0]-14,prog[1]),(150,prog[1]),(150,210.19),(164,210.19)); path((164,217.81),(164,225)); gnd(164,225)
 
 # TS network preserves the pack NTC port plus provisional fixed bias resistors.
@@ -308,32 +334,33 @@ qon=P('12');
 make_generic('Switch:SW_Push','SW100','WAKE_QON',298,214,'')
 path(qon,(270,qon[1]),(270,214),(292.92,214)); path((303.08,214),(311,214)); gnd(311,214)
 
-note('1S Li-ion; PROG 4.7k = 750kHz. Charge target 1A is firmware-only; POR 2A must remain disabled.',34,42,1.15)
-note('ILIM_HIZ low keeps switching off; POR sample below1.08V caches100mA. EN_EXTILIM/watchdog policy unresolved.',34,48,1.0)
-note('Do not release CHG_SYS_ENABLE before source-specific IINDPM. Prove REG_RST/watchdog behavior in firmware.',34,53,1.0)
-note('DP/DM left ports require a source-selection mux; do not tie to codec. SYS_RAW is variable NVDC, not 5V.',34,58,1.0)
-note('L1 2.2uH/6A is provisional: total SYS + charge current and ripple need product-load/thermal review.',34,63,1.0)
-note('Pack and 10k NTC profile pending. QON wake defaults to ~1s low (15ms if configured); verify button hold.',34,68,1.0)
-note('TPS2116 SYS max5.5V; 1S default4.27–4.55V at BAT4.2; SYSMIN 3.5–4.1V; qualify SYSOVP/transients.',34,73,1.0)
-note('PMID follows high input path: 35V caps shown; verify effective capacitance, derating and surge.',274,84,1.0)
-note('50uF nominal BQ bank counts in PD bulk budget; keep shared nominal bank <=100uF.',274,89,1.0)
+note('Startup: keep HIZ clamped through POR; clear EN_EXTILIM, program/read back IINDPM and 1S limits before enabling SYS. Verify reset/watchdog recovery.',45,266,1.0)
+note('Set REG14.SFET_PRESENT=1 before SDRV ship control. MCU reset/REG_RST requires reconfiguration. Pack 10k NTC curve and QON timing pending.',45,271,1.0)
+note('R102 4.7k = 1S/750kHz; use 1A initial charge target. D+/D− stay raw for mux. SYS_RAW varies; qualify TPS2116 5.5V limit/transients.',45,276,1.0)
+note('L1 2.2uH/6A and input MLCCs are provisional: qualify 20V surge/DC-bias, audio+charge current, ripple, efficiency and thermal limits.',45,281,1.0)
 
 # Tighten the functional grouping around U4 before laying wires.
-positions={'C101':(268,96),'C108':(288,96),'C112':(308,96),'C114':(328,96),
- 'C102':(228,96),'C109':(246,96),'C103':(260,119.38),'C110':(260,124.46),
- 'L1':(286,124),'C104':(286,165),'C105':(307,165),'C107':(328,165),'C106':(258,166),
- 'Q103':(267,145),'R112':(300,195),'J5':(365,189.23),'SW101':(345,186.69),'SW100':(258,190),
- 'R102':(160,165),'R100':(167,178),'R101':(185,178),'R108':(165,145),'R109':(181,156),
- 'R110':(198,156),'Q101':(213,166),'Q102':(240,180),'R111':(256,186),
- 'Q100':(145,185),'R103':(162,190),'R107':(130,195),'R106':(185,197)}
+positions={'C100':(110,96.52),'C111':(130,96.52),'C113':(150,96.52),
+ 'C101':(300,96.52),'C108':(320,96.52),'C112':(340,96.52),'C114':(360,96.52),
+ 'C102':(260,96.52),'C109':(280,96.52),'C103':(280,119.38),'C110':(280,124.46),
+ 'L1':(320,121.92),'C104':(300,170),'C105':(335,170),'C107':(370,170),'C106':(350,195),
+ 'Q103':(325,158),'R112':(320,190),'J5':(385,220),'SW101':(360,217.46),'SW100':(150,170),
+ 'R102':(155,185),'R100':(185,180),'R101':(210,187.62),'R108':(260,165),'R109':(280,180),
+ 'R110':(260,195),'Q101':(300,195),'Q102':(315,238),'R111':(340,255),
+ 'Q100':(150,235),'R103':(180,225),'R107':(130,245),'R106':(210,235),
+ }
 for ref,(nx,ny) in positions.items():
     inst=getinst(ref) if 'getinst' in globals() else next(v for v in allof(sch,'symbol') if find_prop(v,'Reference')[2]==ref)
     old=one(inst,'at'); dx,dy=grid(nx)-float(old[1]),grid(ny)-float(old[2]); old[1:]=[grid(nx),grid(ny),90 if ref in ('C103','C110') else old[3]]
     for prop in allof(inst,'property'):
         atp=allof(prop,'at')
-        if atp: atp[0][1:]=[grid(float(atp[0][1])+dx),grid(float(atp[0][2])+dy),atp[0][3]]
+        if atp: atp[0][1:]=[grid(float(atp[0][1])+dx),grid(float(atp[0][2])+dy),0]
+for ref,(rx,ry) in {'C103':(290,113.03),'C110':(290,127.0),'L1':(329,119.38)}.items():
+    obj=next(v for v in allof(sch,'symbol') if find_prop(v,'Reference')[2]==ref)
+    find_prop(obj,'Reference')[3]=at(rx,ry,0)
+    find_prop(obj,'Value')[3]=at(rx,ry+2.54,0)
 u4_now=next(v for v in allof(sch,'symbol') if find_prop(v,'Reference')[2]=='U4')
-find_prop(u4_now,'Reference')[3]=at(U4_X,153.67,0); find_prop(u4_now,'Value')[3]=at(U4_X,156.21,0)
+find_prop(u4_now,'Reference')[3]=at(U4_X,156.21,0); find_prop(u4_now,'Value')[3]=at(U4_X,158.75,0)
 
 # Rebuild electrical geometry from pin coordinates. This discards the first
 # draft's long crossing wires, then uses short local wires/labels between
@@ -364,72 +391,96 @@ def wirelabel(ref,pinno,name):
         end=(x,grid(y+(2.54 if dy>0 else -2.54)))
         path((x,y),end); label(name,*end,'left')
 
-# Charger IC pins.
-for n in ('[2-3]','8','9'): wirelabel('U4',n,'VBUS_PD')
-for n,net in [('29','PMID'),('25','SYS_RAW'),('18','BATP_SENSE'),
-              ('24','SDRV'),('13','CE_N'),('14','CHG_SCL'),('15','CHG_SDA'),
-              ('6','CHG_DP_RAW'),('7','CHG_DM_RAW'),('12','QON_SW'),('16','TS_SENSE'),
-              ('17','ILIM_HIZ'),('20','PROG'),('21','CHG_INT')]: wirelabel('U4',n,net)
-nc(*P('1'))
-for pinno in ('10','11','27'):
-    gnd(*point_for('U4',pinno)[:2])
-# Input and output hierarchical ports, each on a clear independent stub.
-for name,y in [('VBUS_PD',93),('CHG_DP_RAW',108),('CHG_DM_RAW',118),('CHG_SCL',148),('CHG_SDA',158),
-               ('CHG_ENABLE',218),('CHG_SYS_ENABLE',233),('CHG_VIO_3V0',248)]:
-    port(name,38,y,'bidirectional' if name in ('CHG_SCL','CHG_SDA') else 'input'); path((38,y),(43.08,y))
-for name,y in [('SYS_RAW',129.54),('CHG_INT',208),('BAT_PACK',242.46)]:
-    port(name,390,y,'bidirectional' if name=='BAT_PACK' else 'output','right'); path((382.38,y),(390,y))
+# Recompute all U4 wiring from the corrected physical symbol endpoints.
+nc(*point_for('U4','1')[:2])
+for pinno in ('10','11','27'): gnd(*point_for('U4',pinno)[:2])
 
-# Capacitor banks: input/PMID/REGN/SYS/BAT decoupling.
-def rail_caps(refs,net,top,bottom):
-    pts=[]
+# VBUS, VAC1 and VAC2 share one direct top rail. Separate PMID/REGN rails remain isolated.
+port('VBUS_PD',65,82.55,'input'); path((65,82.55),(110,82.55))
+for pinno in ('[2-3]','8','9'):
+    ep=point_for('U4',pinno)[:2]; path(ep,(ep[0],82.55))
+vbus=point_for('U4','[2-3]')[:2]; path((110,82.55),(vbus[0],82.55)); junction(vbus[0],82.55)
+def rail_caps(refs,top,bottom):
+    xs=[]
     for ref in refs:
         p1=point_for(ref,'1')[:2]; p2=point_for(ref,'2')[:2]; x=p1[0]
-        path(p1,(x,top)); path(p2,(x,bottom)); pts.append(x)
-    pts=sorted(pts); path((pts[0],top),(pts[-1],top)); path((pts[0],bottom),(pts[-1],bottom))
-    for x in pts: junction(x,top); junction(x,bottom)
-    label(net,pts[0],top); gnd(pts[-1],bottom)
-rail_caps(('C100','C111','C113'),'VBUS_PD',82.55,114.3)
-rail_caps(('C101','C108','C112','C114'),'PMID',82.55,114.3)
-rail_caps(('C102','C109'),'REGN',82.55,114.3)
-rail_caps(('C104','C105','C107'),'SYS_RAW',151.13,183.0)
-# BAT decoupling is local to the ship FET path; its single lower terminal has a downward ground symbol.
-wirelabel('C106','1','BAT_INT'); gnd(*point_for('C106','2')[:2])
-# One REGN ceramic runs directly from the pin to its local decoupling rail.
-regpin=point_for('U4','5')[:2]; regcap=point_for('C102','1')[:2]
-path(regpin,(regpin[0],88.9),(regcap[0],88.9),regcap)
-# Two independent bootstrap pairs and the inductor.
-def connect_bootstrap(bt_pin,sw_pin,cap,bt_name,sw_name):
-    bx,by,_,_=point_for('U4',bt_pin); sx,sy,_,_=point_for('U4',sw_pin)
-    c1x,c1y,_,_=point_for(cap,'1'); c2x,c2y,_,_=point_for(cap,'2')
-    # Two distinct orthogonal lanes connect BTST to the top capacitor pin and
-    # SW to the bottom pin without crossing at the 2.54 mm IC pitch.
-    path((bx,by),(c1x,c1y))
-    lane=grid(sx+13.97)
-    path((sx,sy),(lane,sy),(lane,c2y),(c2x,c2y))
-    label(sw_name,c2x,c2y)
-connect_bootstrap('4','28','C103','BTST1','SW1')
-connect_bootstrap('19','26','C110','BTST2','SW2')
-wirelabel('L1','1','SW1'); wirelabel('L1','2','SW2')
-# Pack connector, mechanical disconnect, and external SDRV ship FET in series.
-j1=point_for('J5','1')[:2]; swb=point_for('SW101','2')[:2]; path(j1,swb)
-wirelabel('J5','2','TS_SENSE'); gnd(*point_for('J5','3')[:2])
-wirelabel('SW101','1','BAT_PACK')
-batpin=P('[22-23]'); ssx,ssy,_,_=point_for('Q103','[1-3]')
-path(batpin,(260.35,batpin[1]),(260.35,156.21),(ssx,156.21),(ssx,ssy)); label('BAT_INT',260.35,156.21)
-wirelabel('Q103','[5-9]','BAT_PACK'); wirelabel('Q103','4','SDRV')
-wirelabel('R112','1','BAT_PACK'); wirelabel('R112','2','BATP_SENSE')
-# TS, 1S PROG, and default-off analog input-current ceiling.
-for ref,a,b in [('R100','REGN','TS_SENSE'),('R101','TS_SENSE','GND'),('R102','PROG','GND'),
-                ('R108','REGN','ILIM_HIZ'),('R109','ILIM_HIZ','GND'),('R110','REGN','Q101_GATE'),
-                ('R111','CHG_SYS_ENABLE','GND'),('R103','REGN','CE_N'),('R107','CHG_ENABLE','GND'),
-                ('R106','CHG_VIO_3V0','CHG_INT')]:
-    (gnd(*point_for(ref,'1')[:2]) if a=='GND' else wirelabel(ref,'1',a))
-    (gnd(*point_for(ref,'2')[:2]) if b=='GND' else wirelabel(ref,'2',b))
-for ref,nets in [('Q101',('Q101_GATE','GND','ILIM_HIZ')),('Q102',('CHG_SYS_ENABLE','GND','Q101_GATE')),
-                 ('Q100',('CHG_ENABLE','GND','CE_N'))]:
-    for pn,net in zip(('1','2','3'),nets): (gnd(*point_for(ref,pn)[:2]) if net=='GND' else wirelabel(ref,pn,net))
-wirelabel('SW100','1','QON_SW'); gnd(*point_for('SW100','2')[:2])
+        path(p1,(x,top)); path(p2,(x,bottom)); xs.append(x)
+    xs=sorted(xs); path((xs[0],top),(xs[-1],top)); path((xs[0],bottom),(xs[-1],bottom))
+    for x in xs: junction(x,top); junction(x,bottom)
+    gnd(xs[-1],bottom)
+rail_caps(('C100','C111','C113'),82.55,114.3)
+rail_caps(('C101','C108','C112','C114'),76.2,114.3)
+rail_caps(('C102','C109'),82.55,114.3)
+rail_caps(('C104','C105','C107'),158.75,185.42)
+pmid=point_for('U4','29')[:2]; c101=point_for('C101','1')[:2]
+path(pmid,(pmid[0],76.2),(c101[0],76.2)); junction(pmid[0],76.2)
+reg=point_for('U4','5')[:2]; c102=point_for('C102','1')[:2]; path(reg,(reg[0],c102[1]),c102)
+
+# Direct hierarchical input/output ports and SYS decoupling rail.
+for name,pinno,direction in [('CHG_DP_RAW','6','input'),('CHG_DM_RAW','7','input'),('CHG_SCL','14','bidirectional'),('CHG_SDA','15','bidirectional')]:
+    ep=point_for('U4',pinno)[:2]; port(name,70,ep[1],direction); path((70,ep[1]),ep)
+sys=point_for('U4','25')[:2]; port('SYS_RAW',410,sys[1],'output','right'); path(sys,(410,sys[1]))
+irq=point_for('U4','21')[:2]; port('CHG_INT',410,irq[1],'output','right'); path(irq,(410,irq[1]))
+q100g=point_for('Q100','1')[:2]; port('CHG_ENABLE',70,q100g[1],'input'); path((70,q100g[1]),q100g)
+q102g=point_for('Q102','1')[:2]; port('CHG_SYS_ENABLE',70,q102g[1],'input'); path((70,q102g[1]),q102g)
+vio=point_for('R106','1')[:2]; port('CHG_VIO_3V0',70,vio[1],'input'); path((70,vio[1]),vio)
+sysc=point_for('C104','1')[:2]; lane=sys[0]+32.0
+path(sys,(lane,sys[1]),(lane,158.75),(sysc[0],158.75)); junction(lane,sys[1]); junction(lane,158.75)
+
+# Horizontal bootstrap capacitors are wired directly from BTST to SW, with L1 beyond each SW node.
+for btn,swp,cap,lpin in [('4','28','C103','1'),('19','26','C110','2')]:
+    bt=point_for('U4',btn)[:2]; sw=point_for('U4',swp)[:2]
+    c1=point_for(cap,'1')[:2]; c2=point_for(cap,'2')[:2]
+    path(bt,c1)
+    path(sw,(c2[0],sw[1]),c2)
+    lp=point_for('L1',lpin)[:2]; path(c2,(lp[0],c2[1]),lp)
+
+# Direct battery power path: BQ BAT -> external ship FET -> mechanical disconnect -> pack connector.
+bat=point_for('U4','[22-23]')[:2]; qsrc=point_for('Q103','[1-3]')[:2]
+path(bat,(270,bat[1]),(270,qsrc[1]),(qsrc[0],qsrc[1])); junction(270,bat[1])
+sdrv=point_for('U4','24')[:2]; qgate=point_for('Q103','4')[:2]
+path(sdrv,(285,sdrv[1]),(285,qgate[1]),qgate)
+qdrain=point_for('Q103','[5-9]')[:2]; sw1=point_for('SW101','1')[:2]
+path(qdrain,(sw1[0],qdrain[1]),(sw1[0],sw1[1]),sw1)
+sw2=point_for('SW101','2')[:2]; j1=point_for('J5','1')[:2]
+path(sw2,(j1[0],sw2[1]),j1)
+port('BAT_PACK',410,sw1[1],'bidirectional','right'); path(sw1,(410,sw1[1])); junction(sw1[0],sw1[1])
+label('TS_SENSE',*point_for('J5','2')[:2]); gnd(*point_for('J5','3')[:2])
+qbat=point_for('C106','1')[:2]; gnd(*point_for('C106','2')[:2]); path(qbat,(qbat[0],qsrc[1]),qsrc); junction(qsrc[0],qsrc[1])
+
+# BATP Kelvin sense resistor remains local to the pack-side node.
+batp=point_for('U4','18')[:2]; r112a=point_for('R112','1')[:2]; r112b=point_for('R112','2')[:2]
+wirelabel('U4','18','BATP_SENSE'); label('BAT_PACK',*r112a); wirelabel('R112','2','BATP_SENSE')
+
+# TS divider and PROG resistor use direct U4-side routing and local grounds.
+ts=point_for('U4','16')[:2]; r100b=point_for('R100','2')[:2]; r101t=point_for('R101','1')[:2]
+path(ts,(160,ts[1]),(160,r100b[1]),r100b); path(r100b,r101t)
+junction((r100b[0]+r101t[0])/2,r100b[1]); label('TS_SENSE',(r100b[0]+r101t[0])/2,r100b[1])
+wirelabel('R100','1','REGN'); gnd(*point_for('R101','2')[:2])
+prog=point_for('U4','20')[:2]; rprog=point_for('R102','1')[:2]
+path(prog,(170,prog[1]),(170,rprog[1]),rprog); gnd(*point_for('R102','2')[:2])
+
+# REGN-fed HIZ divider and default clamp transistor.
+ilim=point_for('U4','17')[:2]; r108b=point_for('R108','2')[:2]; r109t=point_for('R109','1')[:2]; q101d=point_for('Q101','3')[:2]
+path(ilim,(240,ilim[1]),(240,r108b[1]),r108b); path(r108b,(r108b[0],r109t[1]),r109t)
+path(r109t,(q101d[0],r109t[1]),q101d); junction(r109t[0],r109t[1])
+wirelabel('R108','1','REGN'); gnd(*point_for('R109','2')[:2]); gnd(*point_for('Q101','2')[:2])
+r110b=point_for('R110','2')[:2]; q101g=point_for('Q101','1')[:2]; q102d=point_for('Q102','3')[:2]
+wirelabel('R110','1','REGN'); path(r110b,(r110b[0],q101g[1]),q101g)
+path(q101g,(q102d[0],q101g[1]),q102d); label('Q101_GATE',*q101g)
+q2g=point_for('Q102','1')[:2]; r111t=point_for('R111','1')[:2]
+path(q2g,(r111t[0],q2g[1]),r111t); junction(q2g[0],q2g[1])
+gnd(*point_for('Q102','2')[:2]); gnd(*point_for('R111','2')[:2])
+
+# Charge-enable and interrupt support circuits.
+wirelabel('U4','13','CE_N'); wirelabel('R103','2','CE_N'); wirelabel('R103','1','REGN')
+gnd(*point_for('Q100','2')[:2]); q100gate=point_for('Q100','1')[:2]; r107t=point_for('R107','1')[:2]
+path(q100gate,(r107t[0],q100gate[1]),r107t); junction(r107t[0],q100gate[1]); gnd(*point_for('R107','2')[:2])
+wirelabel('R106','2','CHG_INT')
+
+# QON button sits below-left and is directly wired to the QON pin.
+qon=point_for('U4','12')[:2]; swq=point_for('SW100','1')[:2]
+path(qon,(175,qon[1]),(175,swq[1]),swq); gnd(*point_for('SW100','2')[:2])
 
 # Coordinator-approved provisional Samsung 10uF/50V 1210 for the five-cap
 # VBUS/PMID bank; the small 100nF bypass MPNs remain unsourced.
@@ -440,6 +491,37 @@ for ref in ('C100','C111','C101','C108','C112'):
         elif p[1] in ('LCSC Part','LCSC'):p[2]='C138687'
         elif p[1]=='Manufacturer':p[2]='Samsung Electro-Mechanics'
         elif p[1]=='Datasheet':p[2]='https://product.samsungsem.com/mlcc/CL32B106KBJNNN.do'
+
+# Reuse already-selected passive mappings where the new candidate values match.
+metadata={
+ 'C110':('YAGEO','CC0603KRX7R9BB473','C107093','https://www.yageo.com/upload/media/product/productspec/capacitor/CC0603KRX7R9BB473.pdf'),
+ 'C113':('Samsung Electro-Mechanics','CL21B104KBCNNNC','C1711','https://product.samsungsem.com/mlcc/CL21B104KBCNNNC.do'),
+ 'C114':('Samsung Electro-Mechanics','CL21B104KBCNNNC','C1711','https://product.samsungsem.com/mlcc/CL21B104KBCNNNC.do'),
+ 'R108':('YAGEO','RC0603FR-07180KL','C123419','${KIPRJMOD}/../ai-files/datasheets/Yageo_RC0603FR_series.pdf'),
+ 'R109':('YAGEO','RC0603FR-07100KL','C14675','${KIPRJMOD}/../ai-files/datasheets/Yageo_RC0603FR_series.pdf'),
+ 'R110':('YAGEO','RC0603FR-07100KL','C14675','${KIPRJMOD}/../ai-files/datasheets/Yageo_RC0603FR_series.pdf'),
+ 'R111':('YAGEO','RC0603FR-07100KL','C14675','${KIPRJMOD}/../ai-files/datasheets/Yageo_RC0603FR_series.pdf'),
+ 'R112':('YAGEO','RC0603FR-07100RL','C105588','${KIPRJMOD}/../ai-files/datasheets/Yageo_RC0603FR_series.pdf'),
+}
+for ref,(manufacturer,mpn,lcsc,datasheet) in metadata.items():
+    inst=getinst(ref)
+    for p in allof(inst,'property'):
+        if p[1]=='Manufacturer':p[2]=manufacturer
+        elif p[1]=='MPN':p[2]=mpn
+        elif p[1] in ('LCSC','LCSC Part'):p[2]=lcsc
+        elif p[1]=='Datasheet':p[2]=datasheet
+# Q101/Q102 reuse the already selected Q100 2N7002 mapping.
+for ref in ('Q101','Q102'):
+    inst=getinst(ref)
+    for key,val in [('MPN','2N7002,215'),('LCSC Part','C65189'),('Manufacturer','Nexperia'),
+                    ('Datasheet','https://assets.nexperia.com/documents/data-sheet/2N7002.pdf')]:
+        inst.insert(next(i for i,v in enumerate(inst) if k(v)=='pin'),[S('property'),key,val,at(0,0),eff(hide=True)])
+# Correct R102's stale 220-ohm purchasing identity for its retained 4.7-kohm value.
+for p in allof(getinst('R102'),'property'):
+    if p[1]=='MPN':p[2]='RC0603FR-074K7L'
+    elif p[1] in ('LCSC','LCSC Part'):p[2]='C99782'
+    elif p[1]=='Manufacturer':p[2]='YAGEO'
+    elif p[1]=='Datasheet':p[2]='${KIPRJMOD}/../ai-files/datasheets/Yageo_RC0603FR_series.pdf'
 
 add([S('sheet_instances'),[S('path'),'/',[S('page'),'1']]])
 add([S('embedded_fonts'),S('no')])

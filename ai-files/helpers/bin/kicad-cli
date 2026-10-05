@@ -1,0 +1,2 @@
+#!/bin/sh
+exec flatpak run --filesystem=/home/chithi/Desktop/DesktopSpeaker --filesystem=/tmp --command=kicad-cli org.kicad.KiCad "$@"

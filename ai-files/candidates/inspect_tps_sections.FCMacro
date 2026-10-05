@@ -1,0 +1,10 @@
+import FreeCAD as App, Part, os, json
+p=os.path.abspath('ai-files/candidates/TPS2116DRLR.step'); s=Part.Shape(); s.read(p)
+rows=[]
+for z in [0.02,0.08,0.1,0.15,0.2,0.3,0.5,0.55,0.6,0.65,0.69]:
+ try:
+  sec=s.section(Part.Plane(App.Vector(0,0,z),App.Vector(0,0,1)))
+  b=sec.BoundBox
+  rows.append({'z':z,'edges':len(sec.Edges),'x':round(b.XLength,3),'y':round(b.YLength,3),'bounds':[round(b.XMin,3),round(b.XMax,3),round(b.YMin,3),round(b.YMax,3)]})
+ except Exception as e:rows.append({'z':z,'error':str(e)})
+print(json.dumps(rows,indent=2));json.dump(rows,open('ai-files/reports/tps2116-model-sections.json','w'),indent=2)

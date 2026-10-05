@@ -2,7 +2,7 @@
 	(version "E")
 	(design
 		(source "/home/chithi/Desktop/DesktopSpeaker/ai-files/candidates/Battery_Charger.kicad_sch")
-		(date "2026-10-05T17:33:42")
+		(date "2026-10-05T18:46:45")
 		(tool "Eeschema 10.0.6-rc2")
 		(sheet
 			(number "1")
@@ -784,24 +784,20 @@
 			(ref "C110")
 			(value "47nF / 50V")
 			(footprint "DesktopSpeaker:PD_C_0603")
+			(datasheet "https://www.yageo.com/upload/media/product/productspec/capacitor/CC0603KRX7R9BB473.pdf")
 			(fields
 				(field
-					(name "MPN")
-				)
+					(name "MPN") "CC0603KRX7R9BB473")
 				(field
-					(name "Manufacturer")
-				)
+					(name "Manufacturer") "YAGEO")
 				(field
-					(name "LCSC")
-				)
+					(name "LCSC") "C107093")
 				(field
-					(name "LCSC Part")
-				)
+					(name "LCSC Part") "C107093")
 				(field
 					(name "Footprint") "DesktopSpeaker:PD_C_0603")
 				(field
-					(name "Datasheet")
-				)
+					(name "Datasheet") "https://www.yageo.com/upload/media/product/productspec/capacitor/CC0603KRX7R9BB473.pdf")
 				(field
 					(name "Description")
 				)
@@ -813,19 +809,19 @@
 			)
 			(property
 				(name "MPN")
-				(value "")
+				(value "CC0603KRX7R9BB473")
 			)
 			(property
 				(name "Manufacturer")
-				(value "")
+				(value "YAGEO")
 			)
 			(property
 				(name "LCSC")
-				(value "")
+				(value "C107093")
 			)
 			(property
 				(name "LCSC Part")
-				(value "")
+				(value "C107093")
 			)
 			(property
 				(name "Sheetname")
@@ -847,7 +843,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "f018f199-93b7-467f-b2fd-1e4c363393b8")
+			(tstamps "8d40eabf-778b-4614-b516-07f973a6bb75")
 			(units
 				(unit
 					(name "A")
@@ -925,7 +921,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "f2c116cc-6cc9-4a93-96bf-1fbc10ee4645")
+			(tstamps "28bc0801-fefd-4cce-83c7-70f80d663bcb")
 			(units
 				(unit
 					(name "A")
@@ -1003,7 +999,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "fa9aa549-14ef-4b15-aa5c-226b9b90d3e8")
+			(tstamps "3cb69532-4ef1-4f50-81ce-55249b28f44e")
 			(units
 				(unit
 					(name "A")
@@ -1022,24 +1018,20 @@
 			(ref "C113")
 			(value "0.1uF / 50V")
 			(footprint "DesktopSpeaker:PD_C_0603")
+			(datasheet "https://product.samsungsem.com/mlcc/CL21B104KBCNNNC.do")
 			(fields
 				(field
-					(name "MPN")
-				)
+					(name "MPN") "CL21B104KBCNNNC")
 				(field
-					(name "Manufacturer")
-				)
+					(name "Manufacturer") "Samsung Electro-Mechanics")
 				(field
-					(name "LCSC")
-				)
+					(name "LCSC") "C1711")
 				(field
-					(name "LCSC Part")
-				)
+					(name "LCSC Part") "C1711")
 				(field
 					(name "Footprint") "DesktopSpeaker:PD_C_0603")
 				(field
-					(name "Datasheet")
-				)
+					(name "Datasheet") "https://product.samsungsem.com/mlcc/CL21B104KBCNNNC.do")
 				(field
 					(name "Description")
 				)
@@ -1051,19 +1043,19 @@
 			)
 			(property
 				(name "MPN")
-				(value "")
+				(value "CL21B104KBCNNNC")
 			)
 			(property
 				(name "Manufacturer")
-				(value "")
+				(value "Samsung Electro-Mechanics")
 			)
 			(property
 				(name "LCSC")
-				(value "")
+				(value "C1711")
 			)
 			(property
 				(name "LCSC Part")
-				(value "")
+				(value "C1711")
 			)
 			(property
 				(name "Sheetname")
@@ -1085,7 +1077,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "63bb137c-a066-47bd-8a50-7a55b25840d5")
+			(tstamps "bc8deebb-adfc-48f0-a437-085e6cf94339")
 			(units
 				(unit
 					(name "A")
@@ -1104,24 +1096,20 @@
 			(ref "C114")
 			(value "0.1uF / 50V")
 			(footprint "DesktopSpeaker:PD_C_0603")
+			(datasheet "https://product.samsungsem.com/mlcc/CL21B104KBCNNNC.do")
 			(fields
 				(field
-					(name "MPN")
-				)
+					(name "MPN") "CL21B104KBCNNNC")
 				(field
-					(name "Manufacturer")
-				)
+					(name "Manufacturer") "Samsung Electro-Mechanics")
 				(field
-					(name "LCSC")
-				)
+					(name "LCSC") "C1711")
 				(field
-					(name "LCSC Part")
-				)
+					(name "LCSC Part") "C1711")
 				(field
 					(name "Footprint") "DesktopSpeaker:PD_C_0603")
 				(field
-					(name "Datasheet")
-				)
+					(name "Datasheet") "https://product.samsungsem.com/mlcc/CL21B104KBCNNNC.do")
 				(field
 					(name "Description")
 				)
@@ -1133,19 +1121,19 @@
 			)
 			(property
 				(name "MPN")
-				(value "")
+				(value "CL21B104KBCNNNC")
 			)
 			(property
 				(name "Manufacturer")
-				(value "")
+				(value "Samsung Electro-Mechanics")
 			)
 			(property
 				(name "LCSC")
-				(value "")
+				(value "C1711")
 			)
 			(property
 				(name "LCSC Part")
-				(value "")
+				(value "C1711")
 			)
 			(property
 				(name "Sheetname")
@@ -1167,7 +1155,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "df1fff3c-873f-4088-a5a3-d7ba550e4d34")
+			(tstamps "87e82904-18e4-43ef-9216-3b44f1df3a67")
 			(units
 				(unit
 					(name "A")
@@ -1342,7 +1330,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "e02678a1-54aa-4097-80ea-f759bf4bef47")
+			(tstamps "88a4de57-2bf6-4ad8-848f-14706e4b2cab")
 			(units
 				(unit
 					(name "A")
@@ -1364,12 +1352,18 @@
 			(ref "Q101")
 			(value "2N7002")
 			(footprint "DesktopSpeaker:2N7002")
+			(datasheet "https://assets.nexperia.com/documents/data-sheet/2N7002.pdf")
 			(fields
+				(field
+					(name "MPN") "2N7002,215")
+				(field
+					(name "LCSC Part") "C65189")
+				(field
+					(name "Manufacturer") "Nexperia")
 				(field
 					(name "Footprint") "DesktopSpeaker:2N7002")
 				(field
-					(name "Datasheet")
-				)
+					(name "Datasheet") "https://assets.nexperia.com/documents/data-sheet/2N7002.pdf")
 				(field
 					(name "Description")
 				)
@@ -1378,6 +1372,18 @@
 				(lib "2N7002")
 				(part "2N7002")
 				(description "Nexperia 60V 300mA N-channel MOSFET; SOT-23")
+			)
+			(property
+				(name "MPN")
+				(value "2N7002,215")
+			)
+			(property
+				(name "LCSC Part")
+				(value "C65189")
+			)
+			(property
+				(name "Manufacturer")
+				(value "Nexperia")
 			)
 			(property
 				(name "Sheetname")
@@ -1391,7 +1397,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "5c78c555-3bb0-4192-afeb-787d744af50a")
+			(tstamps "c00e3d72-4d4c-49c1-a184-297a4d5fb97d")
 			(units
 				(unit
 					(name "A")
@@ -1413,12 +1419,18 @@
 			(ref "Q102")
 			(value "2N7002")
 			(footprint "DesktopSpeaker:2N7002")
+			(datasheet "https://assets.nexperia.com/documents/data-sheet/2N7002.pdf")
 			(fields
+				(field
+					(name "MPN") "2N7002,215")
+				(field
+					(name "LCSC Part") "C65189")
+				(field
+					(name "Manufacturer") "Nexperia")
 				(field
 					(name "Footprint") "DesktopSpeaker:2N7002")
 				(field
-					(name "Datasheet")
-				)
+					(name "Datasheet") "https://assets.nexperia.com/documents/data-sheet/2N7002.pdf")
 				(field
 					(name "Description")
 				)
@@ -1427,6 +1439,18 @@
 				(lib "2N7002")
 				(part "2N7002")
 				(description "Nexperia 60V 300mA N-channel MOSFET; SOT-23")
+			)
+			(property
+				(name "MPN")
+				(value "2N7002,215")
+			)
+			(property
+				(name "LCSC Part")
+				(value "C65189")
+			)
+			(property
+				(name "Manufacturer")
+				(value "Nexperia")
 			)
 			(property
 				(name "Sheetname")
@@ -1440,7 +1464,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "33ba40f7-4679-4b15-8727-69fb58c31644")
+			(tstamps "8603ab4b-05ef-45fe-8ae0-4b974c81e119")
 			(units
 				(unit
 					(name "A")
@@ -1511,7 +1535,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "979d3486-eb2c-4ca7-8fea-ffe8a0f6cbff")
+			(tstamps "bb5dcdb7-5a27-463a-a617-265ea805fab2")
 			(units
 				(unit
 					(name "A")
@@ -1698,11 +1722,11 @@
 			(datasheet "${KIPRJMOD}/../ai-files/datasheets/Yageo_RC0603FR_series.pdf")
 			(fields
 				(field
-					(name "MPN") "RC0603FR-07220RL")
+					(name "MPN") "RC0603FR-074K7L")
 				(field
 					(name "Manufacturer") "YAGEO")
 				(field
-					(name "LCSC") "C107696")
+					(name "LCSC") "C99782")
 				(field
 					(name "Footprint") "DesktopSpeaker:PD_R_0603")
 				(field
@@ -1718,7 +1742,7 @@
 			)
 			(property
 				(name "MPN")
-				(value "RC0603FR-07220RL")
+				(value "RC0603FR-074K7L")
 			)
 			(property
 				(name "Manufacturer")
@@ -1726,7 +1750,7 @@
 			)
 			(property
 				(name "LCSC")
-				(value "C107696")
+				(value "C99782")
 			)
 			(property
 				(name "Sheetname")
@@ -1983,21 +2007,18 @@
 			(ref "R108")
 			(value "180k")
 			(footprint "DesktopSpeaker:PD_R_0603")
+			(datasheet "${KIPRJMOD}/../ai-files/datasheets/Yageo_RC0603FR_series.pdf")
 			(fields
 				(field
-					(name "MPN")
-				)
+					(name "MPN") "RC0603FR-07180KL")
 				(field
-					(name "Manufacturer")
-				)
+					(name "Manufacturer") "YAGEO")
 				(field
-					(name "LCSC")
-				)
+					(name "LCSC") "C123419")
 				(field
 					(name "Footprint") "DesktopSpeaker:PD_R_0603")
 				(field
-					(name "Datasheet")
-				)
+					(name "Datasheet") "${KIPRJMOD}/../ai-files/datasheets/Yageo_RC0603FR_series.pdf")
 				(field
 					(name "Description")
 				)
@@ -2009,15 +2030,15 @@
 			)
 			(property
 				(name "MPN")
-				(value "")
+				(value "RC0603FR-07180KL")
 			)
 			(property
 				(name "Manufacturer")
-				(value "")
+				(value "YAGEO")
 			)
 			(property
 				(name "LCSC")
-				(value "")
+				(value "C123419")
 			)
 			(property
 				(name "Sheetname")
@@ -2039,7 +2060,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "b434bb01-f250-4968-9b92-65bbd8bdc0d2")
+			(tstamps "d17d31dd-a155-461d-921c-40b5da6880b3")
 			(units
 				(unit
 					(name "A")
@@ -2058,21 +2079,18 @@
 			(ref "R109")
 			(value "100k")
 			(footprint "DesktopSpeaker:PD_R_0603")
+			(datasheet "${KIPRJMOD}/../ai-files/datasheets/Yageo_RC0603FR_series.pdf")
 			(fields
 				(field
-					(name "MPN")
-				)
+					(name "MPN") "RC0603FR-07100KL")
 				(field
-					(name "Manufacturer")
-				)
+					(name "Manufacturer") "YAGEO")
 				(field
-					(name "LCSC")
-				)
+					(name "LCSC") "C14675")
 				(field
 					(name "Footprint") "DesktopSpeaker:PD_R_0603")
 				(field
-					(name "Datasheet")
-				)
+					(name "Datasheet") "${KIPRJMOD}/../ai-files/datasheets/Yageo_RC0603FR_series.pdf")
 				(field
 					(name "Description")
 				)
@@ -2084,15 +2102,15 @@
 			)
 			(property
 				(name "MPN")
-				(value "")
+				(value "RC0603FR-07100KL")
 			)
 			(property
 				(name "Manufacturer")
-				(value "")
+				(value "YAGEO")
 			)
 			(property
 				(name "LCSC")
-				(value "")
+				(value "C14675")
 			)
 			(property
 				(name "Sheetname")
@@ -2114,7 +2132,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "e734a82d-aa4f-47ab-8634-33ea3580bea2")
+			(tstamps "11628700-2637-49b7-b293-bb35da695230")
 			(units
 				(unit
 					(name "A")
@@ -2133,21 +2151,18 @@
 			(ref "R110")
 			(value "100k")
 			(footprint "DesktopSpeaker:PD_R_0603")
+			(datasheet "${KIPRJMOD}/../ai-files/datasheets/Yageo_RC0603FR_series.pdf")
 			(fields
 				(field
-					(name "MPN")
-				)
+					(name "MPN") "RC0603FR-07100KL")
 				(field
-					(name "Manufacturer")
-				)
+					(name "Manufacturer") "YAGEO")
 				(field
-					(name "LCSC")
-				)
+					(name "LCSC") "C14675")
 				(field
 					(name "Footprint") "DesktopSpeaker:PD_R_0603")
 				(field
-					(name "Datasheet")
-				)
+					(name "Datasheet") "${KIPRJMOD}/../ai-files/datasheets/Yageo_RC0603FR_series.pdf")
 				(field
 					(name "Description")
 				)
@@ -2159,15 +2174,15 @@
 			)
 			(property
 				(name "MPN")
-				(value "")
+				(value "RC0603FR-07100KL")
 			)
 			(property
 				(name "Manufacturer")
-				(value "")
+				(value "YAGEO")
 			)
 			(property
 				(name "LCSC")
-				(value "")
+				(value "C14675")
 			)
 			(property
 				(name "Sheetname")
@@ -2189,7 +2204,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "caa86fa2-7415-4097-9ee5-93f0be31e00b")
+			(tstamps "e3a8295a-79a4-45f6-ba41-4b69c9820c7f")
 			(units
 				(unit
 					(name "A")
@@ -2208,21 +2223,18 @@
 			(ref "R111")
 			(value "100k")
 			(footprint "DesktopSpeaker:PD_R_0603")
+			(datasheet "${KIPRJMOD}/../ai-files/datasheets/Yageo_RC0603FR_series.pdf")
 			(fields
 				(field
-					(name "MPN")
-				)
+					(name "MPN") "RC0603FR-07100KL")
 				(field
-					(name "Manufacturer")
-				)
+					(name "Manufacturer") "YAGEO")
 				(field
-					(name "LCSC")
-				)
+					(name "LCSC") "C14675")
 				(field
 					(name "Footprint") "DesktopSpeaker:PD_R_0603")
 				(field
-					(name "Datasheet")
-				)
+					(name "Datasheet") "${KIPRJMOD}/../ai-files/datasheets/Yageo_RC0603FR_series.pdf")
 				(field
 					(name "Description")
 				)
@@ -2234,15 +2246,15 @@
 			)
 			(property
 				(name "MPN")
-				(value "")
+				(value "RC0603FR-07100KL")
 			)
 			(property
 				(name "Manufacturer")
-				(value "")
+				(value "YAGEO")
 			)
 			(property
 				(name "LCSC")
-				(value "")
+				(value "C14675")
 			)
 			(property
 				(name "Sheetname")
@@ -2264,7 +2276,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "d60aa7f6-a7c5-48c2-8e45-c7daaf77394b")
+			(tstamps "6e32aa32-6b8b-4f05-ad41-907accb58dcd")
 			(units
 				(unit
 					(name "A")
@@ -2283,21 +2295,18 @@
 			(ref "R112")
 			(value "100R")
 			(footprint "DesktopSpeaker:PD_R_0603")
+			(datasheet "${KIPRJMOD}/../ai-files/datasheets/Yageo_RC0603FR_series.pdf")
 			(fields
 				(field
-					(name "MPN")
-				)
+					(name "MPN") "RC0603FR-07100RL")
 				(field
-					(name "Manufacturer")
-				)
+					(name "Manufacturer") "YAGEO")
 				(field
-					(name "LCSC")
-				)
+					(name "LCSC") "C105588")
 				(field
 					(name "Footprint") "DesktopSpeaker:PD_R_0603")
 				(field
-					(name "Datasheet")
-				)
+					(name "Datasheet") "${KIPRJMOD}/../ai-files/datasheets/Yageo_RC0603FR_series.pdf")
 				(field
 					(name "Description")
 				)
@@ -2309,15 +2318,15 @@
 			)
 			(property
 				(name "MPN")
-				(value "")
+				(value "RC0603FR-07100RL")
 			)
 			(property
 				(name "Manufacturer")
-				(value "")
+				(value "YAGEO")
 			)
 			(property
 				(name "LCSC")
-				(value "")
+				(value "C105588")
 			)
 			(property
 				(name "Sheetname")
@@ -2339,7 +2348,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "94550db5-ccc8-46d5-8f09-5ea87bf915ae")
+			(tstamps "700a6c9d-af34-42b9-ac26-9d3f7f4cfc14")
 			(units
 				(unit
 					(name "A")
@@ -2389,7 +2398,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "c9972530-c182-4808-b315-d1bb4982388b")
+			(tstamps "46906771-4d9a-4361-a677-15bdfefba667")
 			(units
 				(unit
 					(name "A")
@@ -2664,7 +2673,7 @@
 			(pins
 				(pin
 					(num "1")
-					(name "~{STAT}")
+					(name "STAT")
 					(type "open_collector")
 				)
 				(pin
@@ -2699,12 +2708,12 @@
 				)
 				(pin
 					(num "10")
-					(name "ACDRV2")
+					(name "ACD2")
 					(type "passive")
 				)
 				(pin
 					(num "11")
-					(name "ACDRV1")
+					(name "ACD1")
 					(type "passive")
 				)
 				(pin
@@ -2734,7 +2743,7 @@
 				)
 				(pin
 					(num "17")
-					(name "ILIM_HIZ")
+					(name "HIZ/ILIM")
 					(type "input")
 				)
 				(pin
@@ -3107,48 +3116,20 @@
 		)
 		(net
 			(code "2")
-			(name "/BAT_INT")
-			(class "Default")
-			(node
-				(ref "C106")
-				(pin "1")
-				(pintype "passive")
-			)
-			(node
-				(ref "Q103")
-				(pin "1")
-				(pinfunction "S_1")
-				(pintype "passive")
-			)
-			(node
-				(ref "Q103")
-				(pin "2")
-				(pinfunction "S_2")
-				(pintype "passive")
-			)
-			(node
-				(ref "Q103")
-				(pin "3")
-				(pinfunction "S_3")
-				(pintype "passive")
-			)
-			(node
-				(ref "U4")
-				(pin "22")
-				(pinfunction "BAT_22")
-				(pintype "power_in")
-			)
-			(node
-				(ref "U4")
-				(pin "23")
-				(pinfunction "BAT_23")
-				(pintype "power_in")
-			)
-		)
-		(net
-			(code "3")
 			(name "/BAT_PACK")
 			(class "Default")
+			(node
+				(ref "J5")
+				(pin "1")
+				(pinfunction "Pin_1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "J5")
+				(pin "2")
+				(pinfunction "Pin_2_2")
+				(pintype "passive")
+			)
 			(node
 				(ref "Q103")
 				(pin "5")
@@ -3180,6 +3161,16 @@
 				(pintype "passive")
 			)
 			(node
+				(ref "R100")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R101")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
 				(ref "R112")
 				(pin "1")
 				(pintype "passive")
@@ -3190,20 +3181,31 @@
 				(pinfunction "A_1")
 				(pintype "passive")
 			)
-		)
-		(net
-			(code "4")
-			(name "/CE_N")
-			(class "Default")
 			(node
-				(ref "Q100")
-				(pin "3")
-				(pinfunction "D_3")
+				(ref "SW101")
+				(pin "2")
+				(pinfunction "B_2")
 				(pintype "passive")
 			)
 			(node
+				(ref "U4")
+				(pin "16")
+				(pinfunction "TS_16")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "3")
+			(name "/CE_N")
+			(class "Default")
+			(node
 				(ref "R103")
 				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R106")
+				(pin "1")
 				(pintype "passive")
 			)
 			(node
@@ -3214,7 +3216,7 @@
 			)
 		)
 		(net
-			(code "5")
+			(code "4")
 			(name "/CHG_DM_RAW")
 			(class "Default")
 			(node
@@ -3225,7 +3227,7 @@
 			)
 		)
 		(net
-			(code "6")
+			(code "5")
 			(name "/CHG_DP_RAW")
 			(class "Default")
 			(node
@@ -3236,7 +3238,7 @@
 			)
 		)
 		(net
-			(code "7")
+			(code "6")
 			(name "/CHG_ENABLE")
 			(class "Default")
 			(node
@@ -3252,7 +3254,7 @@
 			)
 		)
 		(net
-			(code "8")
+			(code "7")
 			(name "/CHG_INT")
 			(class "Default")
 			(node
@@ -3268,7 +3270,7 @@
 			)
 		)
 		(net
-			(code "9")
+			(code "8")
 			(name "/CHG_SCL")
 			(class "Default")
 			(node
@@ -3279,7 +3281,7 @@
 			)
 		)
 		(net
-			(code "10")
+			(code "9")
 			(name "/CHG_SDA")
 			(class "Default")
 			(node
@@ -3290,7 +3292,7 @@
 			)
 		)
 		(net
-			(code "11")
+			(code "10")
 			(name "/CHG_SYS_ENABLE")
 			(class "Default")
 			(node
@@ -3306,91 +3308,7 @@
 			)
 		)
 		(net
-			(code "12")
-			(name "/CHG_VIO_3V0")
-			(class "Default")
-			(node
-				(ref "R106")
-				(pin "1")
-				(pintype "passive")
-			)
-		)
-		(net
-			(code "13")
-			(name "/ILIM_HIZ")
-			(class "Default")
-			(node
-				(ref "Q101")
-				(pin "3")
-				(pinfunction "D_3")
-				(pintype "passive")
-			)
-			(node
-				(ref "R108")
-				(pin "2")
-				(pintype "passive")
-			)
-			(node
-				(ref "R109")
-				(pin "1")
-				(pintype "passive")
-			)
-			(node
-				(ref "U4")
-				(pin "17")
-				(pinfunction "ILIM_HIZ_17")
-				(pintype "input")
-			)
-		)
-		(net
-			(code "14")
-			(name "/PMID")
-			(class "Default")
-			(node
-				(ref "C101")
-				(pin "1")
-				(pintype "passive")
-			)
-			(node
-				(ref "C108")
-				(pin "1")
-				(pintype "passive")
-			)
-			(node
-				(ref "C112")
-				(pin "1")
-				(pintype "passive")
-			)
-			(node
-				(ref "C114")
-				(pin "1")
-				(pintype "passive")
-			)
-			(node
-				(ref "U4")
-				(pin "29")
-				(pinfunction "PMID_29")
-				(pintype "power_out")
-			)
-		)
-		(net
-			(code "15")
-			(name "/PROG")
-			(class "Default")
-			(node
-				(ref "R102")
-				(pin "1")
-				(pintype "passive")
-			)
-			(node
-				(ref "U4")
-				(pin "20")
-				(pinfunction "PROG_20")
-				(pintype "input")
-			)
-		)
-		(net
-			(code "16")
+			(code "11")
 			(name "/Q101_GATE")
 			(class "Default")
 			(node
@@ -3412,38 +3330,16 @@
 			)
 		)
 		(net
-			(code "17")
-			(name "/QON_SW")
-			(class "Default")
-			(node
-				(ref "SW100")
-				(pin "1")
-				(pinfunction "1_1")
-				(pintype "passive")
-			)
-			(node
-				(ref "U4")
-				(pin "12")
-				(pinfunction "QON_12")
-				(pintype "input")
-			)
-		)
-		(net
-			(code "18")
+			(code "12")
 			(name "/REGN")
 			(class "Default")
 			(node
-				(ref "C102")
-				(pin "1")
-				(pintype "passive")
-			)
-			(node
-				(ref "C109")
-				(pin "1")
-				(pintype "passive")
-			)
-			(node
 				(ref "R100")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R102")
 				(pin "1")
 				(pintype "passive")
 			)
@@ -3464,74 +3360,13 @@
 			)
 			(node
 				(ref "U4")
-				(pin "5")
-				(pinfunction "REGN_5")
-				(pintype "power_out")
-			)
-		)
-		(net
-			(code "19")
-			(name "/SDRV")
-			(class "Default")
-			(node
-				(ref "Q103")
-				(pin "4")
-				(pinfunction "G_4")
+				(pin "20")
+				(pinfunction "PROG_20")
 				(pintype "input")
 			)
-			(node
-				(ref "U4")
-				(pin "24")
-				(pinfunction "SDRV_24")
-				(pintype "output")
-			)
 		)
 		(net
-			(code "20")
-			(name "/SW1")
-			(class "Default")
-			(node
-				(ref "C103")
-				(pin "2")
-				(pintype "passive")
-			)
-			(node
-				(ref "L1")
-				(pin "1")
-				(pinfunction "1_1")
-				(pintype "passive")
-			)
-			(node
-				(ref "U4")
-				(pin "28")
-				(pinfunction "SW1_28")
-				(pintype "passive")
-			)
-		)
-		(net
-			(code "21")
-			(name "/SW2")
-			(class "Default")
-			(node
-				(ref "C110")
-				(pin "2")
-				(pintype "passive")
-			)
-			(node
-				(ref "L1")
-				(pin "2")
-				(pinfunction "2_2")
-				(pintype "passive")
-			)
-			(node
-				(ref "U4")
-				(pin "26")
-				(pinfunction "SW2_26")
-				(pintype "passive")
-			)
-		)
-		(net
-			(code "22")
+			(code "13")
 			(name "/SYS_RAW")
 			(class "Default")
 			(node
@@ -3545,8 +3380,31 @@
 				(pintype "passive")
 			)
 			(node
+				(ref "C106")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
 				(ref "C107")
 				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "Q103")
+				(pin "1")
+				(pinfunction "S_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "Q103")
+				(pin "2")
+				(pinfunction "S_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "Q103")
+				(pin "3")
+				(pinfunction "S_3")
 				(pintype "passive")
 			)
 			(node
@@ -3555,36 +3413,21 @@
 				(pinfunction "SYS_25")
 				(pintype "power_out")
 			)
-		)
-		(net
-			(code "23")
-			(name "/TS_SENSE")
-			(class "Default")
 			(node
-				(ref "J5")
-				(pin "2")
-				(pinfunction "Pin_2_2")
-				(pintype "passive")
-			)
-			(node
-				(ref "R100")
-				(pin "2")
-				(pintype "passive")
-			)
-			(node
-				(ref "R101")
-				(pin "1")
-				(pintype "passive")
+				(ref "U4")
+				(pin "22")
+				(pinfunction "BAT_22")
+				(pintype "power_in")
 			)
 			(node
 				(ref "U4")
-				(pin "16")
-				(pinfunction "TS_16")
-				(pintype "input")
+				(pin "23")
+				(pinfunction "BAT_23")
+				(pintype "power_in")
 			)
 		)
 		(net
-			(code "24")
+			(code "14")
 			(name "/VBUS_PD")
 			(class "Default")
 			(node
@@ -3604,18 +3447,6 @@
 			)
 			(node
 				(ref "U4")
-				(pin "8")
-				(pinfunction "VAC2_8")
-				(pintype "power_in")
-			)
-			(node
-				(ref "U4")
-				(pin "9")
-				(pinfunction "VAC1_9")
-				(pintype "power_in")
-			)
-			(node
-				(ref "U4")
 				(pin "2")
 				(pinfunction "VBUS_2")
 				(pintype "power_in")
@@ -3628,7 +3459,7 @@
 			)
 		)
 		(net
-			(code "25")
+			(code "15")
 			(name "GND")
 			(class "Default")
 			(node
@@ -3754,13 +3585,13 @@
 			(node
 				(ref "U4")
 				(pin "10")
-				(pinfunction "ACDRV2_10")
+				(pinfunction "ACD2_10")
 				(pintype "passive")
 			)
 			(node
 				(ref "U4")
 				(pin "11")
-				(pinfunction "ACDRV1_11")
+				(pinfunction "ACD1_11")
 				(pintype "passive")
 			)
 			(node
@@ -3771,24 +3602,51 @@
 			)
 		)
 		(net
-			(code "26")
-			(name "Net-(J5-Pin_1)")
+			(code "16")
+			(name "Net-(Q101-D)")
 			(class "Default")
 			(node
-				(ref "J5")
-				(pin "1")
-				(pinfunction "Pin_1_1")
+				(ref "Q101")
+				(pin "3")
+				(pinfunction "D_3")
 				(pintype "passive")
 			)
 			(node
-				(ref "SW101")
+				(ref "R108")
 				(pin "2")
-				(pinfunction "B_2")
 				(pintype "passive")
+			)
+			(node
+				(ref "R109")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U4")
+				(pin "17")
+				(pinfunction "HIZ/ILIM_17")
+				(pintype "input")
 			)
 		)
 		(net
-			(code "27")
+			(code "17")
+			(name "Net-(Q103-G)")
+			(class "Default")
+			(node
+				(ref "Q103")
+				(pin "4")
+				(pinfunction "G_4")
+				(pintype "input")
+			)
+			(node
+				(ref "U4")
+				(pin "24")
+				(pinfunction "SDRV_24")
+				(pintype "output")
+			)
+		)
+		(net
+			(code "18")
 			(name "Net-(U4-BTST1)")
 			(class "Default")
 			(node
@@ -3804,7 +3662,7 @@
 			)
 		)
 		(net
-			(code "28")
+			(code "19")
 			(name "Net-(U4-BTST2)")
 			(class "Default")
 			(node
@@ -3820,14 +3678,160 @@
 			)
 		)
 		(net
-			(code "29")
-			(name "unconnected-(U4-~{STAT}-Pad1)")
+			(code "20")
+			(name "Net-(U4-PMID)")
+			(class "Default")
+			(node
+				(ref "C101")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "C108")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "C112")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "C114")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U4")
+				(pin "29")
+				(pinfunction "PMID_29")
+				(pintype "power_out")
+			)
+		)
+		(net
+			(code "21")
+			(name "Net-(U4-QON)")
+			(class "Default")
+			(node
+				(ref "SW100")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U4")
+				(pin "12")
+				(pinfunction "QON_12")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "22")
+			(name "Net-(U4-REGN)")
+			(class "Default")
+			(node
+				(ref "C102")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "C109")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U4")
+				(pin "5")
+				(pinfunction "REGN_5")
+				(pintype "power_out")
+			)
+		)
+		(net
+			(code "23")
+			(name "Net-(U4-SW1)")
+			(class "Default")
+			(node
+				(ref "C103")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "L1")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U4")
+				(pin "28")
+				(pinfunction "SW1_28")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "24")
+			(name "Net-(U4-SW2)")
+			(class "Default")
+			(node
+				(ref "C110")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "L1")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U4")
+				(pin "26")
+				(pinfunction "SW2_26")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "25")
+			(name "unconnected-(Q100-D-Pad3)")
+			(class "Default")
+			(node
+				(ref "Q100")
+				(pin "3")
+				(pinfunction "D_3")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "26")
+			(name "unconnected-(U4-STAT-Pad1)")
 			(class "Default")
 			(node
 				(ref "U4")
 				(pin "1")
-				(pinfunction "~{STAT}_1")
+				(pinfunction "STAT_1")
 				(pintype "open_collector+no_connect")
+			)
+		)
+		(net
+			(code "27")
+			(name "unconnected-(U4-VAC1-Pad9)")
+			(class "Default")
+			(node
+				(ref "U4")
+				(pin "9")
+				(pinfunction "VAC1_9")
+				(pintype "power_in")
+			)
+		)
+		(net
+			(code "28")
+			(name "unconnected-(U4-VAC2-Pad8)")
+			(class "Default")
+			(node
+				(ref "U4")
+				(pin "8")
+				(pinfunction "VAC2_8")
+				(pintype "power_in")
 			)
 		)
 	)

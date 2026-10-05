@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "TPS25730D") (type "KiCad") (uri "${KIPRJMOD}/TPS25730D.pretty") (options "") (descr "TI REF0038A WQFN-38 two exposed pads"))
+)

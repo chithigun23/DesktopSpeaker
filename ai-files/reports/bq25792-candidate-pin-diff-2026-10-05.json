@@ -1,0 +1,458 @@
+{
+  "candidate_only": true,
+  "baseline": "previous full pin review passed before redraw; expected exact groups from review_bq25792_candidate.py",
+  "after": "installed KiCad 10.0.6 exported netlist; review_bq25792_candidate.py pass",
+  "group_count": 29,
+  "all29U4pins_included": true,
+  "groups": [
+    {
+      "net": "VBUS",
+      "before": [
+        "C100.1",
+        "C111.1",
+        "C113.1",
+        "U4.2",
+        "U4.3",
+        "U4.8",
+        "U4.9"
+      ],
+      "after": [
+        "C100.1",
+        "C111.1",
+        "C113.1",
+        "U4.2",
+        "U4.3",
+        "U4.8",
+        "U4.9"
+      ],
+      "equal": true
+    },
+    {
+      "net": "PMID",
+      "before": [
+        "C101.1",
+        "C108.1",
+        "C112.1",
+        "C114.1",
+        "U4.29"
+      ],
+      "after": [
+        "C101.1",
+        "C108.1",
+        "C112.1",
+        "C114.1",
+        "U4.29"
+      ],
+      "equal": true
+    },
+    {
+      "net": "REGN",
+      "before": [
+        "C102.1",
+        "C109.1",
+        "R100.1",
+        "R103.1",
+        "R108.1",
+        "R110.1",
+        "U4.5"
+      ],
+      "after": [
+        "C102.1",
+        "C109.1",
+        "R100.1",
+        "R103.1",
+        "R108.1",
+        "R110.1",
+        "U4.5"
+      ],
+      "equal": true
+    },
+    {
+      "net": "SYS",
+      "before": [
+        "C104.1",
+        "C105.1",
+        "C107.1",
+        "U4.25"
+      ],
+      "after": [
+        "C104.1",
+        "C105.1",
+        "C107.1",
+        "U4.25"
+      ],
+      "equal": true
+    },
+    {
+      "net": "BAT_INT",
+      "before": [
+        "C106.1",
+        "Q103.1",
+        "Q103.2",
+        "Q103.3",
+        "U4.22",
+        "U4.23"
+      ],
+      "after": [
+        "C106.1",
+        "Q103.1",
+        "Q103.2",
+        "Q103.3",
+        "U4.22",
+        "U4.23"
+      ],
+      "equal": true
+    },
+    {
+      "net": "BAT_PACK",
+      "before": [
+        "Q103.5",
+        "Q103.6",
+        "Q103.7",
+        "Q103.8",
+        "Q103.9",
+        "R112.1",
+        "SW101.1"
+      ],
+      "after": [
+        "Q103.5",
+        "Q103.6",
+        "Q103.7",
+        "Q103.8",
+        "Q103.9",
+        "R112.1",
+        "SW101.1"
+      ],
+      "equal": true
+    },
+    {
+      "net": "PACK_RAW",
+      "before": [
+        "J5.1",
+        "SW101.2"
+      ],
+      "after": [
+        "J5.1",
+        "SW101.2"
+      ],
+      "equal": true
+    },
+    {
+      "net": "BATP",
+      "before": [
+        "R112.2",
+        "U4.18"
+      ],
+      "after": [
+        "R112.2",
+        "U4.18"
+      ],
+      "equal": true
+    },
+    {
+      "net": "SDRV",
+      "before": [
+        "Q103.4",
+        "U4.24"
+      ],
+      "after": [
+        "Q103.4",
+        "U4.24"
+      ],
+      "equal": true
+    },
+    {
+      "net": "BTST1",
+      "before": [
+        "C103.1",
+        "U4.4"
+      ],
+      "after": [
+        "C103.1",
+        "U4.4"
+      ],
+      "equal": true
+    },
+    {
+      "net": "SW1",
+      "before": [
+        "C103.2",
+        "L1.1",
+        "U4.28"
+      ],
+      "after": [
+        "C103.2",
+        "L1.1",
+        "U4.28"
+      ],
+      "equal": true
+    },
+    {
+      "net": "BTST2",
+      "before": [
+        "C110.1",
+        "U4.19"
+      ],
+      "after": [
+        "C110.1",
+        "U4.19"
+      ],
+      "equal": true
+    },
+    {
+      "net": "SW2",
+      "before": [
+        "C110.2",
+        "L1.2",
+        "U4.26"
+      ],
+      "after": [
+        "C110.2",
+        "L1.2",
+        "U4.26"
+      ],
+      "equal": true
+    },
+    {
+      "net": "QON",
+      "before": [
+        "SW100.1",
+        "U4.12"
+      ],
+      "after": [
+        "SW100.1",
+        "U4.12"
+      ],
+      "equal": true
+    },
+    {
+      "net": "CE",
+      "before": [
+        "Q100.3",
+        "R103.2",
+        "U4.13"
+      ],
+      "after": [
+        "Q100.3",
+        "R103.2",
+        "U4.13"
+      ],
+      "equal": true
+    },
+    {
+      "net": "SCL",
+      "before": [
+        "U4.14"
+      ],
+      "after": [
+        "U4.14"
+      ],
+      "equal": true
+    },
+    {
+      "net": "SDA",
+      "before": [
+        "U4.15"
+      ],
+      "after": [
+        "U4.15"
+      ],
+      "equal": true
+    },
+    {
+      "net": "DP",
+      "before": [
+        "U4.6"
+      ],
+      "after": [
+        "U4.6"
+      ],
+      "equal": true
+    },
+    {
+      "net": "DM",
+      "before": [
+        "U4.7"
+      ],
+      "after": [
+        "U4.7"
+      ],
+      "equal": true
+    },
+    {
+      "net": "STAT_NC",
+      "before": [
+        "U4.1"
+      ],
+      "after": [
+        "U4.1"
+      ],
+      "equal": true
+    },
+    {
+      "net": "TS",
+      "before": [
+        "J5.2",
+        "R100.2",
+        "R101.1",
+        "U4.16"
+      ],
+      "after": [
+        "J5.2",
+        "R100.2",
+        "R101.1",
+        "U4.16"
+      ],
+      "equal": true
+    },
+    {
+      "net": "ILIM_HIZ",
+      "before": [
+        "Q101.3",
+        "R108.2",
+        "R109.1",
+        "U4.17"
+      ],
+      "after": [
+        "Q101.3",
+        "R108.2",
+        "R109.1",
+        "U4.17"
+      ],
+      "equal": true
+    },
+    {
+      "net": "PROG",
+      "before": [
+        "R102.1",
+        "U4.20"
+      ],
+      "after": [
+        "R102.1",
+        "U4.20"
+      ],
+      "equal": true
+    },
+    {
+      "net": "INT",
+      "before": [
+        "R106.2",
+        "U4.21"
+      ],
+      "after": [
+        "R106.2",
+        "U4.21"
+      ],
+      "equal": true
+    },
+    {
+      "net": "VIO",
+      "before": [
+        "R106.1"
+      ],
+      "after": [
+        "R106.1"
+      ],
+      "equal": true
+    },
+    {
+      "net": "CLAMP_GATE",
+      "before": [
+        "Q101.1",
+        "Q102.3",
+        "R110.2"
+      ],
+      "after": [
+        "Q101.1",
+        "Q102.3",
+        "R110.2"
+      ],
+      "equal": true
+    },
+    {
+      "net": "SYS_ENABLE",
+      "before": [
+        "Q102.1",
+        "R111.1"
+      ],
+      "after": [
+        "Q102.1",
+        "R111.1"
+      ],
+      "equal": true
+    },
+    {
+      "net": "CHG_ENABLE",
+      "before": [
+        "Q100.1",
+        "R107.1"
+      ],
+      "after": [
+        "Q100.1",
+        "R107.1"
+      ],
+      "equal": true
+    },
+    {
+      "net": "GND",
+      "before": [
+        "C100.2",
+        "C101.2",
+        "C102.2",
+        "C104.2",
+        "C105.2",
+        "C106.2",
+        "C107.2",
+        "C108.2",
+        "C109.2",
+        "C111.2",
+        "C112.2",
+        "C113.2",
+        "C114.2",
+        "J5.3",
+        "Q100.2",
+        "Q101.2",
+        "Q102.2",
+        "R101.2",
+        "R102.2",
+        "R107.2",
+        "R109.2",
+        "R111.2",
+        "SW100.2",
+        "U4.10",
+        "U4.11",
+        "U4.27"
+      ],
+      "after": [
+        "C100.2",
+        "C101.2",
+        "C102.2",
+        "C104.2",
+        "C105.2",
+        "C106.2",
+        "C107.2",
+        "C108.2",
+        "C109.2",
+        "C111.2",
+        "C112.2",
+        "C113.2",
+        "C114.2",
+        "J5.3",
+        "Q100.2",
+        "Q101.2",
+        "Q102.2",
+        "R101.2",
+        "R102.2",
+        "R107.2",
+        "R109.2",
+        "R111.2",
+        "SW100.2",
+        "U4.10",
+        "U4.11",
+        "U4.27"
+      ],
+      "equal": true
+    }
+  ],
+  "complete_groups_equal": true
+}

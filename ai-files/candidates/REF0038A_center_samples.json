@@ -1,0 +1,92 @@
+[
+  {
+    "z": 0.001,
+    "samples": {
+      "-2": true,
+      "-1": true,
+      "0": true,
+      "0.5": false,
+      "0.6": false,
+      "0.7": false,
+      "0.8": true,
+      "1": true,
+      "1.5": true,
+      "2": true
+    }
+  },
+  {
+    "z": 0.01,
+    "samples": {
+      "-2": true,
+      "-1": true,
+      "0": true,
+      "0.5": false,
+      "0.6": false,
+      "0.7": false,
+      "0.8": true,
+      "1": true,
+      "1.5": true,
+      "2": true
+    }
+  },
+  {
+    "z": 0.05,
+    "samples": {
+      "-2": true,
+      "-1": true,
+      "0": true,
+      "0.5": false,
+      "0.6": false,
+      "0.7": false,
+      "0.8": true,
+      "1": true,
+      "1.5": true,
+      "2": true
+    }
+  },
+  {
+    "z": 0.1,
+    "samples": {
+      "-2": true,
+      "-1": true,
+      "0": true,
+      "0.5": true,
+      "0.6": true,
+      "0.7": true,
+      "0.8": true,
+      "1": true,
+      "1.5": true,
+      "2": true
+    }
+  },
+  {
+    "z": 0.15,
+    "samples": {
+      "-2": true,
+      "-1": true,
+      "0": true,
+      "0.5": true,
+      "0.6": true,
+      "0.7": true,
+      "0.8": true,
+      "1": true,
+      "1.5": true,
+      "2": true
+    }
+  },
+  {
+    "z": 0.19,
+    "samples": {
+      "-2": true,
+      "-1": true,
+      "0": true,
+      "0.5": true,
+      "0.6": true,
+      "0.7": true,
+      "0.8": true,
+      "1": true,
+      "1.5": true,
+      "2": true
+    }
+  }
+]

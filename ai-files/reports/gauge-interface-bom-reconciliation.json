@@ -1,0 +1,163 @@
+{
+  "date": "2026-10-05",
+  "scope": "Current active fuel-gauge undervoltage interface; candidate charger/PD parts excluded.",
+  "sources": {
+    "bom_xlsx": "ai-files/bom/DesktopSpeaker_LCSC_Starter_BOM.xlsx",
+    "bom_csv": "ai-files/bom/DesktopSpeaker_LCSC_Starter_BOM.csv",
+    "netlist_xml": "ai-files/reports/gauge-voltage-domain-after.xml"
+  },
+  "coverage": {
+    "netlist_physical_references": 113,
+    "bom_physical_references": 113,
+    "missing_from_bom": [],
+    "extra_in_bom": [],
+    "duplicate_bom_references": [],
+    "identity_checks": {
+      "mpn": {
+        "checked": 109,
+        "matched": 109,
+        "mismatches": [],
+        "unresolved": []
+      },
+      "lcsc": {
+        "checked": 109,
+        "matched": 109,
+        "mismatches": [],
+        "unresolved": []
+      }
+    },
+    "existing_unresolved_netlist_metadata": []
+  },
+  "requested_rows": {
+    "Q104": {
+      "mpn": "2N7002,215",
+      "lcsc": "C65189",
+      "function": "Charger CE and gauge-enable NMOS",
+      "fitted_qty": "2"
+    },
+    "C126": {
+      "mpn": "CL10B104KB8NNNC",
+      "lcsc": "C1591",
+      "function": "100nF / 10V-or-higher 0603 decoupling; supervisor C126",
+      "fitted_qty": "8"
+    },
+    "U21": {
+      "mpn": "TPS3839G33DBZR",
+      "lcsc": "C485802",
+      "function": "Gauge undervoltage supervisor",
+      "fitted_qty": "1"
+    },
+    "R126": {
+      "mpn": "RC0603FR-071ML",
+      "lcsc": "C105578",
+      "function": "Gauge signal-switch and supervisor gate pull-up/pull-down resistors",
+      "fitted_qty": "2"
+    },
+    "R127": {
+      "mpn": "RC0603FR-071ML",
+      "lcsc": "C105578",
+      "function": "Gauge signal-switch and supervisor gate pull-up/pull-down resistors",
+      "fitted_qty": "2"
+    }
+  },
+  "requested_reference_identity": {
+    "Q104": {
+      "netlist": {
+        "mpn": "2N7002,215",
+        "lcsc": "C65189"
+      },
+      "bom": {
+        "mpn": "2N7002,215",
+        "lcsc": "C65189"
+      },
+      "matches": true
+    },
+    "C126": {
+      "netlist": {
+        "mpn": "CL10B104KB8NNNC",
+        "lcsc": "C1591"
+      },
+      "bom": {
+        "mpn": "CL10B104KB8NNNC",
+        "lcsc": "C1591"
+      },
+      "matches": true
+    },
+    "U21": {
+      "netlist": {
+        "mpn": "TPS3839G33DBZR",
+        "lcsc": "C485802"
+      },
+      "bom": {
+        "mpn": "TPS3839G33DBZR",
+        "lcsc": "C485802"
+      },
+      "matches": true
+    },
+    "R126": {
+      "netlist": {
+        "mpn": "RC0603FR-071ML",
+        "lcsc": "C105578"
+      },
+      "bom": {
+        "mpn": "RC0603FR-071ML",
+        "lcsc": "C105578"
+      },
+      "matches": true
+    },
+    "R127": {
+      "netlist": {
+        "mpn": "RC0603FR-071ML",
+        "lcsc": "C105578"
+      },
+      "bom": {
+        "mpn": "RC0603FR-071ML",
+        "lcsc": "C105578"
+      },
+      "matches": true
+    }
+  },
+  "materials": {
+    "U21": {
+      "manufacturer": "Texas Instruments",
+      "mpn": "TPS3839G33DBZR",
+      "lcsc": "C485802",
+      "listing_snapshot_stock": 3444,
+      "listing_snapshot_usd_at_1": 0.439,
+      "datasheet": "https://www.ti.com/lit/ds/symlink/tps3839.pdf"
+    },
+    "R126_R127": {
+      "manufacturer": "YAGEO",
+      "mpn": "RC0603FR-071ML",
+      "lcsc": "C105578",
+      "value": "1 MOhm, 1%, 0603",
+      "listing_snapshot_stock": 359600,
+      "listing_snapshot_usd_at_100": 0.0056,
+      "moq_multiple": 100,
+      "datasheet": "https://www.yageogroup.com/component-documentation/download/specsheet/RC0603FR-071ML"
+    },
+    "Q104_reuse": {
+      "mpn": "2N7002,215",
+      "lcsc": "C65189",
+      "shared_bom_row": "Q100, Q104"
+    },
+    "C126_reuse": {
+      "mpn": "CL10B104KB8NNNC",
+      "lcsc": "C1591",
+      "shared_bom_row": "C120, C121, C130, C131, C132, C143, C151, C126"
+    }
+  },
+  "formula_scan": {
+    "result_path": "ai-files/reports/gauge-interface-bom-formula-scan.ndjson",
+    "matches": 0
+  },
+  "subtotal_usd": {
+    "fitted": 75.61,
+    "in_stock_order": 95.01,
+    "complete_product_cost": false
+  },
+  "limitations": [
+    "Listing stock and price are volatile snapshots.",
+    "2N7002 cold gate-drive qualification remains open."
+  ]
+}
