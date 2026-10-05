@@ -54,13 +54,14 @@ Updated: 2026-10-05. Use this checklist with `AGENTS.md` and `ai-files/HANDOVER.
 - [x] Add SW100 QON wake button and SW101 pack-positive physical disconnect to the charger sheet.
 - [ ] Finalize both selected storage modes: physical battery disconnect and electronic off with USB/button wake; finalize switch ratings, shutdown sequencing and drain budget.
 
-## 4. MCU, controls and configuration
+## 4. MCU, controls and configuration — PARTIAL
 
-- [ ] Connect the currently placed STM32G031K8T6 supply/grounds, decoupling, reset/boot and programming/debug interface.
-- [ ] Check pin allocation and voltage domains for charger/gauge, PD, amplifiers, Bluetooth and controls.
-- [ ] Define buttons, indicators, volume/source control and battery display requirements.
-- [ ] Allocate interrupt/enable/mute lines and bus addresses; select pull-ups by bus capacitance and rail state.
-- [ ] Document startup/shutdown sequencing, fault handling and external-power charge policy.
+- [x] Connect the STM32G031K8T6 (U3, moved to child sheet `MCU.kicad_sch`, symbol pins regrouped by function) supply/grounds, decoupling (C160 100nF, C161 4.7uF), NRST 100nF (C162), BOOT0/SWCLK pull-down (R160) and SWD header J6 (1 SWDIO, 2 SWCLK, 3 NRST, 4 3V_AO, 5 GND).
+- [x] Connect MCU to the captured power blocks only: CTRL_SDA/SCL (I2C1 PB7/PB6), PDCTRL_SDA/SCL (I2C2 PA12/PA11), CHG_ENABLE, CHG_SYS_ENABLE, CHG_INT, GAUGE_ALRT_N, PD_PLUG_EVENT, PD_SINK_EN, BT_PWR_EN, BT_FORCE_PWM, 5V_LOGIC_EN. Allocation and rationale: `ai-files/reports/mcu-pin-allocation.md`. All other MCU pins are no-connect (reserved list in that report).
+- [ ] Check pin allocation and voltage domains for amplifiers, Bluetooth UART and controls (reserved pins only: PA2/PA3 UART, PA4/PA5 selects, PA6/PA7 amp PDN/FAULT, PA1 button ladder, PB0 headphone detect, PB1 USB-source detect). GPIO budget is tight; third I2C bus for audio has no hardware instance left (bit-bang on PB3/PB4 or share CTRL).
+- [ ] Define buttons, indicators, volume/source control and battery display requirements. QON sense needs a new Battery_Charger port (no net exists today).
+- [ ] Allocate remaining interrupt/enable/mute lines and bus addresses; select pull-ups by bus capacitance and rail state.
+- [ ] Document startup/shutdown sequencing, fault handling and external-power charge policy (see `reports/replacement-power-control-contract.md`).
 - [ ] Resolve any MCU/Bluetooth architecture change explicitly before replacing the currently selected parts.
 
 ## 5. USB audio and connector data path
@@ -291,3 +292,6 @@ Quick mechanical envelope review: `ai-files/reports/mechanical-fit-rough-2026-10
 - SW101 = SHOU HAN KCD1-201-R (LCSC C5884429), 20 mm round SPST rocker, datasheet rating 10 A @12 VDC, 6 A 250 VAC. LCSC stock 0 at 2026-10-06; the datasheet drawing shows 3 terminals at 7 mm pitch (4.7 mm tabs): outer terminals assumed switched (symbol 1/2 -> pads 1/3, pad 2 NC), UNVERIFIED by continuity. Rating is below the assumed 15-20 A peak; treat as service/transport disconnect or add current limiting. Footprint `SHOUHAN_KCD1-201-R_Rocker_D20_Panel`, no STEP.
 - Pack itself remains PENDING (datasheet needed; not selected). Charge current recommendation: default 0.2-0.3C (2-3 A), gentle 0.1C; from a 5 V/2 A source limit to ~0.5-1 A charge. Peak discharge 15-20 A is an unverified assumption.
 - BOM rows J5/SW100/SW101 filled; prices are unverified listing snapshots. Datasheets in ai-files/datasheets: Molex_43650-0300_C503478.pdf, TE_1977066-1_datasheet.pdf, SHOU_HAN_KCD1-201-R_C5884429.pdf. ERC unchanged at 260; netlist unchanged.
+
+## MCU sheet capture (2026-10-06)
+- [x] `MCU.kicad_sch` added (root page 7, right of Fuel_Gauge_Power). U3 reference/UUID preserved (the placed MCU is U3, not U1). TAS5825M U6/U7 moved up in the root to clear the sheet. New parts C160-C162, R160, J6 added to the BOM (unverified prices). ERC 260 -> 222 (fewer root pin_not_connected and label_dangling); MCU sheet adds 0.
