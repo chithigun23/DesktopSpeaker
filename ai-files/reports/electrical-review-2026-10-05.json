@@ -1,0 +1,63 @@
+{
+  "date": "2026-10-05",
+  "scope": "read-only active power-sheet and isolated BQ25792 candidate review",
+  "cli": "KiCad 10.0.6",
+  "edits_or_tests": false,
+  "candidate_integration_approved": false,
+  "findings": [
+    {
+      "id": "active_gauge_low_voltage_domain",
+      "severity": "medium",
+      "status": "active concrete interface-range mismatch",
+      "refs": [
+        "Fuel_Gauge_Power: U13/U16/U17 pins 1,2,4,5; U5 pins 3,5,7,8; 3V_AO; BAT_PACK"
+      ],
+      "condition": "BAT_PACK is nonzero but below 3V_AO pull-up; below 2.5V MAX17048 is below its stated operating supply; below 1.65V TS5A3167 is outside recommended VCC range",
+      "datasheets": [
+        "MAX17048_MAX17049.pdf electrical characteristics, VIN=2.5\u20134.5V",
+        "TS5A3167.pdf \u00a75.3 and power-off leakage table"
+      ],
+      "action": "Keep U5 disconnected until its supply is valid; default the signal switches off or use a safe 3V_AO-side isolation/level-translation scheme."
+    },
+    {
+      "id": "active_aux_rail_headroom",
+      "severity": "low",
+      "status": "qualification gate, no demonstrated miswire",
+      "refs": [
+        "USB_PD: U19 pins 7,8 and U11 pin 24 / USB_AUX_5V; Fuel_Gauge_Power: U20 pins 3,5,6,2,7; U12 pins 1,3,5"
+      ],
+      "condition": "Fixed 5V LDO fed by nominal 5V USB; weak-source output, startup load and dropout margin are not bounded",
+      "datasheets": [
+        "TPS7B84-Q1.pdf operating/dropout data",
+        "TPS2116.pdf \u00a7\u00a76.3, 7.3.1, 7.6.1.1"
+      ],
+      "action": "Qualify U19/U12/AO startup at weakest allowed USB source and actual MCU/I2C load."
+    },
+    {
+      "id": "candidate_bq25792_startup_policy",
+      "severity": "medium integration gate",
+      "status": "candidate-only; no active defect claimed",
+      "refs": [
+        "candidate Battery_Charger: U4 pins 13,17,24; Q100/Q101/Q102/Q103; SW101"
+      ],
+      "supported_good": "Default-off CE, POR HIZ hold and series external ship-FET routing are consistent with intended sequence.",
+      "condition": "POR HIZ sample below 1.08V implies cached 100mA clamp; no documented resampling on release. Host must clear EN_EXTILIM and set/read back source-specific IINDPM, while handling reset/watchdog/source changes; DP/DM detection mux and host enumeration are pending. Candidate R102 is displayed 4.7k but has MPN/LCSC for 220R; 4.7k is the BQ25792 1S/750kHz Table 9-1 setting, and 220R is not a listed valid profile. REG14 SFET_PRESENT resets to 0 and locks SDRV_CTRL/ship control until the host sets it to 1.",
+      "datasheets": [
+        "BQ25792.pdf \u00a7\u00a77, 9.3.4.3, 9.3.6, 9.3.12, 9.4",
+        "reports/bq25792-ilim-startup-review.md"
+      ],
+      "action": "Correct R102 MPN/LCSC; have startup set/read back SFET_PRESENT=1 before using Q103 ship control; keep candidate isolated until source-aware current, reset/watchdog and CE behavior are implemented and verified."
+    }
+  ],
+  "supported_good": [
+    "TPS2116 active pin mapping: USB_AUX_5V VIN1/MODE, SYS_RAW VIN2, output to U12 VIN/EN; domains remain distinct.",
+    "TS5A3167 powered-off isolation applies at VCC=0 absent-pack condition; low nonzero pack behavior remains open.",
+    "Candidate 1S SYS max 4.55V under BQ25792 specified condition is below TPS2116 5.5V recommended input ceiling."
+  ],
+  "evidence_files": [
+    "reports/usb-aux-logic-integrated.xml",
+    "reports/review-candidate-netlist.xml",
+    "reports/usb-aux-logic-integration.json",
+    "reports/bq25792-candidate-full-pin-review.json"
+  ]
+}

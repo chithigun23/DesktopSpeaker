@@ -1,0 +1,1453 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="E">
+  <design>
+    <source>/home/chithi/Desktop/DesktopSpeaker/ai-files/candidates/Battery_Charger.kicad_sch</source>
+    <date>2026-10-05T17:44:27</date>
+    <tool>Eeschema 10.0.6-rc2</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title>BQ25792 1S charger and power path candidate</title>
+        <company/>
+        <rev>candidate-0.1</rev>
+        <date/>
+        <source>Battery_Charger.kicad_sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="C100">
+      <value>10uF / 50V</value>
+      <footprint>DesktopSpeaker:PD_C_1210</footprint>
+      <datasheet>https://product.samsungsem.com/mlcc/CL32B106KBJNNN.do</datasheet>
+      <fields>
+        <field name="Manufacturer">Samsung Electro-Mechanics</field>
+        <field name="MPN">CL32B106KBJNNNE</field>
+        <field name="LCSC Part">C138687</field>
+        <field name="Footprint">DesktopSpeaker:PD_C_1210</field>
+        <field name="Datasheet">https://product.samsungsem.com/mlcc/CL32B106KBJNNN.do</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="PD_C" part="PD_C" description="Unpolarized capacitor"/>
+      <property name="Manufacturer" value="Samsung Electro-Mechanics"/>
+      <property name="MPN" value="CL32B106KBJNNNE"/>
+      <property name="LCSC Part" value="C138687"/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="ai-files/candidates/Battery_Charger.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>9d7fa575-c149-42c1-8758-f39904b8ccc3</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C101">
+      <value>10uF / 50V</value>
+      <footprint>DesktopSpeaker:PD_C_1210</footprint>
+      <datasheet>https://product.samsungsem.com/mlcc/CL32B106KBJNNN.do</datasheet>
+      <fields>
+        <field name="Manufacturer">Samsung Electro-Mechanics</field>
+        <field name="MPN">CL32B106KBJNNNE</field>
+        <field name="LCSC Part">C138687</field>
+        <field name="Footprint">DesktopSpeaker:PD_C_1210</field>
+        <field name="Datasheet">https://product.samsungsem.com/mlcc/CL32B106KBJNNN.do</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="PD_C" part="PD_C" description="Unpolarized capacitor"/>
+      <property name="Manufacturer" value="Samsung Electro-Mechanics"/>
+      <property name="MPN" value="CL32B106KBJNNNE"/>
+      <property name="LCSC Part" value="C138687"/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="ai-files/candidates/Battery_Charger.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>31edde22-84ec-4846-a45c-720269ec7a82</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C102">
+      <value>10uF / 10V</value>
+      <footprint>DesktopSpeaker:PD_C_0805</footprint>
+      <datasheet>../ai-files/datasheets/Samsung_CL21B106KPQNNNE.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">Samsung Electro-Mechanics</field>
+        <field name="MPN">CL21B106KPQNNNE</field>
+        <field name="LCSC Part">C32635</field>
+        <field name="Footprint">DesktopSpeaker:PD_C_0805</field>
+        <field name="Datasheet">../ai-files/datasheets/Samsung_CL21B106KPQNNNE.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="PD_C" part="PD_C" description="Unpolarized capacitor"/>
+      <property name="Manufacturer" value="Samsung Electro-Mechanics"/>
+      <property name="MPN" value="CL21B106KPQNNNE"/>
+      <property name="LCSC Part" value="C32635"/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="ai-files/candidates/Battery_Charger.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>07e8bd63-18f8-41ed-bfb8-a236d79be5ae</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C103">
+      <value>47nF / 50V</value>
+      <footprint>DesktopSpeaker:PD_C_0603</footprint>
+      <datasheet>${KIPRJMOD}/../ai-files/datasheets/YAGEO_C107093_CC0603KRX7R9BB473.pdf</datasheet>
+      <fields>
+        <field name="MPN">CC0603KRX7R9BB473</field>
+        <field name="Manufacturer">YAGEO</field>
+        <field name="LCSC">C107093</field>
+        <field name="LCSC Part">C107093</field>
+        <field name="Footprint">DesktopSpeaker:PD_C_0603</field>
+        <field name="Datasheet">${KIPRJMOD}/../ai-files/datasheets/YAGEO_C107093_CC0603KRX7R9BB473.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="PD_C" part="PD_C" description="Unpolarized capacitor"/>
+      <property name="MPN" value="CC0603KRX7R9BB473"/>
+      <property name="Manufacturer" value="YAGEO"/>
+      <property name="LCSC" value="C107093"/>
+      <property name="LCSC Part" value="C107093"/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="ai-files/candidates/Battery_Charger.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>96177075-a4f2-4133-8b7b-cc0fc06b2b56</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C104">
+      <value>22uF / 10V</value>
+      <footprint>DesktopSpeaker:PD_C_0805</footprint>
+      <fields>
+        <field name="Manufacturer">Murata</field>
+        <field name="MPN">GRM21BZ71A226ME15L</field>
+        <field name="LCSC Part">C907991</field>
+        <field name="Footprint">DesktopSpeaker:PD_C_0805</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="PD_C" part="PD_C" description="Unpolarized capacitor"/>
+      <property name="Manufacturer" value="Murata"/>
+      <property name="MPN" value="GRM21BZ71A226ME15L"/>
+      <property name="LCSC Part" value="C907991"/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="ai-files/candidates/Battery_Charger.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>0957d969-4b97-46c1-b8cb-c957c3464f58</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C105">
+      <value>22uF / 10V</value>
+      <footprint>DesktopSpeaker:PD_C_0805</footprint>
+      <fields>
+        <field name="Manufacturer">Murata</field>
+        <field name="MPN">GRM21BZ71A226ME15L</field>
+        <field name="LCSC Part">C907991</field>
+        <field name="Footprint">DesktopSpeaker:PD_C_0805</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="PD_C" part="PD_C" description="Unpolarized capacitor"/>
+      <property name="Manufacturer" value="Murata"/>
+      <property name="MPN" value="GRM21BZ71A226ME15L"/>
+      <property name="LCSC Part" value="C907991"/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="ai-files/candidates/Battery_Charger.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>4aaaaebd-3449-466d-8cbc-93eccd686f17</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C106">
+      <value>22uF / 10V</value>
+      <footprint>DesktopSpeaker:PD_C_0805</footprint>
+      <datasheet>../ai-files/datasheets/Murata_GRM21BZ71A226ME15L_LCSC.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">Murata</field>
+        <field name="MPN">GRM21BZ71A226ME15L</field>
+        <field name="LCSC Part">C907991</field>
+        <field name="Footprint">DesktopSpeaker:PD_C_0805</field>
+        <field name="Datasheet">../ai-files/datasheets/Murata_GRM21BZ71A226ME15L_LCSC.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="PD_C" part="PD_C" description="Unpolarized capacitor"/>
+      <property name="Manufacturer" value="Murata"/>
+      <property name="MPN" value="GRM21BZ71A226ME15L"/>
+      <property name="LCSC Part" value="C907991"/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="ai-files/candidates/Battery_Charger.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>26c6960b-0ac3-42a0-8ec4-e008105e065b</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C107">
+      <value>22uF / 10V</value>
+      <footprint>DesktopSpeaker:PD_C_0805</footprint>
+      <fields>
+        <field name="Manufacturer">Murata</field>
+        <field name="MPN">GRM21BZ71A226ME15L</field>
+        <field name="LCSC Part">C907991</field>
+        <field name="Footprint">DesktopSpeaker:PD_C_0805</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="PD_C" part="PD_C" description="Unpolarized capacitor"/>
+      <property name="Manufacturer" value="Murata"/>
+      <property name="MPN" value="GRM21BZ71A226ME15L"/>
+      <property name="LCSC Part" value="C907991"/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="ai-files/candidates/Battery_Charger.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>4ce74719-a4f6-4c8b-9105-1fb2307f693c</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C108">
+      <value>10uF / 50V</value>
+      <footprint>DesktopSpeaker:PD_C_1210</footprint>
+      <datasheet>https://product.samsungsem.com/mlcc/CL32B106KBJNNN.do</datasheet>
+      <fields>
+        <field name="Manufacturer">Samsung Electro-Mechanics</field>
+        <field name="MPN">CL32B106KBJNNNE</field>
+        <field name="LCSC Part">C138687</field>
+        <field name="Footprint">DesktopSpeaker:PD_C_1210</field>
+        <field name="Datasheet">https://product.samsungsem.com/mlcc/CL32B106KBJNNN.do</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="PD_C" part="PD_C" description="Unpolarized capacitor"/>
+      <property name="Manufacturer" value="Samsung Electro-Mechanics"/>
+      <property name="MPN" value="CL32B106KBJNNNE"/>
+      <property name="LCSC Part" value="C138687"/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="ai-files/candidates/Battery_Charger.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>0eb300c3-b857-4118-9173-d5912e3c6d16</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C109">
+      <value>10uF / 10V</value>
+      <footprint>DesktopSpeaker:PD_C_0805</footprint>
+      <datasheet>../ai-files/datasheets/Samsung_CL21B106KPQNNNE.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">Samsung Electro-Mechanics</field>
+        <field name="MPN">CL21B106KPQNNNE</field>
+        <field name="LCSC Part">C32635</field>
+        <field name="Footprint">DesktopSpeaker:PD_C_0805</field>
+        <field name="Datasheet">../ai-files/datasheets/Samsung_CL21B106KPQNNNE.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="PD_C" part="PD_C" description="Unpolarized capacitor"/>
+      <property name="Manufacturer" value="Samsung Electro-Mechanics"/>
+      <property name="MPN" value="CL21B106KPQNNNE"/>
+      <property name="LCSC Part" value="C32635"/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="ai-files/candidates/Battery_Charger.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>1784aa47-b785-4e08-86ab-9419e33faf40</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C110">
+      <value>47nF / 50V</value>
+      <footprint>DesktopSpeaker:PD_C_0603</footprint>
+      <fields>
+        <field name="MPN"/>
+        <field name="Manufacturer"/>
+        <field name="LCSC"/>
+        <field name="LCSC Part"/>
+        <field name="Footprint">DesktopSpeaker:PD_C_0603</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="PD_C" part="PD_C" description="Unpolarized capacitor"/>
+      <property name="MPN" value=""/>
+      <property name="Manufacturer" value=""/>
+      <property name="LCSC" value=""/>
+      <property name="LCSC Part" value=""/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="ai-files/candidates/Battery_Charger.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>f018f199-93b7-467f-b2fd-1e4c363393b8</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C111">
+      <value>10uF / 50V</value>
+      <footprint>DesktopSpeaker:PD_C_1210</footprint>
+      <datasheet>https://product.samsungsem.com/mlcc/CL32B106KBJNNN.do</datasheet>
+      <fields>
+        <field name="MPN">CL32B106KBJNNNE</field>
+        <field name="Manufacturer">Samsung Electro-Mechanics</field>
+        <field name="LCSC">C138687</field>
+        <field name="LCSC Part">C138687</field>
+        <field name="Footprint">DesktopSpeaker:PD_C_1210</field>
+        <field name="Datasheet">https://product.samsungsem.com/mlcc/CL32B106KBJNNN.do</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="PD_C" part="PD_C" description="Unpolarized capacitor"/>
+      <property name="MPN" value="CL32B106KBJNNNE"/>
+      <property name="Manufacturer" value="Samsung Electro-Mechanics"/>
+      <property name="LCSC" value="C138687"/>
+      <property name="LCSC Part" value="C138687"/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="ai-files/candidates/Battery_Charger.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>f2c116cc-6cc9-4a93-96bf-1fbc10ee4645</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C112">
+      <value>10uF / 50V</value>
+      <footprint>DesktopSpeaker:PD_C_1210</footprint>
+      <datasheet>https://product.samsungsem.com/mlcc/CL32B106KBJNNN.do</datasheet>
+      <fields>
+        <field name="MPN">CL32B106KBJNNNE</field>
+        <field name="Manufacturer">Samsung Electro-Mechanics</field>
+        <field name="LCSC">C138687</field>
+        <field name="LCSC Part">C138687</field>
+        <field name="Footprint">DesktopSpeaker:PD_C_1210</field>
+        <field name="Datasheet">https://product.samsungsem.com/mlcc/CL32B106KBJNNN.do</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="PD_C" part="PD_C" description="Unpolarized capacitor"/>
+      <property name="MPN" value="CL32B106KBJNNNE"/>
+      <property name="Manufacturer" value="Samsung Electro-Mechanics"/>
+      <property name="LCSC" value="C138687"/>
+      <property name="LCSC Part" value="C138687"/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="ai-files/candidates/Battery_Charger.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>fa9aa549-14ef-4b15-aa5c-226b9b90d3e8</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C113">
+      <value>0.1uF / 50V</value>
+      <footprint>DesktopSpeaker:PD_C_0603</footprint>
+      <fields>
+        <field name="MPN"/>
+        <field name="Manufacturer"/>
+        <field name="LCSC"/>
+        <field name="LCSC Part"/>
+        <field name="Footprint">DesktopSpeaker:PD_C_0603</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="PD_C" part="PD_C" description="Unpolarized capacitor"/>
+      <property name="MPN" value=""/>
+      <property name="Manufacturer" value=""/>
+      <property name="LCSC" value=""/>
+      <property name="LCSC Part" value=""/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="ai-files/candidates/Battery_Charger.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>63bb137c-a066-47bd-8a50-7a55b25840d5</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C114">
+      <value>0.1uF / 50V</value>
+      <footprint>DesktopSpeaker:PD_C_0603</footprint>
+      <fields>
+        <field name="MPN"/>
+        <field name="Manufacturer"/>
+        <field name="LCSC"/>
+        <field name="LCSC Part"/>
+        <field name="Footprint">DesktopSpeaker:PD_C_0603</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="PD_C" part="PD_C" description="Unpolarized capacitor"/>
+      <property name="MPN" value=""/>
+      <property name="Manufacturer" value=""/>
+      <property name="LCSC" value=""/>
+      <property name="LCSC Part" value=""/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="ai-files/candidates/Battery_Charger.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>df1fff3c-873f-4088-a5a3-d7ba550e4d34</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="J5">
+      <value>1S_PACK_3PIN</value>
+      <footprint>DesktopSpeaker:JST_B3P_VH_1x03_P3.96mm_Vertical</footprint>
+      <fields>
+        <field name="Footprint">DesktopSpeaker:JST_B3P_VH_1x03_P3.96mm_Vertical</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Connector_Generic" part="Conn_01x03" description="Generic connector, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="ai-files/candidates/Battery_Charger.kicad_sch"/>
+      <property name="ki_keywords" value="connector"/>
+      <property name="ki_fp_filters" value="Connector*:*_1x??_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>bf698e54-1257-448b-b6e9-f4110fd952d9</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="L1">
+      <value>2.2uH</value>
+      <footprint>DesktopSpeaker:SRN6045TA-2R2Y</footprint>
+      <fields>
+        <field name="MPN">SRN6045TA-2R2Y</field>
+        <field name="Manufacturer">Bourns</field>
+        <field name="LCSC Part">C1332316</field>
+        <field name="Footprint">DesktopSpeaker:SRN6045TA-2R2Y</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="L" description="Inductor"/>
+      <property name="MPN" value="SRN6045TA-2R2Y"/>
+      <property name="Manufacturer" value="Bourns"/>
+      <property name="LCSC Part" value="C1332316"/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="ai-files/candidates/Battery_Charger.kicad_sch"/>
+      <property name="ki_keywords" value="inductor choke coil reactor magnetic"/>
+      <property name="ki_fp_filters" value="Choke_* *Coil* Inductor_* L_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>ec7c19fd-4cfa-418e-815b-9fc987b0415c</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="Q100">
+      <value>2N7002</value>
+      <footprint>DesktopSpeaker:2N7002</footprint>
+      <fields>
+        <field name="Footprint">DesktopSpeaker:2N7002</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="2N7002" part="2N7002" description="Nexperia 60V 300mA N-channel MOSFET; SOT-23"/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="ai-files/candidates/Battery_Charger.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>e02678a1-54aa-4097-80ea-f759bf4bef47</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="3"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="Q101">
+      <value>2N7002</value>
+      <footprint>DesktopSpeaker:2N7002</footprint>
+      <fields>
+        <field name="Footprint">DesktopSpeaker:2N7002</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="2N7002" part="2N7002" description="Nexperia 60V 300mA N-channel MOSFET; SOT-23"/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="ai-files/candidates/Battery_Charger.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>5c78c555-3bb0-4192-afeb-787d744af50a</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="3"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="Q102">
+      <value>2N7002</value>
+      <footprint>DesktopSpeaker:2N7002</footprint>
+      <fields>
+        <field name="Footprint">DesktopSpeaker:2N7002</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="2N7002" part="2N7002" description="Nexperia 60V 300mA N-channel MOSFET; SOT-23"/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="ai-files/candidates/Battery_Charger.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>33ba40f7-4679-4b15-8727-69fb58c31644</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="3"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="Q103">
+      <value>CSD17579Q3A</value>
+      <footprint>DesktopSpeaker:CSD17579Q3A_DNH0008A</footprint>
+      <datasheet>https://www.ti.com/lit/ds/symlink/csd17579q3a.pdf</datasheet>
+      <fields>
+        <field name="MPN">CSD17579Q3A</field>
+        <field name="LCSC Part">C97376</field>
+        <field name="Manufacturer">Texas Instruments</field>
+        <field name="Footprint">DesktopSpeaker:CSD17579Q3A_DNH0008A</field>
+        <field name="Datasheet">https://www.ti.com/lit/ds/symlink/csd17579q3a.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="CSD17579Q3A" part="CSD17579Q3A" description="30 V low-Qg N-channel MOSFET, DNH0008A SON-8-EP"/>
+      <property name="MPN" value="CSD17579Q3A"/>
+      <property name="LCSC Part" value="C97376"/>
+      <property name="Manufacturer" value="Texas Instruments"/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="ai-files/candidates/Battery_Charger.kicad_sch"/>
+      <property name="ki_keywords" value="transistor NMOS N-MOS N-MOSFET"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>979d3486-eb2c-4ca7-8fea-ffe8a0f6cbff</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="4"/>
+            <pin num="5"/>
+            <pin num="6"/>
+            <pin num="7"/>
+            <pin num="8"/>
+            <pin num="9"/>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R100">
+      <value>5.23k</value>
+      <footprint>DesktopSpeaker:PD_R_0603</footprint>
+      <datasheet>${KIPRJMOD}/../ai-files/datasheets/SAE_1RC0603F_series.pdf</datasheet>
+      <fields>
+        <field name="MPN">1RC0603F5231</field>
+        <field name="Manufacturer">SAE</field>
+        <field name="LCSC">C54531489</field>
+        <field name="Footprint">DesktopSpeaker:PD_R_0603</field>
+        <field name="Datasheet">${KIPRJMOD}/../ai-files/datasheets/SAE_1RC0603F_series.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="PD_R" part="PD_R" description="Resistor"/>
+      <property name="MPN" value="1RC0603F5231"/>
+      <property name="Manufacturer" value="SAE"/>
+      <property name="LCSC" value="C54531489"/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="ai-files/candidates/Battery_Charger.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>279362b1-55ce-43e7-a0de-9c755fc5a14b</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R101">
+      <value>30.1k</value>
+      <footprint>DesktopSpeaker:PD_R_0603</footprint>
+      <datasheet>${KIPRJMOD}/../ai-files/datasheets/SAE_1RC0603F_series.pdf</datasheet>
+      <fields>
+        <field name="MPN">1RC0603F3012</field>
+        <field name="Manufacturer">SAE</field>
+        <field name="LCSC">C54531365</field>
+        <field name="Footprint">DesktopSpeaker:PD_R_0603</field>
+        <field name="Datasheet">${KIPRJMOD}/../ai-files/datasheets/SAE_1RC0603F_series.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="PD_R" part="PD_R" description="Resistor"/>
+      <property name="MPN" value="1RC0603F3012"/>
+      <property name="Manufacturer" value="SAE"/>
+      <property name="LCSC" value="C54531365"/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="ai-files/candidates/Battery_Charger.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>7f16b3c4-0e3e-4c3a-a20e-3ecd054ab467</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R102">
+      <value>4.7k</value>
+      <footprint>DesktopSpeaker:PD_R_0603</footprint>
+      <datasheet>${KIPRJMOD}/../ai-files/datasheets/Yageo_RC0603FR_series.pdf</datasheet>
+      <fields>
+        <field name="MPN">RC0603FR-07220RL</field>
+        <field name="Manufacturer">YAGEO</field>
+        <field name="LCSC">C107696</field>
+        <field name="Footprint">DesktopSpeaker:PD_R_0603</field>
+        <field name="Datasheet">${KIPRJMOD}/../ai-files/datasheets/Yageo_RC0603FR_series.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="PD_R" part="PD_R" description="Resistor"/>
+      <property name="MPN" value="RC0603FR-07220RL"/>
+      <property name="Manufacturer" value="YAGEO"/>
+      <property name="LCSC" value="C107696"/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="ai-files/candidates/Battery_Charger.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>47f55e1c-89b7-4034-a157-8761ccefcd03</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R103">
+      <value>10k</value>
+      <footprint>DesktopSpeaker:PD_R_0603</footprint>
+      <datasheet>${KIPRJMOD}/../ai-files/datasheets/Yageo_RC0603FR_series.pdf</datasheet>
+      <fields>
+        <field name="MPN">RC0603FR-0710KL</field>
+        <field name="Manufacturer">YAGEO</field>
+        <field name="LCSC">C98220</field>
+        <field name="Footprint">DesktopSpeaker:PD_R_0603</field>
+        <field name="Datasheet">${KIPRJMOD}/../ai-files/datasheets/Yageo_RC0603FR_series.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="PD_R" part="PD_R" description="Resistor"/>
+      <property name="MPN" value="RC0603FR-0710KL"/>
+      <property name="Manufacturer" value="YAGEO"/>
+      <property name="LCSC" value="C98220"/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="ai-files/candidates/Battery_Charger.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>6416317b-3cba-49cc-a221-b9f9f1042d31</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R106">
+      <value>10k</value>
+      <footprint>DesktopSpeaker:PD_R_0603</footprint>
+      <datasheet>${KIPRJMOD}/../ai-files/datasheets/Yageo_RC0603FR_series.pdf</datasheet>
+      <fields>
+        <field name="MPN">RC0603FR-0710KL</field>
+        <field name="Manufacturer">YAGEO</field>
+        <field name="LCSC">C98220</field>
+        <field name="Footprint">DesktopSpeaker:PD_R_0603</field>
+        <field name="Datasheet">${KIPRJMOD}/../ai-files/datasheets/Yageo_RC0603FR_series.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="PD_R" part="PD_R" description="Resistor"/>
+      <property name="MPN" value="RC0603FR-0710KL"/>
+      <property name="Manufacturer" value="YAGEO"/>
+      <property name="LCSC" value="C98220"/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="ai-files/candidates/Battery_Charger.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>d3b4482a-107e-406e-b572-02c0cc8c8c71</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R107">
+      <value>100k</value>
+      <footprint>DesktopSpeaker:PD_R_0603</footprint>
+      <datasheet>${KIPRJMOD}/../ai-files/datasheets/Yageo_RC0603FR_series.pdf</datasheet>
+      <fields>
+        <field name="MPN">RC0603FR-07100KL</field>
+        <field name="Manufacturer">YAGEO</field>
+        <field name="LCSC">C14675</field>
+        <field name="Footprint">DesktopSpeaker:PD_R_0603</field>
+        <field name="Datasheet">${KIPRJMOD}/../ai-files/datasheets/Yageo_RC0603FR_series.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="PD_R" part="PD_R" description="Resistor"/>
+      <property name="MPN" value="RC0603FR-07100KL"/>
+      <property name="Manufacturer" value="YAGEO"/>
+      <property name="LCSC" value="C14675"/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="ai-files/candidates/Battery_Charger.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>998f5188-ce6a-41c5-b9f0-013ca13cb87c</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R108">
+      <value>180k</value>
+      <footprint>DesktopSpeaker:PD_R_0603</footprint>
+      <fields>
+        <field name="MPN"/>
+        <field name="Manufacturer"/>
+        <field name="LCSC"/>
+        <field name="Footprint">DesktopSpeaker:PD_R_0603</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="PD_R" part="PD_R" description="Resistor"/>
+      <property name="MPN" value=""/>
+      <property name="Manufacturer" value=""/>
+      <property name="LCSC" value=""/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="ai-files/candidates/Battery_Charger.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>b434bb01-f250-4968-9b92-65bbd8bdc0d2</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R109">
+      <value>100k</value>
+      <footprint>DesktopSpeaker:PD_R_0603</footprint>
+      <fields>
+        <field name="MPN"/>
+        <field name="Manufacturer"/>
+        <field name="LCSC"/>
+        <field name="Footprint">DesktopSpeaker:PD_R_0603</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="PD_R" part="PD_R" description="Resistor"/>
+      <property name="MPN" value=""/>
+      <property name="Manufacturer" value=""/>
+      <property name="LCSC" value=""/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="ai-files/candidates/Battery_Charger.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>e734a82d-aa4f-47ab-8634-33ea3580bea2</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R110">
+      <value>100k</value>
+      <footprint>DesktopSpeaker:PD_R_0603</footprint>
+      <fields>
+        <field name="MPN"/>
+        <field name="Manufacturer"/>
+        <field name="LCSC"/>
+        <field name="Footprint">DesktopSpeaker:PD_R_0603</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="PD_R" part="PD_R" description="Resistor"/>
+      <property name="MPN" value=""/>
+      <property name="Manufacturer" value=""/>
+      <property name="LCSC" value=""/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="ai-files/candidates/Battery_Charger.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>caa86fa2-7415-4097-9ee5-93f0be31e00b</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R111">
+      <value>100k</value>
+      <footprint>DesktopSpeaker:PD_R_0603</footprint>
+      <fields>
+        <field name="MPN"/>
+        <field name="Manufacturer"/>
+        <field name="LCSC"/>
+        <field name="Footprint">DesktopSpeaker:PD_R_0603</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="PD_R" part="PD_R" description="Resistor"/>
+      <property name="MPN" value=""/>
+      <property name="Manufacturer" value=""/>
+      <property name="LCSC" value=""/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="ai-files/candidates/Battery_Charger.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>d60aa7f6-a7c5-48c2-8e45-c7daaf77394b</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R112">
+      <value>100R</value>
+      <footprint>DesktopSpeaker:PD_R_0603</footprint>
+      <fields>
+        <field name="MPN"/>
+        <field name="Manufacturer"/>
+        <field name="LCSC"/>
+        <field name="Footprint">DesktopSpeaker:PD_R_0603</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="PD_R" part="PD_R" description="Resistor"/>
+      <property name="MPN" value=""/>
+      <property name="Manufacturer" value=""/>
+      <property name="LCSC" value=""/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="ai-files/candidates/Battery_Charger.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>94550db5-ccc8-46d5-8f09-5ea87bf915ae</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="SW100">
+      <value>WAKE_QON</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Switch" part="SW_Push" description="Push button switch, generic, two pins"/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="ai-files/candidates/Battery_Charger.kicad_sch"/>
+      <property name="ki_keywords" value="switch normally-open pushbutton push-button"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>c9972530-c182-4808-b315-d1bb4982388b</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="SW101">
+      <value>BAT_DISCONNECT</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Switch" part="SW_SPST" description="Single Pole Single Throw (SPST) switch"/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="ai-files/candidates/Battery_Charger.kicad_sch"/>
+      <property name="ki_keywords" value="switch lever"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>a8404534-5091-4a06-9c21-640e48e694d2</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="U4">
+      <value>BQ25792RQMR</value>
+      <footprint>DesktopSpeaker:BQ25792RQMR</footprint>
+      <datasheet>../ai-files/datasheets/BQ25792.pdf</datasheet>
+      <fields>
+        <field name="MPN">BQ25792RQMR</field>
+        <field name="LCSC Part">C2862876</field>
+        <field name="Manufacturer">Texas Instruments</field>
+        <field name="Footprint">DesktopSpeaker:BQ25792RQMR</field>
+        <field name="Datasheet">../ai-files/datasheets/BQ25792.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="BQ25792RQMR" part="BQ25792RQMR" description="I2C controlled 1-4 cell 5 A buck-boost battery charger"/>
+      <property name="MPN" value="BQ25792RQMR"/>
+      <property name="LCSC Part" value="C2862876"/>
+      <property name="Manufacturer" value="Texas Instruments"/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="ai-files/candidates/Battery_Charger.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>1247a06f-5f22-436c-b6c3-4f9c6b95fa94</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="6"/>
+            <pin num="7"/>
+            <pin num="12"/>
+            <pin num="13"/>
+            <pin num="14"/>
+            <pin num="15"/>
+            <pin num="16"/>
+            <pin num="17"/>
+            <pin num="20"/>
+            <pin num="21"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="8"/>
+            <pin num="9"/>
+            <pin num="27"/>
+            <pin num="29"/>
+            <pin num="5"/>
+            <pin num="28"/>
+            <pin num="4"/>
+            <pin num="26"/>
+            <pin num="19"/>
+            <pin num="25"/>
+            <pin num="22"/>
+            <pin num="23"/>
+            <pin num="18"/>
+            <pin num="24"/>
+            <pin num="11"/>
+            <pin num="10"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="2N7002" part="2N7002">
+      <description>Nexperia 60V 300mA N-channel MOSFET; SOT-23</description>
+      <docs>https://assets.nexperia.com/documents/data-sheet/2N7002.pdf</docs>
+      <fields>
+        <field name="Reference">Q</field>
+        <field name="Value">2N7002</field>
+        <field name="Footprint">DesktopSpeaker:2N7002</field>
+        <field name="Datasheet">https://assets.nexperia.com/documents/data-sheet/2N7002.pdf</field>
+        <field name="Description">Nexperia 60V 300mA N-channel MOSFET; SOT-23</field>
+      </fields>
+      <pins>
+        <pin num="1" name="G" type="input"/>
+        <pin num="2" name="S" type="passive"/>
+        <pin num="3" name="D" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="BQ25792RQMR" part="BQ25792RQMR">
+      <description>I2C controlled 1-4 cell 5 A buck-boost battery charger</description>
+      <docs>../ai-files/datasheets/BQ25792.pdf</docs>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">BQ25792RQMR</field>
+        <field name="Footprint">DesktopSpeaker:BQ25792RQMR</field>
+        <field name="Datasheet">../ai-files/datasheets/BQ25792.pdf</field>
+        <field name="Description">I2C controlled 1-4 cell 5 A buck-boost battery charger</field>
+        <field name="Manufacturer">Texas Instruments</field>
+        <field name="MPN">BQ25792RQMR</field>
+        <field name="LCSC Part">C2862876</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~{STAT}" type="open_collector"/>
+        <pin num="4" name="BTST1" type="passive"/>
+        <pin num="5" name="REGN" type="power_out"/>
+        <pin num="6" name="D+" type="bidirectional"/>
+        <pin num="7" name="D−" type="bidirectional"/>
+        <pin num="8" name="VAC2" type="power_in"/>
+        <pin num="9" name="VAC1" type="power_in"/>
+        <pin num="10" name="ACDRV2" type="passive"/>
+        <pin num="11" name="ACDRV1" type="passive"/>
+        <pin num="12" name="QON" type="input"/>
+        <pin num="13" name="~{CE}" type="input"/>
+        <pin num="14" name="SCL" type="input"/>
+        <pin num="15" name="SDA" type="bidirectional"/>
+        <pin num="16" name="TS" type="input"/>
+        <pin num="17" name="ILIM_HIZ" type="input"/>
+        <pin num="18" name="BATP" type="power_in"/>
+        <pin num="19" name="BTST2" type="passive"/>
+        <pin num="20" name="PROG" type="input"/>
+        <pin num="21" name="~{INT}" type="open_collector"/>
+        <pin num="24" name="SDRV" type="output"/>
+        <pin num="25" name="SYS" type="power_out"/>
+        <pin num="26" name="SW2" type="passive"/>
+        <pin num="27" name="GND" type="power_in"/>
+        <pin num="28" name="SW1" type="passive"/>
+        <pin num="29" name="PMID" type="power_out"/>
+        <pin num="2" name="VBUS" type="power_in"/>
+        <pin num="3" name="VBUS" type="power_in"/>
+        <pin num="22" name="BAT" type="power_in"/>
+        <pin num="23" name="BAT" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="CSD17579Q3A" part="CSD17579Q3A">
+      <description>30 V low-Qg N-channel MOSFET, DNH0008A SON-8-EP</description>
+      <docs>${KIPRJMOD}/../ai-files/datasheets/CSD17579Q3A.pdf</docs>
+      <fields>
+        <field name="Reference">Q</field>
+        <field name="Value">CSD17579Q3A</field>
+        <field name="Footprint">DesktopSpeaker:CSD17579Q3A_DNH0008A</field>
+        <field name="Datasheet">${KIPRJMOD}/../ai-files/datasheets/CSD17579Q3A.pdf</field>
+        <field name="Description">30 V low-Qg N-channel MOSFET, DNH0008A SON-8-EP</field>
+        <field name="Manufacturer">Texas Instruments</field>
+        <field name="MPN">CSD17579Q3A</field>
+        <field name="LCSC Part">C97376</field>
+      </fields>
+      <pins>
+        <pin num="4" name="G" type="input"/>
+        <pin num="1" name="S" type="passive"/>
+        <pin num="2" name="S" type="passive"/>
+        <pin num="3" name="S" type="passive"/>
+        <pin num="5" name="D" type="passive"/>
+        <pin num="6" name="D" type="passive"/>
+        <pin num="7" name="D" type="passive"/>
+        <pin num="8" name="D" type="passive"/>
+        <pin num="9" name="D" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Connector_Generic" part="Conn_01x03">
+      <description>Generic connector, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+      <footprints>
+        <fp>Connector*:*_1x??_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_01x03</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description">Generic connector, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+        <pin num="3" name="Pin_3" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="L">
+      <description>Inductor</description>
+      <footprints>
+        <fp>Choke_*</fp>
+        <fp>*Coil*</fp>
+        <fp>Inductor_*</fp>
+        <fp>L_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">L</field>
+        <field name="Value">L</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description">Inductor</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="PD_C" part="PD_C">
+      <description>Unpolarized capacitor</description>
+      <footprints>
+        <fp>C_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">C</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description">Unpolarized capacitor</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="PD_R" part="PD_R">
+      <description>Resistor</description>
+      <footprints>
+        <fp>R_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">R</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description">Resistor</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Switch" part="SW_Push">
+      <description>Push button switch, generic, two pins</description>
+      <fields>
+        <field name="Reference">SW</field>
+        <field name="Value">SW_Push</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description">Push button switch, generic, two pins</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Switch" part="SW_SPST">
+      <description>Single Pole Single Throw (SPST) switch</description>
+      <fields>
+        <field name="Reference">SW</field>
+        <field name="Value">SW_SPST</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description">Single Pole Single Throw (SPST) switch</field>
+      </fields>
+      <pins>
+        <pin num="1" name="A" type="passive"/>
+        <pin num="2" name="B" type="passive"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries/>
+  <nets>
+    <net code="1" name="/BATP_SENSE" class="Default">
+      <node ref="R112" pin="2" pintype="passive"/>
+      <node ref="U4" pin="18" pinfunction="BATP_18" pintype="power_in"/>
+    </net>
+    <net code="2" name="/BAT_INT" class="Default">
+      <node ref="C106" pin="1" pintype="passive"/>
+      <node ref="Q103" pin="1" pinfunction="S_1" pintype="passive"/>
+      <node ref="Q103" pin="2" pinfunction="S_2" pintype="passive"/>
+      <node ref="Q103" pin="3" pinfunction="S_3" pintype="passive"/>
+      <node ref="U4" pin="22" pinfunction="BAT_22" pintype="power_in"/>
+      <node ref="U4" pin="23" pinfunction="BAT_23" pintype="power_in"/>
+    </net>
+    <net code="3" name="/BAT_PACK" class="Default">
+      <node ref="Q103" pin="5" pinfunction="D_5" pintype="passive"/>
+      <node ref="Q103" pin="6" pinfunction="D_6" pintype="passive"/>
+      <node ref="Q103" pin="7" pinfunction="D_7" pintype="passive"/>
+      <node ref="Q103" pin="8" pinfunction="D_8" pintype="passive"/>
+      <node ref="Q103" pin="9" pinfunction="D_9" pintype="passive"/>
+      <node ref="R112" pin="1" pintype="passive"/>
+      <node ref="SW101" pin="1" pinfunction="A_1" pintype="passive"/>
+    </net>
+    <net code="4" name="/CE_N" class="Default">
+      <node ref="Q100" pin="3" pinfunction="D_3" pintype="passive"/>
+      <node ref="R103" pin="2" pintype="passive"/>
+      <node ref="U4" pin="13" pinfunction="~{CE}_13" pintype="input"/>
+    </net>
+    <net code="5" name="/CHG_DM_RAW" class="Default">
+      <node ref="U4" pin="7" pinfunction="D−_7" pintype="bidirectional"/>
+    </net>
+    <net code="6" name="/CHG_DP_RAW" class="Default">
+      <node ref="U4" pin="6" pinfunction="D+_6" pintype="bidirectional"/>
+    </net>
+    <net code="7" name="/CHG_ENABLE" class="Default">
+      <node ref="Q100" pin="1" pinfunction="G_1" pintype="input"/>
+      <node ref="R107" pin="1" pintype="passive"/>
+    </net>
+    <net code="8" name="/CHG_INT" class="Default">
+      <node ref="R106" pin="2" pintype="passive"/>
+      <node ref="U4" pin="21" pinfunction="~{INT}_21" pintype="open_collector"/>
+    </net>
+    <net code="9" name="/CHG_SCL" class="Default">
+      <node ref="U4" pin="14" pinfunction="SCL_14" pintype="input"/>
+    </net>
+    <net code="10" name="/CHG_SDA" class="Default">
+      <node ref="U4" pin="15" pinfunction="SDA_15" pintype="bidirectional"/>
+    </net>
+    <net code="11" name="/CHG_SYS_ENABLE" class="Default">
+      <node ref="Q102" pin="1" pinfunction="G_1" pintype="input"/>
+      <node ref="R111" pin="1" pintype="passive"/>
+    </net>
+    <net code="12" name="/CHG_VIO_3V0" class="Default">
+      <node ref="R106" pin="1" pintype="passive"/>
+    </net>
+    <net code="13" name="/ILIM_HIZ" class="Default">
+      <node ref="Q101" pin="3" pinfunction="D_3" pintype="passive"/>
+      <node ref="R108" pin="2" pintype="passive"/>
+      <node ref="R109" pin="1" pintype="passive"/>
+      <node ref="U4" pin="17" pinfunction="ILIM_HIZ_17" pintype="input"/>
+    </net>
+    <net code="14" name="/PMID" class="Default">
+      <node ref="C101" pin="1" pintype="passive"/>
+      <node ref="C108" pin="1" pintype="passive"/>
+      <node ref="C112" pin="1" pintype="passive"/>
+      <node ref="C114" pin="1" pintype="passive"/>
+      <node ref="U4" pin="29" pinfunction="PMID_29" pintype="power_out"/>
+    </net>
+    <net code="15" name="/PROG" class="Default">
+      <node ref="R102" pin="1" pintype="passive"/>
+      <node ref="U4" pin="20" pinfunction="PROG_20" pintype="input"/>
+    </net>
+    <net code="16" name="/Q101_GATE" class="Default">
+      <node ref="Q101" pin="1" pinfunction="G_1" pintype="input"/>
+      <node ref="Q102" pin="3" pinfunction="D_3" pintype="passive"/>
+      <node ref="R110" pin="2" pintype="passive"/>
+    </net>
+    <net code="17" name="/QON_SW" class="Default">
+      <node ref="SW100" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="U4" pin="12" pinfunction="QON_12" pintype="input"/>
+    </net>
+    <net code="18" name="/REGN" class="Default">
+      <node ref="C102" pin="1" pintype="passive"/>
+      <node ref="C109" pin="1" pintype="passive"/>
+      <node ref="R100" pin="1" pintype="passive"/>
+      <node ref="R103" pin="1" pintype="passive"/>
+      <node ref="R108" pin="1" pintype="passive"/>
+      <node ref="R110" pin="1" pintype="passive"/>
+      <node ref="U4" pin="5" pinfunction="REGN_5" pintype="power_out"/>
+    </net>
+    <net code="19" name="/SDRV" class="Default">
+      <node ref="Q103" pin="4" pinfunction="G_4" pintype="input"/>
+      <node ref="U4" pin="24" pinfunction="SDRV_24" pintype="output"/>
+    </net>
+    <net code="20" name="/SW1" class="Default">
+      <node ref="C103" pin="2" pintype="passive"/>
+      <node ref="L1" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="U4" pin="28" pinfunction="SW1_28" pintype="passive"/>
+    </net>
+    <net code="21" name="/SW2" class="Default">
+      <node ref="C110" pin="2" pintype="passive"/>
+      <node ref="L1" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="U4" pin="26" pinfunction="SW2_26" pintype="passive"/>
+    </net>
+    <net code="22" name="/SYS_RAW" class="Default">
+      <node ref="C104" pin="1" pintype="passive"/>
+      <node ref="C105" pin="1" pintype="passive"/>
+      <node ref="C107" pin="1" pintype="passive"/>
+      <node ref="U4" pin="25" pinfunction="SYS_25" pintype="power_out"/>
+    </net>
+    <net code="23" name="/TS_SENSE" class="Default">
+      <node ref="J5" pin="2" pinfunction="Pin_2_2" pintype="passive"/>
+      <node ref="R100" pin="2" pintype="passive"/>
+      <node ref="R101" pin="1" pintype="passive"/>
+      <node ref="U4" pin="16" pinfunction="TS_16" pintype="input"/>
+    </net>
+    <net code="24" name="/VBUS_PD" class="Default">
+      <node ref="C100" pin="1" pintype="passive"/>
+      <node ref="C111" pin="1" pintype="passive"/>
+      <node ref="C113" pin="1" pintype="passive"/>
+      <node ref="U4" pin="8" pinfunction="VAC2_8" pintype="power_in"/>
+      <node ref="U4" pin="9" pinfunction="VAC1_9" pintype="power_in"/>
+      <node ref="U4" pin="2" pinfunction="VBUS_2" pintype="power_in"/>
+      <node ref="U4" pin="3" pinfunction="VBUS_3" pintype="power_in"/>
+    </net>
+    <net code="25" name="GND" class="Default">
+      <node ref="C100" pin="2" pintype="passive"/>
+      <node ref="C101" pin="2" pintype="passive"/>
+      <node ref="C102" pin="2" pintype="passive"/>
+      <node ref="C104" pin="2" pintype="passive"/>
+      <node ref="C105" pin="2" pintype="passive"/>
+      <node ref="C106" pin="2" pintype="passive"/>
+      <node ref="C107" pin="2" pintype="passive"/>
+      <node ref="C108" pin="2" pintype="passive"/>
+      <node ref="C109" pin="2" pintype="passive"/>
+      <node ref="C111" pin="2" pintype="passive"/>
+      <node ref="C112" pin="2" pintype="passive"/>
+      <node ref="C113" pin="2" pintype="passive"/>
+      <node ref="C114" pin="2" pintype="passive"/>
+      <node ref="J5" pin="3" pinfunction="Pin_3_3" pintype="passive"/>
+      <node ref="Q100" pin="2" pinfunction="S_2" pintype="passive"/>
+      <node ref="Q101" pin="2" pinfunction="S_2" pintype="passive"/>
+      <node ref="Q102" pin="2" pinfunction="S_2" pintype="passive"/>
+      <node ref="R101" pin="2" pintype="passive"/>
+      <node ref="R102" pin="2" pintype="passive"/>
+      <node ref="R107" pin="2" pintype="passive"/>
+      <node ref="R109" pin="2" pintype="passive"/>
+      <node ref="R111" pin="2" pintype="passive"/>
+      <node ref="SW100" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="U4" pin="10" pinfunction="ACDRV2_10" pintype="passive"/>
+      <node ref="U4" pin="11" pinfunction="ACDRV1_11" pintype="passive"/>
+      <node ref="U4" pin="27" pinfunction="GND_27" pintype="power_in"/>
+    </net>
+    <net code="26" name="Net-(J5-Pin_1)" class="Default">
+      <node ref="J5" pin="1" pinfunction="Pin_1_1" pintype="passive"/>
+      <node ref="SW101" pin="2" pinfunction="B_2" pintype="passive"/>
+    </net>
+    <net code="27" name="Net-(U4-BTST1)" class="Default">
+      <node ref="C103" pin="1" pintype="passive"/>
+      <node ref="U4" pin="4" pinfunction="BTST1_4" pintype="passive"/>
+    </net>
+    <net code="28" name="Net-(U4-BTST2)" class="Default">
+      <node ref="C110" pin="1" pintype="passive"/>
+      <node ref="U4" pin="19" pinfunction="BTST2_19" pintype="passive"/>
+    </net>
+    <net code="29" name="unconnected-(U4-~{STAT}-Pad1)" class="Default">
+      <node ref="U4" pin="1" pinfunction="~{STAT}_1" pintype="open_collector+no_connect"/>
+    </net>
+  </nets>
+</export>

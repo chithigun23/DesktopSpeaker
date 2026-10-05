@@ -1,0 +1,27 @@
+{
+  "physical_refs": 108,
+  "bom_missing": [],
+  "bom_extra": [],
+  "populated_identity_mismatches": [
+    [
+      "J4",
+      "MPN",
+      "TBD",
+      ""
+    ],
+    [
+      "J4",
+      "LCSC",
+      "TBD",
+      ""
+    ]
+  ],
+  "footprints_unassigned": [
+    "SW100",
+    "SW101"
+  ],
+  "missing_assigned_footprint_or_model_assets": [],
+  "model_links_checked": 106,
+  "geometry_checks_not_repeated": true,
+  "identity_interpretation": "J4 TBD versus blank is an unresolved selection placeholder, not a conflicting selected MPN. No selected-part identity mismatches found."
+}

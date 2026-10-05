@@ -261,3 +261,11 @@ U20 TPS2116DRLR now selects U19 USB_AUX_5V or SYS_RAW into U12. R124/R125 180k/1
 Replacement sink-bulk correction: TPS25730 datasheet table6.4 specifies47uF nominal and100uF maximum, with no47uF minimum. Use the charger shared input bank; remove extra33uF polymer placeholder. Verify converter effective capacitance minima, shared maximum and startup/transient behavior rather than adding unneeded bulk.
 
 Replacement charger startup gate: review POR-sampled ILIM_HIZ100mA clamp under default-off gating, EN_EXTILIM override and watchdog/reset behavior. Current candidate analog-ceiling claim is unverified/withdrawn; independent review needed before capture integration. Selected high-voltage input ceramics remain provisional pending effective-capacitance qualification.
+
+## Latest read-only review (2026-10-05)
+
+See `ai-files/reports/review-2026-10-05.md` (from root) for the current consolidated findings; earlier review baselines are historical. Fresh checks:108 physical refs covered,106 assigned footprint/model paths resolve,SW100/SW101 unassigned,ERC319 inherited root/0 captured children. No circuit fixes made in this review.
+
+Open priorities: active battery-powered gauge switches versus3V_AO pullups at low nonzero BAT_PACK; draft R1024.7k versus220R purchasing code; remaining draft sourcing; source-aware HIZ/current/watchdog/reset policy; SFET_PRESENT firmware setup; visible pins/direct-wire/readability redraw of both replacement sheets. Protection/startup/thermal corners remain qualification gates. Active PD/charger remains5/9V only. User additionally requested a quick mechanical envelope check including drivers,pack,PCB and enclosure.
+
+Quick mechanical envelope review: `ai-files/reports/mechanical-fit-rough-2026-10-05.md`. Two phone faces side-by-side gives163.3×155.8×81.7mm external;2–3mm walls leave1.79–1.88L gross internal. Illustrative unselected driver/pack/PCB reservations total~0.64L; lateral placement needed because stacking woofer/pack/board consumes nearly all internal height. Actual10Ah protected pack and drivers remain unselected, PCB outline absent; bass chamber/tuning and downward clearance are likely constraints. This is not a validated fit or authorized PCB layout.
