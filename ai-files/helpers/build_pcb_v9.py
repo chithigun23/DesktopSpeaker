@@ -407,8 +407,8 @@ def main():
             slots = {order[0]: (-27.9, LV, 180), order[1]: (-12.0, LV, 180), order[2]: (12.0, LV, 0), order[3]: (27.9, LV, 0)}
             chs = [0.0]
         else:
-            slots = {order[0]: (-8.0, LV, 180), order[1]: (8.0, LV, 0)}
-            chs = []
+            slots = {order[0]: (-12.0, LV, 180), order[1]: (12.0, LV, 0)}
+            chs = [0.0]            # v9: mounting hole between the woofer inductors too
         for hdu in chs:      # v8: M3 mounting hole inside the inductor row (heavy parts <= 15 mm from a support)
             keep((cx + hdu - HOLE_R, cy + LV - HOLE_R, cx + hdu + HOLE_R, cy + LV + HOLE_R), 'CH')
             CELL_HOLES.setdefault(cn, []).append((hdu, LV))

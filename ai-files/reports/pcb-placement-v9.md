@@ -18,3 +18,11 @@ Pipeline: `helpers/build_pcb_v9.sh` (build_pcb_v9.py), floorplan `pcb/floorplan-
 - Some section edges still step by about 1.8 mm where a title strip prevents merging (PDIN/SWG vs JACKS/MUX).
 - BOM xlsx not regenerated (CSV has SW102, C308-C310 and a TP line, all unverified, no LCSC codes).
 - Decap distances are unchanged from v8 by the checker (U6 PVDD bulk 0805 6.5 mm, U25 bulk 8.5 mm, 0402 HF caps close).
+
+## v9b: mounting hole moves (user request)
+- Encoder support: the middle hole of the three left of the encoder (H5) now sits directly under H6, so two holes bracket the encoder's right side (the encoder is a push switch: support against the press force). The encoder's left side keeps H4.
+- Woofer inductor row: one hole inline between L205 and L206 (AMP7 cell hole, same mechanism as the front amp row).
+- Hole between the Front Amp and Woofer Amp sections, just below the inductor row, between U6 and U7 (7.8 mm gap column inserted).
+- The two bottom-right holes (H7/H8) are removed (replaced by the two above). Hole count unchanged (10).
+- Cost: the board is 136.9 x 127.8 mm (17,497 mm²; +6.4 mm width: gap column plus the wider woofer amp); the right column (Battery, BT Supply, ADC, USB Audio Codec) shifted right with void left of it.
+- CAD: PCB re-centred in the enclosure (pcb_cx -3.5), harness route follows the board edge, 0 unintended overlaps.

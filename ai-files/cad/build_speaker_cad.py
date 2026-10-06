@@ -29,7 +29,7 @@ P = dict(
     woof_cx=0.0, woof_cy=109.5, ap_w=70.0, ring_od=86.0, ring_t=4.5, w_flange_od=82.6, w_flange_t=4.0,
     w_bc=77.0, w_hole=3.5, w_depth=44.5,
     boss_od=8.0, boss_h=4.5, pilot=4.6, ins_od=4.6, ins_id=3.0, ins_l=5.7,
-    pcb_w=100.0, pcb_d=66.0, pcb_t=1.6, pcb_cx=0.0, pcb_cy=123.5, pcb_hole=(47.0, 29.5), standoff=5.0,
+    pcb_w=100.0, pcb_d=66.0, pcb_t=1.6, pcb_cx=-3.5, pcb_cy=123.5, pcb_hole=(47.0, 29.5), standoff=5.0,
     grille_t=0.8, hole_d=2.0, hole_pitch=3.0,
 )
 # PCB placement from the KiCad board generator (ai-files/helpers/build_pcb.py -> ai-files/pcb/layout.json); falls back to the estimate
@@ -285,7 +285,7 @@ rocker = fuse([cyl(9.8, 22.0, V(rx, YB - 19.0 + 0.0, rz), V(0, 1, 0)).cut(Part.m
 add('SW101_rocker_D20_standin', 'hardware', rocker, (0.6, 0.1, 0.1))
 hz = bz
 J5U, J5V = PL('J5', 'cy_u', 46.0), PL('J5', 'cy_v', 3.0)
-hp = [(pcx + (PL('J5', 'rect')[2] + 2.0 if LJ else J5U + 3.0), pcy + J5V, PCB_TOP + 4.5), (pcx + BU1 + 3.5, pcy + J5V, PCB_TOP + 4.5), (pcx + BU1 + 3.5, pcy + J5V, hz), (pcx + BU1 + 3.5, by, hz), (39.0, by, hz)]
+hp = [(pcx + (PL('J5', 'rect')[2] + 2.0 if LJ else J5U + 3.0), pcy + J5V, PCB_TOP + 4.5), (pcx + BU1 + 2.8, pcy + J5V, PCB_TOP + 4.5), (pcx + BU1 + 2.8, pcy + J5V, hz), (pcx + BU1 + 2.8, by, hz), (39.0, by, hz)]
 hs = []
 for a, b in zip(hp[:-1], hp[1:]):
     d = V(b[0] - a[0], b[1] - a[1], b[2] - a[2]); L = d.Length

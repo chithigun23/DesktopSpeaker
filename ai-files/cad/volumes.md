@@ -5,14 +5,14 @@ Outer 163 x 100 x 196 mm (X x Z x Y, lid included), wall 3 mm; external volume 3
 | Chamber | Gross (L) | Displaced by parts/bosses/pads (L) | Net (L) | Target |
 |---|---|---|---|---|
 | Woofer (sealed, own chamber; rear wall = lid) | 0.581 | 0.056 | **0.525** | 0.45-0.60 |
-| Main (2 front drivers + battery + PCB, shared) | 2.134 | 0.215 | **1.919** | >= 0.80 |
+| Main (2 front drivers + battery + PCB, shared) | 2.134 | 0.219 | **1.915** | >= 0.80 |
 
 Walls and partitions between the chambers are not counted in either (gross = air region bounded by the wall inner faces).
 
 ## Woofer chamber displacement (mm3, >0.5)
 
 - Woofer_W3-2052SC_standin: 45411
-- Shell_Box: 9268
+- Shell_Box: 9576
 - Screw_M3x10_WoofScrew_1: 131
 - Screw_M3x10_WoofScrew_2: 131
 - Screw_M3x10_WoofScrew_3: 131
@@ -28,26 +28,26 @@ Walls and partitions between the chambers are not counted in either (gross = air
 
 ## Main chamber displacement (mm3, >0.5)
 
-- Shell_Box: 41281
+- Shell_Box: 44168
 - Driver_FrontR_ND65-4: 32723
 - Driver_FrontL_ND65-4: 32723
-- PCB_130.5x127.8x1.6: 26556
+- PCB_136.9x127.8x1.6: 27865
 - Battery_Cell1_21700_50S: 25962
 - Battery_Cell2_21700_50S: 25962
 - SW101_rocker_D20_standin: 5733
 - Battery_PCM_board: 2344
-- Harness_J5_to_pack_schematic: 1750
+- Harness_J5_to_pack_schematic: 1775
 - PCB_J5_MicroFit3_standin: 1361
 - PCB_SW102: 1121
-- PCB_L204: 1095
-- PCB_L206: 1095
-- PCB_L201: 1095
 - PCB_L203: 1095
+- PCB_L204: 1095
 - PCB_L205: 1095
+- PCB_L201: 1095
 - PCB_L202: 1095
+- PCB_L206: 1095
 - PCB_J10_JST_B2P-VH_standin: 960
-- PCB_J9_JST_B2P-VH_standin: 960
 - PCB_J11_JST_B2P-VH_standin: 960
+- PCB_J9_JST_B2P-VH_standin: 960
 - PCB_C275: 500
 - PCB_L200: 429
 - PCB_U1: 367

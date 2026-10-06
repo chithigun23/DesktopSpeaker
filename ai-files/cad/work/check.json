@@ -1,16 +1,16 @@
 {
  "woof_gross": 581000.0000000001,
- "woof_disp": 55584.85610194196,
- "woof_net": 525415.1438980582,
+ "woof_disp": 55892.52403153225,
+ "woof_net": 525107.4759684679,
  "main_gross": 2134308.4567951313,
- "main_disp": 214890.8721457347,
- "main_net": 1919417.5846493966,
+ "main_disp": 219132.5572165379,
+ "main_net": 1915175.8995785934,
  "total_internal": 2801068.4000000004,
  "ext": 3191540.0,
  "items_w": [
   [
    "Shell_Box",
-   9268.211096805546
+   9575.879026395844
   ],
   [
    "Woofer_W3-2052SC_standin",
@@ -68,7 +68,7 @@
  "items_m": [
   [
    "Shell_Box",
-   41280.742309604124
+   44168.01128426502
   ],
   [
    "Driver_FrontL_ND65-4",
@@ -91,16 +91,16 @@
    2343.6
   ],
   [
-   "PCB_130.5x127.8x1.6",
-   26555.96036490887
+   "PCB_136.9x127.8x1.6",
+   27864.63236490887
   ],
   [
    "PCB_U1",
-   366.702297758492
+   366.7022977584923
   ],
   [
    "PCB_U3",
-   136.63488111154055
+   136.63488111154047
   ],
   [
    "PCB_U2",
@@ -108,19 +108,19 @@
   ],
   [
    "PCB_U24",
-   49.35756285188201
+   49.35756285188196
   ],
   [
    "PCB_L200",
-   429.34873697082827
+   429.3487369708282
   ],
   [
    "PCB_C275",
-   500.09212403026294
+   500.09212403026316
   ],
   [
    "PCB_L201",
-   1095.1677316326077
+   1095.1677316326075
   ],
   [
    "PCB_L202",
@@ -128,7 +128,7 @@
   ],
   [
    "PCB_L203",
-   1095.1677316326077
+   1095.167731632608
   ],
   [
    "PCB_L204",
@@ -140,7 +140,7 @@
   ],
   [
    "PCB_L206",
-   1095.167731632608
+   1095.1677316326075
   ],
   [
    "PCB_L1",
@@ -148,47 +148,47 @@
   ],
   [
    "PCB_L2",
-   28.26619695780967
+   28.266196957809672
   ],
   [
    "PCB_L3",
-   28.266196957809676
+   28.266196957809672
   ],
   [
    "PCB_U4",
-   15.678858433849978
+   15.678858433849966
   ],
   [
    "PCB_U11",
-   18.95050387061445
+   18.95050387061446
   ],
   [
    "PCB_J4",
-   78.76443754666712
+   78.76443754666711
   ],
   [
    "PCB_J6",
-   78.76443754666715
+   78.76443754666714
   ],
   [
    "PCB_J8",
-   98.45554693333624
+   98.45554693333631
   ],
   [
    "PCB_SW102",
-   1120.5192950663688
+   1120.5192950663682
   ],
   [
    "PCB_J1_USB-C",
-   120.04905670629613
+   120.04905670629608
   ],
   [
    "PCB_J2_3.5mm_jack",
-   283.2878405655519
+   283.28784056555196
   ],
   [
    "PCB_J3_3.5mm_jack",
-   283.2878405655525
+   283.2878405655523
   ],
   [
    "PCB_J5_MicroFit3_standin",
@@ -196,11 +196,11 @@
   ],
   [
    "PCB_J9_JST_B2P-VH_standin",
-   959.9085000000002
+   959.9085000000001
   ],
   [
    "PCB_J10_JST_B2P-VH_standin",
-   959.9085000000005
+   959.9085000000003
   ],
   [
    "PCB_J11_JST_B2P-VH_standin",
@@ -220,7 +220,7 @@
   ],
   [
    "Harness_J5_to_pack_schematic",
-   1749.5725686532223
+   1775.2699389259492
   ],
   [
    "Insert_M3x5.7_DrvScrew_L1",
@@ -288,11 +288,11 @@
   ],
   [
    "Insert_M3x5.7_PcbScrew_1",
-   42.976987501108376
+   47.933180485821566
   ],
   [
    "Screw_M3x12_PcbScrew_1",
-   149.73615985172353
+   151.8499625393075
   ],
   [
    "Standoff_M3_5mm_PcbScrew_1",
@@ -300,7 +300,7 @@
   ],
   [
    "Insert_M3x5.7_PcbScrew_2",
-   42.976987501108354
+   42.97698750110837
   ],
   [
    "Screw_M3x12_PcbScrew_2",
@@ -320,11 +320,11 @@
   ],
   [
    "Standoff_M3_5mm_PcbScrew_3",
-   95.64342496951116
+   95.64342496951119
   ],
   [
    "Insert_M3x5.7_PcbScrew_4",
-   42.97698750110834
+   42.976987501108354
   ],
   [
    "Screw_M3x12_PcbScrew_4",
@@ -336,7 +336,7 @@
   ],
   [
    "Insert_M3x5.7_PcbScrew_5",
-   42.976987501108354
+   42.976987501108376
   ],
   [
    "Screw_M3x12_PcbScrew_5",
@@ -344,11 +344,11 @@
   ],
   [
    "Standoff_M3_5mm_PcbScrew_5",
-   95.64342496951113
+   95.64342496951102
   ],
   [
    "Insert_M3x5.7_PcbScrew_6",
-   42.97698750110834
+   42.976987501108354
   ],
   [
    "Screw_M3x12_PcbScrew_6",
@@ -360,51 +360,51 @@
   ],
   [
    "Insert_M3x5.7_PcbScrew_7",
-   42.976987501108376
+   54.43751750140396
   ],
   [
    "Screw_M3x12_PcbScrew_7",
-   149.7361598517235
+   156.09788497524298
   ],
   [
    "Standoff_M3_5mm_PcbScrew_7",
-   95.643424969511
+   95.64342496951114
   ],
   [
    "Insert_M3x5.7_PcbScrew_8",
-   54.43751750140397
-  ],
-  [
-   "Screw_M3x12_PcbScrew_8",
-   156.09788497524295
-  ],
-  [
-   "Standoff_M3_5mm_PcbScrew_8",
-   95.64342496951099
-  ],
-  [
-   "Insert_M3x5.7_PcbScrew_9",
    42.976987501108354
   ],
   [
-   "Screw_M3x12_PcbScrew_9",
+   "Screw_M3x12_PcbScrew_8",
    149.73615985172358
   ],
   [
-   "Standoff_M3_5mm_PcbScrew_9",
+   "Standoff_M3_5mm_PcbScrew_8",
    95.64342496951097
   ],
   [
+   "Insert_M3x5.7_PcbScrew_9",
+   50.50478994665447
+  ],
+  [
+   "Screw_M3x12_PcbScrew_9",
+   155.1850876034494
+  ],
+  [
+   "Standoff_M3_5mm_PcbScrew_9",
+   95.64342496951119
+  ],
+  [
    "Insert_M3x5.7_PcbScrew_10",
-   50.504789946654356
+   50.50478994665447
   ],
   [
    "Screw_M3x12_PcbScrew_10",
-   155.18508760345102
+   155.1850876034492
   ],
   [
    "Standoff_M3_5mm_PcbScrew_10",
-   95.64342496951119
+   95.64342496951099
   ],
   [
    "Insert_M3x5.7_LidScrew_1",
@@ -482,43 +482,43 @@
  "overlaps": [],
  "intended": [
   [
-   "PCB_130.5x127.8x1.6",
+   "PCB_136.9x127.8x1.6",
    "PCB_J2_3.5mm_jack",
    8.61,
    "through-hole/mid-mount pins and body below PCB top (model pins sit in the board)"
   ],
   [
-   "PCB_130.5x127.8x1.6",
+   "PCB_136.9x127.8x1.6",
    "PCB_J3_3.5mm_jack",
    8.61,
    "through-hole/mid-mount pins and body below PCB top (model pins sit in the board)"
   ],
   [
-   "PCB_130.5x127.8x1.6",
+   "PCB_136.9x127.8x1.6",
    "PCB_SW102",
    5.09,
    "through-hole/mid-mount pins and body below PCB top (model pins sit in the board)"
   ],
   [
-   "PCB_130.5x127.8x1.6",
+   "PCB_136.9x127.8x1.6",
    "PCB_J8",
    3.28,
    "through-hole/mid-mount pins and body below PCB top (model pins sit in the board)"
   ],
   [
-   "PCB_130.5x127.8x1.6",
+   "PCB_136.9x127.8x1.6",
    "PCB_J4",
    2.62,
    "through-hole/mid-mount pins and body below PCB top (model pins sit in the board)"
   ],
   [
-   "PCB_130.5x127.8x1.6",
+   "PCB_136.9x127.8x1.6",
    "PCB_J6",
    2.62,
    "through-hole/mid-mount pins and body below PCB top (model pins sit in the board)"
   ],
   [
-   "PCB_130.5x127.8x1.6",
+   "PCB_136.9x127.8x1.6",
    "PCB_J1_USB-C",
    0.96,
    "through-hole/mid-mount pins and body below PCB top (model pins sit in the board)"
