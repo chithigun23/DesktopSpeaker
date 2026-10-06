@@ -343,3 +343,7 @@ Quick mechanical envelope review: `ai-files/reports/mechanical-fit-rough-2026-10
 - [x] Kept after datasheet check: C126 (U21 TPS3839 VDD bypass), R12, R18, C184.
 - [ ] Deferred pending bench: M1 USB/BT bias merge, ADC anti-alias C206-C211, PVDD caps C279/C292, low-med items (C131/C132, C154, C263/C264, C222/C223, R122).
 - [x] The 11 removed footprints are gone from the PCB (placement v2 regenerated from the netlist).
+
+## PCB routing plan (2026-10-06, planned and rules set up, NOT routed)
+- [x] `ai-files/reports/pcb-routing-plan.md`: stackup (JLC04161H-7628, 1 oz outer recommended), 15 netclasses covering all 311 nets (`ai-files/pcb/net-classes.json`), routing order, per-block guidance, decoupling mitigation, teardrop plan, pre/post-route checklists. Rules installed (`DesktopSpeaker.kicad_pro`, `DesktopSpeaker.kicad_dru`, stackup in the .kicad_pcb, `ai-files/helpers/setup_pcb_rules.py`); DRC 22 violations (inherited), no tracks yet.
+- [ ] Open: TPS61088 datasheet, JLC impedance confirmation (USB 0.25/0.15), inner 1 oz, teardrops only via pcbnew GUI (no CLI/Python API), decoupling > 3 mm.
