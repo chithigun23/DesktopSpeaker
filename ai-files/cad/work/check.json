@@ -3,8 +3,8 @@
  "woof_disp": 55584.85610194196,
  "woof_net": 525415.1438980582,
  "main_gross": 2134308.4567951313,
- "main_disp": 215424.5895283145,
- "main_net": 1918883.8672668168,
+ "main_disp": 214890.8721457347,
+ "main_net": 1919417.5846493966,
  "total_internal": 2801068.4000000004,
  "ext": 3191540.0,
  "items_w": [
@@ -175,6 +175,10 @@
    98.45554693333624
   ],
   [
+   "PCB_SW102",
+   1120.5192950663688
+  ],
+  [
    "PCB_J1_USB-C",
    120.04905670629613
   ],
@@ -209,14 +213,6 @@
   [
    "PCB_SW100_plunger",
    2.454369260617028
-  ],
-  [
-   "PCB_SW102_EC11E_body_standin",
-   1088.75
-  ],
-  [
-   "PCB_SW102_shaft",
-   565.4866776461633
   ],
   [
    "SW101_rocker_D20_standin",
@@ -495,6 +491,12 @@
    "PCB_130.5x127.8x1.6",
    "PCB_J3_3.5mm_jack",
    8.61,
+   "through-hole/mid-mount pins and body below PCB top (model pins sit in the board)"
+  ],
+  [
+   "PCB_130.5x127.8x1.6",
+   "PCB_SW102",
+   5.09,
    "through-hole/mid-mount pins and body below PCB top (model pins sit in the board)"
   ],
   [

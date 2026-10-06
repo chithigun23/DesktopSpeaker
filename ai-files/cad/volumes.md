@@ -38,19 +38,19 @@ Walls and partitions between the chambers are not counted in either (gross = air
 - Battery_PCM_board: 2344
 - Harness_J5_to_pack_schematic: 1750
 - PCB_J5_MicroFit3_standin: 1361
+- PCB_SW102: 1121
 - PCB_L204: 1095
 - PCB_L206: 1095
 - PCB_L201: 1095
 - PCB_L203: 1095
 - PCB_L205: 1095
 - PCB_L202: 1095
-- PCB_SW102_EC11E_body_standin: 1089
 - PCB_J10_JST_B2P-VH_standin: 960
 - PCB_J9_JST_B2P-VH_standin: 960
 - PCB_J11_JST_B2P-VH_standin: 960
-- PCB_SW102_shaft: 565
 - PCB_C275: 500
 - PCB_L200: 429
 - PCB_U1: 367
 - PCB_J3_3.5mm_jack: 283
+- PCB_J2_3.5mm_jack: 283
 

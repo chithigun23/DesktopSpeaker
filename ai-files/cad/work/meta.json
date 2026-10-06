@@ -342,6 +342,17 @@
    "vol": 98.45554693333635
   },
   {
+   "name": "PCB_SW102",
+   "group": "pcb_parts",
+   "color": [
+    0.55,
+    0.55,
+    0.6
+   ],
+   "file": "PCB_SW102.brep",
+   "vol": 1120.5192950663688
+  },
+  {
    "name": "PCB_J1_USB-C",
    "group": "pcb_parts",
    "color": [
@@ -439,28 +450,6 @@
    ],
    "file": "PCB_SW100_plunger.brep",
    "vol": 12.271846303085134
-  },
-  {
-   "name": "PCB_SW102_EC11E_body_standin",
-   "group": "pcb_parts",
-   "color": [
-    0.55,
-    0.55,
-    0.6
-   ],
-   "file": "PCB_SW102_EC11E_body_standin.brep",
-   "vol": 1088.75
-  },
-  {
-   "name": "PCB_SW102_shaft",
-   "group": "pcb_parts",
-   "color": [
-    0.2,
-    0.2,
-    0.2
-   ],
-   "file": "PCB_SW102_shaft.brep",
-   "vol": 565.486677646163
   },
   {
    "name": "SW101_rocker_D20_standin",
@@ -1492,8 +1481,7 @@
   "J9",
   "J10",
   "J11",
-  "SW100",
-  "SW102"
+  "SW100"
  ],
  "pcb": {
   "top": 68.1,

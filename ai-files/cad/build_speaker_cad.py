@@ -236,7 +236,7 @@ LAYOUT = [
     ('L201', -15.0, -24.5, 0.0), ('L202', 0.0, -24.5, 0.0), ('L203', 15.0, -24.5, 0.0),
     ('L204', -15.0, -11.5, 0.0), ('L205', 0.0, -11.5, 0.0), ('L206', 15.0, -11.5, 0.0),
     ('L1', 26.0, -5.0, 0.0), ('L2', 26.0, 6.0, 0.0), ('L3', 33.0, 6.0, 0.0), ('U4', 26.0, 14.0, 0.0), ('U11', 33.0, 14.0, 0.0),
-    ('J4', 40.0, 17.0, 0.0), ('J6', 45.5, 17.0, 0.0), ('J8', 36.0, 25.0, 0.0),
+    ('J4', 40.0, 17.0, 0.0), ('J6', 45.5, 17.0, 0.0), ('J8', 36.0, 25.0, 0.0), ('SW102', 0.0, 0.0, 0.0),
 ]
 if LJ:
     LAYOUT = [(ref, PL(ref, 'cy_u', u), PL(ref, 'cy_v', v), float(PL(ref, 'rot', yaw))) for ref, u, v, yaw in LAYOUT]
@@ -277,11 +277,6 @@ SW_U = PL('SW100', 'origin_u', 30.0)
 sbox('SW100', SW_U, PL('SW100', 'cy_v', 30.0), 4.6, 5.0, 3.5, 'tact_standin', (0.3, 0.3, 0.3))
 plunger = cyl(1.25, 2.5, V(pcx + SW_U, REAR_E, PCB_TOP + 1.75), V(0, 1, 0))
 add('PCB_SW100_plunger', 'pcb_parts', plunger, (0.8, 0.1, 0.1))
-
-# SW102 Alps EC11E volume encoder stand-in: body 13.4 x 12.5 x 6.5 mm (rect of the footprint), 6 mm shaft 20 mm above the body top
-_r = rdim('SW102', (17.0, 12.5))
-sbox('SW102', PL('SW102', 'cy_u', 0.0), PL('SW102', 'cy_v', 0.0), 13.4, 12.5, 6.5, 'EC11E_body_standin', (0.55, 0.55, 0.6))
-add('PCB_SW102_shaft', 'pcb_parts', cyl(3.0, 20.0, V(pcx + PL('SW102', 'cy_u', 0.0), pcy + PL('SW102', 'cy_v', 0.0), PCB_TOP + 6.5), V(0, 0, 1)), (0.2, 0.2, 0.2))
 
 # ------------------------------------------------------------------ SW101 rocker (panel mount, stand-in) and speaker-wire/battery harness (schematic)
 rx, rz = 66.0, 78.0
