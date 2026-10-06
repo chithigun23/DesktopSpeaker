@@ -75,7 +75,7 @@ CELLDEF = {
     'BOOST': ('Boost', {'U25': (0, 0, 270), 'L200': (-8.0, 0.5, 0), 'C275': (13.5, 0, 0)}, [], {}),
     'CHG': ('Charger', {'U4': (0, 0, 0), 'L1': (0, 10.5, 0)}, [], {}),
     'CHGQ': ('Charger FETs', {'Q103': (0, 0, 0)}, [('Q100', -7.5, 0), ('Q101', 7.5, 0), ('Q102', 0, -7)], {}),
-    'BATIO': ('Connectors (battery)', {'J5': (0, 0, 270), 'SW101': (2.25, 17.8, 90)}, [], dict(r=5.55)),
+    'BATIO': ('Battery I/O', {'J5': (0, 0, 270), 'SW101': (2.25, 17.8, 90)}, [], dict(r=5.55)),
     'WAKE': ('Wake', {'SW100': (0, 0, 0)}, [], dict(t=3.8)),
     'AO3V': ('3V AO', {'U12': (0, 0, 0)}, [], {}),
     'SWG': ('Fuel gauge + low-current power', {'U20': (-7.5, 4.0, 0), 'U13': (0, 4.0, 0), 'U16': (7.5, 4.0, 0), 'U17': (-7.5, -4.0, 0), 'U21': (0, -4.0, 0), 'Q104': (7.5, -4.0, 0), 'U5': (0, -10.5, 0)}, [], {}),
@@ -83,7 +83,7 @@ CELLDEF = {
     'ADC': ('ADC', {'U24': (0, 0, 0)}, [('Y200', -11, 0), ('FB200', 9, 6)], {}),
     'CODSUP': ('5V codec rail', {'U22': (-6.5, 0, 0), 'U23': (6.5, 0, 0)}, [], {}),
     'USBAUD': ('USB audio codec', {'U2': (0, 0, 0)}, [('Y170', 0, -9)], {}),
-    'JACKS': ('Headphone / aux jacks', {'J2': (-6.7, 0, 270), 'J3': (6.7, 0, 270)}, [('D200', -6.7, -6.5), ('D201', 6.7, -6.5)], dict(t=7.2)),
+    'JACKS': ('Jacks', {'J2': (-6.7, 0, 270), 'J3': (6.7, 0, 270)}, [('D200', -6.7, -6.5), ('D201', 6.7, -6.5)], dict(t=7.2)),
     'MUX': ('Source mux + headphone', {'U8': (-12, 0, 0), 'U9': (0, 0, 0), 'U10': (12, 0, 0)}, [], {}),
     'PD': ('USB-C + PD input', {'U11': (0, 0, 0)}, [('D7', 11, -5)], {}),
     'PDIN': ('USB-C connector + ESD', {'J1': (0, 0, 180), 'J4': (9.6, -3.9, 0)}, [('D1', -9, -7), ('D5', -3, -7), ('D6', 3, -7), ('U19', 0, -13)], dict(t=3.75)),
@@ -248,7 +248,7 @@ def main():
         netitems[name] = ni
 
     # ---- footprints loaded at the origin, rotation 0: courtyard rect and net pad positions in footprint coordinates
-    fps, crt = {}, {}
+    fps, crt, crt_s = {}, {}, {}
     for ref, c in comps.items():
         f = pcbnew.FootprintLoad(FPLIB, c['fp'])
         if f is None:
@@ -268,6 +268,11 @@ def main():
             rc = [min(rc[0], pb.GetX() / MM - 0.2), min(rc[1], pb.GetY() / MM - 0.2),
                   max(rc[2], pb.GetRight() / MM + 0.2), max(rc[3], pb.GetBottom() / MM + 0.2)]
         crt[ref] = tuple(rc)
+        rs = [bb.GetX() / MM, bb.GetY() / MM, bb.GetRight() / MM, bb.GetBottom() / MM]     # true courtyard united with the pad extents (no margin)
+        for p in f.Pads():
+            pb = p.GetBoundingBox()
+            rs = [min(rs[0], pb.GetX() / MM), min(rs[1], pb.GetY() / MM), max(rs[2], pb.GetRight() / MM), max(rs[3], pb.GetBottom() / MM)]
+        crt_s[ref] = tuple(rs)
         c['pads'] = [(p.GetNumber(), p.GetPosition().x / MM, p.GetPosition().y / MM) for p in f.Pads() if c['pins'].get(p.GetNumber())]
         fps[ref] = f
         c['kind'] = kind_of(ref, c['fp'])
@@ -966,6 +971,16 @@ def main():
         for hn_, hu_, hv_ in HOLES:
             if inter(cellrect[a_], (hu_ - HOLE_R, hv_ - HOLE_R, hu_ + HOLE_R, hv_ + HOLE_R)):
                 print('WARNING hole', hn_, 'overlaps cell', a_)
+    # ---- decap snap (v6): lift every passive that serves an IC pin and re-place it as close as legal (snap_v6.py)
+    if os.environ.get('SNAP', '1') != '0':
+        import snap_v6
+        kp_ = [(hu_ - HOLE_R, hv_ - HOLE_R, hu_ + HOLE_R, hv_ + HOLE_R) for hn_, hu_, hv_ in HOLES]
+        kp_.append((TITLE_AT_FINAL[0] - 9.0, TITLE_AT_FINAL[1] - 1.0, TITLE_AT_FINAL[0] + 9.0, TITLE_AT_FINAL[1] + 1.0))
+        if antenna_keep:
+            kp_.append((antenna_keep['u0'], antenna_keep['v0'] - ANTENNA_MARGIN, antenna_keep['u1'], antenna_keep['v1'] + ANTENNA_MARGIN))
+        snap_v6.run(dict(placed=placed, comps=comps, nets=nets, fps=fps, crt_s=crt_s, ispas=ispas, cell_name=cell_name, rot_pt=rot_pt,
+                         rot_rect=rot_rect, inter=inter, board_ok=board_ok, rect_at=rect_at, txt_slots=txt_slots, cellrect=cellrect, keeps=kp_,
+                         away_set=away_set, SW_NET=SW_NET, AWAY_MM=AWAY_MM, UL=UL, UR=UR, VF=VF, VR=VR, MM=MM))
     # ---- free rectangle finder for board texts
     def find_free(w, h, around=None):
         best = None
@@ -998,6 +1013,11 @@ def main():
         if p['txt']:
             t = p['txt']
             rf.SetPosition(ip(K((t[0] + t[2]) / 2, (t[1] + t[3]) / 2)))
+            rf.SetVisible(True)
+        elif p.get('fab'):                      # passive labels on the assembly layer (silk has no room near the decoupling)
+            rf.SetLayer(pcbnew.F_Fab)
+            rf.SetTextAngleDegrees(0)
+            rf.SetPosition(ip(K(p['u'], p['v'])))
             rf.SetVisible(True)
         else:
             rf.SetLayer(pcbnew.F_Fab)

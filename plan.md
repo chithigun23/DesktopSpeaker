@@ -358,3 +358,4 @@ Cell-based tiled floorplan with boxed, titled sections (report `ai-files/reports
 - [x] Tighter cells, 1.2 mm title strip, 0.25 mm raster packer, class-D/analogue 15.4 mm (deliberate; 47.9 mm achieved), BT supply >= 10 mm from analogue: 116 x 138 mm (16,008 mm2), enclosure 206 mm, chamber 0.525 L (`reports/pcb-placement-v6-2026-10-06.md`).
 - [ ] Unmet: area <= 13,000 / depth <= 190, critical decaps <= 2.5 mm (0402 mean 3.23), 4 label overlaps.
 - [ ] Open: area <= 13,000 mm2 and depth <= 185 mm unmet (separation chain); per-cap decoupling <= 2.5 mm unmet for U6/U24/U4/U25; corner holes.
+- [x] Decap snap (`helpers/snap_v6.py`): 0402 passive reference designators on F.Fab (silk kept for ICs, connectors, inductors, switches, diodes/transistors, roomy 0805), 0402 gap 0.25 mm; 0402 caps near ICs mean 3.23 -> 2.07 mm, board unchanged. [ ] Open: 24 critical 0402 caps still 2.5-3.9 mm (U24, U6, U2), bulk 0805 3-7 mm from U6/U4/U25.
