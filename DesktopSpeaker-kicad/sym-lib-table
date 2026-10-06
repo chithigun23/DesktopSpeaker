@@ -51,4 +51,6 @@
   (lib (name "PD_L") (type "KiCad") (uri "${KIPRJMOD}/kicad-library/schematic/PD_L.kicad_sym") (options "") (descr "Generic inductor"))
   (lib (name "PD_CP") (type "KiCad") (uri "${KIPRJMOD}/kicad-library/schematic/PD_CP.kicad_sym") (options "") (descr "Generic polarized capacitor"))
   (lib (name "JST_B2P_VH") (type "KiCad") (uri "${KIPRJMOD}/kicad-library/schematic/JST_B2P_VH.kicad_sym") (options "") (descr "JST B2P-VH 2-pin VH header"))
+  (lib (name "EC11E_Encoder") (type "KiCad") (uri "${KIPRJMOD}/kicad-library/schematic/EC11E_Encoder.kicad_sym") (options "") (descr "Alps Alpine EC11E rotary encoder with switch"))
+  (lib (name "TestPoint") (type "KiCad") (uri "${KIPRJMOD}/kicad-library/schematic/TestPoint.kicad_sym") (options "") (descr "Stock KiCad test point"))
 )

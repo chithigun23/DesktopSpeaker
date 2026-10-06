@@ -63,6 +63,8 @@ Updated: 2026-10-05. Use this checklist with `AGENTS.md` and `ai-files/HANDOVER.
 - [x] Allocate remaining interrupt/enable/mute lines and bus addresses; select pull-ups by bus capacitance and rail state. (Done in the pin allocation; audio I2C is on the PCM1862/TAS bus with 2.2k pull-ups R209/R210.)
 - [ ] Document startup/shutdown sequencing, fault handling and external-power charge policy (see `reports/replacement-power-control-contract.md`).
 - [ ] Resolve any MCU/Bluetooth architecture change explicitly before replacing the currently selected parts.
+- [x] Rotary encoder SW102 (Alps EC11E, push switch) added on MCU sheet: ENC_A/ENC_B/ENC_SW on PC8/PC9/PC10 (internal pull-ups), 10 nF debounce C308-C310 (2026-10-06). Part number/LCSC unverified; stock footprint has no 3D model.
+- [x] 25 debug test points (TP1-TP22 rails/signals, Keystone 5015 SMD; TP23-TP25 GND, Keystone 5010-5014 THT) placed on the owning sheets (2026-10-06, not committed).
 
 ## 5. USB audio and connector data path — PARTIAL
 
@@ -361,3 +363,7 @@ Cell-based tiled floorplan with boxed, titled sections (report `ai-files/reports
 - [x] Decap snap (`helpers/snap_v6.py`): 0402 passive reference designators on F.Fab (silk kept for ICs, connectors, inductors, switches, diodes/transistors, roomy 0805), 0402 gap 0.25 mm; 0402 caps near ICs mean 3.23 -> 2.07 mm, board unchanged. [ ] Open: 24 critical 0402 caps still 2.5-3.9 mm (U24, U6, U2), bulk 0805 3-7 mm from U6/U4/U25.
 
 - [ ] PCB v8 follow-up (2026-10-06): 121.1 x 127.4 mm = 15,428 mm2 (v6 16,008; v7 17,802), 10 M3 GND holes, plate f1 387 Hz, CAD 0 unintended overlaps. Unmet: area <= 14,000 (tile sum 12.9k + holes; separation rules and 2.3 mm title strips), hole distance to J9/J10 26 mm, L200 17.7 mm, max board point to hole 42.6 mm. Not done: tile rotation/mirroring. See ai-files/reports/pcb-placement-v8-2026-10-06.md.
+
+
+## Placement v9 (2026-10-06)
+EC11E volume encoder SW102 (+C308-C310), 25 test points (TP1-TP25), full silkscreen pass, Orwellian logo on the back, board 130.5 x 127.8 mm. Details and open items: `ai-files/reports/pcb-placement-v9.md`; pipeline `helpers/build_pcb_v9.sh`. Routing not started.

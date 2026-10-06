@@ -177,6 +177,30 @@
    "src": "courtyard"
   },
   {
+   "ref": "TP1",
+   "fp": "DesktopSpeaker:TestPoint_Keystone_5015_Micro_Mini",
+   "w": 4.3,
+   "h": 2.7,
+   "a": 11.61,
+   "src": "courtyard"
+  },
+  {
+   "ref": "TP5",
+   "fp": "DesktopSpeaker:TestPoint_Keystone_5015_Micro_Mini",
+   "w": 4.3,
+   "h": 2.7,
+   "a": 11.61,
+   "src": "courtyard"
+  },
+  {
+   "ref": "TP23",
+   "fp": "DesktopSpeaker:TestPoint_Keystone_5010-5014_Multipurpose",
+   "w": 3.5,
+   "h": 3.5,
+   "a": 12.25,
+   "src": "courtyard"
+  },
+  {
    "ref": "U11",
    "fp": "DesktopSpeaker:TPS25730D",
    "w": 6.9,
@@ -457,6 +481,22 @@
    "src": "courtyard"
   },
   {
+   "ref": "TP2",
+   "fp": "DesktopSpeaker:TestPoint_Keystone_5015_Micro_Mini",
+   "w": 4.3,
+   "h": 2.7,
+   "a": 11.61,
+   "src": "courtyard"
+  },
+  {
+   "ref": "TP11",
+   "fp": "DesktopSpeaker:TestPoint_Keystone_5015_Micro_Mini",
+   "w": 4.3,
+   "h": 2.7,
+   "a": 11.61,
+   "src": "courtyard"
+  },
+  {
    "ref": "U4",
    "fp": "DesktopSpeaker:BQ25792RQMR",
    "w": 5.24,
@@ -601,6 +641,22 @@
    "src": "courtyard"
   },
   {
+   "ref": "TP3",
+   "fp": "DesktopSpeaker:TestPoint_Keystone_5015_Micro_Mini",
+   "w": 4.3,
+   "h": 2.7,
+   "a": 11.61,
+   "src": "courtyard"
+  },
+  {
+   "ref": "TP4",
+   "fp": "DesktopSpeaker:TestPoint_Keystone_5015_Micro_Mini",
+   "w": 4.3,
+   "h": 2.7,
+   "a": 11.61,
+   "src": "courtyard"
+  },
+  {
    "ref": "U5",
    "fp": "DesktopSpeaker:MAX17048G+T10",
    "w": 2.16,
@@ -737,6 +793,14 @@
    "src": "courtyard"
   },
   {
+   "ref": "TP9",
+   "fp": "DesktopSpeaker:TestPoint_Keystone_5015_Micro_Mini",
+   "w": 4.3,
+   "h": 2.7,
+   "a": 11.61,
+   "src": "courtyard"
+  },
+  {
    "ref": "U15",
    "fp": "DesktopSpeaker:TPS63802DLAR",
    "w": 3.4,
@@ -801,6 +865,14 @@
    "src": "courtyard"
   },
   {
+   "ref": "TP7",
+   "fp": "DesktopSpeaker:TestPoint_Keystone_5015_Micro_Mini",
+   "w": 4.3,
+   "h": 2.7,
+   "a": 11.61,
+   "src": "courtyard"
+  },
+  {
    "ref": "U14",
    "fp": "DesktopSpeaker:TPS63802DLAR",
    "w": 3.4,
@@ -833,6 +905,30 @@
    "src": "courtyard"
   },
   {
+   "ref": "C308",
+   "fp": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "w": 2.18,
+   "h": 0.92,
+   "a": 2.01,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C309",
+   "fp": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "w": 2.18,
+   "h": 0.92,
+   "a": 2.01,
+   "src": "courtyard"
+  },
+  {
+   "ref": "C310",
+   "fp": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "w": 2.18,
+   "h": 0.92,
+   "a": 2.01,
+   "src": "courtyard"
+  },
+  {
    "ref": "J6",
    "fp": "DesktopSpeaker:PinHeader_1x04_P2.54mm_Vertical",
    "w": 3.54,
@@ -854,6 +950,70 @@
    "w": 2.22,
    "h": 0.94,
    "a": 2.09,
+   "src": "courtyard"
+  },
+  {
+   "ref": "SW102",
+   "fp": "DesktopSpeaker:RotaryEncoder_Alps_EC11E-Switch_Vertical_H20mm_MountingHoles",
+   "w": 17.5,
+   "h": 14.2,
+   "a": 248.5,
+   "src": "courtyard"
+  },
+  {
+   "ref": "TP15",
+   "fp": "DesktopSpeaker:TestPoint_Keystone_5015_Micro_Mini",
+   "w": 4.3,
+   "h": 2.7,
+   "a": 11.61,
+   "src": "courtyard"
+  },
+  {
+   "ref": "TP16",
+   "fp": "DesktopSpeaker:TestPoint_Keystone_5015_Micro_Mini",
+   "w": 4.3,
+   "h": 2.7,
+   "a": 11.61,
+   "src": "courtyard"
+  },
+  {
+   "ref": "TP17",
+   "fp": "DesktopSpeaker:TestPoint_Keystone_5015_Micro_Mini",
+   "w": 4.3,
+   "h": 2.7,
+   "a": 11.61,
+   "src": "courtyard"
+  },
+  {
+   "ref": "TP18",
+   "fp": "DesktopSpeaker:TestPoint_Keystone_5015_Micro_Mini",
+   "w": 4.3,
+   "h": 2.7,
+   "a": 11.61,
+   "src": "courtyard"
+  },
+  {
+   "ref": "TP19",
+   "fp": "DesktopSpeaker:TestPoint_Keystone_5015_Micro_Mini",
+   "w": 4.3,
+   "h": 2.7,
+   "a": 11.61,
+   "src": "courtyard"
+  },
+  {
+   "ref": "TP21",
+   "fp": "DesktopSpeaker:TestPoint_Keystone_5015_Micro_Mini",
+   "w": 4.3,
+   "h": 2.7,
+   "a": 11.61,
+   "src": "courtyard"
+  },
+  {
+   "ref": "TP25",
+   "fp": "DesktopSpeaker:TestPoint_Keystone_5010-5014_Multipurpose",
+   "w": 3.5,
+   "h": 3.5,
+   "a": 12.25,
    "src": "courtyard"
   },
   {
@@ -1142,6 +1302,14 @@
    "w": 2.22,
    "h": 0.94,
    "a": 2.09,
+   "src": "courtyard"
+  },
+  {
+   "ref": "TP22",
+   "fp": "DesktopSpeaker:TestPoint_Keystone_5015_Micro_Mini",
+   "w": 4.3,
+   "h": 2.7,
+   "a": 11.61,
    "src": "courtyard"
   },
   {
@@ -1486,6 +1654,46 @@
    "w": 2.22,
    "h": 0.94,
    "a": 2.09,
+   "src": "courtyard"
+  },
+  {
+   "ref": "TP6",
+   "fp": "DesktopSpeaker:TestPoint_Keystone_5015_Micro_Mini",
+   "w": 4.3,
+   "h": 2.7,
+   "a": 11.61,
+   "src": "courtyard"
+  },
+  {
+   "ref": "TP8",
+   "fp": "DesktopSpeaker:TestPoint_Keystone_5015_Micro_Mini",
+   "w": 4.3,
+   "h": 2.7,
+   "a": 11.61,
+   "src": "courtyard"
+  },
+  {
+   "ref": "TP12",
+   "fp": "DesktopSpeaker:TestPoint_Keystone_5015_Micro_Mini",
+   "w": 4.3,
+   "h": 2.7,
+   "a": 11.61,
+   "src": "courtyard"
+  },
+  {
+   "ref": "TP13",
+   "fp": "DesktopSpeaker:TestPoint_Keystone_5015_Micro_Mini",
+   "w": 4.3,
+   "h": 2.7,
+   "a": 11.61,
+   "src": "courtyard"
+  },
+  {
+   "ref": "TP14",
+   "fp": "DesktopSpeaker:TestPoint_Keystone_5015_Micro_Mini",
+   "w": 4.3,
+   "h": 2.7,
+   "a": 11.61,
    "src": "courtyard"
   },
   {
@@ -2465,6 +2673,30 @@
    "src": "courtyard"
   },
   {
+   "ref": "TP10",
+   "fp": "DesktopSpeaker:TestPoint_Keystone_5015_Micro_Mini",
+   "w": 4.3,
+   "h": 2.7,
+   "a": 11.61,
+   "src": "courtyard"
+  },
+  {
+   "ref": "TP20",
+   "fp": "DesktopSpeaker:TestPoint_Keystone_5015_Micro_Mini",
+   "w": 4.3,
+   "h": 2.7,
+   "a": 11.61,
+   "src": "courtyard"
+  },
+  {
+   "ref": "TP24",
+   "fp": "DesktopSpeaker:TestPoint_Keystone_5010-5014_Multipurpose",
+   "w": 3.5,
+   "h": 3.5,
+   "a": 12.25,
+   "src": "courtyard"
+  },
+  {
    "ref": "U6",
    "fp": "DesktopSpeaker:TAS5825MRHBR",
    "w": 5.54,
@@ -2490,5 +2722,5 @@
   }
  ],
  "missing": [],
- "total": 5026.55
+ "total": 5573.25
 }

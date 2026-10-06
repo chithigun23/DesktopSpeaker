@@ -44,6 +44,7 @@
 | HP_DET | in | PB1 (28) | Captured: J2 switched tip, 100 k (R239) pull-up to 3V3_AUDIO, 1 k (R240) series. EXTI. Reads low with no plug or with the audio rail off.
 | AUX_DET | in | PB2 (29) | Captured: J3 switched tip, 1 M (R241) to 3V_AO, 100 nF (C246), 10 k (R242) series. About 30 mV unplugged, high when a plug is inserted.
 | AMP_PDN | out | PA6 (23) | Captured 2026-10-06: shared U6/U7 PDN via 1 k each (R257/R258), 100 k pull-down R259 on Amplifiers. Drive high only after 3V3_AUDIO is up; wait 5 ms before clocks.
+| ENC_A, ENC_B, ENC_SW | in | PC8 (48), PC9 (49), PC10 (64) | Captured 2026-10-06: SW102 Alps EC11E encoder + push switch on MCU sheet. ENC_A/ENC_B/ENC_SW, EXTI or timer, internal pull-up (enable GPIO pull-ups; encoder common, switch return and shield to GND). 10 nF debounce caps C308/C309/C310 to GND; switch is active low. |
 | AMP_BOOST_EN | out | PA7 (24) | Captured: U25 TPS61088 EN, R255 100 k pull-down.
 | AMP_FAULT_N | in | PC4 (25) | Captured: U6/U7 GPIO0 (open drain FAULTZ, wired-OR), R262 10 k pull-up to 3V3_AUDIO on Amplifiers. EXTI. Firmware must set GPIO0 to FAULTZ; default pin state to be verified.
 
@@ -60,7 +61,7 @@ All captured pins are 5 V tolerant FT variants. Pin moves versus the G031 are nu
 | CODEC_SSPND | out | PD2 (52) | PCM2902C suspend status/control. |
 | USB_HID_MUTE, USB_HID_VOLUP, USB_HID_VOLDN | out | PD3 (53), PD4 (54), PD5 (55) | PCM2902C HID0/HID1/HID2 drive, pull-downs. |
 
-Spare GPIO (13, unlabelled no-connect): PA5 (22), PA15 (47), PB12 (32), PC8 (48), PC9 (49), PC10 (64), PC11 (1), PC12 (2), PD6 (56), PD8 (40), PD9 (41), PF0 (10), PF1 (11). Budget: 60 I/O = 35 captured + NRST + 11 reserved + 13 spare.
+Spare GPIO (10, unlabelled no-connect): PA5 (22), PA15 (47), PB12 (32), PC11 (1), PC12 (2), PD6 (56), PD8 (40), PD9 (41), PF0 (10), PF1 (11). Budget: 60 I/O = 38 captured + NRST + 11 reserved + 10 spare.
 
 ## Constraints checked
 

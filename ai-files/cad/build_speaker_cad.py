@@ -278,6 +278,11 @@ sbox('SW100', SW_U, PL('SW100', 'cy_v', 30.0), 4.6, 5.0, 3.5, 'tact_standin', (0
 plunger = cyl(1.25, 2.5, V(pcx + SW_U, REAR_E, PCB_TOP + 1.75), V(0, 1, 0))
 add('PCB_SW100_plunger', 'pcb_parts', plunger, (0.8, 0.1, 0.1))
 
+# SW102 Alps EC11E volume encoder stand-in: body 13.4 x 12.5 x 6.5 mm (rect of the footprint), 6 mm shaft 20 mm above the body top
+_r = rdim('SW102', (17.0, 12.5))
+sbox('SW102', PL('SW102', 'cy_u', 0.0), PL('SW102', 'cy_v', 0.0), 13.4, 12.5, 6.5, 'EC11E_body_standin', (0.55, 0.55, 0.6))
+add('PCB_SW102_shaft', 'pcb_parts', cyl(3.0, 20.0, V(pcx + PL('SW102', 'cy_u', 0.0), pcy + PL('SW102', 'cy_v', 0.0), PCB_TOP + 6.5), V(0, 0, 1)), (0.2, 0.2, 0.2))
+
 # ------------------------------------------------------------------ SW101 rocker (panel mount, stand-in) and speaker-wire/battery harness (schematic)
 rx, rz = 66.0, 78.0
 rocker = fuse([cyl(9.8, 22.0, V(rx, YB - 19.0 + 0.0, rz), V(0, 1, 0)).cut(Part.makeBox(1, 1, 1)) if False else cyl(9.8, 22.0, V(rx, Dd - 22.0, rz), V(0, 1, 0)),
@@ -285,7 +290,7 @@ rocker = fuse([cyl(9.8, 22.0, V(rx, YB - 19.0 + 0.0, rz), V(0, 1, 0)).cut(Part.m
 add('SW101_rocker_D20_standin', 'hardware', rocker, (0.6, 0.1, 0.1))
 hz = bz
 J5U, J5V = PL('J5', 'cy_u', 46.0), PL('J5', 'cy_v', 3.0)
-hp = [(pcx + (PL('J5', 'rect')[2] + 2.0 if LJ else J5U + 3.0), pcy + J5V, PCB_TOP + 4.5), (66.0, pcy + J5V, PCB_TOP + 4.5), (66.0, pcy + J5V, hz), (66.0, by, hz), (39.0, by, hz)]
+hp = [(pcx + (PL('J5', 'rect')[2] + 2.0 if LJ else J5U + 3.0), pcy + J5V, PCB_TOP + 4.5), (pcx + BU1 + 3.5, pcy + J5V, PCB_TOP + 4.5), (pcx + BU1 + 3.5, pcy + J5V, hz), (pcx + BU1 + 3.5, by, hz), (39.0, by, hz)]
 hs = []
 for a, b in zip(hp[:-1], hp[1:]):
     d = V(b[0] - a[0], b[1] - a[1], b[2] - a[2]); L = d.Length

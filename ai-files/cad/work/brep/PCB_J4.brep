@@ -3,8 +3,8 @@ DBRep_DrawableShape
 CASCADE Topology V1, (c) Matra-Datavision
 Locations 3
 1
-              1               0               0           -3.99 
-              0               1               0         188.807 
+              1               0               0            0.13 
+              0               1               0         189.207 
               0               0               1            68.1 
 1
               1               0               0 -2.22044604925031e-16 
