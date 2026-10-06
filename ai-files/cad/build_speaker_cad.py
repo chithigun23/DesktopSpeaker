@@ -111,6 +111,9 @@ adds.append(cyl(P['ring_od'] / 2, P['ring_t'], V(P['woof_cx'], P['woof_cy'], t))
 for s in sites:
     p = s['p']
     if s['kind'] == 'pcb':
+        if abs(p.x) > chx + t - 1.0 or p.y < P['ch_y0'] + 1.0:      # v7: hole not over the chamber roof -> 8 mm post from the main floor up to the boss top
+            adds.append(cyl(P['boss_od'] / 2, RB + P['boss_h'] - t, V(p.x, p.y, t)))
+            s['post'] = True
         adds.append(cyl(P['boss_od'] / 2, P['boss_h'], V(p.x, p.y, RB)))
     elif s['kind'] == 'lid':
         adds.append(cyl(P['boss_od'] / 2, 10.0, V(p.x, p.y - 10.0, p.z), V(0, 1, 0)))
@@ -276,7 +279,7 @@ plunger = cyl(1.25, 2.5, V(pcx + SW_U, REAR_E, PCB_TOP + 1.75), V(0, 1, 0))
 add('PCB_SW100_plunger', 'pcb_parts', plunger, (0.8, 0.1, 0.1))
 
 # ------------------------------------------------------------------ SW101 rocker (panel mount, stand-in) and speaker-wire/battery harness (schematic)
-rx, rz = 66.0, 75.0
+rx, rz = 66.0, 78.0
 rocker = fuse([cyl(9.8, 22.0, V(rx, YB - 19.0 + 0.0, rz), V(0, 1, 0)).cut(Part.makeBox(1, 1, 1)) if False else cyl(9.8, 22.0, V(rx, Dd - 22.0, rz), V(0, 1, 0)),
                cyl(11.5, 1.5, V(rx, Dd, rz), V(0, 1, 0))])
 add('SW101_rocker_D20_standin', 'hardware', rocker, (0.6, 0.1, 0.1))
@@ -335,9 +338,9 @@ for s in sites:
         add('Insert_M3x5.7_' + s['name'], 'hardware', ins, (0.85, 0.65, 0.2))
         hu = p - ax * s['head_off']                    # head underside
         head = cyl(2.75, 3.0, hu, ax * -1)
-        shank = cyl(1.5, 10.0, hu, ax)
+        shank = cyl(1.5, 12.0 if s['kind'] == 'pcb' else 10.0, hu, ax)       # PCB screws M3x12: 5.4 mm engagement in the 5.7 mm insert (M3x10 gave 3.4 mm)
         scr = head.fuse(shank).removeSplitter()
-        add('Screw_M3x10_' + s['name'], 'hardware', scr, (0.55, 0.55, 0.6))
+        add(('Screw_M3x12_' if s['kind'] == 'pcb' else 'Screw_M3x10_') + s['name'], 'hardware', scr, (0.55, 0.55, 0.6))
     else:
         ins = cyl(P['ins_od'] / 2, P['ins_l'], p, ax).cut(cyl(P['ins_id'] / 2, P['ins_l'] + 2, p - ax * 1, ax))
         add('Insert_M3x5.7_' + s['name'], 'hardware', ins, (0.85, 0.65, 0.2))

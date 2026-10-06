@@ -49,3 +49,6 @@ Pilot holes are modelled at 4.6 mm (= insert OD) so inserts show no overlap; rea
 
 ## Files
 `build_speaker_cad.py`, `check_cad.py`, `render_cad.py`, `pcb_estimate.py`, `DesktopSpeaker_internal.FCStd`, `DesktopSpeaker_internal.step` (named solids), `renders/`, `interference.md`, `volumes.md`, `mechanical-bom.md`, `pcb-size-estimate.md`, `mechanical-parts.md` (sourcing), `parts/` (ND65 files), `work/` (netlist, brep dumps, probes; regenerable).
+
+## v8 (2026-10-06)
+PCB holes now 10 (`layout.json` holes); holes outside the woofer chamber roof get printed 8 mm posts from the main floor; PCB screws are M3x12. Board 121.1 x 127.4 mm, outer 163 x 100 x 195 mm, woofer chamber net 0.525 L, main 1.917 L; rocker stand-in raised to z 78 (was overlapping the board corner); check_cad: 0 unintended overlaps. See reports/pcb-placement-v8-2026-10-06.md.

@@ -359,3 +359,5 @@ Cell-based tiled floorplan with boxed, titled sections (report `ai-files/reports
 - [ ] Unmet: area <= 13,000 / depth <= 190, critical decaps <= 2.5 mm (0402 mean 3.23), 4 label overlaps.
 - [ ] Open: area <= 13,000 mm2 and depth <= 185 mm unmet (separation chain); per-cap decoupling <= 2.5 mm unmet for U6/U24/U4/U25; corner holes.
 - [x] Decap snap (`helpers/snap_v6.py`): 0402 passive reference designators on F.Fab (silk kept for ICs, connectors, inductors, switches, diodes/transistors, roomy 0805), 0402 gap 0.25 mm; 0402 caps near ICs mean 3.23 -> 2.07 mm, board unchanged. [ ] Open: 24 critical 0402 caps still 2.5-3.9 mm (U24, U6, U2), bulk 0805 3-7 mm from U6/U4/U25.
+
+- [ ] PCB v8 follow-up (2026-10-06): 121.1 x 127.4 mm = 15,428 mm2 (v6 16,008; v7 17,802), 10 M3 GND holes, plate f1 387 Hz, CAD 0 unintended overlaps. Unmet: area <= 14,000 (tile sum 12.9k + holes; separation rules and 2.3 mm title strips), hole distance to J9/J10 26 mm, L200 17.7 mm, max board point to hole 42.6 mm. Not done: tile rotation/mirroring. See ai-files/reports/pcb-placement-v8-2026-10-06.md.
