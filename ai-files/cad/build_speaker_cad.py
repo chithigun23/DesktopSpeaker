@@ -45,6 +45,11 @@ Wd, Hd, Dd, t = P['W'], P['H'], P['D'], P['wall']
 YB = Dd - t                                   # rear end of the shell (lid sits at YB..Dd)
 ZB_IN, ZT_IN = t, Hd - t
 RB = P['ch_top'] + P['roof']                  # roof top z
+# woofer chamber volume rule: the chamber is as long as needed for a NET volume of CH_NET_L (gross = net + displaced ~0.056 L), not as long as the board
+CH_NET_L, CH_DISPLACED_L = 0.525, 0.056
+CH_LEN = (CH_NET_L + CH_DISPLACED_L) * 1e6 / ((2 * P['ch_x']) * (P['ch_top'] - t))     # inner length in Y (mm)
+P['ch_y0'] = YB - t - CH_LEN
+P['woof_cy'] = P['ch_y0'] + t + CH_LEN / 2.0 - 2.0
 PCB_BOT = RB + P['boss_h'] + P['standoff']
 PCB_TOP = PCB_BOT + P['pcb_t']
 

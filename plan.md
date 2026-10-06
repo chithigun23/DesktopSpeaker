@@ -350,3 +350,7 @@ Quick mechanical envelope review: `ai-files/reports/mechanical-fit-rough-2026-10
 
 ## PCB placement v4 (2026-10-06)
 Cell-based tiled floorplan with boxed, titled sections (report `ai-files/reports/pcb-placement-v4-2026-10-06.md`). Done: deterministic 12 s generator `build_pcb_v4.sh`, DRC courtyard/overlap/outline 0, hard separations met, CAD rebuilt (0 unintended overlaps). Open: board 117.5 x 176 mm (v3 116 x 112), critical decaps <= 2.5 mm unmet for U6/U4/U25/U24, woofer chamber now 1.003 L (target 0.60), no routing.
+
+## PCB placement v5 (2026-10-06)
+- [x] Denser cells, 0.6 mm labels, minimum-separation packer, 116 x 152 mm (17,632 mm2), woofer chamber auto-sized to 0.525 L net, enclosure 220 mm deep (`reports/pcb-placement-v5-2026-10-06.md`).
+- [ ] Open: area <= 13,000 mm2 and depth <= 185 mm unmet (separation chain); per-cap decoupling <= 2.5 mm unmet for U6/U24/U4/U25; corner holes.

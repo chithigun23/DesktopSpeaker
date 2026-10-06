@@ -516,3 +516,6 @@ Quick mechanical envelope review: `ai-files/reports/mechanical-fit-rough-2026-10
 
 ## PCB placement v4 (2026-10-06)
 `build_pcb_v4.sh` = cells (`build_pcb_v4.py`, sizes in `ai-files/pcb/cells-v4.json`) + packer (`fp_pack_v4.py` with the KiCad python, numpy) + `fp_spec_v4.py` -> `ai-files/pcb/floorplan-v4.json` -> board. Edit `CELLDEF` in the generator for cell contents, the pack constants for the separation rules. Result 117.5 x 176 mm, tiles with silk boxes/titles, DRC overlap-type 0. Decoupling practice: rules doc section 8. Decisions pending: board size/compaction, woofer chamber volume (CAD depth 244 mm), decap distance for U6/U4/U25/U24. Report: `ai-files/reports/pcb-placement-v4-2026-10-06.md`. Not committed.
+
+## PCB placement v5 (2026-10-06)
+`ai-files/helpers/run_v5.sh` regenerates the board (cells, packer with Euclidean minimum separations, spec). Result 116 x 152 mm (17,632 mm2, v4 20,680, v3 12,992), 0402 decap mean 2.84 mm, DRC overlap-type 0, separations met at the stated minimums. CAD woofer chamber now auto-sized (`CH_NET_L` 0.525 L net), enclosure 163 x 100 x 220. Unmet: area <= 13,000 mm2 / depth <= 185 mm (separation chain + tile overhead), per-cap decap <= 2.5 mm for U6/U24/U4/U25. `min_text_height` set to 0.6 mm in the project. Report: `ai-files/reports/pcb-placement-v5-2026-10-06.md`. Not committed.
