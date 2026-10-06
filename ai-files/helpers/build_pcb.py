@@ -11,7 +11,8 @@ Method : anchors (ICs, connectors, inductors) are placed by hand in ANCHORS; sat
          with courtyard gap rules, a reference text slot per part, and board/hole/antenna obstacles.
 Re-running overwrites the board (manual edits in KiCad are lost); edit the tables below instead.
 """
-import math, json, re, sys, os, collections
+import math, json, re, sys, os, collections, time
+T_START = time.time()
 import xml.etree.ElementTree as ET
 import pcbnew
 
@@ -24,15 +25,19 @@ MM = 1e6
 
 # ------------------------------------------------------------------ board parameters
 UL, UR = -61.0, 55.0                  # board left/right edge: u = CAD X (0 = enclosure centre); left = roof edge, right limited by the rocker body
-BW, BD = UR - UL, 96.0                # board width (u) x depth (v); the enclosure depth D = 160 + (BD - 92) so the front edge stays at y 64.5
-VF, VR = -BD / 2, BD / 2
+BD = float(os.environ.get('BOARD_D', '112.0'))
+BW = UR - UL                          # board width (u) x depth (v); the front edge stays at CAD y 64.5, the enclosure depth follows the rear edge
+VF = -48.0                            # DESIGN frame: v = 0 is 48 mm behind the front edge; layout.json is exported centre-relative (v - VCEN) for the CAD
+VR = VF + BD
+VCEN = (VF + VR) / 2
 CORNER_R = 3.0
 X0, Y0 = 150.0 - (UL + UR) / 2, 100.0     # sheet position of u = 0, v = 0 (mm)
-HOLES = [('H1', -55.5, -(BD / 2 - 4.0)), ('H2', 51.0, -(BD / 2 - 4.0)), ('H3', -28.5, 41.0), ('H4', 51.0, 16.5)]
+HOLES = [('H1', -55.5, VF + 4.0), ('H2', 51.0, -20.0), ('H3', -28.5, 52.0), ('H4', 51.0, 37.0)]
 HOLE_R = 3.75                         # 6.2 mm plated pad + screw head/washer keepout
 HOLE_FP = 'MountingHole_3.2mm_M3_PTH_GND'
-REAR_CAD_Y = 160.5                    # CAD y of the rear board edge (enclosure D 164 minus 3.5)
-PCB_CY_CAD = REAR_CAD_Y - BD / 2
+FRONT_CAD_Y = 64.5
+REAR_CAD_Y = FRONT_CAD_Y + BD           # CAD y of the rear board edge (enclosure D = this + 3.5)
+PCB_CY_CAD = FRONT_CAD_Y + BD / 2
 GAP_EDGE = 0.5
 TXT_H = 0.8                           # reference text height/width (mm)
 TXT_T = 0.12
@@ -60,45 +65,52 @@ def kind_of(ref, fp):
 R = VR
 C1, C2, C3 = -17.5, -1.6, 14.3        # class-D channel columns (inductor pitch 15.9)
 ANCHORS = {
-    'U1': ('left', 38.0, 90, 8.0),      # BM83: antenna overhangs the left edge by 8 mm, rear-left corner
-    'J8': ('c', -36.5, 22.3, 0),
+    'U1': ('left', 54.0, 90, 8.0),      # BM83: antenna overhangs the left edge by 8 mm, rear-left corner
+    'J8': ('c', -36.5, 37.0, 0),
     'J2': ('rear', -13.7, 270, -0.30),  # 3.5 mm jacks, bore to the rear, 0.3 mm inside the edge
     'J3': ('rear', -0.2, 270, -0.30),
     'SW100': ('rear', 10.5, 0, 0.0),
     'J4': ('rear', 16.5, 0, 0.0),
     'J1': ('rear', 25.5, 180, 1.25),    # USB-C: shell tab pads end 0.5 mm inside the edge, body 1.25 mm past it
-    'SW101': ('o', 51.5, 36.0, 90),     # rocker wire pads along the right edge (courtyard reduced to the pads)
-    'J5': ('right', 4.0, 270, 0.0),     # Micro-Fit, mating face at the right edge
+    'SW101': ('o', 51.5, 52.0, 90),     # rocker wire pads along the right edge, rear (courtyard reduced to the pads)
+    'J5': ('right', 26.0, 270, 0.0),    # Micro-Fit, mating face at the right edge
     'J9': ('front', -22.5, 0, 0.0), 'J10': ('front', -2.5, 0, 0.0), 'J11': ('front', 17.5, 0, 0.0),
     'J7': ('front', -46.5, 0, 0.0), 'J6': ('left', -12.0, 0, 0.0),
     'U3': ('c', -51.0, -27.0, 0),
     'L201': ('c', C1, -30.6, 0), 'L202': ('c', C1, -16.6, 0),
     'L203': ('c', C2, -30.6, 0), 'L204': ('c', C2, -16.6, 0),
     'L205': ('c', C3, -30.6, 0), 'L206': ('c', C3, -16.6, 0),
-    'U6': ('c', -35.0, -22.0, 0), 'U7': ('c', 28.5, -22.0, 0),
-    'U25': ('c', 44.0, -43.0, 0), 'L200': ('c', 36.0, -42.5, 0), 'C275': ('c', 48.5, -32.0, 0),
-    'U4': ('c', 37.0, 7.0, 0), 'L1': ('c', 37.0, 19.5, 0),
-    'U11': ('c', 31.0, 34.0, 0),
-    'U24': ('c', -28.0, 12.0, 0), 'U2': ('c', 9.0, 19.0, 0),
+    'U6': ('c', -35.0, -27.0, 0), 'U7': ('c', 28.5, -27.0, 0),
+    'U25': ('c', 44.5, -42.5, 270), 'L200': ('c', 33.5, -42.0, 0), 'C275': ('c', 46.0, -30.5, 0),
+    'U4': ('c', 39.0, 20.0, 0), 'L1': ('c', 39.0, 32.5, 0),
+    'U11': ('c', 33.0, 49.0, 0), 'U14': ('c', 49.0, 2.0, 0), 'L2': ('c', 50.0, 9.5, 0),
+    'U24': ('c', -28.0, 19.0, 0), 'U2': ('c', 9.0, 27.0, 0),
 }
 # satellites: greedy placement (hint = zone centre, used when no placed pin attracts them)
 SATELLITES = [
-    ('D5', 24.0, 40.0), ('D6', 37.0, 40.0), ('D1', 30.0, 28.0), ('U19', 38.0, 28.0), ('D7', 24.0, 32.0),
-    ('Q103', 48.0, 12.0), ('U5', 40.0, -8.0), ('U12', 46.0, -8.0), ('U13', 40.0, -12.0), ('U16', 46.0, -12.0),
+    ('D5', 24.0, 54.0), ('D6', 40.0, 54.0), ('D1', 30.0, 40.0), ('U19', 44.0, 42.0), ('D7', 22.0, 44.0),
+    ('Q103', 46.0, 24.0), ('U5', 40.0, -8.0), ('U12', 46.0, -8.0), ('U13', 40.0, -12.0), ('U16', 46.0, -12.0),
     ('U17', 40.0, -16.0), ('U20', 46.0, -16.0), ('U21', 40.0, -20.0), ('Q104', 46.0, -20.0),
-    ('Q100', 46.0, 0.0), ('Q101', 36.0, 18.0), ('Q102', 46.0, 20.0),
-    ('U14', 18.0, 8.0), ('L2', 24.0, 8.0), ('U15', -52.0, 8.0), ('L3', -46.0, 8.0),
-    ('U22', -2.0, 28.0), ('U23', 4.0, 28.0), ('Y200', -24.0, 13.0), ('Y170', 15.0, 25.0),
-    ('U8', -9.0, 30.0), ('U9', 1.0, 30.0), ('U10', -18.0, 26.0), ('D200', -14.0, 32.0), ('D201', 2.0, 32.0),
-    ('FB200', -24.0, 4.0),
+    ('Q100', 46.0, 12.0), ('Q101', 33.0, 28.0), ('Q102', 46.0, 34.0),
+    ('U15', -56.0, 4.0), ('L3', -52.0, 8.0),
+    ('U22', -12.0, 16.0), ('U23', -4.0, 16.0), ('Y200', -33.0, 18.0), ('Y170', 15.0, 30.0),
+    ('U8', -14.0, 40.0), ('U9', -2.0, 40.0), ('U10', -12.0, 30.0), ('D200', -14.0, 44.0), ('D201', -2.0, 44.0),
+    ('FB200', -24.0, 12.0),
 ]
-# zone rectangles (u0, u1, v0, v1): hard limits for a part and the passives it owns
+# zone rectangles (u0, u1, v0, v1): hard limits for a part and the passives it owns.  Separation plan (design frame, front edge v -48):
+# class-D block ends at v -10; every analogue zone starts at v 10.5 (>= 20 mm); BM83 courtyard v 43.3..60.7, u <= -35.7: analogue u >= -19.5 or v <= 28 (>= 15 mm)
 ZONES = {
-    'BM': (-61, -22, 4, 48), 'BTP': (-61, -47, -2, 20), 'MCU': (-61, -44, -48, -6),
-    'AMP6': (-44, -24, -47.5, -12), 'AMP7': (22, 36, -47.5, -12), 'AMPCOL': (-26, 23, -47.5, -12),
-    'BOOST': (31, 55, -48, -17), 'GAUGE': (34, 55, -22, 0), 'CHG': (18, 55, -9, 27), 'PD': (14, 55, 24, 48),
-    'AUDIO': ((-19.5, 24, 2.5, 48), (-46, -19.5, 2.5, 16)), 'U14': (12, 30, 0, 22),
+    'BM': (-61, -21, 30.5, 64), 'BTP': (-61, -50, -5, 13), 'MCU': (-61, -44, -48, -6),
+    'AMP6': (-45, -24, -47.5, -12), 'AMP7': (22, 36, -47.5, -12), 'AMPCOL': (-26, 23, -47.5, -12),
+    'BOOST': (27, 55, -48, -17), 'GAUGE': ((34, 47, -24, -3), (24, 34, -9, -3), (47, 55, -15, -3)), 'CHG': (24, 55, 8, 40), 'PD': (14, 55, 40, 64),
+    'AUDIO': ((-19, 6, 11.5, 64), (-42, -19, 11.5, 28.5), (6, 23.0, 11.5, 44)), 'U14': (45, 55, -4, 16),
 }
+# hard clamps (u0, u1, v0, v1) applied to each zone rectangle AFTER the escalating margin: these are the separation rules
+# (analogue v >= 10.5 = 20 mm from the class-D block that ends at v -10; analogue u >= -20.5 / v <= 29.5 beside the BM83 = 15 mm;
+#  analogue u <= 24.5 so the 5 V supply at u >= 44.5 stays 20 mm away; class-D parts v <= -11; BT supply v <= 17 = 25 mm from the BM83)
+CLAMP = {'AUDIO': [(-20.5, 22.5, 10.5, 99), (-44, -17.5, 10.5, 29.5), (-20.5, 22.5, 10.5, 99)],
+         'AMP6': [(-99, 99, -99, -10.0)], 'AMP7': [(-99, 99, -99, -10.0)], 'AMPCOL': [(-99, 99, -99, -10.0)],
+         'BTP': [(-99, 99, -99, 17.0)], 'U14': [(44.5, 99, -99, 99)]}
 ZONE_OF = {'U1': 'BM', 'J8': 'BM', 'U15': 'BTP', 'L3': 'BTP', 'U3': 'MCU', 'J6': 'MCU', 'J7': 'MCU',
            'U6': 'AMP6', 'U7': 'AMP7', 'U25': 'BOOST', 'L200': 'BOOST', 'C275': 'BOOST',
            'U4': 'CHG', 'L1': 'CHG', 'Q100': 'CHG', 'Q101': 'CHG', 'Q102': 'CHG', 'Q103': 'CHG', 'J5': 'CHG',
@@ -113,14 +125,22 @@ for _r in ('L201', 'L202', 'L203', 'L204', 'L205', 'L206'):
 SHEET_ZONE = {'USB_PD': 'PD', 'Battery_Charger': 'CHG', 'Fuel_Gauge_Power': 'GAUGE', 'Amplifiers': 'AMPCOL', 'Bluetooth': 'BM',
               'Bluetooth_Power': 'BTP', 'MCU': 'MCU', 'USB_Audio': 'AUDIO', 'Source_Select_ADC': 'AUDIO', 'Headphone_Aux': 'AUDIO',
               'Logic_Audio_Power': 'U14', '': 'AUDIO'}
-SHEET_HINT = {'USB_PD': (30, 34), 'Battery_Charger': (38, 10), 'Fuel_Gauge_Power': (42, -10), 'Amplifiers': (-10, -22),
-              'Bluetooth': (-40, 36), 'Bluetooth_Power': (-48, 8), 'MCU': (-48, -29), 'USB_Audio': (9, 19),
-              'Source_Select_ADC': (-10, 19), 'Headphone_Aux': (-8, 30), 'Logic_Audio_Power': (18, 8), '': (0, 0)}
+SHEET_HINT = {'USB_PD': (32, 50), 'Battery_Charger': (39, 22), 'Fuel_Gauge_Power': (42, -10), 'Amplifiers': (-10, -22),
+              'Bluetooth': (-45, 40), 'Bluetooth_Power': (-55, 4), 'MCU': (-48, -29), 'USB_Audio': (9, 26),
+              'Source_Select_ADC': (-12, 22), 'Headphone_Aux': (-8, 38), 'Logic_Audio_Power': (48, 4), '': (0, 0)}
 # order in which the passives of each owner are placed (decoupling-critical ICs first, hungry zones early)
+# decoupling-critical owners: their small caps get a higher weight and a steeper penalty beyond 2 mm
+CRIT_OWNERS = {'U6': 1.6, 'U7': 1.6, 'U4': 1.6, 'U25': 1.8, 'U3': 1.6, 'U24': 1.4, 'U22': 1.8, 'U23': 1.8, 'U2': 1.5, 'U15': 1.4, 'U14': 1.4, 'U11': 1.3}
+AWAY_NETS = ('Net-(U25-FB)', 'Net-(U25-COMP)')      # U25 feedback/compensation: keep away from the SW pins/inductor
+SW_NET = 'Net-(U25-SW)'
+AWAY_MM = 6.0
+PRE_OWNERS = ['U14', 'U4', 'U25', 'U6', 'U7', 'U24', 'U2', 'U3', 'U11']   # anchored ICs whose decoupling caps are placed (and locked) before everything else
 OWNER_ORDER = ['U6', 'U7', 'U25', 'L200', 'U4', 'U11', 'U24', 'U2', 'U10', 'U1', 'U15', 'U14', 'U3', 'U8', 'U9', 'U22', 'U23']
 NETBASED = {'D1', 'D5', 'D6', 'D7', 'D200', 'D201', 'Q100', 'Q101', 'Q102', 'Q103', 'Q104', 'Y170', 'Y200', 'L2', 'L3', 'FB200'}
 ANTENNA_MARGIN = 3.0
-TITLE_AT = (-17.0, -2.5)               # top-silk board title, reserved before placement
+ASHEETS = ('Source_Select_ADC', 'Headphone_Aux', 'USB_Audio')
+NOCLAMP = [False]
+TITLE_AT = (-17.0, 2.0)               # top-silk board title, reserved before placement
 
 
 STEP = 0.5                           # ring search step (mm)
@@ -203,6 +223,9 @@ def main():
             for o, _p in nets[n]:
                 if not ispas(o) and not o.startswith('H'):
                     sc[o] += 1.0 / (1 + len(nets[n]) / 6.0) + (0.5 if comps[o]['sheet'] == c['sheet'] else 0)
+        if c['sheet'] in ASHEETS:          # audio-sheet passives must not be owned (and pulled) by a part of another sheet (e.g. the BM83)
+            sc2 = collections.Counter({o: v for o, v in sc.items() if comps[o]['sheet'] in ASHEETS})
+            sc = sc2
         owner[k] = sc.most_common(1)[0][0] if sc else None
     for _ in range(4):
         for k in [k for k, o in owner.items() if o is None]:
@@ -219,9 +242,15 @@ def main():
     def zone_rect(ref, margin=0.0):
         c = comps[ref]
         zn = ZONE_OF.get(ref) or ZONE_OF.get(owner.get(ref)) or SHEET_ZONE.get(c['sheet'], 'AUDIO')
+        if c['sheet'] in ASHEETS and ref not in ZONE_OF:
+            zn = 'AUDIO'
         z = ZONES[zn]
         zs = z if isinstance(z[0], tuple) else (z,)
-        return [(q[0] - margin, q[2] - margin, q[1] + margin, q[3] + margin) for q in zs]      # list of (u0, v0, u1, v1)
+        out = [(q[0] - margin, q[2] - margin, q[1] + margin, q[3] + margin) for q in zs]      # list of (u0, v0, u1, v1)
+        for i, cl in enumerate(() if NOCLAMP[0] else CLAMP.get(zn, ())):
+            o = out[i]
+            out[i] = (max(o[0], cl[0]), max(o[1], cl[2]), min(o[2], cl[1]), min(o[3], cl[3]))
+        return out
     ZM = [0.0]                                    # current zone margin (escalated when a part does not fit)
 
     board = pcbnew.CreateEmptyBoard()
@@ -433,8 +462,16 @@ def main():
             tot += (1.0 if strict else (0.02 if any(a[0] for a in attr) else 0.5)) * (abs(u - hint[0]) + abs(v - hint[1]))
         if rot in (180, 270):
             tot += 0.3
+        if ref in away_set:
+            for num, px, py in comps[ref]['pads']:
+                x, y = rot_pt(px, py, rot)
+                for a, b, _r, _n in attract.get(SW_NET, ()):
+                    dd = math.hypot(u + x - a, v - y - b)
+                    if dd < AWAY_MM:
+                        tot += 12.0 * (AWAY_MM - dd) ** 2
         return tot
 
+    away_set = {k for k, c in comps.items() if ispas(k) and any(n in AWAY_NETS for n in c['pins'].values())}
     failed = []
 
     def place_greedy(ref, hint, relax=False):
@@ -489,20 +526,37 @@ def main():
 
     def try_place(ref, hint):
         ok = False
-        for m in (0.0, 3.0, 6.0, 300.0):
+        for m in (0.0, 1.0, 3.0, 6.0, 300.0):
             ZM[0] = m
             if place_greedy(ref, hint):
                 ok = True
+                if m > 1.0:
+                    print('WARNING zone margin %.0f needed for %s' % (m, ref), flush=True)
                 break
         if not ok:
             ZM[0] = 300.0
             ok = place_greedy(ref, hint, relax=True)
+            if not ok:
+                print('WARNING %s placed without clamps' % ref, flush=True)
+                NOCLAMP[0] = True
+                ok = place_greedy(ref, hint, relax=True)
+                NOCLAMP[0] = False
         ZM[0] = 0.0
         if not ok:
             failed.append(ref)
 
+    locked = set()
+    for o in PRE_OWNERS:
+        cl = [r for r in comps if comps[r]['kind'] == 'pas' and owner.get(r) == o and r not in placed and
+              ((r[0] == 'C' and 'GND' in comps[r]['pins'].values()) or r in away_set)]
+        cl.sort(key=lambda r: ((0 if (r[0] == 'C' and '0402' in comps[r]['fp'] and r not in away_set) else (1 if r in away_set else 2)), (0 if '0402' in comps[r]['fp'] else 1), min([len(nets[n]) for n in comps[r]['pins'].values() if n != 'GND'] or [99]), r))
+        for r in cl:
+            try_place(r, SHEET_HINT.get(comps[r]['sheet']))
+            locked.add(r)
+    print('pre-stage locked %d caps %.0fs' % (len(locked), time.time() - T_START), flush=True)
     for ref, hu, hv in SATELLITES:
         try_place(ref, (hu, hv))
+    print('satellites done %.0fs' % (time.time() - T_START), flush=True)
 
     def prio(r):
         o = owner.get(r)
@@ -524,12 +578,13 @@ def main():
             break
         rest = remaining
     failed += [r for r in comps if r not in placed and r not in failed]
+    print('greedy done %.0fs, failed %s' % (time.time() - T_START, failed), flush=True)
 
     # ---- soft-constraint simulated annealing of the passives (overlap/zone penalties ramped up), then legalisation of violators
     def anneal(iters, seed=7, lam0=20.0, lam1=320.0, t0=0.6, t1=0.02):
         import random
         rnd = random.Random(seed)
-        movers = [r for r, p in placed.items() if comps[r]['kind'] == 'pas' and r not in ANCHORS]
+        movers = [r for r, p in placed.items() if comps[r]['kind'] == 'pas' and r not in ANCHORS and r not in locked]
         mset = set(movers)
         cell = 3.0
         buckets = collections.defaultdict(set)
@@ -615,11 +670,11 @@ def main():
                 if nm == 'GND' or len(nets[nm]) > 70:
                     ws.append(0.0)
                 elif small_cap:
-                    ws.append(10.0)
+                    ws.append(10.0 * CRIT_OWNERS.get(owner.get(r), 1.0))
                 elif bulk_cap:
-                    ws.append(3.0)
+                    ws.append(3.0 if CRIT_OWNERS.get(owner.get(r), 1.0) <= 1.0 else 6.0 * CRIT_OWNERS[owner.get(r)])
                 else:
-                    ws.append(1.0 if len(nets[nm]) <= 12 else 0.4)
+                    ws.append((1.0 if len(nets[nm]) <= 12 else 0.4) * (3.0 if CRIT_OWNERS.get(owner.get(r), 1.0) > 1.0 else 1.0))
             c['w'] = ws
             for k, (num, px, py) in enumerate(c['pads']):
                 mover_pads[c['pins'][num]].append((r, k))
@@ -636,6 +691,9 @@ def main():
                       for n2, qx, qy in comps[o]['pads'] if comps[o]['pins'][n2] == nm] if (o and o in placed and o not in mset) else []
                 row.append(op or allp)
             tg[r] = row
+
+        away_refs = {r for r in movers if any(n in AWAY_NETS for n in comps[r]['pins'].values())}
+        sw_pads = [pt for pt in fixed_pads.get(SW_NET, [])]
 
         def pcost(ref, ou, ov, rot):
             tot = 0.0
@@ -655,7 +713,14 @@ def main():
                             o2 = st[r2]
                             dx2, dy2, _ = padinfo[r2][o2[2]][k2]
                             d = min(d, ((x - o2[0] - dx2) ** 2 + (y - o2[1] - dy2) ** 2) ** 0.5)
-                tot += w * (d + (0.4 * max(0.0, d - 3.0) ** 2 if w >= 3.0 else 0.0))
+                crit = CRIT_OWNERS.get(owner.get(ref), 1.0) > 1.0 and w >= 6.0
+                tot += w * (d + (0.4 * max(0.0, d - (2.0 if crit else 3.0)) ** 2 if w >= 3.0 else 0.0))
+            if ref in away_refs:
+                for k, (dx, dy, nm) in enumerate(padinfo[ref][rot]):
+                    for a, b in sw_pads:
+                        dd = ((ou + dx - a) ** 2 + (ov + dy - b) ** 2) ** 0.5
+                        if dd < AWAY_MM:
+                            tot += 12.0 * (AWAY_MM - dd) ** 2
             return tot
 
         for r in movers:
@@ -759,7 +824,9 @@ def main():
             for ring in range(0, 200):
                 if best is not None and ring * 0.25 > best[0] / 1.0 + 1.0:
                     break
-                ZM[0] = 1.0 if ring < 24 else (5.0 if ring < 48 else 300.0)
+                ZM[0] = 1.0 if ring < 12 else (3.0 if ring < 24 else (5.0 if ring < 48 else 300.0))
+                if ring in (12, 24, 48):
+                    print('WARNING legalise %s needs zone margin %.0f' % (r, ZM[0]), flush=True)
                 pts = [(0.0, 0.0)] if ring == 0 else [(i * 0.25, s_ * ring * 0.25) for i in range(-ring, ring + 1) for s_ in (-1, 1)] + [(s_ * ring * 0.25, j * 0.25) for j in range(-ring + 1, ring) for s_ in (-1, 1)]
                 for dx_, dy_ in pts:
                     for rot in ROTS:
@@ -772,6 +839,26 @@ def main():
                         cst = pcost(r, ou, ov, rot) + 2.0 * (abs(dx_) + abs(dy_))
                         if best is None or cst < best[0]:
                             best = (cst, ou, ov, rot, rect, tr_, k_)
+            if best is None and not NOCLAMP[0]:
+                NOCLAMP[0] = True
+                print('WARNING legalise %s without clamps' % r, flush=True)
+                for ring in range(0, 120):
+                    if best is not None and ring * 0.25 > best[0] / 1.0 + 1.0:
+                        break
+                    ZM[0] = 300.0
+                    pts = [(0.0, 0.0)] if ring == 0 else [(i * 0.25, s_ * ring * 0.25) for i in range(-ring, ring + 1) for s_ in (-1, 1)] + [(s_ * ring * 0.25, j * 0.25) for j in range(-ring + 1, ring) for s_ in (-1, 1)]
+                    for dx_, dy_ in pts:
+                        for rot in ROTS:
+                            rect, (ou, ov) = rect_at(r, u_ + dx_, v_ + dy_, rot, 'o')
+                            if not free(rect, r, kd):
+                                continue
+                            k_, tr_ = pick_slot(r, rect, 'RLBTrlbt')
+                            if tr_ is None:
+                                continue
+                            cst = pcost(r, ou, ov, rot) + 2.0 * (abs(dx_) + abs(dy_))
+                            if best is None or cst < best[0]:
+                                best = (cst, ou, ov, rot, rect, tr_, k_)
+                NOCLAMP[0] = False
             if best is None:
                 fails.append(r)
                 continue
@@ -911,10 +998,12 @@ def main():
     for ref, p in placed.items():
         if TALL.match(ref) or ref in ANCHORS or comps[ref]['kind'] != 'pas':
             rr = p['rect']
-            cad[ref] = dict(origin_u=round(p['u'], 3), origin_v=round(p['v'], 3), rot=p['rot'],
-                            cy_u=round((rr[0] + rr[2]) / 2, 3), cy_v=round((rr[1] + rr[3]) / 2, 3), rect=[round(x, 3) for x in rr])
-    json.dump(dict(board=dict(w=BW, d=BD, u0=UL, u1=UR, v0=VF, v1=VR, corner_r=CORNER_R, rear_edge_cad_y=REAR_CAD_Y, centre_cad_y=PCB_CY_CAD),
-                   holes=[dict(name=n, u=u, v=v) for n, u, v in HOLES], parts=cad, sheets={r: c['sheet'] for r, c in comps.items()}, owner=owner, antenna=antenna_keep, failed=failed,
+            cad[ref] = dict(origin_u=round(p['u'], 3), origin_v=round(p['v'] - VCEN, 3), rot=p['rot'],
+                            cy_u=round((rr[0] + rr[2]) / 2, 3), cy_v=round((rr[1] + rr[3]) / 2 - VCEN, 3),
+                            rect=[round(rr[0], 3), round(rr[1] - VCEN, 3), round(rr[2], 3), round(rr[3] - VCEN, 3)])
+    ant = dict(antenna_keep, v0=antenna_keep['v0'] - VCEN, v1=antenna_keep['v1'] - VCEN) if antenna_keep else None
+    json.dump(dict(board=dict(w=BW, d=BD, u0=UL, u1=UR, v0=-BD / 2, v1=BD / 2, corner_r=CORNER_R, rear_edge_cad_y=REAR_CAD_Y, centre_cad_y=PCB_CY_CAD, v_design_offset=VCEN),
+                   holes=[dict(name=n, u=u, v=v - VCEN) for n, u, v in HOLES], parts=cad, sheets={r: c['sheet'] for r, c in comps.items()}, owner=owner, antenna=ant, failed=failed,
                    noslot=[r for r, p in placed.items() if not p['txt']]),
               open(LAYOUT_JSON, 'w'), indent=1)
     print('placed', len(placed), 'failed', failed, 'noslot', [r for r, p in placed.items() if not p['txt']])

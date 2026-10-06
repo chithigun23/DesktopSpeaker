@@ -89,8 +89,24 @@ for name, g1, g2 in [('BM83-amp/inductors', ['U1'], amps), ('BM83-boost', ['U1']
                      ('BM83-analog audio', ['U1'], analog), ('classD-analog', amps, analog), ('boost-analog', boost, analog),
                      ('charger-analog', chg, analog), ('BM83-analog ALL parts', ['U1'], analog_all),
                      ('classD-analog ALL parts', amps + [r for r in fp if r.startswith('C') and SH.get(r) == 'Amplifiers' and r not in ('C275',)], analog_all),
-                     ('boost-analog ALL parts', boost + ['C275'], analog_all), ('L2/U14-analog ALL', ['L2', 'U14'], analog_all)]:
+                     ('boost-analog ALL parts', boost + ['C275'], analog_all), ('L2/U14-analog ALL', ['L2', 'U14'], analog_all),
+                     ('BM83-U15/L3 (own supply)', ['U1'], ['U15', 'L3']), ('BM83-L1/L2/L200 inductors', ['U1'], ['L1', 'L2', 'L200']),
+                     ('BM83-U14/U4/U25', ['U1'], ['U14', 'U4', 'U25']), ('U15/L3-analog ALL', ['U15', 'L3'], analog_all),
+                     ('charger U4/L1-analog ALL', chg, analog_all)]:
     d = mingap(g1, g2); sep[name] = d
     print('SEP %-20s %6.1f mm  (%s - %s)' % (name, d[0], d[1], d[2]))
+CRIT = {'U6': 'TAS5825M #1', 'U7': 'TAS5825M #2', 'U4': 'BQ25792', 'U25': 'TPS61088', 'U3': 'MCU', 'U24': 'PCM1862', 'U22': 'LDO', 'U23': 'LDO', 'U2': 'PCM2902C', 'Y170': 'xtal', 'U15': 'TPS63802', 'U14': '5V', 'U11': 'TPS25730D'}
+print('--- critical per-IC (decoupling = C with GND pad; other passives) ---')
+for ic, nm in CRIT.items():
+    if ic not in out:
+        continue
+    it = out[ic]['items']
+    dc = sorted(x[1] for x in it if x[0] in decap)
+    ot = sorted(x[1] for x in it if x[0] not in decap)
+    print('%-5s %-10s decaps n=%2d max %5.2f mean %5.2f >3: %d | other n=%2d max %5.2f' % (ic, nm, len(dc), dc[-1] if dc else 0, sum(dc) / len(dc) if dc else 0, sum(d > 3 for d in dc), len(ot), ot[-1] if ot else 0))
+fbg = [(x[0], x[1]) for x in out.get('U25', {}).get('items', []) if x[3] in ('Net-(U25-FB)', 'Net-(U25-COMP)')]
+swp = [(p.GetPosition().x / MM, p.GetPosition().y / MM) for p in fp['U25'].Pads() if p.GetNetname() == 'Net-(U25-SW)'] + [(p.GetPosition().x / MM, p.GetPosition().y / MM) for p in fp['L200'].Pads() if p.GetNetname() == 'Net-(U25-SW)']
+for r, d in fbg:
+    print('U25 FB/COMP part %s: %.2f mm from pin, nearest SW pad %.2f mm' % (r, d, min(math.hypot(q.GetPosition().x / MM - a, q.GetPosition().y / MM - b) for q in fp[r].Pads() for a, b in swp)))
 if OUT:
     json.dump(dict(ic=out, chain=chain, sep=sep), open(OUT, 'w'), indent=1)

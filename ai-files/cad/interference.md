@@ -11,9 +11,9 @@ Pairwise Boolean common volume of all 107 solids, threshold 0.5 mm3.
 
 | A | B | mm3 |
 |---|---|---|
-| PCB_116x96x1.6 | PCB_J2_3.5mm_jack | 8.61 |
-| PCB_116x96x1.6 | PCB_J3_3.5mm_jack | 8.61 |
-| PCB_116x96x1.6 | PCB_J8 | 3.28 |
-| PCB_116x96x1.6 | PCB_J4 | 2.62 |
-| PCB_116x96x1.6 | PCB_J6 | 2.62 |
-| PCB_116x96x1.6 | PCB_J1_USB-C | 0.96 |
+| PCB_116x112x1.6 | PCB_J2_3.5mm_jack | 8.61 |
+| PCB_116x112x1.6 | PCB_J3_3.5mm_jack | 8.61 |
+| PCB_116x112x1.6 | PCB_J8 | 3.28 |
+| PCB_116x112x1.6 | PCB_J4 | 2.62 |
+| PCB_116x112x1.6 | PCB_J6 | 2.62 |
+| PCB_116x112x1.6 | PCB_J1_USB-C | 0.96 |
