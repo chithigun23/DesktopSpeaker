@@ -9,3 +9,4 @@ node_modules
 
 # Local recovery snapshots; reviewed project history is retained in Git
 ai-files/backups/
+ai-files/pcb/work-p0/

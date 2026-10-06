@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 """Freerouting input filter: drop critical nets from the DSN network (they stay as pad obstacles), protect existing wiring.
-usage: route_p0_dsn_filter.py IN.dsn OUT.dsn EXCLUDED_NETS.json   (writes the excluded list as json)"""
+usage: route_p0_dsn_filter.py IN.dsn OUT.dsn EXCLUDED_NETS.json INCLUDE_CLASSES(comma list)   (writes the excluded list as json)"""
 import sys, re, json
 src, dst, exj = sys.argv[1:4]
 cls = json.load(open('/home/chithi/Desktop/DesktopSpeaker/ai-files/pcb/net-classes-p0.json'))
 txt = open(src).read()
-EXC_CLASS = {'AUDIO', 'I2S_CLK', 'USB', 'SWITCH', 'BOOT', 'SPK_OUT', 'POWER_HI', 'PVDD'}
+INC = set(sys.argv[4].split(','))
+EXC_CLASS = set(cls.values()) - INC
 excl = {n for n, c in cls.items() if c in EXC_CLASS}
 # network block
 i = txt.index('  (network')
@@ -53,6 +54,7 @@ for idx, (a, c) in enumerate(bl):
 res += net[bl[-1][1]:]
 out = head + res
 out = out.replace('(type route)', '(type protect)')
+out = re.sub(r'(\(layer In1\.Cu\s*\(type )signal', r'\1power', out)   # In1 = solid GND: no routing
 open(dst, 'w').write(out)
 json.dump(sorted(excl), open(exj, 'w'), indent=0)
 print('excluded nets', len(excl))

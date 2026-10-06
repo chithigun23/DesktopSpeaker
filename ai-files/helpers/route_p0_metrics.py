@@ -20,7 +20,7 @@ narrow = []; wcount = collections.Counter(); tl = collections.Counter(); lens = 
 for t in b.GetTracks():
     nm = t.GetNetname()
     if t.GetClass() == 'PCB_VIA':
-        vias[(round(t.GetWidth()/M, 2), round(t.GetDrillValue()/M, 2))] += 1; continue
+        vias[(round(t.GetWidth(pcbnew.F_Cu)/M, 2), round(t.GetDrillValue()/M, 2))] += 1; continue
     c = cls.get(nm, 'SIGNAL'); w = t.GetWidth()/M
     tl[(c, b.GetLayerName(t.GetLayer()))] += 1; lens[c] += t.GetLength()/M
     if w + 1e-6 < MINW.get(c, 0.2): narrow.append((nm, c, round(w, 3), b.GetLayerName(t.GetLayer()), round(t.GetStart().x/M, 1), round(t.GetStart().y/M, 1)))

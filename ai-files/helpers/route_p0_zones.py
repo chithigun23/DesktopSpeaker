@@ -14,32 +14,29 @@ def net(name):
     return n.GetNetCode() if n else None
 GND = net('GND')
 
-# ---------------- zones / islands definition (mm) -------------------
-EDGE = [(84.75,23.0),(87.75,20.0),(212.25,20.0),(215.25,23.0),(215.25,144.8),(212.25,147.8),(87.75,147.8),(84.75,144.8)]
-KEEP = (84.75, 25.865, 87.355, 41.865)   # BM83 antenna keepout bbox
-# name, net, rect, via (dia, drill)  -> In2 island + F.Cu pour (same rect) where fcu=True
+# ---------------- geometry derived from the board (nothing hard-coded) -------------------
+def board_outline():
+    ps = pcbnew.SHAPE_POLY_SET()
+    b.GetBoardPolygonOutlines(ps, True)
+    o = ps.Outline(0)
+    pts = [(o.CPoint(i).x/M, o.CPoint(i).y/M) for i in range(o.PointCount())]
+    # drop collinear/duplicate points
+    out = []
+    for p in pts:
+        if out and abs(out[-1][0]-p[0]) < 1e-6 and abs(out[-1][1]-p[1]) < 1e-6: continue
+        out.append(p)
+    return out
+EDGE = board_outline()
+ka = [z for z in b.Zones() if z.GetIsRuleArea() and z.GetZoneName() == 'BM83_ANTENNA_KEEPOUT'][0].GetBoundingBox()
+KEEP = (ka.GetLeft()/M, ka.GetTop()/M, ka.GetRight()/M, ka.GetBottom()/M)
+EX0 = min(p[0] for p in EDGE); EX1 = max(p[0] for p in EDGE); EY0 = min(p[1] for p in EDGE); EY1 = max(p[1] for p in EDGE)
 V6, V8 = (0.6, 0.3), (0.8, 0.4)
-ISL = [
- ('USB_VBUS',  '/USB_VBUS',                       (110.5, 87.5, 124.0, 96.5), V8, True),
- ('VBUS_PD',   '/Battery_Charger/VBUS_PD',        (125.0, 98.0, 137.2, 105.0), V8, True),
- ('SYS_CHG',   '/SYS_RAW',                        (139.5, 94.0, 150.0, 104.0), V8, True),
- ('BAT_INT',   '/Battery_Charger/BAT_INT',        (127.5, 74.0, 132.9, 83.0), V8, True),
- ('BAT_PACK_G','/Fuel_Gauge_Power/BAT_PACK',      (133.5, 74.0, 141.0, 83.0), V8, True),
- ('PACK_RAW',  '/Battery_Charger/PACK_RAW',       (203.0, 128.5, 214.0, 134.5), V8, False),
- ('SYS_BOOST', '/SYS_RAW',                        (165.5, 105.6, 183.0, 113.0), V8, True),
- ('PVDD_BOOST','/Amplifiers/PVDD_AMP',            (179.0, 100.0, 197.5, 105.0), V8, True),
- ('PVDD_U6',   '/Amplifiers/PVDD_AMP',            (102.0, 128.0, 129.5, 135.4), V8, True),
- ('PVDD_U7',   '/Amplifiers/PVDD_AMP',            (166.5, 131.0, 176.5, 135.4), V8, False),
- ('V3A_U6',    '/3V3_AUDIO',                      (112.0, 136.2, 119.5, 141.5), V6, False),
- ('V3A_ADC',   '/3V3_AUDIO',                      (185.0, 35.0, 203.5, 44.0), V6, False),
- ('V3A_MUX',   '/3V3_AUDIO',                      (142.0, 49.0, 172.5, 55.5), V6, False),
- ('V3_AO_MUX', '/3V_AO',                          (122.0, 46.0, 139.0, 59.0), V6, False),
- ('V3_AO_MCU', '/3V_AO',                          (93.0, 65.0, 102.0, 72.0), V6, False),
- ('V3_BT_U1',  '/3V8_BT',                         (106.5, 34.0, 113.5, 41.0), V6, False),
- ('V3_BT_U15', '/3V8_BT',                         (198.0, 92.5, 209.5, 102.5), V6, False),
- ('V5_LOGIC1', '/5V_LOGIC',                       (91.0, 92.5, 98.5, 97.5), V6, False),
- ('V5_LOGIC2', '/5V_LOGIC',                       (157.5, 64.5, 175.8, 71.0), V6, False),
- ('V5_CODEC',  '/5V_CODEC',                       (176.6, 64.5, 180.5, 71.0), V6, False),
+# rail nets that get an In2 island: net, plan minimum island width (mm), via size, F.Cu pour too
+RAILS = [
+ ('/Battery_Charger/VBUS_PD', 3.5, V8, True), ('/USB_VBUS', 3.5, V8, True), ('/SYS_RAW', 8.0, V8, True),
+ ('/Battery_Charger/BAT_INT', 6.0, V8, True), ('/Fuel_Gauge_Power/BAT_PACK', 6.0, V8, True), ('/Battery_Charger/PACK_RAW', 6.0, V8, False),
+ ('/Amplifiers/PVDD_AMP', 6.0, V8, True),
+ ('/5V_LOGIC', 2.5, V6, False), ('/5V_CODEC', 2.5, V6, False), ('/3V8_BT', 2.5, V6, False), ('/3V3_AUDIO', 2.5, V6, False), ('/3V_AO', 2.5, V6, False),
 ]
 
 # ---------------- obstacle model -------------------
@@ -68,9 +65,9 @@ def seg_dist(px, py, a, c):
     dx, dy = cx-ax, cy-ay; L = dx*dx+dy*dy
     t = 0 if L == 0 else max(0, min(1, ((px-ax)*dx+(py-ay)*dy)/L))
     return math.hypot(px-(ax+t*dx), py-(ay+t*dy))
-EDGE_SEGS = [(EDGE[i], EDGE[(i+1) % 8]) for i in range(8)]
+EDGE_SEGS = [(EDGE[i], EDGE[(i+1) % len(EDGE)]) for i in range(len(EDGE))]
 def edge_ok(x, y, rad, clr=0.5):
-    if not (84.75 < x < 215.25 and 20 < y < 147.8): return False
+    if not (EX0 < x < EX1 and EY0 < y < EY1): return False
     return all(seg_dist(x, y, a, c) >= rad + clr for a, c in EDGE_SEGS)
 def point_ok(x, y, rad, gap, owner, ignore_rects=()):
     if owner is not None and not isinstance(owner, tuple): owner = pkey(owner)
@@ -169,6 +166,8 @@ def place_array(fp, pad, netcode, dia, drill, pitch, maxn=None):
     for i in range(nx):
         for j in range(ny):
             vx = cx + (i-(nx-1)/2)*px_; vy = cy + (j-(ny-1)/2)*py_
+            rr = dia/2+0.05
+            if not all(pad.HitTest(pcbnew.VECTOR2I(mm(vx+dx_), mm(vy+dy_))) for dx_, dy_ in ((0, 0), (rr, 0), (-rr, 0), (0, rr), (0, -rr))): continue
             if not point_ok(vx, vy, dia/2, 0.2, pad): continue
             # hole-to-hole vs placed circles already handled (gap 0.2 > 0.3 drill rule needs hole gap >=0.3)
             add_via(vx, vy, netcode, dia, drill); vias.append((fp.GetReference(), pad.GetNumber(), vx, vy, 'array', 0)); n += 1
@@ -188,9 +187,9 @@ for f in b.GetFootprints():
         gnd_pad_list.append((f, p))
 exposed = []; normal = []
 for f, p in gnd_pad_list:
-    s = p.GetSize(); area = s.x*s.y/1e12
+    bb_ = p.GetBoundingBox(); area = bb_.GetWidth()*bb_.GetHeight()/1e12
     ref = f.GetReference()
-    if area >= 2.0 and (ref.startswith('U') or ref.startswith('C')) and min(s.x, s.y)/M >= 1.2:
+    if area >= 2.0 and (ref.startswith('U') or ref.startswith('C')) and min(bb_.GetWidth(), bb_.GetHeight())/M >= 1.2:
         exposed.append((f, p, area))
     else:
         normal.append((f, p))
@@ -205,6 +204,62 @@ normal.sort(key=lambda fp: (0 if fp[0].GetReference().startswith('U') else 1))
 for f, p in normal:
     place_beside(f, p, GND, 0.6, 0.3, label='GND')
 n_gnd_via = len(vias)
+
+# ---------------- 1b. derive In2 islands / F.Cu pours from the pad positions -------------------
+def inter(r, q, g):
+    return not (r[2]+g <= q[0] or r[0] >= q[2]+g or r[3]+g <= q[1] or r[1] >= q[3]+g)
+ISL = []; isl_dropped = []
+placed = [(KEEP, 0.4)]
+for nn, minw, via, fcu in RAILS:
+    code = net(nn)
+    if code is None: continue
+    pads = []
+    for f in b.GetFootprints():
+        if f.GetLayer() != pcbnew.F_Cu or f.GetReference().startswith('TP'): continue
+        for p in f.Pads():
+            if p.GetNetCode() == code and p.GetAttribute() == pcbnew.PAD_ATTRIB_SMD:
+                bb = p.GetBoundingBox()
+                pads.append(((bb.GetLeft()/M, bb.GetTop()/M, bb.GetRight()/M, bb.GetBottom()/M), p.GetPosition().x/M, p.GetPosition().y/M))
+    par = list(range(len(pads)))
+    def find(i):
+        while par[i] != i: par[i] = par[par[i]]; i = par[i]
+        return i
+    for i in range(len(pads)):
+        for j in range(i+1, len(pads)):
+            if math.hypot(pads[i][1]-pads[j][1], pads[i][2]-pads[j][2]) <= 10.0: par[find(i)] = find(j)
+    groups = collections.defaultdict(list)
+    for i in range(len(pads)): groups[find(i)].append(pads[i])
+    short = nn.split('/')[-1]
+    for gi, (_, cl) in enumerate(sorted(groups.items(), key=lambda kv: min(p[1] for p in kv[1]))):
+        if len(cl) < 2: continue
+        x0 = min(p[0][0] for p in cl)-1.0; y0 = min(p[0][1] for p in cl)-1.0
+        x1 = max(p[0][2] for p in cl)+1.0; y1 = max(p[0][3] for p in cl)+1.0
+        if x1-x0 < minw: c = (x0+x1)/2; x0, x1 = c-minw/2, c+minw/2
+        if y1-y0 < minw: c = (y0+y1)/2; y0, y1 = c-minw/2, c+minw/2
+        r = [max(x0, EX0+0.8), max(y0, EY0+0.8), min(x1, EX1-0.8), min(y1, EY1-0.8)]
+        ok = True
+        for _ in range(12):
+            hit = [(q, g) for q, g in placed if inter(r, q, 0.5 if g != 0.4 else 0.4)]
+            if not hit: break
+            q, g = hit[0]; gg = 0.5 if g != 0.4 else 0.4
+            opts = [[r[0], r[1], q[0]-gg, r[3]], [q[2]+gg, r[1], r[2], r[3]], [r[0], r[1], r[2], q[1]-gg], [r[0], q[3]+gg, r[2], r[3]]]
+            best = None
+            for o in opts:
+                if o[2]-o[0] < 1.8 or o[3]-o[1] < 1.8: continue
+                n_in = sum(1 for p in cl if o[0] <= p[1] <= o[2] and o[1] <= p[2] <= o[3])
+                sc = (n_in, (o[2]-o[0])*(o[3]-o[1]))
+                if best is None or sc > best[0]: best = (sc, o)
+            if best is None or best[0][0] < 2: ok = False; break
+            r = best[1]
+        else:
+            ok = False
+        if ok and any(inter(r, q, 0.5 if g != 0.4 else 0.4) for q, g in placed): ok = False
+        n_in = sum(1 for p in cl if r[0] <= p[1] <= r[2] and r[1] <= p[2] <= r[3])
+        if not ok or n_in < 2:
+            isl_dropped.append((nn, gi, len(cl))); continue
+        r = tuple(round(v, 2) for v in r)
+        placed.append((r, 0.5))
+        ISL.append(('%s_%d' % (short, gi), nn, r, via, fcu))
 
 # ---------------- 2. rail vias to In2 -------------------
 HI_NETS = set(['/SYS_RAW','/Battery_Charger/BAT_INT','/Fuel_Gauge_Power/BAT_PACK','/Battery_Charger/PACK_RAW','/Battery_Charger/VBUS_PD','/USB_VBUS','/Battery_Charger/PMID','/Amplifiers/PVDD_AMP'])
@@ -264,8 +319,9 @@ def inset_octagon(d):
     return out
 oct_in = inset_octagon(0.3)
 zones = []
-zones.append(poly_zone(pcbnew.In1_Cu, GND, oct_in, 'GND_L2', 0, False, 0.2, 0.2))
-zones.append(poly_zone(pcbnew.B_Cu, GND, oct_in, 'GND_B', 0, False, 0.2, 0.2))
+# GND pours keep 0.4: the zone filler ignores the .kicad_dru vbus/pvdd rules, so HI vias would otherwise sit 0.2 from GND copper
+zones.append(poly_zone(pcbnew.In1_Cu, GND, oct_in, 'GND_L2', 0, False, 0.4, 0.2))
+zones.append(poly_zone(pcbnew.B_Cu, GND, oct_in, 'GND_B', 0, False, 0.4, 0.2))
 # overlap/gap check for islands
 bad = []
 for i in range(len(ISL)):
@@ -275,13 +331,15 @@ for i in range(len(ISL)):
         if max(gx, gy) < 0.5: bad.append((ISL[i][0], ISL[j][0], round(max(gx, gy), 2)))
 overlaps = bad
 def rect_pts(r): return [(r[0], r[1]), (r[2], r[1]), (r[2], r[3]), (r[0], r[3])]
+def ZC(nn):
+    return 0.35 if nn == '/Amplifiers/PVDD_AMP' else (0.45 if nn in HI_NETS else 0.25)
 pri = 1
 for name, nn, rect, via, fcu in ISL:
     code = net(nn)
     if rail_via[name] > 0:
-        zones.append(poly_zone(pcbnew.In2_Cu, code, rect_pts(rect), 'L3_'+name, pri, False, 0.3, 0.4))
-    if fcu:
-        zones.append(poly_zone(pcbnew.F_Cu, code, rect_pts(rect), 'L1_'+name, pri, True, 0.3, 0.4))
+        zones.append(poly_zone(pcbnew.In2_Cu, code, rect_pts(rect), 'L3_'+name, pri, False, ZC(nn), 0.4))
+    if fcu and rail_via[name] > 0:
+        zones.append(poly_zone(pcbnew.F_Cu, code, rect_pts(rect), 'L1_'+name, pri, True, ZC(nn), 0.4))
     pri += 1
 
 # F.Cu no-pour rule areas around SWITCH-class pads that overlap F.Cu pours
@@ -290,7 +348,7 @@ sw_codes = set()
 for nm in list(b.GetNetsByName().keys()):
     s = str(nm)
     if s in SW_NETS or s.startswith('Net-(U6-OUT_') or s.startswith('Net-(U7-OUT_'): sw_codes.add(b.FindNet(s).GetNetCode())
-fcu_rects = [r for (_, _, r, _, f) in ISL if f]
+fcu_rects = [r for (n_, _, r, _, f) in ISL if f and rail_via[n_] > 0]
 sw_ko = 0
 for f in b.GetFootprints():
     for p in f.Pads():
@@ -307,7 +365,7 @@ for f in b.GetFootprints():
                 b.Add(z); sw_ko += 1
 
 # ---------------- 4. pad zone connections -------------------
-POUR_NETS = set(net(n) for _, n, _, _, f in ISL if f)
+POUR_NETS = set(net(n) for n_, n, _, _, f in ISL if f and rail_via[n_] > 0)
 full = 0; therm = 0
 for f in b.GetFootprints():
     ref = f.GetReference()
@@ -329,6 +387,6 @@ filler = pcbnew.ZONE_FILLER(b)
 filler.Fill(b.Zones())
 pcbnew.SaveBoard(OUT, b)
 json.dump({'gnd_vias_total': n_gnd_via, 'vias': len(vias), 'arrays': arr_count, 'rail_via': dict(rail_via), 'rail_fail': dict(rail_fail),
-           'failures': [(a, str(c), d, e) for a, c, d, e in failures], 'island_overlaps': overlaps, 'sw_nopour': sw_ko,
+           'failures': [(a, str(c), d, e) for a, c, d, e in failures], 'island_overlaps': overlaps, 'islands': [(n, nn, r) for n, nn, r, _, _ in ISL], 'islands_dropped': isl_dropped, 'edge_pts': len(EDGE), 'keep': KEEP, 'sw_nopour': sw_ko,
            'pad_full': full, 'pad_thermal': therm, 'stubs': len(stubs)}, open(REP, 'w'), indent=1)
 print('done', n_gnd_via, len(vias), 'fail', len(failures), 'overlap', overlaps, 'sw_ko', sw_ko)
