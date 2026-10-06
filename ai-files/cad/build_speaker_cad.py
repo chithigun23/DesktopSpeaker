@@ -37,6 +37,7 @@ LJ = None
 if os.path.exists(ROOT + 'ai-files/pcb/layout.json'):
     LJ = json.load(open(ROOT + 'ai-files/pcb/layout.json'))
     P.update(pcb_w=LJ['board']['w'], pcb_d=LJ['board']['d'], pcb_cy=LJ['board']['centre_cad_y'])
+    P['D'] = LJ['board']['rear_edge_cad_y'] + 3.5      # enclosure depth follows the board (rear edge 3.5 mm in front of the lid face)
 P['pcb_holes'] = [(h['u'], h['v']) for h in LJ['holes']] if LJ else [(a * 47.0, b * 29.5) for a, b in ((1, 1), (1, -1), (-1, 1), (-1, -1))]
 def PL(ref, key, default=None):
     return LJ['parts'][ref][key] if LJ and ref in LJ['parts'] else default
@@ -203,7 +204,8 @@ for s in sites:
         board = board.cut(cyl(1.6, 3, V(s['p'].x, s['p'].y, PCB_BOT - 1)))
 add('PCB_%gx%gx1.6' % (P['pcb_w'], P['pcb_d']), 'pcb', board, (0.05, 0.35, 0.15))
 
-YF_USB, YF_JACK = 158.5, 156.6
+REAR_E = LJ['board']['rear_edge_cad_y'] if LJ else 156.5
+YF_USB, YF_JACK = REAR_E + 2.0, REAR_E + 0.1
 placed = {}
 def put(ref, shape, u, v, yaw=0.0, center=True, zfix=True, origin_y=None):
     s = shape
@@ -265,7 +267,7 @@ for ref, v in (('J9', -27.0), ('J10', -17.5), ('J11', -8.0)):
     sbox(ref, PL(ref, 'cy_u', -38.0), PL(ref, 'cy_v', v), 9.27, 9.5, 10.9, 'JST_B2P-VH_standin', (0.95, 0.95, 0.9))
 SW_U = PL('SW100', 'origin_u', 30.0)
 sbox('SW100', SW_U, PL('SW100', 'cy_v', 30.0), 4.6, 5.0, 3.5, 'tact_standin', (0.3, 0.3, 0.3))
-plunger = cyl(1.25, 159.0 - 156.5 + 0.0, V(pcx + SW_U, 156.5, PCB_TOP + 1.75), V(0, 1, 0))
+plunger = cyl(1.25, 2.5, V(pcx + SW_U, REAR_E, PCB_TOP + 1.75), V(0, 1, 0))
 add('PCB_SW100_plunger', 'pcb_parts', plunger, (0.8, 0.1, 0.1))
 
 # ------------------------------------------------------------------ SW101 rocker (panel mount, stand-in) and speaker-wire/battery harness (schematic)

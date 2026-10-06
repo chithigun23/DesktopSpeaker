@@ -1,0 +1,7 @@
+TPS61088 full datasheet PDF could not be downloaded (ti.com symlink/gpn returned 404 pages, mouser.lt mirror returned HTML; 3 attempts, 2026-10-06).
+Excerpt retrieved from the TI document viewer (TPS61088-Q1 datasheet section 11.1, same layout text as TPS61088), verbatim:
+- "Minimize the length and area of all traces connected to the SW pin, and always use a ground plane under the switching regulator to minimize interplane coupling."
+- "The input capacitor must be close to the VIN pin and GND pin in order to reduce the input supply ripple." (0.1 uF ceramic bypass as close as possible to VIN)
+- "A thermal pad that improves the thermal capabilities of the package should be soldered to the large ground plate, using thermal vias underneath the thermal pad."
+Not retrieved (from memory of the datasheet section 11.1/11.2, UNVERIFIED): output caps close to VOUT/PGND, inductor adjacent to SW, FB divider close to FB pin and away from SW, COMP/SS parts close to pins, AGND/PGND joined at the thermal pad.
+Source: https://www.ti.com/document-viewer/TPS61088-Q1/datasheet/layout-guidelines-slvse528754

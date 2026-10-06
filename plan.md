@@ -332,10 +332,12 @@ Quick mechanical envelope review: `ai-files/reports/mechanical-fit-rough-2026-10
 
 ## PCB layout (2026-10-06, user-authorised: placement only)
 - [x] `DesktopSpeaker-kicad/DesktopSpeaker.kicad_pcb`: 114 x 92 mm, 322 parts top side, 4 M3 holes, BM83 antenna keepout, no routing/zones. Method/rules/DRC/open concerns: `ai-files/reports/pcb-placement-2026-10-06.md`; regenerate with `ai-files/helpers/build_pcb.sh`, check with `pcb_check.sh`. CAD rebuilt from the layout (0 unintended overlaps).
+- [x] Placement v2 (2026-10-06): 116 x 96 mm, 311 parts, noise zoning (BM83 rear-left corner >= 40 mm from class-D/boost, boost >= 45 mm from audio, class-D 17.9 mm from analogue ICs and 10 mm from analogue passives, BM83 13.5 mm from U24), 4 plated M3 GND mounting holes (`MountingHole_3.2mm_M3_PTH_GND`, 6.2 mm pad), enclosure depth 164 mm (CAD rebuilt, 0 overlaps, woofer chamber 0.530 L). DRC courtyard/overlap/outline 0. Report: `ai-files/reports/pcb-placement-v2-2026-10-06.md`.
+- [ ] Placement v2 open: class-D 20 mm and BM83-U15/L3 25 mm not met on one board (two-board split or deeper board), decoupling distances still 5-7 mm mean (target 2-3), U25 FB/COMP 2-5 mm from SW, fetch the TPS61088 datasheet PDF (excerpt only in `ai-files/datasheets/tps61088-layout-excerpt.txt`).
 - [ ] Review placement, then routing/stackup/planes, test points, silk slots for 5 refs, footprint clearance fixes (J1/U11/U19/SW100) are NOT started.
 
 ## Low-risk BOM reduction (2026-10-06)
 - [x] Removed C185, C113-C115, C121, C143, C151, C163, C164, C242, R260 (U6 ADR now tied directly to GND). ERC 19 unchanged; netlist pin groups unchanged apart from the removed pins and U6 pin 8 on GND. BOM subtotal US$74.38 fitted / US$83.57 order (partial). Preview refreshed.
 - [x] Kept after datasheet check: C126 (U21 TPS3839 VDD bypass), R12, R18, C184.
 - [ ] Deferred pending bench: M1 USB/BT bias merge, ADC anti-alias C206-C211, PVDD caps C279/C292, low-med items (C131/C132, C154, C263/C264, C222/C223, R122).
-- [ ] PCB still has the 11 removed footprints; remove them in the layout redo.
+- [x] The 11 removed footprints are gone from the PCB (placement v2 regenerated from the netlist).

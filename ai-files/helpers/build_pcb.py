@@ -23,14 +23,16 @@ LAYOUT_JSON = ROOT + 'ai-files/pcb/layout.json'
 MM = 1e6
 
 # ------------------------------------------------------------------ board parameters
-UL, UR = -59.0, 55.0                  # board left/right edge: u = CAD X (0 = enclosure centre); right edge limited by the rocker body
-BW, BD = UR - UL, 92.0                # board width (u) x depth (v)
+UL, UR = -61.0, 55.0                  # board left/right edge: u = CAD X (0 = enclosure centre); left = roof edge, right limited by the rocker body
+BW, BD = UR - UL, 96.0                # board width (u) x depth (v); the enclosure depth D = 160 + (BD - 92) so the front edge stays at y 64.5
 VF, VR = -BD / 2, BD / 2
 CORNER_R = 3.0
 X0, Y0 = 150.0 - (UL + UR) / 2, 100.0     # sheet position of u = 0, v = 0 (mm)
-HOLES = [('H1', UL + 3.5, -(BD / 2 - 3.5)), ('H2', 51.5, -(BD / 2 - 3.5)), ('H3', UL + 3.5, BD / 2 - 3.5), ('H4', 51.5, 18.5)]
-HOLE_R = 3.45 + 0.3
-PCB_CY_CAD = 156.5 - BD / 2           # CAD y of the board centre (rear edge fixed at 156.5)
+HOLES = [('H1', -55.5, -(BD / 2 - 4.0)), ('H2', 51.0, -(BD / 2 - 4.0)), ('H3', -28.5, 41.0), ('H4', 51.0, 16.5)]
+HOLE_R = 3.75                         # 6.2 mm plated pad + screw head/washer keepout
+HOLE_FP = 'MountingHole_3.2mm_M3_PTH_GND'
+REAR_CAD_Y = 160.5                    # CAD y of the rear board edge (enclosure D 164 minus 3.5)
+PCB_CY_CAD = REAR_CAD_Y - BD / 2
 GAP_EDGE = 0.5
 TXT_H = 0.8                           # reference text height/width (mm)
 TXT_T = 0.12
@@ -53,72 +55,78 @@ def kind_of(ref, fp):
 # ------------------------------------------------------------------ anchors: ref -> (mode, a, b, rot[, overhang])
 # 'c': courtyard centre at (a, b); 'o': footprint origin at (a, b);
 # 'rear'/'front'/'left'/'right': courtyard flush to that board edge (+overhang), a = position along the edge
+# Zone plan (u right, v rear): BM83 rear-left corner | audio (jacks on the rear edge) rear-centre | PD/USB-C rear-right |
+# MCU front-left | class-D block front-centre | boost front-right | charger/gauge right strip.
 R = VR
+C1, C2, C3 = -17.5, -1.6, 14.3        # class-D channel columns (inductor pitch 15.9)
 ANCHORS = {
-    'J1': ('rear', 20.0, 180, 1.25),    # USB-C: shell tab pads end 0.5 mm inside the edge, body 1.25 mm past it
-    'J2': ('rear', -26.0, 270, -0.30),  # 3.5 mm jacks, bore to the rear, 0.3 mm inside the edge (silk clearance)
-    'J3': ('rear', -12.0, 270, -0.30),
-    'SW100': ('rear', -1.0, 0, 0.0),    # tact switch: plunger to the rear
-    'SW101': ('o', 52.0, 32.5, 90),     # rocker wire pads at the rear-right corner, panel body overhangs the edges
-    'J8': ('c', -44.0, 35.0, 0),
-    'U1': ('left', 14.0, 90, 8.0),      # BM83: antenna overhangs the left edge by 8 mm
-    'J5': ('right', -8.0, 270, 0.0),   # Micro-Fit, mating face at the right edge
-    'J9': ('front', -17.0, 0, 0.0), 'J10': ('front', 0.5, 0, 0.0), 'J11': ('front', 18.0, 0, 0.0),
-    'J7': ('front', -42.0, 0, 0.0), 'J6': ('front', -33.0, 0, 0.0),
-    'J4': ('c', 33.0, 33.0, 0),
-    'U3': ('c', -37.0, -22.0, 0),
-    'L201': ('c', -17.0, -24.4, 0), 'L202': ('c', -17.0, -10.2, 0),
-    'L203': ('c', 0.5, -24.4, 0), 'L204': ('c', 0.5, -10.2, 0),
-    'L205': ('c', 18.0, -24.4, 0), 'L206': ('c', 18.0, -10.2, 0),
-    'U6': ('c', -8.25, 5.0, 0), 'U7': ('c', 18.0, 5.0, 0),
-    'U25': ('c', 33.0, -33.5, 0), 'L200': ('c', 43.0, -35.0, 0), 'C275': ('c', 45.0, -22.5, 0),
-    'U4': ('c', 38.0, 3.0, 0), 'L1': ('c', 28.0, 3.0, 0),
-    'U11': ('c', 20.0, 27.0, 0),
-    'U24': ('c', -22.0, 4.0, 0), 'U2': ('c', -8.0, 14.0, 0),
+    'U1': ('left', 38.0, 90, 8.0),      # BM83: antenna overhangs the left edge by 8 mm, rear-left corner
+    'J8': ('c', -36.5, 22.3, 0),
+    'J2': ('rear', -13.7, 270, -0.30),  # 3.5 mm jacks, bore to the rear, 0.3 mm inside the edge
+    'J3': ('rear', -0.2, 270, -0.30),
+    'SW100': ('rear', 10.5, 0, 0.0),
+    'J4': ('rear', 16.5, 0, 0.0),
+    'J1': ('rear', 25.5, 180, 1.25),    # USB-C: shell tab pads end 0.5 mm inside the edge, body 1.25 mm past it
+    'SW101': ('o', 51.5, 36.0, 90),     # rocker wire pads along the right edge (courtyard reduced to the pads)
+    'J5': ('right', 4.0, 270, 0.0),     # Micro-Fit, mating face at the right edge
+    'J9': ('front', -22.5, 0, 0.0), 'J10': ('front', -2.5, 0, 0.0), 'J11': ('front', 17.5, 0, 0.0),
+    'J7': ('front', -46.5, 0, 0.0), 'J6': ('left', -12.0, 0, 0.0),
+    'U3': ('c', -51.0, -27.0, 0),
+    'L201': ('c', C1, -30.6, 0), 'L202': ('c', C1, -16.6, 0),
+    'L203': ('c', C2, -30.6, 0), 'L204': ('c', C2, -16.6, 0),
+    'L205': ('c', C3, -30.6, 0), 'L206': ('c', C3, -16.6, 0),
+    'U6': ('c', -35.0, -22.0, 0), 'U7': ('c', 28.5, -22.0, 0),
+    'U25': ('c', 44.0, -43.0, 0), 'L200': ('c', 36.0, -42.5, 0), 'C275': ('c', 48.5, -32.0, 0),
+    'U4': ('c', 37.0, 7.0, 0), 'L1': ('c', 37.0, 19.5, 0),
+    'U11': ('c', 31.0, 34.0, 0),
+    'U24': ('c', -28.0, 12.0, 0), 'U2': ('c', 9.0, 19.0, 0),
 }
 # satellites: greedy placement (hint = zone centre, used when no placed pin attracts them)
 SATELLITES = [
-    ('D5', 14.0, 33.0), ('D6', 26.0, 33.0), ('D1', 20.0, 22.0), ('U19', 8.0, 24.0), ('D7', 12.0, 26.0),
-    ('Q103', 46.0, 2.0), ('U5', 31.0, -8.0), ('U12', 36.0, -8.0), ('U13', 31.0, -12.0), ('U16', 36.0, -12.0),
-    ('U17', 31.0, -16.0), ('U20', 36.0, -16.0), ('U21', 31.0, -20.0), ('Q104', 36.0, -20.0),
-    ('Q100', 44.0, 8.0), ('Q101', 46.0, 12.0), ('Q102', 38.0, 12.0),
-    ('U14', -4.0, 18.0), ('L2', -2.0, 22.0), ('U15', -46.0, -6.0), ('L3', -41.0, -8.0),
-    ('U22', -18.0, 12.0), ('U23', -16.0, 14.0), ('Y200', -26.0, 10.0), ('Y170', -4.0, 22.0),
-    ('U8', -27.0, 22.0), ('U9', -18.0, 22.0), ('U10', -8.0, 22.0), ('D200', -30.0, 30.0), ('D201', -16.0, 30.0),
-    ('FB200', -26.0, 8.0),
+    ('D5', 24.0, 40.0), ('D6', 37.0, 40.0), ('D1', 30.0, 28.0), ('U19', 38.0, 28.0), ('D7', 24.0, 32.0),
+    ('Q103', 48.0, 12.0), ('U5', 40.0, -8.0), ('U12', 46.0, -8.0), ('U13', 40.0, -12.0), ('U16', 46.0, -12.0),
+    ('U17', 40.0, -16.0), ('U20', 46.0, -16.0), ('U21', 40.0, -20.0), ('Q104', 46.0, -20.0),
+    ('Q100', 46.0, 0.0), ('Q101', 36.0, 18.0), ('Q102', 46.0, 20.0),
+    ('U14', 18.0, 8.0), ('L2', 24.0, 8.0), ('U15', -52.0, 8.0), ('L3', -46.0, 8.0),
+    ('U22', -2.0, 28.0), ('U23', 4.0, 28.0), ('Y200', -24.0, 13.0), ('Y170', 15.0, 25.0),
+    ('U8', -9.0, 30.0), ('U9', 1.0, 30.0), ('U10', -18.0, 26.0), ('D200', -14.0, 32.0), ('D201', 2.0, 32.0),
+    ('FB200', -24.0, 4.0),
 ]
-SHEET_HINT = {'USB_PD': (20, 28), 'Battery_Charger': (36, 4), 'Fuel_Gauge_Power': (36, -10), 'Amplifiers': (4, -8),
-              'Bluetooth': (-38, 12), 'Bluetooth_Power': (-44, -4), 'MCU': (-37, -22), 'USB_Audio': (-8, 12),
-              'Source_Select_ADC': (-22, 6), 'Headphone_Aux': (-18, 22), 'Logic_Audio_Power': (-2, 16), '': (0, 0)}
+# zone rectangles (u0, u1, v0, v1): hard limits for a part and the passives it owns
+ZONES = {
+    'BM': (-61, -22, 4, 48), 'BTP': (-61, -47, -2, 20), 'MCU': (-61, -44, -48, -6),
+    'AMP6': (-44, -24, -47.5, -12), 'AMP7': (22, 36, -47.5, -12), 'AMPCOL': (-26, 23, -47.5, -12),
+    'BOOST': (31, 55, -48, -17), 'GAUGE': (34, 55, -22, 0), 'CHG': (18, 55, -9, 27), 'PD': (14, 55, 24, 48),
+    'AUDIO': ((-19.5, 24, 2.5, 48), (-46, -19.5, 2.5, 16)), 'U14': (12, 30, 0, 22),
+}
+ZONE_OF = {'U1': 'BM', 'J8': 'BM', 'U15': 'BTP', 'L3': 'BTP', 'U3': 'MCU', 'J6': 'MCU', 'J7': 'MCU',
+           'U6': 'AMP6', 'U7': 'AMP7', 'U25': 'BOOST', 'L200': 'BOOST', 'C275': 'BOOST',
+           'U4': 'CHG', 'L1': 'CHG', 'Q100': 'CHG', 'Q101': 'CHG', 'Q102': 'CHG', 'Q103': 'CHG', 'J5': 'CHG',
+           'U5': 'GAUGE', 'U12': 'GAUGE', 'U13': 'GAUGE', 'U16': 'GAUGE', 'U17': 'GAUGE', 'U20': 'GAUGE', 'U21': 'GAUGE', 'Q104': 'GAUGE',
+           'U11': 'PD', 'U19': 'PD', 'D1': 'PD', 'D5': 'PD', 'D6': 'PD', 'D7': 'PD', 'J1': 'PD', 'J4': 'PD', 'SW100': 'PD', 'SW101': 'PD',
+           'U14': 'U14', 'L2': 'U14', 'U24': 'AUDIO', 'U2': 'AUDIO', 'U8': 'AUDIO', 'U9': 'AUDIO', 'U10': 'AUDIO', 'U22': 'AUDIO',
+           'U23': 'AUDIO', 'Y170': 'AUDIO', 'Y200': 'AUDIO', 'FB200': 'AUDIO', 'D200': 'AUDIO', 'D201': 'AUDIO', 'J2': 'AUDIO', 'J3': 'AUDIO',
+           'J9': 'AMPCOL', 'J10': 'AMPCOL', 'J11': 'AMPCOL'}
+for _r in ('L201', 'L202', 'L203', 'L204', 'L205', 'L206'):
+    ZONE_OF[_r] = 'AMPCOL'
+# sheet fallback zone for passives whose owner could not be found
+SHEET_ZONE = {'USB_PD': 'PD', 'Battery_Charger': 'CHG', 'Fuel_Gauge_Power': 'GAUGE', 'Amplifiers': 'AMPCOL', 'Bluetooth': 'BM',
+              'Bluetooth_Power': 'BTP', 'MCU': 'MCU', 'USB_Audio': 'AUDIO', 'Source_Select_ADC': 'AUDIO', 'Headphone_Aux': 'AUDIO',
+              'Logic_Audio_Power': 'U14', '': 'AUDIO'}
+SHEET_HINT = {'USB_PD': (30, 34), 'Battery_Charger': (38, 10), 'Fuel_Gauge_Power': (42, -10), 'Amplifiers': (-10, -22),
+              'Bluetooth': (-40, 36), 'Bluetooth_Power': (-48, 8), 'MCU': (-48, -29), 'USB_Audio': (9, 19),
+              'Source_Select_ADC': (-10, 19), 'Headphone_Aux': (-8, 30), 'Logic_Audio_Power': (18, 8), '': (0, 0)}
+# order in which the passives of each owner are placed (decoupling-critical ICs first, hungry zones early)
+OWNER_ORDER = ['U6', 'U7', 'U25', 'L200', 'U4', 'U11', 'U24', 'U2', 'U10', 'U1', 'U15', 'U14', 'U3', 'U8', 'U9', 'U22', 'U23']
 NETBASED = {'D1', 'D5', 'D6', 'D7', 'D200', 'D201', 'Q100', 'Q101', 'Q102', 'Q103', 'Q104', 'Y170', 'Y200', 'L2', 'L3', 'FB200'}
 ANTENNA_MARGIN = 3.0
-
-
-def stretch(u, v):
-    """tables below were drawn for a 110 x 84 board: stretch to the current outline."""
-    dv = (BD - 84.0) / 2
-    return (u + (UL + 55.0) if u < -20.0 else u), (v + dv if v > 0 else v - dv if v < 0 else v)
-
-
-def _fix_tables():
-    for k, a in list(ANCHORS.items()):
-        if a[0] in ('c', 'o'):
-            u, v = stretch(a[1], a[2])
-            ANCHORS[k] = (a[0], u, v) + a[3:]
-        elif a[0] in ('rear', 'front'):
-            ANCHORS[k] = (a[0], stretch(a[1], 0)[0]) + a[2:]
-        else:
-            ANCHORS[k] = (a[0], stretch(0, a[1])[1]) + a[2:]
-    SATELLITES[:] = [(r,) + stretch(u, v) for r, u, v in SATELLITES]
-    for k, (u, v) in list(SHEET_HINT.items()):
-        SHEET_HINT[k] = stretch(u, v)
+TITLE_AT = (-17.0, -2.5)               # top-silk board title, reserved before placement
 
 
 STEP = 0.5                           # ring search step (mm)
 
 
 # ------------------------------------------------------------------ helpers
-_fix_tables()
 
 
 def rot_pt(x, y, r):
@@ -182,6 +190,40 @@ def main():
             comps[nd.get('ref')]['pins'].setdefault(nd.get('pin'), n.get('name'))
             nets.setdefault(n.get('name'), []).append((nd.get('ref'), nd.get('pin')))
 
+    # ---- owner IC of each passive (most shared non-GND nets, same sheet preferred), chain passives inherit from a neighbour
+    ispas = lambda k: (k[0] in 'RC' and k[1:2].isdigit()) or k.startswith('FB')
+    owner = {}
+    for k, c in comps.items():
+        if not ispas(k):
+            continue
+        sc = collections.Counter()
+        for n in set(c['pins'].values()):
+            if n == 'GND':
+                continue
+            for o, _p in nets[n]:
+                if not ispas(o) and not o.startswith('H'):
+                    sc[o] += 1.0 / (1 + len(nets[n]) / 6.0) + (0.5 if comps[o]['sheet'] == c['sheet'] else 0)
+        owner[k] = sc.most_common(1)[0][0] if sc else None
+    for _ in range(4):
+        for k in [k for k, o in owner.items() if o is None]:
+            for n in set(comps[k]['pins'].values()):
+                if n == 'GND' or len(nets[n]) > 8:
+                    continue
+                for o, _p in nets[n]:
+                    if o != k and owner.get(o):
+                        owner[k] = owner[o]
+                        break
+                if owner[k]:
+                    break
+
+    def zone_rect(ref, margin=0.0):
+        c = comps[ref]
+        zn = ZONE_OF.get(ref) or ZONE_OF.get(owner.get(ref)) or SHEET_ZONE.get(c['sheet'], 'AUDIO')
+        z = ZONES[zn]
+        zs = z if isinstance(z[0], tuple) else (z,)
+        return [(q[0] - margin, q[2] - margin, q[1] + margin, q[3] + margin) for q in zs]      # list of (u0, v0, u1, v1)
+    ZM = [0.0]                                    # current zone margin (escalated when a part does not fit)
+
     board = pcbnew.CreateEmptyBoard()
     board.SetCopperLayerCount(4)
     netitems = {}
@@ -240,7 +282,7 @@ def main():
             return 2.0 if 'pas' in (ka, kb) else 1.0
         if 'qfn' in (ka, kb):
             if 'pas' in (ka, kb) and conn(a['ref'], b['ref']):
-                return 0.6
+                return 0.5
             return 1.0
         if ka == 'pas' and kb == 'pas':
             return 0.5
@@ -248,6 +290,7 @@ def main():
 
     def keep(rect, label):
         grid.add(rect, dict(kind='keep', ref=label))
+    keep((TITLE_AT[0] - 9.0, TITLE_AT[1] - 0.8, TITLE_AT[0] + 9.0, TITLE_AT[1] + 0.8), 'TITLE')
     for nm, hu, hv in HOLES:
         keep((hu - HOLE_R, hv - HOLE_R, hu + HOLE_R, hv + HOLE_R), nm)
 
@@ -276,11 +319,14 @@ def main():
             grid.add(txt, dict(kind='txt', ref=ref))
         for num, px, py in comps[ref]['pads']:
             x, y = rot_pt(px, py, rot)
-            attract[comps[ref]['pins'][num]].append((ou + x, ov - y, ref))
+            attract[comps[ref]['pins'][num]].append((ou + x, ov - y, ref, num))
 
     def free(rect, ref, kd, exempt_edge=False):
         if not exempt_edge and not board_ok(rect):
             return False
+        if not exempt_edge and ref in comps:
+            if not any(rect[0] >= zr[0] and rect[2] <= zr[2] and rect[1] >= zr[1] and rect[3] <= zr[3] for zr in zone_rect(ref, ZM[0])):
+                return False
         for orect, meta in grid.near(rect, 2.1):
             if meta['ref'] != ref and inter(rect, orect, gap_for(kd, meta)):
                 return False
@@ -331,7 +377,8 @@ def main():
                    'left': (UL - ovh + w / 2, along), 'right': (UR + ovh - w / 2, along)}[mode]
             rect, (ou, ov) = rect_at(ref, pos[0], pos[1], rot, 'c')
         if not free(rect, ref, kd, exempt_edge=True):
-            print('WARNING anchor overlap', ref, [round(x, 2) for x in rect])
+            print('WARNING anchor overlap', ref, [round(x, 2) for x in rect],
+                  [m['ref'] for orect, m in grid.near(rect, 2.1) if m['ref'] != ref and inter(rect, orect, gap_for(kd, m))])
         commit(ref, ou, ov, rot, rect, None, None)
         if ref == 'U1':
             ax = rot_rect((-8.0, -22.0, 8.0, -11.0), rot)
@@ -339,20 +386,39 @@ def main():
             keep((UL - 20, antenna_keep['v0'] - ANTENNA_MARGIN, antenna_keep['u1'], antenna_keep['v1'] + ANTENNA_MARGIN), 'ANT')
     for ref in ANCHORS:                       # reference text slots after all anchor courtyards are known
         k, tr = pick_slot(ref, placed[ref]['rect'], 'BTRLbtrl')
+        if tr is None and TALL.match(ref):        # no free slot around a tall part: label on the body centre (between the pads)
+            rr = placed[ref]['rect']
+            cx, cy = (rr[0] + rr[2]) / 2, (rr[1] + rr[3]) / 2
+            w_ = len(ref) * TXT_H * 0.95 + 0.3
+            tr, k = (cx - w_ / 2, cy - (TXT_H + 0.3) / 2, cx + w_ / 2, cy + (TXT_H + 0.3) / 2), 'B'
         placed[ref]['txt'], placed[ref]['slot'] = tr, k
         if tr:
             grid.add(tr, dict(kind='txt', ref=ref))
 
     # ---- greedy placer
+    pin_load = collections.Counter()
+    chosen_pin = {}
+
     def attractors_for(ref):
         c, out = comps[ref], []
+        own = owner.get(ref) if c['kind'] == 'pas' else None
         for num, px, py in c['pads']:
             nm = c['pins'][num]
             if nm == 'GND' or len(nets[nm]) > 70:
                 out.append((None, 0.0))
                 continue
             w = 1.0 if len(nets[nm]) <= 4 else (0.6 if len(nets[nm]) <= 12 else 0.3)
-            pts = [(a, b, r) for a, b, r in attract.get(nm, ()) if r != ref]
+            pts = [(a, b, r) for a, b, r, _n in attract.get(nm, ()) if r != ref]
+            if own and own in placed:
+                op = [(a, b, n) for a, b, r, n in attract.get(nm, ()) if r == own]
+                if op:                              # decoupling/pull-up: this pin of the owner IC, least loaded first
+                    key = (ref, nm)
+                    if key not in chosen_pin:
+                        hint = SHEET_HINT.get(c['sheet'], (0, 0))
+                        chosen_pin[key] = min(op, key=lambda q: (pin_load[(own, q[2])], abs(q[0] - hint[0]) + abs(q[1] - hint[1])))
+                    q = chosen_pin[key]
+                    out.append(([(q[0], q[1])], 1.5))
+                    continue
             same = [(a, b) for a, b, r in pts if comps[r]['sheet'] == c['sheet']]
             out.append((same or [(a, b) for a, b, r in pts] or None, w))
         return out
@@ -416,17 +482,34 @@ def main():
                 print('FAIL', ref, c['value'], 'centre', centre, 'hint', hint, 'kind', c['kind'], [pt for pt in pts][:3])
             return False
         commit(ref, best[1], best[2], best[3], best[4], best[5], best[6])
+        for (r2, nm2), q in list(chosen_pin.items()):
+            if r2 == ref:
+                pin_load[(owner[ref], q[2])] += 1
         return True
 
     def try_place(ref, hint):
-        if not place_greedy(ref, hint) and not place_greedy(ref, hint, relax=True):
+        ok = False
+        for m in (0.0, 3.0, 6.0, 300.0):
+            ZM[0] = m
+            if place_greedy(ref, hint):
+                ok = True
+                break
+        if not ok:
+            ZM[0] = 300.0
+            ok = place_greedy(ref, hint, relax=True)
+        ZM[0] = 0.0
+        if not ok:
             failed.append(ref)
 
     for ref, hu, hv in SATELLITES:
         try_place(ref, (hu, hv))
 
+    def prio(r):
+        o = owner.get(r)
+        oi = OWNER_ORDER.index(o) if o in OWNER_ORDER else len(OWNER_ORDER)
+        return (oi, (0 if '0402' in comps[r]['fp'] else 1) if r[0] == 'C' else 2, min([len(nets[n]) for n in comps[r]['pins'].values() if n != 'GND'] or [99]), r)
     rest = [r for r in comps if r not in placed and comps[r]['kind'] == 'pas']
-    rest.sort(key=lambda r: (0 if r[0] == 'C' else 1, min([len(nets[n]) for n in comps[r]['pins'].values() if n != 'GND'] or [99]), r))
+    rest.sort(key=prio)
     while rest:
         remaining, progress = [], False
         for ref in rest:
@@ -441,6 +524,269 @@ def main():
             break
         rest = remaining
     failed += [r for r in comps if r not in placed and r not in failed]
+
+    # ---- soft-constraint simulated annealing of the passives (overlap/zone penalties ramped up), then legalisation of violators
+    def anneal(iters, seed=7, lam0=20.0, lam1=320.0, t0=0.6, t1=0.02):
+        import random
+        rnd = random.Random(seed)
+        movers = [r for r, p in placed.items() if comps[r]['kind'] == 'pas' and r not in ANCHORS]
+        mset = set(movers)
+        cell = 3.0
+        buckets = collections.defaultdict(set)
+        items = {}
+        cnt = [0]
+
+        def cells(rc):
+            return [(i, j) for i in range(int(rc[0] // cell), int(rc[2] // cell) + 1) for j in range(int(rc[1] // cell), int(rc[3] // cell) + 1)]
+
+        def add(rc, meta):
+            i = cnt[0]; cnt[0] += 1
+            items[i] = (rc, meta)
+            for c_ in cells(rc):
+                buckets[c_].add(i)
+            return i
+
+        def remove(i):
+            rc, meta = items.pop(i)
+            for c_ in cells(rc):
+                buckets[c_].discard(i)
+
+        for rc, meta in grid.items:
+            if meta['ref'] not in mset:
+                add(rc, meta)
+
+        def near(rc, g):
+            seen = set()
+            for c_ in cells((rc[0] - g, rc[1] - g, rc[2] + g, rc[3] + g)):
+                for i in buckets.get(c_, ()):
+                    if i not in seen:
+                        seen.add(i)
+                        yield items[i]
+
+        zones = {r: zone_rect(r, 1.0) for r in movers}
+
+        def zpen(ref, rc):
+            best = 1e9
+            for z in zones[ref]:
+                v = max(0.0, z[0] - rc[0]) + max(0.0, rc[2] - z[2]) + max(0.0, z[1] - rc[1]) + max(0.0, rc[3] - z[3])
+                if v < best:
+                    best = v
+            return best
+
+        def bpen(rc, edge):
+            return max(0.0, UL + edge - rc[0]) + max(0.0, rc[2] - (UR - edge)) + max(0.0, VF + edge - rc[1]) + max(0.0, rc[3] - (VR - edge))
+
+        def depth(a_, b_, g):
+            dx = min(a_[2], b_[2]) - max(a_[0], b_[0]) + g
+            dy = min(a_[3], b_[3]) - max(a_[1], b_[1]) + g
+            return min(dx, dy) if dx > 0 and dy > 0 else 0.0
+
+        def pen_all(ref, rc, tx):
+            tot = 0.0
+            kd = dict(kind='pas', ref=ref)
+            for orc, meta in near(rc, 2.1):
+                if meta['ref'] != ref:
+                    tot += depth(rc, orc, gap_for(kd, meta))
+            if tx is not None:
+                tk = dict(kind='txt', ref=ref)
+                for orc, meta in near(tx, 0.5):
+                    if meta['ref'] != ref:
+                        tot += depth(tx, orc, gap_for(tk, meta))
+                tot += 2.0 * bpen(tx, 0.3)
+            return tot
+
+        padinfo, ROTS = {}, (0, 90, 180, 270)
+        fixed_pads = collections.defaultdict(list)
+        mover_pads = collections.defaultdict(list)
+        for r, p in placed.items():
+            if r in mset:
+                continue
+            for num, px, py in comps[r]['pads']:
+                x, y = rot_pt(px, py, p['rot'])
+                fixed_pads[comps[r]['pins'][num]].append((p['u'] + x, p['v'] - y))
+        for r in movers:
+            c = comps[r]
+            small_cap = r[0] == 'C' and '0402' in c['fp'] and 'GND' in c['pins'].values()
+            bulk_cap = r[0] == 'C' and not small_cap and 'GND' in c['pins'].values()
+            padinfo[r] = {rot: [(rot_pt(px, py, rot)[0], -rot_pt(px, py, rot)[1], c['pins'][num]) for num, px, py in c['pads']] for rot in ROTS}
+            ws = []
+            for num, px, py in c['pads']:
+                nm = c['pins'][num]
+                if nm == 'GND' or len(nets[nm]) > 70:
+                    ws.append(0.0)
+                elif small_cap:
+                    ws.append(10.0)
+                elif bulk_cap:
+                    ws.append(3.0)
+                else:
+                    ws.append(1.0 if len(nets[nm]) <= 12 else 0.4)
+            c['w'] = ws
+            for k, (num, px, py) in enumerate(c['pads']):
+                mover_pads[c['pins'][num]].append((r, k))
+        st = {}
+        tg = {}                                            # per mover pad: target pads = those of the owner IC on that net, else all fixed pads on the net
+        for r in movers:
+            c = comps[r]
+            o = owner.get(r)
+            row = []
+            for num, px, py in c['pads']:
+                nm = c['pins'][num]
+                allp = fixed_pads.get(nm, [])
+                op = [(placed[o]['u'] + rot_pt(qx, qy, placed[o]['rot'])[0], placed[o]['v'] - rot_pt(qx, qy, placed[o]['rot'])[1])
+                      for n2, qx, qy in comps[o]['pads'] if comps[o]['pins'][n2] == nm] if (o and o in placed and o not in mset) else []
+                row.append(op or allp)
+            tg[r] = row
+
+        def pcost(ref, ou, ov, rot):
+            tot = 0.0
+            ws = comps[ref]['w']
+            for k, (dx, dy, nm) in enumerate(padinfo[ref][rot]):
+                w = ws[k]
+                if w == 0.0:
+                    continue
+                x, y = ou + dx, ov + dy
+                fp_ = tg[ref][k]
+                if fp_:
+                    d = min((x - a) ** 2 + (y - b) ** 2 for a, b in fp_) ** 0.5
+                else:
+                    d = 40.0
+                    for r2, k2 in mover_pads[nm]:
+                        if r2 != ref and r2 in st:
+                            o2 = st[r2]
+                            dx2, dy2, _ = padinfo[r2][o2[2]][k2]
+                            d = min(d, ((x - o2[0] - dx2) ** 2 + (y - o2[1] - dy2) ** 2) ** 0.5)
+                tot += w * (d + (0.4 * max(0.0, d - 3.0) ** 2 if w >= 3.0 else 0.0))
+            return tot
+
+        for r in movers:
+            p = placed[r]
+            cid = add(p['rect'], dict(kind='pas', ref=r))
+            tid = add(p['txt'], dict(kind='txt', ref=r)) if p['txt'] else None
+            st[r] = [p['u'], p['v'], p['rot'], p['slot'], cid, tid, p['rect'], p['txt']]
+        lam = [2.0]
+
+        def energy(ref, ou, ov, rot, rc, tx):
+            e = pcost(ref, ou, ov, rot) + lam[0] * (pen_all(ref, rc, tx) + 2.0 * zpen(ref, rc) + 3.0 * bpen(rc, GAP_EDGE))
+            if tx is None:
+                e += 4.0
+            elif (tx[2] - tx[0]) < (tx[3] - tx[1]):          # vertical text: small penalty so rows stay readable
+                e += 0.6
+            return e
+        q = lambda v: round(v * 4) / 4.0
+        acc = 0
+        T0, T1 = t0, t1
+        for it in range(iters):
+            prog = it / float(iters)
+            T = T0 * (T1 / T0) ** prog
+            lam[0] = lam0 + (lam1 - lam0) * prog
+            r = movers[rnd.randrange(len(movers))]
+            ou, ov, rot, slot, cid, tid, rc0, tx0 = st[r]
+            kind = rnd.random()
+            if kind < 0.5:
+                sg = 2.5 * (1 - prog) + 0.25
+                nu, nv, nrot = q(ou + rnd.gauss(0, sg)), q(ov + rnd.gauss(0, sg)), rot
+            elif kind < 0.9:
+                nrot = rnd.choice(ROTS) if rnd.random() < 0.5 else rot
+                ks = [k for k, w in enumerate(comps[r]['w']) if w > 0]
+                if not ks:
+                    continue
+                k = rnd.choice(ks)
+                fp_ = tg[r][k]
+                if not fp_:
+                    continue
+                a, b = fp_[rnd.randrange(len(fp_))]
+                ang, rad = rnd.random() * 6.2832, 1.0 + rnd.random() * (3.0 + 4.0 * (1 - prog))
+                dx, dy, _ = padinfo[r][nrot][k]
+                nu, nv = q(a + rad * math.cos(ang) - dx), q(b + rad * math.sin(ang) - dy)
+            else:
+                nu, nv, nrot = ou, ov, rnd.choice(ROTS)
+            rect, (nu2, nv2) = rect_at(r, nu, nv, nrot, 'o')
+            sl = dict(txt_slots(r, rect, 'RLBTrlbt'))
+            if slot in sl and rnd.random() < 0.6:
+                ks_ = [slot]
+            else:
+                ks_ = rnd.sample(list(sl), 3)
+            # temporarily take this part out of the grid so it does not collide with itself
+            remove(cid)
+            if tid is not None:
+                remove(tid)
+            ecur = energy(r, ou, ov, rot, rc0, tx0)
+            best = None
+            for k_ in ks_:
+                en = energy(r, nu2, nv2, nrot, rect, sl[k_])
+                if best is None or en < best[0]:
+                    best = (en, k_)
+            en, k_ = best
+            d = en - ecur
+            if d <= 0 or rnd.random() < math.exp(-d / T):
+                cid = add(rect, dict(kind='pas', ref=r))
+                tid = add(sl[k_], dict(kind='txt', ref=r))
+                st[r] = [nu2, nv2, nrot, k_, cid, tid, rect, sl[k_]]
+                acc += 1
+            else:
+                cid = add(rc0, dict(kind='pas', ref=r))
+                tid = add(tx0, dict(kind='txt', ref=r)) if tx0 else None
+                st[r][4], st[r][5] = cid, tid
+        lam[0] = 100.0
+        bad = []
+        for r in movers:
+            u_, v_, rot, slot, cid, tid, rc, tx = st[r]
+            remove(cid)
+            if tid is not None:
+                remove(tid)
+            ok = board_ok(rc) and zpen(r, rc) == 0 and pen_all(r, rc, tx) < 1e-6 and tx is not None
+            if ok:
+                cid = add(rc, dict(kind='pas', ref=r)); tid = add(tx, dict(kind='txt', ref=r))
+                st[r][4], st[r][5] = cid, tid
+                placed[r].update(u=u_, v=v_, rot=rot, rect=rc, txt=tx, slot=slot)
+            else:
+                bad.append(r)
+        print('anneal: %d moves accepted of %d; violators after SA: %d' % (acc, iters, len(bad)))
+        # rebuild the global grid with the legal parts, then legalise the violators by ring search around their SA position
+        grid.items = [(rc, m) for rc, m in items.values()]
+        grid.d = collections.defaultdict(list)
+        for idx, (rc, m) in enumerate(grid.items):
+            for i in range(int(rc[0] // grid.cell), int(rc[2] // grid.cell) + 1):
+                for j in range(int(rc[1] // grid.cell), int(rc[3] // grid.cell) + 1):
+                    grid.d[(i, j)].append(idx)
+        fails = []
+        ZM[0] = 1.0
+        for r in bad:
+            u_, v_, rot0 = st[r][0], st[r][1], st[r][2]
+            c = comps[r]
+            kd = dict(kind='pas', ref=r)
+            best = None
+            for ring in range(0, 200):
+                if best is not None and ring * 0.25 > best[0] / 1.0 + 1.0:
+                    break
+                ZM[0] = 1.0 if ring < 24 else (5.0 if ring < 48 else 300.0)
+                pts = [(0.0, 0.0)] if ring == 0 else [(i * 0.25, s_ * ring * 0.25) for i in range(-ring, ring + 1) for s_ in (-1, 1)] + [(s_ * ring * 0.25, j * 0.25) for j in range(-ring + 1, ring) for s_ in (-1, 1)]
+                for dx_, dy_ in pts:
+                    for rot in ROTS:
+                        rect, (ou, ov) = rect_at(r, u_ + dx_, v_ + dy_, rot, 'o')
+                        if not free(rect, r, kd):
+                            continue
+                        k_, tr_ = pick_slot(r, rect, 'RLBTrlbt')
+                        if tr_ is None:
+                            continue
+                        cst = pcost(r, ou, ov, rot) + 2.0 * (abs(dx_) + abs(dy_))
+                        if best is None or cst < best[0]:
+                            best = (cst, ou, ov, rot, rect, tr_, k_)
+            if best is None:
+                fails.append(r)
+                continue
+            _, ou, ov, rot, rect, tr_, k_ = best
+            placed[r].update(u=ou, v=ov, rot=rot, rect=rect, txt=tr_, slot=k_)
+            grid.add(rect, dict(kind='pas', ref=r))
+            grid.add(tr_, dict(kind='txt', ref=r))
+            st[r][:3] = [ou, ov, rot]
+        ZM[0] = 0.0
+        print('legalised %d violators; unplaceable: %s' % (len(bad) - len(fails), fails))
+        for r in fails:
+            failed.append(r)
+
+    anneal(int(os.environ.get('ANNEAL_ITERS', '2200000')), lam0=4.0, lam1=200.0, t0=4.0, t1=0.05)
+    anneal(int(os.environ.get('ANNEAL2_ITERS', '800000')), seed=11, lam0=150.0, lam1=400.0, t0=0.35, t1=0.02)
 
     # ---- free rectangle finder for board texts
     def find_free(w, h, around=None):
@@ -496,16 +842,17 @@ def main():
         board.Add(t)
 
     for nm, hu, hv in HOLES:
-        mh = pcbnew.FootprintLoad(FPLIB, 'MountingHole_3.2mm_M3')
+        mh = pcbnew.FootprintLoad(FPLIB, HOLE_FP)
         mh.SetReference(nm)
-        mh.SetValue('M3 NPTH 3.2')
-        mh.SetFPID(pcbnew.LIB_ID('DesktopSpeaker', 'MountingHole_3.2mm_M3'))
+        mh.SetValue('M3 PTH GND')
+        mh.SetFPID(pcbnew.LIB_ID('DesktopSpeaker', HOLE_FP))
         mh.SetAttributes(mh.GetAttributes() | pcbnew.FP_BOARD_ONLY)
+        for p_ in mh.Pads():
+            p_.SetNet(netitems['GND'])
         mh.SetPosition(ip(K(hu, hv)))
         mh.Reference().SetVisible(False)
         mh.Value().SetVisible(False)
         board.Add(mh)
-        text(nm + ' M3', hu, hv + (-3.4 if hv > 0 else 3.4), 0.8, 0.12)     # label on the inner side of the ring (silk is under the screw head)
 
     t = pcbnew.PCB_TEXT(board)                 # board name/revision on the (empty) bottom silk, mirrored
     t.SetText('DesktopSpeaker rev A 2026-10-06 (placement only)')
@@ -516,11 +863,7 @@ def main():
     t.SetPosition(ip(K(0.0, 0.0)))
     t.SetHorizJustify(pcbnew.GR_TEXT_H_ALIGN_CENTER)
     board.Add(t)
-    title = find_free(26.0, 1.4, around=(0, VF))
-    if title:
-        text('DesktopSpeaker rev A', (title[0] + title[2]) / 2, (title[1] + title[3]) / 2, 1.0, 0.15)
-    else:
-        print('NOTE: no room for a top-side board title (bottom silk only)')
+    text('DesktopSpeaker rev A', TITLE_AT[0], TITLE_AT[1], 1.0, 0.15)
 
     # ---- outline
     def shape(kind, pts):
@@ -570,8 +913,8 @@ def main():
             rr = p['rect']
             cad[ref] = dict(origin_u=round(p['u'], 3), origin_v=round(p['v'], 3), rot=p['rot'],
                             cy_u=round((rr[0] + rr[2]) / 2, 3), cy_v=round((rr[1] + rr[3]) / 2, 3), rect=[round(x, 3) for x in rr])
-    json.dump(dict(board=dict(w=BW, d=BD, u0=UL, u1=UR, v0=VF, v1=VR, corner_r=CORNER_R, rear_edge_cad_y=156.5, centre_cad_y=PCB_CY_CAD),
-                   holes=[dict(name=n, u=u, v=v) for n, u, v in HOLES], parts=cad, antenna=antenna_keep, failed=failed,
+    json.dump(dict(board=dict(w=BW, d=BD, u0=UL, u1=UR, v0=VF, v1=VR, corner_r=CORNER_R, rear_edge_cad_y=REAR_CAD_Y, centre_cad_y=PCB_CY_CAD),
+                   holes=[dict(name=n, u=u, v=v) for n, u, v in HOLES], parts=cad, sheets={r: c['sheet'] for r, c in comps.items()}, owner=owner, antenna=antenna_keep, failed=failed,
                    noslot=[r for r, p in placed.items() if not p['txt']]),
               open(LAYOUT_JSON, 'w'), indent=1)
     print('placed', len(placed), 'failed', failed, 'noslot', [r for r, p in placed.items() if not p['txt']])
