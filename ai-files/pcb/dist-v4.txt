@@ -1,0 +1,79 @@
+IC        n    max   mean  worst
+D201      6   6.50   4.33  R243 -> pin 1 (/AUX_L)
+D5        2   3.50   2.75  C183 -> pin 2 (/USB_CC2)
+J10       2   9.46   7.85  C304 -> pin 1 (Net-(C304-Pad1))
+J11       2   5.46   5.46  C306 -> pin 1 (Net-(C306-Pad1))
+J2        2   6.18   5.84  R239 -> pin 4 (/Headphone_Aux/HP_TIPSW)
+J3        3  11.26   9.87  R241 -> pin 4 (/Headphone_Aux/AUX_TIPSW)
+J5        1   4.50   4.50  R101 -> pin 2 (/Battery_Charger/TS_SENSE)
+J6        2   4.43   4.43  R160 -> pin 2 (/MCU/SWCLK)
+J8        3   4.40   4.40  R182 -> pin 3 (/Bluetooth/BT_RXD_M)
+J9        2  10.27   7.91  C303 -> pin 2 (Net-(C303-Pad1))
+L200      5   7.46   6.13  C264 -> pin 1 (/SYS_RAW)
+Q100      1   2.00   2.00  R107 -> pin 1 (/CHG_ENABLE)
+Q101      1   2.40   2.40  R109 -> pin 3 (/Battery_Charger/ILIM_HIZ)
+Q102      2   3.07   2.54  R110 -> pin 3 (Net-(Q101-G))
+Q103      4   2.50   2.18  C106 -> pin 2 (/Battery_Charger/BAT_INT)
+Q104      1   2.00   2.00  R127 -> pin 1 (Net-(Q104-G))
+SW100     1   4.00   4.00  R113 -> pin 1 (Net-(U4-QON))
+U1        9   5.55   3.73  R184 -> pin 26 (Net-(U1-PWR(MFB)))
+U10      10   5.50   3.32  R232 -> pin 14 (/3V3_AUDIO)
+U11      13   6.60   3.76  R17 -> pin 3 (/USB_PD/LDO_3V3)
+U12       5   4.50   3.12  C132 -> pin 5 (/3V_AO)
+U13       2   2.11   2.06  R121 -> pin 5 (/3V_AO)
+U14       6   4.25   3.15  R142 -> pin 1 (/5V_LOGIC_EN)
+U15       9   6.00   4.03  R154 -> pin 6 (/3V8_BT)
+U16       1   2.28   2.28  R120 -> pin 5 (/3V_AO)
+U17       1   2.04   2.04  R122 -> pin 5 (/3V_AO)
+U19       1   4.76   4.76  C5 -> pin 1 (/Fuel_Gauge_Power/USB_AUX_5V)
+U2       13   5.82   3.86  C187 -> pin 15 (Net-(U2-VOUTR))
+U20       4   3.00   2.48  R125 -> pin 4 (Net-(U20-PR1))
+U22       2   2.50   2.25  C224 -> pin 3 (/5V_LOGIC)
+U23       3   2.50   2.31  R212 -> pin 3 (/CODEC_PWR_EN)
+U24      32   9.38   5.63  C216 -> pin 8 (Net-(U24-AVDD))
+U25      12   8.53   4.98  C275 -> pin 15 (/Amplifiers/PVDD_AMP)
+U3        4   3.98   3.46  R106 -> pin 8 (/3V_AO)
+U4       16   9.07   5.85  R108 -> pin 5 (/Battery_Charger/REGN)
+U6       26  14.81   7.70  R262 -> pin 9 (/AMP_FAULT_N)
+U7        9   4.69   2.48  C301 -> pin 23 (Net-(U7-OUT_B+))
+U8        5   3.00   2.54  R234 -> pin 5 (/HP_SEL_A)
+U9        5   3.49   2.68  C240 -> pin 6 (/Headphone_Aux/HP_R)
+Y170      2   5.28   4.00  R174 -> pin 3 (Net-(U2-XTO))
+ALL passives with IC pin: n=230 max 14.81 mean 4.66; chain-only: 21
+>3mm: 150  >5mm: 78  >8mm: 28
+0402 HF decaps: n=62 max 7.88 mean 3.25  >3: 32  >6: 1
+0805+ bulk caps: n=54 max 13.80 mean 6.13  >3: 48  >6: 25
+DECAP (C with a GND pad): n=116 max 13.80 mean 4.59  >2: 110  >3: 80  >5: 37
+SEP BM83-amp/inductors     98.9 mm  (U1 - L201)
+SEP BM83-boost            101.7 mm  (U1 - L200)
+SEP BM83-charger SW       132.0 mm  (U1 - L1)
+SEP BM83-analog audio      31.6 mm  (U1 - J2)
+SEP classD-analog          41.0 mm  (L203 - U24)
+SEP boost-analog           37.2 mm  (L200 - U24)
+SEP charger-analog         55.2 mm  (L1 - U9)
+SEP BM83-analog ALL parts    2.5 mm  (U1 - C233)
+SEP classD-analog ALL parts   25.5 mm  (C264 - C223)
+SEP boost-analog ALL parts   30.5 mm  (L200 - C223)
+SEP L2/U14-analog ALL      77.8 mm  (L2 - C223)
+SEP BM83-U15/L3 (own supply)   76.4 mm  (U1 - L3)
+SEP BM83-L1/L2/L200 inductors  101.7 mm  (U1 - L200)
+SEP BM83-U14/U4/U25       107.4 mm  (U1 - U25)
+SEP U15/L3-analog ALL       6.3 mm  (L3 - R234)
+SEP charger U4/L1-analog ALL   52.6 mm  (L1 - R235)
+--- critical per-IC (decoupling = C with GND pad; other passives) ---
+U6    TAS5825M #1 decaps n=20 max 13.80 mean  6.40 >3: 16 | other n= 6 max 14.81
+U7    TAS5825M #2 decaps n= 3 max  2.46 mean  2.13 >3: 0 | other n= 6 max  4.69
+U4    BQ25792    decaps n=10 max  8.88 mean  5.81 >3: 10 | other n= 6 max  9.07
+U25   TPS61088   decaps n= 4 max  8.53 mean  5.25 >3: 3 | other n= 8 max  6.29
+U3    MCU        decaps n= 2 max  3.88 mean  3.19 >3: 1 | other n= 2 max  3.98
+U24   PCM1862    decaps n=19 max  9.38 mean  4.80 >3: 14 | other n=13 max  9.35
+U22   LDO        decaps n= 2 max  2.50 mean  2.25 >3: 0 | other n= 0 max  0.00
+U23   LDO        decaps n= 1 max  2.43 mean  2.43 >3: 0 | other n= 2 max  2.50
+U2    PCM2902C   decaps n= 8 max  5.50 mean  3.53 >3: 6 | other n= 5 max  5.82
+Y170  xtal       decaps n= 1 max  2.73 mean  2.73 >3: 0 | other n= 1 max  5.28
+U15   TPS63802   decaps n= 4 max  4.50 mean  3.35 >3: 2 | other n= 5 max  6.00
+U14   5V         decaps n= 3 max  3.50 mean  2.99 >3: 1 | other n= 3 max  4.25
+U11   TPS25730D  decaps n= 4 max  3.74 mean  2.84 >3: 2 | other n= 9 max  6.60
+U25 FB/COMP part C269: 4.02 mm from pin, nearest SW pad 5.95 mm
+U25 FB/COMP part R254: 2.60 mm from pin, nearest SW pad 6.05 mm
+U25 FB/COMP part R251: 4.71 mm from pin, nearest SW pad 4.58 mm

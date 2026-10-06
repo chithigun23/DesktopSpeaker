@@ -347,3 +347,6 @@ Quick mechanical envelope review: `ai-files/reports/mechanical-fit-rough-2026-10
 ## PCB routing plan (2026-10-06, planned and rules set up, NOT routed)
 - [x] `ai-files/reports/pcb-routing-plan.md`: stackup (JLC04161H-7628, 1 oz outer recommended), 15 netclasses covering all 311 nets (`ai-files/pcb/net-classes.json`), routing order, per-block guidance, decoupling mitigation, teardrop plan, pre/post-route checklists. Rules installed (`DesktopSpeaker.kicad_pro`, `DesktopSpeaker.kicad_dru`, stackup in the .kicad_pcb, `ai-files/helpers/setup_pcb_rules.py`); DRC 22 violations (inherited), no tracks yet.
 - [ ] Open: TPS61088 datasheet, JLC impedance confirmation (USB 0.25/0.15), inner 1 oz, teardrops only via pcbnew GUI (no CLI/Python API), decoupling > 3 mm.
+
+## PCB placement v4 (2026-10-06)
+Cell-based tiled floorplan with boxed, titled sections (report `ai-files/reports/pcb-placement-v4-2026-10-06.md`). Done: deterministic 12 s generator `build_pcb_v4.sh`, DRC courtyard/overlap/outline 0, hard separations met, CAD rebuilt (0 unintended overlaps). Open: board 117.5 x 176 mm (v3 116 x 112), critical decaps <= 2.5 mm unmet for U6/U4/U25/U24, woofer chamber now 1.003 L (target 0.60), no routing.
