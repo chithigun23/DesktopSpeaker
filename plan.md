@@ -353,4 +353,8 @@ Cell-based tiled floorplan with boxed, titled sections (report `ai-files/reports
 
 ## PCB placement v5 (2026-10-06)
 - [x] Denser cells, 0.6 mm labels, minimum-separation packer, 116 x 152 mm (17,632 mm2), woofer chamber auto-sized to 0.525 L net, enclosure 220 mm deep (`reports/pcb-placement-v5-2026-10-06.md`).
+
+## PCB placement v6 (2026-10-06)
+- [x] Tighter cells, 1.2 mm title strip, 0.25 mm raster packer, class-D/analogue 15.4 mm (deliberate; 47.9 mm achieved), BT supply >= 10 mm from analogue: 116 x 138 mm (16,008 mm2), enclosure 206 mm, chamber 0.525 L (`reports/pcb-placement-v6-2026-10-06.md`).
+- [ ] Unmet: area <= 13,000 / depth <= 190, critical decaps <= 2.5 mm (0402 mean 3.23), 4 label overlaps.
 - [ ] Open: area <= 13,000 mm2 and depth <= 185 mm unmet (separation chain); per-cap decoupling <= 2.5 mm unmet for U6/U24/U4/U25; corner holes.
