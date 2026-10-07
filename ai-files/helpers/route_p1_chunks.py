@@ -51,7 +51,7 @@ for rnd in range(rounds):
         cfg = dict(spec['dsn_cfg']); cfg['nets_only'] = nets; cfg['nets_keep'] = spec.get('keep', []); json.dump(cfg, open(W + '/%s-c%d.cfg.json' % (tag, k), 'w'))
         r = subprocess.run(['python3', H + '/route_p1_dsn.py', dsn0, dsn, W + '/%s-c%d.cfg.json' % (tag, k)], capture_output=True, text=True)
         t0 = time.time()
-        p = subprocess.Popen(['timeout', '300', J, '-Djava.awt.headless=true', '-jar', JAR, '-de', dsn, '-do', ses, '-mp', str(spec.get('mp', 1))], stdout=open(W + '/fr%s-c%d.log' % (tag, k), 'w'), stderr=subprocess.STDOUT)
+        p = subprocess.Popen(['timeout', str(spec.get('timeout', 300)), J, '-Djava.awt.headless=true', '-jar', JAR, '-de', dsn, '-do', ses, '-mp', str(spec.get('mp', 1))], stdout=open(W + '/fr%s-c%d.log' % (tag, k), 'w'), stderr=subprocess.STDOUT)
         p.wait()
         if not os.path.exists(ses): L('chunk', k, 'no ses'); continue
         imp = W + '/%s-c%d-imp.kicad_pcb' % (tag, k)

@@ -12,6 +12,7 @@ HI = set(['/SYS_RAW', '/Battery_Charger/BAT_INT', '/Fuel_Gauge_Power/BAT_PACK', 
 def refill(b):
     for z in b.Zones():
         if z.GetIsRuleArea(): continue
+        z.SetIslandRemovalMode(pcbnew.ISLAND_REMOVAL_MODE_ALWAYS)
         if z.GetZoneName().startswith('GND'): z.SetLocalClearance(400000)
         elif z.GetNetname() == '/Amplifiers/PVDD_AMP': z.SetLocalClearance(350000)
         elif z.GetNetname() in HI: z.SetLocalClearance(450000)

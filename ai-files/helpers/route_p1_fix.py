@@ -11,10 +11,16 @@ byu = {}
 for t in list(b.Tracks()): byu[t.m_Uuid.AsString()] = t
 RANK = {'USB': 0, 'I2S_CLK': 1, 'AUDIO': 2}
 def cl(n): return CL.get(n, 'SIGNAL')
-rm = {}; reasons = collections.Counter()
+whole_force = set(); rm = {}; reasons = collections.Counter()
 for v in d['violations']:
     ty = v['type']
-    if ty in ('shorting_items', 'via_dangling', 'track_dangling', 'hole_to_hole', 'holes_co_located'):
+    if ty in ('items_not_allowed',):
+        for i in v['items']:
+            if i['uuid'] in byu: whole_force.add(byu[i['uuid']].GetNetname())
+    elif ty == 'copper_edge_clearance':
+        for i in v['items']:
+            if i['uuid'] in byu and byu[i['uuid']].GetNetname() != 'GND': whole_force.add(byu[i['uuid']].GetNetname())
+    elif ty in ('shorting_items', 'via_dangling', 'track_dangling', 'hole_to_hole', 'holes_co_located'):
         its = [byu[i['uuid']] for i in v['items'] if i['uuid'] in byu]
         if ty in ('hole_to_hole', 'holes_co_located') and len(its) == 2:
             its = [its[1]]
@@ -31,7 +37,7 @@ for v in d['violations']:
             t = its[0]; rm[t.m_Uuid.AsString()] = t; reasons['clearance1'] += 1
 nets = collections.Counter()
 # net-level removal for non-GND nets (whole net is rerouted), item-level for GND and co-located duplicates
-whole = set()
+whole = set(whole_force)
 for u, t in rm.items():
     n = t.GetNetname()
     if n != 'GND': whole.add(n)

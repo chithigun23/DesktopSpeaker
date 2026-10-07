@@ -118,7 +118,7 @@ for a, c in bl:
 # order: loosest first, strictest last (later classes override earlier ones in the clearance matrix)
 classes.sort(key=lambda x: x[0])
 # the net list of each class goes first, remaining blocks follow
-body = net[:bl[0][0]] + ''.join('    ' + b + '\n' for b in netblocks) + '    (net OBST_FOREIGN\n      (pins)\n    )\n' + ''.join(c for _, c in classes) + '  )\n'
+body = net[:bl[0][0]] + ''.join('    ' + b + '\n' for b in netblocks) + ('    (net OBST_FOREIGN\n      (pins)\n    )\n' if cfg.get('obst') else '') + ''.join(c for _, c in classes) + '  )\n'
 # via padstack names: keep (via ...) line already inside head
 out = head + body + tail
 # wires/vias of nets that are not in the network become netless fixed obstacles (otherwise Freerouting drops vias and hangs on the SES write)
@@ -126,8 +126,33 @@ kept = set(nname(x) for x in netblocks)
 def _strip(m):
     n = m.group(2).strip('"')
     return m.group(0) if n in kept else m.group(1) + '(net OBST_FOREIGN)'
-tail = re.sub(r'(\((?:wire|via)[^\n]*?)\(net ("[^"]*"|[^\s)]+)\)', _strip, tail)
+if cfg.get('obst'): tail = re.sub(r'(\((?:wire|via)[^\n]*?)\(net ("[^"]*"|[^\s)]+)\)', _strip, tail)
 out = head + body + tail
+NCLS = json.load(open('/home/chithi/Desktop/DesktopSpeaker/ai-files/pcb/work-p1/net-classes-p1.json'))
+HALO = {'AUDIO': 600, 'I2S_CLK': 400, 'USB': 400} if cfg.get('halo', True) else {}
+if cfg.get('wires_as_keepout', True):
+    ko = []
+    def _w(m):
+        n = m.group(4).strip('"')
+        if n in kept: return m.group(0)
+        ex = HALO.get(NCLS.get(n, ''), 0)
+        ko.append('    (keepout "" (path %s %d %s))' % (m.group(1), int(m.group(2)) + ex, ' '.join(m.group(3).split()))); return ''
+    def _v(m):
+        n = m.group(4).strip('"')
+        if n in kept: return m.group(0)
+        ex = HALO.get(NCLS.get(n, ''), 0)
+        for ly in ('F.Cu', 'In1.Cu', 'In2.Cu', 'B.Cu'):
+            ko.append('    (keepout "" (circle %s %d %s %s))' % (ly, int(m.group(1)) + ex, m.group(2), m.group(3)))
+        return ''
+    tail = re.sub(r'\(wire\s*\(path\s+(\S+)\s+(\d+)\s+([^)]*)\)\s*\(net\s+("[^"]*"|[^\s)]+)\)\s*\(type\s+\w+\)\s*\)', _w, tail)
+    tail = re.sub(r'\(via\s+"Via\[0-3\]_(\d+):\d+_um"\s+(\S+)\s+(\S+)\s*\(net\s+("[^"]*"|[^\s)]+)\)\s*\(type\s+\w+\)\s*\)', _v, tail)
+    for ly in ('F.Cu', 'In1.Cu', 'In2.Cu', 'B.Cu'):
+        ko.append('    (keepout "" (polygon %s 0  81550 -41865  84155 -41865  84155 -25865  81550 -25865  81550 -41865))' % ly)
+        if cfg.get('edge_frame', True):
+            for (x0, y0, x1, y1) in ((81550, -20000, 218450, -20300), (81550, -147500, 218450, -147800), (81550, -20000, 81850, -147800), (218150, -20000, 218450, -147800)):
+                ko.append('    (keepout "" (polygon %s 0  %d %d  %d %d  %d %d  %d %d  %d %d))' % (ly, x0, y0, x1, y0, x1, y1, x0, y1, x0, y0))
+    k = head.index('    (via "Via[0-3]'); head = head[:k] + '\n'.join(ko) + '\n' + head[k:]
+    out = head + body + tail
 if cfg.get('no_wiring'):
     k = out.index('  (wiring'); out = out[:k] + '  (wiring\n  )\n)\n'
 if cfg.get('protect', True): out = out.replace('(type route)', '(type protect)')
