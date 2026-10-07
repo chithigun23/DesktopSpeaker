@@ -1,0 +1,27 @@
+round 0 board nowire.kicad_pcb unconnected items in set 166 nets 53
+['pruned 0']
+nets in network 53 classes 5 {'plane B.Cu': 1}
+freerouting 49 s rc 0
+import True | widened 66
+round 1 board A1-r1.kicad_pcb unconnected items in set 106 nets 58
+['.']
+nets in network 58 classes 7 {'plane B.Cu': 1}
+freerouting 75 s rc 0
+import True | widened 64
+round 2 board A1-r2.kicad_pcb unconnected items in set 108 nets 63
+["_TRACK *', no destructor found."]
+nets in network 63 classes 7 {'plane B.Cu': 1}
+freerouting 80 s rc 0
+import True | widened 53
+round 3 board A1-r3.kicad_pcb unconnected items in set 103 nets 64
+["e 'PCB_TRACK *', no destructor found."]
+nets in network 64 classes 7 {'plane B.Cu': 1}
+freerouting 83 s rc 0
+import True | widened 72
+round 4 board A1-r4.kicad_pcb unconnected items in set 105 nets 66
+['no destructor found.']
+nets in network 66 classes 7 {'plane B.Cu': 1}
+freerouting 93 s rc 0
+import True | widened 50
+final board A1-r5.kicad_pcb unconnected items in set 100
+BEST /home/chithi/Desktop/DesktopSpeaker/ai-files/pcb/work-p1/A1-best.kicad_pcb 100

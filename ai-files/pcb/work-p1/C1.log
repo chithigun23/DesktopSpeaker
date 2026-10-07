@@ -1,0 +1,23 @@
+start: nets to route 53 items 166
+chunk 1 nets 15 failed 3 span<=35 20s C1-c1-pruned.kicad_pcb
+chunk 2 nets 15 failed 6 span<=75 28s C1-c2-pruned.kicad_pcb
+chunk 3 nets 15 failed 4 span<=119 16s C1-c3-pruned.kicad_pcb
+chunk 4 nets 8 failed 5 span<=204 31s C1-c4-pruned.kicad_pcb
+after round 0 open nets 50 items 160
+chunk 5 nets 15 failed 3 span<=35 16s C1-c5-pruned.kicad_pcb
+chunk 6 nets 15 failed 5 span<=75 25s C1-c6-pruned.kicad_pcb
+chunk 7 nets 15 failed 6 span<=119 24s C1-c7-pruned.kicad_pcb
+chunk 8 nets 5 failed 5 span<=204 18s C1-c8-pruned.kicad_pcb
+after round 1 open nets 53 items 167
+DONE C1 open nets 53 ['Net-(U10-HPVDD)', 'Net-(U10-HPVSS)', 'Net-(U10-CPP)', 'Net-(U10-CPN)', 'Net-(U11-ADC4)', 'Net-(U25-FSW)', 'Net-(U15-FB)', 'Net-(R18-Pad1)', 'Net-(U24-LDO)', 'Net-(U24-AVDD)', '/BT_RST_N', '/CHG_ENABLE', '/MCU/NRST', '/BT_MFB', '/PD_PLUG_EVENT', '/CHG_SYS_ENABLE', '/MCU/SWCLK', '/MCU/SWDIO', '/5V_LOGIC_EN', '/GAUGE_ALRT_N', '/PD_SINK_EN', '/BT_TX_IND', '/BT_UART_TX', '/BT_UART_RX', '/HP_SEL_A', '/CODEC_PWR_EN', '/CHG_QON_SENSE', '/MCU/ENC_A', '/HP_SEL_B', '/CHG_INT', '/MCU/ENC_B', '/HP_G1', '/HP_G0', '/CTRL_SCL', '/HP_DET', '/CTRL_SDA', '/HP_EN', '/AMP_BOOST_EN', '/AUX_DET', '/MCU/ENC_SW', '/Battery_Charger/TS_SENSE', '/PDCTRL_SDA', '/PDCTRL_SCL', '/3V_AO', '/BT_PWR_EN', '/BT_FORCE_PWM', '/AMP_FAULT_N', '/AMP_PDN', '/ADC_INT', '/3V8_BT', '/3V3_AUDIO', '/AUD_SCL', '/AUD_SDA']
+start: nets to route 53 items 166
+chunk 1 nets 15 failed 3 span<=35 21s C1-c1-pruned.kicad_pcb
+chunk 2 nets 15 failed 7 span<=75 27s C1-c2-pruned.kicad_pcb
+chunk 3 nets 15 failed 7 span<=119 31s C1-c3-pruned.kicad_pcb
+chunk 4 nets 8 failed 6 span<=204 26s C1-c4-pruned.kicad_pcb
+after round 0 open nets 32 items 133
+chunk 5 nets 15 failed 5 span<=66 31s C1-c5-pruned.kicad_pcb
+chunk 6 nets 15 failed 12 span<=198 52s C1-c6-pruned.kicad_pcb
+chunk 7 nets 2 failed 2 span<=204 17s C1-c7-pruned.kicad_pcb
+after round 1 open nets 27 items 122
+DONE C1 open nets 27 ['/Battery_Charger/BTST2', 'Net-(U6-BST_A+)', 'Net-(U10-CPP)', 'Net-(R18-Pad1)', '/Battery_Charger/PROG', 'Net-(U4-BATP)', '/MCU/NRST', 'Net-(Q103-G)', '/Battery_Charger/ILIM_HIZ', '/Battery_Charger/CE_N', '/MCU/SWCLK', '/MCU/SWDIO', '/HP_SEL_B', '/CHG_INT', '/CTRL_SDA', '/USB_CC1', '/HP_EN', 'Net-(U4-QON)', '/MCU/ENC_SW', '/PDCTRL_SDA', '/PDCTRL_SCL', '/USB_PD/LDO_3V3', '/3V_AO', '/3V8_BT', '/3V3_AUDIO', '/AUD_SCL', '/AUD_SDA']

@@ -1,0 +1,1 @@
+{"nets_include": ["AUDIO"], "in1_power": true, "protect": true, "drop_planes": ["B.Cu", "F.Cu"], "drop_keepouts": true, "class_rules": {"AUDIO": {"width": 200, "clearance": 200, "layers": ["F.Cu"]}}, "default_clear": 200}

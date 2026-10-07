@@ -1,0 +1,29 @@
+2026-10-07 13:31:20.168 INFO   Freerouting v2.5.0 (build-date: 2026-10-05)
+2026-10-07 13:31:20.432 INFO   Hardware: 24 CPU cores, 602 CPU score, 16056 MB RAM
+2026-10-07 13:31:20.432 WARN   Deprecated settings path '-mp / --router.max_passes'; use '--router.autorouter.max_passes' instead. The old path will be removed in a future release.
+2026-10-07 13:31:20.432 WARN   Couldn't get screen resolution. If you are running in a headless environment, disable the GUI by setting gui.enabled to false.
+2026-10-07 13:31:21.455 WARN   Deprecated settings path 'router.max_passes'; use 'router.autorouter.max_passes' instead. The old path will be removed in a future release.
+2026-10-07 13:31:21.715 INFO   [A4B876\247939] Loading board file 'R2-c6.dsn'...
+2026-10-07 13:31:21.934 WARN   DSN file 'R2-c6.dsn' was loaded with 47 warning(s).
+2026-10-07 13:31:22.005 INFO   [A4B876\247939] Job 'A4B876\247939' started at 2026-10-07T02:31:22.005439909Z.
+2026-10-07 13:31:22.172 WARN   Design Warning: Board has 1175 pre-existing clearance violation(s) in the loaded design (before routing):
+  - 1175 unfixable violation(s) (cannot be resolved by Freerouting):
+      * 25 pin-to-pin clearance violations (first 5 shown):
+          - Q103.9 <-> Q103.8
+          - Q103.9 <-> Q103.7
+          - Q103.9 <-> Q103.6
+          - Q103.9 <-> Q103.5
+          - U25.21 <-> U25.20
+          ... and 20 more
+      * 1150 fixed trace/via clearance violations (first 5 shown):
+          - FixedVia#4693 [net OBST_FOREIGN] <-> FixedTrace#3968 [net /Battery_Charger/VBUS_PD]
+          - FixedVia#4692 [net OBST_FOREIGN] <-> FixedTrace#3968 [net /Battery_Charger/VBUS_PD]
+          - FixedVia#4691 [net OBST_FOREIGN] <-> FixedTrace#3968 [net /Battery_Charger/VBUS_PD]
+          - FixedVia#4614 [net OBST_FOREIGN] <-> U24.15
+          - FixedVia#4613 [net OBST_FOREIGN] <-> U23.2
+          ... and 1145 more
+  - 0 potentially fixable violations
+Notice: Freerouting does not modify component placement, board outlines, or fixed items.
+Resolving these 1175 unfixable violation(s) is the responsibility of the board author in their EDA tool (e.g. KiCad).
+2026-10-07 13:31:22.230 INFO   [A4B876\247939] Pipeline thread limits: autorouter pass is single-threaded, optimizer.max_threads=23.
+2026-10-07 13:31:22.378 INFO   [A4B876\247939] Fanout stage started on board '1074eab7b5ef5fcb56924bde6b89dc3f' with 74 of 1066 SMD pins needing fanout (0 already connected, 992 netless).

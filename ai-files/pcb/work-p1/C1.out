@@ -1,0 +1,11 @@
+start: nets to route 53 items 166
+chunk 1 nets 15 failed 3 span<=35 21s C1-c1-pruned.kicad_pcb
+chunk 2 nets 15 failed 7 span<=75 27s C1-c2-pruned.kicad_pcb
+chunk 3 nets 15 failed 7 span<=119 31s C1-c3-pruned.kicad_pcb
+chunk 4 nets 8 failed 6 span<=204 26s C1-c4-pruned.kicad_pcb
+after round 0 open nets 32 items 133
+chunk 5 nets 15 failed 5 span<=66 31s C1-c5-pruned.kicad_pcb
+chunk 6 nets 15 failed 12 span<=198 52s C1-c6-pruned.kicad_pcb
+chunk 7 nets 2 failed 2 span<=204 17s C1-c7-pruned.kicad_pcb
+after round 1 open nets 27 items 122
+DONE C1 open nets 27 ['/Battery_Charger/BTST2', 'Net-(U6-BST_A+)', 'Net-(U10-CPP)', 'Net-(R18-Pad1)', '/Battery_Charger/PROG', 'Net-(U4-BATP)', '/MCU/NRST', 'Net-(Q103-G)', '/Battery_Charger/ILIM_HIZ', '/Battery_Charger/CE_N', '/MCU/SWCLK', '/MCU/SWDIO', '/HP_SEL_B', '/CHG_INT', '/CTRL_SDA', '/USB_CC1', '/HP_EN', 'Net-(U4-QON)', '/MCU/ENC_SW', '/PDCTRL_SDA', '/PDCTRL_SCL', '/USB_PD/LDO_3V3', '/3V_AO', '/3V8_BT', '/3V3_AUDIO', '/AUD_SCL', '/AUD_SDA']

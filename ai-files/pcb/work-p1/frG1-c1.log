@@ -1,0 +1,58 @@
+2026-10-07 13:02:15.859 INFO   Freerouting v2.5.0 (build-date: 2026-10-05)
+2026-10-07 13:02:16.125 INFO   Hardware: 24 CPU cores, 595 CPU score, 16056 MB RAM
+2026-10-07 13:02:16.125 WARN   Deprecated settings path '-mp / --router.max_passes'; use '--router.autorouter.max_passes' instead. The old path will be removed in a future release.
+2026-10-07 13:02:16.126 WARN   Couldn't get screen resolution. If you are running in a headless environment, disable the GUI by setting gui.enabled to false.
+2026-10-07 13:02:17.148 WARN   Deprecated settings path 'router.max_passes'; use 'router.autorouter.max_passes' instead. The old path will be removed in a future release.
+2026-10-07 13:02:17.407 INFO   [DD118A\D669C1] Loading board file 'G1-c1.dsn'...
+2026-10-07 13:02:17.611 WARN   Wiring: duplicate via skipped at (1304440, -484312)
+2026-10-07 13:02:17.611 WARN   Wiring: duplicate via skipped at (1163750, -588312)
+2026-10-07 13:02:17.612 WARN   Wiring: duplicate via skipped at (1288630, -477802)
+2026-10-07 13:02:17.612 WARN   Wiring: duplicate via skipped at (1135180, -588312)
+2026-10-07 13:02:17.612 WARN   Wiring: duplicate via skipped at (1253570, -524197)
+2026-10-07 13:02:17.613 WARN   Wiring: duplicate via skipped at (2003720, -424139)
+2026-10-07 13:02:17.614 WARN   Wiring: duplicate via skipped at (1524160, -374224)
+2026-10-07 13:02:17.614 WARN   Wiring: duplicate via skipped at (1607220, -689198)
+2026-10-07 13:02:17.614 WARN   Wiring: duplicate via skipped at (1147170, -1386380)
+2026-10-07 13:02:17.614 WARN   Wiring: duplicate via skipped at (1657040, -504191)
+2026-10-07 13:02:17.614 WARN   Wiring: duplicate via skipped at (1528770, -543058)
+2026-10-07 13:02:17.615 WARN   Wiring: duplicate via skipped at (1891250, -416048)
+2026-10-07 13:02:17.679 WARN   DSN file 'G1-c1.dsn' was loaded with 22 warning(s).
+2026-10-07 13:02:17.774 INFO   [DD118A\D669C1] Job 'DD118A\D669C1' started at 2026-10-07T02:02:17.774450591Z.
+2026-10-07 13:02:18.194 WARN   Design Warning: Board has 386 pre-existing clearance violation(s) in the loaded design (before routing):
+  - 386 unfixable violation(s) (cannot be resolved by Freerouting):
+      * 135 pin-to-pin clearance violations (first 5 shown):
+          - U19.6 <-> U19.5 [net GND]
+          - U19.2 <-> U19.1 [net /Fuel_Gauge_Power/USB_AUX_5V]
+          - Q103.9 <-> Q103.8
+          - Q103.9 <-> Q103.7
+          - Q103.9 <-> Q103.6
+          ... and 130 more
+      * 251 fixed trace/via clearance violations (first 5 shown):
+          - FixedVia#4830 [net /USB_CC2] <-> FixedTrace#3156 [net /3V_AO]
+          - FixedVia#4829 [net /USB_CC2] <-> FixedTrace#3155 [net /3V_AO]
+          - FixedVia#4776 [net /3V3_AUDIO] <-> FixedVia#4691 [net GND]
+          - FixedVia#4776 [net /3V3_AUDIO] <-> FixedVia#4691 [net GND]
+          - FixedVia#4776 [net /3V3_AUDIO] <-> FixedVia#4691 [net GND]
+          ... and 246 more
+  - 0 potentially fixable violations
+Notice: Freerouting does not modify component placement, board outlines, or fixed items.
+Resolving these 386 unfixable violation(s) is the responsibility of the board author in their EDA tool (e.g. KiCad).
+2026-10-07 13:02:18.246 INFO   [DD118A\D669C1] Pipeline thread limits: autorouter pass is single-threaded, optimizer.max_threads=23.
+2026-10-07 13:02:18.825 INFO   [DD118A\D669C1] Fanout stage started on board '374b1bd50869846040d270c21dcde69d' with 740 of 1066 SMD pins needing fanout (82 already connected, 244 netless).
+2026-10-07 13:03:01.839 WARN   BasicBoard.normalizeTraces: reached 2000 iterations for net '/USB_PD/LDO_3V3' — stopping to prevent hang. The board geometry for this net may be oscillating (split/combine cycle); traces are kept as-is and further normalization for this net is suppressed on this board candidate.
+2026-10-07 13:03:36.554 INFO   [DD118A\D669C1] Fanout pass #1 on board '69aa9b9e2b0883f68b51e9d52d4c2a4d' completed in 77.37 seconds with 372 SMD pins fanouted, 209 not routed, 0 insert errors, +0 extra vias (0 SMD pins still to check in pass, ripup costs=100).
+2026-10-07 13:03:54.295 WARN   BasicBoard.normalizeTraces: reached 2000 iterations for net 'Net-(U11-FAULT)' — stopping to prevent hang. The board geometry for this net may be oscillating (split/combine cycle); traces are kept as-is and further normalization for this net is suppressed on this board candidate.
+2026-10-07 13:04:22.272 INFO   [DD118A\D669C1] Fanout pass #2 on board '21dca31c99b655ebd1b1fee93b8b34ba' completed in 45.65 seconds with 168 SMD pins fanouted, 149 not routed, 0 insert errors, +1 extra via (0 SMD pins still to check in pass, ripup costs=200).
+2026-10-07 13:04:50.978 INFO   [DD118A\D669C1] Fanout pass #3 on board '70db22a6aa92544b373c224a7f149bd3' completed in 28.63 seconds with 159 SMD pins fanouted, 112 not routed, 0 insert errors, +0 extra vias (0 SMD pins still to check in pass, ripup costs=300).
+2026-10-07 13:05:19.703 INFO   [DD118A\D669C1] Fanout pass #4 on board 'dc80a6f2b32ce9f6b5f0f2c628dcbbd8' completed in 28.65 seconds with 159 SMD pins fanouted, 110 not routed, 0 insert errors, +0 extra vias (0 SMD pins still to check in pass, ripup costs=400).
+2026-10-07 13:05:48.398 INFO   [DD118A\D669C1] Fanout pass #5 on board 'ef6a4f6a264ddbd0b4a147a78f1a6cab' completed in 28.62 seconds with 159 SMD pins fanouted, 110 not routed, 0 insert errors, +0 extra vias (0 SMD pins still to check in pass, ripup costs=500).
+2026-10-07 13:06:17.145 INFO   [DD118A\D669C1] Fanout pass #6 on board '74a4a64862d5bbb6326270003d923f00' completed in 28.68 seconds with 159 SMD pins fanouted, 110 not routed, 0 insert errors, +0 extra vias (0 SMD pins still to check in pass, ripup costs=600).
+2026-10-07 13:06:17.146 INFO   Fanout stopped after 6 passes: no progress for 3 consecutive passes.
+2026-10-07 13:06:17.869 INFO   [DD118A\D669C1] Fanout stage completed: started with 822 total SMD pins, completed in 238.76 seconds, escaped pins: 532/822 (64.7%), using 238.63 total CPU seconds, 165.11 GB total allocated, and 337.1 MB peak heap usage.
+2026-10-07 13:06:20.176 INFO   [DD118A\D669C1] Auto-routing stage started on board '74a4a64862d5bbb6326270003d923f00' with baseline score 463.58 for 282 unrouted items.
+2026-10-07 13:10:29.958 INFO   [DD118A\D669C1] Auto-routing pass #1 on board '74a4a64862d5bbb6326270003d923f00' was completed in 248.98 seconds with score 593.71 (213 unrouted and 386 violations), using 489.58 CPU seconds and the job allocated 450.07 GB of memory so far.
+2026-10-07 13:10:32.452 INFO   [DD118A\D669C1] Auto-routing stage completed: started with 494 unrouted nets, completed in 493.39 seconds, final score: 593.71 (213 unrouted and 386 violations), using 491.57 total CPU seconds, 451.02 GB total allocated, and 829.9 MB peak heap usage.
+2026-10-07 13:10:33.264 INFO   [DD118A\D669C1] Skipping optimization stage: the board has 213 unrouted connection(s) (optimizer only runs on completely routed boards).
+2026-10-07 13:10:33.337 INFO   [DD118A\D669C1] Job 'DD118A\D669C1' finished with state: COMPLETED (elapsed: 8 minutes 15.56 seconds, finished at UTC: 2026-10-07T02:10:33.337165115Z).
+2026-10-07 13:10:33.343 INFO   Saving output file '/home/chithi/Desktop/DesktopSpeaker/ai-files/pcb/work-p1/G1-c1.ses' (SES)...
+2026-10-07 13:10:33.344 INFO   Successfully saved output file '/home/chithi/Desktop/DesktopSpeaker/ai-files/pcb/work-p1/G1-c1.ses' (352279 bytes).

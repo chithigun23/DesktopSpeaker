@@ -1,0 +1,1 @@
+{"nets_include": ["SIGNAL", "I2C", "PWR_LOCAL", "PWR_3V", "PWR_5V", "BOOT"], "in1_power": true, "protect": true, "drop_planes": ["B.Cu", "F.Cu", "In2.Cu"], "drop_keepouts": true, "no_wiring": true}

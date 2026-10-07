@@ -1,0 +1,33 @@
+2026-10-07 02:09:26.175 INFO   Freerouting v2.5.0 (build-date: 2026-10-05)
+2026-10-07 02:09:26.438 INFO   Hardware: 24 CPU cores, 592 CPU score, 16056 MB RAM
+2026-10-07 02:09:26.439 WARN   Deprecated settings path '-mp / --router.max_passes'; use '--router.autorouter.max_passes' instead. The old path will be removed in a future release.
+2026-10-07 02:09:26.439 WARN   Couldn't get screen resolution. If you are running in a headless environment, disable the GUI by setting gui.enabled to false.
+2026-10-07 02:09:27.464 WARN   Deprecated settings path 'router.max_passes'; use 'router.autorouter.max_passes' instead. The old path will be removed in a future release.
+2026-10-07 02:09:27.723 INFO   [1F79FA\CA3BA5] Loading board file 'C2-c1.dsn'...
+2026-10-07 02:09:27.892 INFO   [1F79FA\CA3BA5] Job '1F79FA\CA3BA5' started at 2026-10-06T15:09:27.892586Z.
+2026-10-07 02:09:27.996 WARN   Design Warning: Board has 11 pre-existing clearance violation(s) in the loaded design (before routing):
+  - 11 unfixable violation(s) (cannot be resolved by Freerouting):
+      * 11 pin-to-pin clearance violations (first 5 shown):
+          - Q103.9 <-> Q103.8
+          - Q103.9 <-> Q103.7
+          - Q103.9 <-> Q103.6
+          - Q103.9 <-> Q103.5
+          - U25.21 <-> U25.20
+          ... and 6 more
+  - 0 potentially fixable violations
+Notice: Freerouting does not modify component placement, board outlines, or fixed items.
+Resolving these 11 unfixable violation(s) is the responsibility of the board author in their EDA tool (e.g. KiCad).
+2026-10-07 02:09:28.025 INFO   [1F79FA\CA3BA5] Pipeline thread limits: autorouter pass is single-threaded, optimizer.max_threads=23.
+2026-10-07 02:09:28.087 INFO   [1F79FA\CA3BA5] Fanout stage started on board 'f0754b288b745a4c438efe64da371da1' with 39 of 1066 SMD pins needing fanout (0 already connected, 1027 netless).
+2026-10-07 02:09:28.658 INFO   [1F79FA\CA3BA5] Fanout pass #1 on board '3accca49a398e8485c43090ebf6632e2' completed in 0.53 seconds with 14 SMD pins fanouted, 19 not routed, 0 insert errors, +0 extra vias (0 SMD pins still to check in pass, ripup costs=100).
+2026-10-07 02:09:28.863 INFO   [1F79FA\CA3BA5] Fanout pass #2 on board 'd66048dabcf09b322855c07746dca7da' completed in 0.18 seconds with 1 SMD pin fanouted, 9 not routed, 0 insert errors, +1 extra via (0 SMD pins still to check in pass, ripup costs=200).
+2026-10-07 02:09:28.946 INFO   [1F79FA\CA3BA5] Fanout pass #3 on board 'd66048dabcf09b322855c07746dca7da' completed in 0.06 seconds with 0 SMD pins fanouted, 1 not routed, 0 insert errors, +0 extra vias (0 SMD pins still to check in pass, ripup costs=300).
+2026-10-07 02:09:28.950 INFO   [1F79FA\CA3BA5] Fanout stage completed: started with 39 total SMD pins, completed in 0.85 seconds, escaped pins: 24/39 (61.5%), using 0.86 total CPU seconds, 0.51 GB total allocated, and 261.1 MB peak heap usage.
+2026-10-07 02:09:29.015 INFO   [1F79FA\CA3BA5] Auto-routing stage started on board 'd66048dabcf09b322855c07746dca7da' with baseline score 282.71 for 19 unrouted items.
+2026-10-07 02:09:35.725 INFO   [1F79FA\CA3BA5] Auto-routing pass #1 on board 'd66048dabcf09b322855c07746dca7da' was completed in 6.67 seconds with score 555.43 (11 unrouted and 11 violations), using 6.81 CPU seconds and the job allocated 8.97 GB of memory so far.
+2026-10-07 02:09:43.566 INFO   [1F79FA\CA3BA5] Auto-routing pass #2 on board '3f6fee146d2eb31323faa16c7f922615' was completed in 7.81 seconds with score 474.63 (13 unrouted and 11 violations), using 14.74 CPU seconds and the job allocated 19.10 GB of memory so far.
+2026-10-07 02:09:43.755 INFO   [1F79FA\CA3BA5] Auto-routing stage completed: started with 33 unrouted nets, completed in 15.70 seconds, final score: 555.43 (11 unrouted and 11 violations), using 14.74 total CPU seconds, 19.10 GB total allocated, and 612.2 MB peak heap usage.
+2026-10-07 02:09:43.787 INFO   [1F79FA\CA3BA5] Skipping optimization stage: the board has 11 unrouted connection(s) (optimizer only runs on completely routed boards).
+2026-10-07 02:09:43.809 INFO   [1F79FA\CA3BA5] Job '1F79FA\CA3BA5' finished with state: COMPLETED (elapsed: 15.92 seconds, finished at UTC: 2026-10-06T15:09:43.808673003Z).
+2026-10-07 02:09:43.834 INFO   Saving output file '/home/chithi/Desktop/DesktopSpeaker/ai-files/pcb/work-p1/C2-c1.ses' (SES)...
+2026-10-07 02:09:43.836 INFO   Successfully saved output file '/home/chithi/Desktop/DesktopSpeaker/ai-files/pcb/work-p1/C2-c1.ses' (27915 bytes).

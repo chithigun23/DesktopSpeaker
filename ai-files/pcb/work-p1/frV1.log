@@ -1,0 +1,39 @@
+2026-10-07 01:01:41.464 INFO   Freerouting v2.5.0 (build-date: 2026-10-05)
+2026-10-07 01:01:41.742 INFO   Hardware: 24 CPU cores, 564 CPU score, 16056 MB RAM
+2026-10-07 01:01:41.742 WARN   Deprecated settings path '-mp / --router.max_passes'; use '--router.autorouter.max_passes' instead. The old path will be removed in a future release.
+2026-10-07 01:01:41.743 WARN   Couldn't get screen resolution. If you are running in a headless environment, disable the GUI by setting gui.enabled to false.
+2026-10-07 01:01:42.770 WARN   Deprecated settings path 'router.max_passes'; use 'router.autorouter.max_passes' instead. The old path will be removed in a future release.
+2026-10-07 01:01:43.034 INFO   [4FC338\745DEF] Loading board file 'V1.dsn'...
+2026-10-07 01:01:43.460 INFO   [4FC338\745DEF] Job '4FC338\745DEF' started at 2026-10-06T14:01:43.460448164Z.
+2026-10-07 01:01:43.816 WARN   Design Warning: Board has 275 pre-existing clearance violation(s) in the loaded design (before routing):
+  - 275 unfixable violation(s) (cannot be resolved by Freerouting):
+      * 13 pin-to-pin clearance violations (first 5 shown):
+          - U19.2 <-> U19.1 [net /Fuel_Gauge_Power/USB_AUX_5V]
+          - Q103.9 <-> Q103.8
+          - Q103.9 <-> Q103.7
+          - Q103.9 <-> Q103.6
+          - Q103.9 <-> Q103.5
+          ... and 8 more
+      * 262 fixed trace/via clearance violations (first 5 shown):
+          - FixedVia#3389 [net GND] <-> U7.33
+          - FixedVia#3381 [net GND] <-> U6.33
+          - FixedVia#3374 [net GND] <-> ObstacleArea#18
+          - FixedVia#3374 [net GND] <-> ObstacleArea#8
+          - FixedVia#3368 [net GND] <-> U6.33
+          ... and 257 more
+  - 0 potentially fixable violations
+Notice: Freerouting does not modify component placement, board outlines, or fixed items.
+Resolving these 275 unfixable violation(s) is the responsibility of the board author in their EDA tool (e.g. KiCad).
+2026-10-07 01:01:43.890 INFO   [4FC338\745DEF] Pipeline thread limits: autorouter pass is single-threaded, optimizer.max_threads=23.
+2026-10-07 01:01:44.065 INFO   [4FC338\745DEF] Fanout stage started on board '2ad2648f81c651ba4ac722aa6c7f884b' with 468 of 1066 SMD pins needing fanout (0 already connected, 598 netless).
+2026-10-07 01:01:48.830 INFO   [4FC338\745DEF] Fanout pass #1 on board '930b766e2c4ee7af92da6eeb03137700' completed in 4.63 seconds with 172 SMD pins fanouted, 252 not routed, 0 insert errors, +11 extra vias (0 SMD pins still to check in pass, ripup costs=100).
+2026-10-07 01:01:50.184 INFO   [4FC338\745DEF] Fanout pass #2 on board '59b4947c25bd2b55d2844b65b7b7f3fa' completed in 1.30 seconds with 21 SMD pins fanouted, 154 not routed, 0 insert errors, +1 extra via (0 SMD pins still to check in pass, ripup costs=200).
+2026-10-07 01:01:50.802 INFO   [4FC338\745DEF] Fanout pass #3 on board '95f19d9959b48b423bad00417692b762' completed in 0.57 seconds with 15 SMD pins fanouted, 54 not routed, 0 insert errors, +0 extra vias (0 SMD pins still to check in pass, ripup costs=300).
+2026-10-07 01:01:51.203 INFO   [4FC338\745DEF] Fanout pass #4 on board 'f6382e435d7f57a3c786a84418ce3149' completed in 0.35 seconds with 14 SMD pins fanouted, 9 not routed, 0 insert errors, +0 extra vias (0 SMD pins still to check in pass, ripup costs=400).
+2026-10-07 01:01:51.582 INFO   [4FC338\745DEF] Fanout pass #5 on board '5aee2db754e837fba36e19f64d68dfdc' completed in 0.33 seconds with 14 SMD pins fanouted, 9 not routed, 0 insert errors, +0 extra vias (0 SMD pins still to check in pass, ripup costs=500).
+2026-10-07 01:01:51.962 INFO   [4FC338\745DEF] Fanout pass #6 on board 'ee328aca19b5bd938dea7566cc94446f' completed in 0.33 seconds with 14 SMD pins fanouted, 9 not routed, 0 insert errors, +0 extra vias (0 SMD pins still to check in pass, ripup costs=600).
+2026-10-07 01:01:52.330 INFO   [4FC338\745DEF] Fanout pass #7 on board '3de9fff832ee4ed1159eb2ecec268cd3' completed in 0.32 seconds with 14 SMD pins fanouted, 9 not routed, 0 insert errors, +0 extra vias (0 SMD pins still to check in pass, ripup costs=700).
+2026-10-07 01:01:52.331 INFO   Fanout stopped after 7 passes: no progress for 3 consecutive passes.
+2026-10-07 01:01:52.358 INFO   [4FC338\745DEF] Fanout stage completed: started with 468 total SMD pins, completed in 8.22 seconds, escaped pins: 266/468 (56.8%), using 7.93 total CPU seconds, 5.23 GB total allocated, and 421.6 MB peak heap usage.
+2026-10-07 01:01:52.531 INFO   [4FC338\745DEF] Auto-routing stage started on board '3de9fff832ee4ed1159eb2ecec268cd3' with baseline score 322.11 for 184 unrouted items.
+2026-10-07 01:04:36.104 INFO   [4FC338\745DEF] Auto-routing pass #1 on board '3de9fff832ee4ed1159eb2ecec268cd3' was completed in 163.49 seconds with score 578.31 (113 unrouted and 275 violations), using 169.89 CPU seconds and the job allocated 196.88 GB of memory so far.

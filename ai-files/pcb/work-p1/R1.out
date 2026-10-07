@@ -1,0 +1,10 @@
+start: nets to route 83 items 229
+chunk 1 nets 12 failed 7 span<=3 20s R1-c1-pruned.kicad_pcb
+chunk 2 nets 12 failed 7 span<=8 21s R1-c2-pruned.kicad_pcb
+chunk 3 nets 12 failed 3 span<=35 20s R1-c3-pruned.kicad_pcb
+chunk 4 nets 12 failed 2 span<=68 25s R1-c4-pruned.kicad_pcb
+chunk 5 nets 12 failed 3 span<=100 41s R1-c5-pruned.kicad_pcb
+chunk 6 nets 12 failed 4 span<=124 29s R1-c6-pruned.kicad_pcb
+chunk 7 nets 11 failed 4 span<=204 35s R1-c7-pruned.kicad_pcb
+after round 0 open nets 57 items 116
+DONE R1 open nets 57 ['Net-(U10-HPVSS)', 'unconnected-(U11-DRAIN-Pad40)', 'Net-(U25-SS)', 'Net-(U7-BST_B-)', 'Net-(U7-AVDD)', 'Net-(U10-CPP)', 'Net-(U6-BST_B-)', 'Net-(U6-AVDD)', 'Net-(U25-VCC)', 'Net-(U24-VINL2)', '/Battery_Charger/PROG', 'Net-(U24-VREF)', 'Net-(U24-VINL1)', 'Net-(U24-VINR2)', 'Net-(U24-VINR1)', 'Net-(U24-LRCK)', 'Net-(U8-COM2)', 'Net-(U24-AVDD)', 'Net-(U2-SEL0)', 'Net-(U24-XO)', '/MCU/NRST', 'Net-(C200-Pad2)', '/PD_PLUG_EVENT', '/MCU/SWCLK', '/MCU/SWDIO', '/Battery_Charger/REGN', 'Net-(C204-Pad2)', '/BT_UART_TX', '/Headphone_Aux/VMID_HP', '/USB_AUDIO_L', '/HP_SEL_B', '/CHG_INT', '/HP_G1', '/HP_G0', '/CTRL_SCL', '/CTRL_SDA', '/USB_CC1', '/HP_EN', 'Net-(U4-QON)', '/Battery_Charger/TS_SENSE', '/PDCTRL_SDA', '/PDCTRL_SCL', '/USB_DN', '/5V_LOGIC', '/USB_PD/LDO_3V3', '/3V_AO', '/USB_DP', '/BT_AUDIO_L', '/AMP_FAULT_N', '/ADC_INT', '/3V8_BT', '/I2S_BCK', '/I2S_SDATA', '/I2S_LRCK', '/3V3_AUDIO', '/AUD_SCL', '/AUD_SDA']

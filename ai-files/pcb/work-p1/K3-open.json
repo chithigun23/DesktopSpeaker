@@ -1,0 +1,18 @@
+{
+"Net-(U24-VINL2)": 1,
+"Net-(U24-VINL1)": 1,
+"Net-(U24-VINR2)": 1,
+"Net-(U24-VINR1)": 2,
+"Net-(U24-LRCK)": 1,
+"Net-(U8-COM2)": 1,
+"Net-(U24-XO)": 1,
+"Net-(C204-Pad2)": 1,
+"/Headphone_Aux/VMID_HP": 4,
+"/USB_AUDIO_L": 1,
+"/USB_AUDIO_R": 2,
+"/USB_DN": 1,
+"/USB_DP": 1,
+"/BT_AUDIO_L": 1,
+"/I2S_BCK": 3,
+"/I2S_SDATA": 3
+}

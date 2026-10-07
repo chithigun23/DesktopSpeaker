@@ -1,0 +1,17 @@
+start: nets to route 61 items 116
+chunk 1 nets 10 failed 0 span<=3 5s K3-c1-imp.kicad_pcb
+chunk 2 nets 10 failed 0 span<=5 6s K3-c2-imp.kicad_pcb
+chunk 3 nets 10 failed 0 span<=8 7s K3-c3-imp.kicad_pcb
+chunk 4 nets 10 failed 2 span<=14 8s K3-c4-pruned.kicad_pcb
+chunk 5 nets 10 failed 3 span<=49 9s K3-c5-pruned.kicad_pcb
+chunk 6 nets 10 failed 1 span<=191 12s K3-c6-pruned.kicad_pcb
+chunk 7 nets 1 failed 0 span<=198 6s K3-c7-imp.kicad_pcb
+after round 0 open nets 21 items 27
+chunk 8 nets 10 failed 9 span<=35 8s K3-c8-pruned.kicad_pcb
+chunk 9 nets 10 failed 8 span<=181 11s K3-c9-pruned.kicad_pcb
+chunk 10 nets 1 failed 1 span<=191 7s K3-c10-pruned.kicad_pcb
+after round 1 open nets 19 items 46
+chunk 11 nets 10 failed 3 span<=45 10s K3-c11-pruned.kicad_pcb
+chunk 12 nets 9 failed 3 span<=191 11s K3-c12-pruned.kicad_pcb
+after round 2 open nets 16 items 25
+DONE K3 open nets 16 ['Net-(U24-VINL2)', 'Net-(U24-VINL1)', 'Net-(U24-VINR2)', 'Net-(U24-VINR1)', 'Net-(U24-LRCK)', 'Net-(U8-COM2)', 'Net-(U24-XO)', 'Net-(C204-Pad2)', '/Headphone_Aux/VMID_HP', '/USB_AUDIO_L', '/USB_AUDIO_R', '/USB_DN', '/USB_DP', '/BT_AUDIO_L', '/I2S_BCK', '/I2S_SDATA']

@@ -1,0 +1,17 @@
+start: nets to route 58 items 183
+chunk 1 nets 10 failed 4 span<=5 27s B1-c1-pruned.kicad_pcb
+chunk 2 nets 10 failed 4 span<=38 32s B1-c2-pruned.kicad_pcb
+chunk 3 nets 10 failed 4 span<=66 31s B1-c3-pruned.kicad_pcb
+chunk 4 nets 10 failed 8 span<=91 40s B1-c4-pruned.kicad_pcb
+chunk 5 nets 10 failed 7 span<=119 31s B1-c5-pruned.kicad_pcb
+chunk 6 nets 8 failed 6 span<=204 26s B1-c6-pruned.kicad_pcb
+after round 0 open nets 46 items 162
+chunk 7 nets 10 failed 4 span<=4 25s B1-c7-pruned.kicad_pcb
+chunk 8 nets 10 failed 6 span<=38 38s B1-c8-pruned.kicad_pcb
+chunk 9 nets 10 failed 7 span<=87 48s B1-c9-pruned.kicad_pcb
+chunk 10 nets 10 failed 8 span<=119 40s B1-c10-pruned.kicad_pcb
+chunk 11 nets 6 failed 5 span<=204 31s B1-c11-pruned.kicad_pcb
+after round 1 open nets 39 items 151
+chunk 12 nets 10 failed 6 span<=4 29s B1-c12-pruned.kicad_pcb
+chunk 13 nets 10 failed 7 span<=41 38s B1-c13-pruned.kicad_pcb
+chunk 14 nets 10 failed 10 span<=105 50s B1-c14-pruned.kicad_pcb

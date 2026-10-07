@@ -31,7 +31,11 @@ for name,(mn,pref,clr,vd,vdr,pl) in CL.items():
     c=dict(tmpl); c.update(name=name,track_width=pref,clearance=0.2,via_diameter=vd,via_drill=vdr,priority=len(classes))
     if name=='USB': c.update(diff_pair_width=0.25,diff_pair_gap=0.15)
     classes.append(c)
-    for p in pl: pats.append({'netclass':name,'pattern':p})
+    for p in pl:
+        if '[' in p:       # KiCad netclass patterns only know * and ?: expand [..] ranges to the exact net names (v9 routing finding)
+            for n in nets:
+                if fnmatch.fnmatchcase(n,p): pats.append({'netclass':name,'pattern':n})
+        else: pats.append({'netclass':name,'pattern':p})
 pats.append({'netclass':'SIGNAL','pattern':'*'})
 sig=dict(tmpl); sig.update(name='SIGNAL',priority=len(classes)); classes.append(sig)
 ns['classes']=classes; ns['netclass_patterns']=pats
@@ -40,7 +44,7 @@ asg={}
 for n in nets:
     got='SIGNAL'
     for p in pats[:-1]:
-        if fnmatch.fnmatchcase(n,p['pattern']) :
+        if p['pattern']==n or ('[' not in p['pattern'] and fnmatch.fnmatchcase(n,p['pattern'])):
             got=p['netclass']; break
     asg[n]=got
 json.dump(asg,open('/tmp/w/net_class.json','w'),indent=0)

@@ -1,0 +1,1022 @@
+(session "C3-c5"
+  (base_design "C3-c5")
+  (placement
+    (resolution um 10)
+    (component "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+      (place R221 1467300 -512700 front 0)
+      (place R171 1969600 -677800 front 0)
+      (place R11 1082600 -981600 front 0)
+      (place FB200 1919400 -416800 front 0)
+      (place R17 1108600 -981600 front 0)
+      (place R102 1424500 -1008800 front 0)
+      (place R100 1369000 -1034700 front 0)
+      (place R124 1187700 -536800 front 0)
+      (place R208 2117700 -384800 front 0)
+      (place R234 1436000 -557900 front 0)
+      (place R109 1415600 -785400 front 0)
+      (place R210 2060700 -383800 front 0)
+      (place R174 1983200 -588100 front 0)
+      (place R206 2060700 -401800 front 0)
+      (place R14 1053600 -976600 front 0)
+      (place R187 867000 -244600 front 0)
+      (place R107 1228900 -760900 front 0)
+      (place R103 1281500 -1013800 front 0)
+      (place R175 2099300 -554200 front 0)
+      (place R236 1683500 -528800 front 0)
+      (place R10 1079600 -968600 front 0)
+      (place R244 1704900 -427000 front 0)
+      (place R172 1972100 -690800 front 0)
+      (place R258 1812100 -1397500 front 0)
+      (place R180 901575 -468650 front 0)
+      (place R13 1124300 -968400 front 0)
+      (place R125 1213700 -544800 front 0)
+      (place R241 1613200 -360500 front 0)
+      (place R220 1465300 -499700 front 0)
+      (place R108 1368500 -1048800 front 0)
+      (place R101 2054850 -1338050 front 90)
+      (place R18 1064600 -890100 front 90)
+      (place R222 1479300 -532700 front 90)
+      (place R185 951600 -542300 front 90)
+      (place R106 927400 -701600 front 90)
+      (place R182 1075200 -312600 front 90)
+      (place R233 1689500 -493800 front 90)
+      (place R181 851950 -454025 front 90)
+      (place R110 1347900 -768200 front 90)
+      (place R261 1755900 -1397500 front 90)
+      (place R253 1798100 -997400 front 90)
+      (place R12 1077600 -898100 front 90)
+      (place R160 1078900 -625500 front 90)
+      (place R211 2066700 -361800 front 90)
+      (place R113 1182700 -247450 front 90)
+      (place R183 1100200 -393600 front 90)
+      (place R186 1075200 -269600 front 90)
+      (place R151 2061100 -924900 front 90)
+      (place R250 1808100 -1036400 front 90)
+      (place R173 2075700 -712800 front 90)
+      (place R154 2022600 -988900 front 90)
+      (place R239 1539300 -370500 front 90)
+      (place R254 1812100 -1010400 front 90)
+      (place R251 1784100 -997400 front 90)
+      (place R232 1676500 -505800 front 90)
+      (place R184 1088200 -327600 front 90)
+      (place R229 1430000 -577900 front 90)
+      (place R227 1430000 -535700 front 90)
+      (place R209 2053700 -363800 front 90)
+      (place R228 1394000 -595900 front 90)
+      (place R202 1963400 -283800 front 270)
+      (place R243 1724900 -374000 front 270)
+      (place R207 2030700 -418800 front 270)
+      (place R238 1648500 -593800 front 270)
+      (place R111 1397400 -736500 front 270)
+      (place R200 2003400 -303800 front 270)
+      (place R201 1977400 -288800 front 270)
+      (place R262 1138400 -1410100 front 270)
+      (place R230 1550000 -556900 front 270)
+      (place R170 1978600 -656800 front 270)
+      (place R259 1003600 -787800 front 270)
+      (place R120 1327100 -513800 front 270)
+      (place R203 1939400 -304800 front 270)
+      (place R256 1798100 -1086400 front 270)
+      (place R121 1273100 -484800 front 270)
+      (place R15 1034300 -942400 front 270)
+      (place R153 2048100 -927900 front 270)
+      (place R112 1328800 -818100 front 270)
+      (place R257 1224000 -1402500 front 270)
+      (place R235 1504000 -577900 front 270)
+      (place R252 1733600 -998400 front 180)
+      (place R150 2063600 -951900 front 180)
+      (place R205 2057700 -302800 front 180)
+      (place R223 1893700 -267100 front 180)
+      (place R255 1727600 -985400 front 180)
+      (place R225 1678900 -420700 front 180)
+      (place R224 1665900 -407700 front 180)
+      (place R122 1211100 -571800 front 180)
+      (place R142 872300 -887800 front 180)
+      (place R204 2060700 -315800 front 180)
+      (place R152 2055100 -904900 front 180)
+      (place R126 1320100 -533800 front 180)
+      (place R127 1344700 -571800 front 180)
+      (place R141 863200 -900800 front 180)
+      (place R242 1639200 -356500 front 180)
+      (place R176 2134525 -662550 front 180)
+      (place R240 1499300 -356500 front 180)
+      (place R140 925700 -957800 front 180)
+      (place R231 1556000 -576900 front 180)
+      (place R16 1045300 -895400 front 180)
+      (place R226 1408000 -512700 front 180)
+      (place R237 1624500 -578800 front 180)
+      (place R212 1706600 -714800 front 180)
+    )
+    (component DesktopSpeaker:PESD5V0S2BT
+      (place D201 1698250 -375450 front 0)
+      (place Q104 1360100 -596275 front 0)
+      (place U21 1285100 -596275 front 0)
+      (place D5 1378300 -318550 front 0)
+      (place Q101 1382250 -785350 front 0)
+      (place Q100 1232250 -785350 front 0)
+      (place D200 1474250 -330450 front 180)
+    )
+    (component "DesktopSpeaker:TestPoint_Keystone_5015_Micro_Mini"
+      (place TP14 2107675 -448850 front 90)
+      (place TP3 1319475 -646275 front 90)
+      (place TP6 1864450 -379525 front 90)
+      (place TP11 1252450 -1014750 front 90)
+      (place TP9 2043550 -995850 front 90)
+      (place TP21 1103650 -658800 front 90)
+      (place TP17 1103650 -763800 front 90)
+      (place TP2 1300450 -907750 front 90)
+      (place TP18 1103650 -713800 front 90)
+      (place TP13 2147675 -383850 front 90)
+      (place TP20 1342450 -1315150 front 90)
+      (place TP5 1027350 -874375 front 0)
+      (place TP15 993650 -600300 front 0)
+      (place TP12 2012675 -483850 front 0)
+      (place TP1 1159600 -877125 front 0)
+      (place TP4 1243775 -636100 front 0)
+      (place TP22 1031150 -227675 front 0)
+      (place TP10 1000850 -1323550 front 0)
+      (place TP19 964400 -794550 front 0)
+      (place TP8 2063075 -458850 front 0)
+      (place TP16 1048650 -615300 front 0)
+      (place TP7 931750 -873750 front 0)
+    )
+    (component "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+      (place C236 1648500 -490800 front 180)
+      (place C263 1695600 -1106400 front 180)
+      (place C214 1921400 -371800 front 180)
+      (place C274 1144800 -1300500 front 180)
+      (place C175 2043200 -724800 front 180)
+      (place C111 1334500 -1032700 front 180)
+      (place C112 1300500 -981500 front 180)
+      (place C302 950100 -1418500 front 180)
+      (place C141 891700 -962800 front 180)
+      (place C272 1110800 -1325500 front 180)
+      (place C100 1315500 -1008800 front 180)
+      (place C270 1110800 -1349500 front 180)
+      (place C293 1096800 -1374500 front 180)
+      (place C194 906600 -448600 front 180)
+      (place C292 1102800 -1300500 front 180)
+      (place C304 1260100 -1422500 front 180)
+      (place C216 1921400 -346800 front 180)
+      (place C6 1045300 -915400 front 180)
+      (place C306 1852100 -1418500 front 180)
+      (place C2 1148800 -939800 front 270)
+      (place C106 1274800 -792600 front 270)
+      (place C290 1178000 -1419500 front 270)
+      (place C262 1779600 -1096400 front 270)
+      (place C280 1118800 -1408500 front 270)
+      (place C195 871000 -447000 front 270)
+      (place C140 864300 -928800 front 270)
+      (place C102 1226500 -1038800 front 270)
+      (place C261 1755600 -1104400 front 270)
+      (place C190 1080200 -403600 front 270)
+      (place C142 897800 -883800 front 270)
+      (place C150 2115600 -925900 front 270)
+      (place C107 1398500 -1025700 front 270)
+      (place C277 1243000 -1388500 front 270)
+      (place C181 1054300 -948400 front 270)
+      (place C218 1947400 -434800 front 270)
+      (place C153 2115600 -958900 front 0)
+      (place C176 2109200 -685800 front 0)
+      (place C305 1399700 -1418500 front 0)
+      (place C271 1219000 -1311500 front 0)
+      (place C152 2079600 -1015900 front 0)
+      (place C105 1420500 -989700 front 0)
+      (place C101 1362500 -957500 front 0)
+      (place C109 1288500 -1032700 front 0)
+      (place C264 1798600 -1061400 front 0)
+      (place C184 1109600 -899100 front 0)
+      (place C223 1919400 -396800 front 0)
+      (place C187 2122500 -643600 front 0)
+      (place C279 1013800 -1349500 front 0)
+      (place C5 1298800 -356500 front 90)
+      (place C265 1762400 -997100 front 90)
+      (place C186 2112300 -588200 front 90)
+      (place C303 1081700 -1408500 front 90)
+      (place C161 935400 -666600 front 90)
+      (place C154 2069600 -981900 front 90)
+      (place C307 1983700 -1408500 front 90)
+      (place C273 1243000 -1345500 front 90)
+      (place C108 1329500 -948500 front 90)
+      (place C104 1398500 -956700 front 90)
+    )
+    (component "DesktopSpeaker:Tag-Connect_TC2030-IDC-FP_2x03_P1.27mm_Vertical"
+      (place J7 863650 -777050 front 0)
+    )
+    (component "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+      (place C204 1658900 -388000 front 270)
+      (place C234 1671900 -388000 front 270)
+      (place C130 1313100 -512800 front 270)
+      (place C160 941400 -700500 front 270)
+      (place C276 1138800 -1358500 front 270)
+      (place C219 1949400 -395800 front 270)
+      (place C266 1737300 -1088800 front 270)
+      (place C243 1675000 -548300 front 270)
+      (place C174 2095200 -622600 front 270)
+      (place C245 1688000 -554300 front 270)
+      (place C201 1990400 -276800 front 270)
+      (place C205 1718900 -406000 front 270)
+      (place C282 1151800 -1403500 front 270)
+      (place C210 2053700 -334800 front 270)
+      (place C191 1075200 -369600 front 270)
+      (place C213 1962400 -400800 front 270)
+      (place C281 1138800 -1384500 front 270)
+      (place C298 1756500 -1345900 front 270)
+      (place C260 1724600 -1088400 front 270)
+      (place C207 1949400 -343800 front 270)
+      (place C300 1829100 -1346500 front 270)
+      (place C162 941400 -728500 front 270)
+      (place C202 1950400 -271800 front 270)
+      (place C246 1671200 -362500 front 270)
+      (place C308 1584600 -796350 front 270)
+      (place C294 1125800 -1374500 front 270)
+      (place C278 1211000 -1363500 front 270)
+      (place C193 1088200 -359600 front 270)
+      (place C203 1926400 -292800 front 270)
+      (place C215 1949400 -369800 front 270)
+      (place C226 1962400 -374800 front 270)
+      (place C183 1365900 -349100 front 270)
+      (place C287 1224000 -1346500 front 270)
+      (place C241 1643500 -509800 front 180)
+      (place C301 1813500 -1324900 front 180)
+      (place C220 1973400 -421800 front 180)
+      (place C233 1919400 -273100 front 180)
+      (place C225 1734300 -666300 front 180)
+      (place C288 1179400 -1311900 front 180)
+      (place C230 1441000 -512700 front 180)
+      (place C212 1943400 -324800 front 180)
+      (place C177 2035200 -598600 front 180)
+      (place C211 2031700 -309800 front 180)
+      (place C200 2087650 -567175 front 180)
+      (place C209 1958400 -303800 front 180)
+      (place C267 1737600 -1011400 front 180)
+      (place C231 1460000 -530700 front 180)
+      (place C172 2009100 -598600 front 180)
+      (place C237 1644500 -522800 front 180)
+      (place C132 1292100 -491800 front 180)
+      (place C123 1319100 -493800 front 0)
+      (place C182 1374900 -294100 front 0)
+      (place C268 1817100 -990400 front 0)
+      (place C178 2060700 -598600 front 0)
+      (place C244 1668500 -578800 front 0)
+      (place C285 1157800 -1324500 front 0)
+      (place C131 1244100 -586800 front 0)
+      (place C240 1562000 -537700 front 0)
+      (place C299 1787900 -1324500 front 0)
+      (place C171 2056200 -705800 front 0)
+      (place C221 1592600 -665800 front 0)
+      (place C208 1984400 -309800 front 0)
+      (place C122 1484100 -665800 front 0)
+      (place C170 2012600 -705800 front 0)
+      (place C284 1204000 -1397500 front 0)
+      (place C232 1400000 -615900 front 0)
+      (place C286 1183400 -1324900 front 0)
+      (place C126 1340800 -788100 front 0)
+      (place C283 1218000 -1382500 front 0)
+      (place C235 1693900 -408000 front 0)
+      (place C239 1547000 -512700 front 0)
+      (place C217 1983400 -407800 front 0)
+      (place C222 2009400 -415800 front 0)
+      (place C120 1334500 -768400 front 90)
+      (place C173 2080200 -592600 front 90)
+      (place C310 1799600 -836350 front 90)
+      (place C295 1756900 -1371500 front 90)
+      (place C192 1075200 -338600 front 90)
+      (place C309 1584600 -836350 front 90)
+      (place C103 1329500 -983700 front 90)
+      (place C269 1794100 -1023400 front 90)
+      (place C224 1570600 -694800 front 90)
+      (place C227 1962400 -348800 front 90)
+      (place C296 1829100 -1372500 front 90)
+      (place C297 1842100 -1362500 front 90)
+      (place C124 1189500 -513800 front 90)
+      (place C206 1962400 -322800 front 90)
+      (place C125 1230500 -513800 front 90)
+      (place C110 1393100 -990800 front 90)
+      (place C291 1211000 -1337500 front 90)
+      (place C238 1663500 -516800 front 90)
+      (place C289 1138800 -1332500 front 90)
+    )
+    (component DesktopSpeaker:STM32G071RBT6
+      (place U3 1016150 -707050 front 0)
+    )
+    (component DesktopSpeaker:TPA6132A2RTER
+      (place U10 1646950 -550775 front 0)
+    )
+    (component DesktopSpeaker:TS5A23157DGSR
+      (place U9 1526950 -550775 front 0)
+      (place U8 1406950 -550775 front 0)
+    )
+    (component "DesktopSpeaker:L_Coilcraft_XAL7070-XXX"
+      (place L200 1672850 -1041950 front 0)
+    )
+    (component "DesktopSpeaker:PJ-307"
+      (place J2 1564250 -293950 front 270)
+      (place J3 1698250 -293950 front 270)
+    )
+    (component DesktopSpeaker:BQ25792RQMR
+      (place U4 1361450 -994750 front 0)
+    )
+    (component DesktopSpeaker:TAS5825MRHBR
+      (place U6 1174950 -1361050 front 0)
+      (place U7 1792950 -1361050 front 0)
+    )
+    (component DesktopSpeaker:TPS22917DBVR
+      (place U23 1728975 -690350 front 0)
+    )
+    (component "DesktopSpeaker:PinHeader_1x04_P2.54mm_Vertical"
+      (place J6 838650 -623950 front 0)
+      (place J4 1426800 -230925 front 0)
+    )
+    (component "DesktopSpeaker:TestPoint_Keystone_5010-5014_Multipurpose"
+      (place TP24 1174950 -1156063 front 90)
+      (place TP25 941150 -612063 front 90)
+      (place TP23 1136587 -1011375 front 0)
+    )
+    (component "DesktopSpeaker:Molex_Micro-Fit_3.0_43650-0300_1x03_P3.00mm_Horizontal"
+      (place J5 2089850 -1313050 front 270)
+    )
+    (component DesktopSpeaker:PCM2902CDBR
+      (place U2 2036850 -652150 front 0)
+    )
+    (component "DesktopSpeaker:MountingHole_3.2mm_M3_PTH_GND"
+      (place H7 1573500 -1304000 front 0)
+      (place H5 1874500 -869000 front 0)
+      (place HA2 1812950 -1216050 front 0)
+      (place H2 1509500 -1061000 front 0)
+      (place H6 1874500 -791000 front 0)
+      (place HA1 1174950 -1216050 front 0)
+      (place H3 1235500 -351000 front 0)
+      (place H9 1884500 -551000 front 0)
+      (place H1 854500 -1037000 front 0)
+      (place H4 1503500 -761000 front 0)
+    )
+    (component "DesktopSpeaker:RotaryEncoder_Alps_EC11E-Switch_Vertical_H20mm_MountingHoles"
+      (place SW102 1619600 -791350 front 0)
+    )
+    (component "DesktopSpeaker:TYPE-C-31-M-12"
+      (place J1 1330800 -238850 front 180)
+    )
+    (component DesktopSpeaker:TPS7A0230PDBVR
+      (place U12 1490450 -690350 front 0)
+      (place U22 1598975 -690350 front 0)
+    )
+    (component DesktopSpeaker:TS5A3167DBVR
+      (place U16 1360100 -516275 front 0)
+      (place U17 1210100 -596275 front 0)
+      (place U13 1285100 -516275 front 0)
+    )
+    (component DesktopSpeaker:TPS25730D
+      (place U11 1101600 -936375 front 0)
+    )
+    (component DesktopSpeaker:PCM1862DBTR
+      (place U24 2008075 -358850 front 0)
+    )
+    (component "DesktopSpeaker:PinHeader_1x05_P2.54mm_Vertical"
+      (place J8 981025 -508650 front 90)
+    )
+    (component "DesktopSpeaker:Crystal_SMD_3225-4Pin_3.2x2.5mm"
+      (place Y200 1894450 -303850 front 90)
+      (place Y170 1990150 -562550 front 0)
+    )
+    (component DesktopSpeaker:TPS2116DRLR
+      (place U20 1210100 -516275 front 0)
+    )
+    (component "DesktopSpeaker:Bourns_SRN6045TA-2R2Y"
+      (place L1 1361450 -889750 front 0)
+    )
+    (component "DesktopSpeaker:CP_Elec_8x10"
+      (place C275 1887850 -1046950 front 0)
+    )
+    (component "DesktopSpeaker:JST_B2P_VH_1x02_P3.96mm_Vertical"
+      (place J11 1902150 -1420550 front 0)
+      (place J10 1310150 -1420550 front 0)
+      (place J9 1000150 -1420550 front 0)
+    )
+    (component "DesktopSpeaker:Coilcraft_XFL4015-471MEC"
+      (place L2 946750 -923750 front 0)
+      (place L3 2093550 -870850 front 90)
+    )
+    (component "DesktopSpeaker:TE_1977066-1_Tact_RA_SMD"
+      (place SW100 1227700 -252450 front 0)
+    )
+    (component "DesktopSpeaker:SHOUHAN_KCD1-201-R_Rocker_D20_Panel"
+      (place SW101 2152000 -1165050 front 90)
+    )
+    (component "DesktopSpeaker:L_Sunlord_MWSA1265S"
+      (place L206 1932950 -1216050 front 0)
+      (place L203 1453950 -1216050 front 0)
+      (place L204 1294950 -1216050 front 0)
+      (place L205 1692950 -1216050 front 180)
+      (place L202 1054950 -1216050 front 180)
+      (place L201 895950 -1216050 front 180)
+    )
+    (component DesktopSpeaker:TPS63802DLAR
+      (place U15 2086050 -925850 front 0)
+      (place U14 894250 -923750 front 0)
+    )
+    (component DesktopSpeaker:MAX17048G+T10
+      (place U5 1285100 -661275 front 0)
+    )
+    (component DesktopSpeaker:TPS61088RHLR
+      (place U25 1752850 -1046950 front 270)
+    )
+    (component DesktopSpeaker:TVS2200DRVR
+      (place D6 1334800 -328550 front 90)
+    )
+    (component "DesktopSpeaker:CSD17579Q3A_DNH0008A"
+      (place Q103 1307250 -785350 front 0)
+    )
+    (component DesktopSpeaker:2N7002
+      (place Q102 1372875 -740850 front 270)
+    )
+    (component "DesktopSpeaker:BM83SM1-00TA"
+      (place U1 951550 -338650 front 90)
+    )
+    (component "DesktopSpeaker:TPS7B8450QWDRBRQ1_WSON-8"
+      (place U19 1330800 -375025 front 0)
+    )
+    (component "DesktopSpeaker:PD_D_SOD123"
+      (place D7 1190850 -969375 front 270)
+    )
+    (component DesktopSpeaker:TPD2E2U06DRLR
+      (place D1 1293300 -293400 front 0)
+    )
+  )
+  (was_is
+  )
+  (routes 
+    (resolution um 10)
+    (parser
+      (host_cad "KiCad's Pcbnew")
+      (host_version "10.0.6-rc2")
+    )
+    (library_out 
+      (padstack "Via[0-3]_600:300_um"
+        (shape
+          (circle F.Cu 6000 0 0)
+        )
+        (shape
+          (circle In1.Cu 6000 0 0)
+        )
+        (shape
+          (circle In2.Cu 6000 0 0)
+        )
+        (shape
+          (circle B.Cu 6000 0 0)
+        )
+        (attach off)
+      )
+      (padstack "Via[0-3]_800:400_um"
+        (shape
+          (circle F.Cu 8000 0 0)
+        )
+        (shape
+          (circle In1.Cu 8000 0 0)
+        )
+        (shape
+          (circle In2.Cu 8000 0 0)
+        )
+        (shape
+          (circle B.Cu 8000 0 0)
+        )
+        (attach off)
+      )
+    )
+    (network_out 
+      (net "/3V8_BT"
+        (wire
+          (path In2.Cu 2000
+            1066720 -399349
+            1044520 -421544
+          )
+          (type protect)
+        )
+      )
+      (net "/USB_VBUS"
+        (wire
+          (path In2.Cu 2000
+            1077180 -921778
+            1077180 -901012
+          )
+          (type protect)
+        )
+        (wire
+          (path In2.Cu 2000
+            1086400 -952896
+            1086400 -934145
+          )
+          (type protect)
+        )
+        (wire
+          (path In2.Cu 2000
+            1086100 -930700
+            1077180 -921778
+          )
+          (type protect)
+        )
+        (wire
+          (path In2.Cu 2000
+            1101890 -968385
+            1086400 -952896
+          )
+          (type protect)
+        )
+        (wire
+          (path In2.Cu 2000
+            1086400 -934145
+            1086100 -933846
+          )
+          (type protect)
+        )
+        (wire
+          (path In2.Cu 2000
+            1086100 -933846
+            1086100 -930700
+          )
+          (type protect)
+        )
+      )
+      (net "/SYS_RAW"
+        (wire
+          (path In2.Cu 2000
+            1724090 -1032700
+            1724090 -1008520
+          )
+          (type protect)
+        )
+        (wire
+          (path In2.Cu 2000
+            1724090 -1008520
+            1742530 -990083
+          )
+          (type protect)
+        )
+      )
+      (net "/3V_AO"
+        (wire
+          (path In2.Cu 2000
+            973856 -677516
+            881825 -585485
+            881825 -248589
+          )
+          (type protect)
+        )
+      )
+      (net "/HP_EN"
+        (wire
+          (path F.Cu 1500
+            1677428 -529008
+            1654450 -529008
+          )
+        )
+        (wire
+          (path F.Cu 2000
+            1677525 -528800
+            1677428 -528897
+            1677428 -529008
+          )
+        )
+        (wire
+          (path F.Cu 1500
+            1654450 -535775
+            1654450 -529008
+          )
+        )
+      )
+      (net "/HP_G0"
+        (wire
+          (path F.Cu 2000
+            1483133 -671908
+            1484002 -672777
+            1536498 -672777
+            1630475 -578800
+          )
+        )
+        (wire
+          (path F.Cu 1500
+            1383575 -674842
+            1480199 -674842
+            1483133 -671908
+          )
+        )
+        (wire
+          (path F.Cu 2000
+            1103863 -687380
+            1371037 -687380
+            1383575 -674842
+          )
+        )
+        (wire
+          (path F.Cu 1500
+            1099859 -688553
+            1102690 -688553
+            1103863 -687380
+          )
+        )
+        (wire
+          (path F.Cu 2000
+            1086705 -691088
+            1089240 -688553
+            1099859 -688553
+          )
+        )
+        (via "Via[0-3]_600:300_um" 1086705 -691088
+        )
+        (wire
+          (path B.Cu 2000
+            994113 -717740
+            1060053 -717740
+            1086705 -691088
+          )
+        )
+        (via "Via[0-3]_600:300_um" 994113 -717740
+        )
+        (wire
+          (path F.Cu 1500
+            990025 -724531
+            994113 -720443
+            994113 -717740
+          )
+        )
+        (wire
+          (path F.Cu 2000
+            988622 -724531
+            990025 -724531
+          )
+        )
+        (wire
+          (path F.Cu 1500
+            968367 -744786
+            988622 -724531
+          )
+        )
+        (wire
+          (path F.Cu 2000
+            959400 -744550
+            968131 -744550
+            968367 -744786
+          )
+        )
+        (wire
+          (path F.Cu 2000
+            1644450 -565775
+            1644450 -572792
+          )
+        )
+        (wire
+          (path F.Cu 2000
+            1630475 -578800
+            1638442 -578800
+            1644450 -572792
+          )
+        )
+      )
+      (net "/AMP_BOOST_EN"
+        (wire
+          (path F.Cu 1500
+            1062145 -753045
+            1053112 -744012
+            1028210 -744012
+          )
+        )
+        (wire
+          (path F.Cu 2000
+            1720807 -992663
+            1709799 -992663
+            1577584 -860448
+            1169548 -860448
+            1062145 -753045
+          )
+        )
+        (wire
+          (path F.Cu 2000
+            1720807 -992663
+            1720807 -1014679
+            1735578 -1029450
+          )
+        )
+        (wire
+          (path F.Cu 1500
+            1015208 -751480
+            1013650 -753038
+            1013650 -763800
+          )
+        )
+        (wire
+          (path F.Cu 2000
+            1028210 -744012
+            1022676 -744012
+            1015208 -751480
+          )
+        )
+        (wire
+          (path F.Cu 1500
+            1724325 -991608
+            1723270 -992663
+            1720807 -992663
+          )
+        )
+        (wire
+          (path F.Cu 1200
+            1726360 -991285
+            1724648 -991285
+            1724325 -991608
+          )
+        )
+        (wire
+          (path F.Cu 2000
+            1733575 -985400
+            1732245 -985400
+            1726360 -991285
+          )
+        )
+      )
+      (net "/HP_DET"
+        (wire
+          (path F.Cu 2000
+            1493325 -356500
+            1475151 -374674
+            1352976 -374674
+          )
+        )
+        (wire
+          (path In2.Cu 2000
+            1352976 -374674
+            1091185 -636465
+            1091185 -661282
+            1032194 -720273
+            1032194 -750801
+          )
+        )
+        (wire
+          (path F.Cu 2000
+            1032194 -750801
+            1033650 -752257
+            1033650 -763800
+          )
+        )
+        (via "Via[0-3]_600:300_um" 1032194 -750801
+        )
+        (via "Via[0-3]_600:300_um" 1352976 -374674
+        )
+      )
+      (net "/AUX_DET"
+        (wire
+          (path F.Cu 2000
+            1041306 -750783
+            1038650 -753439
+            1038650 -763800
+          )
+        )
+        (wire
+          (path In2.Cu 2000
+            1322417 -413741
+            1120005 -616153
+            1120005 -672084
+            1041306 -750783
+          )
+        )
+        (via "Via[0-3]_600:300_um" 1041306 -750783
+        )
+        (via "Via[0-3]_600:300_um" 1322417 -413741
+        )
+        (wire
+          (path F.Cu 2000
+            1633225 -356500
+            1633225 -357284
+            1576768 -413741
+            1322417 -413741
+          )
+        )
+      )
+      (net "/CTRL_SCL"
+        (wire
+          (path F.Cu 2000
+            1021214 -615300
+            1048650 -615300
+          )
+        )
+        (wire
+          (path In2.Cu 2000
+            997439 -663292
+            997439 -639075
+            1021214 -615300
+          )
+        )
+        (via "Via[0-3]_600:300_um" 1021214 -615300
+        )
+        (via "Via[0-3]_600:300_um" 997439 -663292
+        )
+        (wire
+          (path F.Cu 2000
+            998650 -650300
+            998650 -662081
+            997439 -663292
+          )
+        )
+        (wire
+          (path In2.Cu 2000
+            1201631 -558727
+            1361405 -718501
+            1361405 -996179
+          )
+        )
+        (via "Via[0-3]_600:300_um" 1361405 -996179
+        )
+        (wire
+          (path F.Cu 2000
+            1367450 -1008624
+            1361405 -1002579
+            1361405 -996179
+          )
+        )
+        (wire
+          (path F.Cu 1500
+            1367450 -1013750
+            1367450 -1008624
+          )
+        )
+        (wire
+          (path F.Cu 2000
+            1201631 -558727
+            1105223 -558727
+            1048650 -615300
+          )
+        )
+        (via "Via[0-3]_600:300_um" 1201631 -558727
+        )
+        (wire
+          (path F.Cu 2000
+            1347100 -516275
+            1330600 -516275
+            1327100 -519775
+          )
+        )
+      )
+      (net "/CTRL_SDA"
+        (wire
+          (path F.Cu 1500
+            1098160 -520152
+            1064916 -553396
+            1037110 -553396
+          )
+        )
+        (wire
+          (path F.Cu 1500
+            1037110 -559398
+            1028639 -559398
+          )
+        )
+        (wire
+          (path F.Cu 2000
+            1037110 -553396
+            1037110 -559398
+          )
+        )
+        (wire
+          (path F.Cu 2000
+            1280761 -510026
+            1280761 -498436
+            1273100 -490775
+          )
+        )
+        (wire
+          (path F.Cu 2000
+            1272100 -516275
+            1274512 -516275
+            1280761 -510026
+          )
+        )
+        (wire
+          (path F.Cu 2000
+            1280761 -510026
+            1285520 -514785
+            1306608 -514785
+          )
+        )
+        (wire
+          (path F.Cu 1500
+            1371450 -997754
+            1371450 -1013750
+          )
+        )
+        (wire
+          (path F.Cu 2000
+            1371760 -994752
+            1371760 -997444
+            1371450 -997754
+          )
+        )
+        (via "Via[0-3]_600:300_um" 1371760 -994752
+        )
+        (wire
+          (path In2.Cu 2000
+            1346717 -538992
+            1371760 -564035
+            1371760 -994752
+          )
+        )
+        (via "Via[0-3]_600:300_um" 1346717 -538992
+        )
+        (wire
+          (path F.Cu 2000
+            1308994 -526375
+            1334100 -526375
+            1346717 -538992
+          )
+        )
+        (wire
+          (path F.Cu 1500
+            1306608 -514785
+            1306608 -523989
+            1308994 -526375
+          )
+        )
+        (wire
+          (path F.Cu 2000
+            1028639 -559398
+            993650 -594387
+            993650 -600300
+          )
+        )
+        (wire
+          (path F.Cu 2000
+            1187531 -527626
+            1105634 -527626
+            1098160 -520152
+          )
+        )
+        (wire
+          (path F.Cu 1500
+            1192499 -529763
+            1189668 -529763
+            1187531 -527626
+          )
+        )
+        (wire
+          (path F.Cu 2000
+            1200712 -530592
+            1199883 -529763
+            1192499 -529763
+          )
+        )
+        (wire
+          (path F.Cu 1500
+            1238195 -528279
+            1203025 -528279
+            1200712 -530592
+          )
+        )
+        (wire
+          (path F.Cu 2000
+            1272100 -516275
+            1250199 -516275
+            1238195 -528279
+          )
+        )
+      )
+      (net "/MCU/ENC_SW"
+        (wire
+          (path F.Cu 2000
+            978650 -650300
+            972697 -656253
+            971418 -656253
+          )
+        )
+        (wire
+          (path B.Cu 2000
+            1675598 -778348
+            1534324 -637074
+            1034968 -637074
+            1015789 -656253
+            971418 -656253
+          )
+        )
+        (via "Via[0-3]_600:300_um" 971418 -656253
+        )
+        (wire
+          (path B.Cu 1500
+            1751598 -800348
+            1697598 -800348
+            1675598 -778348
+          )
+        )
+        (wire
+          (path B.Cu 2000
+            1764600 -841350
+            1751598 -828348
+            1751598 -800348
+          )
+        )
+        (wire
+          (path F.Cu 2000
+            1764600 -841350
+            1798925 -841350
+            1799600 -842025
+          )
+        )
+      )
+    )
+  )
+)

@@ -1,0 +1,31 @@
+2026-10-07 01:54:52.504 INFO   Freerouting v2.5.0 (build-date: 2026-10-05)
+2026-10-07 01:54:52.774 INFO   Hardware: 24 CPU cores, 584 CPU score, 16056 MB RAM
+2026-10-07 01:54:52.775 WARN   Deprecated settings path '-mp / --router.max_passes'; use '--router.autorouter.max_passes' instead. The old path will be removed in a future release.
+2026-10-07 01:54:52.775 WARN   Couldn't get screen resolution. If you are running in a headless environment, disable the GUI by setting gui.enabled to false.
+2026-10-07 01:54:53.803 WARN   Deprecated settings path 'router.max_passes'; use 'router.autorouter.max_passes' instead. The old path will be removed in a future release.
+2026-10-07 01:54:54.063 INFO   [17C344\EDCA1C] Loading board file 'T4.dsn'...
+2026-10-07 01:54:54.312 INFO   [17C344\EDCA1C] Job '17C344\EDCA1C' started at 2026-10-06T14:54:54.312342375Z.
+2026-10-07 01:54:54.463 WARN   Design Warning: Board has 10 pre-existing clearance violation(s) in the loaded design (before routing):
+  - 10 unfixable violation(s) (cannot be resolved by Freerouting):
+      * 10 pin-to-pin clearance violations (first 5 shown):
+          - Q103.9 <-> Q103.8
+          - Q103.9 <-> Q103.7
+          - Q103.9 <-> Q103.6
+          - Q103.9 <-> Q103.5
+          - U25.21 <-> U25.20
+          ... and 5 more
+  - 0 potentially fixable violations
+Notice: Freerouting does not modify component placement, board outlines, or fixed items.
+Resolving these 10 unfixable violation(s) is the responsibility of the board author in their EDA tool (e.g. KiCad).
+2026-10-07 01:54:54.530 INFO   [17C344\EDCA1C] Pipeline thread limits: autorouter pass is single-threaded, optimizer.max_threads=23.
+2026-10-07 01:54:54.609 INFO   [17C344\EDCA1C] Fanout stage started on board '14468919e29098e5094da61afaf855d8' with 6 of 1066 SMD pins needing fanout (0 already connected, 1060 netless).
+2026-10-07 01:54:55.021 INFO   [17C344\EDCA1C] Fanout pass #1 on board 'ebd19df6199fbda5145f38257c0be31d' completed in 0.38 seconds with 1 SMD pin fanouted, 5 not routed, 0 insert errors, +0 extra vias (0 SMD pins still to check in pass, ripup costs=100).
+2026-10-07 01:54:55.095 INFO   [17C344\EDCA1C] Fanout pass #2 on board 'ebd19df6199fbda5145f38257c0be31d' completed in 0.05 seconds with 0 SMD pins fanouted, 0 not routed, 0 insert errors, +0 extra vias (0 SMD pins still to check in pass, ripup costs=200).
+2026-10-07 01:54:55.097 INFO   [17C344\EDCA1C] Fanout stage completed: started with 6 total SMD pins, completed in 0.48 seconds, escaped pins: 2/6 (33.3%), using 0.46 total CPU seconds, 0.22 GB total allocated, and 189.1 MB peak heap usage.
+2026-10-07 01:54:55.160 INFO   [17C344\EDCA1C] Auto-routing stage started on board 'ebd19df6199fbda5145f38257c0be31d' with baseline score 222.10 for 2 unrouted items.
+2026-10-07 01:54:58.746 INFO   [17C344\EDCA1C] Auto-routing pass #1 on board 'ebd19df6199fbda5145f38257c0be31d' was completed in 3.54 seconds with score 555.43 (1 unrouted and 10 violations), using 3.72 CPU seconds and the job allocated 3.79 GB of memory so far.
+2026-10-07 01:54:58.805 INFO   [17C344\EDCA1C] Auto-routing stage completed: started with 3 unrouted nets, completed in 4.26 seconds, final score: 555.43 (1 unrouted and 10 violations), using 3.72 total CPU seconds, 3.79 GB total allocated, and 309.1 MB peak heap usage.
+2026-10-07 01:54:58.832 INFO   [17C344\EDCA1C] Skipping optimization stage: the board has 1 unrouted connection(s) (optimizer only runs on completely routed boards).
+2026-10-07 01:54:58.854 INFO   [17C344\EDCA1C] Job '17C344\EDCA1C' finished with state: COMPLETED (elapsed: 4.54 seconds, finished at UTC: 2026-10-06T14:54:58.853426768Z).
+2026-10-07 01:54:58.877 INFO   Saving output file '/home/chithi/Desktop/DesktopSpeaker/ai-files/pcb/work-p1/T4.ses' (SES)...
+2026-10-07 01:54:58.879 INFO   Successfully saved output file '/home/chithi/Desktop/DesktopSpeaker/ai-files/pcb/work-p1/T4.ses' (20674 bytes).

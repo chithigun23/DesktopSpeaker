@@ -1,0 +1,44 @@
+2026-10-07 12:37:10.156 INFO   Freerouting v2.5.0 (build-date: 2026-10-05)
+2026-10-07 12:37:10.417 INFO   Hardware: 24 CPU cores, 607 CPU score, 16056 MB RAM
+2026-10-07 12:37:10.418 WARN   Deprecated settings path '-mp / --router.max_passes'; use '--router.autorouter.max_passes' instead. The old path will be removed in a future release.
+2026-10-07 12:37:10.418 WARN   Couldn't get screen resolution. If you are running in a headless environment, disable the GUI by setting gui.enabled to false.
+2026-10-07 12:37:11.440 WARN   Deprecated settings path 'router.max_passes'; use 'router.autorouter.max_passes' instead. The old path will be removed in a future release.
+2026-10-07 12:37:11.699 INFO   [255651\293B26] Loading board file 'B3-c1.dsn'...
+2026-10-07 12:37:11.896 WARN   DSN file 'B3-c1.dsn' was loaded with 1 warning(s).
+2026-10-07 12:37:11.972 INFO   [255651\293B26] Job '255651\293B26' started at 2026-10-07T01:37:11.972126085Z.
+2026-10-07 12:37:12.104 WARN   Design Warning: Board has 44 pre-existing clearance violation(s) in the loaded design (before routing):
+  - 44 unfixable violation(s) (cannot be resolved by Freerouting):
+      * 34 pin-to-pin clearance violations (first 5 shown):
+          - Q103.9 <-> Q103.8
+          - Q103.9 <-> Q103.7
+          - Q103.9 <-> Q103.6
+          - Q103.9 <-> Q103.5
+          - U25.21 <-> U25.20
+          ... and 29 more
+      * 10 fixed trace/via clearance violations (first 5 shown):
+          - FixedTrace#3334 [net Net-(U24-XI)] <-> C206.1 [net Net-(U24-VINL1)]
+          - FixedTrace#3326 [net Net-(U24-XI)] <-> C206.1 [net Net-(U24-VINL1)]
+          - FixedTrace#3323 [net Net-(U24-XI)] <-> C227.1 [net Net-(U24-XO)]
+          - FixedTrace#3315 [net Net-(U24-XI)] <-> C227.2
+          - FixedTrace#3311 [net Net-(U24-XI)] <-> C227.1 [net Net-(U24-XO)]
+          ... and 5 more
+  - 0 potentially fixable violations
+Notice: Freerouting does not modify component placement, board outlines, or fixed items.
+Resolving these 44 unfixable violation(s) is the responsibility of the board author in their EDA tool (e.g. KiCad).
+2026-10-07 12:37:12.142 INFO   [255651\293B26] Pipeline thread limits: autorouter pass is single-threaded, optimizer.max_threads=23.
+2026-10-07 12:37:12.238 INFO   [255651\293B26] Fanout stage started on board 'ab6f54319af12dd00b5e38ed7d4dfdf8' with 164 of 1066 SMD pins needing fanout (27 already connected, 875 netless).
+2026-10-07 12:37:13.361 INFO   [255651\293B26] Fanout pass #1 on board '276297c41f8554b1e013030b8af61954' completed in 1.05 seconds with 72 SMD pins fanouted, 55 not routed, 0 insert errors, +0 extra vias (0 SMD pins still to check in pass, ripup costs=100).
+2026-10-07 12:37:13.707 INFO   [255651\293B26] Fanout pass #2 on board 'a7e8d3a54b9560df49dffdac855753bf' completed in 0.31 seconds with 35 SMD pins fanouted, 14 not routed, 0 insert errors, +0 extra vias (0 SMD pins still to check in pass, ripup costs=200).
+2026-10-07 12:37:13.980 INFO   [255651\293B26] Fanout pass #3 on board 'acddccba76f7a3ba4b9f5854b86e2526' completed in 0.24 seconds with 33 SMD pins fanouted, 10 not routed, 0 insert errors, +0 extra vias (0 SMD pins still to check in pass, ripup costs=300).
+2026-10-07 12:37:14.250 INFO   [255651\293B26] Fanout pass #4 on board '4daea9f7d628cd473d1f7d6adfc161ae' completed in 0.24 seconds with 33 SMD pins fanouted, 9 not routed, 0 insert errors, +0 extra vias (0 SMD pins still to check in pass, ripup costs=400).
+2026-10-07 12:37:14.519 INFO   [255651\293B26] Fanout pass #5 on board '52fb91cc2f75a1420a36c6782971cf3a' completed in 0.23 seconds with 33 SMD pins fanouted, 9 not routed, 0 insert errors, +0 extra vias (0 SMD pins still to check in pass, ripup costs=500).
+2026-10-07 12:37:14.785 INFO   [255651\293B26] Fanout pass #6 on board '907e34dc3ed6aeed5ab237522c06bae3' completed in 0.23 seconds with 33 SMD pins fanouted, 9 not routed, 0 insert errors, +0 extra vias (0 SMD pins still to check in pass, ripup costs=600).
+2026-10-07 12:37:14.786 INFO   Fanout stopped after 6 passes: no progress for 3 consecutive passes.
+2026-10-07 12:37:14.799 INFO   [255651\293B26] Fanout stage completed: started with 191 total SMD pins, completed in 2.53 seconds, escaped pins: 138/191 (72.3%), using 2.54 total CPU seconds, 2.20 GB total allocated, and 196.7 MB peak heap usage.
+2026-10-07 12:37:14.917 INFO   [255651\293B26] Auto-routing stage started on board '907e34dc3ed6aeed5ab237522c06bae3' with baseline score 412.54 for 59 unrouted items.
+2026-10-07 12:37:26.438 INFO   [255651\293B26] Auto-routing pass #1 on board '907e34dc3ed6aeed5ab237522c06bae3' was completed in 11.46 seconds with score 561.80 (44 unrouted and 44 violations), using 13.76 CPU seconds and the job allocated 16.17 GB of memory so far.
+2026-10-07 12:37:26.567 INFO   [255651\293B26] Auto-routing stage completed: started with 96 unrouted nets, completed in 14.39 seconds, final score: 561.80 (44 unrouted and 44 violations), using 13.76 total CPU seconds, 16.17 GB total allocated, and 201.6 MB peak heap usage.
+2026-10-07 12:37:26.611 INFO   [255651\293B26] Skipping optimization stage: the board has 44 unrouted connection(s) (optimizer only runs on completely routed boards).
+2026-10-07 12:37:26.642 INFO   [255651\293B26] Job '255651\293B26' finished with state: COMPLETED (elapsed: 14.67 seconds, finished at UTC: 2026-10-07T01:37:26.642099741Z).
+2026-10-07 12:37:26.653 INFO   Saving output file '/home/chithi/Desktop/DesktopSpeaker/ai-files/pcb/work-p1/B3-c1.ses' (SES)...
+2026-10-07 12:37:26.654 INFO   Successfully saved output file '/home/chithi/Desktop/DesktopSpeaker/ai-files/pcb/work-p1/B3-c1.ses' (94197 bytes).

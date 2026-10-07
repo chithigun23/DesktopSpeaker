@@ -1,0 +1,2 @@
+{"tag":"A1","start":"nowire.kicad_pcb","classes":["SIGNAL","I2C","PWR_LOCAL","PWR_3V","PWR_5V","BOOT"],"rounds":5,"mp":1,
+ "dsn_cfg":{"nets_include":["SIGNAL","I2C","PWR_LOCAL","PWR_3V","PWR_5V","BOOT"],"drop_planes":["B.Cu"],"in1_power":true,"protect":true}}

@@ -1,0 +1,4 @@
+start: nets to route 1 items 161
+chunk 1 nets 1 failed 0 span<=251 504s G1-c1-imp.kicad_pcb
+after round 0 open nets 1 items 75
+DONE G1 open nets 1 ['GND']

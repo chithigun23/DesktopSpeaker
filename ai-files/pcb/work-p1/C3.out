@@ -1,0 +1,20 @@
+start: nets to route 53 items 166
+chunk 1 nets 8 failed 2 span<=4 15s C3-c1-pruned.kicad_pcb
+chunk 2 nets 8 failed 2 span<=36 13s C3-c2-pruned.kicad_pcb
+chunk 3 nets 8 failed 2 span<=62 13s C3-c3-pruned.kicad_pcb
+chunk 4 nets 8 failed 4 span<=85 17s C3-c4-pruned.kicad_pcb
+chunk 5 nets 8 failed 3 span<=101 16s C3-c5-pruned.kicad_pcb
+chunk 6 nets 8 failed 4 span<=144 19s C3-c6-pruned.kicad_pcb
+chunk 7 nets 5 failed 5 span<=204 15s C3-c7-pruned.kicad_pcb
+after round 0 open nets 31 items 136
+chunk 8 nets 8 failed 3 span<=25 15s C3-c8-pruned.kicad_pcb
+chunk 9 nets 8 failed 3 span<=75 16s C3-c9-pruned.kicad_pcb
+chunk 10 nets 8 failed 8 span<=118 30s C3-c10-pruned.kicad_pcb
+chunk 11 nets 7 failed 7 span<=204 20s C3-c11-pruned.kicad_pcb
+after round 1 open nets 28 items 128
+chunk 12 nets 8 failed 6 span<=30 22s C3-c12-pruned.kicad_pcb
+chunk 13 nets 8 failed 8 span<=91 32s C3-c13-pruned.kicad_pcb
+chunk 14 nets 8 failed 8 span<=144 29s C3-c14-pruned.kicad_pcb
+chunk 15 nets 4 failed 3 span<=204 13s C3-c15-pruned.kicad_pcb
+after round 2 open nets 29 items 123
+DONE C3 open nets 29 ['/Battery_Charger/BTST2', 'Net-(U6-BST_A+)', 'Net-(U6-GVDD)', 'Net-(U6-VR_DIG)', 'Net-(U10-CPP)', 'Net-(R18-Pad1)', '/Battery_Charger/PROG', 'Net-(U6-~{PDN})', 'Net-(U4-BATP)', '/MCU/NRST', '/Battery_Charger/CE_N', '/MCU/SWCLK', '/MCU/SWDIO', '/CHG_INT', '/HP_G1', '/CTRL_SCL', '/CTRL_SDA', '/USB_CC1', '/HP_EN', 'Net-(U4-QON)', '/PDCTRL_SDA', '/USB_PD/LDO_3V3', '/3V_AO', '/AMP_FAULT_N', '/AMP_PDN', '/ADC_INT', '/3V8_BT', '/3V3_AUDIO', '/AUD_SDA']

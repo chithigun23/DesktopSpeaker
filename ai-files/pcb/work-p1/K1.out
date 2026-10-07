@@ -1,0 +1,10 @@
+start: nets to route 25 items 51
+chunk 1 nets 10 failed 0 span<=6 6s K1-c1-imp.kicad_pcb
+chunk 2 nets 10 failed 0 span<=45 7s K1-c2-imp.kicad_pcb
+chunk 3 nets 5 failed 4 span<=191 10s K1-c3-pruned.kicad_pcb
+after round 0 open nets 6 items 19
+chunk 4 nets 6 failed 5 span<=191 11s K1-c4-pruned.kicad_pcb
+after round 1 open nets 5 items 17
+chunk 5 nets 5 failed 5 span<=191 11s K1-c5-pruned.kicad_pcb
+after round 2 open nets 5 items 17
+DONE K1 open nets 5 ['Net-(C234-Pad2)', 'Net-(C204-Pad2)', '/Headphone_Aux/VMID_HP', '/I2S_BCK', '/I2S_SDATA']

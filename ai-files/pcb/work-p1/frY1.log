@@ -1,0 +1,32 @@
+2026-10-07 02:09:37.281 INFO   Freerouting v2.5.0 (build-date: 2026-10-05)
+2026-10-07 02:09:37.550 INFO   Hardware: 24 CPU cores, 575 CPU score, 16056 MB RAM
+2026-10-07 02:09:37.551 WARN   Deprecated settings path '-mp / --router.max_passes'; use '--router.autorouter.max_passes' instead. The old path will be removed in a future release.
+2026-10-07 02:09:37.551 WARN   Couldn't get screen resolution. If you are running in a headless environment, disable the GUI by setting gui.enabled to false.
+2026-10-07 02:09:38.577 WARN   Deprecated settings path 'router.max_passes'; use 'router.autorouter.max_passes' instead. The old path will be removed in a future release.
+2026-10-07 02:09:38.837 INFO   [C748D4\80CED2] Loading board file 'Y1.dsn'...
+2026-10-07 02:09:39.071 INFO   [C748D4\80CED2] Job 'C748D4\80CED2' started at 2026-10-06T15:09:39.070889234Z.
+2026-10-07 02:09:39.221 WARN   Design Warning: Board has 103 pre-existing clearance violation(s) in the loaded design (before routing):
+  - 103 unfixable violation(s) (cannot be resolved by Freerouting):
+      * 103 pin-to-pin clearance violations (first 5 shown):
+          - U1.9 <-> U1.8 [net Net-(U1-AOHPL)]
+          - U1.8 [net Net-(U1-AOHPL)] <-> U1.7
+          - U1.7 <-> U1.6 [net Net-(U1-AOHPR)]
+          - U1.6 [net Net-(U1-AOHPR)] <-> U1.5
+          - Q103.9 <-> Q103.8
+          ... and 98 more
+  - 0 potentially fixable violations
+Notice: Freerouting does not modify component placement, board outlines, or fixed items.
+Resolving these 103 unfixable violation(s) is the responsibility of the board author in their EDA tool (e.g. KiCad).
+2026-10-07 02:09:39.273 INFO   [C748D4\80CED2] Pipeline thread limits: autorouter pass is single-threaded, optimizer.max_threads=23.
+2026-10-07 02:09:39.366 INFO   [C748D4\80CED2] Fanout stage started on board 'e7d46ce74a1a8f27ef1a56885e356143' with 126 of 1066 SMD pins needing fanout (0 already connected, 940 netless).
+2026-10-07 02:09:40.428 INFO   [C748D4\80CED2] Fanout pass #1 on board 'd44246b9a60b440c0ece3899e6a063aa' completed in 1.00 seconds with 39 SMD pins fanouted, 82 not routed, 0 insert errors, +0 extra vias (0 SMD pins still to check in pass, ripup costs=100).
+2026-10-07 02:09:40.743 INFO   [C748D4\80CED2] Fanout pass #2 on board '935d20558899d499ae849d22f706d55b' completed in 0.28 seconds with 1 SMD pin fanouted, 31 not routed, 0 insert errors, +0 extra vias (0 SMD pins still to check in pass, ripup costs=200).
+2026-10-07 02:09:40.840 INFO   [C748D4\80CED2] Fanout pass #3 on board '935d20558899d499ae849d22f706d55b' completed in 0.07 seconds with 0 SMD pins fanouted, 0 not routed, 0 insert errors, +0 extra vias (0 SMD pins still to check in pass, ripup costs=300).
+2026-10-07 02:09:40.848 INFO   [C748D4\80CED2] Fanout stage completed: started with 126 total SMD pins, completed in 1.46 seconds, escaped pins: 62/126 (49.2%), using 1.47 total CPU seconds, 0.77 GB total allocated, and 341.5 MB peak heap usage.
+2026-10-07 02:09:40.939 INFO   [C748D4\80CED2] Auto-routing stage started on board '935d20558899d499ae849d22f706d55b' with baseline score 284.79 for 53 unrouted items.
+2026-10-07 02:09:50.575 INFO   [C748D4\80CED2] Auto-routing pass #1 on board '935d20558899d499ae849d22f706d55b' was completed in 9.59 seconds with score 291.95 (52 unrouted and 103 violations), using 10.75 CPU seconds and the job allocated 10.49 GB of memory so far.
+2026-10-07 02:09:50.661 INFO   [C748D4\80CED2] Auto-routing stage completed: started with 93 unrouted nets, completed in 11.36 seconds, final score: 291.95 (52 unrouted and 103 violations), using 10.75 total CPU seconds, 10.49 GB total allocated, and 407.5 MB peak heap usage.
+2026-10-07 02:09:50.693 INFO   [C748D4\80CED2] Skipping optimization stage: the board has 52 unrouted connection(s) (optimizer only runs on completely routed boards).
+2026-10-07 02:09:50.720 INFO   [C748D4\80CED2] Job 'C748D4\80CED2' finished with state: COMPLETED (elapsed: 11.65 seconds, finished at UTC: 2026-10-06T15:09:50.719786886Z).
+2026-10-07 02:09:50.746 INFO   Saving output file '/home/chithi/Desktop/DesktopSpeaker/ai-files/pcb/work-p1/Y1.ses' (SES)...
+2026-10-07 02:09:50.748 INFO   Successfully saved output file '/home/chithi/Desktop/DesktopSpeaker/ai-files/pcb/work-p1/Y1.ses' (28602 bytes).

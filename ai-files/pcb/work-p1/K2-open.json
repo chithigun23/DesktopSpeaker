@@ -1,0 +1,23 @@
+{
+"Net-(U9-NO2)": 1,
+"/Headphone_Aux/HP_R": 1,
+"Net-(U24-BCK)": 1,
+"Net-(U24-VINR3)": 2,
+"Net-(U9-NO1)": 1,
+"/Headphone_Aux/HP_L": 1,
+"Net-(U24-VINL2)": 2,
+"Net-(U10-INR-)": 1,
+"Net-(U10-INL-)": 1,
+"Net-(U8-COM2)": 1,
+"Net-(U8-COM1)": 1,
+"Net-(C232-Pad2)": 2,
+"Net-(C234-Pad2)": 2,
+"/Headphone_Aux/HP_OUTL": 2,
+"/Headphone_Aux/HP_OUTR": 2,
+"Net-(C205-Pad2)": 1,
+"/Headphone_Aux/VMID_HP": 8,
+"/USB_DP": 4,
+"/I2S_BCK": 3,
+"/I2S_SDATA": 3,
+"/I2S_LRCK": 3
+}

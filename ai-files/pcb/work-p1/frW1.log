@@ -1,0 +1,34 @@
+2026-10-07 01:56:22.885 INFO   Freerouting v2.5.0 (build-date: 2026-10-05)
+2026-10-07 01:56:23.153 INFO   Hardware: 24 CPU cores, 585 CPU score, 16056 MB RAM
+2026-10-07 01:56:23.153 WARN   Deprecated settings path '-mp / --router.max_passes'; use '--router.autorouter.max_passes' instead. The old path will be removed in a future release.
+2026-10-07 01:56:23.154 WARN   Couldn't get screen resolution. If you are running in a headless environment, disable the GUI by setting gui.enabled to false.
+2026-10-07 01:56:24.181 WARN   Deprecated settings path 'router.max_passes'; use 'router.autorouter.max_passes' instead. The old path will be removed in a future release.
+2026-10-07 01:56:24.442 INFO   [68D8F3\F75EF2] Loading board file 'W1.dsn'...
+2026-10-07 01:56:24.695 INFO   [68D8F3\F75EF2] Job '68D8F3\F75EF2' started at 2026-10-06T14:56:24.695702974Z.
+2026-10-07 01:56:24.871 WARN   Design Warning: Board has 13 pre-existing clearance violation(s) in the loaded design (before routing):
+  - 13 unfixable violation(s) (cannot be resolved by Freerouting):
+      * 13 pin-to-pin clearance violations (first 5 shown):
+          - U19.2 <-> U19.1 [net /Fuel_Gauge_Power/USB_AUX_5V]
+          - Q103.9 <-> Q103.8
+          - Q103.9 <-> Q103.7
+          - Q103.9 <-> Q103.6
+          - Q103.9 <-> Q103.5
+          ... and 8 more
+  - 0 potentially fixable violations
+Notice: Freerouting does not modify component placement, board outlines, or fixed items.
+Resolving these 13 unfixable violation(s) is the responsibility of the board author in their EDA tool (e.g. KiCad).
+2026-10-07 01:56:24.939 INFO   [68D8F3\F75EF2] Pipeline thread limits: autorouter pass is single-threaded, optimizer.max_threads=23.
+2026-10-07 01:56:25.032 INFO   [68D8F3\F75EF2] Fanout stage started on board '15855ebae126c027b0a8007d6ff09314' with 396 of 1066 SMD pins needing fanout (0 already connected, 670 netless).
+2026-10-07 01:56:28.136 INFO   [68D8F3\F75EF2] Fanout pass #1 on board '473262876abad2daa6cb9a6664c0da40' completed in 3.01 seconds with 171 SMD pins fanouted, 194 not routed, 0 insert errors, +4 extra vias (0 SMD pins still to check in pass, ripup costs=100).
+2026-10-07 01:56:29.794 INFO   [68D8F3\F75EF2] Fanout pass #2 on board '6cce2f5001d392d8c657e5c24ef1aa49' completed in 1.62 seconds with 9 SMD pins fanouted, 187 not routed, 0 insert errors, +1 extra via (0 SMD pins still to check in pass, ripup costs=200).
+2026-10-07 01:56:30.325 INFO   [68D8F3\F75EF2] Fanout pass #3 on board '0fdd44782403f4ee4f09ab37563726b1' completed in 0.49 seconds with 2 SMD pins fanouted, 55 not routed, 0 insert errors, +0 extra vias (0 SMD pins still to check in pass, ripup costs=300).
+2026-10-07 01:56:30.521 INFO   [68D8F3\F75EF2] Fanout pass #4 on board 'a6572c05490cc8ace10f3aa211f85e11' completed in 0.16 seconds with 1 SMD pin fanouted, 8 not routed, 0 insert errors, +0 extra vias (0 SMD pins still to check in pass, ripup costs=400).
+2026-10-07 01:56:30.696 INFO   [68D8F3\F75EF2] Fanout pass #5 on board 'a6572c05490cc8ace10f3aa211f85e11' completed in 0.14 seconds with 0 SMD pins fanouted, 6 not routed, 0 insert errors, +0 extra vias (0 SMD pins still to check in pass, ripup costs=500).
+2026-10-07 01:56:30.721 INFO   [68D8F3\F75EF2] Fanout stage completed: started with 396 total SMD pins, completed in 5.64 seconds, escaped pins: 257/396 (64.9%), using 5.61 total CPU seconds, 4.98 GB total allocated, and 395.2 MB peak heap usage.
+2026-10-07 01:56:30.847 INFO   [68D8F3\F75EF2] Auto-routing stage started on board 'a6572c05490cc8ace10f3aa211f85e11' with baseline score 427.09 for 125 unrouted items.
+2026-10-07 01:57:57.592 INFO   [68D8F3\F75EF2] Auto-routing pass #1 on board 'a6572c05490cc8ace10f3aa211f85e11' was completed in 86.69 seconds with score 642.44 (78 unrouted and 13 violations), using 91.11 CPU seconds and the job allocated 118.49 GB of memory so far.
+2026-10-07 01:57:57.739 INFO   [68D8F3\F75EF2] Auto-routing stage completed: started with 291 unrouted nets, completed in 92.75 seconds, final score: 642.44 (78 unrouted and 13 violations), using 92.11 total CPU seconds, 119.42 GB total allocated, and 745.2 MB peak heap usage.
+2026-10-07 01:57:57.790 INFO   [68D8F3\F75EF2] Skipping optimization stage: the board has 78 unrouted connection(s) (optimizer only runs on completely routed boards).
+2026-10-07 01:57:57.824 INFO   [68D8F3\F75EF2] Job '68D8F3\F75EF2' finished with state: COMPLETED (elapsed: 1 minute 33.13 seconds, finished at UTC: 2026-10-06T14:57:57.823912715Z).
+2026-10-07 01:57:57.868 INFO   Saving output file '/home/chithi/Desktop/DesktopSpeaker/ai-files/pcb/work-p1/W1.ses' (SES)...
+2026-10-07 01:57:57.870 INFO   Successfully saved output file '/home/chithi/Desktop/DesktopSpeaker/ai-files/pcb/work-p1/W1.ses' (93474 bytes).

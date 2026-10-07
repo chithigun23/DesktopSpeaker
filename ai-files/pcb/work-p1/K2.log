@@ -1,0 +1,14 @@
+start: nets to route 27 items 55
+chunk 1 nets 10 failed 7 span<=6 9s K2-c1-pruned.kicad_pcb
+chunk 2 nets 10 failed 7 span<=37 10s K2-c2-pruned.kicad_pcb
+chunk 3 nets 7 failed 6 span<=191 13s K2-c3-pruned.kicad_pcb
+after round 0 open nets 21 items 43
+chunk 4 nets 10 failed 10 span<=12 10s K2-c4-pruned.kicad_pcb
+chunk 5 nets 10 failed 10 span<=191 15s K2-c5-pruned.kicad_pcb
+chunk 6 nets 1 failed 1 span<=198 9s K2-c6-pruned.kicad_pcb
+after round 1 open nets 21 items 43
+chunk 7 nets 10 failed 10 span<=12 10s K2-c7-pruned.kicad_pcb
+chunk 8 nets 10 failed 10 span<=191 15s K2-c8-pruned.kicad_pcb
+chunk 9 nets 1 failed 1 span<=198 9s K2-c9-pruned.kicad_pcb
+after round 2 open nets 21 items 43
+DONE K2 open nets 21 ['Net-(U9-NO2)', '/Headphone_Aux/HP_R', 'Net-(U24-BCK)', 'Net-(U24-VINR3)', 'Net-(U9-NO1)', '/Headphone_Aux/HP_L', 'Net-(U24-VINL2)', 'Net-(U10-INR-)', 'Net-(U10-INL-)', 'Net-(U8-COM2)', 'Net-(U8-COM1)', 'Net-(C232-Pad2)', 'Net-(C234-Pad2)', '/Headphone_Aux/HP_OUTL', '/Headphone_Aux/HP_OUTR', 'Net-(C205-Pad2)', '/Headphone_Aux/VMID_HP', '/USB_DP', '/I2S_BCK', '/I2S_SDATA', '/I2S_LRCK']
