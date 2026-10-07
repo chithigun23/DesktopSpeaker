@@ -629,7 +629,27 @@
       },
       {
         "netclass": "SPK_OUT",
-        "pattern": "Net-(C30[2-7]-Pad1)"
+        "pattern": "Net-(C302-Pad1)"
+      },
+      {
+        "netclass": "SPK_OUT",
+        "pattern": "Net-(C303-Pad1)"
+      },
+      {
+        "netclass": "SPK_OUT",
+        "pattern": "Net-(C304-Pad1)"
+      },
+      {
+        "netclass": "SPK_OUT",
+        "pattern": "Net-(C305-Pad1)"
+      },
+      {
+        "netclass": "SPK_OUT",
+        "pattern": "Net-(C306-Pad1)"
+      },
+      {
+        "netclass": "SPK_OUT",
+        "pattern": "Net-(C307-Pad1)"
       },
       {
         "netclass": "SWITCH",
@@ -825,19 +845,83 @@
       },
       {
         "netclass": "AUDIO",
-        "pattern": "Net-(C20[0-5]-Pad2)"
+        "pattern": "Net-(C200-Pad2)"
       },
       {
         "netclass": "AUDIO",
-        "pattern": "Net-(C23[0-5]-Pad2)"
+        "pattern": "Net-(C201-Pad2)"
       },
       {
         "netclass": "AUDIO",
-        "pattern": "Net-(U10-IN[LR]-)"
+        "pattern": "Net-(C202-Pad2)"
       },
       {
         "netclass": "AUDIO",
-        "pattern": "Net-(U24-VIN[LR][123])"
+        "pattern": "Net-(C203-Pad2)"
+      },
+      {
+        "netclass": "AUDIO",
+        "pattern": "Net-(C204-Pad2)"
+      },
+      {
+        "netclass": "AUDIO",
+        "pattern": "Net-(C205-Pad2)"
+      },
+      {
+        "netclass": "AUDIO",
+        "pattern": "Net-(C230-Pad2)"
+      },
+      {
+        "netclass": "AUDIO",
+        "pattern": "Net-(C231-Pad2)"
+      },
+      {
+        "netclass": "AUDIO",
+        "pattern": "Net-(C232-Pad2)"
+      },
+      {
+        "netclass": "AUDIO",
+        "pattern": "Net-(C233-Pad2)"
+      },
+      {
+        "netclass": "AUDIO",
+        "pattern": "Net-(C234-Pad2)"
+      },
+      {
+        "netclass": "AUDIO",
+        "pattern": "Net-(C235-Pad2)"
+      },
+      {
+        "netclass": "AUDIO",
+        "pattern": "Net-(U10-INL-)"
+      },
+      {
+        "netclass": "AUDIO",
+        "pattern": "Net-(U10-INR-)"
+      },
+      {
+        "netclass": "AUDIO",
+        "pattern": "Net-(U24-VINL1)"
+      },
+      {
+        "netclass": "AUDIO",
+        "pattern": "Net-(U24-VINL2)"
+      },
+      {
+        "netclass": "AUDIO",
+        "pattern": "Net-(U24-VINL3)"
+      },
+      {
+        "netclass": "AUDIO",
+        "pattern": "Net-(U24-VINR1)"
+      },
+      {
+        "netclass": "AUDIO",
+        "pattern": "Net-(U24-VINR2)"
+      },
+      {
+        "netclass": "AUDIO",
+        "pattern": "Net-(U24-VINR3)"
       },
       {
         "netclass": "AUDIO",
@@ -845,7 +929,11 @@
       },
       {
         "netclass": "AUDIO",
-        "pattern": "Net-(U2-VOUT[LR])"
+        "pattern": "Net-(U2-VOUTL)"
+      },
+      {
+        "netclass": "AUDIO",
+        "pattern": "Net-(U2-VOUTR)"
       },
       {
         "netclass": "AUDIO",
@@ -853,7 +941,11 @@
       },
       {
         "netclass": "AUDIO",
-        "pattern": "Net-(U1-AOHP[LR])"
+        "pattern": "Net-(U1-AOHPL)"
+      },
+      {
+        "netclass": "AUDIO",
+        "pattern": "Net-(U1-AOHPR)"
       },
       {
         "netclass": "AUDIO",
