@@ -115,3 +115,4 @@ Verdict: the rules, widths, netclasses, keep-outs and block guidance above stand
 ## Decisions (user, 2026-10-08)
 - Stay on 0.5 oz inner copper; a 15 K rise is acceptable for the 8 A paths (IPC-2221 at 15 K needs about 25 mm of 0.5 oz inner, so carry BAT/SYS as an In2 pour in parallel with a 5 mm+ F.Cu pour and many vias).
 - In2 carries power islands only: no signal tracks or vias of other nets inside them. Signals stay on F.Cu; short B.Cu jumpers (one per net, with a GND via beside it, not under the amps/BM83/audio block) are the only exception.
+- Overspec pass (user): after routing and DRC are clean, go round every power/high-current net and widen tracks and grow pours wherever room allows (beyond the minimum trunk widths), re-running DRC after each pass; record before/after widths per net in the routing report.
