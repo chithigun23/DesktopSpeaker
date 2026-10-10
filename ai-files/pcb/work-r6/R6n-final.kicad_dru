@@ -1,0 +1,136 @@
+(version 1)
+# DesktopSpeaker R6a rules (routing plan + pcb-routing-plan-review.md sec. 1/4, KiCad 10.0.6 syntax).
+# Later rules override earlier ones for the same constraint. The neck rules come last.
+# No board-wide width or clearance exemption: pin-pitch relaxations only inside NECK_<ref> rule areas
+# (fine-pitch IC courtyard + 1.5 mm halo, drawn on the board) and the IC courtyards themselves.
+
+# 1. Audio analogue: 0.5 mm to other-net tracks/vias/zones
+(rule audio_clear
+  (condition "A.NetClass == 'AUDIO' && B.NetClass != 'AUDIO' && B.NetClass != 'GND' && A.Type != 'Pad' && B.Type != 'Pad'")
+  (constraint clearance (min 0.5mm)))
+
+# 2. High-voltage (22 V TVS rail) and battery copper
+(rule vbus_clear
+  (condition "A.NetClass == 'POWER_HI' && A.Type != 'Pad' && B.Type != 'Pad'")
+  (constraint clearance (min 0.4mm)))
+
+# 2b. PVDD and speaker outputs (12 V)
+(rule pvdd_clear
+  (condition "(A.NetClass == 'PVDD' || A.NetClass == 'SPK_OUT') && A.Type != 'Pad' && B.Type != 'Pad'")
+  (constraint clearance (min 0.3mm)))
+
+# 3a. Switch nodes: voltage clearance to power / BOOT copper (22 V)
+(rule switch_power
+  (condition "A.NetClass == 'SWITCH' && B.NetClass != 'SWITCH' && B.NetClass != 'GND' && !(A.Type == 'Pad' && B.Type == 'Pad')")
+  (constraint clearance (min 0.3mm)))
+
+# 3b. Switch nodes: noise clearance to sensitive classes, pads included (only pad-pad pairs exempt)
+(rule switch_sensitive
+  (condition "A.NetClass == 'SWITCH' && (B.NetClass == 'SIGNAL' || B.NetClass == 'Default' || B.NetClass == 'I2C' || B.NetClass == 'AUDIO' || B.NetClass == 'I2S_CLK' || B.NetClass == 'USB') && !(A.Type == 'Pad' && B.Type == 'Pad')")
+  (constraint clearance (min 1.0mm)))
+
+# 3c. Switch / bootstrap copper to the charger battery sense and the boost control network
+(rule switch_critical
+  (condition "(A.NetClass == 'SWITCH' || A.NetClass == 'BOOT') && (B.NetName == 'Net-(U4-BATP)' || B.NetName == 'Net-(U25-FB)' || B.NetName == 'Net-(U25-COMP)' || B.NetName == 'Net-(U25-ILIM)') && !(A.Type == 'Pad' && B.Type == 'Pad')")
+  (constraint clearance (min 2.0mm)))
+
+# 4. I2S / clocks 0.4 mm to other nets
+(rule clk_clear
+  (condition "A.NetClass == 'I2S_CLK' && B.NetClass != 'I2S_CLK' && B.NetClass != 'GND' && A.Type != 'Pad' && B.Type != 'Pad'")
+  (constraint clearance (min 0.4mm)))
+
+# 5. Minimum widths (DRC floors outside the neck areas; trunks follow the plan widths, checked by script)
+(rule width_power
+  (condition "A.NetClass == 'POWER_HI' || A.NetClass == 'PVDD' || A.NetClass == 'SPK_OUT'")
+  (constraint track_width (min 0.5mm)))
+(rule width_switch
+  (condition "A.NetClass == 'SWITCH' || A.NetClass == 'PWR_5V'")
+  (constraint track_width (min 0.4mm)))
+(rule width_audio
+  (condition "A.NetClass == 'AUDIO' || A.NetClass == 'I2S_CLK' || A.NetClass == 'USB'")
+  (constraint track_width (min 0.25mm)))
+
+# 6. USB 90 ohm pair (0.25 / 0.15 over L2, confirm in JLC calculator)
+(rule usb_diff
+  (condition "A.NetClass == 'USB'")
+  (constraint diff_pair_gap (min 0.15mm) (opt 0.15mm) (max 0.25mm))
+  (constraint diff_pair_uncoupled (max 6mm))
+  (constraint skew (max 0.5mm)))
+
+# 7. BM83 antenna keep-out: nothing on any layer
+(rule rf_keepout
+  (condition "A.intersectsArea('BM83_ANTENNA_KEEPOUT')")
+  (constraint disallow track via zone))
+
+# 8. Vias: standard 0.6/0.3 (power arrays 0.8/0.4 by netclass); fine 0.45/0.2 only in neck areas (rule 12)
+(rule via_std
+  (condition "A.Type == 'Via'")
+  (constraint hole_size (min 0.3mm))
+  (constraint via_diameter (min 0.6mm)))
+
+# 10. Hole to copper edge for plated mounting holes
+(rule edge_hole
+  (condition "A.Type == 'Via' || A.Type == 'Pad'")
+  (constraint edge_clearance (min 0.5mm)))
+
+# 11. In2 is power-only: no tracks of signal classes on In2 (user decision 2026-10-08)
+(rule in2_power_only
+  (layer "In2.Cu")
+  (condition "A.Type == 'Track' && A.NetClass != 'POWER_HI' && A.NetClass != 'PVDD' && A.NetClass != 'PWR_5V' && A.NetClass != 'PWR_3V' && A.NetClass != 'GND' && A.NetName != '/5V_LOGIC_EN' && A.NetName != '/ADC_INT' && A.NetName != '/AMP_BOOST_EN' && A.NetName != '/AMP_FAULT_N' && A.NetName != '/AMP_PDN' && A.NetName != '/AUD_SCL' && A.NetName != '/AUD_SDA' && A.NetName != '/AUX_DET' && A.NetName != '/BT_FORCE_PWM' && A.NetName != '/BT_MFB' && A.NetName != '/BT_PWR_EN' && A.NetName != '/BT_RST_N' && A.NetName != '/BT_TX_IND' && A.NetName != '/BT_UART_RX' && A.NetName != '/BT_UART_TX' && A.NetName != '/Battery_Charger/CE_N' && A.NetName != '/Battery_Charger/ILIM_HIZ' && A.NetName != '/Battery_Charger/TS_SENSE' && A.NetName != '/CHG_ENABLE' && A.NetName != '/CHG_INT' && A.NetName != '/CHG_QON_SENSE' && A.NetName != '/CHG_SYS_ENABLE' && A.NetName != '/CODEC_PWR_EN' && A.NetName != '/CTRL_SCL' && A.NetName != '/CTRL_SDA' && A.NetName != '/GAUGE_ALRT_N' && A.NetName != '/HP_DET' && A.NetName != '/HP_EN' && A.NetName != '/HP_SEL_A' && A.NetName != '/HP_SEL_B' && A.NetName != '/MCU/ENC_A' && A.NetName != '/MCU/ENC_B' && A.NetName != '/MCU/ENC_SW' && A.NetName != '/MCU/NRST' && A.NetName != '/PDCTRL_SCL' && A.NetName != '/PDCTRL_SDA' && A.NetName != '/PD_PLUG_EVENT' && A.NetName != '/PD_SINK_EN' && A.NetName != 'Net-(U4-BATP)' && A.NetName != 'Net-(U4-QON)' && A.NetName != 'Net-(U6-~{PDN})' && A.NetName != 'Net-(U7-~{PDN})'")
+  (constraint disallow track))
+
+# 12. LAST: pin-pitch escapes only inside fine-pitch IC courtyards and NECK_<ref> areas (courtyard + 1.5 mm)
+(rule neck_ic
+  (condition "A.intersectsCourtyard('U4') || A.intersectsCourtyard('U6') || A.intersectsCourtyard('U7') || A.intersectsCourtyard('U8') || A.intersectsCourtyard('U9') || A.intersectsCourtyard('U11') || A.intersectsCourtyard('U14') || A.intersectsCourtyard('U15') || A.intersectsCourtyard('U19') || A.intersectsCourtyard('U24') || A.intersectsCourtyard('U25') || A.intersectsCourtyard('U3') || A.intersectsCourtyard('U5') || A.intersectsCourtyard('U10') || A.intersectsCourtyard('U20') || A.intersectsCourtyard('J1') || A.intersectsArea('NECK_U4') || A.intersectsArea('NECK_U6') || A.intersectsArea('NECK_U7') || A.intersectsArea('NECK_U8') || A.intersectsArea('NECK_U9') || A.intersectsArea('NECK_U11') || A.intersectsArea('NECK_U14') || A.intersectsArea('NECK_U15') || A.intersectsArea('NECK_U19') || A.intersectsArea('NECK_U24') || A.intersectsArea('NECK_U25') || A.intersectsArea('NECK_U3') || A.intersectsArea('NECK_U5') || A.intersectsArea('NECK_U10') || A.intersectsArea('NECK_U20') || A.intersectsArea('NECK_J1')")
+  (constraint track_width (min 0.2mm))
+  (constraint clearance (min 0.2mm))
+  (constraint hole_size (min 0.2mm))
+  (constraint via_diameter (min 0.45mm)))
+
+# 13. U11 (TPS25730D) footprint geometry: pins 2/31/36 sit 0.17 mm from the wide pads (v10c review m1)
+(rule neck_u11
+  (condition "A.intersectsCourtyard('U11') || A.intersectsArea('NECK_U11')")
+  (constraint track_width (min 0.15mm))
+  (constraint clearance (min 0.15mm)))
+
+# 14. U11 thermal-pad footprint vias (0.2 mm drill, solid)
+(rule u11_fp_vias
+  (condition "A.Type == 'Via' && A.memberOfFootprint('U11')")
+  (constraint hole_size (min 0.2mm))
+  (constraint via_diameter (min 0.4mm)))
+(rule u11_fp_holes
+  (condition "A.Type == 'Pad' && A.memberOfFootprint('U11')")
+  (constraint hole_size (min 0.2mm)))
+
+# 15. (after the neck rules) Fine-pitch pad pairs J1 / U11 / U19 (JLC min 0.10 mm)
+(rule fine_pitch
+  (condition "A.Type == 'Pad' && B.Type == 'Pad' && (A.Parent == 'J1' || A.Parent == 'U11' || A.Parent == 'U19')")
+  (constraint clearance (min 0.1mm)))
+
+# 16. R6b: B.Cu signal keep-outs under the amps, the BM83 module and the audio block (BKO_* rule areas, B.Cu only).
+#     Power/GND classes are exempt; R6a's bootstrap jumpers (U7 BST_B+, U25 BOOT) are explicit exceptions.
+(rule bko_tracks
+  (layer "B.Cu")
+  (condition "A.Type == 'Track' && (A.intersectsArea('BKO_U6') || A.intersectsArea('BKO_U7') || A.intersectsArea('BKO_BM83') || A.intersectsArea('BKO_ADC') || A.intersectsArea('BKO_CODEC') || A.intersectsArea('BKO_MUX')) && A.NetClass != 'GND' && A.NetClass != 'PVDD' && A.NetClass != 'POWER_HI' && A.NetClass != 'SPK_OUT' && A.NetClass != 'SWITCH' && A.NetClass != 'PWR_5V' && A.NetClass != 'PWR_3V' && A.NetName != 'Net-(U7-BST_B+)' && A.NetName != 'Net-(U25-BOOT)' && A.NetName != 'Net-(U24-AVDD)' && A.NetName != 'Net-(U2-VCCCI)' && A.NetName != 'Net-(U2-VCCP1I)' && A.NetName != 'Net-(U2-VCCP2I)' && A.NetName != 'Net-(U24-LDO)' && A.NetName != 'Net-(U8-COM1)' && A.NetName != 'Net-(U8-COM2)'")
+  (constraint disallow track))
+(rule bko_vias
+  (condition "A.Type == 'Via' && (A.intersectsArea('BKO_U6') || A.intersectsArea('BKO_U7') || A.intersectsArea('BKO_BM83') || A.intersectsArea('BKO_ADC') || A.intersectsArea('BKO_CODEC') || A.intersectsArea('BKO_MUX')) && A.NetClass != 'GND' && A.NetClass != 'PVDD' && A.NetClass != 'POWER_HI' && A.NetClass != 'SPK_OUT' && A.NetClass != 'SWITCH' && A.NetClass != 'PWR_5V' && A.NetClass != 'PWR_3V' && A.NetName != 'Net-(U7-BST_B+)' && A.NetName != 'Net-(U25-BOOT)' && A.NetName != 'Net-(U24-AVDD)' && A.NetName != 'Net-(U2-VCCCI)' && A.NetName != 'Net-(U2-VCCP1I)' && A.NetName != 'Net-(U2-VCCP2I)' && A.NetName != 'Net-(U24-LDO)' && A.NetName != 'Net-(U8-COM1)' && A.NetName != 'Net-(U8-COM2)'")
+  (constraint disallow via))
+
+# 17. R6d: USB coupled pair 0.25/0.15 (90 ohm, pcb-routing-plan.md): DP-DN (and U2 D+/D-) spacing 0.15 mm. Placed after the neck rules so the pair gap also holds inside NECK_J1.
+(rule usb_pair_gap
+  (condition "A.NetClass == 'USB' && B.NetClass == 'USB'")
+  (constraint clearance (min 0.15mm)))
+
+# 18. R6d: U2 (PCM2902C, 0.65 mm pitch) D- entry passes between pin 1 and R170 (0.64 mm gap): 0.2 mm USB width only inside rule area NECK_U2_USB (149.9-151.5 x 63.55-64.25).
+(rule usb_u2_entry
+  (condition "A.NetClass == 'USB' && A.intersectsArea('NECK_U2_USB')")
+  (constraint track_width (min 0.2mm)))
+
+# 16b. R6h: rule 16 exempts Net-(U8-COM1)/Net-(U8-COM2) (one AUDIO B jumper each, inside BKO_MUX between U8 and U9, GND via beside).
+# 19. R6h (coordinator exception): slow Default/I2C nets listed in rule 11 may run on In2 outside the power islands,
+#     at least 0.3 mm from any non-GND In2 island (zone); 0.2 mm to In2 power tracks (standard).
+(rule in2_slow_island
+  (layer "In2.Cu")
+  (condition "A.Type == 'Track' && (A.NetClass == 'Default' || A.NetClass == 'I2C') && B.Type == 'Zone' && B.NetClass != 'GND'")
+  (constraint clearance (min 0.3mm)))
