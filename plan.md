@@ -11,7 +11,18 @@ Updated: 2026-10-05. Use this checklist with `AGENTS.md` and `ai-files/HANDOVER.
 - Prioritize battery life, low standby/storage current and battery longevity when usually plugged in.
 - Target a protected 1S pack around 10 Ah. Enclosure dimensions and acoustic volume drive selection; weight is not a concern and a heavier enclosure is welcome if acoustics benefit.
 - Use automatic USB-A source detection with a conservative fallback; a 2 A label alone does not grant USB host current.
-- Custom PCB for internal electronics. No PCB layout is authorized yet.
+- Custom PCB for internal electronics. Placement and routing (R6m) exist and are adopted; see "PCB status" below.
+
+## PCB status (2026-10-10)
+
+Active power stack is TPS25730D + BQ25792 (STUSB4500/BQ25895 entries below are history). Details: `ai-files/HANDOVER.md` summary.
+- [x] Placement v10d accepted; routing R6a-R6m adopted (07bf4f4, ef4ed75, 7cf76ea). Gates: ERC 0 (U11 VIN_3V3 exclusion), DRC only 4 USB items + silk, open edges only J7 NRST/SWCLK.
+- [x] Catch-all `*` netclass removed from the project (composite class names made SIGNAL rules misfire; 75 false errors).
+- Standing: BAT_INT 6 A RMS / 8 A 1 s; USB full-speed waiver documented (17.3 mm uncoupled, relax rule to 18 mm; DRC exclusion pending); 3 via-in-pad accepted (R10.2, R224.1, C215.1); C101/C108 PMID GND via 2.5 mm accepted; 7 inherited corner hits; long nets accepted.
+- [ ] Confirm: delete J7 (duplicate of J6, last 2 open nets); cap firmware charge current at 3 A.
+- [ ] User GUI: Update PCB from Schematic, Edit > Teardrops (ratio 0.5, max length 1.0/0.6 mm, max width 2.0, 5 curve points), refill zones; then re-run DRC/strict/sliver gates.
+- [ ] Fab outputs (gerbers, drill, pos, BOM), JLC order. Open: TPS61088_zh.pdf and PESD5V0S2BT.pdf missing; SW100 land pattern still TE-drawing draft; pack unselected; SW101/SW102 no stock; partial BOM subtotal only.
+- Bench order: see HANDOVER "Bench order" (10 steps).
 
 ## 1. USB-C power delivery — PARTIAL
 
@@ -87,7 +98,7 @@ Updated: 2026-10-05. Use this checklist with `AGENTS.md` and `ai-files/HANDOVER.
 
 ## 7. Source selection and analogue-to-digital conversion
 
-- [x] Source_Select_ADC child sheet captured (2026-10-06, root page 10): U24 PCM1862DBTR (I2C 0x4A, I2S master from Y200 24.576 MHz, VIN1 USB / VIN2 BT / VIN3 AUX, 2.2 uF-100R-10 nF C0G input networks), U22 TPS7A2033PDBVR 3V3_AUDIO LDO (EN tied to IN) from 5V_LOGIC, U23 TPS22917DBVR load switch for 5V_CODEC (CODEC_PWR_EN, 100 k pull-down), FB200 on AVDD, I2S through 33 R to ports I2S_BCK/LRCK/SDATA, AUD_SCL/SDA 2.2 k pull-ups to 3V3_AUDIO, ADC_INT 100 k pull-down. MCU PB10/PB11/PC5/PC7 connected. USB_Audio now supplied from 5V_CODEC. AUX_L/R now come from Headphone_Aux; I2S stays an open root stub until Amplifiers. Y200 load caps changed to 22 pF C0G; LCSC codes filled except 10 nF C0G and 33R. Open: LCSC codes/stock for U22-U24 passives, crystal CL (15 pF) trim, PCM1862 bench check. See HANDOVER.
+- [x] Source_Select_ADC child sheet captured (2026-10-06, root page 10): U24 PCM1862DBTR (I2C 0x4A, I2S master from Y200 24.576 MHz, VIN1 USB / VIN2 BT / VIN3 AUX, 2.2 uF-100R-10 nF C0G input networks), U22 TPS7A2033PDBVR 3V3_AUDIO LDO (EN tied to IN) from 5V_LOGIC, U23 TPS22917DBVR load switch for 5V_CODEC (CODEC_PWR_EN, 100 k pull-down), FB200 on AVDD, I2S through 33 R to ports I2S_BCK/LRCK/SDATA, AUD_SCL/SDA 2.2 k pull-ups to 3V3_AUDIO, ADC_INT 100 k pull-down. MCU PB10/PB11/PC5/PC7 connected. USB_Audio now supplied from 5V_CODEC. AUX_L/R now come from Headphone_Aux; I2S stays an open root stub until Amplifiers. Y200 load caps changed to 22 pF C0G; LCSC codes filled except 10 nF C0G and 33R. Open: LCSC codes/stock for U22-U24 passives, crystal CL trim (done: Y200 24.576 MHz CL 12 pF with C226/C227 15 pF), PCM1862 bench check. See HANDOVER.
 - [x] Define the complete USB/Bluetooth/auxiliary audio path and switching truth table. (PCM1862 4:1 input, 2026-10-06.)
 - [x] Connect/configure TS5A23157 switches only after confirming signal swing, bias, supply and default state. (Headphone_Aux sheet, USB default.)
 - [x] Select an audio ADC or a compatible alternative architecture. TAS5825M requires digital audio; current analogue codec/mux outputs cannot directly drive it. (PCM1862DBTR selected.)
@@ -319,7 +330,7 @@ Quick mechanical envelope review: `ai-files/reports/mechanical-fit-rough-2026-10
 
 ## Final consistency sweep (2026-10-06, not committed)
 - Open items: see "Final open-items list" at the end of `ai-files/HANDOVER.md`.
-- Sweep results: 321 references, no duplicates; BOM covers all (R256 DNP inside the R260 row, PACK is external); D6 MPN property corrected to TVS2200DRVR; stray note rows removed from the BOM; CHG_VIO_3V0 is a dangling port with nothing behind it in Battery_Charger (BQ25792 has no VIO pin).
+- Sweep results: 321 references, no duplicates; BOM covers all (R256 DNP inside the R260 row, PACK is external); D6 MPN property corrected to TVS2200DRVR; stray note rows removed from the BOM; CHG_VIO_3V0 is not dangling: it feeds R106.1 (CHG_INT pull-up) from the root 3V_AO label (misnomer, no change).
 
 
 ## Mechanical CAD (2026-10-06, not committed)

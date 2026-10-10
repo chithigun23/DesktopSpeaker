@@ -1,25 +1,54 @@
 # Desktop Speaker handover
 
-Updated 2026-10-06. The current KiCad schematics are the source of truth. Update this file in place; keep future AI exports, reports and helpers under `ai-files/` instead of creating additional notes around the project.
+Updated 2026-10-10. The current KiCad schematics are the source of truth. Update this file in place; keep future AI exports, reports and helpers under `ai-files/` instead of creating additional notes around the project.
 
-## Current continuation summary
+## Current continuation summary (refreshed 2026-10-10)
 
-Read this summary and root `plan.md` first; dated sections below retain earlier evidence and are superseded by later decisions.
+Schematic and board are both complete. The PCB (placement plus routing) exists, is adopted into `DesktopSpeaker-kicad/`, and is NOT fab-ready until the GUI steps below. Older dated sections below are history; where they mention STUSB4500, BQ25895, STL9P3LLH6, TPS26600 or "no PCB", they are superseded: the active power stack is TPS25730D (USB_PD) + BQ25792 (Battery_Charger, 5-20 V), MAX17048 gauge, STM32G071RBT6 MCU. Evidence: `reports/project-review-fable.md` (whole-project review: circuit and routing release-candidate quality, not fab-ready), `reports/adopt-r6m.md`, `reports/pcb-routing-r6a..r6m.md` with Fable reviews r6j/r6k/r6l, `reports/bom-sourcing-pass.md`, `reports/sync-y200-c275.md`, `reports/erc-cleanup.md`.
 
-- User now authorizes actual 5–20 V PD operation (higher EPR scope pending), alongside ordinary 5 V / 2 A adapter operation. Do not assume fallback 5 V grants 2 A. The active 5/9-only power circuit has not yet been redesigned.
-- User: automatic USB source detection; protected1S pack around10Ah with10k NTC; dimensions/acoustic volume lead, weight unimportant. Both physical pack disconnect and electronic ship/off with USB/button wake. Exact pack geometry/NTC/current, switches and driver choices remain open.
-- Active power children: USB_PD, Battery_Charger, Fuel_Gauge_Power, Bluetooth_Power, Logic_Audio_Power. MCU/audio blocks remain unconnected; noPCB. Use installedKiCad10.0.6 CLI and personal readable-schematic skill.
-- Completed review fixes: compatible TPS63802/TS5A3167 individual-library headers, verified BQ/MAX electrical pin types/native stacks, switched-source flags, direct GND connections, text cleanup. U14 nowTPS63802 with0.47uH Coilcraft L2 and78.7k/9.1k divider. SteadyPWM nominal4.82418V/DC4.60004–5.05869V; startupPFM/ripple/overshoot remain open.
-- D9 BZT52C12 afterR4 clamps STUSB sense pin for5/9-only policy; rawVDD now fed through U19 TPS7B8450 40V-input5V LDO; capacitor/dropout/transient qualification remains open. Correct Diodesdatasheet isds18004, notoldwrongds18001.
-- Fresh connectivity preserves all retained physical pin groups excluding intended U14/L2/D9 changes. FullERC319 inheritedroot findings, allfivepowerchildren0; no suppressions. Preview `DesktopSpeaker-preview.pdf` refreshed.
-- BOM XLSX/CSV:103physicalrefs covered in72rows, US$75.08 partialfitted /US$94.01 MOQ snapshot estimate, notfullproductcost. D4 1N4148W-7-F/C83528 and C103 Yageo CC0603KRX7R9BB473/C107093 are selected; headers/switches/pack/speakers/audio remain open. Guarded`reconcile_power_bom.mjs --codec` preservesnewrows; originalunguardedmodeunsafe. Historicalmetadatahelper excludesR140/R141.
-- Replacement direction: BQ25792RQMR native 5–20 V charger and TPS25730D autonomous SPR controller with integrated sink path are selected for prototype capture. Agents own isolated candidates under `candidates/`; active sheets still use STUSB4500/BQ25895. Prior LTC4368/pre-buck/limited-bootstrap proposals are superseded design alternatives, not next integration tasks.
-- Exact TI BQ25792 RQM0029A STEP was sourced; 4×4×1 mm extents agree with datasheet. Corrected official 29-pad footprint and functional symbol are candidates pending integration. External SDRV ship NMOS selection is underway; physical switch remains in series.
-- New cold-start strategy: BQ25792 ILIM_HIZ held low disables conversion while REGN and source detection remain available. An independent USB auxiliary rail must power MCU before enabling the converter. U19 is retained for that proposed role; `reports/usb-auxiliary-logic-power.md` evaluates TPS2116 reverse-blocking priority mux into U12. Unknown USB attach and suspend budgets still require resolution; no 100mA-compliance claim.
-- TPS25730 exposes explicit PD contract current over I2C, but not documented non-PD Rp status. Generic BC1.2 DCP budget is conservative1.5A, not its charger3.25A reset/detection setting. Source detection/data mux and firmware sequencing are unfinished.
-- TI recommends TVS2200 for TPS25730, but maximum rated clamp28.35V exceeds controller28V absolute maximum; actual transient pin voltage needs physical qualification. Do not claim a guaranteed full-rated surge result.
-- Existing L1 is provisional for the new charger: SYS plus charging current must fit6A thermal/9.5A saturation definitions. See `reports/bq25792-l1-envelope.md`; 750kHz uses2.2µH, not1µH.
-- Latest decisions/evidence: `reports/5-20v-charger-selection.md`, `reports/5-20v-pd-front-end-review.md`, `reports/bq25792-library-review.json`, `reports/usb-auxiliary-logic-power.md`; previous review reports remain historical evidence.
+### PCB state
+- Placement v10d accepted with its recorded deviations (see "Placement v9" and later placement sections). Routing R6a-R6m adopted into `DesktopSpeaker.kicad_pcb` + `.kicad_dru` (commit 07bf4f4; BOM/Y200 follow-ups ef4ed75 and 7cf76ea; this refresh is uncommitted). R6m: 360 footprints, 4-layer, power pours with overspec pass (96% of the +868 mm2 gain kept, per r6l/r6m).
+- Gates on the adopted board: ERC 0 (one documented exclusion: U11 pin 38 VIN_3V3 power_pin_not_driven); DRC errors only the 4 USB items (3 skew_out_of_range + 1 diff_pair_uncoupled) plus silk warnings (20 silk_over_copper, 8 silk_edge_clearance, 8 silk_overlap); open edges only J7 /MCU/NRST and /MCU/SWCLK; lib_footprint_mismatch 0. 244 parity items remain until the GUI "Update PCB from Schematic" (fields, TP BOM-exclude, R256 DNP, `{slash}` net-name encoding; 15 net_conflict are 6 U11 merged-pad plus 9 encoding).
+- Catch-all `*` -> SIGNAL netclass REMOVED from `DesktopSpeaker.kicad_pro`: KiCad 10 builds composite class names, so `NetClass == 'SIGNAL'` rules (`switch_sensitive` 1.0 mm, `vbus_clear` 0.4 mm) misfired on nets that are Default in R6m and gave 75 extra clearance errors (same reason R6a removed it). Other netclasses/patterns equal R6m; `td_curve_segcount` kept 5.
+
+### Standing decisions and accepted items
+- BAT_INT limit 6 A RMS / 8 A for 1 s (narrowest strip 3.1 mm).
+- USB full-speed waiver: D+/D- uncoupled 17.3 mm vs the 6 mm rule; rule to be relaxed to 18 mm because the link is 12 Mbps full speed and physical skew is about 0.2 mm. Recorded here as a documented waiver; the DRC exclusion entry itself is PENDING (the 4 USB DRC items remain).
+- 3 accepted via-in-pad: R10.2, R224.1, C215.1 (user will inspect manually). Accepted minor: C101/C108 PMID GND via distance 2.5 mm.
+- In2 slow-signal exception list and island vias exception: see `reports/pcb-routing-r6h.md` and `r6i.md`. Corner rule: 7 remaining hits, all inherited (`corner-hits-r6h.json`). Long nets accepted as judged by Fable (AUD_SDA 278 mm, FAULT 232 mm, etc.).
+- Y200 is now YXC X322524576MOB4SI 24.576 MHz, CL 12 pF, with C226/C227 15 pF (datasheet `YXC_YSX321SL_X322524576MOB4SI.pdf`); C275 now has a 3D model (`reports/sync-y200-c275.md`). Schematic MPN/Manufacturer/LCSC fields synced to the BOM and mirrored to the PCB.
+- C241 (U10 VDD) is 2.2 uF (CL05A225KP5NNNC, LCSC open); C240 stays 1 uF. CHG_VIO_3V0 is NOT dangling: it feeds R106.1 (CHG_INT pull-up) and the root `3V_AO` label; the name is a misnomer (BQ25792 has no VIO).
+
+### Recommended, awaiting user confirmation
+- Delete J7 (Tag-Connect duplicate of J6; its NRST/SWCLK are the last 2 open nets).
+- Cap firmware charge current at 3 A (U4 PGND pin 27 via loading).
+
+### Open items
+- Missing datasheet files: `TPS61088_zh.pdf` (only `tps61088-layout-excerpt.txt`; excerpt only) and `PESD5V0S2BT.pdf`.
+- SW100 library footprint fixed (pad 1 now 0.9 x 1.7 at y -0.05, matches board); land pattern is still the DRAFT from the TE drawing, unchecked against `TE_1977066-1_datasheet.pdf`.
+- Pack unselected; SW101/SW102 have no stock; BOM 93 of 101 rows coded, 6 unresolved, 11 below order quantity; subtotals ($101.69 fitted / $124.59 in-stock order) are partial, not a product cost; stock is a 2026-10-10 snapshot.
+- Unverified: TVS2200 clamp above TPS25730D 28 V abs max (surge immunity unproven), PFM acoustics, boost compensation (calculated only), BM83 sequencing, all bench behaviour.
+- `reports/mcu-pin-allocation.md` line 8 still lists the cut C163/C164.
+
+### Remaining steps to fabrication
+1. User, KiCad GUI: Update PCB from Schematic; Edit > Teardrops (ratio 0.5, max length 1.0 / 0.6 mm, max width 2.0, 5 curve points); refill all zones.
+2. Re-run DRC, strict, sliver and island gates (helpers `route_r6m_eval.sh` etc.); add the USB-waiver DRC exclusion/relaxed 18 mm rule; decide J7.
+3. Fab outputs: gerbers, drill, pos, BOM; stackup/order note (no impedance control for full-speed USB, ENIG, 0.5 oz inner); JLC order (user).
+
+### Bench order (from project-review-fable.md section e)
+1. USB only, no pack: rails, 3V_AO, MCU alive, PD contract readback 5/9/15/20 V, VBUS waveform at attach.
+2. Pack only: QON wake, ship-mode entry/exit, SW101.
+3. Both: charger register sequence, IINDPM readback, ICHG 1 A, thermal of U4/L1.
+4. 5V_LOGIC, 3V3_AUDIO, 5V_CODEC enables and ripple.
+5. PVDD boost no load / 1 A / 2 A, PFM audibility.
+6. U6 BTL then U7 PBTL into dummy loads, thermal.
+7. Codec USB enumeration at 100 mA, PCM1862 I2S clocks.
+8. BM83 power sequence, pairing, DAC level.
+9. Headphone/aux detection and TPA6132A2 pop.
+10. Standby/ship current.
+
+### Pushed milestones
+- 07bf4f4 routing R6a-R6m adopted, ERC cleanup, pin swaps; ef4ed75 BOM sourcing pass; 7cf76ea Y200/C275 sync. Latest checkpoint: this documentation refresh is not yet committed.
 
 ## Project locations
 
@@ -95,7 +124,7 @@ The original 14 root symbol instances retain their placements, reference designa
 4. Select an audio ADC: the analogue PCM2902C/mux outputs cannot directly drive TAS5825M's digital audio input. PCM1862DBTR is a candidate; clocking/bias/coupling remain open.
 5. Select the amplifier boost supply: the single-cell battery cannot directly satisfy TAS5825M's minimum power-stage voltage. TPS61088 is a candidate; voltage, magnetics, compensation, output capability and idle behaviour remain open.
 6. Finalize battery capacity, rail isolation, Bluetooth power switching, controls, remaining passives and firmware.
-7. Select drivers/impedances, acoustic volumes and woofer tuning. No PCB layout exists.
+7. Select drivers/impedances, acoustic volumes and woofer tuning. PCB layout and routing now exist (see the summary).
 
 ## Cleanup performed
 
@@ -476,7 +505,7 @@ Quick mechanical envelope review: `ai-files/reports/mechanical-fit-rough-2026-10
 - Hardware: pack choice pending (PACK row); J5 and SW100/SW101 stock/price unverified (SW101 listing stock 0, check 3 A+ rating for pack current); no 3D model for J5, SW101, SW100, JST VH, PD_C_0402.
 - Qualification: PBTL pairing and boost (U25) compensation on the bench (PFM acoustics); TVS2200/D6 and TPD2E2U06/PESD5V0S2BT TVS qualification; all bench tests; footprint checks for TPS61088 (EasyEDA pads vs TI RHL0020A) and TPS25730D.
 - BOM gaps (unverified): LCSC codes still open for GRM1885C1H103JA01D, RC0603FR-0733RL, 6.8 nF, 47 pF, 100 uF EEH-ZA1E101P, 22 uH MWSA1265S-220MT (Isat 5.0 A) and 2.2 uH XAL7070-222MEC (not at LCSC; need Isat >= 12 A alternative), boost resistors, 0R. Found: CL10B474KA8NNNC = C1623 (price/stock not retrieved). Partial subtotal US$78.94 fitted / US$95.64 order; not a product cost.
-- Schematic hygiene: Battery_Charger port CHG_VIO_3V0 is dangling (nothing connected in the child, BQ25792 has no VIO) - remove port/root pin or document.
+- Schematic hygiene: CHG_VIO_3V0 is not dangling (feeds R106 CHG_INT pull-up from 3V_AO); resolved.
 - Firmware duties: PBTL mode for U7, SFET_PRESENT handling, EN_EXTILIM sequencing, I2C2 enable, PD_PLUG_EVENT, BT config (host-mode UART baud, TX_IND, MFB polarity), headphone mute and source-change sequencing, startup/shutdown/fault policy.
 
 
