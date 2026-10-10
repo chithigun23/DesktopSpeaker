@@ -1,0 +1,1061 @@
+{
+ "components": 348,
+ "footprints_with_field_mismatch": 204,
+ "detail": {
+  "D1": [
+   "MPN",
+   "Manufacturer",
+   "Datasheet"
+  ],
+  "J1": [
+   "MPN",
+   "Manufacturer",
+   "Datasheet",
+   "Description"
+  ],
+  "C6": [
+   "Manufacturer",
+   "MPN",
+   "LCSC Part",
+   "LCSC"
+  ],
+  "C181": [
+   "Manufacturer",
+   "MPN",
+   "LCSC Part",
+   "LCSC",
+   "Datasheet"
+  ],
+  "C184": [
+   "Manufacturer",
+   "MPN",
+   "LCSC Part",
+   "LCSC",
+   "Datasheet"
+  ],
+  "D5": [
+   "Manufacturer",
+   "MPN",
+   "LCSC Part",
+   "Datasheet"
+  ],
+  "D7": [
+   "Manufacturer",
+   "MPN",
+   "LCSC Part"
+  ],
+  "R11": [
+   "Manufacturer",
+   "MPN",
+   "LCSC Part",
+   "LCSC",
+   "Datasheet"
+  ],
+  "R12": [
+   "Manufacturer",
+   "MPN",
+   "LCSC Part",
+   "LCSC",
+   "Datasheet"
+  ],
+  "R13": [
+   "Manufacturer",
+   "MPN",
+   "LCSC Part",
+   "LCSC",
+   "Datasheet"
+  ],
+  "R14": [
+   "Manufacturer",
+   "MPN",
+   "LCSC Part",
+   "LCSC",
+   "Datasheet"
+  ],
+  "R15": [
+   "Manufacturer",
+   "MPN",
+   "LCSC Part",
+   "LCSC",
+   "Datasheet"
+  ],
+  "R16": [
+   "Manufacturer",
+   "MPN",
+   "LCSC Part",
+   "LCSC",
+   "Datasheet"
+  ],
+  "R17": [
+   "Manufacturer",
+   "MPN",
+   "LCSC Part",
+   "LCSC",
+   "Datasheet"
+  ],
+  "R18": [
+   "Manufacturer",
+   "MPN",
+   "LCSC Part",
+   "LCSC",
+   "Datasheet"
+  ],
+  "TP1": [
+   "Description"
+  ],
+  "TP5": [
+   "Description"
+  ],
+  "TP23": [
+   "Description"
+  ],
+  "U11": [
+   "Manufacturer",
+   "MPN",
+   "LCSC Part",
+   "Datasheet"
+  ],
+  "U19": [
+   "Manufacturer",
+   "MPN",
+   "LCSC Part",
+   "Datasheet",
+   "Description"
+  ],
+  "C102": [
+   "LCSC",
+   "Manufacturer",
+   "MPN",
+   "LCSC Part",
+   "Datasheet"
+  ],
+  "C104": [
+   "LCSC",
+   "Manufacturer",
+   "MPN",
+   "LCSC Part"
+  ],
+  "C105": [
+   "LCSC",
+   "Manufacturer",
+   "MPN",
+   "LCSC Part"
+  ],
+  "C106": [
+   "LCSC",
+   "Manufacturer",
+   "MPN",
+   "LCSC Part",
+   "Datasheet"
+  ],
+  "C107": [
+   "LCSC",
+   "Manufacturer",
+   "MPN",
+   "LCSC Part"
+  ],
+  "C109": [
+   "LCSC",
+   "Manufacturer",
+   "MPN",
+   "LCSC Part",
+   "Datasheet"
+  ],
+  "J5": [
+   "Manufacturer",
+   "MPN",
+   "LCSC"
+  ],
+  "L1": [
+   "MPN",
+   "Manufacturer",
+   "LCSC Part"
+  ],
+  "Q101": [
+   "MPN",
+   "LCSC Part",
+   "Manufacturer",
+   "Datasheet"
+  ],
+  "Q102": [
+   "MPN",
+   "LCSC Part",
+   "Manufacturer",
+   "Datasheet"
+  ],
+  "Q103": [
+   "MPN",
+   "LCSC Part",
+   "Manufacturer",
+   "Datasheet"
+  ],
+  "R103": [
+   "MPN",
+   "Manufacturer",
+   "LCSC",
+   "Datasheet"
+  ],
+  "R106": [
+   "MPN",
+   "Manufacturer",
+   "LCSC",
+   "Datasheet"
+  ],
+  "R107": [
+   "MPN",
+   "Manufacturer",
+   "LCSC",
+   "Datasheet"
+  ],
+  "R109": [
+   "MPN",
+   "Manufacturer",
+   "LCSC",
+   "Datasheet"
+  ],
+  "R110": [
+   "MPN",
+   "Manufacturer",
+   "LCSC",
+   "Datasheet"
+  ],
+  "R111": [
+   "MPN",
+   "Manufacturer",
+   "LCSC",
+   "Datasheet"
+  ],
+  "R113": [
+   "MPN",
+   "Manufacturer",
+   "LCSC",
+   "Datasheet"
+  ],
+  "SW100": [
+   "Manufacturer",
+   "MPN",
+   "LCSC"
+  ],
+  "SW101": [
+   "Manufacturer",
+   "MPN",
+   "LCSC"
+  ],
+  "TP2": [
+   "Description"
+  ],
+  "TP11": [
+   "Description"
+  ],
+  "TP26": [
+   "Description"
+  ],
+  "TP27": [
+   "Description"
+  ],
+  "U4": [
+   "MPN",
+   "LCSC Part",
+   "Manufacturer",
+   "Datasheet"
+  ],
+  "C120": [
+   "MPN",
+   "Manufacturer",
+   "LCSC",
+   "Datasheet"
+  ],
+  "C122": [
+   "MPN",
+   "Manufacturer",
+   "LCSC",
+   "Datasheet"
+  ],
+  "C123": [
+   "MPN",
+   "Manufacturer",
+   "LCSC",
+   "Datasheet"
+  ],
+  "C124": [
+   "MPN",
+   "Manufacturer",
+   "LCSC",
+   "Datasheet"
+  ],
+  "C125": [
+   "MPN",
+   "Manufacturer",
+   "LCSC",
+   "Datasheet"
+  ],
+  "C126": [
+   "ki_keywords",
+   "ki_fp_filters",
+   "MPN",
+   "Manufacturer",
+   "LCSC",
+   "Datasheet",
+   "Description"
+  ],
+  "C130": [
+   "MPN",
+   "Manufacturer",
+   "LCSC",
+   "Datasheet"
+  ],
+  "C131": [
+   "MPN",
+   "Manufacturer",
+   "LCSC",
+   "Datasheet"
+  ],
+  "C132": [
+   "MPN",
+   "Manufacturer",
+   "LCSC",
+   "Datasheet"
+  ],
+  "Q104": [
+   "MPN",
+   "LCSC",
+   "Manufacturer",
+   "Datasheet",
+   "Description"
+  ],
+  "R125": [
+   "Manufacturer",
+   "MPN",
+   "LCSC",
+   "LCSC Part"
+  ],
+  "TP3": [
+   "Description"
+  ],
+  "TP4": [
+   "Description"
+  ],
+  "U5": [
+   "MPN",
+   "Manufacturer",
+   "Datasheet"
+  ],
+  "U20": [
+   "Manufacturer",
+   "MPN",
+   "LCSC",
+   "Datasheet"
+  ],
+  "U21": [
+   "Manufacturer",
+   "MPN",
+   "LCSC Part",
+   "LCSC",
+   "Datasheet",
+   "Description"
+  ],
+  "C150": [
+   "LCSC",
+   "Manufacturer",
+   "MPN",
+   "LCSC Part"
+  ],
+  "C152": [
+   "LCSC",
+   "Manufacturer",
+   "MPN",
+   "LCSC Part"
+  ],
+  "C153": [
+   "LCSC",
+   "Manufacturer",
+   "MPN",
+   "LCSC Part"
+  ],
+  "C154": [
+   "LCSC",
+   "Manufacturer",
+   "MPN",
+   "LCSC Part"
+  ],
+  "R152": [
+   "MPN",
+   "Manufacturer",
+   "LCSC",
+   "Datasheet"
+  ],
+  "R153": [
+   "MPN",
+   "Manufacturer",
+   "LCSC",
+   "Datasheet"
+  ],
+  "R154": [
+   "MPN",
+   "Manufacturer",
+   "LCSC",
+   "Datasheet"
+  ],
+  "TP9": [
+   "Description"
+  ],
+  "C140": [
+   "LCSC",
+   "Manufacturer",
+   "MPN",
+   "LCSC Part"
+  ],
+  "C141": [
+   "LCSC",
+   "Manufacturer",
+   "MPN",
+   "LCSC Part"
+  ],
+  "C142": [
+   "LCSC",
+   "Manufacturer",
+   "MPN",
+   "LCSC Part"
+  ],
+  "R142": [
+   "MPN",
+   "LCSC Part",
+   "Manufacturer",
+   "LCSC",
+   "Datasheet"
+  ],
+  "TP7": [
+   "Description"
+  ],
+  "C160": [
+   "MPN",
+   "Manufacturer",
+   "LCSC",
+   "Datasheet"
+  ],
+  "C162": [
+   "MPN",
+   "Manufacturer",
+   "LCSC",
+   "Datasheet"
+  ],
+  "J6": [
+   "Manufacturer",
+   "MPN",
+   "LCSC"
+  ],
+  "J7": [
+   "Manufacturer",
+   "MPN"
+  ],
+  "R160": [
+   "MPN",
+   "Manufacturer",
+   "LCSC",
+   "Datasheet"
+  ],
+  "TP15": [
+   "Description"
+  ],
+  "TP16": [
+   "Description"
+  ],
+  "TP17": [
+   "Description"
+  ],
+  "TP18": [
+   "Description"
+  ],
+  "TP19": [
+   "Description"
+  ],
+  "TP21": [
+   "Description"
+  ],
+  "TP25": [
+   "Description"
+  ],
+  "U3": [
+   "MPN",
+   "LCSC Part",
+   "Manufacturer",
+   "Datasheet"
+  ],
+  "C170": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "C171": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "C172": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "C173": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "C174": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "C175": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "C176": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "R173": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "R175": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "R176": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "U2": [
+   "MPN",
+   "Manufacturer",
+   "Datasheet"
+  ],
+  "C190": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "C191": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "C192": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "C193": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "J8": [
+   "Manufacturer",
+   "MPN",
+   "LCSC"
+  ],
+  "R180": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "R181": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "R182": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "R183": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "R184": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "TP22": [
+   "Description"
+  ],
+  "U1": [
+   "MPN",
+   "Manufacturer",
+   "Datasheet"
+  ],
+  "C212": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "C213": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "C214": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "C215": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "C216": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "C217": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "C218": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "C219": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "C220": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "C221": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "C222": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "C223": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "C224": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "C225": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "R211": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "R212": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "TP6": [
+   "Description"
+  ],
+  "TP8": [
+   "Description"
+  ],
+  "TP12": [
+   "Description"
+  ],
+  "TP13": [
+   "Description",
+   "Value"
+  ],
+  "TP14": [
+   "Description",
+   "Value"
+  ],
+  "U22": [
+   "Manufacturer",
+   "MPN",
+   "LCSC Part",
+   "Datasheet"
+  ],
+  "U23": [
+   "Manufacturer",
+   "MPN",
+   "LCSC Part",
+   "Datasheet"
+  ],
+  "U24": [
+   "Manufacturer",
+   "MPN",
+   "LCSC Part",
+   "Datasheet"
+  ],
+  "C230": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "C231": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "C232": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "C233": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "C234": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "C235": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "C237": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "C238": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "C239": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "C240": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "C245": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "C246": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "J2": [
+   "MPN",
+   "Manufacturer",
+   "Description"
+  ],
+  "J3": [
+   "MPN",
+   "Manufacturer",
+   "Description"
+  ],
+  "R220": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "R221": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "R222": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "R223": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "R224": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "R225": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "R234": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "R235": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "R236": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "R237": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "R238": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "R239": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "R242": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "R243": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "R244": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "U8": [
+   "MPN",
+   "Manufacturer",
+   "Datasheet"
+  ],
+  "U9": [
+   "MPN",
+   "Manufacturer",
+   "Datasheet"
+  ],
+  "U10": [
+   "MPN",
+   "Manufacturer",
+   "Datasheet"
+  ],
+  "C260": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "C261": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "C262": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "C263": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "C264": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "C265": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "C267": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "C270": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "C276": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "C278": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "C281": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "C282": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "C283": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "C284": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "C289": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "C291": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "C294": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "C295": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "C296": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "C297": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "C302": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "C303": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "C304": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "C305": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "C306": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "C307": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "J9": [
+   "MPN",
+   "Manufacturer",
+   "LCSC Part",
+   "Datasheet"
+  ],
+  "J10": [
+   "MPN",
+   "Manufacturer",
+   "LCSC Part",
+   "Datasheet"
+  ],
+  "J11": [
+   "MPN",
+   "Manufacturer",
+   "LCSC Part",
+   "Datasheet"
+  ],
+  "R255": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "R259": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "R262": [
+   "MPN",
+   "Manufacturer",
+   "LCSC"
+  ],
+  "TP10": [
+   "Description"
+  ],
+  "TP20": [
+   "Description"
+  ],
+  "TP24": [
+   "Description"
+  ],
+  "U6": [
+   "MPN",
+   "Manufacturer",
+   "Datasheet"
+  ],
+  "U7": [
+   "MPN",
+   "Manufacturer",
+   "Datasheet"
+  ],
+  "U25": [
+   "MPN",
+   "Manufacturer",
+   "LCSC Part",
+   "Datasheet"
+  ]
+ }
+}

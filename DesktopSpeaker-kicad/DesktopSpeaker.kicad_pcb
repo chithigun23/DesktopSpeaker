@@ -754,7 +754,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "${KIPRJMOD}/../ai-files/datasheets/PESD5V0S2BT.pdf"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -770,6 +770,39 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "e33565eb-6303-48d5-bc31-ed07ada278d0")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "PESD5V0S2BT"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "834ab9b9-0ef0-4206-bac4-50e8351abf0e")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "DOWO"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0cfca213-6d4e-4f88-ad30-5e37fba729b9")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C5380400"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2e83ba38-2913-447b-9009-e1764f9e903a")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1145,6 +1178,39 @@
 				)
 			)
 		)
+		(property "MPN" "RC0402FR-070RL"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "cb328627-4394-486f-bc67-0288bf8296d2")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Yageo"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0e4ac1df-b50d-4605-962c-0da2a237a354")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C106231"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b58ea9d0-c0df-40f0-af19-ac6b9f3a6911")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
 			(at 0 0 270)
 			(layer "F.SilkS")
@@ -1441,6 +1507,39 @@
 				)
 			)
 		)
+		(property "MPN" "TPS63802DLAR"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "20f89959-41e9-442b-8551-763a80b1a96f")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C2845237"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0cc58daf-e97c-42e4-b20d-325bd302269f")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Texas Instruments"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e32cf64f-8121-456f-829b-365f7772c2b9")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(path "/f761c113-2c86-429a-8773-5f4b423ef275/69beebdc-5a76-488b-8714-be634c494a5e")
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
@@ -1655,6 +1754,39 @@
 				)
 			)
 		)
+		(property "MPN" "RC0402FR-071KL"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "35b8ef07-6e66-4a3e-89cf-521bb910764c")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Yageo"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "898603cc-4883-4c65-9458-b0e35ca41759")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C106235"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "039d2d9e-6077-4264-a901-d77dddbd461b")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
 			(at 0 0 90)
 			(layer "F.SilkS")
@@ -1781,7 +1913,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/ts5a3167.pdf"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -1797,6 +1929,39 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "f4ef1080-f468-4287-993b-3b9dc8876a9f")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "TS5A3167DBVR"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e2f04e42-60da-4c2e-9507-1dc420aee5b6")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C128416"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9ca5fc90-3057-4f0d-a3b8-64c1643696e7")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Texas Instruments"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3f8df2d1-75b8-40c3-857b-15480ad7f133")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2555,6 +2720,39 @@
 				)
 			)
 		)
+		(property "MPN" "RC0402FR-07100RL"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "31233ab9-b7b8-41c8-a787-05938a50e65d")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Yageo"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "fb58adab-b65a-41b6-a0f8-64e14d23ccc2")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C106232"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2cd15277-4eaf-4b72-826e-e41bf37a18be")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
 			(at 0 0 90)
 			(layer "F.SilkS")
@@ -2697,6 +2895,39 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "941c4b7d-2e33-4986-adaf-8f97dc6cd215")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "CL21A475KAQNNNE"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b73ff242-ff3a-487b-9725-f98cb0c8378e")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "35340589-c813-4b4d-b0eb-bf333f4599f3")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C1779"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7c823758-68e2-4525-abdb-db4a245bf6db")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3509,6 +3740,39 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "0d272671-63da-4d38-afc1-2ecca34af672")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "MWSA1265S-220MT"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e44ca5c2-a506-4d35-bfde-e1c00b08e5ea")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Sunlord"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b457f0db-a7db-4338-a7ed-9bdf7cfdbda5")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C7245133"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "98ee775c-8b16-4c8a-8b63-3c974e837851")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5425,7 +5689,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "${KIPRJMOD}/../ai-files/datasheets/PESD5V0S2BT.pdf"
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -5441,6 +5705,39 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "980a5aa8-6e07-4472-b2f7-4d1f63100cf3")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "PESD5V0S2BT"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "20608a17-e72e-4115-826b-6b2603d800a1")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "DOWO"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "87a3c315-65df-400a-b51a-4248d5126dad")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C5380400"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f85814de-6d10-488c-9191-25d2cd41d548")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5816,6 +6113,39 @@
 				)
 			)
 		)
+		(property "MPN" "GRM1555C1H103JE01D"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "4e4d5322-3694-441e-8bc0-748e904ac3ff")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "36eabc10-549d-4f4b-af50-443a37656246")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C22400107"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c0f6dd7a-b09b-48eb-b413-2c0f9bb43e53")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
 			(at 0 0 0)
 			(layer "F.SilkS")
@@ -5958,6 +6288,39 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "84fbd23c-017a-42e6-9a28-783485d9581d")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "CGA0402X7R474K160GT"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "4f17abaf-0ed4-4be2-aee2-09e28130a8f8")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "HRE"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "067935e8-1b2e-4f2f-b6ea-ac51ef92e43c")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C22435970"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b7d9e500-1f4e-4b7c-b664-4d25adf22e3c")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6385,6 +6748,39 @@
 				)
 			)
 		)
+		(property "MPN" "GRM155R71H473KE14D"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "aeb61aaf-ee41-45af-bc4b-92b442827870")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "6188c7c7-66d2-4c20-8df6-7c05bcafd6c4")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C117757"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "dfb45331-eb22-4e63-8b43-7e7ad0aef990")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
 			(at 0 0 270)
 			(layer "F.SilkS")
@@ -6681,6 +7077,39 @@
 				)
 			)
 		)
+		(property "MPN" "GRM155R71H103KA88D"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8180cd74-43e8-481a-ac24-39b8e6cf4001")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8639e3c4-5a21-4207-931d-944fa5202466")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C77019"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "bdaa2cc8-62a8-4bb5-a8fd-bbd382c316dd")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
 			(at 0 0 90)
 			(layer "F.SilkS")
@@ -6830,6 +7259,39 @@
 				)
 			)
 		)
+		(property "MPN" "CL21A475KAQNNNE"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "6a1e33b2-0a24-4a77-ae2e-f93acc7703ca")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d597f012-760b-498a-b53e-f260c098970b")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C1779"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "df7528d1-508e-4ab5-90aa-54f17c356eb2")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
 			(at 0 0 90)
 			(layer "F.SilkS")
@@ -6973,6 +7435,39 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "96429785-4ec0-4f07-b7a3-492edd9a908a")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "GRM1555C1H470JA01D"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5acbd9b8-338e-47a1-85f6-1c9fd648582c")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9401c260-5e3a-4d81-b03b-cea779d48483")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C76970"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "26ba6286-473c-4be9-9d4d-0bbb9ea38c0a")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8319,6 +8814,39 @@
 				)
 			)
 		)
+		(property "MPN" "RC0402FR-071KL"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7a46a0b6-df21-4cd8-8084-8cc4ac861b1e")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Yageo"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7aeb2a25-b84d-4946-b4b4-ea9ecb7dc32d")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C106235"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b3409e4e-e84e-4b01-8f2e-ba0f44eb2da1")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
 			(at 0 0 180)
 			(layer "F.SilkS")
@@ -8461,6 +8989,39 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "fd2d62c8-cf4e-47fa-9e8f-1b0ab842198d")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "RC0402FR-07100RL"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "39a8fb80-0d1a-4487-bd9f-52f7ed8e1001")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Yageo"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f32b2149-254d-4406-a2c8-78f064f4a140")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C106232"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0eb735a8-84b3-42ee-9bec-5f0cbea278e5")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8610,6 +9171,39 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "28c24539-48a4-44b9-b2ad-d831ce9d27e9")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "CL21A226MAQNNNE"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7280f0b3-8f7b-4d84-ac79-9301f44029c1")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "cfaf0365-7053-48d8-a1de-7041a26f5d22")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C45783"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3803c308-a5e2-4c9d-b23f-9e295c20f4ed")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9209,6 +9803,39 @@
 				)
 			)
 		)
+		(property "MPN" "RC0402FR-071KL"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "84ec09d3-096b-4708-8203-1211a1c55296")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Yageo"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e6eca933-6c8a-4cc2-ad6d-1a4b4f4c7f5a")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C106235"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "984f2018-9113-4b8a-a992-abf83674341c")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
 			(at 0 0 270)
 			(layer "F.SilkS")
@@ -9351,6 +9978,39 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "a372075d-1b1b-433f-adaf-e07b48c5e86c")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "RC0402FR-072K2L"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "fc332f07-670c-4ef2-9f41-effd76adbe43")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Yageo"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2e6154fd-69eb-4a11-85c6-4f5c9950ac93")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C114762"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "86ad7f33-50ab-4101-b790-f9b5a5d86a72")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9797,6 +10457,39 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "e39a2153-6dbd-412d-aabc-8d37e31e1ca6")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "MWSA1265S-220MT"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b89d0c0e-72d2-412a-b80d-a68054163f40")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Sunlord"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2ab0f571-0560-4eee-b2b3-2ec36f44665f")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C7245133"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "78d42a9f-61ac-4948-bc5c-ad24d9222670")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10664,7 +11357,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "${KIPRJMOD}/../ai-files/datasheets/TVS2200.pdf"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -10680,6 +11373,39 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "fdcbaffe-8acd-480c-93d8-ec5a4b0c1084")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Texas Instruments"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b380aa8d-88e1-45af-98e4-4d714ec3a695")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "TVS2200DRVR"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2c0eeace-3572-40f1-b024-ecbeb178edb3")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C523793"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "23fd5324-2630-4595-b0f8-efd4674a569d")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11005,6 +11731,39 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "3df8442b-61cb-4f81-9c4a-0fb2a7519074")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "RC0402FR-071KL"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "bddcab3e-bf8f-4044-b569-81a64e60fc4c")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Yageo"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "65a7a320-86ce-478d-bd7e-0781798c0495")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C106235"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0c32a33e-7204-45c4-bcaa-46f0053dc585")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11555,6 +12314,39 @@
 				)
 			)
 		)
+		(property "MPN" "MWSA1265S-220MT"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "833fd9f3-eaae-4790-ac44-8cc2cf39997c")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Sunlord"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "66c6f86e-856f-4e87-b0d1-fd1a302047a7")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C7245133"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "cea6ad8b-3603-4698-aefc-e8673c29767f")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "KiLib_Generator" "inductor/SMD"
 			(at 0 0 180)
 			(layer "F.SilkS")
@@ -11831,7 +12623,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "${KIPRJMOD}/../ai-files/datasheets/Samsung_MLCC_LCSC_C1591_C1711.pdf"
 			(at 0 0 270)
 			(layer "F.Fab")
 			(hide yes)
@@ -11847,6 +12639,50 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "c43979bc-38b4-4e54-9362-e574dd033616")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C77020"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a3f12ec5-b60a-4ba7-a12f-8e5e06158392")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3615d87c-e749-4571-ab37-10168aff99f2")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "GRM155R71H104KE14D"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f3b7b4cb-6053-45af-a8fd-1ad15eadec27")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C77020"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c5b8f1f0-7978-4a14-9d8c-4b9d505daefd")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11980,7 +12816,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C28323.pdf"
 			(at 0 0 270)
 			(layer "F.Fab")
 			(hide yes)
@@ -11996,6 +12832,50 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "d3ef2b59-8bd6-45f2-bb38-212134acec38")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C28323"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "231e270c-2043-4155-a1c1-44617deb8c06")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2f893c7f-7dbc-4ec0-8946-fd0176ea56c0")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "CL21B105KBFNNNE"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "eed605f9-821d-4817-9b51-8b9645c67990")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C28323"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "33f11399-3043-419f-8f62-eedcff8a8b5d")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12269,7 +13149,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "${KIPRJMOD}/../ai-files/datasheets/YXC_YSX321SL_X322524576MOB4SI.pdf"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -12285,6 +13165,39 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "81765b81-34e0-4f10-abd2-51985f8aa1bb")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "X322524576MOB4SI"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "537358c5-7181-4d1d-8bc3-bda9e23c9682")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "YXC"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2bf18490-e253-48f2-b64b-f77431fa8fc0")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C70568"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "698defad-ef22-4edb-9184-ac12dae8b5cf")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12833,6 +13746,39 @@
 				)
 			)
 		)
+		(property "MPN" "CL21A475KAQNNNE"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3211eb63-3098-48b3-a2dd-dc52cc89431f")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "84b382a9-52f0-41db-a898-d774879b6fb4")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C1779"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e6004e91-7b1c-482f-a347-5d3d78a42247")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
 			(at 0 0 90)
 			(layer "F.SilkS")
@@ -12959,7 +13905,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "../ai-files/datasheets/TPS63802.pdf"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -12975,6 +13921,39 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "4b1cda41-b7a5-4b51-bda4-4e51475c59fd")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "TPS63802DLAR"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8e48c146-5c13-4e69-a71c-429a8a99df05")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C2845237"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "32e48340-d8d3-4dc2-88e5-e18eb1f13d17")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Texas Instruments"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "aa965c6f-08fb-426b-bbea-ede83ec64172")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13604,6 +14583,39 @@
 				)
 			)
 		)
+		(property "MPN" "MWSA1265S-220MT"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "408c4ccc-eb5f-412e-a44e-fc74559d6774")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Sunlord"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "91b583b5-8c45-459c-bef2-931f768a5650")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C7245133"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "64eca4aa-f2a6-446d-bab6-1eab021b475e")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "KiLib_Generator" "inductor/SMD"
 			(at 0 0 180)
 			(layer "F.SilkS")
@@ -13895,6 +14907,39 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "4cd327d9-2ef0-48e8-ad4c-4d20c0acd26f")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "CGA0402X7R474K160GT"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e203d084-9a15-4b8b-8608-a8d6db512b51")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "HRE"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ebc6b20b-225d-4240-98bb-0f9a7bfd7ec7")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C22435970"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "73e38327-419c-4288-b0d5-ea0b7dd172b3")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15270,6 +16315,39 @@
 				)
 			)
 		)
+		(property "MPN" "CGA0402X7R474K160GT"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c0af0556-935c-40a5-a857-3fba445d8f4c")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "HRE"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c2aa7137-7aa2-4c9c-980e-dd40302887a0")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C22435970"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ff5bed8a-06ec-4b45-8276-2c1e9f28f20e")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
 			(at 0 0 180)
 			(layer "F.SilkS")
@@ -16540,6 +17618,39 @@
 				)
 			)
 		)
+		(property "MPN" "RC0402FR-072R2L"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "632854cf-f685-49c8-936b-ccc03beb6e7e")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Yageo"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5f3bcaf9-c8bb-48f0-809f-74528775b3ce")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C327251"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7733d0ba-4916-4541-8a41-f98cb606e311")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
 			(at 0 0 90)
 			(layer "F.SilkS")
@@ -16683,6 +17794,39 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "0efd6ba3-e563-4e87-8d43-65e3c0b311c5")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "CGA0402X7R474K160GT"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3c2e4abb-b403-49d2-b765-0e8fe2d19906")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "HRE"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7f8343c3-9170-43bf-aabd-20be9d59c44b")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C22435970"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "edcfacf9-51d9-479d-9478-a3cf1cd27516")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17134,6 +18278,39 @@
 				)
 			)
 		)
+		(property "Manufacturer" "Nexperia"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ee90e141-f790-4e2f-bb45-6201fde61e21")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "2N7002,215"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "512f5cf2-6c87-43c5-88f6-ceecca8ab428")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C65189"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5e3ebccb-fa3a-44cc-8831-4c28d48b1286")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "KiLib_Generator" "package/gullwing"
 			(at 0 0 0)
 			(layer "F.SilkS")
@@ -17502,6 +18679,39 @@
 				)
 			)
 		)
+		(property "MPN" "CL05A225KP5NNNC"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "46fb46f9-32cc-4a43-b2db-27677cd4ed9c")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "eda95183-6066-4de6-911a-5adc4080501e")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C7464343"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c7894d97-9e6d-4f54-b8e6-09ae4a6404a5")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
 			(at 0 0 270)
 			(layer "F.SilkS")
@@ -17755,6 +18965,39 @@
 				)
 			)
 		)
+		(property "MPN" "RC0402FR-071KL"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b62b84c4-3cb7-4a8f-bd62-55b25c227a87")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Yageo"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "4121460d-70cb-44fe-b999-7ab3f8d5303c")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C106235"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5770d0c2-9fd7-4fe1-a05b-1262e36c3719")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
 			(at 0 0 270)
 			(layer "F.SilkS")
@@ -17904,6 +19147,50 @@
 				)
 			)
 		)
+		(property "LCSC" "C76965"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a751d648-0319-440a-8885-617ea8379914")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "4de72432-0919-45fb-8a81-68f1338b71bf")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "GRM1555C1H331JA01D"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8222c4dd-5eae-4c84-991f-4ea747bdb393")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C76965"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f4c0dba0-52cb-4d8a-a814-0bdef1177636")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
 			(at 0 0 90)
 			(layer "F.SilkS")
@@ -18047,6 +19334,39 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "6bb24b70-43c0-45bd-b1f0-318908ecf4bd")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "CL21A475KAQNNNE"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "03fb262c-5689-4574-bf86-6469f129cab2")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7fe1d66f-64c6-42cd-9314-0f46890ed00a")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C1779"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8f0014c3-4dbd-4d0c-8a66-2e61904ef49a")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18459,6 +19779,39 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "410097e0-8cf7-4bf1-b35c-b3d8654984f7")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "RC0402FR-0733RL"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ea12e899-ef0a-4c15-bc6a-4877fc3e4633")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Yageo"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "10defa77-42e9-452b-98ee-12821f5275d3")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C138002"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "eaea882b-a654-49d5-91e2-64834c1be3c9")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18880,7 +20233,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "${KIPRJMOD}/../ai-files/datasheets/Yageo_RC0603FR_series.pdf"
 			(at 0 0 270)
 			(layer "F.Fab")
 			(hide yes)
@@ -18896,6 +20249,39 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "6f4a265c-82c8-40db-8477-a7b3504363d0")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "RC0402FR-074K7L"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a49c3055-db4e-4766-a30e-a86e5450a88e")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Yageo"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "cb0804ad-da40-4324-acc8-dd1882e04fad")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C105871"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ef4fc715-23da-4cbb-b410-e9fd81506b6c")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19044,6 +20430,50 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "d416b98e-a8fc-4055-9a50-9ca7532815b9")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Yageo"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d4ef3d02-dacd-46c5-89be-190e8959d766")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "RC0402FR-07180KL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c07a43de-ceae-45e3-9be7-eba4ed2b9fa2")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C138046"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c4771472-7ad7-4a8e-9f06-7c9b86b5eb92")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C138046"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "85092c50-e8cc-4232-a8b0-4005aa35e3a9")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19341,6 +20771,39 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "0a22b86f-d062-4361-9d04-4a8691b162e9")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "RC0402FR-07100RL"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9dce796e-a19a-4900-96f3-4b218240bf14")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Yageo"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "85722bd0-b4af-4c5d-8304-cb5c59287924")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C106232"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "6c4a58cb-cc73-46ec-afba-1bc3ca7c735e")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20993,7 +22456,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://product.samsungsem.com/mlcc/CL32B106KBJNNN.do"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -21009,6 +22472,50 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "2235ac76-f8c9-40b9-8322-17c9e2eb312d")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C440198"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "602dfbd5-e287-4d82-ad13-89772959d3f8")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2bdd3355-0474-4039-b710-ef0120c6080e")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "GRM21BR61H106KE43L"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a3b33a60-9c5c-485e-9d4f-5d79e7e20cd9")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C440198"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d4b108b5-998b-4043-915c-952a4b8d21ab")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21158,6 +22665,39 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "b95ec26b-c9c3-48c9-b369-727b0ec4ffef")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "RC0402FR-071KL"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e019e41e-cdc6-4877-89bf-06476c67e2f7")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Yageo"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "cb2f1dab-5201-42c9-aaf9-8d7f428fa508")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C106235"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "06b87916-144c-40a9-8aa5-673a32220d13")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21460,6 +23000,39 @@
 				)
 			)
 		)
+		(property "MPN" "RC0402FR-071KL"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f3780df5-2175-4e2c-b82a-d9429fe3e085")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Yageo"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "04c56f4f-caf1-451c-a1ea-5f1c118daa33")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C106235"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0a64b63e-6369-49c4-be87-d70ac26913d3")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
 			(at 0 0 90)
 			(layer "F.SilkS")
@@ -21603,6 +23176,39 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "6652f4cc-c6f7-47f6-8d90-a3814a756e8d")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "RC0402FR-07100RL"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ba60ab44-759d-4272-af1f-9f4658646bd5")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Yageo"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1734396a-7035-4a20-8595-c387a92ff33b")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C106232"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e7d0650e-7b48-450c-9405-dbfc0286eb0f")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -22342,6 +23948,39 @@
 				)
 			)
 		)
+		(property "MPN" "CL21A475KAQNNNE"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "01afcc10-67c4-4469-aa79-8ef13a7ba5e0")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7a6cb7d9-5e69-49ec-b25e-bd554fc6bf86")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C1779"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ba4e6e20-b4c4-4229-862e-473bc3cd9f54")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
 			(at 0 0 0)
 			(layer "F.SilkS")
@@ -22485,6 +24124,39 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "3d6f9c80-b3e9-4cdd-b061-d8e5e81fd9e9")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "RC0402FR-07499KL"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8be439b3-0648-4fd6-a47e-f876b04e1d54")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Yageo"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "358f3c0c-26bf-42b2-90aa-8192558f4695")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C137971"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c475d620-0934-42da-89d1-3177e452c0cf")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25067,6 +26739,39 @@
 				)
 			)
 		)
+		(property "MPN" "RC0402FR-071ML"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "70c9b825-260e-4b5e-817d-eccef2afc703")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Yageo"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "18706a10-8646-468f-85ef-d4fb8f94722f")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C138033"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "30a2a854-4e61-4a8b-b7b7-51028573465d")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
 			(at 0 0 0)
 			(layer "F.SilkS")
@@ -25361,6 +27066,45 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "1538b312-ed4d-4c17-9621-72eee3ffc7e7")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "Alps Alpine"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "238b0e79-d133-4b53-a0a6-87ee96608928")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "EC11E15244G1"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e747b101-3d11-4b91-aa32-6f92b40d747e")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C370970"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0dc89d30-6f29-4df5-87a1-d08dc1841ca6")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25743,7 +27487,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/ts5a3167.pdf"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -25759,6 +27503,39 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "44ed23bf-be7e-40ee-8644-5f0a351051f2")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "TS5A3167DBVR"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2797d8c3-0627-4ffe-9481-beadd0b498d4")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C128416"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a4f5da72-d144-41c7-a9ec-f1f2d218a496")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Texas Instruments"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "33a73311-f642-4c36-9a70-0bf8abc4aae0")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26149,6 +27926,39 @@
 				)
 			)
 		)
+		(property "MPN" "RC0402FR-0747KL"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2c9b5ecc-ce1d-4cfa-aaf2-fedf63012984")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Yageo"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ee890abe-5674-4410-a78f-219ddb1ce2b8")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C93943"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e57e6412-4179-420d-9855-c646d846202d")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
 			(at 0 0 90)
 			(layer "F.SilkS")
@@ -26292,6 +28102,39 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "b75de50d-75fd-47bd-97a1-e5cb989d1ffd")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "GRM1555C1H103JE01D"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "992f0697-0a15-491c-ab05-5e9cb2a931c8")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "af48470a-bbfa-4a21-a764-208fd2795e00")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C22400107"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a3dd6ef3-9068-409a-ac15-0d4e268c27a2")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -28324,6 +30167,39 @@
 				)
 			)
 		)
+		(property "MPN" "RC0402FR-071KL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1e456d2c-d97f-45a1-ab45-e8be97be094d")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Yageo"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2f9045f8-7d89-4c33-b188-019a5106ba63")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C106235"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e984a2f4-0047-4f6e-b33a-31e97e30c3ae")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
 			(at 0 0 0)
 			(layer "F.SilkS")
@@ -28764,6 +30640,39 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "731a121f-de7b-4cc1-a226-8cb8381c129f")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "RC0402FR-07150KL"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e550fa55-8764-4dd0-b447-c74185c8b084")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Yageo"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "45f9b01a-215a-48cb-b293-2dc7707a96c6")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C93947"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "27fc9d1f-1a93-487b-bf07-e7e1a76b12b5")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -30185,6 +32094,39 @@
 				)
 			)
 		)
+		(property "MPN" "CL05A225KP5NNNC"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "474c6ff1-f76a-4b3b-a373-2bff4850e5ca")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9cb16c7b-03cc-4a73-a7c4-fe71350d84c5")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C7464343"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "4a3a6d7b-d782-4794-85aa-7a020d9ee7c6")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
 			(at 0 0 180)
 			(layer "F.SilkS")
@@ -30334,6 +32276,39 @@
 				)
 			)
 		)
+		(property "MPN" "CL21A226MAQNNNE"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "4780482a-3fff-4b7d-ae68-099262be4750")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7a2d5a29-d2b4-402a-8184-2c5daafdad5e")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C45783"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "249150f9-d290-4d0d-bf5d-5da348524b2b")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
 			(at 0 0 90)
 			(layer "F.SilkS")
@@ -30460,7 +32435,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "${KIPRJMOD}/../ai-files/datasheets/YAGEO_C114639_RC0603FR-079K1L.pdf"
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -30476,6 +32451,50 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "c16d8f1e-d301-4b5d-b29f-46b5aa6be58a")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "RC0402FR-079K1L"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "83053e93-10fc-467f-bc39-bf32ae9a1565")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C163450"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2a4aecd9-fefb-4ed7-a618-9fff5b944bdc")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Yageo"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ba312725-81b8-44ac-ab92-12b3d25795ac")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C163450"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e9892458-e191-4fda-b0ae-f86d342f525b")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -30772,6 +32791,39 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "f3f6a0de-88d9-4bd5-94e6-e352ddb7980c")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "MWSA1265S-220MT"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3d8c4e24-7547-42c2-a22c-2ba0ca411777")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Sunlord"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ffd1ee3b-5a23-4a03-920c-583060daabaf")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C7245133"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ae86dd17-1007-407a-99ab-11a80ca2068a")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -31224,6 +33276,39 @@
 				)
 			)
 		)
+		(property "MPN" "RC0402FR-07100RL"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "bb4c6bae-73c9-4200-a809-c8e07c426175")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Yageo"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "39fa598d-0732-4821-ba3a-5a2fc17f1ea3")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C106232"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "79b900ef-3cdf-4d38-93d4-60476ccd578d")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
 			(at 0 0 180)
 			(layer "F.SilkS")
@@ -31514,6 +33599,39 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "612dd702-fd3f-4a60-b3a4-8bbf1690cd3f")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "RC0402FR-071KL"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b269ae00-e5af-4c7f-9004-2a1e248cb836")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Yageo"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "cecff40d-9284-4c91-875f-5b458566e87e")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C106235"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b185a8af-12a8-4b82-abb5-122c0001ea3e")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32053,6 +34171,39 @@
 				)
 			)
 		)
+		(property "MPN" "CL05A225KP5NNNC"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c8fbcca5-37e0-4b0a-9517-33d71494be4e")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "916ab6ca-fbb3-4976-896e-2598a9a84484")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C7464343"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e50b0e72-9ec8-4fb1-b020-199fb34739c9")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
 			(at 0 0 180)
 			(layer "F.SilkS")
@@ -32195,6 +34346,39 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "143f2db2-372a-4347-ad31-00c246a4a8f6")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "XAL7070-222MEC"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ba281cb7-3e16-4c45-844f-1127546072fa")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Coilcraft"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c9bfdc12-04a1-46fa-9505-dd7498a46f8d")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C3911470"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "61d9b4d2-01a2-435b-a22f-1105856e4293")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32929,7 +35113,7 @@
 				)
 			)
 		)
-		(property "Value" "22pF C0G"
+		(property "Value" "15pF C0G"
 			(at 0 1.16 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -32957,6 +35141,39 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "92f16aa3-3f68-498e-85a8-0f9e7ba6344e")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "GRM1555C1H150JA01D"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a59cac69-d26c-4c10-a436-c13e2982e538")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "62dd05cf-9d93-4fc7-b7a9-49a044984558")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C76950"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d44be05e-1408-476a-b52c-ec6a4d59f016")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -33622,6 +35839,39 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "eedc9c15-34a8-4fb4-a01e-3edfcbaa3abf")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "CL05B682KB5NNNC"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "eb017218-0b11-4dfc-a90c-afeb9b201e70")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "af79bd14-35aa-401c-89f4-dd72302d4b00")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C318580"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2073d69a-c276-44a0-9577-23c8fd0e1b3c")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -34652,6 +36902,39 @@
 				)
 			)
 		)
+		(property "MPN" "CL21A226MAQNNNE"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9e24ae50-661d-42a7-ae9c-33201c8a049b")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f5a8266e-8759-4777-999b-4000bd036c1c")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C45783"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "51061c2b-a6a6-4d01-b477-2a8a47bced2f")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
 			(at 0 0 90)
 			(layer "F.SilkS")
@@ -35101,6 +37384,39 @@
 				)
 			)
 		)
+		(property "MPN" "RC0402FR-0756KL"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "871d9974-7b17-43a1-a11c-623682be3e62")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Yageo"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2e6ddd29-46cc-4767-9e27-1e542a77f634")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C114756"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1efe8eb1-3350-465b-baa8-24595cf3ca92")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
 			(at 0 0 90)
 			(layer "F.SilkS")
@@ -35243,6 +37559,39 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "d0ef20c5-2ef5-4a36-b73c-75304c54b3de")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "RC0402FR-07301KL"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ba640719-801f-43c5-b9fc-9553b70a79de")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Yageo"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2de1e6ae-3035-4b27-924e-2c3dfe3efd29")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C171693"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d47f2858-da02-4abe-b180-dbb5c5e6a0e7")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -35843,6 +38192,39 @@
 				)
 			)
 		)
+		(property "MPN" "AC0402FR-0782KL"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "fb744fe9-fdfd-4ec6-a6d2-8884e88081c5")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Yageo"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "bf52eb2c-4c5b-465f-a1aa-365696faba21")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C144735"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "917aad2e-a6ce-45be-9daa-10fc6195d16f")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
 			(at 0 0 90)
 			(layer "F.SilkS")
@@ -36416,7 +38798,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.yageogroup.com/component-documentation/download/specsheet/RC0603FR-071ML"
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -36427,11 +38809,66 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Resistor"
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "ec525d1a-e693-4d11-88ec-4968a13f7ec0")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "R res resistor"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9c0a9b15-2f11-453b-b724-377d00c8c07d")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_fp_filters" "R_*"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a5d6995a-b2c3-4bf7-8b78-298367dd56a1")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "RC0402FR-071ML"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "91c6b434-7d0d-4a2f-9b46-687f2b2cd039")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Yageo"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0d3b7a24-c093-4173-a241-ce2649d5bbff")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C138033"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b304a9b4-e82a-42f9-83b7-53b31c0983a7")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -36580,6 +39017,39 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "b956e287-1020-4428-9cee-8d64cc1d55cd")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "RC0402FR-071KL"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c335785a-031e-4715-a97d-cd9787d8b586")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Yageo"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a125a851-3a0a-47a7-8465-ed278b1e2cea")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C106235"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2d73aaf5-eec3-48de-a7cb-9f5008fe1947")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -36869,6 +39339,39 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "b5426015-6cc6-464f-89dc-45b5f2a57e99")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "RC0402FR-0733RL"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f9b86a62-2bfc-4dd3-8bd5-07c749b50879")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Yageo"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8e1f25f6-c98d-4dda-8fbd-8e8b98f973d1")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C138002"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "134c79b7-af4f-48c8-bbbd-a673c8a376e8")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -37298,7 +39801,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://product.samsungsem.com/mlcc/CL32B106KBJNNN.do"
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -37314,6 +39817,50 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "f83739c9-0253-43ed-bebb-3c48792ed38e")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C440198"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d68a3382-148b-4796-9971-06a5ced30a1b")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9b907744-2594-475d-8209-bd7022899205")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "GRM21BR61H106KE43L"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d4fb9c20-a2d6-47b9-8e15-b5796e90a828")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C440198"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8ee5bd5d-8f96-4fa4-8e78-0d26b5811ab7")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -38042,7 +40589,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "${KIPRJMOD}/../ai-files/datasheets/Samsung_MLCC_LCSC_C1591_C1711.pdf"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -38058,6 +40605,50 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "5e3c9ffa-3d94-4be3-ac4c-985081b471f4")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C77020"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "424d50ba-3d52-4c5f-b0c4-f457ee990257")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1921fdc5-919f-4447-83c7-25612390dffb")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "GRM155R71H104KE14D"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7b28775e-a12c-4dd4-8d64-9e8d3877b30c")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C77020"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f9c2b033-f6a3-4e4d-8888-cfb6433e71d9")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -38502,6 +41093,39 @@
 				)
 			)
 		)
+		(property "MPN" "RC0402FR-071ML"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "558b98fb-3e6d-4c2c-822d-033a7b146e02")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Yageo"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8999101f-161d-4ce8-9462-6fb65cf8a71f")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C138033"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9da715ea-f759-479a-be56-6479a386f150")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
 			(at 0 0 90)
 			(layer "F.SilkS")
@@ -38923,6 +41547,50 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "17d2804b-0ee2-4bd0-8350-14042c4b90bf")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C114763"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "00309628-fb15-4ded-abe1-a22d5cd1d04f")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Yageo"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e1f204de-e2dc-4a9a-ad7a-4adeebcaa387")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "RC0402FR-07200KL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b8724f1f-c09a-486a-86ae-3dd29c3ef04e")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C114763"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2b5afce4-108f-45b5-bf04-8bc085574e7a")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -40028,6 +42696,39 @@
 				)
 			)
 		)
+		(property "MPN" "FCC0402N330J500AT"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "994eaa1e-e6b1-430d-85e8-594160c1c455")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "FOJAN"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7b09368e-aaac-46dd-b848-26ced7073459")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C5137486"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "4e9e471c-97c3-488f-8b66-c0a299bc31a3")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
 			(at 0 0 90)
 			(layer "F.SilkS")
@@ -40170,6 +42871,39 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "88d53e83-d141-45f3-841f-2a24237f7c3a")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "RC0402FR-0722RL"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "458614b6-40da-4069-a109-fb4bc4bebcde")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Yageo"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "12b64615-934e-43d2-a268-7950e17b8e19")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C114765"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3205d1f9-88e1-4aba-a5fa-0ab663e8d3a6")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -40623,6 +43357,39 @@
 				)
 			)
 		)
+		(property "MPN" "CGA0402X7R474K160GT"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1a27bf7e-dccd-4e08-989b-a38ba6a619bc")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "HRE"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ea65c87e-c0c8-486b-84ae-28584391fbbe")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C22435970"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8522a31c-71ae-4d77-bec4-c9a9d4f2d1b0")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
 			(at 0 0 0)
 			(layer "F.SilkS")
@@ -40750,7 +43517,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "${KIPRJMOD}/../ai-files/datasheets/Samsung_MLCC_LCSC_C1591_C1711.pdf"
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -40766,6 +43533,50 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "7f8ca987-217d-4ae2-80a2-1f95ef8a6947")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C77020"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2a8b7fc4-a8d3-4014-93a4-5422b13bfeef")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3ee2be9a-8997-41f6-929e-c20a2b41a89f")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "GRM155R71H104KE14D"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "6c4c84fa-f934-4197-9c38-00dc7058d7da")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C77020"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e75848a1-c09c-4639-b7fb-b3a1b9569b9e")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -41310,7 +44121,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "${KIPRJMOD}/../ai-files/datasheets/Yageo_RC0603FR_series.pdf"
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -41326,6 +44137,39 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "65a5cff7-cfac-4386-ad29-0d02f8aa6fa2")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "RC0402FR-0747KL"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "abedc197-ddc8-477b-a791-b9afb763a2e9")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Yageo"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1b067726-d75f-448d-996e-2831ede3eeec")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C93943"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c3ce2c06-f8d3-41b6-846f-3735333c7353")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -41629,6 +44473,39 @@
 				)
 			)
 		)
+		(property "MPN" "RC0402FR-0722RL"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "502e3494-a62c-47cb-ad95-d35d8225e526")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Yageo"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "4b18415e-6fd1-4a22-91ad-3a3cdf2b9fff")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C114765"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "21925bcc-e885-4fcf-bcba-4fe0f1ae89b7")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
 			(at 0 0 270)
 			(layer "F.SilkS")
@@ -41772,6 +44649,39 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "1687fefb-1db5-4da0-a5e0-15ef52dec8eb")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "XFL4015-471MEC"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "af7feb04-25b5-490d-b7b2-6e6c30a4fc82")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C18221164"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1a0d0a94-08d6-4247-9c82-6138714d9284")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Coilcraft"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0fe7a752-1da4-46fd-b25b-5a83fd11d0d2")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -42042,6 +44952,39 @@
 				)
 			)
 		)
+		(property "MPN" "GRM1555C1H103JE01D"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "fd13a755-d29a-48bd-9c94-0c5dfad72a73")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a95555ff-bf50-4ee9-b6bf-bdffe194da77")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C22400107"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "716d0556-41ad-4d2a-9082-3bba789f6dda")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
 			(at 0 0 180)
 			(layer "F.SilkS")
@@ -42305,7 +45248,7 @@
 				)
 			)
 		)
-		(property "Value" "22pF C0G"
+		(property "Value" "15pF C0G"
 			(at 0 1.16 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -42333,6 +45276,39 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "228547a0-dbc1-4e7d-839c-8b82e8b0f1d2")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "GRM1555C1H150JA01D"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a0f85d1c-be56-40be-9234-ceba6118cd9c")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "949c7613-5a5a-4123-bd4c-16e35eb585d8")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C76950"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c4847115-0908-4f8d-9e7b-f93f953d8bbe")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -42615,7 +45591,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "${KIPRJMOD}/../ai-files/datasheets/Yageo_RC0603FR_series.pdf"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -42631,6 +45607,39 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "3af5bc34-45ec-4fe2-8221-87695f91ebcf")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "RC0402FR-07180KL"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3a1bb249-d6cf-4b7a-9596-571b2fc01525")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Yageo"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "695cde76-b135-43b3-bb21-62c92a2308da")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C138046"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d8003dd7-0d90-459d-a0f6-11c6823e4e9d")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -42763,7 +45772,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "${KIPRJMOD}/../ai-files/datasheets/Yageo_RC0603FR_series.pdf"
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -42779,6 +45788,39 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "e2bb21f7-68ff-4531-a80e-b578baa52e2c")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "RC0402FR-07100RL"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "808ff701-a5f7-4691-8415-226253a65f6c")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Yageo"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2e220415-333f-47a2-8568-972cae7d3c03")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C106232"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0bae29b0-0fcd-4a70-a958-094f0e816de0")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -42933,6 +45975,39 @@
 				)
 			)
 		)
+		(property "LCSC" "C5159426"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e5becc60-1253-407f-b40d-9e66b398aa1a")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "TDK"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ef83c92d-f50c-4404-a4fd-7ffc3352a09e")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "C2012X7R1H475KT0A0E"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "4d70fd5e-9496-4515-9581-f8a8ee983db8")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
 			(at 0 0 90)
 			(layer "F.SilkS")
@@ -43075,6 +46150,39 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "fddfcbf3-1955-4df7-a95c-83768da1c1cb")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "RC0402FR-0747KL"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "235f2f67-bc13-490a-9f27-3a18529f8255")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Yageo"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2dd08355-e99b-4f57-9433-f5fff891163f")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C93943"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f154bdb8-dc1b-46b3-b91e-09c27dcf2eb3")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -43229,6 +46337,39 @@
 				)
 			)
 		)
+		(property "MPN" "CL05A225KP5NNNC"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "27269c9c-fe96-4939-92d7-c911979c7c7c")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "4363ab1a-5eb1-4e36-92f0-eb252a0be9e8")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C7464343"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7ae9bba6-7aca-435a-874e-635d300956d0")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
 			(at 0 0 180)
 			(layer "F.SilkS")
@@ -43371,6 +46512,39 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "0b55de64-d79b-47a0-9cbc-da8c2ed7ab1b")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "FCC0402N330J500AT"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "583b90a6-75d7-4029-8dbf-5c873cb017cc")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "FOJAN"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "df4e524d-1d6a-4c3c-8e7e-7d6b53a71504")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C5137486"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ad1b0f35-59de-49c8-979c-fcd5dcb36772")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -43810,6 +46984,39 @@
 				)
 			)
 		)
+		(property "MPN" "CL05A225KP5NNNC"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f8a1082d-e64f-40d3-9851-29e93b95f726")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f8a08cd6-aa21-4ce6-b860-011dc17e5077")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C7464343"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c4cea02f-8926-4bb0-bad4-33a153a70496")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
 			(at 0 0 270)
 			(layer "F.SilkS")
@@ -44086,7 +47293,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "${KIPRJMOD}/../ai-files/datasheets/SAE_1RC0603F_series.pdf"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -44102,6 +47309,39 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "44749aac-b4bf-43c9-806f-a3a89ebb9671")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "0402WGF5231TCE"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "4effd976-9e27-4de7-86cc-8edd10692d1e")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "4769ef03-76d9-450a-87c3-7d98c7410b28")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C25907"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0da85300-658f-4b27-9645-958a08262b02")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -44391,6 +47631,39 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "741ad2db-1794-4c1a-a0d4-f29bf1acdb7a")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "CL05A225KP5NNNC"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "4fa1aea3-42d3-436e-979e-0f27a206aa93")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "56aacc53-cf31-4dc1-afb3-f7fb7561dd67")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C7464343"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7e25393e-f2ce-4fc0-9906-9cd0ecf547d0")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -45228,6 +48501,39 @@
 				)
 			)
 		)
+		(property "MPN" "CL21A226MAQNNNE"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "114d8a84-0540-4128-b33d-fa2922061de9")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d2310a77-9d2d-4c9f-9c33-921c275c2df1")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C45783"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "53d8d451-bf30-40bc-a0f9-b81e58f67209")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
 			(at 0 0 90)
 			(layer "F.SilkS")
@@ -45673,6 +48979,39 @@
 				)
 			)
 		)
+		(property "MPN" "GRM1555C1H103JE01D"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7b15f55c-3d38-46a0-9ea5-0441235c857c")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "203b313b-7d22-414a-bba9-da281e825bdc")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C22400107"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "6bc584f3-ea41-45ff-b0d2-049bba233a1c")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
 			(at 0 0 270)
 			(layer "F.SilkS")
@@ -45815,6 +49154,39 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "7032038f-e1f5-41d4-8287-660af26a32c0")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "RC0402FR-071KL"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "cfdfeb5b-b57d-41b2-a447-0e095df4ccd0")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Yageo"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "cb13b6b4-14ad-4432-903f-b4762dff03ac")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C106235"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "924e5b13-b17b-4a28-924f-029d44cd542b")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -46539,6 +49911,50 @@
 				)
 			)
 		)
+		(property "LCSC" "C76965"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5cf4d7b3-51fe-48ab-9a07-c09eb794c743")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "db4760a3-417e-46d8-8cf5-42c398919f8e")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "GRM1555C1H331JA01D"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "bd2841f4-0cd6-41a6-805b-718b9842e8ce")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C76965"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2fc3abef-0be7-4e62-8aab-855896884fb2")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
 			(at 0 0 90)
 			(layer "F.SilkS")
@@ -46681,6 +50097,39 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "16686b8c-1c11-4f51-971b-842f71c761e7")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "BLM15AG601SN1D"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0266bec1-002c-4111-b6e5-cffed820ebee")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "deeb0a5d-f332-4782-bf75-ac0df1076155")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C76884"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a2f55b22-c8ce-4b72-a5ef-b34f571455c4")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -46978,6 +50427,39 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "78fbcf51-2c72-42f1-b684-9a8578c8452b")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "CL05A225KP5NNNC"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "dfb6204f-df69-4711-b34c-77bc929af09d")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5ba5ad37-914c-4574-b589-18c25dfebe7f")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C7464343"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9c70bd5f-7504-4987-a5d3-ed9f8a712cf5")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -47679,7 +51161,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "${KIPRJMOD}/../ai-files/datasheets/Samsung_MLCC_LCSC_C1591_C1711.pdf"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -47695,6 +51177,50 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "f8ae66b2-6867-48f2-9d1f-9f13a2fe5f43")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C77020"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e7fb7088-ab87-4a26-b059-e67674362a9f")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c1fffa10-6416-4034-85fd-f42b16109ad8")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "GRM155R71H104KE14D"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1fdfa84c-da78-4f28-a927-2cbe0e8ada3d")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C77020"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "466f7f5f-6ded-41f7-8ef0-f8f8c437856a")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -47974,6 +51500,39 @@
 				)
 			)
 		)
+		(property "Manufacturer" "Ckmtw"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f15b7f2b-c0a7-4259-8441-4ffc1e1b14f1")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "B-2100S04P-A110"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9f80b27e-6b6f-45ad-a2f1-368f2812dd18")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C124378"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f6859218-12e1-412e-80d6-697cae7c45b3")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "KiLib_Generator" "connector/pin_header_socket"
 			(at 0 0 0)
 			(layer "F.SilkS")
@@ -48221,6 +51780,39 @@
 				)
 			)
 		)
+		(property "MPN" "RC0402FR-072K2L"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1f70667d-dc2c-4066-a0f5-fa99c8f3bd54")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Yageo"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "fceb6599-ece6-4314-ae61-1b4bcef7f0d9")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C114762"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b96746c0-e96e-47cd-a109-44c98c0c11fd")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
 			(at 0 0 270)
 			(layer "F.SilkS")
@@ -48347,7 +51939,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "${KIPRJMOD}/../ai-files/datasheets/Yageo_RC0603FR_series.pdf"
 			(at 0 0 270)
 			(layer "F.Fab")
 			(hide yes)
@@ -48363,6 +51955,39 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "94229d2b-c004-4334-aef5-ee79794f9a2d")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "RC0402FR-074K7L"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "19b76ddc-7640-4b16-8a86-7817cc9fa468")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Yageo"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "fe30ebb3-d043-4062-92b0-ae1f3382b922")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C105871"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "285781d2-1656-4644-8d24-860e46578a37")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -48496,7 +52121,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.yageo.com/upload/media/product/productspec/capacitor/CC0603KRX7R9BB473.pdf"
 			(at 0 0 270)
 			(layer "F.Fab")
 			(hide yes)
@@ -48512,6 +52137,50 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "85ee25f4-a4a1-4978-8aaa-fea6386050e1")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "GRM155R71H473KE14D"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "81281a59-4b46-4179-8436-25f5b040ad93")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2204fe4d-6861-4a2b-a996-e92b3ef78832")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C117757"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "11286792-ad24-4b78-994e-cfe4026fd028")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C117757"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "bfa68d11-6914-417d-98c1-12052fbbe3e8")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -50023,6 +53692,39 @@
 				)
 			)
 		)
+		(property "MPN" "CL21A226MAQNNNE"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1ceb8531-1732-4355-9e58-679e64a8bb99")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "6e3224d9-f0ea-45c0-92fa-71e752024f2c")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C45783"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5cad5e63-e2cf-40ad-a248-aa96b0152ac4")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
 			(at 0 0 90)
 			(layer "F.SilkS")
@@ -50321,6 +54023,39 @@
 				)
 			)
 		)
+		(property "MPN" "CGA0402X7R474K160GT"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1384b383-b700-4dc9-9657-5135f25f390a")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "HRE"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3418b1f1-6d7c-400c-8300-35596fdb0ffc")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C22435970"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f61d7f36-19e1-4133-813d-1ac5b3cdd646")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
 			(at 0 0 180)
 			(layer "F.SilkS")
@@ -50470,6 +54205,39 @@
 				)
 			)
 		)
+		(property "MPN" "GRM1555C1H103JE01D"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0bed4659-ef85-4d0d-a45a-cd92d6cc9954")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "02d01c43-0a5c-47e3-affd-5a1e602dde84")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C22400107"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ad9e7c7c-635f-4291-a5ac-7be2916887ec")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
 			(at 0 0 0)
 			(layer "F.SilkS")
@@ -50597,7 +54365,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://product.samsungsem.com/mlcc/CL32B106KBJNNN.do"
 			(at 0 0 270)
 			(layer "F.Fab")
 			(hide yes)
@@ -50613,6 +54381,50 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "dec1abcb-d42f-4565-b946-4688f84607fe")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "GRM21BR61H106KE43L"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "6d23aa14-bacf-480e-b088-87f4b20b678c")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8c0137f7-d0e7-4572-8b2c-61404b81ef79")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C440198"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "71f73be2-7be0-40be-9c40-04174264c804")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C440198"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "723e1e72-b820-4af9-b98d-1a7c310ee0f0")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -50746,7 +54558,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "${KIPRJMOD}/../ai-files/datasheets/YAGEO_C107093_CC0603KRX7R9BB473.pdf"
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -50762,6 +54574,50 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "a2cc4337-ac6a-48cd-9383-1bda9b6f9ad5")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "GRM155R71H473KE14D"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8592dd2e-39f7-4310-b93d-4a7b2cc8a696")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ec3711d0-77cf-4921-91be-37bd2add1146")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C117757"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "381aea5a-94a2-4081-a8a9-fbac4559be8f")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C117757"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ac0afa32-f748-441c-a09f-a30625cbe1b8")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -51680,6 +55536,39 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "200484e5-40cb-45f0-9dca-7e274d1ac611")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "GRM155R71H103KA88D"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "27dba1b6-9e78-4532-bbdf-c41b27edc02e")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e52fbeb3-b3dd-41c6-bf29-4a4df6736771")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C77019"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f5de12de-1e88-4176-8259-5fb5c6b1b761")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -53355,6 +57244,39 @@
 				)
 			)
 		)
+		(property "MPN" "CL05A225KP5NNNC"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0bbe095a-4a8a-4d55-b61f-fda993b6e838")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "90a00e17-a5e2-41d1-87ce-e3b9a019f7b6")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C7464343"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a8a55d64-79ed-4dfe-aaa0-6e3cc5ac8d3d")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
 			(at 0 0 0)
 			(layer "F.SilkS")
@@ -53504,6 +57426,39 @@
 				)
 			)
 		)
+		(property "MPN" "RC0402FR-07100RL"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ea6ebbbb-74d4-4131-b341-4af427825488")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Yageo"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "379c47be-1fa8-49d8-92f4-a8b4cb6c5953")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C106232"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "24cbfaca-a7d9-4fb4-a9f0-8d4af5eca83f")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
 			(at 0 0 180)
 			(layer "F.SilkS")
@@ -53631,7 +57586,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "${KIPRJMOD}/../ai-files/datasheets/Panasonic_EEH-ZA_hybrid_polymer.pdf"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -53647,6 +57602,39 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "215274a1-e1ac-42fc-b29d-117009fc782e")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "EEHZA1E101XP"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e217025e-9c6f-4b00-9348-3b88ad5907b8")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Panasonic"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "dedc5e0c-483d-4188-85fd-0e75540b9f48")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C264047"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9643c7fb-7f4d-4e43-9841-88663577fa35")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -54027,7 +58015,7 @@
 			(uuid "30bf9aa9-91f2-426d-871b-db1b81acdf6e")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/kicad-library/3d/CP_Elec_8x10.step"
+		(model "${KIPRJMOD}/kicad-library/3d/CP_Elec_6.3x7.7.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -54475,6 +58463,39 @@
 				)
 			)
 		)
+		(property "MPN" "GRM155R71H103KA88D"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7b991e3c-176c-4551-90f3-031f03e0bb33")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ac34a995-89f2-44dc-ab4c-6c2a72e5e074")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C77019"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "37f5a881-be6e-4179-955c-4797a3ac1502")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
 			(at 0 0 270)
 			(layer "F.SilkS")
@@ -54624,6 +58645,39 @@
 				)
 			)
 		)
+		(property "MPN" "CL21A475KAQNNNE"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "59e0bc89-22fe-498a-b1de-d2cf191aa1ad")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "fe6bf959-f691-4a2d-b3a7-96c898c3d888")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C1779"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a3510069-5c6c-41ba-880d-e25407908cdc")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
 			(at 0 0 0)
 			(layer "F.SilkS")
@@ -54767,6 +58821,39 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "fb10e5f3-64e1-4467-8680-70d5e32a0739")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "CL21A226MAQNNNE"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "bcd16ee9-a82c-4c57-b235-da0a061c45a0")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "851dc672-7245-4c8a-9a5e-58d551443572")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C45783"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c1e4ffa8-1e0a-4247-bb93-d3f0d43c8bd7")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -55416,7 +59503,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "${KIPRJMOD}/../ai-files/datasheets/Yageo_RC0603FR_series.pdf"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -55432,6 +59519,39 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "fa8c4297-ad78-4ae5-861d-f3fc498c1c7f")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "RC0402FR-074K7L"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "03e80605-dc30-4f64-bdbe-3c5969584bc4")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Yageo"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "18513cb8-6cc0-4628-a694-3576fe18c1a0")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C105871"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e5976fc6-e381-4940-9287-0682284cb4c0")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -55565,7 +59685,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://product.samsungsem.com/mlcc/CL32B106KBJNNN.do"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -55581,6 +59701,50 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "3f4cdee8-050a-4bc7-962e-935c0255dc6b")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "GRM21BR61H106KE43L"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "160988ff-0906-49b5-8bd3-781f3d5e0063")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1304fb3e-89e7-486e-9805-93051b51f5e3")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C440198"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "548d26f2-4636-4451-af4a-4d96bf3db4f5")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C440198"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d0fc5fab-ea76-4edb-9dbd-0d28472c635e")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -55736,6 +59900,39 @@
 				)
 			)
 		)
+		(property "MPN" "CGA0402X7R474K160GT"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3053c3ae-ce30-48be-b468-ab4e9b354fc1")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "HRE"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1a0316e8-608a-4460-b612-655801c678f5")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C22435970"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "65e02a8a-a9e4-4bcc-a217-d1359e811a6b")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
 			(at 0 0 180)
 			(layer "F.SilkS")
@@ -55862,7 +60059,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/ts5a3167.pdf"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -55878,6 +60075,39 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "7061bb8d-ab72-4ef8-a986-ba1309f17cb1")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "TS5A3167DBVR"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2548b789-95ec-4a16-9efa-dad01b364ba7")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C128416"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9093d126-bf12-4b5b-83da-f986c4d6d9b4")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Texas Instruments"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "336e4530-4876-4130-83d4-31338c083414")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -56418,6 +60648,39 @@
 				)
 			)
 		)
+		(property "MPN" "CGA0402X7R474K160GT"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "6d19943e-2ddb-4ed4-93ef-901802e47a50")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "HRE"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5fdd5e95-a64c-481c-8ec2-ffa719697c32")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C22435970"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "6124c3c4-28fe-4608-8d43-bf216b8965c6")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
 			(at 0 0 0)
 			(layer "F.SilkS")
@@ -56545,7 +60808,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://product.samsungsem.com/mlcc/CL32B106KBJNNN.do"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -56561,6 +60824,50 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "0ce7bda2-87a1-4a9a-b91a-feb803601013")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C440198"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3732d22f-f2a2-474b-ac8f-cf68e72f4860")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9fd72d7e-b808-4646-8a22-20f202c18692")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "GRM21BR61H106KE43L"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5051e6c4-0f96-474a-9b3f-3a1d135f4e70")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C440198"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0b9f591d-d004-40f6-b1bd-7d72204b07cd")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -56841,7 +61148,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/tps7a02.pdf"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -56857,6 +61164,39 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "a2156616-0329-451c-b931-7a000756acf5")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "TPS7A0230PDBVR"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3b6d53b2-755f-40c3-93aa-2c2634082fcd")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C3747031"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "28850d58-289a-41ce-a751-7c0ac9fd1a9a")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Texas Instruments"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "de2c23d3-87c7-498f-bffc-d98d2752ae98")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -57373,7 +61713,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "${KIPRJMOD}/../ai-files/datasheets/SAE_1RC0603F_series.pdf"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -57389,6 +61729,39 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "04425ccd-3fc2-4893-ba51-b8ea483f814e")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "AC0402FR-0730K1L"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f579dd78-65cc-4fb0-850f-eae915c6cc58")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Yageo"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3e6180aa-0e6c-49b1-8d5c-0d2a0add665e")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C226982"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "6ad34cfb-0194-4432-96c0-02eead43c2f0")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -57522,7 +61895,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://product.samsungsem.com/mlcc/CL32B475KBUYNN.do"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -57538,6 +61911,50 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "8f1e510c-2c36-444e-af2e-058f4d6473d4")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "TDK"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "30c1994d-6d0e-430b-9ecd-71c80bc719c9")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "C2012X7R1H475KT0A0E"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "fbd62696-419f-4d1d-bc72-14aebf316187")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C5159426"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "629f37dd-f619-4fb8-b1b0-507e38b2adec")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C5159426"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9cbb4b1b-d037-4aa3-b29c-c5d1967bbc51")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -57687,6 +62104,39 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "064db1ba-d0d8-416a-9612-5d8cb4ab08ba")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "CL21A226MAQNNNE"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "74bd20d0-9d41-4365-b46b-9115ec3c669c")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "adc41f07-b2cb-464d-bd0e-8955872adc22")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C45783"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7eec8096-04b1-4de3-afe5-af58ed0f9a43")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -58225,6 +62675,39 @@
 				)
 			)
 		)
+		(property "MPN" "RC0402FR-071KL"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b4599a20-e12b-4b3c-afc6-a255ee7d57d6")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Yageo"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "97d0e413-4fb5-4a0c-b3b1-6d2f215f4bad")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C106235"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "06b01e10-cba8-41d4-b984-c29b4952fa97")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
 			(at 0 0 90)
 			(layer "F.SilkS")
@@ -58367,6 +62850,39 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "1553bbcf-50e9-4deb-865b-4c2c83e07e51")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "CL05A225KP5NNNC"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7b4b06b9-69c2-4fe7-ac64-5f6be38480c3")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "afa6b919-6375-4239-aa73-c2051fcfd92e")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C7464343"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "16c6a890-8862-4da8-8c03-5a96e95766fb")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -58818,6 +63334,39 @@
 				)
 			)
 		)
+		(property "MPN" "CL21A226MAQNNNE"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a787d229-e978-4fd4-8dff-ff90257ca2bc")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1718d203-8b5c-47fc-b5c4-32f49c44b262")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C45783"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "51ee019c-bb6b-4d5c-adc7-8d84853c23bd")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
 			(at 0 0 0)
 			(layer "F.SilkS")
@@ -58966,6 +63515,39 @@
 				)
 			)
 		)
+		(property "MPN" "CL21A475KAQNNNE"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "22394d3c-c76d-42ad-85e2-dc6704cdac00")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "854a3139-bec7-41cf-a64c-d95930f6495d")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C1779"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8465fc40-3dfc-4c5f-b1a0-9a5c0228967b")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
 			(at 0 0 180)
 			(layer "F.SilkS")
@@ -59108,6 +63690,39 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "6317d8f3-2f6f-404d-86ee-35a2dc086646")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "MWSA1265S-220MT"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1f0cfe1d-985c-48ce-ae90-3444a3086448")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Sunlord"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d7bd7ffc-bfd7-4e28-8f17-216888018a37")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C7245133"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "19de3fa3-9aa2-458b-9b52-4172107b2f36")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -59389,7 +64004,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "${KIPRJMOD}/../ai-files/datasheets/SAE_C54531588_1RC0603F7872.pdf"
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -59405,6 +64020,50 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "85a8e73a-603d-4ea8-8af5-39af33c925a4")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "RC0402FR-0778K7L"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3de6580c-a7a7-4b92-9747-781b981ba4e1")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C163454"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "20a0ed43-cba7-4a7b-a96a-a2132a4a5506")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Yageo"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2fe5653e-7da8-41e9-9aa4-40f34caf243f")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C163454"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "86d903aa-3e5c-4549-9d81-3e1323e9f135")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -59554,6 +64213,39 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "a5fca703-7ac4-4abf-a1ab-2c1378d239da")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "RC0402FR-071KL"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1669e447-4cf1-4838-bc7b-ce19e0c32e91")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Yageo"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1e329574-1f9a-4177-9fa1-87d212b88b71")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C106235"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0f200d9f-36bd-44bf-8a8f-ced717a12192")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -59857,6 +64549,39 @@
 				)
 			)
 		)
+		(property "MPN" "GRM1555C1H103JE01D"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5634094a-1876-413a-b215-e25469796acb")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "747ad4ac-f0b2-4bc8-a5e7-0e2b32d7d63c")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C22400107"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "974dd1f5-e479-41a8-bbb9-f906bf052608")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
 			(at 0 0 0)
 			(layer "F.SilkS")
@@ -60154,6 +64879,50 @@
 				)
 			)
 		)
+		(property "LCSC" "C403725"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "78a46893-9b94-470d-8b07-0565b0a70a9d")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "95577e05-c293-4c62-b263-2135817fc931")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "GRM31CR61E476ME44L"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d29234ae-3ff7-49e9-be28-572c04e3c046")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C403725"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8d9aa65c-755a-4580-949b-f04579cdb9a5")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
 			(at 0 0 270)
 			(layer "F.SilkS")
@@ -60295,6 +65064,39 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "d2aeda85-2941-4e18-85f7-92682e071ddb")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "K3A120002010"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2553b9e1-435f-4861-ac3c-b7f97e942b70")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "KYX"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e6dbd024-1994-4042-80ff-ea79f8a143e9")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C368730"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e39a566e-2feb-4689-a453-8021ef3d10ea")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -62645,7 +67447,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "${KIPRJMOD}/../ai-files/datasheets/Yageo_AC0603FR-0791KL.pdf"
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -62661,6 +67463,39 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "f27d6586-221d-4ae0-8e3e-ccbd76b9fe2d")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "AC0402FR-0791KL"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "764ab8a5-d0e7-4c0a-a258-cd5b10e10fb9")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Yageo"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "803ac7d8-162d-412a-b4e1-086d18dd568e")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C144733"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e4c37c9b-9083-4ca7-88db-6a63888ccf43")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -63244,6 +68079,39 @@
 				)
 			)
 		)
+		(property "MPN" "CL21A475KAQNNNE"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "be35d197-53fb-4582-803e-08c40de39438")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "797cc596-fd9f-4f7f-952e-dfa410a792f0")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C1779"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "64b7201f-be25-46ca-9f52-cd1b3d641435")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
 			(at 0 0 270)
 			(layer "F.SilkS")
@@ -63370,7 +68238,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "${KIPRJMOD}/../ai-files/datasheets/Coilcraft_XFL4015.pdf"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -63386,6 +68254,39 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "6b40b26c-3c01-4690-9e28-685ae29ba39c")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "XFL4015-471MEC"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b43ab780-d0b1-48e3-9226-4c70559813a0")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C18221164"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "14106460-ba39-4dbc-8f08-19c777a6a4e0")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Coilcraft"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e8f89ae1-db39-48d2-a933-fa0eb242c593")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -63510,6 +68411,39 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "94124144-5112-4871-970b-a7f3eb0348da")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "RC0402FR-0733RL"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c6bf49a9-aba2-47f9-ae2c-679287cda731")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Yageo"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "603c7001-06d5-40c0-b32d-4fc4e7d36991")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C138002"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d75cdec6-670b-4c08-90eb-ed3a57074aac")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -63642,7 +68576,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.yageogroup.com/component-documentation/download/specsheet/RC0603FR-071ML"
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -63653,11 +68587,66 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Resistor"
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "6957f5a2-5422-48ce-8973-30ee8353b93d")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "R res resistor"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f27cf5b7-64dc-414c-af27-33f32115b727")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_fp_filters" "R_*"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c2c3f9e1-0475-4d15-810d-cb2888c8b1d6")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "RC0402FR-071ML"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "225160f7-926f-4fc8-ab1d-467534092f8e")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Yageo"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ed4804d5-736f-419f-89fa-b45b9c8d2a1a")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C138033"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "27683f8f-ba24-4bc2-845d-ef16066a4f98")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -64223,7 +69212,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "${KIPRJMOD}/../ai-files/datasheets/FOJAN_FRC0603_resistors.pdf"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -64239,6 +69228,39 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "7997f23b-4abd-40ea-b90c-cc2e73749c5d")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "0402WGF6043TCE"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "783a81ad-b731-4081-afae-1246c1644f1f")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "322a5f6f-9737-457f-a5a5-94453f2ed5f9")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C27013"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9214fef7-0e70-4238-90eb-c52a3bb75659")
 			(effects
 				(font
 					(size 1.27 1.27)

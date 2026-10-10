@@ -1,0 +1,4779 @@
+{
+ "schematic_changes": [
+  {
+   "ref": "L200",
+   "sheet": "Amplifiers.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C3911470",
+   "action": "set"
+  },
+  {
+   "ref": "R252",
+   "sheet": "Amplifiers.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C171693",
+   "action": "set"
+  },
+  {
+   "ref": "R256",
+   "sheet": "Amplifiers.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C106231",
+   "action": "set"
+  },
+  {
+   "ref": "R250",
+   "sheet": "Amplifiers.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C137971",
+   "action": "set"
+  },
+  {
+   "ref": "R251",
+   "sheet": "Amplifiers.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C114756",
+   "action": "set"
+  },
+  {
+   "ref": "C271",
+   "sheet": "Amplifiers.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C45783",
+   "action": "set"
+  },
+  {
+   "ref": "C272",
+   "sheet": "Amplifiers.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C45783",
+   "action": "set"
+  },
+  {
+   "ref": "C273",
+   "sheet": "Amplifiers.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C45783",
+   "action": "set"
+  },
+  {
+   "ref": "C274",
+   "sheet": "Amplifiers.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C45783",
+   "action": "set"
+  },
+  {
+   "ref": "C275",
+   "sheet": "Amplifiers.kicad_sch",
+   "field": "Datasheet",
+   "old": "",
+   "new": "${KIPRJMOD}/../ai-files/datasheets/Panasonic_EEH-ZA_hybrid_polymer.pdf",
+   "action": "added"
+  },
+  {
+   "ref": "C275",
+   "sheet": "Amplifiers.kicad_sch",
+   "field": "MPN",
+   "old": "EEH-ZA1E101P",
+   "new": "EEHZA1E101XP",
+   "action": "set"
+  },
+  {
+   "ref": "C275",
+   "sheet": "Amplifiers.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C264047",
+   "action": "set"
+  },
+  {
+   "ref": "R254",
+   "sheet": "Amplifiers.kicad_sch",
+   "field": "MPN",
+   "old": "RC0402FR-0782KL",
+   "new": "AC0402FR-0782KL",
+   "action": "set"
+  },
+  {
+   "ref": "R254",
+   "sheet": "Amplifiers.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C144735",
+   "action": "set"
+  },
+  {
+   "ref": "C268",
+   "sheet": "Amplifiers.kicad_sch",
+   "field": "Manufacturer",
+   "old": "Murata",
+   "new": "Samsung Electro-Mechanics",
+   "action": "set"
+  },
+  {
+   "ref": "C268",
+   "sheet": "Amplifiers.kicad_sch",
+   "field": "MPN",
+   "old": "GRM155R71H682KA01D",
+   "new": "CL05B682KB5NNNC",
+   "action": "set"
+  },
+  {
+   "ref": "C268",
+   "sheet": "Amplifiers.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C318580",
+   "action": "set"
+  },
+  {
+   "ref": "C269",
+   "sheet": "Amplifiers.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C76970",
+   "action": "set"
+  },
+  {
+   "ref": "R253",
+   "sheet": "Amplifiers.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C93947",
+   "action": "set"
+  },
+  {
+   "ref": "C266",
+   "sheet": "Amplifiers.kicad_sch",
+   "field": "MPN",
+   "old": "GRM155R71H473KA12D",
+   "new": "GRM155R71H473KE14D",
+   "action": "set"
+  },
+  {
+   "ref": "C266",
+   "sheet": "Amplifiers.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C117757",
+   "action": "set"
+  },
+  {
+   "ref": "R257",
+   "sheet": "Amplifiers.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C106235",
+   "action": "set"
+  },
+  {
+   "ref": "C280",
+   "sheet": "Amplifiers.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C1779",
+   "action": "set"
+  },
+  {
+   "ref": "C277",
+   "sheet": "Amplifiers.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C45783",
+   "action": "set"
+  },
+  {
+   "ref": "C279",
+   "sheet": "Amplifiers.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C45783",
+   "action": "set"
+  },
+  {
+   "ref": "C285",
+   "sheet": "Amplifiers.kicad_sch",
+   "field": "Manufacturer",
+   "old": "Samsung Electro-Mechanics",
+   "new": "HRE",
+   "action": "set"
+  },
+  {
+   "ref": "C285",
+   "sheet": "Amplifiers.kicad_sch",
+   "field": "MPN",
+   "old": "CL05B474KO5NNNC",
+   "new": "CGA0402X7R474K160GT",
+   "action": "set"
+  },
+  {
+   "ref": "C285",
+   "sheet": "Amplifiers.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C22435970",
+   "action": "set"
+  },
+  {
+   "ref": "C286",
+   "sheet": "Amplifiers.kicad_sch",
+   "field": "Manufacturer",
+   "old": "Samsung Electro-Mechanics",
+   "new": "HRE",
+   "action": "set"
+  },
+  {
+   "ref": "C286",
+   "sheet": "Amplifiers.kicad_sch",
+   "field": "MPN",
+   "old": "CL05B474KO5NNNC",
+   "new": "CGA0402X7R474K160GT",
+   "action": "set"
+  },
+  {
+   "ref": "C286",
+   "sheet": "Amplifiers.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C22435970",
+   "action": "set"
+  },
+  {
+   "ref": "C287",
+   "sheet": "Amplifiers.kicad_sch",
+   "field": "Manufacturer",
+   "old": "Samsung Electro-Mechanics",
+   "new": "HRE",
+   "action": "set"
+  },
+  {
+   "ref": "C287",
+   "sheet": "Amplifiers.kicad_sch",
+   "field": "MPN",
+   "old": "CL05B474KO5NNNC",
+   "new": "CGA0402X7R474K160GT",
+   "action": "set"
+  },
+  {
+   "ref": "C287",
+   "sheet": "Amplifiers.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C22435970",
+   "action": "set"
+  },
+  {
+   "ref": "C288",
+   "sheet": "Amplifiers.kicad_sch",
+   "field": "Manufacturer",
+   "old": "Samsung Electro-Mechanics",
+   "new": "HRE",
+   "action": "set"
+  },
+  {
+   "ref": "C288",
+   "sheet": "Amplifiers.kicad_sch",
+   "field": "MPN",
+   "old": "CL05B474KO5NNNC",
+   "new": "CGA0402X7R474K160GT",
+   "action": "set"
+  },
+  {
+   "ref": "C288",
+   "sheet": "Amplifiers.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C22435970",
+   "action": "set"
+  },
+  {
+   "ref": "L201",
+   "sheet": "Amplifiers.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C7245133",
+   "action": "set"
+  },
+  {
+   "ref": "L202",
+   "sheet": "Amplifiers.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C7245133",
+   "action": "set"
+  },
+  {
+   "ref": "L203",
+   "sheet": "Amplifiers.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C7245133",
+   "action": "set"
+  },
+  {
+   "ref": "L204",
+   "sheet": "Amplifiers.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C7245133",
+   "action": "set"
+  },
+  {
+   "ref": "R258",
+   "sheet": "Amplifiers.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C106235",
+   "action": "set"
+  },
+  {
+   "ref": "R261",
+   "sheet": "Amplifiers.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C106235",
+   "action": "set"
+  },
+  {
+   "ref": "C293",
+   "sheet": "Amplifiers.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C1779",
+   "action": "set"
+  },
+  {
+   "ref": "C290",
+   "sheet": "Amplifiers.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C45783",
+   "action": "set"
+  },
+  {
+   "ref": "C292",
+   "sheet": "Amplifiers.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C45783",
+   "action": "set"
+  },
+  {
+   "ref": "C298",
+   "sheet": "Amplifiers.kicad_sch",
+   "field": "Manufacturer",
+   "old": "Samsung Electro-Mechanics",
+   "new": "HRE",
+   "action": "set"
+  },
+  {
+   "ref": "C298",
+   "sheet": "Amplifiers.kicad_sch",
+   "field": "MPN",
+   "old": "CL05B474KO5NNNC",
+   "new": "CGA0402X7R474K160GT",
+   "action": "set"
+  },
+  {
+   "ref": "C298",
+   "sheet": "Amplifiers.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C22435970",
+   "action": "set"
+  },
+  {
+   "ref": "C299",
+   "sheet": "Amplifiers.kicad_sch",
+   "field": "Manufacturer",
+   "old": "Samsung Electro-Mechanics",
+   "new": "HRE",
+   "action": "set"
+  },
+  {
+   "ref": "C299",
+   "sheet": "Amplifiers.kicad_sch",
+   "field": "MPN",
+   "old": "CL05B474KO5NNNC",
+   "new": "CGA0402X7R474K160GT",
+   "action": "set"
+  },
+  {
+   "ref": "C299",
+   "sheet": "Amplifiers.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C22435970",
+   "action": "set"
+  },
+  {
+   "ref": "C300",
+   "sheet": "Amplifiers.kicad_sch",
+   "field": "Manufacturer",
+   "old": "Samsung Electro-Mechanics",
+   "new": "HRE",
+   "action": "set"
+  },
+  {
+   "ref": "C300",
+   "sheet": "Amplifiers.kicad_sch",
+   "field": "MPN",
+   "old": "CL05B474KO5NNNC",
+   "new": "CGA0402X7R474K160GT",
+   "action": "set"
+  },
+  {
+   "ref": "C300",
+   "sheet": "Amplifiers.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C22435970",
+   "action": "set"
+  },
+  {
+   "ref": "C301",
+   "sheet": "Amplifiers.kicad_sch",
+   "field": "Manufacturer",
+   "old": "Samsung Electro-Mechanics",
+   "new": "HRE",
+   "action": "set"
+  },
+  {
+   "ref": "C301",
+   "sheet": "Amplifiers.kicad_sch",
+   "field": "MPN",
+   "old": "CL05B474KO5NNNC",
+   "new": "CGA0402X7R474K160GT",
+   "action": "set"
+  },
+  {
+   "ref": "C301",
+   "sheet": "Amplifiers.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C22435970",
+   "action": "set"
+  },
+  {
+   "ref": "L205",
+   "sheet": "Amplifiers.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C7245133",
+   "action": "set"
+  },
+  {
+   "ref": "L206",
+   "sheet": "Amplifiers.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C7245133",
+   "action": "set"
+  },
+  {
+   "ref": "C314",
+   "sheet": "Amplifiers.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C77020",
+   "action": "set"
+  },
+  {
+   "ref": "C314",
+   "sheet": "Amplifiers.kicad_sch",
+   "field": "LCSC Part",
+   "old": "",
+   "new": "C77020",
+   "action": "set"
+  },
+  {
+   "ref": "C100",
+   "sheet": "Battery_Charger.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C440198",
+   "action": "set"
+  },
+  {
+   "ref": "C100",
+   "sheet": "Battery_Charger.kicad_sch",
+   "field": "LCSC Part",
+   "old": "",
+   "new": "C440198",
+   "action": "set"
+  },
+  {
+   "ref": "C111",
+   "sheet": "Battery_Charger.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C440198",
+   "action": "set"
+  },
+  {
+   "ref": "C111",
+   "sheet": "Battery_Charger.kicad_sch",
+   "field": "LCSC Part",
+   "old": "",
+   "new": "C440198",
+   "action": "set"
+  },
+  {
+   "ref": "C101",
+   "sheet": "Battery_Charger.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C440198",
+   "action": "set"
+  },
+  {
+   "ref": "C101",
+   "sheet": "Battery_Charger.kicad_sch",
+   "field": "LCSC Part",
+   "old": "",
+   "new": "C440198",
+   "action": "set"
+  },
+  {
+   "ref": "C108",
+   "sheet": "Battery_Charger.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C440198",
+   "action": "set"
+  },
+  {
+   "ref": "C108",
+   "sheet": "Battery_Charger.kicad_sch",
+   "field": "LCSC Part",
+   "old": "",
+   "new": "C440198",
+   "action": "set"
+  },
+  {
+   "ref": "C112",
+   "sheet": "Battery_Charger.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C440198",
+   "action": "set"
+  },
+  {
+   "ref": "C112",
+   "sheet": "Battery_Charger.kicad_sch",
+   "field": "LCSC Part",
+   "old": "",
+   "new": "C440198",
+   "action": "set"
+  },
+  {
+   "ref": "C103",
+   "sheet": "Battery_Charger.kicad_sch",
+   "field": "MPN",
+   "old": "GRM155R71H473KA12D",
+   "new": "GRM155R71H473KE14D",
+   "action": "set"
+  },
+  {
+   "ref": "C103",
+   "sheet": "Battery_Charger.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C117757",
+   "action": "set"
+  },
+  {
+   "ref": "C103",
+   "sheet": "Battery_Charger.kicad_sch",
+   "field": "LCSC Part",
+   "old": "",
+   "new": "C117757",
+   "action": "set"
+  },
+  {
+   "ref": "C110",
+   "sheet": "Battery_Charger.kicad_sch",
+   "field": "MPN",
+   "old": "GRM155R71H473KA12D",
+   "new": "GRM155R71H473KE14D",
+   "action": "set"
+  },
+  {
+   "ref": "C110",
+   "sheet": "Battery_Charger.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C117757",
+   "action": "set"
+  },
+  {
+   "ref": "C110",
+   "sheet": "Battery_Charger.kicad_sch",
+   "field": "LCSC Part",
+   "old": "",
+   "new": "C117757",
+   "action": "set"
+  },
+  {
+   "ref": "R112",
+   "sheet": "Battery_Charger.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C106232",
+   "action": "set"
+  },
+  {
+   "ref": "R102",
+   "sheet": "Battery_Charger.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C105871",
+   "action": "set"
+  },
+  {
+   "ref": "R100",
+   "sheet": "Battery_Charger.kicad_sch",
+   "field": "Manufacturer",
+   "old": "Yageo",
+   "new": "UNI-ROYAL",
+   "action": "set"
+  },
+  {
+   "ref": "R100",
+   "sheet": "Battery_Charger.kicad_sch",
+   "field": "MPN",
+   "old": "RC0402FR-075K23L",
+   "new": "0402WGF5231TCE",
+   "action": "set"
+  },
+  {
+   "ref": "R100",
+   "sheet": "Battery_Charger.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C25907",
+   "action": "set"
+  },
+  {
+   "ref": "R101",
+   "sheet": "Battery_Charger.kicad_sch",
+   "field": "MPN",
+   "old": "RC0402FR-0730K1L",
+   "new": "AC0402FR-0730K1L",
+   "action": "set"
+  },
+  {
+   "ref": "R101",
+   "sheet": "Battery_Charger.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C226982",
+   "action": "set"
+  },
+  {
+   "ref": "R108",
+   "sheet": "Battery_Charger.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C138046",
+   "action": "set"
+  },
+  {
+   "ref": "Q100",
+   "sheet": "Battery_Charger.kicad_sch",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Nexperia",
+   "action": "added"
+  },
+  {
+   "ref": "Q100",
+   "sheet": "Battery_Charger.kicad_sch",
+   "field": "MPN",
+   "old": null,
+   "new": "2N7002,215",
+   "action": "added"
+  },
+  {
+   "ref": "Q100",
+   "sheet": "Battery_Charger.kicad_sch",
+   "field": "LCSC",
+   "old": null,
+   "new": "C65189",
+   "action": "added"
+  },
+  {
+   "ref": "C311",
+   "sheet": "Battery_Charger.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C77020",
+   "action": "set"
+  },
+  {
+   "ref": "C311",
+   "sheet": "Battery_Charger.kicad_sch",
+   "field": "LCSC Part",
+   "old": "",
+   "new": "C77020",
+   "action": "set"
+  },
+  {
+   "ref": "C312",
+   "sheet": "Battery_Charger.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C77020",
+   "action": "set"
+  },
+  {
+   "ref": "C312",
+   "sheet": "Battery_Charger.kicad_sch",
+   "field": "LCSC Part",
+   "old": "",
+   "new": "C77020",
+   "action": "set"
+  },
+  {
+   "ref": "C313",
+   "sheet": "Battery_Charger.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C77020",
+   "action": "set"
+  },
+  {
+   "ref": "C313",
+   "sheet": "Battery_Charger.kicad_sch",
+   "field": "LCSC Part",
+   "old": "",
+   "new": "C77020",
+   "action": "set"
+  },
+  {
+   "ref": "R185",
+   "sheet": "Bluetooth.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C106235",
+   "action": "set"
+  },
+  {
+   "ref": "R186",
+   "sheet": "Bluetooth.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C106235",
+   "action": "set"
+  },
+  {
+   "ref": "R187",
+   "sheet": "Bluetooth.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C106235",
+   "action": "set"
+  },
+  {
+   "ref": "C194",
+   "sheet": "Bluetooth.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C1779",
+   "action": "set"
+  },
+  {
+   "ref": "C195",
+   "sheet": "Bluetooth.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C1779",
+   "action": "set"
+  },
+  {
+   "ref": "U15",
+   "sheet": "Bluetooth_Power.kicad_sch",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Texas Instruments",
+   "action": "added"
+  },
+  {
+   "ref": "L3",
+   "sheet": "Bluetooth_Power.kicad_sch",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Coilcraft",
+   "action": "added"
+  },
+  {
+   "ref": "R150",
+   "sheet": "Bluetooth_Power.kicad_sch",
+   "field": "Manufacturer",
+   "old": "Yageo",
+   "new": "UNI-ROYAL",
+   "action": "set"
+  },
+  {
+   "ref": "R150",
+   "sheet": "Bluetooth_Power.kicad_sch",
+   "field": "MPN",
+   "old": "RC0402FR-07604KL",
+   "new": "0402WGF6043TCE",
+   "action": "set"
+  },
+  {
+   "ref": "R150",
+   "sheet": "Bluetooth_Power.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C27013",
+   "action": "set"
+  },
+  {
+   "ref": "R151",
+   "sheet": "Bluetooth_Power.kicad_sch",
+   "field": "MPN",
+   "old": "RC0402FR-0791KL",
+   "new": "AC0402FR-0791KL",
+   "action": "set"
+  },
+  {
+   "ref": "R151",
+   "sheet": "Bluetooth_Power.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C144733",
+   "action": "set"
+  },
+  {
+   "ref": "U12",
+   "sheet": "Fuel_Gauge_Power.kicad_sch",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Texas Instruments",
+   "action": "added"
+  },
+  {
+   "ref": "R120",
+   "sheet": "Fuel_Gauge_Power.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C105871",
+   "action": "set"
+  },
+  {
+   "ref": "R121",
+   "sheet": "Fuel_Gauge_Power.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C105871",
+   "action": "set"
+  },
+  {
+   "ref": "R122",
+   "sheet": "Fuel_Gauge_Power.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C93943",
+   "action": "set"
+  },
+  {
+   "ref": "U13",
+   "sheet": "Fuel_Gauge_Power.kicad_sch",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Texas Instruments",
+   "action": "added"
+  },
+  {
+   "ref": "U16",
+   "sheet": "Fuel_Gauge_Power.kicad_sch",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Texas Instruments",
+   "action": "added"
+  },
+  {
+   "ref": "U17",
+   "sheet": "Fuel_Gauge_Power.kicad_sch",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Texas Instruments",
+   "action": "added"
+  },
+  {
+   "ref": "R124",
+   "sheet": "Fuel_Gauge_Power.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C138046",
+   "action": "set"
+  },
+  {
+   "ref": "R124",
+   "sheet": "Fuel_Gauge_Power.kicad_sch",
+   "field": "LCSC Part",
+   "old": "",
+   "new": "C138046",
+   "action": "set"
+  },
+  {
+   "ref": "R126",
+   "sheet": "Fuel_Gauge_Power.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C138033",
+   "action": "set"
+  },
+  {
+   "ref": "R127",
+   "sheet": "Fuel_Gauge_Power.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C138033",
+   "action": "set"
+  },
+  {
+   "ref": "R226",
+   "sheet": "Headphone_Aux.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C106235",
+   "action": "set"
+  },
+  {
+   "ref": "R227",
+   "sheet": "Headphone_Aux.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C106235",
+   "action": "set"
+  },
+  {
+   "ref": "R228",
+   "sheet": "Headphone_Aux.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C106235",
+   "action": "set"
+  },
+  {
+   "ref": "R229",
+   "sheet": "Headphone_Aux.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C106235",
+   "action": "set"
+  },
+  {
+   "ref": "R230",
+   "sheet": "Headphone_Aux.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C106235",
+   "action": "set"
+  },
+  {
+   "ref": "R231",
+   "sheet": "Headphone_Aux.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C106235",
+   "action": "set"
+  },
+  {
+   "ref": "C241",
+   "sheet": "Headphone_Aux.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C7464343",
+   "action": "set"
+  },
+  {
+   "ref": "C243",
+   "sheet": "Headphone_Aux.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C7464343",
+   "action": "set"
+  },
+  {
+   "ref": "C244",
+   "sheet": "Headphone_Aux.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C7464343",
+   "action": "set"
+  },
+  {
+   "ref": "D200",
+   "sheet": "Headphone_Aux.kicad_sch",
+   "field": "Manufacturer",
+   "old": "Nexperia",
+   "new": "DOWO",
+   "action": "set"
+  },
+  {
+   "ref": "R240",
+   "sheet": "Headphone_Aux.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C106235",
+   "action": "set"
+  },
+  {
+   "ref": "D201",
+   "sheet": "Headphone_Aux.kicad_sch",
+   "field": "Manufacturer",
+   "old": "Nexperia",
+   "new": "DOWO",
+   "action": "set"
+  },
+  {
+   "ref": "R241",
+   "sheet": "Headphone_Aux.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C138033",
+   "action": "set"
+  },
+  {
+   "ref": "R232",
+   "sheet": "Headphone_Aux.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C93943",
+   "action": "set"
+  },
+  {
+   "ref": "R233",
+   "sheet": "Headphone_Aux.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C93943",
+   "action": "set"
+  },
+  {
+   "ref": "C236",
+   "sheet": "Headphone_Aux.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C1779",
+   "action": "set"
+  },
+  {
+   "ref": "U14",
+   "sheet": "Logic_Audio_Power.kicad_sch",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Texas Instruments",
+   "action": "added"
+  },
+  {
+   "ref": "L2",
+   "sheet": "Logic_Audio_Power.kicad_sch",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Coilcraft",
+   "action": "added"
+  },
+  {
+   "ref": "R140",
+   "sheet": "Logic_Audio_Power.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C163454",
+   "action": "set"
+  },
+  {
+   "ref": "R140",
+   "sheet": "Logic_Audio_Power.kicad_sch",
+   "field": "LCSC Part",
+   "old": "",
+   "new": "C163454",
+   "action": "set"
+  },
+  {
+   "ref": "R141",
+   "sheet": "Logic_Audio_Power.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C163450",
+   "action": "set"
+  },
+  {
+   "ref": "R141",
+   "sheet": "Logic_Audio_Power.kicad_sch",
+   "field": "LCSC Part",
+   "old": "",
+   "new": "C163450",
+   "action": "set"
+  },
+  {
+   "ref": "C161",
+   "sheet": "MCU.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C1779",
+   "action": "set"
+  },
+  {
+   "ref": "SW102",
+   "sheet": "MCU.kicad_sch",
+   "field": "LCSC",
+   "old": "unverified",
+   "new": "C370970",
+   "action": "set"
+  },
+  {
+   "ref": "C308",
+   "sheet": "MCU.kicad_sch",
+   "field": "LCSC",
+   "old": "unverified",
+   "new": "C77019",
+   "action": "set"
+  },
+  {
+   "ref": "C309",
+   "sheet": "MCU.kicad_sch",
+   "field": "LCSC",
+   "old": "unverified",
+   "new": "C77019",
+   "action": "set"
+  },
+  {
+   "ref": "C310",
+   "sheet": "MCU.kicad_sch",
+   "field": "LCSC",
+   "old": "unverified",
+   "new": "C77019",
+   "action": "set"
+  },
+  {
+   "ref": "C200",
+   "sheet": "Source_Select_ADC.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C7464343",
+   "action": "set"
+  },
+  {
+   "ref": "R200",
+   "sheet": "Source_Select_ADC.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C106232",
+   "action": "set"
+  },
+  {
+   "ref": "C206",
+   "sheet": "Source_Select_ADC.kicad_sch",
+   "field": "MPN",
+   "old": "GRM1555C1H103JA01D",
+   "new": "GRM1555C1H103JE01D",
+   "action": "set"
+  },
+  {
+   "ref": "C206",
+   "sheet": "Source_Select_ADC.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C22400107",
+   "action": "set"
+  },
+  {
+   "ref": "C201",
+   "sheet": "Source_Select_ADC.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C7464343",
+   "action": "set"
+  },
+  {
+   "ref": "R201",
+   "sheet": "Source_Select_ADC.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C106232",
+   "action": "set"
+  },
+  {
+   "ref": "C207",
+   "sheet": "Source_Select_ADC.kicad_sch",
+   "field": "MPN",
+   "old": "GRM1555C1H103JA01D",
+   "new": "GRM1555C1H103JE01D",
+   "action": "set"
+  },
+  {
+   "ref": "C207",
+   "sheet": "Source_Select_ADC.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C22400107",
+   "action": "set"
+  },
+  {
+   "ref": "C202",
+   "sheet": "Source_Select_ADC.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C7464343",
+   "action": "set"
+  },
+  {
+   "ref": "R202",
+   "sheet": "Source_Select_ADC.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C106232",
+   "action": "set"
+  },
+  {
+   "ref": "C208",
+   "sheet": "Source_Select_ADC.kicad_sch",
+   "field": "MPN",
+   "old": "GRM1555C1H103JA01D",
+   "new": "GRM1555C1H103JE01D",
+   "action": "set"
+  },
+  {
+   "ref": "C208",
+   "sheet": "Source_Select_ADC.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C22400107",
+   "action": "set"
+  },
+  {
+   "ref": "C203",
+   "sheet": "Source_Select_ADC.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C7464343",
+   "action": "set"
+  },
+  {
+   "ref": "R203",
+   "sheet": "Source_Select_ADC.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C106232",
+   "action": "set"
+  },
+  {
+   "ref": "C209",
+   "sheet": "Source_Select_ADC.kicad_sch",
+   "field": "MPN",
+   "old": "GRM1555C1H103JA01D",
+   "new": "GRM1555C1H103JE01D",
+   "action": "set"
+  },
+  {
+   "ref": "C209",
+   "sheet": "Source_Select_ADC.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C22400107",
+   "action": "set"
+  },
+  {
+   "ref": "C204",
+   "sheet": "Source_Select_ADC.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C7464343",
+   "action": "set"
+  },
+  {
+   "ref": "R204",
+   "sheet": "Source_Select_ADC.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C106232",
+   "action": "set"
+  },
+  {
+   "ref": "C210",
+   "sheet": "Source_Select_ADC.kicad_sch",
+   "field": "MPN",
+   "old": "GRM1555C1H103JA01D",
+   "new": "GRM1555C1H103JE01D",
+   "action": "set"
+  },
+  {
+   "ref": "C210",
+   "sheet": "Source_Select_ADC.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C22400107",
+   "action": "set"
+  },
+  {
+   "ref": "C205",
+   "sheet": "Source_Select_ADC.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C7464343",
+   "action": "set"
+  },
+  {
+   "ref": "R205",
+   "sheet": "Source_Select_ADC.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C106232",
+   "action": "set"
+  },
+  {
+   "ref": "C211",
+   "sheet": "Source_Select_ADC.kicad_sch",
+   "field": "MPN",
+   "old": "GRM1555C1H103JA01D",
+   "new": "GRM1555C1H103JE01D",
+   "action": "set"
+  },
+  {
+   "ref": "C211",
+   "sheet": "Source_Select_ADC.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C22400107",
+   "action": "set"
+  },
+  {
+   "ref": "FB200",
+   "sheet": "Source_Select_ADC.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C76884",
+   "action": "set"
+  },
+  {
+   "ref": "R206",
+   "sheet": "Source_Select_ADC.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C138002",
+   "action": "set"
+  },
+  {
+   "ref": "R207",
+   "sheet": "Source_Select_ADC.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C138002",
+   "action": "set"
+  },
+  {
+   "ref": "R208",
+   "sheet": "Source_Select_ADC.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C138002",
+   "action": "set"
+  },
+  {
+   "ref": "R209",
+   "sheet": "Source_Select_ADC.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C114762",
+   "action": "set"
+  },
+  {
+   "ref": "R210",
+   "sheet": "Source_Select_ADC.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C114762",
+   "action": "set"
+  },
+  {
+   "ref": "C226",
+   "sheet": "Source_Select_ADC.kicad_sch",
+   "field": "Value",
+   "old": "22pF C0G",
+   "new": "15pF C0G",
+   "action": "set"
+  },
+  {
+   "ref": "C226",
+   "sheet": "Source_Select_ADC.kicad_sch",
+   "field": "MPN",
+   "old": "GRM1555C1H220JA01D",
+   "new": "GRM1555C1H150JA01D",
+   "action": "set"
+  },
+  {
+   "ref": "C226",
+   "sheet": "Source_Select_ADC.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C76950",
+   "action": "set"
+  },
+  {
+   "ref": "C227",
+   "sheet": "Source_Select_ADC.kicad_sch",
+   "field": "Value",
+   "old": "22pF C0G",
+   "new": "15pF C0G",
+   "action": "set"
+  },
+  {
+   "ref": "C227",
+   "sheet": "Source_Select_ADC.kicad_sch",
+   "field": "MPN",
+   "old": "GRM1555C1H220JA01D",
+   "new": "GRM1555C1H150JA01D",
+   "action": "set"
+  },
+  {
+   "ref": "C227",
+   "sheet": "Source_Select_ADC.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C76950",
+   "action": "set"
+  },
+  {
+   "ref": "Y200",
+   "sheet": "Source_Select_ADC.kicad_sch",
+   "field": "Datasheet",
+   "old": "",
+   "new": "${KIPRJMOD}/../ai-files/datasheets/YXC_YSX321SL_X322524576MOB4SI.pdf",
+   "action": "added"
+  },
+  {
+   "ref": "Y200",
+   "sheet": "Source_Select_ADC.kicad_sch",
+   "field": "Manufacturer",
+   "old": "Lucki",
+   "new": "YXC",
+   "action": "set"
+  },
+  {
+   "ref": "Y200",
+   "sheet": "Source_Select_ADC.kicad_sch",
+   "field": "MPN",
+   "old": "L327S240P11L",
+   "new": "X322524576MOB4SI",
+   "action": "set"
+  },
+  {
+   "ref": "Y200",
+   "sheet": "Source_Select_ADC.kicad_sch",
+   "field": "LCSC",
+   "old": "C5261154",
+   "new": "C70568",
+   "action": "set"
+  },
+  {
+   "ref": "R170",
+   "sheet": "USB_Audio.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C327251",
+   "action": "set"
+  },
+  {
+   "ref": "R172",
+   "sheet": "USB_Audio.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C114765",
+   "action": "set"
+  },
+  {
+   "ref": "R171",
+   "sheet": "USB_Audio.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C114765",
+   "action": "set"
+  },
+  {
+   "ref": "C177",
+   "sheet": "USB_Audio.kicad_sch",
+   "field": "Manufacturer",
+   "old": "Murata",
+   "new": "FOJAN",
+   "action": "set"
+  },
+  {
+   "ref": "C177",
+   "sheet": "USB_Audio.kicad_sch",
+   "field": "MPN",
+   "old": "GRM1555C1H330JA01D",
+   "new": "FCC0402N330J500AT",
+   "action": "set"
+  },
+  {
+   "ref": "C177",
+   "sheet": "USB_Audio.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C5137486",
+   "action": "set"
+  },
+  {
+   "ref": "R174",
+   "sheet": "USB_Audio.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C138033",
+   "action": "set"
+  },
+  {
+   "ref": "C178",
+   "sheet": "USB_Audio.kicad_sch",
+   "field": "Manufacturer",
+   "old": "Murata",
+   "new": "FOJAN",
+   "action": "set"
+  },
+  {
+   "ref": "C178",
+   "sheet": "USB_Audio.kicad_sch",
+   "field": "MPN",
+   "old": "GRM1555C1H330JA01D",
+   "new": "FCC0402N330J500AT",
+   "action": "set"
+  },
+  {
+   "ref": "C178",
+   "sheet": "USB_Audio.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C5137486",
+   "action": "set"
+  },
+  {
+   "ref": "Y170",
+   "sheet": "USB_Audio.kicad_sch",
+   "field": "Manufacturer",
+   "old": "YXC",
+   "new": "KYX",
+   "action": "set"
+  },
+  {
+   "ref": "Y170",
+   "sheet": "USB_Audio.kicad_sch",
+   "field": "MPN",
+   "old": "X322512MSB4SI",
+   "new": "K3A120002010",
+   "action": "set"
+  },
+  {
+   "ref": "Y170",
+   "sheet": "USB_Audio.kicad_sch",
+   "field": "LCSC",
+   "old": "C9002",
+   "new": "C368730",
+   "action": "set"
+  },
+  {
+   "ref": "C186",
+   "sheet": "USB_Audio.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C1779",
+   "action": "set"
+  },
+  {
+   "ref": "C187",
+   "sheet": "USB_Audio.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C1779",
+   "action": "set"
+  },
+  {
+   "ref": "D6",
+   "sheet": "USB_PD.kicad_sch",
+   "field": "LCSC",
+   "old": null,
+   "new": "C523793",
+   "action": "added"
+  },
+  {
+   "ref": "C2",
+   "sheet": "USB_PD.kicad_sch",
+   "field": "MPN",
+   "old": "C2012X7R1H475K125AC",
+   "new": "C2012X7R1H475KT0A0E",
+   "action": "set"
+  },
+  {
+   "ref": "C2",
+   "sheet": "USB_PD.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C5159426",
+   "action": "set"
+  },
+  {
+   "ref": "C2",
+   "sheet": "USB_PD.kicad_sch",
+   "field": "LCSC Part",
+   "old": "",
+   "new": "C5159426",
+   "action": "set"
+  },
+  {
+   "ref": "C182",
+   "sheet": "USB_PD.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C76965",
+   "action": "set"
+  },
+  {
+   "ref": "C182",
+   "sheet": "USB_PD.kicad_sch",
+   "field": "LCSC Part",
+   "old": "",
+   "new": "C76965",
+   "action": "set"
+  },
+  {
+   "ref": "C183",
+   "sheet": "USB_PD.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C76965",
+   "action": "set"
+  },
+  {
+   "ref": "C183",
+   "sheet": "USB_PD.kicad_sch",
+   "field": "LCSC Part",
+   "old": "",
+   "new": "C76965",
+   "action": "set"
+  },
+  {
+   "ref": "C5",
+   "sheet": "USB_PD.kicad_sch",
+   "field": "MPN",
+   "old": "C2012X7R1H475K125AC",
+   "new": "C2012X7R1H475KT0A0E",
+   "action": "set"
+  },
+  {
+   "ref": "C5",
+   "sheet": "USB_PD.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C5159426",
+   "action": "set"
+  },
+  {
+   "ref": "R10",
+   "sheet": "USB_PD.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C114763",
+   "action": "set"
+  },
+  {
+   "ref": "R10",
+   "sheet": "USB_PD.kicad_sch",
+   "field": "LCSC Part",
+   "old": "",
+   "new": "C114763",
+   "action": "set"
+  },
+  {
+   "ref": "J4",
+   "sheet": "USB_PD.kicad_sch",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Ckmtw",
+   "action": "added"
+  },
+  {
+   "ref": "J4",
+   "sheet": "USB_PD.kicad_sch",
+   "field": "MPN",
+   "old": null,
+   "new": "B-2100S04P-A110",
+   "action": "added"
+  },
+  {
+   "ref": "J4",
+   "sheet": "USB_PD.kicad_sch",
+   "field": "LCSC",
+   "old": null,
+   "new": "C124378",
+   "action": "added"
+  },
+  {
+   "ref": "C315",
+   "sheet": "USB_PD.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C403725",
+   "action": "set"
+  },
+  {
+   "ref": "C315",
+   "sheet": "USB_PD.kicad_sch",
+   "field": "LCSC Part",
+   "old": "",
+   "new": "C403725",
+   "action": "set"
+  },
+  {
+   "ref": "C316",
+   "sheet": "USB_PD.kicad_sch",
+   "field": "LCSC",
+   "old": "",
+   "new": "C28323",
+   "action": "set"
+  },
+  {
+   "ref": "C316",
+   "sheet": "USB_PD.kicad_sch",
+   "field": "LCSC Part",
+   "old": "",
+   "new": "C28323",
+   "action": "set"
+  }
+ ],
+ "pcb_changes": [
+  {
+   "ref": "D201",
+   "field": "Datasheet",
+   "old": "",
+   "new": "${KIPRJMOD}/../ai-files/datasheets/PESD5V0S2BT.pdf"
+  },
+  {
+   "ref": "D201",
+   "field": "MPN",
+   "old": null,
+   "new": "PESD5V0S2BT"
+  },
+  {
+   "ref": "D201",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "DOWO"
+  },
+  {
+   "ref": "D201",
+   "field": "LCSC Part",
+   "old": null,
+   "new": "C5380400"
+  },
+  {
+   "ref": "R256",
+   "field": "MPN",
+   "old": null,
+   "new": "RC0402FR-070RL"
+  },
+  {
+   "ref": "R256",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Yageo"
+  },
+  {
+   "ref": "R256",
+   "field": "LCSC",
+   "old": null,
+   "new": "C106231"
+  },
+  {
+   "ref": "U15",
+   "field": "MPN",
+   "old": null,
+   "new": "TPS63802DLAR"
+  },
+  {
+   "ref": "U15",
+   "field": "LCSC Part",
+   "old": null,
+   "new": "C2845237"
+  },
+  {
+   "ref": "U15",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Texas Instruments"
+  },
+  {
+   "ref": "R229",
+   "field": "MPN",
+   "old": null,
+   "new": "RC0402FR-071KL"
+  },
+  {
+   "ref": "R229",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Yageo"
+  },
+  {
+   "ref": "R229",
+   "field": "LCSC",
+   "old": null,
+   "new": "C106235"
+  },
+  {
+   "ref": "U16",
+   "field": "Datasheet",
+   "old": "",
+   "new": "https://www.ti.com/lit/ds/symlink/ts5a3167.pdf"
+  },
+  {
+   "ref": "U16",
+   "field": "MPN",
+   "old": null,
+   "new": "TS5A3167DBVR"
+  },
+  {
+   "ref": "U16",
+   "field": "LCSC",
+   "old": null,
+   "new": "C128416"
+  },
+  {
+   "ref": "U16",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Texas Instruments"
+  },
+  {
+   "ref": "R205",
+   "field": "MPN",
+   "old": null,
+   "new": "RC0402FR-07100RL"
+  },
+  {
+   "ref": "R205",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Yageo"
+  },
+  {
+   "ref": "R205",
+   "field": "LCSC",
+   "old": null,
+   "new": "C106232"
+  },
+  {
+   "ref": "C195",
+   "field": "MPN",
+   "old": null,
+   "new": "CL21A475KAQNNNE"
+  },
+  {
+   "ref": "C195",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Samsung Electro-Mechanics"
+  },
+  {
+   "ref": "C195",
+   "field": "LCSC",
+   "old": null,
+   "new": "C1779"
+  },
+  {
+   "ref": "L202",
+   "field": "MPN",
+   "old": null,
+   "new": "MWSA1265S-220MT"
+  },
+  {
+   "ref": "L202",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Sunlord"
+  },
+  {
+   "ref": "L202",
+   "field": "LCSC",
+   "old": null,
+   "new": "C7245133"
+  },
+  {
+   "ref": "D200",
+   "field": "Datasheet",
+   "old": "",
+   "new": "${KIPRJMOD}/../ai-files/datasheets/PESD5V0S2BT.pdf"
+  },
+  {
+   "ref": "D200",
+   "field": "MPN",
+   "old": null,
+   "new": "PESD5V0S2BT"
+  },
+  {
+   "ref": "D200",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "DOWO"
+  },
+  {
+   "ref": "D200",
+   "field": "LCSC Part",
+   "old": null,
+   "new": "C5380400"
+  },
+  {
+   "ref": "C206",
+   "field": "MPN",
+   "old": null,
+   "new": "GRM1555C1H103JE01D"
+  },
+  {
+   "ref": "C206",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Murata"
+  },
+  {
+   "ref": "C206",
+   "field": "LCSC",
+   "old": null,
+   "new": "C22400107"
+  },
+  {
+   "ref": "C286",
+   "field": "MPN",
+   "old": null,
+   "new": "CGA0402X7R474K160GT"
+  },
+  {
+   "ref": "C286",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "HRE"
+  },
+  {
+   "ref": "C286",
+   "field": "LCSC",
+   "old": null,
+   "new": "C22435970"
+  },
+  {
+   "ref": "C266",
+   "field": "MPN",
+   "old": null,
+   "new": "GRM155R71H473KE14D"
+  },
+  {
+   "ref": "C266",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Murata"
+  },
+  {
+   "ref": "C266",
+   "field": "LCSC",
+   "old": null,
+   "new": "C117757"
+  },
+  {
+   "ref": "C309",
+   "field": "MPN",
+   "old": null,
+   "new": "GRM155R71H103KA88D"
+  },
+  {
+   "ref": "C309",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Murata"
+  },
+  {
+   "ref": "C309",
+   "field": "LCSC",
+   "old": null,
+   "new": "C77019"
+  },
+  {
+   "ref": "C280",
+   "field": "MPN",
+   "old": null,
+   "new": "CL21A475KAQNNNE"
+  },
+  {
+   "ref": "C280",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Samsung Electro-Mechanics"
+  },
+  {
+   "ref": "C280",
+   "field": "LCSC",
+   "old": null,
+   "new": "C1779"
+  },
+  {
+   "ref": "C269",
+   "field": "MPN",
+   "old": null,
+   "new": "GRM1555C1H470JA01D"
+  },
+  {
+   "ref": "C269",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Murata"
+  },
+  {
+   "ref": "C269",
+   "field": "LCSC",
+   "old": null,
+   "new": "C76970"
+  },
+  {
+   "ref": "R261",
+   "field": "MPN",
+   "old": null,
+   "new": "RC0402FR-071KL"
+  },
+  {
+   "ref": "R261",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Yageo"
+  },
+  {
+   "ref": "R261",
+   "field": "LCSC",
+   "old": null,
+   "new": "C106235"
+  },
+  {
+   "ref": "R204",
+   "field": "MPN",
+   "old": null,
+   "new": "RC0402FR-07100RL"
+  },
+  {
+   "ref": "R204",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Yageo"
+  },
+  {
+   "ref": "R204",
+   "field": "LCSC",
+   "old": null,
+   "new": "C106232"
+  },
+  {
+   "ref": "C274",
+   "field": "MPN",
+   "old": null,
+   "new": "CL21A226MAQNNNE"
+  },
+  {
+   "ref": "C274",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Samsung Electro-Mechanics"
+  },
+  {
+   "ref": "C274",
+   "field": "LCSC",
+   "old": null,
+   "new": "C45783"
+  },
+  {
+   "ref": "R231",
+   "field": "MPN",
+   "old": null,
+   "new": "RC0402FR-071KL"
+  },
+  {
+   "ref": "R231",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Yageo"
+  },
+  {
+   "ref": "R231",
+   "field": "LCSC",
+   "old": null,
+   "new": "C106235"
+  },
+  {
+   "ref": "R209",
+   "field": "MPN",
+   "old": null,
+   "new": "RC0402FR-072K2L"
+  },
+  {
+   "ref": "R209",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Yageo"
+  },
+  {
+   "ref": "R209",
+   "field": "LCSC",
+   "old": null,
+   "new": "C114762"
+  },
+  {
+   "ref": "L201",
+   "field": "MPN",
+   "old": null,
+   "new": "MWSA1265S-220MT"
+  },
+  {
+   "ref": "L201",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Sunlord"
+  },
+  {
+   "ref": "L201",
+   "field": "LCSC",
+   "old": null,
+   "new": "C7245133"
+  },
+  {
+   "ref": "D6",
+   "field": "Datasheet",
+   "old": "",
+   "new": "${KIPRJMOD}/../ai-files/datasheets/TVS2200.pdf"
+  },
+  {
+   "ref": "D6",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Texas Instruments"
+  },
+  {
+   "ref": "D6",
+   "field": "MPN",
+   "old": null,
+   "new": "TVS2200DRVR"
+  },
+  {
+   "ref": "D6",
+   "field": "LCSC",
+   "old": null,
+   "new": "C523793"
+  },
+  {
+   "ref": "R230",
+   "field": "MPN",
+   "old": null,
+   "new": "RC0402FR-071KL"
+  },
+  {
+   "ref": "R230",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Yageo"
+  },
+  {
+   "ref": "R230",
+   "field": "LCSC",
+   "old": null,
+   "new": "C106235"
+  },
+  {
+   "ref": "L206",
+   "field": "MPN",
+   "old": null,
+   "new": "MWSA1265S-220MT"
+  },
+  {
+   "ref": "L206",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Sunlord"
+  },
+  {
+   "ref": "L206",
+   "field": "LCSC",
+   "old": null,
+   "new": "C7245133"
+  },
+  {
+   "ref": "C314",
+   "field": "LCSC",
+   "old": null,
+   "new": "C77020"
+  },
+  {
+   "ref": "C314",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Murata"
+  },
+  {
+   "ref": "C314",
+   "field": "MPN",
+   "old": null,
+   "new": "GRM155R71H104KE14D"
+  },
+  {
+   "ref": "C314",
+   "field": "LCSC Part",
+   "old": null,
+   "new": "C77020"
+  },
+  {
+   "ref": "C314",
+   "field": "Datasheet",
+   "old": "",
+   "new": "${KIPRJMOD}/../ai-files/datasheets/Samsung_MLCC_LCSC_C1591_C1711.pdf"
+  },
+  {
+   "ref": "C316",
+   "field": "LCSC",
+   "old": null,
+   "new": "C28323"
+  },
+  {
+   "ref": "C316",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Samsung Electro-Mechanics"
+  },
+  {
+   "ref": "C316",
+   "field": "MPN",
+   "old": null,
+   "new": "CL21B105KBFNNNE"
+  },
+  {
+   "ref": "C316",
+   "field": "LCSC Part",
+   "old": null,
+   "new": "C28323"
+  },
+  {
+   "ref": "C316",
+   "field": "Datasheet",
+   "old": "",
+   "new": "https://www.lcsc.com/datasheet/C28323.pdf"
+  },
+  {
+   "ref": "Y200",
+   "field": "MPN",
+   "old": null,
+   "new": "X322524576MOB4SI"
+  },
+  {
+   "ref": "Y200",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "YXC"
+  },
+  {
+   "ref": "Y200",
+   "field": "LCSC",
+   "old": null,
+   "new": "C70568"
+  },
+  {
+   "ref": "Y200",
+   "field": "Datasheet",
+   "old": "",
+   "new": "${KIPRJMOD}/../ai-files/datasheets/YXC_YSX321SL_X322524576MOB4SI.pdf"
+  },
+  {
+   "ref": "C186",
+   "field": "MPN",
+   "old": null,
+   "new": "CL21A475KAQNNNE"
+  },
+  {
+   "ref": "C186",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Samsung Electro-Mechanics"
+  },
+  {
+   "ref": "C186",
+   "field": "LCSC",
+   "old": null,
+   "new": "C1779"
+  },
+  {
+   "ref": "U14",
+   "field": "MPN",
+   "old": null,
+   "new": "TPS63802DLAR"
+  },
+  {
+   "ref": "U14",
+   "field": "LCSC Part",
+   "old": null,
+   "new": "C2845237"
+  },
+  {
+   "ref": "U14",
+   "field": "Datasheet",
+   "old": "",
+   "new": "../ai-files/datasheets/TPS63802.pdf"
+  },
+  {
+   "ref": "U14",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Texas Instruments"
+  },
+  {
+   "ref": "L203",
+   "field": "MPN",
+   "old": null,
+   "new": "MWSA1265S-220MT"
+  },
+  {
+   "ref": "L203",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Sunlord"
+  },
+  {
+   "ref": "L203",
+   "field": "LCSC",
+   "old": null,
+   "new": "C7245133"
+  },
+  {
+   "ref": "C288",
+   "field": "MPN",
+   "old": null,
+   "new": "CGA0402X7R474K160GT"
+  },
+  {
+   "ref": "C288",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "HRE"
+  },
+  {
+   "ref": "C288",
+   "field": "LCSC",
+   "old": null,
+   "new": "C22435970"
+  },
+  {
+   "ref": "C287",
+   "field": "MPN",
+   "old": null,
+   "new": "CGA0402X7R474K160GT"
+  },
+  {
+   "ref": "C287",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "HRE"
+  },
+  {
+   "ref": "C287",
+   "field": "LCSC",
+   "old": null,
+   "new": "C22435970"
+  },
+  {
+   "ref": "R170",
+   "field": "MPN",
+   "old": null,
+   "new": "RC0402FR-072R2L"
+  },
+  {
+   "ref": "R170",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Yageo"
+  },
+  {
+   "ref": "R170",
+   "field": "LCSC",
+   "old": null,
+   "new": "C327251"
+  },
+  {
+   "ref": "C301",
+   "field": "MPN",
+   "old": null,
+   "new": "CGA0402X7R474K160GT"
+  },
+  {
+   "ref": "C301",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "HRE"
+  },
+  {
+   "ref": "C301",
+   "field": "LCSC",
+   "old": null,
+   "new": "C22435970"
+  },
+  {
+   "ref": "Q100",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Nexperia"
+  },
+  {
+   "ref": "Q100",
+   "field": "MPN",
+   "old": null,
+   "new": "2N7002,215"
+  },
+  {
+   "ref": "Q100",
+   "field": "LCSC",
+   "old": null,
+   "new": "C65189"
+  },
+  {
+   "ref": "C205",
+   "field": "MPN",
+   "old": null,
+   "new": "CL05A225KP5NNNC"
+  },
+  {
+   "ref": "C205",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Samsung Electro-Mechanics"
+  },
+  {
+   "ref": "C205",
+   "field": "LCSC",
+   "old": null,
+   "new": "C7464343"
+  },
+  {
+   "ref": "R257",
+   "field": "MPN",
+   "old": null,
+   "new": "RC0402FR-071KL"
+  },
+  {
+   "ref": "R257",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Yageo"
+  },
+  {
+   "ref": "R257",
+   "field": "LCSC",
+   "old": null,
+   "new": "C106235"
+  },
+  {
+   "ref": "C182",
+   "field": "LCSC",
+   "old": null,
+   "new": "C76965"
+  },
+  {
+   "ref": "C182",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Murata"
+  },
+  {
+   "ref": "C182",
+   "field": "MPN",
+   "old": null,
+   "new": "GRM1555C1H331JA01D"
+  },
+  {
+   "ref": "C182",
+   "field": "LCSC Part",
+   "old": null,
+   "new": "C76965"
+  },
+  {
+   "ref": "C161",
+   "field": "MPN",
+   "old": null,
+   "new": "CL21A475KAQNNNE"
+  },
+  {
+   "ref": "C161",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Samsung Electro-Mechanics"
+  },
+  {
+   "ref": "C161",
+   "field": "LCSC",
+   "old": null,
+   "new": "C1779"
+  },
+  {
+   "ref": "R206",
+   "field": "MPN",
+   "old": null,
+   "new": "RC0402FR-0733RL"
+  },
+  {
+   "ref": "R206",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Yageo"
+  },
+  {
+   "ref": "R206",
+   "field": "LCSC",
+   "old": null,
+   "new": "C138002"
+  },
+  {
+   "ref": "R121",
+   "field": "MPN",
+   "old": null,
+   "new": "RC0402FR-074K7L"
+  },
+  {
+   "ref": "R121",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Yageo"
+  },
+  {
+   "ref": "R121",
+   "field": "LCSC",
+   "old": null,
+   "new": "C105871"
+  },
+  {
+   "ref": "R121",
+   "field": "Datasheet",
+   "old": "",
+   "new": "${KIPRJMOD}/../ai-files/datasheets/Yageo_RC0603FR_series.pdf"
+  },
+  {
+   "ref": "R124",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Yageo"
+  },
+  {
+   "ref": "R124",
+   "field": "MPN",
+   "old": null,
+   "new": "RC0402FR-07180KL"
+  },
+  {
+   "ref": "R124",
+   "field": "LCSC",
+   "old": null,
+   "new": "C138046"
+  },
+  {
+   "ref": "R124",
+   "field": "LCSC Part",
+   "old": null,
+   "new": "C138046"
+  },
+  {
+   "ref": "R201",
+   "field": "MPN",
+   "old": null,
+   "new": "RC0402FR-07100RL"
+  },
+  {
+   "ref": "R201",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Yageo"
+  },
+  {
+   "ref": "R201",
+   "field": "LCSC",
+   "old": null,
+   "new": "C106232"
+  },
+  {
+   "ref": "C108",
+   "field": "LCSC",
+   "old": null,
+   "new": "C440198"
+  },
+  {
+   "ref": "C108",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Murata"
+  },
+  {
+   "ref": "C108",
+   "field": "MPN",
+   "old": null,
+   "new": "GRM21BR61H106KE43L"
+  },
+  {
+   "ref": "C108",
+   "field": "LCSC Part",
+   "old": null,
+   "new": "C440198"
+  },
+  {
+   "ref": "C108",
+   "field": "Datasheet",
+   "old": "",
+   "new": "https://product.samsungsem.com/mlcc/CL32B106KBJNNN.do"
+  },
+  {
+   "ref": "R226",
+   "field": "MPN",
+   "old": null,
+   "new": "RC0402FR-071KL"
+  },
+  {
+   "ref": "R226",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Yageo"
+  },
+  {
+   "ref": "R226",
+   "field": "LCSC",
+   "old": null,
+   "new": "C106235"
+  },
+  {
+   "ref": "R186",
+   "field": "MPN",
+   "old": null,
+   "new": "RC0402FR-071KL"
+  },
+  {
+   "ref": "R186",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Yageo"
+  },
+  {
+   "ref": "R186",
+   "field": "LCSC",
+   "old": null,
+   "new": "C106235"
+  },
+  {
+   "ref": "R200",
+   "field": "MPN",
+   "old": null,
+   "new": "RC0402FR-07100RL"
+  },
+  {
+   "ref": "R200",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Yageo"
+  },
+  {
+   "ref": "R200",
+   "field": "LCSC",
+   "old": null,
+   "new": "C106232"
+  },
+  {
+   "ref": "C187",
+   "field": "MPN",
+   "old": null,
+   "new": "CL21A475KAQNNNE"
+  },
+  {
+   "ref": "C187",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Samsung Electro-Mechanics"
+  },
+  {
+   "ref": "C187",
+   "field": "LCSC",
+   "old": null,
+   "new": "C1779"
+  },
+  {
+   "ref": "R250",
+   "field": "MPN",
+   "old": null,
+   "new": "RC0402FR-07499KL"
+  },
+  {
+   "ref": "R250",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Yageo"
+  },
+  {
+   "ref": "R250",
+   "field": "LCSC",
+   "old": null,
+   "new": "C137971"
+  },
+  {
+   "ref": "R174",
+   "field": "MPN",
+   "old": null,
+   "new": "RC0402FR-071ML"
+  },
+  {
+   "ref": "R174",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Yageo"
+  },
+  {
+   "ref": "R174",
+   "field": "LCSC",
+   "old": null,
+   "new": "C138033"
+  },
+  {
+   "ref": "SW102",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Alps Alpine"
+  },
+  {
+   "ref": "SW102",
+   "field": "MPN",
+   "old": null,
+   "new": "EC11E15244G1"
+  },
+  {
+   "ref": "SW102",
+   "field": "LCSC",
+   "old": null,
+   "new": "C370970"
+  },
+  {
+   "ref": "U13",
+   "field": "Datasheet",
+   "old": "",
+   "new": "https://www.ti.com/lit/ds/symlink/ts5a3167.pdf"
+  },
+  {
+   "ref": "U13",
+   "field": "MPN",
+   "old": null,
+   "new": "TS5A3167DBVR"
+  },
+  {
+   "ref": "U13",
+   "field": "LCSC",
+   "old": null,
+   "new": "C128416"
+  },
+  {
+   "ref": "U13",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Texas Instruments"
+  },
+  {
+   "ref": "R232",
+   "field": "MPN",
+   "old": null,
+   "new": "RC0402FR-0747KL"
+  },
+  {
+   "ref": "R232",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Yageo"
+  },
+  {
+   "ref": "R232",
+   "field": "LCSC",
+   "old": null,
+   "new": "C93943"
+  },
+  {
+   "ref": "C207",
+   "field": "MPN",
+   "old": null,
+   "new": "GRM1555C1H103JE01D"
+  },
+  {
+   "ref": "C207",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Murata"
+  },
+  {
+   "ref": "C207",
+   "field": "LCSC",
+   "old": null,
+   "new": "C22400107"
+  },
+  {
+   "ref": "R187",
+   "field": "MPN",
+   "old": null,
+   "new": "RC0402FR-071KL"
+  },
+  {
+   "ref": "R187",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Yageo"
+  },
+  {
+   "ref": "R187",
+   "field": "LCSC",
+   "old": null,
+   "new": "C106235"
+  },
+  {
+   "ref": "R253",
+   "field": "MPN",
+   "old": null,
+   "new": "RC0402FR-07150KL"
+  },
+  {
+   "ref": "R253",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Yageo"
+  },
+  {
+   "ref": "R253",
+   "field": "LCSC",
+   "old": null,
+   "new": "C93947"
+  },
+  {
+   "ref": "C201",
+   "field": "MPN",
+   "old": null,
+   "new": "CL05A225KP5NNNC"
+  },
+  {
+   "ref": "C201",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Samsung Electro-Mechanics"
+  },
+  {
+   "ref": "C201",
+   "field": "LCSC",
+   "old": null,
+   "new": "C7464343"
+  },
+  {
+   "ref": "C271",
+   "field": "MPN",
+   "old": null,
+   "new": "CL21A226MAQNNNE"
+  },
+  {
+   "ref": "C271",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Samsung Electro-Mechanics"
+  },
+  {
+   "ref": "C271",
+   "field": "LCSC",
+   "old": null,
+   "new": "C45783"
+  },
+  {
+   "ref": "R141",
+   "field": "MPN",
+   "old": null,
+   "new": "RC0402FR-079K1L"
+  },
+  {
+   "ref": "R141",
+   "field": "LCSC Part",
+   "old": null,
+   "new": "C163450"
+  },
+  {
+   "ref": "R141",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Yageo"
+  },
+  {
+   "ref": "R141",
+   "field": "LCSC",
+   "old": null,
+   "new": "C163450"
+  },
+  {
+   "ref": "R141",
+   "field": "Datasheet",
+   "old": "",
+   "new": "${KIPRJMOD}/../ai-files/datasheets/YAGEO_C114639_RC0603FR-079K1L.pdf"
+  },
+  {
+   "ref": "L204",
+   "field": "MPN",
+   "old": null,
+   "new": "MWSA1265S-220MT"
+  },
+  {
+   "ref": "L204",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Sunlord"
+  },
+  {
+   "ref": "L204",
+   "field": "LCSC",
+   "old": null,
+   "new": "C7245133"
+  },
+  {
+   "ref": "R202",
+   "field": "MPN",
+   "old": null,
+   "new": "RC0402FR-07100RL"
+  },
+  {
+   "ref": "R202",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Yageo"
+  },
+  {
+   "ref": "R202",
+   "field": "LCSC",
+   "old": null,
+   "new": "C106232"
+  },
+  {
+   "ref": "R240",
+   "field": "MPN",
+   "old": null,
+   "new": "RC0402FR-071KL"
+  },
+  {
+   "ref": "R240",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Yageo"
+  },
+  {
+   "ref": "R240",
+   "field": "LCSC",
+   "old": null,
+   "new": "C106235"
+  },
+  {
+   "ref": "C203",
+   "field": "MPN",
+   "old": null,
+   "new": "CL05A225KP5NNNC"
+  },
+  {
+   "ref": "C203",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Samsung Electro-Mechanics"
+  },
+  {
+   "ref": "C203",
+   "field": "LCSC",
+   "old": null,
+   "new": "C7464343"
+  },
+  {
+   "ref": "L200",
+   "field": "MPN",
+   "old": null,
+   "new": "XAL7070-222MEC"
+  },
+  {
+   "ref": "L200",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Coilcraft"
+  },
+  {
+   "ref": "L200",
+   "field": "LCSC",
+   "old": null,
+   "new": "C3911470"
+  },
+  {
+   "ref": "C227",
+   "field": "Value",
+   "old": "22pF C0G",
+   "new": "15pF C0G"
+  },
+  {
+   "ref": "C227",
+   "field": "MPN",
+   "old": null,
+   "new": "GRM1555C1H150JA01D"
+  },
+  {
+   "ref": "C227",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Murata"
+  },
+  {
+   "ref": "C227",
+   "field": "LCSC",
+   "old": null,
+   "new": "C76950"
+  },
+  {
+   "ref": "C268",
+   "field": "MPN",
+   "old": null,
+   "new": "CL05B682KB5NNNC"
+  },
+  {
+   "ref": "C268",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Samsung Electro-Mechanics"
+  },
+  {
+   "ref": "C268",
+   "field": "LCSC",
+   "old": null,
+   "new": "C318580"
+  },
+  {
+   "ref": "C277",
+   "field": "MPN",
+   "old": null,
+   "new": "CL21A226MAQNNNE"
+  },
+  {
+   "ref": "C277",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Samsung Electro-Mechanics"
+  },
+  {
+   "ref": "C277",
+   "field": "LCSC",
+   "old": null,
+   "new": "C45783"
+  },
+  {
+   "ref": "R251",
+   "field": "MPN",
+   "old": null,
+   "new": "RC0402FR-0756KL"
+  },
+  {
+   "ref": "R251",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Yageo"
+  },
+  {
+   "ref": "R251",
+   "field": "LCSC",
+   "old": null,
+   "new": "C114756"
+  },
+  {
+   "ref": "R252",
+   "field": "MPN",
+   "old": null,
+   "new": "RC0402FR-07301KL"
+  },
+  {
+   "ref": "R252",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Yageo"
+  },
+  {
+   "ref": "R252",
+   "field": "LCSC",
+   "old": null,
+   "new": "C171693"
+  },
+  {
+   "ref": "R254",
+   "field": "MPN",
+   "old": null,
+   "new": "AC0402FR-0782KL"
+  },
+  {
+   "ref": "R254",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Yageo"
+  },
+  {
+   "ref": "R254",
+   "field": "LCSC",
+   "old": null,
+   "new": "C144735"
+  },
+  {
+   "ref": "R127",
+   "field": "Datasheet",
+   "old": "",
+   "new": "https://www.yageogroup.com/component-documentation/download/specsheet/RC0603FR-071ML"
+  },
+  {
+   "ref": "R127",
+   "field": "Description",
+   "old": "",
+   "new": "Resistor"
+  },
+  {
+   "ref": "R127",
+   "field": "ki_keywords",
+   "old": null,
+   "new": "R res resistor"
+  },
+  {
+   "ref": "R127",
+   "field": "ki_fp_filters",
+   "old": null,
+   "new": "R_*"
+  },
+  {
+   "ref": "R127",
+   "field": "MPN",
+   "old": null,
+   "new": "RC0402FR-071ML"
+  },
+  {
+   "ref": "R127",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Yageo"
+  },
+  {
+   "ref": "R127",
+   "field": "LCSC",
+   "old": null,
+   "new": "C138033"
+  },
+  {
+   "ref": "R185",
+   "field": "MPN",
+   "old": null,
+   "new": "RC0402FR-071KL"
+  },
+  {
+   "ref": "R185",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Yageo"
+  },
+  {
+   "ref": "R185",
+   "field": "LCSC",
+   "old": null,
+   "new": "C106235"
+  },
+  {
+   "ref": "R208",
+   "field": "MPN",
+   "old": null,
+   "new": "RC0402FR-0733RL"
+  },
+  {
+   "ref": "R208",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Yageo"
+  },
+  {
+   "ref": "R208",
+   "field": "LCSC",
+   "old": null,
+   "new": "C138002"
+  },
+  {
+   "ref": "C100",
+   "field": "LCSC",
+   "old": null,
+   "new": "C440198"
+  },
+  {
+   "ref": "C100",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Murata"
+  },
+  {
+   "ref": "C100",
+   "field": "MPN",
+   "old": null,
+   "new": "GRM21BR61H106KE43L"
+  },
+  {
+   "ref": "C100",
+   "field": "LCSC Part",
+   "old": null,
+   "new": "C440198"
+  },
+  {
+   "ref": "C100",
+   "field": "Datasheet",
+   "old": "",
+   "new": "https://product.samsungsem.com/mlcc/CL32B106KBJNNN.do"
+  },
+  {
+   "ref": "C313",
+   "field": "LCSC",
+   "old": null,
+   "new": "C77020"
+  },
+  {
+   "ref": "C313",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Murata"
+  },
+  {
+   "ref": "C313",
+   "field": "MPN",
+   "old": null,
+   "new": "GRM155R71H104KE14D"
+  },
+  {
+   "ref": "C313",
+   "field": "LCSC Part",
+   "old": null,
+   "new": "C77020"
+  },
+  {
+   "ref": "C313",
+   "field": "Datasheet",
+   "old": "",
+   "new": "${KIPRJMOD}/../ai-files/datasheets/Samsung_MLCC_LCSC_C1591_C1711.pdf"
+  },
+  {
+   "ref": "R241",
+   "field": "MPN",
+   "old": null,
+   "new": "RC0402FR-071ML"
+  },
+  {
+   "ref": "R241",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Yageo"
+  },
+  {
+   "ref": "R241",
+   "field": "LCSC",
+   "old": null,
+   "new": "C138033"
+  },
+  {
+   "ref": "R10",
+   "field": "LCSC",
+   "old": null,
+   "new": "C114763"
+  },
+  {
+   "ref": "R10",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Yageo"
+  },
+  {
+   "ref": "R10",
+   "field": "MPN",
+   "old": null,
+   "new": "RC0402FR-07200KL"
+  },
+  {
+   "ref": "R10",
+   "field": "LCSC Part",
+   "old": null,
+   "new": "C114763"
+  },
+  {
+   "ref": "C177",
+   "field": "MPN",
+   "old": null,
+   "new": "FCC0402N330J500AT"
+  },
+  {
+   "ref": "C177",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "FOJAN"
+  },
+  {
+   "ref": "C177",
+   "field": "LCSC",
+   "old": null,
+   "new": "C5137486"
+  },
+  {
+   "ref": "R171",
+   "field": "MPN",
+   "old": null,
+   "new": "RC0402FR-0722RL"
+  },
+  {
+   "ref": "R171",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Yageo"
+  },
+  {
+   "ref": "R171",
+   "field": "LCSC",
+   "old": null,
+   "new": "C114765"
+  },
+  {
+   "ref": "C285",
+   "field": "MPN",
+   "old": null,
+   "new": "CGA0402X7R474K160GT"
+  },
+  {
+   "ref": "C285",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "HRE"
+  },
+  {
+   "ref": "C285",
+   "field": "LCSC",
+   "old": null,
+   "new": "C22435970"
+  },
+  {
+   "ref": "C312",
+   "field": "LCSC",
+   "old": null,
+   "new": "C77020"
+  },
+  {
+   "ref": "C312",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Murata"
+  },
+  {
+   "ref": "C312",
+   "field": "MPN",
+   "old": null,
+   "new": "GRM155R71H104KE14D"
+  },
+  {
+   "ref": "C312",
+   "field": "LCSC Part",
+   "old": null,
+   "new": "C77020"
+  },
+  {
+   "ref": "C312",
+   "field": "Datasheet",
+   "old": "",
+   "new": "${KIPRJMOD}/../ai-files/datasheets/Samsung_MLCC_LCSC_C1591_C1711.pdf"
+  },
+  {
+   "ref": "R122",
+   "field": "MPN",
+   "old": null,
+   "new": "RC0402FR-0747KL"
+  },
+  {
+   "ref": "R122",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Yageo"
+  },
+  {
+   "ref": "R122",
+   "field": "LCSC",
+   "old": null,
+   "new": "C93943"
+  },
+  {
+   "ref": "R122",
+   "field": "Datasheet",
+   "old": "",
+   "new": "${KIPRJMOD}/../ai-files/datasheets/Yageo_RC0603FR_series.pdf"
+  },
+  {
+   "ref": "R172",
+   "field": "MPN",
+   "old": null,
+   "new": "RC0402FR-0722RL"
+  },
+  {
+   "ref": "R172",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Yageo"
+  },
+  {
+   "ref": "R172",
+   "field": "LCSC",
+   "old": null,
+   "new": "C114765"
+  },
+  {
+   "ref": "L3",
+   "field": "MPN",
+   "old": null,
+   "new": "XFL4015-471MEC"
+  },
+  {
+   "ref": "L3",
+   "field": "LCSC Part",
+   "old": null,
+   "new": "C18221164"
+  },
+  {
+   "ref": "L3",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Coilcraft"
+  },
+  {
+   "ref": "C210",
+   "field": "MPN",
+   "old": null,
+   "new": "GRM1555C1H103JE01D"
+  },
+  {
+   "ref": "C210",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Murata"
+  },
+  {
+   "ref": "C210",
+   "field": "LCSC",
+   "old": null,
+   "new": "C22400107"
+  },
+  {
+   "ref": "C226",
+   "field": "Value",
+   "old": "22pF C0G",
+   "new": "15pF C0G"
+  },
+  {
+   "ref": "C226",
+   "field": "MPN",
+   "old": null,
+   "new": "GRM1555C1H150JA01D"
+  },
+  {
+   "ref": "C226",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Murata"
+  },
+  {
+   "ref": "C226",
+   "field": "LCSC",
+   "old": null,
+   "new": "C76950"
+  },
+  {
+   "ref": "R108",
+   "field": "MPN",
+   "old": null,
+   "new": "RC0402FR-07180KL"
+  },
+  {
+   "ref": "R108",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Yageo"
+  },
+  {
+   "ref": "R108",
+   "field": "LCSC",
+   "old": null,
+   "new": "C138046"
+  },
+  {
+   "ref": "R108",
+   "field": "Datasheet",
+   "old": "",
+   "new": "${KIPRJMOD}/../ai-files/datasheets/Yageo_RC0603FR_series.pdf"
+  },
+  {
+   "ref": "R112",
+   "field": "MPN",
+   "old": null,
+   "new": "RC0402FR-07100RL"
+  },
+  {
+   "ref": "R112",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Yageo"
+  },
+  {
+   "ref": "R112",
+   "field": "LCSC",
+   "old": null,
+   "new": "C106232"
+  },
+  {
+   "ref": "R112",
+   "field": "Datasheet",
+   "old": "",
+   "new": "${KIPRJMOD}/../ai-files/datasheets/Yageo_RC0603FR_series.pdf"
+  },
+  {
+   "ref": "C5",
+   "field": "LCSC",
+   "old": null,
+   "new": "C5159426"
+  },
+  {
+   "ref": "C5",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "TDK"
+  },
+  {
+   "ref": "C5",
+   "field": "MPN",
+   "old": null,
+   "new": "C2012X7R1H475KT0A0E"
+  },
+  {
+   "ref": "R233",
+   "field": "MPN",
+   "old": null,
+   "new": "RC0402FR-0747KL"
+  },
+  {
+   "ref": "R233",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Yageo"
+  },
+  {
+   "ref": "R233",
+   "field": "LCSC",
+   "old": null,
+   "new": "C93943"
+  },
+  {
+   "ref": "C241",
+   "field": "MPN",
+   "old": null,
+   "new": "CL05A225KP5NNNC"
+  },
+  {
+   "ref": "C241",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Samsung Electro-Mechanics"
+  },
+  {
+   "ref": "C241",
+   "field": "LCSC",
+   "old": null,
+   "new": "C7464343"
+  },
+  {
+   "ref": "C178",
+   "field": "MPN",
+   "old": null,
+   "new": "FCC0402N330J500AT"
+  },
+  {
+   "ref": "C178",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "FOJAN"
+  },
+  {
+   "ref": "C178",
+   "field": "LCSC",
+   "old": null,
+   "new": "C5137486"
+  },
+  {
+   "ref": "C204",
+   "field": "MPN",
+   "old": null,
+   "new": "CL05A225KP5NNNC"
+  },
+  {
+   "ref": "C204",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Samsung Electro-Mechanics"
+  },
+  {
+   "ref": "C204",
+   "field": "LCSC",
+   "old": null,
+   "new": "C7464343"
+  },
+  {
+   "ref": "R100",
+   "field": "MPN",
+   "old": null,
+   "new": "0402WGF5231TCE"
+  },
+  {
+   "ref": "R100",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "UNI-ROYAL"
+  },
+  {
+   "ref": "R100",
+   "field": "LCSC",
+   "old": null,
+   "new": "C25907"
+  },
+  {
+   "ref": "R100",
+   "field": "Datasheet",
+   "old": "",
+   "new": "${KIPRJMOD}/../ai-files/datasheets/SAE_1RC0603F_series.pdf"
+  },
+  {
+   "ref": "C200",
+   "field": "MPN",
+   "old": null,
+   "new": "CL05A225KP5NNNC"
+  },
+  {
+   "ref": "C200",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Samsung Electro-Mechanics"
+  },
+  {
+   "ref": "C200",
+   "field": "LCSC",
+   "old": null,
+   "new": "C7464343"
+  },
+  {
+   "ref": "C272",
+   "field": "MPN",
+   "old": null,
+   "new": "CL21A226MAQNNNE"
+  },
+  {
+   "ref": "C272",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Samsung Electro-Mechanics"
+  },
+  {
+   "ref": "C272",
+   "field": "LCSC",
+   "old": null,
+   "new": "C45783"
+  },
+  {
+   "ref": "C211",
+   "field": "MPN",
+   "old": null,
+   "new": "GRM1555C1H103JE01D"
+  },
+  {
+   "ref": "C211",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Murata"
+  },
+  {
+   "ref": "C211",
+   "field": "LCSC",
+   "old": null,
+   "new": "C22400107"
+  },
+  {
+   "ref": "R227",
+   "field": "MPN",
+   "old": null,
+   "new": "RC0402FR-071KL"
+  },
+  {
+   "ref": "R227",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Yageo"
+  },
+  {
+   "ref": "R227",
+   "field": "LCSC",
+   "old": null,
+   "new": "C106235"
+  },
+  {
+   "ref": "C183",
+   "field": "LCSC",
+   "old": null,
+   "new": "C76965"
+  },
+  {
+   "ref": "C183",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Murata"
+  },
+  {
+   "ref": "C183",
+   "field": "MPN",
+   "old": null,
+   "new": "GRM1555C1H331JA01D"
+  },
+  {
+   "ref": "C183",
+   "field": "LCSC Part",
+   "old": null,
+   "new": "C76965"
+  },
+  {
+   "ref": "FB200",
+   "field": "MPN",
+   "old": null,
+   "new": "BLM15AG601SN1D"
+  },
+  {
+   "ref": "FB200",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Murata"
+  },
+  {
+   "ref": "FB200",
+   "field": "LCSC",
+   "old": null,
+   "new": "C76884"
+  },
+  {
+   "ref": "C202",
+   "field": "MPN",
+   "old": null,
+   "new": "CL05A225KP5NNNC"
+  },
+  {
+   "ref": "C202",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Samsung Electro-Mechanics"
+  },
+  {
+   "ref": "C202",
+   "field": "LCSC",
+   "old": null,
+   "new": "C7464343"
+  },
+  {
+   "ref": "C311",
+   "field": "LCSC",
+   "old": null,
+   "new": "C77020"
+  },
+  {
+   "ref": "C311",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Murata"
+  },
+  {
+   "ref": "C311",
+   "field": "MPN",
+   "old": null,
+   "new": "GRM155R71H104KE14D"
+  },
+  {
+   "ref": "C311",
+   "field": "LCSC Part",
+   "old": null,
+   "new": "C77020"
+  },
+  {
+   "ref": "C311",
+   "field": "Datasheet",
+   "old": "",
+   "new": "${KIPRJMOD}/../ai-files/datasheets/Samsung_MLCC_LCSC_C1591_C1711.pdf"
+  },
+  {
+   "ref": "J4",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Ckmtw"
+  },
+  {
+   "ref": "J4",
+   "field": "MPN",
+   "old": null,
+   "new": "B-2100S04P-A110"
+  },
+  {
+   "ref": "J4",
+   "field": "LCSC",
+   "old": null,
+   "new": "C124378"
+  },
+  {
+   "ref": "R210",
+   "field": "MPN",
+   "old": null,
+   "new": "RC0402FR-072K2L"
+  },
+  {
+   "ref": "R210",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Yageo"
+  },
+  {
+   "ref": "R210",
+   "field": "LCSC",
+   "old": null,
+   "new": "C114762"
+  },
+  {
+   "ref": "R120",
+   "field": "MPN",
+   "old": null,
+   "new": "RC0402FR-074K7L"
+  },
+  {
+   "ref": "R120",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Yageo"
+  },
+  {
+   "ref": "R120",
+   "field": "LCSC",
+   "old": null,
+   "new": "C105871"
+  },
+  {
+   "ref": "R120",
+   "field": "Datasheet",
+   "old": "",
+   "new": "${KIPRJMOD}/../ai-files/datasheets/Yageo_RC0603FR_series.pdf"
+  },
+  {
+   "ref": "C110",
+   "field": "MPN",
+   "old": null,
+   "new": "GRM155R71H473KE14D"
+  },
+  {
+   "ref": "C110",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Murata"
+  },
+  {
+   "ref": "C110",
+   "field": "LCSC",
+   "old": null,
+   "new": "C117757"
+  },
+  {
+   "ref": "C110",
+   "field": "LCSC Part",
+   "old": null,
+   "new": "C117757"
+  },
+  {
+   "ref": "C110",
+   "field": "Datasheet",
+   "old": "",
+   "new": "https://www.yageo.com/upload/media/product/productspec/capacitor/CC0603KRX7R9BB473.pdf"
+  },
+  {
+   "ref": "C292",
+   "field": "MPN",
+   "old": null,
+   "new": "CL21A226MAQNNNE"
+  },
+  {
+   "ref": "C292",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Samsung Electro-Mechanics"
+  },
+  {
+   "ref": "C292",
+   "field": "LCSC",
+   "old": null,
+   "new": "C45783"
+  },
+  {
+   "ref": "C299",
+   "field": "MPN",
+   "old": null,
+   "new": "CGA0402X7R474K160GT"
+  },
+  {
+   "ref": "C299",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "HRE"
+  },
+  {
+   "ref": "C299",
+   "field": "LCSC",
+   "old": null,
+   "new": "C22435970"
+  },
+  {
+   "ref": "C209",
+   "field": "MPN",
+   "old": null,
+   "new": "GRM1555C1H103JE01D"
+  },
+  {
+   "ref": "C209",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Murata"
+  },
+  {
+   "ref": "C209",
+   "field": "LCSC",
+   "old": null,
+   "new": "C22400107"
+  },
+  {
+   "ref": "C111",
+   "field": "MPN",
+   "old": null,
+   "new": "GRM21BR61H106KE43L"
+  },
+  {
+   "ref": "C111",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Murata"
+  },
+  {
+   "ref": "C111",
+   "field": "LCSC",
+   "old": null,
+   "new": "C440198"
+  },
+  {
+   "ref": "C111",
+   "field": "LCSC Part",
+   "old": null,
+   "new": "C440198"
+  },
+  {
+   "ref": "C111",
+   "field": "Datasheet",
+   "old": "",
+   "new": "https://product.samsungsem.com/mlcc/CL32B106KBJNNN.do"
+  },
+  {
+   "ref": "C103",
+   "field": "MPN",
+   "old": null,
+   "new": "GRM155R71H473KE14D"
+  },
+  {
+   "ref": "C103",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Murata"
+  },
+  {
+   "ref": "C103",
+   "field": "LCSC",
+   "old": null,
+   "new": "C117757"
+  },
+  {
+   "ref": "C103",
+   "field": "LCSC Part",
+   "old": null,
+   "new": "C117757"
+  },
+  {
+   "ref": "C103",
+   "field": "Datasheet",
+   "old": "",
+   "new": "${KIPRJMOD}/../ai-files/datasheets/YAGEO_C107093_CC0603KRX7R9BB473.pdf"
+  },
+  {
+   "ref": "C310",
+   "field": "MPN",
+   "old": null,
+   "new": "GRM155R71H103KA88D"
+  },
+  {
+   "ref": "C310",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Murata"
+  },
+  {
+   "ref": "C310",
+   "field": "LCSC",
+   "old": null,
+   "new": "C77019"
+  },
+  {
+   "ref": "C243",
+   "field": "MPN",
+   "old": null,
+   "new": "CL05A225KP5NNNC"
+  },
+  {
+   "ref": "C243",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Samsung Electro-Mechanics"
+  },
+  {
+   "ref": "C243",
+   "field": "LCSC",
+   "old": null,
+   "new": "C7464343"
+  },
+  {
+   "ref": "R203",
+   "field": "MPN",
+   "old": null,
+   "new": "RC0402FR-07100RL"
+  },
+  {
+   "ref": "R203",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Yageo"
+  },
+  {
+   "ref": "R203",
+   "field": "LCSC",
+   "old": null,
+   "new": "C106232"
+  },
+  {
+   "ref": "C275",
+   "field": "3D model",
+   "old": "${KIPRJMOD}/kicad-library/3d/CP_Elec_8x10.step",
+   "new": "${KIPRJMOD}/kicad-library/3d/CP_Elec_6.3x7.7.step"
+  },
+  {
+   "ref": "C275",
+   "field": "MPN",
+   "old": null,
+   "new": "EEHZA1E101XP"
+  },
+  {
+   "ref": "C275",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Panasonic"
+  },
+  {
+   "ref": "C275",
+   "field": "LCSC",
+   "old": null,
+   "new": "C264047"
+  },
+  {
+   "ref": "C275",
+   "field": "Datasheet",
+   "old": "",
+   "new": "${KIPRJMOD}/../ai-files/datasheets/Panasonic_EEH-ZA_hybrid_polymer.pdf"
+  },
+  {
+   "ref": "C308",
+   "field": "MPN",
+   "old": null,
+   "new": "GRM155R71H103KA88D"
+  },
+  {
+   "ref": "C308",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Murata"
+  },
+  {
+   "ref": "C308",
+   "field": "LCSC",
+   "old": null,
+   "new": "C77019"
+  },
+  {
+   "ref": "C293",
+   "field": "MPN",
+   "old": null,
+   "new": "CL21A475KAQNNNE"
+  },
+  {
+   "ref": "C293",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Samsung Electro-Mechanics"
+  },
+  {
+   "ref": "C293",
+   "field": "LCSC",
+   "old": null,
+   "new": "C1779"
+  },
+  {
+   "ref": "C290",
+   "field": "MPN",
+   "old": null,
+   "new": "CL21A226MAQNNNE"
+  },
+  {
+   "ref": "C290",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Samsung Electro-Mechanics"
+  },
+  {
+   "ref": "C290",
+   "field": "LCSC",
+   "old": null,
+   "new": "C45783"
+  },
+  {
+   "ref": "R102",
+   "field": "MPN",
+   "old": null,
+   "new": "RC0402FR-074K7L"
+  },
+  {
+   "ref": "R102",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Yageo"
+  },
+  {
+   "ref": "R102",
+   "field": "LCSC",
+   "old": null,
+   "new": "C105871"
+  },
+  {
+   "ref": "R102",
+   "field": "Datasheet",
+   "old": "",
+   "new": "${KIPRJMOD}/../ai-files/datasheets/Yageo_RC0603FR_series.pdf"
+  },
+  {
+   "ref": "C112",
+   "field": "MPN",
+   "old": null,
+   "new": "GRM21BR61H106KE43L"
+  },
+  {
+   "ref": "C112",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Murata"
+  },
+  {
+   "ref": "C112",
+   "field": "LCSC",
+   "old": null,
+   "new": "C440198"
+  },
+  {
+   "ref": "C112",
+   "field": "LCSC Part",
+   "old": null,
+   "new": "C440198"
+  },
+  {
+   "ref": "C112",
+   "field": "Datasheet",
+   "old": "",
+   "new": "https://product.samsungsem.com/mlcc/CL32B106KBJNNN.do"
+  },
+  {
+   "ref": "C300",
+   "field": "MPN",
+   "old": null,
+   "new": "CGA0402X7R474K160GT"
+  },
+  {
+   "ref": "C300",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "HRE"
+  },
+  {
+   "ref": "C300",
+   "field": "LCSC",
+   "old": null,
+   "new": "C22435970"
+  },
+  {
+   "ref": "U17",
+   "field": "Datasheet",
+   "old": "",
+   "new": "https://www.ti.com/lit/ds/symlink/ts5a3167.pdf"
+  },
+  {
+   "ref": "U17",
+   "field": "MPN",
+   "old": null,
+   "new": "TS5A3167DBVR"
+  },
+  {
+   "ref": "U17",
+   "field": "LCSC",
+   "old": null,
+   "new": "C128416"
+  },
+  {
+   "ref": "U17",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Texas Instruments"
+  },
+  {
+   "ref": "C298",
+   "field": "MPN",
+   "old": null,
+   "new": "CGA0402X7R474K160GT"
+  },
+  {
+   "ref": "C298",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "HRE"
+  },
+  {
+   "ref": "C298",
+   "field": "LCSC",
+   "old": null,
+   "new": "C22435970"
+  },
+  {
+   "ref": "C101",
+   "field": "LCSC",
+   "old": null,
+   "new": "C440198"
+  },
+  {
+   "ref": "C101",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Murata"
+  },
+  {
+   "ref": "C101",
+   "field": "MPN",
+   "old": null,
+   "new": "GRM21BR61H106KE43L"
+  },
+  {
+   "ref": "C101",
+   "field": "LCSC Part",
+   "old": null,
+   "new": "C440198"
+  },
+  {
+   "ref": "C101",
+   "field": "Datasheet",
+   "old": "",
+   "new": "https://product.samsungsem.com/mlcc/CL32B106KBJNNN.do"
+  },
+  {
+   "ref": "U12",
+   "field": "Datasheet",
+   "old": "",
+   "new": "https://www.ti.com/lit/ds/symlink/tps7a02.pdf"
+  },
+  {
+   "ref": "U12",
+   "field": "MPN",
+   "old": null,
+   "new": "TPS7A0230PDBVR"
+  },
+  {
+   "ref": "U12",
+   "field": "LCSC",
+   "old": null,
+   "new": "C3747031"
+  },
+  {
+   "ref": "U12",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Texas Instruments"
+  },
+  {
+   "ref": "R101",
+   "field": "MPN",
+   "old": null,
+   "new": "AC0402FR-0730K1L"
+  },
+  {
+   "ref": "R101",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Yageo"
+  },
+  {
+   "ref": "R101",
+   "field": "LCSC",
+   "old": null,
+   "new": "C226982"
+  },
+  {
+   "ref": "R101",
+   "field": "Datasheet",
+   "old": "",
+   "new": "${KIPRJMOD}/../ai-files/datasheets/SAE_1RC0603F_series.pdf"
+  },
+  {
+   "ref": "C2",
+   "field": "Datasheet",
+   "old": "",
+   "new": "https://product.samsungsem.com/mlcc/CL32B475KBUYNN.do"
+  },
+  {
+   "ref": "C2",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "TDK"
+  },
+  {
+   "ref": "C2",
+   "field": "MPN",
+   "old": null,
+   "new": "C2012X7R1H475KT0A0E"
+  },
+  {
+   "ref": "C2",
+   "field": "LCSC Part",
+   "old": null,
+   "new": "C5159426"
+  },
+  {
+   "ref": "C2",
+   "field": "LCSC",
+   "old": null,
+   "new": "C5159426"
+  },
+  {
+   "ref": "C279",
+   "field": "MPN",
+   "old": null,
+   "new": "CL21A226MAQNNNE"
+  },
+  {
+   "ref": "C279",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Samsung Electro-Mechanics"
+  },
+  {
+   "ref": "C279",
+   "field": "LCSC",
+   "old": null,
+   "new": "C45783"
+  },
+  {
+   "ref": "R228",
+   "field": "MPN",
+   "old": null,
+   "new": "RC0402FR-071KL"
+  },
+  {
+   "ref": "R228",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Yageo"
+  },
+  {
+   "ref": "R228",
+   "field": "LCSC",
+   "old": null,
+   "new": "C106235"
+  },
+  {
+   "ref": "C244",
+   "field": "MPN",
+   "old": null,
+   "new": "CL05A225KP5NNNC"
+  },
+  {
+   "ref": "C244",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Samsung Electro-Mechanics"
+  },
+  {
+   "ref": "C244",
+   "field": "LCSC",
+   "old": null,
+   "new": "C7464343"
+  },
+  {
+   "ref": "C273",
+   "field": "MPN",
+   "old": null,
+   "new": "CL21A226MAQNNNE"
+  },
+  {
+   "ref": "C273",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Samsung Electro-Mechanics"
+  },
+  {
+   "ref": "C273",
+   "field": "LCSC",
+   "old": null,
+   "new": "C45783"
+  },
+  {
+   "ref": "C194",
+   "field": "MPN",
+   "old": null,
+   "new": "CL21A475KAQNNNE"
+  },
+  {
+   "ref": "C194",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Samsung Electro-Mechanics"
+  },
+  {
+   "ref": "C194",
+   "field": "LCSC",
+   "old": null,
+   "new": "C1779"
+  },
+  {
+   "ref": "L205",
+   "field": "MPN",
+   "old": null,
+   "new": "MWSA1265S-220MT"
+  },
+  {
+   "ref": "L205",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Sunlord"
+  },
+  {
+   "ref": "L205",
+   "field": "LCSC",
+   "old": null,
+   "new": "C7245133"
+  },
+  {
+   "ref": "R140",
+   "field": "MPN",
+   "old": null,
+   "new": "RC0402FR-0778K7L"
+  },
+  {
+   "ref": "R140",
+   "field": "LCSC Part",
+   "old": null,
+   "new": "C163454"
+  },
+  {
+   "ref": "R140",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Yageo"
+  },
+  {
+   "ref": "R140",
+   "field": "LCSC",
+   "old": null,
+   "new": "C163454"
+  },
+  {
+   "ref": "R140",
+   "field": "Datasheet",
+   "old": "",
+   "new": "${KIPRJMOD}/../ai-files/datasheets/SAE_C54531588_1RC0603F7872.pdf"
+  },
+  {
+   "ref": "R258",
+   "field": "MPN",
+   "old": null,
+   "new": "RC0402FR-071KL"
+  },
+  {
+   "ref": "R258",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Yageo"
+  },
+  {
+   "ref": "R258",
+   "field": "LCSC",
+   "old": null,
+   "new": "C106235"
+  },
+  {
+   "ref": "C208",
+   "field": "MPN",
+   "old": null,
+   "new": "GRM1555C1H103JE01D"
+  },
+  {
+   "ref": "C208",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Murata"
+  },
+  {
+   "ref": "C208",
+   "field": "LCSC",
+   "old": null,
+   "new": "C22400107"
+  },
+  {
+   "ref": "C315",
+   "field": "LCSC",
+   "old": null,
+   "new": "C403725"
+  },
+  {
+   "ref": "C315",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Murata"
+  },
+  {
+   "ref": "C315",
+   "field": "MPN",
+   "old": null,
+   "new": "GRM31CR61E476ME44L"
+  },
+  {
+   "ref": "C315",
+   "field": "LCSC Part",
+   "old": null,
+   "new": "C403725"
+  },
+  {
+   "ref": "Y170",
+   "field": "MPN",
+   "old": null,
+   "new": "K3A120002010"
+  },
+  {
+   "ref": "Y170",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "KYX"
+  },
+  {
+   "ref": "Y170",
+   "field": "LCSC",
+   "old": null,
+   "new": "C368730"
+  },
+  {
+   "ref": "R151",
+   "field": "MPN",
+   "old": null,
+   "new": "AC0402FR-0791KL"
+  },
+  {
+   "ref": "R151",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Yageo"
+  },
+  {
+   "ref": "R151",
+   "field": "LCSC",
+   "old": null,
+   "new": "C144733"
+  },
+  {
+   "ref": "R151",
+   "field": "Datasheet",
+   "old": "",
+   "new": "${KIPRJMOD}/../ai-files/datasheets/Yageo_AC0603FR-0791KL.pdf"
+  },
+  {
+   "ref": "C236",
+   "field": "MPN",
+   "old": null,
+   "new": "CL21A475KAQNNNE"
+  },
+  {
+   "ref": "C236",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Samsung Electro-Mechanics"
+  },
+  {
+   "ref": "C236",
+   "field": "LCSC",
+   "old": null,
+   "new": "C1779"
+  },
+  {
+   "ref": "L2",
+   "field": "MPN",
+   "old": null,
+   "new": "XFL4015-471MEC"
+  },
+  {
+   "ref": "L2",
+   "field": "LCSC Part",
+   "old": null,
+   "new": "C18221164"
+  },
+  {
+   "ref": "L2",
+   "field": "Datasheet",
+   "old": "",
+   "new": "${KIPRJMOD}/../ai-files/datasheets/Coilcraft_XFL4015.pdf"
+  },
+  {
+   "ref": "L2",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Coilcraft"
+  },
+  {
+   "ref": "R207",
+   "field": "MPN",
+   "old": null,
+   "new": "RC0402FR-0733RL"
+  },
+  {
+   "ref": "R207",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Yageo"
+  },
+  {
+   "ref": "R207",
+   "field": "LCSC",
+   "old": null,
+   "new": "C138002"
+  },
+  {
+   "ref": "R126",
+   "field": "Datasheet",
+   "old": "",
+   "new": "https://www.yageogroup.com/component-documentation/download/specsheet/RC0603FR-071ML"
+  },
+  {
+   "ref": "R126",
+   "field": "Description",
+   "old": "",
+   "new": "Resistor"
+  },
+  {
+   "ref": "R126",
+   "field": "ki_keywords",
+   "old": null,
+   "new": "R res resistor"
+  },
+  {
+   "ref": "R126",
+   "field": "ki_fp_filters",
+   "old": null,
+   "new": "R_*"
+  },
+  {
+   "ref": "R126",
+   "field": "MPN",
+   "old": null,
+   "new": "RC0402FR-071ML"
+  },
+  {
+   "ref": "R126",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "Yageo"
+  },
+  {
+   "ref": "R126",
+   "field": "LCSC",
+   "old": null,
+   "new": "C138033"
+  },
+  {
+   "ref": "R150",
+   "field": "MPN",
+   "old": null,
+   "new": "0402WGF6043TCE"
+  },
+  {
+   "ref": "R150",
+   "field": "Manufacturer",
+   "old": null,
+   "new": "UNI-ROYAL"
+  },
+  {
+   "ref": "R150",
+   "field": "LCSC",
+   "old": null,
+   "new": "C27013"
+  },
+  {
+   "ref": "R150",
+   "field": "Datasheet",
+   "old": "",
+   "new": "${KIPRJMOD}/../ai-files/datasheets/FOJAN_FRC0603_resistors.pdf"
+  }
+ ],
+ "sheets_touched": [
+  "Amplifiers.kicad_sch",
+  "Battery_Charger.kicad_sch",
+  "Bluetooth.kicad_sch",
+  "Bluetooth_Power.kicad_sch",
+  "Fuel_Gauge_Power.kicad_sch",
+  "Headphone_Aux.kicad_sch",
+  "Logic_Audio_Power.kicad_sch",
+  "MCU.kicad_sch",
+  "Source_Select_ADC.kicad_sch",
+  "USB_Audio.kicad_sch",
+  "USB_PD.kicad_sch"
+ ],
+ "bom_rows_skipped": [
+  "J5 mate (housing)",
+  "J5 mate (contacts)",
+  "PACK",
+  "TP1-TP25",
+  "TP26-TP27"
+ ],
+ "bom_refs_not_in_schematic": [],
+ "changed_refs_without_footprint": [],
+ "counts": {
+  "schematic_field_changes": 219,
+  "refs_changed": 144,
+  "pcb_changes": 499
+ }
+}

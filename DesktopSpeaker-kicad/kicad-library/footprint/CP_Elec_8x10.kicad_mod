@@ -358,7 +358,7 @@
 		(roundrect_rratio 0.1)
 	)
 	(embedded_fonts no)
-	(model "${KIPRJMOD}/kicad-library/3d/CP_Elec_8x10.step"
+	(model "${KIPRJMOD}/kicad-library/3d/CP_Elec_6.3x7.7.step"
 		(offset
 			(xyz 0 0 0)
 		)
