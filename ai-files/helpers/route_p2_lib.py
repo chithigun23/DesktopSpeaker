@@ -150,7 +150,7 @@ class Ctx:
         return out
     def obstacle(self, me, li, y0, y1, x0, x1, w, cme, cpad=0.2, extra=0.0, rip=None, gndc=0.2):
         """bool blocked map (window) for a track of width w on layer li for net id me"""
-        s = (slice(y0, y1), slice(x0, x1)); m = 0.04
+        s = (slice(y0, y1), slice(x0, x1)); m = getattr(self, 'MARGIN', 0.04)
         blocked = np.zeros((y1 - y0, x1 - x0), bool)
         def grp(name, c):
             a = self.R[name][li][s]

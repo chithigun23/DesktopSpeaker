@@ -293,6 +293,17 @@
   "cvpcb": {
     "equivalence_files": []
   },
+  "erc": {
+    "erc_exclusions": [
+      [
+        "power_pin_not_driven|1841500|711200|abd26e7f-62be-4d53-a91b-735f5442d1e2|00000000-0000-0000-0000-000000000000|/feda53ed-537d-4f88-9436-c6075776255b/f38b7023-3d53-43ea-b3db-e2c826d87b35|/feda53ed-537d-4f88-9436-c6075776255b/f38b7023-3d53-43ea-b3db-e2c826d87b35|",
+        "By design: U11 (TPS25730D) pin 38 VIN_3V3 is unused and pulled to GND through R12 100k (net VIN_LOW), as on the TI EVM; the core runs from the internal VBUS LDO. No supply drives the pin, so a PWR_FLAG would misstate the net. Keyed to U11 pin position and sheet path; re-check if U11 moves. See ai-files/reports/erc-cleanup.md."
+      ]
+    ],
+    "meta": {
+      "version": 0
+    }
+  },
   "libraries": {
     "pinned_footprint_libs": [],
     "pinned_symbol_libs": []
@@ -1038,10 +1049,6 @@
       {
         "netclass": "GND",
         "pattern": "GND"
-      },
-      {
-        "netclass": "SIGNAL",
-        "pattern": "*"
       }
     ]
   },

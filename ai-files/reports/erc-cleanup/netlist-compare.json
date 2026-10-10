@@ -1,0 +1,23 @@
+{
+  "components": {
+    "before": 348,
+    "after": 348,
+    "diff": []
+  },
+  "nets": {
+    "before": 311,
+    "after": 311,
+    "diff": []
+  },
+  "pins": {
+    "before": 1130,
+    "after": 1130,
+    "diff": []
+  },
+  "libparts": {
+    "before": 45,
+    "after": 45,
+    "diff": []
+  },
+  "identical": true
+}

@@ -1,0 +1,110 @@
+{
+    "$schema": "https://schemas.kicad.org/erc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-10-09T10:36:02",
+    "ignored_checks": [
+        {
+            "description": "Global label only appears once in the schematic",
+            "key": "single_global_label"
+        },
+        {
+            "description": "Four connection points are joined together",
+            "key": "four_way_junction"
+        },
+        {
+            "description": "SPICE model issue",
+            "key": "simulation_model_issue"
+        },
+        {
+            "description": "Assigned footprint doesn't match footprint filters",
+            "key": "footprint_filter"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.0.6",
+    "sheets": [
+        {
+            "path": "/",
+            "uuid_path": "/feda53ed-537d-4f88-9436-c6075776255b",
+            "violations": []
+        },
+        {
+            "path": "/USB_PD/",
+            "uuid_path": "/feda53ed-537d-4f88-9436-c6075776255b/f38b7023-3d53-43ea-b3db-e2c826d87b35",
+            "violations": [
+                {
+                    "comment": "By design: U11 (TPS25730D) pin 38 VIN_3V3 is unused and pulled to GND through R12 100k (net VIN_LOW), as on the TI EVM; the core runs from the internal VBUS LDO. No supply drives the pin, so a PWR_FLAG would misstate the net. Keyed to U11 pin position and sheet path; re-check if U11 moves. See ai-files/reports/erc-cleanup.md.",
+                    "description": "Input Power pin not driven by any Output Power pins",
+                    "excluded": true,
+                    "items": [
+                        {
+                            "description": "Symbol U11 Pin 38 [VIN_3V3, Power input, Line]",
+                            "pos": {
+                                "x": 1.8415,
+                                "y": 0.7112
+                            },
+                            "uuid": "abd26e7f-62be-4d53-a91b-735f5442d1e2"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "power_pin_not_driven"
+                }
+            ]
+        },
+        {
+            "path": "/Battery_Charger/",
+            "uuid_path": "/feda53ed-537d-4f88-9436-c6075776255b/a7066d55-4393-49f1-9dcb-c2e9f1db9549",
+            "violations": []
+        },
+        {
+            "path": "/Fuel_Gauge_Power/",
+            "uuid_path": "/feda53ed-537d-4f88-9436-c6075776255b/9c37a727-9991-421a-8f6e-77dd39bb53fa",
+            "violations": []
+        },
+        {
+            "path": "/Bluetooth_Power/",
+            "uuid_path": "/feda53ed-537d-4f88-9436-c6075776255b/f761c113-2c86-429a-8773-5f4b423ef275",
+            "violations": []
+        },
+        {
+            "path": "/Logic_Audio_Power/",
+            "uuid_path": "/feda53ed-537d-4f88-9436-c6075776255b/31d56ed5-71f9-4c5a-b590-b5d5119f00f9",
+            "violations": []
+        },
+        {
+            "path": "/MCU/",
+            "uuid_path": "/feda53ed-537d-4f88-9436-c6075776255b/4ab2b160-efba-45d8-be2c-c7b2862cfacf",
+            "violations": []
+        },
+        {
+            "path": "/USB_Audio/",
+            "uuid_path": "/feda53ed-537d-4f88-9436-c6075776255b/54e0bbc5-df7c-4047-acfa-4732ab128bc4",
+            "violations": []
+        },
+        {
+            "path": "/Bluetooth/",
+            "uuid_path": "/feda53ed-537d-4f88-9436-c6075776255b/cc34ef9a-e98e-4641-98b8-a2a9303b711c",
+            "violations": []
+        },
+        {
+            "path": "/Source_Select_ADC/",
+            "uuid_path": "/feda53ed-537d-4f88-9436-c6075776255b/d9a0d73a-f008-4736-b4b9-6b3427051836",
+            "violations": []
+        },
+        {
+            "path": "/Headphone_Aux/",
+            "uuid_path": "/feda53ed-537d-4f88-9436-c6075776255b/07901b33-a7e7-4327-b949-fc2abc1e14b5",
+            "violations": []
+        },
+        {
+            "path": "/Amplifiers/",
+            "uuid_path": "/feda53ed-537d-4f88-9436-c6075776255b/1c0e824e-98ce-4806-8137-f590f469c175",
+            "violations": []
+        }
+    ],
+    "source": "DesktopSpeaker.kicad_sch"
+}

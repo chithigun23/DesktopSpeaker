@@ -27,10 +27,10 @@
 | PD_SINK_EN | in | PB9 (63) | TPS25730D open-drain, R17 100 k to LDO_3V3. Status only. |
 | CHG_QON_SENSE | in | PC13 (3, WKUP2) | New. See QON section. |
 | BT_PWR_EN | out | PA8 (36) | U15 EN, R152 100 k pull-down. |
-| BT_FORCE_PWM | out | PA9 (37) | U15 MODE, R153 100 k pull-down. |
-| 5V_LOGIC_EN | out | PB5 (59) | U14 EN, R142 100 k pull-down. |
-| BT_UART_TX | out | PA2 (19) | USART2_TX AF1 to BM83 via R182. Drive low before BT_PWR_EN goes low. |
-| BT_UART_RX | in | PA3 (20) | USART2_RX AF1 from BM83 via R186. |
+| BT_FORCE_PWM | out | PD4 (54) | U15 MODE, R153 100 k pull-down. |
+| 5V_LOGIC_EN | out | PA1 (18) | U14 EN, R142 100 k pull-down. |
+| BT_UART_TX | out | PD5 (55) | USART2_TX AF0 to BM83 via R182. Drive low before BT_PWR_EN goes low. |
+| BT_UART_RX | in | PD6 (56) | USART2_RX AF0 from BM83 via R186. |
 | BT_MFB | out | PB3 (57) | BM83 MFB via R183 (R184 100 k pull-down on the module side). |
 | BT_RST_N | out | PB4 (58) | BM83 RST_N via R185; drive open-drain (low only). |
 | BT_TX_IND | in | PB8 (62) | BM83 P0_0 via R187; EXTI wake; internal pull-down in firmware. |
@@ -38,8 +38,8 @@
 | AUD_SCL | bidir | PB10 (30) | I2C2_SCL AF6; pull-up R209 2.2 k to 3V3_AUDIO. PB13/PB14 stay LEDs.
 | CODEC_PWR_EN | out | PC7 (39) | Captured: U23 TPS22917 ON, R212 100 k pull-down on Source_Select_ADC (high = 5V_CODEC on).
 | ADC_INT | in | PC5 (26) | Captured: PCM1862 GPIO1/INTA, R211 100 k pull-down (optional input; configure the GPIO as INTA in firmware).
-| HP_SEL_A, HP_SEL_B | out | PC0 (13), PC1 (14) | Captured 2026-10-06: TS5A23157 U8/U9 IN1+IN2 (via Headphone_Aux, 100 k pull-downs R234/R235: USB default).
-| HP_EN | out | PC2 (15) | Captured: TPA6132A2 EN, R236 100 k pull-down on Headphone_Aux.
+| HP_SEL_A, HP_SEL_B | out | PC0 (13), PD1 (51) | Captured 2026-10-06: TS5A23157 U8/U9 IN1+IN2 (via Headphone_Aux, 100 k pull-downs R234/R235: USB default).
+| HP_EN | out | PA15 (47) | Captured: TPA6132A2 EN, R236 100 k pull-down on Headphone_Aux.
 | HP_G0, HP_G1 | out | PC3 (16), PA4 (21) | Captured: TPA6132A2 gain, R237/R238 100 k pull-downs (default -6 dB). PA4 is TT_a: fine as an output.
 | HP_DET | in | PB1 (28) | Captured: J2 switched tip, 100 k (R239) pull-up to 3V3_AUDIO, 1 k (R240) series. EXTI. Reads low with no plug or with the audio rail off.
 | AUX_DET | in | PB2 (29) | Captured: J3 switched tip, 1 M (R241) to 3V_AO, 100 nF (C246), 10 k (R242) series. About 30 mV unplugged, high when a plug is inserted.
@@ -55,20 +55,20 @@ All captured pins are 5 V tolerant FT variants. Pin moves versus the G031 are nu
 | Signal | Dir | Pin | Notes |
 |---|---|---|---|
 | USB_SRC_DET | in | PB0 (27) | ADC_IN8 (analog). |
-| BTN_ADC | in | PA1 (18) | ADC_IN1, resistor-ladder buttons. |
+| BTN_ADC | in | PA3 (20) | ADC_IN3, resistor-ladder buttons. |
 | LED_R, LED_G, LED_B | out | PB13 (33), PB14 (34), PB15 (35) | TIM1_CH1N/CH2N/CH3N AF2 PWM (set MOE). |
-| USB_DATA_SEL, USB_DATA_OE_N | out | PD0 (50), PD1 (51) | TS3USB221A; OE_N needs an external pull-up (disabled by default), SEL a pull-down. |
+| USB_DATA_SEL, USB_DATA_OE_N | out | PD0 (50), PC1 (14) | TS3USB221A; OE_N needs an external pull-up (disabled by default), SEL a pull-down. |
 | CODEC_SSPND | out | PD2 (52) | PCM2902C suspend status/control. |
-| USB_HID_MUTE, USB_HID_VOLUP, USB_HID_VOLDN | out | PD3 (53), PD4 (54), PD5 (55) | PCM2902C HID0/HID1/HID2 drive, pull-downs. |
+| USB_HID_MUTE, USB_HID_VOLUP, USB_HID_VOLDN | out | PC2 (15), PA9 (37), PB5 (59) | PCM2902C HID0/HID1/HID2 drive, pull-downs. |
 
-Spare GPIO (10, unlabelled no-connect): PA5 (22), PA15 (47), PB12 (32), PC11 (1), PC12 (2), PD6 (56), PD8 (40), PD9 (41), PF0 (10), PF1 (11). Budget: 60 I/O = 38 captured + NRST + 11 reserved + 10 spare.
+Spare GPIO (10, unlabelled no-connect): PA2 (19), PA5 (22), PD3 (53), PB12 (32), PC11 (1), PC12 (2), PD8 (40), PD9 (41), PF0 (10), PF1 (11). Budget: 60 I/O = 38 captured + NRST + 11 reserved + 10 spare.
 
 ## Constraints checked
 
 - **SWD/BOOT0**: PA13/PA14 reserved for SWD, BOOT0 on PA14 as before (nBOOT_SEL=1 ignores it).
 - **ADC**: BTN_ADC PA1 (ADC_IN1) and USB_SRC_DET PB0 (ADC_IN8) are ADC channels; PA0-PA7, PB0-PB2, PB10-PB12, PC4/PC5 are FT_a/TT_a analog-capable if more are needed. ADC reference is the sagging VDDA.
 - **FT tolerance**: every input from a 3.3 V domain (LDO_3V3 PD lines, 3V3_AUDIO lines, QON about 3.6-3.8 V) lands on an FT pin (5.5 V limit; absolute maximum VDD + 4.0 V). The only TT pin used is PA4, an output. The MCU only pulls low on I2C lines.
-- **Alternate functions** (Tables 13/14): I2C1 SCL/SDA PB6/PB7 AF6; I2C2 SCL/SDA PB10/PB11 AF6; USART2 TX/RX PA2/PA3 AF1; TIM1_CH1N/2N/3N on PB13/14/15 AF2; WKUP1 PA0, WKUP2 PC13 (Table 12 additional functions).
+- **Alternate functions** (Tables 13/14): I2C1 SCL/SDA PB6/PB7 AF6; I2C2 SCL/SDA PB10/PB11 AF6; USART2 TX/RX PD5/PD6 AF0 (Table 14; PA2/PA3 are AF1); TIM1_CH1N/2N/3N on PB13/14/15 AF2; WKUP1 PA0, WKUP2 PC13 (Table 12 additional functions).
 - **Wake**: GAUGE_ALRT_N (PA0, WKUP1), CHG_QON_SENSE (PC13, WKUP2); other EXTI inputs wake from Stop only.
 - **Safe reset states**: every GPIO is a floating input in reset (SWD pins keep SWD). Captured outputs have external 100 k pull-downs (R107, R111, R142, R152, R153): OFF in reset. Every reserved output must get a pull-down (OE_N: pull-up) when captured, as in the architecture doc; no pin needs an MCU-defined state at reset. Firmware: no audio-domain line driven high before 3V3_AUDIO is up.
 - **PD bus is software I2C**: the TPS25730D is rare, low-rate status traffic; I2C2 hardware is reserved for the audio bus (DSP coefficient loading).
@@ -88,3 +88,22 @@ BQ25792 QON (pin 12, DI): internal pull-up through about 200 k to a typical 3.6-
 
 - USB-source detection: PB0 reserved, no net yet.
 - Remaining PD outputs (CAP_MIS, PLUG_FLIP, DBG_ACC) are no-connect on the PD sheet.
+
+## 2026-10-09 pin swaps (routing r6e, "Smallest changes" item 1 and 2)
+
+Changed in `MCU.kicad_sch` (labels moved to the new pins, vacated pins now no-connects; reserved-signal texts moved to vacated pins). Datasheet DS12232 Tables 12/14 checked: all targets are plain FT GPIOs on LQFP64, free before the move, USART2_TX/RX are AF0 on PD5/PD6.
+
+| Signal | Old | New |
+|---|---|---|
+| BT_UART_TX | PA2 (19) | PD5 (55) |
+| BT_UART_RX | PA3 (20) | PD6 (56) |
+| BT_FORCE_PWM | PA9 (37) | PD4 (54) |
+| HP_SEL_B | PC1 (14) | PD1 (51) |
+| HP_EN | PC2 (15) | PA15 (47) |
+| 5V_LOGIC_EN | PB5 (59) | PA1 (18) |
+
+**Skipped: CHG_QON_SENSE PC13 (3) -> PD3 (53).** PD3 (and PD1, PA9, PA10, PC6, PB0) is an FT_d pin: the UCPD dead-battery pull-down (Rd, about 5.1 k) is on at reset until firmware sets UCPD_DBDIS. Through R113 (100 k) that pulls the BQ25792 QON node to about 1.2 V (near VIL/VIH), and PD3 is not a WKUP pin (loses Standby wake). It stays on PC13. Free alternative without dead-battery pull-down: PD2 (52, plain FT; swap CODEC_SSPND elsewhere) or PD8/PD9. HP_SEL_B on PD1 is acceptable (R235 pull-down already; PD1 is FT_d). Caution: the other moved signals leave PA9 (FT_fd).
+
+Reserved signals re-homed (no nets yet): BTN_ADC PA3 (ADC_IN3), USB_DATA_OE_N PC1, USB_HID_MUTE PC2, USB_HID_VOLUP PA9, USB_HID_VOLDN PB5. PD3 is now reserved-free/spare, as are PA2 and PD2 (CODEC_SSPND unchanged).
+
+Also: TP13/TP14 net swap on Source_Select_ADC (TP13 = I2S_SDATA, TP14 = I2S_LRCK). Net changes listed in `pcb/work-r6/pin-swaps.json`. ERC 19 before and after (inherited: 18 endpoint_off_grid, 1 power_pin_not_driven).

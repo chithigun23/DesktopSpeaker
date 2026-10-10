@@ -537,3 +537,9 @@ Board 121.1 x 127.4 mm = 15,428 mm2 (v6 16,008, v7 17,802), enclosure 163 x 100 
 
 ## Placement v9 (2026-10-06)
 EC11E volume encoder SW102 (+C308-C310), 25 test points (TP1-TP25), full silkscreen pass, Orwellian logo on the back, board 130.5 x 127.8 mm. Details and open items: `ai-files/reports/pcb-placement-v9.md`; pipeline `helpers/build_pcb_v9.sh`. Routing not started.
+
+## MCU pin swaps (2026-10-09, uncommitted)
+Routing r6e item 1/2 applied in `MCU.kicad_sch` and `Source_Select_ADC.kicad_sch`: BT_UART_TX/RX to PD5/PD6 (USART2 AF0), BT_FORCE_PWM PD4, HP_SEL_B PD1, HP_EN PA15, 5V_LOGIC_EN PA1; TP13/TP14 nets swapped. CHG_QON_SENSE stays on PC13 (PD3 is FT_d: dead-battery Rd at reset would load the QON tap, and no WKUP). ERC unchanged at 19 inherited. Pin list: `pcb/work-r6/pin-swaps.json`; details in `reports/mcu-pin-allocation.md`. The PCB still has the old pad nets (update from schematic before routing). Backups: `backups/*.pre-pinswap`.
+
+## ERC cleanup (2026-10-09, uncommitted)
+ERC 19 -> 0 at default severities, netlist unchanged (XML byte-identical apart from date/tool; `helpers/netlist_equiv.py`: 348 components, 311 nets, 1130 pins, 45 libparts identical). (a) Off-grid: root J1 origin y 248.75 -> 248.92 (+0.17 mm, fields follow), its stubs/labels/no-connects +0.17 mm, label ends x 40.51 -> 40.64 and 76.83 -> 76.20; 3 of the 18 flags were really USB_Audio hierarchical labels 5V_CODEC/USB_DN/USB_DP at x 57 -> 57.15 (KiCad listed them under "/"). Symbol library untouched. (b) U11 pin 38 VIN_3V3 (net VIN_LOW, R12 100k to GND by design) is a commented ERC exclusion in `DesktopSpeaker.kicad_pro` (`erc.erc_exclusions`), keyed to the pin position and USB_PD sheet path: if U11 moves, the exclusion goes stale and the error comes back. No PWR_FLAG. Helper `helpers/erc_grid_fix.py` (one-shot). Evidence and before/after crops: `reports/erc-cleanup.md`, `reports/erc-cleanup/`. Backups `backups/*.pre-erc`. Preview refreshed. PCB files untouched.

@@ -83,3 +83,9 @@ Short checklists for reviewing and routing this board. Each one is taken from th
 - Every signal on F.Cu has unbroken In1 GND below it. Look for slots formed by merged antipads of via rows. B.Cu/In2 signals need a nearby reference plane too.
 - Keep inner power-island layers for planes. Signals must not cut islands into fragments.
 - Rule relaxations must be narrow, by area or courtyard and never by width alone, and each one needs a recorded reason.
+
+## 13. Corner radius (user rule, 2026-10-09)
+- Avoid small-radius turns. Two 45 degree bends closer together than about 3x the trace width (or a short segment between them) act like a 90 degree corner and fail this check.
+- Keep the segment between consecutive 45 degree bends at least 3x trace width (min 0.4 mm on signals); prefer long gentle bends, arcs where the router allows.
+- Applies to all signal classes, and especially to USB, audio, I2S, clocks and power. Fix by merging bends or lengthening the middle segment; do not trade it for a DRC or open-edge regression.
+- Reviewer: measure it by script (consecutive same-net segments with a short middle segment and two bends), list every hit by net and location.
