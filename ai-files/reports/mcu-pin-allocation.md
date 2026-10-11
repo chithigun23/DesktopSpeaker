@@ -5,7 +5,7 @@
 ## Supply, reset, boot, debug
 
 - VDD 1.7-3.6 V. LQFP64 has **one** VDD/VDDA pin (8) and one VSS/VSSA pin (9), plus VBAT (6) and VREF+ (7). All are fed from 3V_AO (U12 TPS7A0230, 3.0 V nominal, USB-priority or pack input); the supply sags with the pack, so ADC readings need VREFINT calibration. Single pins: nothing to stack natively (the power pins are electrically distinct pads).
-- Decoupling (DS12232 fig. 13): VDD/VDDA 100 nF (C160) + 4.7 uF (C161); VREF+ 100 nF (C163) + 1 uF (C164) with VREFBUF off and VREF+ tied to VDDA (the datasheet allows VREF+ = VDDA when VDDA is 2.0 V or more; below that VREF+ must equal VDDA, which it does). VBAT tied directly to VDD (no backup cell, LSE and RTC unused). PC14/PC15 are used as GPIO (no crystal planned).
+- Decoupling (DS12232 fig. 13): VDD/VDDA 100 nF (C160) + 4.7 uF (C161); VREF+ tied to VDDA with no separate VREF+ caps (C163/C164 were cut in the BOM reduction; see the MCU sheet note), VREFBUF off (the datasheet allows VREF+ = VDDA when VDDA is 2.0 V or more; below that VREF+ must equal VDDA, which it does). VBAT tied directly to VDD (no backup cell, LSE and RTC unused). PC14/PC15 are used as GPIO (no crystal planned).
 - NRST (12, PF2-NRST): internal pull-up, 100 nF (C162) to GND, wired to J6/J7. NRST_MODE option must stay "reset input".
 - BOOT0 is PA14-BOOT0 (46) shared with SWCLK. nBOOT_SEL=1 ignores the pin. R160 100 k pull-down kept on the SWCLK line.
 - SWD: PA13 SWDIO (45), PA14 SWCLK (46). J7 TC2030-IDC (1 3V_AO, 2 SWDIO, 3 NRST, 4 SWCLK, 5 GND, 6 SWO nc) and J6 4-pin header unchanged. PA13/PA14 must not be remapped. SWO (PB3) is not available because PB3 is BT_MFB.
