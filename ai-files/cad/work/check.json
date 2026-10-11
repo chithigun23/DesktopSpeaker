@@ -1,16 +1,91 @@
 {
  "woof_gross": 581000.0000000001,
- "woof_disp": 59548.82129197411,
- "woof_net": 521451.178708026,
- "main_gross": 2278936.856795131,
- "main_disp": 235042.7231302921,
- "main_net": 2043894.1336648392,
+ "woof_disp": 56339.73900139227,
+ "woof_net": 524660.2609986078,
+ "main_gross": 2255462.206891897,
+ "main_disp": 230487.23712291467,
+ "main_net": 2024974.9697689824,
  "total_internal": 2945696.8,
  "ext": 3367580.0,
+ "dish": {
+  "cx": -34.68,
+  "cy": 121.16,
+  "shaft_top": 93.09,
+  "shaft_section": [
+   5.14,
+   6.0,
+   "D-shaft round side"
+  ],
+  "floor_top": 85.09,
+  "floor_bot": 82.09,
+  "d": 36.0,
+  "wall": 3.0,
+  "hole": 8.5,
+  "exposed_shaft": 8.0,
+  "envelope_cm3": 23.49,
+  "pocket_cm3": 12.71,
+  "fillet_merge": false,
+  "knob_z": [
+   85.84,
+   99.84
+  ],
+  "shaft_in_knob": 7.25
+ },
+ "dish_clear": [
+  [
+   0.0,
+   "PCB_SW102"
+  ],
+  [
+   6.99,
+   "PCB_L201"
+  ],
+  [
+   7.63,
+   "PCB_L203"
+  ],
+  [
+   7.68,
+   "PCB_L202"
+  ],
+  [
+   10.49,
+   "Screw_M3x16_PcbScrew_8_H8"
+  ],
+  [
+   10.5,
+   "Screw_M3x16_PcbScrew_4_H4"
+  ],
+  [
+   11.89,
+   "PCB_L2"
+  ],
+  [
+   11.94,
+   "PCB_U12"
+  ],
+  [
+   12.19,
+   "PCB_U16"
+  ],
+  [
+   12.24,
+   "PCB_smallparts_root"
+  ],
+  [
+   12.29,
+   "PCB_Q104"
+  ],
+  [
+   12.47,
+   "PCB_U21"
+  ]
+ ],
+ "dish_loss": 23474.649903234094,
  "items_w": [
   [
    "Shell_Box",
-   10528.639757973287
+   7408.331021800236
   ],
   [
    "Insert_woofer_chamber",
@@ -18,7 +93,7 @@
   ],
   [
    "Woofer_W3-2052SC_standin",
-   45411.47048022819
+   45322.69692581941
   ],
   [
    "Harness_woofer_leads_schematic",
@@ -152,7 +227,7 @@
  "items_m": [
   [
    "Shell_Box",
-   46881.04679281745
+   46420.23480108493
   ],
   [
    "Insert_woofer_chamber",
@@ -180,7 +255,7 @@
   ],
   [
    "PCB_127.5x137.6x1.6",
-   26273.35384595907
+   26273.353845959078
   ],
   [
    "PCB_U15",
@@ -280,7 +355,7 @@
   ],
   [
    "PCB_SW102",
-   1120.5192950663695
+   873.7872155358133
   ],
   [
    "PCB_U13",
@@ -324,7 +399,7 @@
   ],
   [
    "PCB_U1",
-   366.7022977584886
+   366.70229775848895
   ],
   [
    "PCB_C275",
@@ -368,7 +443,7 @@
   ],
   [
    "PCB_smallparts_root",
-   239.0121562183878
+   239.01215621960165
   ],
   [
    "PCB_J5_MicroFit3_standin",
@@ -396,7 +471,7 @@
   ],
   [
    "SW101_rocker_D20_standin",
-   5430.934052113749
+   1585.6174798916807
   ],
   [
    "Harness_J5_to_pack_schematic",
@@ -600,7 +675,7 @@
   ],
   [
    "Insert_M3x5.7_LidScrew_4",
-   54.43751750140396
+   51.81215360787276
   ],
   [
    "Screw_M3x10_LidScrew_4",
@@ -710,30 +785,6 @@
   [
    "Shell_Box",
    "Insert_M3x5.7_DrvScrew_R4",
-   23.1,
-   "heat-set insert (OD 4.6) melted into a 4.0 mm pilot"
-  ],
-  [
-   "Shell_Box",
-   "Insert_M3x5.7_WoofScrew_1",
-   23.1,
-   "heat-set insert (OD 4.6) melted into a 4.0 mm pilot"
-  ],
-  [
-   "Shell_Box",
-   "Insert_M3x5.7_WoofScrew_2",
-   23.1,
-   "heat-set insert (OD 4.6) melted into a 4.0 mm pilot"
-  ],
-  [
-   "Shell_Box",
-   "Insert_M3x5.7_WoofScrew_3",
-   23.1,
-   "heat-set insert (OD 4.6) melted into a 4.0 mm pilot"
-  ],
-  [
-   "Shell_Box",
-   "Insert_M3x5.7_WoofScrew_4",
    23.1,
    "heat-set insert (OD 4.6) melted into a 4.0 mm pilot"
   ],
@@ -894,6 +945,36 @@
    "heat-set insert (OD 4.6) melted into a 4.0 mm pilot"
   ],
   [
+   "Shell_Box",
+   "Insert_M3x5.7_WoofScrew_1",
+   13.13,
+   "heat-set insert (OD 4.6) melted into a 4.0 mm pilot"
+  ],
+  [
+   "Shell_Box",
+   "Insert_M3x5.7_WoofScrew_2",
+   13.13,
+   "heat-set insert (OD 4.6) melted into a 4.0 mm pilot"
+  ],
+  [
+   "Shell_Box",
+   "Insert_M3x5.7_WoofScrew_3",
+   13.13,
+   "heat-set insert (OD 4.6) melted into a 4.0 mm pilot"
+  ],
+  [
+   "Shell_Box",
+   "Insert_M3x5.7_WoofScrew_4",
+   13.13,
+   "heat-set insert (OD 4.6) melted into a 4.0 mm pilot"
+  ],
+  [
+   "PCB_SW102",
+   "Knob_D30x14_standin",
+   7.29,
+   "knob on the encoder D-shaft (fit; the stand-in bore is round)"
+  ],
+  [
    "PCB_127.5x137.6x1.6",
    "PCB_J2_3.5mm_jack",
    3.72,
@@ -1040,7 +1121,7 @@
    "kind": "tact plunger (stand-in)",
    "cut": 5.0,
    "centre": [
-    -10.68,
+    -14.68,
     70.35
    ],
    "body_section": [
@@ -1056,17 +1137,17 @@
   },
   {
    "ref": "SW101",
-   "kind": "rocker D20 panel hole",
+   "kind": "rocker panel hole (GRB112B802BR1)",
    "cut": 20.2,
    "centre": [
-    66.0,
+    63.0,
     80.0
    ],
    "body_section": [
-    19.6,
-    19.6
+    19.8,
+    19.8
    ],
-   "radial_margin": 0.3,
+   "radial_margin": 0.2,
    "min_dist_connector_to_lid": 0.0,
    "enters_lid": true,
    "wall_clearance": 0.0,

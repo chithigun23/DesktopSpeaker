@@ -17,6 +17,8 @@ ai-files/pcb/work-p0/
 ai-files/pcb/work-r6/*
 !ai-files/pcb/work-r6/R6[mnopq]-final.*
 ai-files/pcb/work-r6/*.kicad_prl
+ai-files/pcb/work-r6/*.json
+ai-files/pcb/work-r6/*.txt
 ai-files/pcb/work-p1/
 ai-files/pcb/work-p2/
 ai-files/pcb/work-p3/
@@ -34,6 +36,7 @@ ai-files/helpers/*.so
 
 # Derived CAD outputs (rebuilt by ai-files/cad/build_speaker_cad.py in seconds; FCStd, STL, renders stay tracked)
 ai-files/cad/work/brep/
+ai-files/cad/work/*.brep
 ai-files/cad/work/__pycache__/
 ai-files/cad/__pycache__/
 ai-files/cad/DesktopSpeaker_internal.step

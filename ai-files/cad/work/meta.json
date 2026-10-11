@@ -9,7 +9,7 @@
     0.34
    ],
    "file": "Shell_Box.brep",
-   "vol": 384157.8115636228
+   "vol": 385625.6549433888
   },
   {
    "name": "Insert_woofer_chamber",
@@ -53,7 +53,7 @@
     0.14
    ],
    "file": "Woofer_W3-2052SC_standin.brep",
-   "vol": 45411.47048022817
+   "vol": 45322.69692581937
   },
   {
    "name": "Battery_Cell1_21700_50S",
@@ -97,7 +97,7 @@
     0.15
    ],
    "file": "PCB_127.5x137.6x1.6.brep",
-   "vol": 26273.353845959067
+   "vol": 26273.353845959078
   },
   {
    "name": "PCB_U15",
@@ -526,7 +526,7 @@
     0.6
    ],
    "file": "PCB_U1.brep",
-   "vol": 366.7022977584891
+   "vol": 366.70229775848895
   },
   {
    "name": "PCB_C275",
@@ -647,7 +647,7 @@
     0.4
    ],
    "file": "PCB_smallparts_root.brep",
-   "vol": 239.01215621838784
+   "vol": 239.0121562196016
   },
   {
    "name": "PCB_J5_MicroFit3_standin",
@@ -713,7 +713,7 @@
     0.1
    ],
    "file": "PCB_SW100_plunger.brep",
-   "vol": 12.271846303085136
+   "vol": 12.271846303085134
   },
   {
    "name": "SW101_rocker_D20_standin",
@@ -724,7 +724,18 @@
     0.1
    ],
    "file": "SW101_rocker_D20_standin.brep",
-   "vol": 7261.021728572678
+   "vol": 3798.995168051832
+  },
+  {
+   "name": "Knob_D30x14_standin",
+   "group": "hardware",
+   "color": [
+    0.1,
+    0.1,
+    0.12
+   ],
+   "file": "Knob_D30x14_standin.brep",
+   "vol": 9613.556263323591
   },
   {
    "name": "Harness_J5_to_pack_schematic",
@@ -779,7 +790,7 @@
     0.42
    ],
    "file": "Lid_rear.brep",
-   "vol": 59685.108982958904
+   "vol": 59487.61345997919
   },
   {
    "name": "Grille_front_perforated",
@@ -1825,14 +1836,14 @@
   "roof": 3.0,
   "woof_cx": 0.0,
   "woof_cy": 151.49587559161594,
-  "ap_w": 70.0,
+  "ap_w": 76.2,
   "ring_od": 86.0,
   "ring_t": 5.5,
-  "w_flange_od": 82.6,
+  "w_flange_od": 82.55,
   "w_flange_t": 4.0,
   "w_bc": 77.0,
   "w_hole": 3.5,
-  "w_depth": 44.5,
+  "w_depth": 44.45,
   "boss_od": 8.0,
   "boss_h": 0.0,
   "pilot": 4.0,
@@ -1848,7 +1859,7 @@
   "grille_t": 0.8,
   "hole_d": 2.0,
   "hole_pitch": 3.0,
-  "rocker_x": 66.0,
+  "rocker_x": 63.0,
   "rocker_z": 80.0,
   "pcb_pilot_l": 6.7,
   "w_recess": 1.0,
@@ -1877,16 +1888,52 @@
   "jack_bore": 8.5,
   "jack_cb": [
    11.0,
-   2.5
+   2.0
   ],
   "sw100_bore": 5.0,
   "min_web": 1.6,
   "rocker_bore": 20.2,
   "rocker_panel": 2.0,
-  "rocker_cb": 25.0,
+  "rocker_cb": 28.0,
+  "rocker_notch": [
+   2.2,
+   1.0
+  ],
+  "rocker_flange": [
+   25.0,
+   2.0
+  ],
+  "rocker_body": [
+   19.8,
+   7.0
+  ],
+  "rocker_faston": [
+   4.8,
+   0.8,
+   4.0,
+   6.0
+  ],
+  "lid_tr": [
+   76.5,
+   94.0
+  ],
   "cell_r": 10.85,
   "cell_l": 70.2,
   "cradle_gap": 0.3,
+  "dish": true,
+  "dish_ref": "SW102",
+  "dish_d": 36.0,
+  "dish_wall": 3.0,
+  "dish_floor_t": 3.0,
+  "dish_expose": 8.0,
+  "dish_hole": 8.5,
+  "dish_leadin": 2.0,
+  "dish_teardrop": true,
+  "knob_d": 30.0,
+  "knob_h": 14.0,
+  "knob_gap": 0.75,
+  "knob_bore": 6.0,
+  "knob_bore_l": 10.0,
   "pcb_holes": [
    [
     -10.6,
@@ -1956,14 +2003,8 @@
   "J11",
   "SW100"
  ],
- "zfix": {
-  "L3": 1.399,
-  "U1": -5.408,
-  "L2": 1.399
- },
- "skipped": [
-  "lid web J1/SW100 0.41 mm < 1.6: openings joined (keyhole); no chamfer on the joining edges"
- ],
+ "zfix": {},
+ "skipped": [],
  "prints": [
   {
    "name": "shell",
@@ -1975,8 +2016,8 @@
     100.0,
     202.6
    ],
-   "volume_cm3": 384.2,
-   "facets": 15763,
+   "volume_cm3": 385.6,
+   "facets": 16385,
    "solids": 1,
    "valid": true
   },
@@ -1984,14 +2025,14 @@
    "name": "lid",
    "file": "ai-files/cad/print/DesktopSpeaker_lid.stl",
    "orient": "outer_face_down",
-   "supports": "none (jack counterbore floors bridge 1.25 mm; chamfers on the bed side)",
+   "supports": "none (jack counterbore floors bridge 1.25 mm; chamfers on the bed side; rocker pocket on the top face)",
    "size": [
     163.0,
     100.0,
     4.0
    ],
-   "volume_cm3": 59.7,
-   "facets": 7718,
+   "volume_cm3": 59.5,
+   "facets": 7956,
    "solids": 1,
    "valid": true
   },
@@ -2036,7 +2077,7 @@
    "d": 8.5,
    "cb": [
     11.0,
-    2.5
+    2.0
    ],
    "body": [
     6.0,
@@ -2053,7 +2094,7 @@
    "d": 8.5,
    "cb": [
     11.0,
-    2.5
+    2.0
    ],
    "body": [
     6.0,
@@ -2065,28 +2106,32 @@
    "ref": "SW100",
    "kind": "tact plunger (stand-in)",
    "shape": "circle",
-   "cx": -10.68,
+   "cx": -14.68,
    "cz": 70.35,
    "d": 5.0,
    "body": [
     2.5,
     2.5
    ],
-   "body_ymax": 204.6,
-   "joined": "J1"
+   "body_ymax": 204.6
   },
   {
    "ref": "SW101",
-   "kind": "rocker D20 panel hole",
+   "kind": "rocker panel hole (GRB112B802BR1)",
    "shape": "circle",
-   "cx": 66.0,
+   "cx": 63.0,
    "cz": 80.0,
    "d": 20.2,
    "body": [
-    19.6,
-    19.6
+    19.8,
+    19.8
    ],
-   "body_ymax": null
+   "body_ymax": null,
+   "pocket": 28.0,
+   "notch": [
+    2.2,
+    1.0
+   ]
   }
  ],
  "cradle": {
@@ -2097,6 +2142,58 @@
    22,
    2.5
   ]
+ },
+ "dish": {
+  "cx": -34.68,
+  "cy": 121.16,
+  "shaft_top": 93.09,
+  "shaft_section": [
+   5.14,
+   6.0,
+   "D-shaft round side"
+  ],
+  "floor_top": 85.09,
+  "floor_bot": 82.09,
+  "d": 36.0,
+  "wall": 3.0,
+  "hole": 8.5,
+  "exposed_shaft": 8.0,
+  "envelope_cm3": 23.49,
+  "pocket_cm3": 12.71,
+  "fillet_merge": false,
+  "knob_z": [
+   85.84,
+   99.84
+  ],
+  "shaft_in_knob": 7.25
+ },
+ "rocker": {
+  "centre": [
+   63.0,
+   80.0
+  ],
+  "pocket_d": 28.0,
+  "panel": 2.0,
+  "gap_groove_side": 2.0,
+  "gap_groove_top": 3.5,
+  "nearest_lid_screw": "LidScrew_4",
+  "gap_lid_boss": 1.45,
+  "nearest_jack": "J3",
+  "gap_jack_cbore": 0.64,
+  "body_to_board_top": 1.5
+ },
+ "woofer_ring": {
+  "aperture_r": 38.1,
+  "recess_r": 41.7,
+  "flange_r": 41.275,
+  "bolt_r": 38.5,
+  "hole_r": 1.75,
+  "pilot_r": 2.0,
+  "land_total": 3.6,
+  "hole_inner_minus_aperture": -1.35,
+  "recess_minus_hole_outer": 1.45,
+  "pilot_inner_minus_aperture": -1.6,
+  "flange_minus_hole_outer": 1.02
  },
  "harness": {
   "j5": [
@@ -2494,9 +2591,9 @@
    "kind": "lid",
    "body": "shell",
    "p": [
-    74.0,
+    76.5,
     202.6,
-    92.5
+    94.0
    ],
    "engage": 6.0,
    "post": false

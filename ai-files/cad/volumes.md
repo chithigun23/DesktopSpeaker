@@ -4,15 +4,17 @@ Outer 163 x 100 x 206.6 mm (X x Z x Y, lid included), wall 3 mm, lid 4 mm; exter
 
 | Chamber | Gross (L) | Displaced by parts/bosses/pads (L) | Net (L) | Target |
 |---|---|---|---|---|
-| Woofer (sealed, own chamber; rear wall = lid) | 0.581 | 0.060 | **0.521** | 0.45-0.60 |
-| Main (2 front drivers + battery + PCB, shared) | 2.279 | 0.235 | **2.044** | >= 0.80 |
+| Woofer (sealed, own chamber; rear wall = lid) | 0.581 | 0.056 | **0.525** | 0.45-0.60 |
+| Main (2 front drivers + battery + PCB, shared) | 2.255 | 0.230 | **2.025** | >= 0.80 |
+
+Encoder knob dish (top wall, centre X -34.68 Y 121.16): the well envelope removes 0.0235 L from the main gross volume (pocket air + well material).
 
 Walls and partitions between the chambers are not counted in either (gross = air region bounded by the wall inner faces).
 
 ## Woofer chamber displacement (mm3, >0.5)
 
-- Woofer_W3-2052SC_standin: 45411
-- Shell_Box: 10529
+- Woofer_W3-2052SC_standin: 45323
+- Shell_Box: 7408
 - Insert_woofer_chamber: 2070
 - Harness_woofer_leads_schematic: 187
 - Screw_M3x10_WoofScrew_2: 131
@@ -39,18 +41,17 @@ Walls and partitions between the chambers are not counted in either (gross = air
 
 ## Main chamber displacement (mm3, >0.5)
 
-- Shell_Box: 46881
+- Shell_Box: 46420
 - Driver_FrontR_ND65-4: 32723
 - Driver_FrontL_ND65-4: 32723
 - PCB_127.5x137.6x1.6: 26273
 - Battery_Cell1_21700_50S: 25962
 - Battery_Cell2_21700_50S: 25962
 - Insert_woofer_chamber: 12588
-- SW101_rocker_D20_standin: 5431
 - Battery_PCM_board: 2344
 - Harness_J5_to_pack_schematic: 2214
+- SW101_rocker_D20_standin: 1586
 - PCB_J5_MicroFit3_standin: 1361
-- PCB_SW102: 1121
 - PCB_L202: 1095
 - PCB_L201: 1095
 - PCB_L204: 1095
@@ -60,6 +61,7 @@ Walls and partitions between the chambers are not counted in either (gross = air
 - PCB_J9_JST_B2P-VH_standin: 960
 - PCB_J10_JST_B2P-VH_standin: 960
 - PCB_J11_JST_B2P-VH_standin: 960
+- PCB_SW102: 874
 - Harness_woofer_leads_schematic: 710
 - PCB_L200: 429
 - PCB_U1: 367

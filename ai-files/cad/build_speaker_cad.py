@@ -57,9 +57,14 @@ if DETAIL:
         shelf_y0=76.0,                                   # insert roof extended forward as a PCB shelf (front holes)
         grom_x=40.0, grom_z=40.0, grom_d=6.0, grom_boss_od=14.0, grom_web=1.6, grom_cb=10.0,
         fillet_out=2.0, fillet_in=1.0, cut_chamfer=0.5,
-        usb_cut=(12.0, 7.0, 2.0), jack_bore=8.5, jack_cb=(11.0, 2.5), sw100_bore=5.0, min_web=1.6,
-        rocker_bore=20.2, rocker_panel=2.0, rocker_cb=25.0, rocker_z=80.0,
+        usb_cut=(12.0, 7.0, 2.0), jack_bore=8.5, jack_cb=(11.0, 2.0), sw100_bore=5.0, min_web=1.6,
+        rocker_bore=20.2, rocker_panel=2.0, rocker_cb=28.0, rocker_x=63.0, rocker_z=80.0,   # CW Industries GRB112B802BR1: inside pocket to a 2.0 panel
+        rocker_notch=(2.2, 1.0), rocker_flange=(25.0, 2.0), rocker_body=(19.8, 7.0), rocker_faston=(4.8, 0.8, 4.0, 6.0),
+        lid_tr=(76.5, 94.0),       # top-right lid screw moved from (74, 92.5) to clear the rocker pocket
+        ap_w=76.2, w_flange_od=82.55, w_depth=44.45,             # Parts Express W3-2052SC: cutout 76.2, flange 82.55, depth 44.45 (bolt circle 77 still assumed)
         cell_r=10.85, cell_l=70.2, cradle_gap=0.3,
+        dish=True, dish_ref='SW102', dish_d=36.0, dish_wall=3.0, dish_floor_t=3.0, dish_expose=8.0, dish_hole=7.5 + 1.0,
+        dish_leadin=2.0, dish_teardrop=True, knob_d=30.0, knob_h=14.0, knob_gap=0.75, knob_bore=6.0, knob_bore_l=10.0,
     )
 LJ = None
 if os.path.exists(LAYOUT_JSON):
@@ -165,7 +170,7 @@ for i, (hu, hv) in enumerate(P['pcb_holes']):
                       axis=V(0, 0, -1), head_off=P['standoff'] + P['pcb_t'], pilot=P.get('pcb_pilot_l', 6.5), body='insert' if DETAIL else 'shell',
                       screw=16.0 if DETAIL else 12.0))
 if DETAIL:
-    lid_pts = [(-74, 7.5, 'floor'), (74, 7.5, 'floor'), (-74, 92.5, 'top'), (74, 92.5, 'top'), (0, 92.5, 'top'), (-50, 7.5, 'floor'), (50, 7.5, 'floor'),
+    lid_pts = [(-74, 7.5, 'floor'), (74, 7.5, 'floor'), (-74, 92.5, 'top'), (P['lid_tr'][0], P['lid_tr'][1], 'top'), (0, 92.5, 'top'), (-50, 7.5, 'floor'), (50, 7.5, 'floor'),
                (-70, 45.0, 'left'), (70, 45.0, 'right'), (-30, 50.0, 'roof'), (30, 50.0, 'roof')]
 else:
     lid_pts = [(-74, 7.5, 'floor'), (74, 7.5, 'floor'), (-74, 92.5, 'top'), (74, 92.5, 'top'), (0, 92.5, 'top'), (-50, 7.5, 'floor'), (50, 7.5, 'floor')]
@@ -274,6 +279,67 @@ if DETAIL:
     tun = box(xs - 11, xs + 11, 0, yr + 20, ZB_IN - 0.5, ZB_IN + 2.5)
     adds.append(fa.cut(tun)); adds.append(ra.cut(tun))
     CRADLE.update(xs=xs, strap_w=20, tunnel=(22, 2.5))
+
+# ------------------------------------------------------------------ board STEP (read once) + encoder knob dish in the top wall (DETAIL)
+_board_step = []
+zfix = {}
+def board_step():
+    if not _board_step:
+        _board_step.append(Part.read(BOARD_STEP))
+    return _board_step[0]
+DISH = None
+def dish_axis(ref):
+    """shaft axis (CAD X, Y) and shaft top z from the board STEP solids inside the part courtyard"""
+    q = LJ['parts'][ref]['rect']
+    sols = [so for so in board_step().Solids if q[0] - 0.6 <= (so.BoundBox.XMin + so.BoundBox.XMax) / 2 <= q[2] + 0.6
+            and q[1] - 0.6 <= (so.BoundBox.YMin + so.BoundBox.YMax) / 2 <= q[3] + 0.6 and so.BoundBox.XLength < 50]
+    c = Part.makeCompound(sols)
+    ztop = c.BoundBox.ZMax
+    tip = c.common(Part.makeBox(400, 400, 1.0, V(-200, -200, ztop - 1.0)))      # top 1 mm = shaft tip
+    sec = tip.BoundBox
+    ax_ = [(f.Surface.Center.x, f.Surface.Center.y, f.Surface.Radius) for f in tip.Faces if isinstance(f.Surface, Part.Cylinder) and 2.0 < f.Surface.Radius < 4.0]
+    ux, uy = (ax_[0][0], ax_[0][1]) if ax_ else ((sec.XMin + sec.XMax) / 2, (sec.YMin + sec.YMax) / 2)   # D-shaft: axis of the round face, not the bbox centre
+    if not ax_ and abs(sec.XLength - sec.YLength) > 0.3:     # D flat: find the flat side (wide chord) and put the axis R from the round side
+        R = max(sec.XLength, sec.YLength) / 2
+        def chord(axis, v0, v1):
+            b = tip.common(box(v0, v1, -500, 500, -500, 500) if axis == 'x' else box(-500, 500, v0, v1, -500, 500)).BoundBox
+            return b.YLength if axis == 'x' else b.XLength
+        if sec.XLength < sec.YLength:
+            ux = sec.XMin + R if chord('x', sec.XMin, sec.XMin + 0.1) < chord('x', sec.XMax - 0.1, sec.XMax) else sec.XMax - R
+            uy = (sec.YMin + sec.YMax) / 2
+        else:
+            uy = sec.YMin + R if chord('y', sec.YMin, sec.YMin + 0.1) < chord('y', sec.YMax - 0.1, sec.YMax) else sec.YMax - R
+            ux = (sec.XMin + sec.XMax) / 2
+        ax_ = ['D-flat']
+    return P['pcb_cx'] + ux, P['pcb_cy'] + uy, PCB_BOT + ztop, (round(sec.XLength, 2), round(sec.YLength, 2), ('D-shaft round side' if ax_ == ['D-flat'] else 'cylinder axis') if ax_ else 'bbox centre')
+def dish_profile(r, cx, cy, z0, h, tip_front=True, tip_rear_cut=None):
+    """circle r, extended to 45 deg points along -Y (front) and +Y (rear) so the well prints baffle-down (+Y up) without support;
+    tip_rear_cut truncates the rear point at cy + tip_rear_cut (flat bridge)"""
+    parts = [cyl(r, h, V(cx, cy, z0))]
+    if P['dish_teardrop']:
+        k = r * math.sqrt(0.5)
+        for sgn, use in ((-1, tip_front), (1, True)):
+            if not use:
+                continue
+            apex = cy + sgn * r * math.sqrt(2)
+            tri = Part.Face(Part.makePolygon([V(cx - k, cy + sgn * k, z0), V(cx + k, cy + sgn * k, z0), V(cx, apex, z0), V(cx - k, cy + sgn * k, z0)])).extrude(V(0, 0, h))
+            if sgn > 0 and tip_rear_cut is not None:
+                tri = tri.common(box(cx - 2 * r, cx + 2 * r, cy - 2 * r, cy + tip_rear_cut, z0 - 1, z0 + h + 1))
+            parts.append(tri)
+    return fuse(parts)
+if DETAIL and P['dish'] and LJ and P['dish_ref'] in LJ['parts'] and os.path.exists(BOARD_STEP):
+    dx, dy, shaft_top, shaft_sec = dish_axis(P['dish_ref'])
+    ri, ro = P['dish_d'] / 2, P['dish_d'] / 2 + P['dish_wall']
+    zf_top = shaft_top - P['dish_expose']                 # dish floor top face
+    zf_bot = zf_top - P['dish_floor_t']
+    well_env = dish_profile(ro, dx, dy, zf_bot, ZT_IN - zf_bot + 0.01, tip_front=True)               # outer envelope (shell material + dish air)
+    dish_in = dish_profile(ri, dx, dy, zf_top, Hd - zf_top + 1.0, tip_front=False, tip_rear_cut=ro)   # dish pocket (open to the top)
+    DISH = dict(cx=round(dx, 2), cy=round(dy, 2), shaft_top=round(shaft_top, 2), shaft_section=shaft_sec, floor_top=round(zf_top, 2), floor_bot=round(zf_bot, 2),
+                d=P['dish_d'], wall=P['dish_wall'], hole=P['dish_hole'], exposed_shaft=P['dish_expose'],
+                envelope_cm3=round(well_env.Volume / 1000, 2), pocket_cm3=round(dish_in.common(box(-Wd, Wd, -10, Dd, zf_top, ZT_IN)).Volume / 1000, 2),
+                fillet_merge=bool(abs(dx) + ro > Wd / 2 - t - P.get('fillet_in', 1.0) - 0.5 or dy - ro * math.sqrt(2) < t + 1.5 or dy + ro * math.sqrt(2) > YB - 0.5))
+    adds.append(well_env)
+    well_env.exportBrep(WORK + 'dish_envelope.brep')
 shell = shell.fuse(fuse(adds)).removeSplitter()
 cuts = []
 for sx in (-1, 1):
@@ -296,6 +362,17 @@ if DETAIL:
 for s in sites:
     if s['body'] == 'shell':
         cuts.append(cyl(P['pilot'] / 2, s['pilot'], s['p'], s['axis']))
+if DISH:
+    cuts.append(dish_in)
+    cuts.append(cyl(P['dish_hole'] / 2, P['dish_floor_t'] + 2, V(DISH['cx'], DISH['cy'], zf_bot - 1)))
+    try:     # 45 deg lead-in on the top rim (loft of the pocket outline to a 2 mm offset)
+        f0 = [f for f in dish_profile(ri, dx, dy, Hd - P['dish_leadin'], 1.0, tip_front=False, tip_rear_cut=ro).Faces
+              if abs(f.BoundBox.ZMin - (Hd - P['dish_leadin'])) < 1e-6 and abs(f.BoundBox.ZMax - (Hd - P['dish_leadin'])) < 1e-6]
+        f0 = Part.Face(Part.Wire(Part.__sortEdges__(fuse(f0).Edges))) if len(f0) > 1 else f0[0]
+        w0 = f0.OuterWire; w1 = f0.makeOffset2D(P['dish_leadin'] + 0.02).OuterWire; w1.translate(V(0, 0, P['dish_leadin'] + 0.02))
+        cuts.append(Part.makeLoft([w0, w1], True))
+    except Exception as ex:
+        skipped.append('dish rim lead-in: %s' % str(ex)[:80])
 shell = shell.cut(fuse(cuts)).removeSplitter()
 add('Shell_Box', 'shell', shell, (0.28, 0.30, 0.34))
 
@@ -365,13 +442,12 @@ BU0, BU1 = (LJ['board']['u0'], LJ['board']['u1']) if LJ else (-P['pcb_w'] / 2, P
 REAR_E = LJ['board']['rear_edge_cad_y'] if LJ else 156.5
 placed = {}
 standin_pcb = []
-zfix = {}
 INDIV = re.compile(r'^(J\d+|U\d+|L\d+|SW\d+|Y\d+|Q\d+|C275)$')
 def at_board(s):
     return tr(s, V(pcx, pcy, PCB_BOT))
 use_step = os.path.exists(BOARD_STEP) and LJ is not None
 if use_step:
-    comp = Part.read(BOARD_STEP)
+    comp = board_step()
     board, own = None, {}
     rects = [(r, p['rect']) for r, p in LJ['parts'].items()]
     for so in comp.Solids:
@@ -392,10 +468,9 @@ if use_step:
     for ref, sols in own.items():
         c = Part.makeCompound(sols)
         bb = c.BoundBox
-        if bb.ZMin > P['pcb_t'] + 0.3:                                   # floating model (BM83 STEP origin 5.4 mm high)
-            zfix[ref] = round(P['pcb_t'] - bb.ZMin, 3); c.translate(V(0, 0, P['pcb_t'] - bb.ZMin))
-        elif bb.ZMax <= P['pcb_t'] + 0.6 and -0.05 <= bb.ZMin < P['pcb_t'] - 0.1:   # SMD model sunk into the board (XFL4015 rotate about the wrong pivot)
-            zfix[ref] = round(P['pcb_t'] - bb.ZMin, 3); c.translate(V(0, 0, P['pcb_t'] - bb.ZMin))
+        # v11.1: no correction (library offsets fixed in 6052ec2); floating/sunk models are only reported
+        if bb.ZMin > P['pcb_t'] + 0.3 or (bb.ZMax <= P['pcb_t'] + 0.6 and -0.05 <= bb.ZMin < P['pcb_t'] - 0.1):
+            zfix[ref] = round(P['pcb_t'] - bb.ZMin, 3)
         c = at_board(c)
         placed[ref] = c
         if INDIV.match(ref):
@@ -431,8 +506,23 @@ add('PCB_SW100_plunger', 'pcb_parts', plunger, (0.8, 0.1, 0.1))
 # ------------------------------------------------------------------ PCB screws/standoffs board holes already in the STEP board body
 # ------------------------------------------------------------------ SW101 rocker (panel mount, stand-in) and harnesses (schematic tubes)
 rx, rz = P['rocker_x'], P['rocker_z']
-rocker = fuse([cyl(9.8, 22.0, V(rx, Dd - 22.0, rz), V(0, 1, 0)), cyl(11.5, 1.5, V(rx, Dd, rz), V(0, 1, 0))])
+if DETAIL:    # GRB112B802BR1 stand-in: 25 mm flange outside, body behind the 2.0 mm panel, 3 fastons (body + tabs about 11 mm)
+    yp = Dd - P['rocker_panel']
+    bd, bl = P['rocker_body']; fw, ft, fl_, fp = P['rocker_faston']
+    rk = [cyl(P['rocker_flange'][0] / 2, P['rocker_flange'][1], V(rx, Dd, rz), V(0, 1, 0)),
+          cyl(P['rocker_bore'] / 2 - 0.2, P['rocker_panel'], V(rx, yp, rz), V(0, 1, 0)),
+          cyl(bd / 2, bl, V(rx, yp - bl, rz), V(0, 1, 0))]
+    for k in (-1, 0, 1):
+        rk.append(box(rx + k * fp - ft / 2, rx + k * fp + ft / 2, yp - bl - fl_, yp - bl + 0.01, rz - fw / 2, rz + fw / 2))
+    rocker = fuse(rk)
+else:
+    rocker = fuse([cyl(9.8, 22.0, V(rx, Dd - 22.0, rz), V(0, 1, 0)), cyl(11.5, 1.5, V(rx, Dd, rz), V(0, 1, 0))])
 add('SW101_rocker_D20_standin', 'hardware', rocker, (0.6, 0.1, 0.1))
+if DISH:
+    kz = DISH['floor_top'] + P['knob_gap']
+    knob = cyl(P['knob_d'] / 2, P['knob_h'], V(DISH['cx'], DISH['cy'], kz)).cut(cyl(P['knob_bore'] / 2, P['knob_bore_l'], V(DISH['cx'], DISH['cy'], kz - 0.01)))
+    add('Knob_D30x14_standin', 'hardware', knob, (0.1, 0.1, 0.12))
+    DISH.update(knob_z=(round(kz, 2), round(kz + P['knob_h'], 2)), shaft_in_knob=round(DISH['shaft_top'] - kz, 2))
 def tube(pts, r):
     hs = []
     for a, b in zip(pts[:-1], pts[1:]):
@@ -511,8 +601,31 @@ if DETAIL and web_usb_sw < P['min_web']:
 rd = P.get('rocker_bore', 20.2)
 lcuts.append(cyl(rd / 2, LT + 2, V(rx, YB - 1, rz), V(0, 1, 0)))
 if DETAIL:
-    lcuts.append(cyl(P['rocker_cb'] / 2, LT - P['rocker_panel'] + 1, V(rx, YB - 1, rz), V(0, 1, 0)))
-cut_info.append(dict(ref='SW101', kind='rocker D20 panel hole', shape='circle', cx=rx, cz=rz, d=rd, body=(19.6, 19.6), body_ymax=None))
+    lcuts.append(cyl(P['rocker_cb'] / 2, LT - P['rocker_panel'] + 1, V(rx, YB - 1, rz), V(0, 1, 0)))       # inside pocket, panel 2.0
+    nw, nd = P['rocker_notch']
+    lcuts.append(box(rx - nw / 2, rx + nw / 2, YB - 1, Dd + 1, rz + rd / 2 - 0.5, rz + rd / 2 + nd))         # key notch at the top
+cut_info.append(dict(ref='SW101', kind='rocker panel hole (GRB112B802BR1)', shape='circle', cx=rx, cz=rz, d=rd, body=(rd - 0.4, rd - 0.4), body_ymax=None,
+                     pocket=P.get('rocker_cb'), notch=P.get('rocker_notch')))
+if DETAIL:   # pocket clearances (2D, lid plane)
+    rp = P['rocker_cb'] / 2
+    xo_in = Wd / 2 - t / 2 - P['groove_w'] / 2; zo_in = Hd - t / 2 - P['groove_w'] / 2
+    bosses = [(s_['p'].x, s_['p'].z, s_['name']) for s_ in sites if s_['kind'] == 'lid']
+    nb = min(bosses, key=lambda b: math.hypot(b[0] - rx, b[1] - rz))
+    jk = [c for c in cut_info if c['ref'] in ('J2', 'J3')]
+    nj = min(jk, key=lambda c: math.hypot(c['cx'] - rx, c['cz'] - rz))
+    ROCKER = dict(centre=(rx, rz), pocket_d=2 * rp, panel=P['rocker_panel'], gap_groove_side=round(xo_in - (rx + rp), 2), gap_groove_top=round(zo_in - (rz + rp), 2),
+                  nearest_lid_screw=nb[2], gap_lid_boss=round(math.hypot(nb[0] - rx, nb[1] - rz) - rp - P['boss_od'] / 2, 2),
+                  nearest_jack=nj['ref'], gap_jack_cbore=round(math.hypot(nj['cx'] - rx, nj['cz'] - rz) - rp - P['jack_cb'][0] / 2 - P['cut_chamfer'], 2),
+                  body_to_board_top=round(rz - P['rocker_body'][0] / 2 - PCB_TOP, 2))
+else:
+    ROCKER = None
+# woofer ring land (2D): aperture vs bolt holes vs flange recess wall
+WRING = dict(aperture_r=P['ap_w'] / 2, recess_r=P.get('w_recess_d', P['w_flange_od']) / 2, flange_r=P['w_flange_od'] / 2, bolt_r=P['w_bc'] / 2,
+             hole_r=P['w_hole'] / 2, pilot_r=P['pilot'] / 2)
+WRING.update(land_total=round(WRING['recess_r'] - WRING['aperture_r'], 2), hole_inner_minus_aperture=round(WRING['bolt_r'] - WRING['hole_r'] - WRING['aperture_r'], 2),
+             recess_minus_hole_outer=round(WRING['recess_r'] - WRING['bolt_r'] - WRING['hole_r'], 2),
+             pilot_inner_minus_aperture=round(WRING['bolt_r'] - WRING['pilot_r'] - WRING['aperture_r'], 2),
+             flange_minus_hole_outer=round(WRING['flange_r'] - WRING['bolt_r'] - WRING['hole_r'], 2))
 def chamfer_tool_circle(cx, cz, r, c):
     return Part.makeCone(r, r + c + 0.02, c + 0.02, V(cx, Dd - c, cz), V(0, 1, 0))
 def chamfer_tool_rrect(cx, cz, w, h, r, c):
@@ -635,7 +748,7 @@ if DETAIL:
         s.translate(V(-(bb.XMin + bb.XMax) / 2, -(bb.YMin + bb.YMax) / 2, -bb.ZMin))
         return s
     for name, shape, how, sup in (('shell', shell, 'baffle_down', 'none (cavity walls vertical; lid bosses have 45 deg lead-ins; cradle ribs start on the baffle)'),
-                                  ('lid', lid, 'outer_face_down', 'none (jack counterbore floors bridge 1.25 mm; chamfers on the bed side)'),
+                                  ('lid', lid, 'outer_face_down', 'none (jack counterbore floors bridge 1.25 mm; chamfers on the bed side; rocker pocket on the top face)'),
                                   ('woofer_chamber_insert', INSERT, 'roof_down', 'none (shelf gussets and bosses grow from the roof)')):
         s = orient(shape, how)
         m = MeshPart.meshFromShape(Shape=s, LinearDeflection=0.03, AngularDeflection=0.2, Relative=False)
@@ -652,7 +765,7 @@ for name, group, shape, color in objs:
     shape.exportBrep(WORK + 'brep/' + fn)
     meta.append(dict(name=name, group=group, color=color, file=fn, vol=shape.Volume))
 json.dump(dict(objs=meta, params={k: v for k, v in P.items()}, detail=DETAIL, standins=standin_pcb, zfix=zfix, skipped=skipped, prints=prints,
-               lid_cutouts=cut_info, cradle=CRADLE, harness=HARNESS, screws=nscrew, board_step=os.path.relpath(BOARD_STEP, ROOT),
+               lid_cutouts=cut_info, cradle=CRADLE, dish=DISH, rocker=ROCKER, woofer_ring=WRING, harness=HARNESS, screws=nscrew, board_step=os.path.relpath(BOARD_STEP, ROOT),
                pcb=dict(top=PCB_TOP, bot=PCB_BOT, cx=pcx, cy=pcy, rear_edge=REAR_E),
                sites=[dict(name=s['name'], kind=s['kind'], body=s['body'], p=[round(s['p'].x, 2), round(s['p'].y, 2), round(s['p'].z, 2)],
                            engage=s.get('engage'), post=s.get('post', False)) for s in sites]),

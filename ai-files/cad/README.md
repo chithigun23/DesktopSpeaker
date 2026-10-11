@@ -69,7 +69,7 @@ Frame: layout u = x_board - 147.25, v = 88.8 - y_board; CAD X = u - 3.5 (`pcb_cx
 ### What comes from the board
 - `ai-files/pcb/layout.json` is now generated from the routed board (`helpers/board_to_layout.py`; stale v9b kept as `pcb/layout-v9b.json`). Same schema as `work-v10d/layout-v10d.json`, plus `side`/`fpid` per part and all 349 footprints (v10d listed 103). Outline 127.5 x 137.6, 11 holes and the antenna keep-out are identical to v10d; part origins identical except C106 (moved 1.24 mm by routing); courtyard rects differ by up to 2 mm (v10d rects were generator rects, now real courtyards).
 - PCB body and all modelled components come from `parts/DesktopSpeaker-board.step` (686 solids, assigned to references by courtyard). Large parts are separate objects; small passives are grouped per sheet (`PCB_smallparts_<sheet>`). Stand-ins remain for J5, J9-J11, SW100 (+ plunger), SW101 and the PCM board (no models).
-- Library model faults found and corrected in the CAD only (library not touched): BM83 (U1) STEP floats 5.41 mm above the board; Coilcraft XFL4015 (L2, L3) STEP sits 1.40 mm inside the board (rotate 90 about X, wrong pivot).
+- Library model faults (BM83 U1 floating 5.41 mm, XFL4015 L2/L3 1.40 mm inside the board) were fixed in the library and board (6052ec2). Since v11.1 the CAD uses the exported STEP unchanged; the build only reports floating/sunk models in `meta.json` `zfix` (empty now).
 
 ### Print-ready detailing (DETAIL=1)
 - **Bodies**: main shell (163 x 100 x 202.6, front baffle on the bed), woofer chamber insert (122 x 126.6 x 55, roof on the bed), rear lid (163 x 100 x 4, outer face on the bed). No supports for any body. FDM 0.4 nozzle, PETG or ASA, 3 mm walls, 8 mm bosses, heat-set pilots 4.0 x (insert + 1 mm) for M3 x 5.7.
@@ -84,5 +84,27 @@ Frame: layout u = x_board - 147.25, v = 88.8 - y_board; CAD X = u - 3.5 (`pcb_cx
 - Results (`volumes.md`, `interference.md`): see the tables there and `ai-files/reports/cad-v11-print-ready.md`.
 
 ### Open
-- SW102 encoder shaft top is 3.9 mm below the top wall (z 93.1 vs 97.0): no knob access through the enclosure. Needs a longer shaft or an extension and a top-wall bore (not modelled).
 - Woofer (no drawing), rocker (panel thickness, body), PCM size/position, grommet part, SW100 plunger height (no STEP), J5/J9-J11 bodies, plug body sizes: assumptions as listed in the report.
+
+### v11.1 (2026-10-12): encoder knob dish
+- Board STEP and `layout.json` re-exported from the committed board (b635b6e, 3D offsets fixed in 6052ec2).
+- Recessed dish in the top wall over the SW102 shaft. The axis is derived from the board STEP: the round side of the D-shaft tip gives CAD X -34.68, Y 121.16. The footprint origin (X -41.4, Y 123.7) is pin A, not the shaft axis.
+  - Dish 36 mm, well wall 3 mm, floor 3 mm with an 8.5 mm shaft hole. Floor top is at the shaft top minus 8 mm (z 85.09), which leaves 8 mm of exposed shaft. 2 mm 45 deg lead-in on the top rim.
+  - The well is a horizontal cylinder when printed baffle-down. It is therefore a teardrop: its outer wall gets a 45 deg point toward the baffle, and the pocket gets a point toward the rear truncated to a 9 mm bridge. No supports. The rear end of the dish looks pointed from above.
+  - Parameters: `dish_*`, `knob_*` in `P`.
+- Knob stand-in D30 x 14 with a 6 mm bore, seated 0.75 mm above the floor (z 85.84-99.84, 0.16 mm below the top surface). The shaft goes 7.25 mm into the knob.
+- Main chamber net 2.021 L (-0.0235 L). The nearest parts to the well are inductors L201/L202/L203 (7.0 mm) and the H8/H4 screw heads (10.5 mm). The well does not touch the wall fillets, the left ND65, the battery or the lid bosses (all > 15 mm).
+
+### v11.2 (2026-10-12): R6q board, woofer cutout, GRB112 rocker
+- Board STEP and `layout.json` were rebuilt from R6q (cfea017). SW100 is now at u -11.18 (X -14.68), so the lid has separate J1 (12 x 7 R2) and SW100 (5.0) openings with a **4.41 mm web**. The keyhole logic (`min_web` 1.6) did not trigger, and both openings are chamfered normally.
+- **Regression in R6q:** the 3D offsets from 6052ec2 are missing again in the cfea017 board. The BM83 offset is z 0 (should be -5.41) and the XFL4015 offset is z 0.1 (should be 1.5). The STEP therefore again has U1 floating 5.41 mm and L2/L3 1.40 mm inside the board. The CAD does not correct this (reported in `meta.json` `zfix`). L2/L3 now show as board/part overlaps; they are filed under the intended category, but they are a library-offset error, not a design overlap. Re-apply the 6052ec2 offsets to the board.
+- **Woofer** W3-2052SC: aperture 76.2 (Parts Express cutout), flange 82.55, depth 44.45. The 77 mm bolt circle and 3.5 mm holes are still assumed. **They no longer fit:** the 3.5 holes break 1.35 mm into the aperture and the 4.0 pilots 1.6 mm. The ring land between the aperture (r 38.1) and the flange recess wall (r 41.7) is 3.6 mm in total; hole outer edge to recess wall is 1.45 mm and to the flange edge 1.02 mm. Not changed; see the report for the proposed fix.
+- **Rocker** CW Industries GRB112B802BR1 at X 63, Z 80 (was 66, 80). Details:
+  - 20.2 hole with a 2.2 x 1.0 key notch at the top. Inside pocket 28 mm leaves a 2.0 mm panel; 30 mm would cut into the J3 counterbore web. The 25 mm outside flange seat stays flat.
+  - The top-right lid screw moved from (74, 92.5) to (76.5, 94.0).
+  - Pocket gaps: 2.0 mm to the gasket groove side band, 3.5 mm to the top band, 1.45 mm to the LidScrew_4 boss footprint, 0.64 mm laterally to the J3 outside counterbore. The jack counterbores are now 2.0 deep, so the counterbore and pocket do not share any depth.
+  - Rocker body bottom is 1.5 mm above the board top.
+- **Update (2c1eecc).** The board offsets are restored and the STEP and `layout.json` were re-exported from the current board. `zfix` is empty: U1 and L2/L3 start at z 1.6.
+  - **0 unintended overlaps, 41 intended** (38 inserts, J2/J3 pins, knob on shaft). The L2/L3 board overlaps are gone.
+  - Woofer chamber net 0.525 L, main chamber net 2.025 L, J1/SW100 web 4.41 mm; rocker pocket gaps unchanged.
+  - The woofer bolt circle of 77 mm is still UNVERIFIED. The clamp-ring proposal remains the fallback.

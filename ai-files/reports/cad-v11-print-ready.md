@@ -80,7 +80,7 @@ Outer 163 x 100 x 206.6 mm (lid +1 mm). Detailing costs 0.004 L in the woofer ch
 - Library STEP offsets for BM83 and XFL4015 were wrong; fixed in the library and the board on 2026-10-12 (commit 6052ec2, offsets z -5.41 and z 1.5, verified by STEP re-export). The CAD-side correction is now redundant and should be removed on the next rebuild.
 
 ## 5. Not finished / known gaps
-- **SW102 encoder**: the shaft does not reach the top wall. It needs a longer shaft variant or an extension, plus a top-wall bore and knob. Not modelled, because the part change is a schematic/BOM decision.
+- SW102 encoder: solved by the knob dish (v11.1).
 - **J1/SW100 spacing**: the keyhole is a workaround. A board revision with SW100 >= 3 mm further from J1 is preferred.
 - Fillets on internal bosses, pads, ribs and the insert were not attempted. There is no draft. Print renders show the bodies alone, without a bed: the painter's-algorithm renderer drew the bed over the parts.
 - Insert-to-shell joint: a bonded seam is assumed (no screws). Cable retention clips in the side pocket are not modelled.
@@ -92,3 +92,47 @@ Outer 163 x 100 x 206.6 mm (lid +1 mm). Detailing costs 0.004 L in the woofer ch
 - `ai-files/cad/parts/DesktopSpeaker-board.step` (new, 21.8 MB), `DesktopSpeaker_internal.FCStd` (4.6 MB) / `.step` (36 MB, was about 20 MB), `work/` (regenerated: `work/brep` is cleared each build, so 47 tracked v10 brep files are deleted and 69 new ones added)
 - `ai-files/cad/print/DesktopSpeaker_{shell,lid,woofer_chamber_insert}.stl` (new)
 - `ai-files/cad/renders/*.png` (same names overwritten) + `print_shell.png`, `print_insert.png`, `print_lid.png`, `rear_lid_drawing.png`
+
+## v11.1: knob dish (2026-10-12)
+- **Library fix taken over.** Board STEP and `layout.json` were re-exported from the committed board (b635b6e; BM83/XFL4015 3D offsets fixed in 6052ec2). The CAD-side Z correction is removed. The build now only reports floating or sunk models, and found none (U1 and L2/L3 start at z 1.6).
+- **Dish position, derived (not hard-coded).** The axis comes from the SW102 solids in the board STEP: the top 1 mm of the shaft, with the axis placed 3.0 mm from the round side of the D-shaft.
+  - Result: CAD X -34.68, Y 121.16, shaft top z 93.09.
+  - The coordinator's estimate (X -41.4, Y 123.7) is the footprint origin (pin A). It is 6.7 mm off the shaft axis.
+- **Geometry** (parameters `dish_*`):
+  - Dish 36 mm, well wall 3 mm, floor 3 mm (z 82.09-85.09) with an 8.5 mm hole (7.5 + 1). Exposed shaft 8.0 mm. 2 mm 45 deg lead-in on the top rim.
+  - The well is horizontal when the shell prints baffle-down. It is therefore a teardrop: its outer wall has a 45 deg point toward the baffle, and the pocket a 45 deg point toward the rear truncated to a 9 mm bridge. This keeps the shell support-free. Cosmetic cost: the dish has a pointed rear end seen from above (`dish_teardrop=False` gives a round dish that needs support).
+  - The well does not merge with the 1 mm cavity fillets or the 2 mm outer fillets: it is 44 mm from the side walls and 70 mm from the baffle.
+- **Knob stand-in.** D30 x 14 with a 6.0 mm bore (round; the D flat is not modelled). It sits 0.75 mm above the floor, at z 85.84-99.84 (0.16 mm below the top surface), with 3 mm radial gap to the dish wall. The shaft goes 7.25 mm into the knob. Knob/shaft is listed as an intended overlap (fit).
+- **Checks.** 165 solids: 0 unintended overlaps, 41 intended (38 inserts, J2/J3 pins, knob on shaft).
+  - Envelope clearances: L201 7.0 mm, L203 7.6, L202 7.7, H8/H4 screw heads 10.5. The left ND65, the battery, the lid bosses and the board's other tall parts are all > 15 mm away.
+  - The encoder body top (about z 75.1) is 7 mm below the floor. The shaft passes the 8.5 hole with 1.25 mm radial clearance.
+- **Volumes.** Woofer 0.521 L (unchanged). Main gross 2.255 L, net **2.021 L** (was 2.044). The loss is 0.0235 L: well material plus dish air.
+- **Assembly note.** The well floor covers PCB screw H8 (10.5 mm above its head). Drive H8, and the other PCB screws, with a ball-end hex key through the rear opening before the lid goes on.
+- **Files.** `cad/build_speaker_cad.py`, `check_cad.py`, `README.md`, `volumes.md`, `interference.md`, `parts/DesktopSpeaker-board.step`, `pcb/layout.json`, `print/*.stl`, `renders/*` (all re-rendered), `work/dish_envelope.brep` (new).
+
+## v11.2: R6q board, woofer cutout 76.2, GRB112 rocker (2026-10-12)
+- **Board.** R6q (cfea017) was re-exported to the board STEP and `layout.json`: SW100 moved to u -11.18 and R113 to u -15.68; outline and holes unchanged. **Lid web J1/SW100 is 4.41 mm**: separate openings, both chamfered 0.5 mm; no keyhole.
+- **3D offset regression.** cfea017 carries the old offsets: BM83 model offset z 0 (6052ec2 had -5.41) and XFL4015 z 0.1 (6052ec2 had 1.5). As instructed, the CAD now uses the STEP unmodified. U1 floats 5.41 mm and L2/L3 sit 1.40 mm in the board, which shows as 24.3 mm3 board/part overlaps for each. These are listed as intended, but they are a board-file error. **Action for the coordinator:** re-apply the 6052ec2 offsets on the R6q board.
+- **Woofer ring land** (aperture r 38.1, flange recess wall r 41.7, flange edge r 41.275, assumed bolt circle r 38.5, holes 3.5, pilots 4.0):
+  - Total land between aperture and recess wall: 3.6 mm.
+  - Hole inner edge to aperture: -1.35 mm (**the holes break into the aperture**). Pilot to aperture: -1.6 mm.
+  - Hole outer edge to recess wall: 1.45 mm; to flange edge: 1.02 mm.
+  - With a 76.2 cutout and an 82.55 flange, no circle can hold a 3.5 hole with land on both sides: the land is 3.2 mm at the flange edge. Either the real flange has ears/scallops, or the holes sit on about 79.5 mm and breach the flange edge.
+  - **Proposed fix, not applied:** (1) get the maker drawing (hole size and circle). (2) If the holes are on about 79.5 mm, use M2.5 screws with M2.5 x 4 inserts (pilot 3.2): pilot edges r 38.15-41.35, 0.05 from the aperture, which still needs the drawing. (3) Recommended fallback: drop screws through the flange. Clamp the flange with a printed 4 mm ring (ID 74, OD 96) screwed on a 90 mm circle into a ring pad enlarged to OD 100. The insert pilots then sit at r 45, clear of the aperture and the flange.
+  - The model keeps the 77 circle so the conflict stays visible.
+- **Rocker** GRB112B802BR1:
+  - Position and lid cuts: X 63, Z 80. 20.2 hole + 2.2 x 1.0 key notch at the top. 28 mm inside pocket to a 2.0 panel; snap-in range 1.5-2.5. The 25 mm outside flange seat is flat with a 0.5 chamfer on the hole only.
+  - Stand-in: flange 25 x 2, body 19.8 x 7, 3 fastons 4.8 x 0.8 x 4 (11 mm behind the panel).
+  - The coordinator's 30 mm pocket does not fit: at X 63 it would leave the J3 counterbore web at -0.36 mm. At the old X 66 it would break the groove (x 81 vs groove inner edge 79) and the (74, 92.5) screw boss.
+  - The top-right lid screw moved to (76.5, 94.0).
+  - Clearances: pocket to groove side band 2.0 mm, to top band 3.5 mm, to LidScrew_4 boss footprint 1.45 mm, to J3 outside counterbore 0.64 mm laterally. The jack counterbores are now 2.0 deep (was 2.5): 2.0 + 2.0 = the 4 mm lid, so no depth band is shared. A plug now reaches 2.84 mm from the lid face to the jack.
+  - Rocker body bottom is 1.5 mm above the board top; fastons are clear of the board (check: 0 overlaps).
+- **Results.** 165 solids: **0 unintended overlaps**, 43 intended (38 inserts, J2/J3 pins, knob on shaft, L2/L3 in board from the offset regression).
+  - Woofer chamber net **0.525 L** (gross 0.581; the larger aperture displaces less ring).
+  - Main chamber net **2.025 L** (gross 2.255).
+  - Dish unchanged at X -34.68, Y 121.16; clearances as in v11.1.
+- **Files.** `cad/build_speaker_cad.py`, `render_cad.py`, `README.md`, `volumes.md`, `interference.md`, `mechanical-bom.md`, `parts/DesktopSpeaker-board.step`, `DesktopSpeaker_internal.FCStd/.step`, `print/*.stl`, `renders/*` (incl. `rear_lid_drawing.png`), `work/`, `pcb/layout.json`, this report.
+- **Update (2c1eecc).** The board offsets are restored and the STEP and `layout.json` were re-exported from the current board. `zfix` is empty: U1 and L2/L3 start at z 1.6.
+  - **0 unintended overlaps, 41 intended** (38 inserts, J2/J3 pins, knob on shaft). The L2/L3 board overlaps are gone.
+  - Woofer chamber net 0.525 L, main chamber net 2.025 L, J1/SW100 web 4.41 mm; rocker pocket gaps unchanged.
+  - The woofer bolt circle of 77 mm is still UNVERIFIED. The clamp-ring proposal remains the fallback.

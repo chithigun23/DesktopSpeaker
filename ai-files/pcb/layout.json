@@ -3235,15 +3235,15 @@
    "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
   },
   "R113": {
-   "origin_u": -11.68,
+   "origin_u": -15.68,
    "origin_v": 64.055,
    "rot": 90,
-   "cy_u": -11.68,
+   "cy_u": -15.68,
    "cy_v": 64.055,
    "rect": [
-    -12.195,
+    -16.195,
     62.9,
-    -11.165,
+    -15.165,
     65.21
    ],
    "side": "F",
@@ -4465,15 +4465,15 @@
    "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
   },
   "SW100": {
-   "origin_u": -7.18,
+   "origin_u": -11.18,
    "origin_v": 63.555,
    "rot": 0,
-   "cy_u": -7.18,
+   "cy_u": -11.18,
    "cy_v": 65.055,
    "rect": [
-    -9.725,
+    -13.725,
     61.31,
-    -4.635,
+    -8.635,
     68.8
    ],
    "side": "F",
@@ -5921,7 +5921,7 @@
  "failed": [],
  "noslot": [],
  "source": {
-  "board": "DesktopSpeaker-kicad/DesktopSpeaker.kicad_pcb (committed R6o, e526e7d)",
+  "board": "DesktopSpeaker-kicad/DesktopSpeaker.kicad_pcb (R6q + 3D offsets, 2c1eecc)",
   "frame": "u = x - 147.25, v = 88.8000 - y (mm)",
   "generator": "board_to_layout.py"
  }

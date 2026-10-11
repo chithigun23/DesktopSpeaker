@@ -163,7 +163,7 @@ if m.get('detail'):
             lab='%s dia %.1f'%(c['ref'],c['d'])
             if c.get('cb') and c['ref'] in ('J2','J3'): lab+=' (cbore dia %.0f x %.1f outside)'%tuple(c['cb'])
             if c.get('joined'): lab+=' (joined to the J1 opening: web < 1.6)'
-            if c['ref']=='SW101': lab+=' (inside cbore dia %.0f, panel %.1f)'%(P['rocker_cb'],P['rocker_panel'])
+            if c['ref']=='SW101': lab+=' + key notch %.1f at top; inside pocket dia %.0f to %.1f panel; 25 flange seat flat'%(P['rocker_notch'][0],P['rocker_cb'],P['rocker_panel'])
         ax.plot([-cx],[cz],'+',color='#a33',ms=6)
         ax.text(-cx+1.2,cz+1.2,'%d'%(i+1),fontsize=8,color='#a33',weight='bold')
         rows.append('%d  %s: X %.2f, Z %.2f'%(i+1,lab,Wd/2-cx,cz))
