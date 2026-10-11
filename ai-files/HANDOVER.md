@@ -31,9 +31,9 @@ Schematic and board are both complete. The PCB (placement plus routing) exists, 
 - `reports/mcu-pin-allocation.md` line 8 still lists the cut C163/C164.
 
 ### Remaining steps to fabrication
-1. User, KiCad GUI (on the adopted R6p board): Edit > Teardrops (ratio 0.5, max length 1.0 mm pads / 0.6 mm vias and track-to-track, max width 2.0, curved edges ticked; KiCad 10 has no curve-point count, the file key td_curve_segcount is 1 = curved); refill all zones; save.
-2. Coordinator: `route_td_prune.py` if DRC is not 0 after the refill, then DRC, strict, sliver, island, corner gates.
-3. Fab outputs: `helpers/fab_export.sh`, BOM/CPL; stackup/order note (no impedance control for full-speed USB, ENIG, 0.5 oz inner, 0.2 mm drills); JLC order (user).
+1. DONE 2026-10-12 02:00: teardrops applied on the adopted R6p board (coordinator drove the KiCad 10.0.5 AppImage GUI by X automation with the user's consent: pass 1 pads with Board Setup defaults 50 % / 1.0 mm / 100 % / 2.0 mm / 90 %, curved; pass 2 vias max 0.6 mm; pass 3 track-to-track max 0.6 mm (added none); refill; save). Project DRC 0 violations / 0 unconnected, open edges 0, merged-copper slivers 0; tracks, vias and footprints byte-identical to R6p-final. First attempt crashed the AppImage on "Apply and Close" of a combined vias + track-to-track pass (no log output); the split passes worked; the recovery snapshot was discarded.
+2. Fab outputs generated from the saved board: `ai-files/fab/out/` (R7-gerbers.zip with 11 layers + PTH/NPTH drills + maps, R7-drill-report.txt (959 PTH), R7-pos-jlc.csv / R7-pos-kicad.csv, 347 placements). Order options in `ai-files/fab/ORDER-NOTES.md`; assembly BOM `ai-files/bom/DesktopSpeaker_JLC_BOM.csv`.
+3. User: review the gerbers in a viewer / JLC preview (rotations of polarised parts in the CPL), confirm stock per BOM line, order.
 
 ### Bench order (from project-review-fable.md section e)
 1. USB only, no pack: rails, 3V_AO, MCU alive, PD contract readback 5/9/15/20 V, VBUS waveform at attach.
