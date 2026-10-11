@@ -9,7 +9,18 @@
     0.34
    ],
    "file": "Shell_Box.brep",
-   "vol": 452011.8858607902
+   "vol": 384157.8115636228
+  },
+  {
+   "name": "Insert_woofer_chamber",
+   "group": "insert",
+   "color": [
+    0.36,
+    0.3,
+    0.26
+   ],
+   "file": "Insert_woofer_chamber.brep",
+   "vol": 100900.9165114664
   },
   {
    "name": "Driver_FrontL_ND65-4",
@@ -42,7 +53,7 @@
     0.14
    ],
    "file": "Woofer_W3-2052SC_standin.brep",
-   "vol": 45411.470480228156
+   "vol": 45411.47048022817
   },
   {
    "name": "Battery_Cell1_21700_50S",
@@ -78,125 +89,59 @@
    "vol": 2343.6000000000004
   },
   {
-   "name": "PCB_136.9x127.8x1.6",
+   "name": "PCB_127.5x137.6x1.6",
    "group": "pcb",
    "color": [
     0.05,
     0.35,
     0.15
    ],
-   "file": "PCB_136.9x127.8x1.6.brep",
-   "vol": 27864.63236490887
+   "file": "PCB_127.5x137.6x1.6.brep",
+   "vol": 26273.353845959067
   },
   {
-   "name": "PCB_U1",
+   "name": "PCB_U15",
    "group": "pcb_parts",
    "color": [
     0.55,
     0.55,
     0.6
    ],
-   "file": "PCB_U1.brep",
-   "vol": 366.7022977584917
+   "file": "PCB_U15.brep",
+   "vol": 5.885366080836377
   },
   {
-   "name": "PCB_U3",
+   "name": "PCB_U16",
    "group": "pcb_parts",
    "color": [
     0.55,
     0.55,
     0.6
    ],
-   "file": "PCB_U3.brep",
-   "vol": 136.63488111154058
+   "file": "PCB_U16.brep",
+   "vol": 6.480480466548713
   },
   {
-   "name": "PCB_U2",
+   "name": "PCB_Q102",
    "group": "pcb_parts",
    "color": [
     0.55,
     0.55,
     0.6
    ],
-   "file": "PCB_U2.brep",
-   "vol": 107.97488460961469
+   "file": "PCB_Q102.brep",
+   "vol": 4.402523112082192
   },
   {
-   "name": "PCB_U24",
+   "name": "PCB_Q104",
    "group": "pcb_parts",
    "color": [
     0.55,
     0.55,
     0.6
    ],
-   "file": "PCB_U24.brep",
-   "vol": 49.35756285188193
-  },
-  {
-   "name": "PCB_U6",
-   "group": "pcb_parts",
-   "color": [
-    0.55,
-    0.55,
-    0.6
-   ],
-   "file": "PCB_U6.brep",
-   "vol": 25.35298680792934
-  },
-  {
-   "name": "PCB_U7",
-   "group": "pcb_parts",
-   "color": [
-    0.55,
-    0.55,
-    0.6
-   ],
-   "file": "PCB_U7.brep",
-   "vol": 25.352986807929337
-  },
-  {
-   "name": "PCB_U25",
-   "group": "pcb_parts",
-   "color": [
-    0.55,
-    0.55,
-    0.6
-   ],
-   "file": "PCB_U25.brep",
-   "vol": 16.013727469070215
-  },
-  {
-   "name": "PCB_L200",
-   "group": "pcb_parts",
-   "color": [
-    0.55,
-    0.55,
-    0.6
-   ],
-   "file": "PCB_L200.brep",
-   "vol": 429.3487369708282
-  },
-  {
-   "name": "PCB_C275",
-   "group": "pcb_parts",
-   "color": [
-    0.55,
-    0.55,
-    0.6
-   ],
-   "file": "PCB_C275.brep",
-   "vol": 500.092124030263
-  },
-  {
-   "name": "PCB_L201",
-   "group": "pcb_parts",
-   "color": [
-    0.55,
-    0.55,
-    0.6
-   ],
-   "file": "PCB_L201.brep",
-   "vol": 1095.1677316326077
+   "file": "PCB_Q104.brep",
+   "vol": 4.402523112082189
   },
   {
    "name": "PCB_L202",
@@ -210,37 +155,59 @@
    "vol": 1095.1677316326077
   },
   {
-   "name": "PCB_L203",
+   "name": "PCB_J2_3.5mm_jack",
+   "group": "pcb_parts",
+   "color": [
+    0.1,
+    0.1,
+    0.1
+   ],
+   "file": "PCB_J2_3.5mm_jack.brep",
+   "vol": 283.2878405655524
+  },
+  {
+   "name": "PCB_U6",
    "group": "pcb_parts",
    "color": [
     0.55,
     0.55,
     0.6
    ],
-   "file": "PCB_L203.brep",
+   "file": "PCB_U6.brep",
+   "vol": 25.352986807928886
+  },
+  {
+   "name": "PCB_Q101",
+   "group": "pcb_parts",
+   "color": [
+    0.55,
+    0.55,
+    0.6
+   ],
+   "file": "PCB_Q101.brep",
+   "vol": 4.4025231120821875
+  },
+  {
+   "name": "PCB_L201",
+   "group": "pcb_parts",
+   "color": [
+    0.55,
+    0.55,
+    0.6
+   ],
+   "file": "PCB_L201.brep",
    "vol": 1095.1677316326075
   },
   {
-   "name": "PCB_L204",
+   "name": "PCB_J6",
    "group": "pcb_parts",
    "color": [
     0.55,
     0.55,
     0.6
    ],
-   "file": "PCB_L204.brep",
-   "vol": 1095.1677316326072
-  },
-  {
-   "name": "PCB_L205",
-   "group": "pcb_parts",
-   "color": [
-    0.55,
-    0.55,
-    0.6
-   ],
-   "file": "PCB_L205.brep",
-   "vol": 1095.1677316326077
+   "file": "PCB_J6.brep",
+   "vol": 78.76443754666701
   },
   {
    "name": "PCB_L206",
@@ -254,37 +221,59 @@
    "vol": 1095.167731632607
   },
   {
-   "name": "PCB_L1",
+   "name": "PCB_Y200",
    "group": "pcb_parts",
    "color": [
     0.55,
     0.55,
     0.6
    ],
-   "file": "PCB_L1.brep",
-   "vol": 95.41091827620352
+   "file": "PCB_Y200.brep",
+   "vol": 4.858760851885207
   },
   {
-   "name": "PCB_L2",
+   "name": "PCB_U14",
    "group": "pcb_parts",
    "color": [
     0.55,
     0.55,
     0.6
    ],
-   "file": "PCB_L2.brep",
-   "vol": 28.26619695780966
+   "file": "PCB_U14.brep",
+   "vol": 5.885366080836374
   },
   {
-   "name": "PCB_L3",
+   "name": "PCB_J1_USB-C",
    "group": "pcb_parts",
    "color": [
     0.55,
     0.55,
     0.6
    ],
-   "file": "PCB_L3.brep",
-   "vol": 28.266196957809683
+   "file": "PCB_J1_USB-C.brep",
+   "vol": 126.46085199903085
+  },
+  {
+   "name": "PCB_L203",
+   "group": "pcb_parts",
+   "color": [
+    0.55,
+    0.55,
+    0.6
+   ],
+   "file": "PCB_L203.brep",
+   "vol": 1095.1677316326072
+  },
+  {
+   "name": "PCB_U20",
+   "group": "pcb_parts",
+   "color": [
+    0.55,
+    0.55,
+    0.6
+   ],
+   "file": "PCB_U20.brep",
+   "vol": 1.501023960033325
   },
   {
    "name": "PCB_U4",
@@ -295,7 +284,84 @@
     0.6
    ],
    "file": "PCB_U4.brep",
-   "vol": 15.678858433849966
+   "vol": 15.678858433849982
+  },
+  {
+   "name": "PCB_U22",
+   "group": "pcb_parts",
+   "color": [
+    0.55,
+    0.55,
+    0.6
+   ],
+   "file": "PCB_U22.brep",
+   "vol": 6.480480466548714
+  },
+  {
+   "name": "PCB_U19",
+   "group": "pcb_parts",
+   "color": [
+    0.55,
+    0.55,
+    0.6
+   ],
+   "file": "PCB_U19.brep",
+   "vol": 7.184804126147879
+  },
+  {
+   "name": "PCB_Q100",
+   "group": "pcb_parts",
+   "color": [
+    0.55,
+    0.55,
+    0.6
+   ],
+   "file": "PCB_Q100.brep",
+   "vol": 4.40252311208219
+  },
+  {
+   "name": "PCB_U9",
+   "group": "pcb_parts",
+   "color": [
+    0.55,
+    0.55,
+    0.6
+   ],
+   "file": "PCB_U9.brep",
+   "vol": 8.516849413538278
+  },
+  {
+   "name": "PCB_Q103",
+   "group": "pcb_parts",
+   "color": [
+    0.55,
+    0.55,
+    0.6
+   ],
+   "file": "PCB_Q103.brep",
+   "vol": 7.554232519623267
+  },
+  {
+   "name": "PCB_U3",
+   "group": "pcb_parts",
+   "color": [
+    0.55,
+    0.55,
+    0.6
+   ],
+   "file": "PCB_U3.brep",
+   "vol": 136.63488116654912
+  },
+  {
+   "name": "PCB_U8",
+   "group": "pcb_parts",
+   "color": [
+    0.55,
+    0.55,
+    0.6
+   ],
+   "file": "PCB_U8.brep",
+   "vol": 8.516849413538287
   },
   {
    "name": "PCB_U11",
@@ -306,40 +372,7 @@
     0.6
    ],
    "file": "PCB_U11.brep",
-   "vol": 18.95050387061446
-  },
-  {
-   "name": "PCB_J4",
-   "group": "pcb_parts",
-   "color": [
-    0.55,
-    0.55,
-    0.6
-   ],
-   "file": "PCB_J4.brep",
-   "vol": 78.76443754666711
-  },
-  {
-   "name": "PCB_J6",
-   "group": "pcb_parts",
-   "color": [
-    0.55,
-    0.55,
-    0.6
-   ],
-   "file": "PCB_J6.brep",
-   "vol": 78.76443754666714
-  },
-  {
-   "name": "PCB_J8",
-   "group": "pcb_parts",
-   "color": [
-    0.55,
-    0.55,
-    0.6
-   ],
-   "file": "PCB_J8.brep",
-   "vol": 98.45554693333636
+   "vol": 18.95050387061442
   },
   {
    "name": "PCB_SW102",
@@ -350,29 +383,238 @@
     0.6
    ],
    "file": "PCB_SW102.brep",
-   "vol": 1120.5192950663682
+   "vol": 1120.5192950663695
   },
   {
-   "name": "PCB_J1_USB-C",
+   "name": "PCB_U13",
    "group": "pcb_parts",
    "color": [
-    0.7,
-    0.7,
-    0.75
+    0.55,
+    0.55,
+    0.6
    ],
-   "file": "PCB_J1_USB-C.brep",
-   "vol": 126.46085199903189
+   "file": "PCB_U13.brep",
+   "vol": 6.480480466548707
   },
   {
-   "name": "PCB_J2_3.5mm_jack",
+   "name": "PCB_U10",
    "group": "pcb_parts",
    "color": [
-    0.1,
-    0.1,
-    0.1
+    0.55,
+    0.55,
+    0.6
    ],
-   "file": "PCB_J2_3.5mm_jack.brep",
-   "vol": 283.28784056555185
+   "file": "PCB_U10.brep",
+   "vol": 6.654939743903268
+  },
+  {
+   "name": "PCB_U23",
+   "group": "pcb_parts",
+   "color": [
+    0.55,
+    0.55,
+    0.6
+   ],
+   "file": "PCB_U23.brep",
+   "vol": 6.565613634439697
+  },
+  {
+   "name": "PCB_L204",
+   "group": "pcb_parts",
+   "color": [
+    0.55,
+    0.55,
+    0.6
+   ],
+   "file": "PCB_L204.brep",
+   "vol": 1095.1677316326075
+  },
+  {
+   "name": "PCB_L200",
+   "group": "pcb_parts",
+   "color": [
+    0.55,
+    0.55,
+    0.6
+   ],
+   "file": "PCB_L200.brep",
+   "vol": 429.3487369708282
+  },
+  {
+   "name": "PCB_U21",
+   "group": "pcb_parts",
+   "color": [
+    0.55,
+    0.55,
+    0.6
+   ],
+   "file": "PCB_U21.brep",
+   "vol": 4.402523112082189
+  },
+  {
+   "name": "PCB_U2",
+   "group": "pcb_parts",
+   "color": [
+    0.55,
+    0.55,
+    0.6
+   ],
+   "file": "PCB_U2.brep",
+   "vol": 107.97488460961202
+  },
+  {
+   "name": "PCB_U5",
+   "group": "pcb_parts",
+   "color": [
+    0.55,
+    0.55,
+    0.6
+   ],
+   "file": "PCB_U5.brep",
+   "vol": 3.0334403408660897
+  },
+  {
+   "name": "PCB_L3",
+   "group": "pcb_parts",
+   "color": [
+    0.55,
+    0.55,
+    0.6
+   ],
+   "file": "PCB_L3.brep",
+   "vol": 28.266196957809804
+  },
+  {
+   "name": "PCB_U25",
+   "group": "pcb_parts",
+   "color": [
+    0.55,
+    0.55,
+    0.6
+   ],
+   "file": "PCB_U25.brep",
+   "vol": 16.013727469069842
+  },
+  {
+   "name": "PCB_J4",
+   "group": "pcb_parts",
+   "color": [
+    0.55,
+    0.55,
+    0.6
+   ],
+   "file": "PCB_J4.brep",
+   "vol": 78.76443754666695
+  },
+  {
+   "name": "PCB_U7",
+   "group": "pcb_parts",
+   "color": [
+    0.55,
+    0.55,
+    0.6
+   ],
+   "file": "PCB_U7.brep",
+   "vol": 25.34184514630003
+  },
+  {
+   "name": "PCB_U1",
+   "group": "pcb_parts",
+   "color": [
+    0.55,
+    0.55,
+    0.6
+   ],
+   "file": "PCB_U1.brep",
+   "vol": 366.7022977584891
+  },
+  {
+   "name": "PCB_C275",
+   "group": "pcb_parts",
+   "color": [
+    0.55,
+    0.55,
+    0.6
+   ],
+   "file": "PCB_C275.brep",
+   "vol": 239.89359893574016
+  },
+  {
+   "name": "PCB_L1",
+   "group": "pcb_parts",
+   "color": [
+    0.55,
+    0.55,
+    0.6
+   ],
+   "file": "PCB_L1.brep",
+   "vol": 95.41091827620349
+  },
+  {
+   "name": "PCB_U17",
+   "group": "pcb_parts",
+   "color": [
+    0.55,
+    0.55,
+    0.6
+   ],
+   "file": "PCB_U17.brep",
+   "vol": 6.480480466548712
+  },
+  {
+   "name": "PCB_U12",
+   "group": "pcb_parts",
+   "color": [
+    0.55,
+    0.55,
+    0.6
+   ],
+   "file": "PCB_U12.brep",
+   "vol": 6.480480466548709
+  },
+  {
+   "name": "PCB_L205",
+   "group": "pcb_parts",
+   "color": [
+    0.55,
+    0.55,
+    0.6
+   ],
+   "file": "PCB_L205.brep",
+   "vol": 1095.1677316326075
+  },
+  {
+   "name": "PCB_Y170",
+   "group": "pcb_parts",
+   "color": [
+    0.55,
+    0.55,
+    0.6
+   ],
+   "file": "PCB_Y170.brep",
+   "vol": 4.858760851885206
+  },
+  {
+   "name": "PCB_J8",
+   "group": "pcb_parts",
+   "color": [
+    0.55,
+    0.55,
+    0.6
+   ],
+   "file": "PCB_J8.brep",
+   "vol": 98.4555469333365
+  },
+  {
+   "name": "PCB_U24",
+   "group": "pcb_parts",
+   "color": [
+    0.55,
+    0.55,
+    0.6
+   ],
+   "file": "PCB_U24.brep",
+   "vol": 49.35756285188245
   },
   {
    "name": "PCB_J3_3.5mm_jack",
@@ -383,7 +625,29 @@
     0.1
    ],
    "file": "PCB_J3_3.5mm_jack.brep",
-   "vol": 283.28784056555213
+   "vol": 283.2878405655518
+  },
+  {
+   "name": "PCB_L2",
+   "group": "pcb_parts",
+   "color": [
+    0.55,
+    0.55,
+    0.6
+   ],
+   "file": "PCB_L2.brep",
+   "vol": 28.2661969578098
+  },
+  {
+   "name": "PCB_smallparts_root",
+   "group": "pcb_parts",
+   "color": [
+    0.5,
+    0.45,
+    0.4
+   ],
+   "file": "PCB_smallparts_root.brep",
+   "vol": 239.01215621838784
   },
   {
    "name": "PCB_J5_MicroFit3_standin",
@@ -405,7 +669,7 @@
     0.9
    ],
    "file": "PCB_J9_JST_B2P-VH_standin.brep",
-   "vol": 959.9085
+   "vol": 959.9085000000008
   },
   {
    "name": "PCB_J10_JST_B2P-VH_standin",
@@ -449,7 +713,7 @@
     0.1
    ],
    "file": "PCB_SW100_plunger.brep",
-   "vol": 12.271846303085134
+   "vol": 12.271846303085136
   },
   {
    "name": "SW101_rocker_D20_standin",
@@ -460,18 +724,51 @@
     0.1
    ],
    "file": "SW101_rocker_D20_standin.brep",
-   "vol": 7261.0217285726785
+   "vol": 7261.021728572678
   },
   {
    "name": "Harness_J5_to_pack_schematic",
-   "group": "battery",
+   "group": "harness",
    "color": [
     0.8,
     0.5,
     0.1
    ],
    "file": "Harness_J5_to_pack_schematic.brep",
-   "vol": 1775.269938925949
+   "vol": 2214.175912343707
+  },
+  {
+   "name": "Harness_woofer_leads_schematic",
+   "group": "harness",
+   "color": [
+    0.7,
+    0.1,
+    0.1
+   ],
+   "file": "Harness_woofer_leads_schematic.brep",
+   "vol": 917.6425166522027
+  },
+  {
+   "name": "Grommet_6mm_standin",
+   "group": "hardware",
+   "color": [
+    0.05,
+    0.05,
+    0.05
+   ],
+   "file": "Grommet_6mm_standin.brep",
+   "vol": 145.5060053436648
+  },
+  {
+   "name": "Gasket_lid_foam_3mm",
+   "group": "hardware",
+   "color": [
+    0.1,
+    0.1,
+    0.1
+   ],
+   "file": "Gasket_lid_foam_3mm.brep",
+   "vol": 2216.999999999997
   },
   {
    "name": "Lid_rear",
@@ -482,7 +779,7 @@
     0.42
    ],
    "file": "Lid_rear.brep",
-   "vol": 47203.50411336482
+   "vol": 59685.108982958904
   },
   {
    "name": "Grille_front_perforated",
@@ -504,7 +801,7 @@
     0.1
    ],
    "file": "Grille_woofer_dia90.brep",
-   "vol": 4031.291693086338
+   "vol": 4031.291693086339
   },
   {
    "name": "Insert_M3x5.7_DrvScrew_L1",
@@ -771,334 +1068,367 @@
    "vol": 141.96071803408879
   },
   {
-   "name": "Insert_M3x5.7_PcbScrew_1",
+   "name": "Insert_M3x5.7_PcbScrew_1_H1",
    "group": "hardware",
    "color": [
     0.85,
     0.65,
     0.2
    ],
-   "file": "Insert_M3x5.7_PcbScrew_1.brep",
-   "vol": 54.437517501403924
+   "file": "Insert_M3x5.7_PcbScrew_1_H1.brep",
+   "vol": 54.43751750140389
   },
   {
-   "name": "Screw_M3x12_PcbScrew_1",
+   "name": "Screw_M3x16_PcbScrew_1_H1",
    "group": "hardware",
    "color": [
     0.55,
     0.55,
     0.6
    ],
-   "file": "Screw_M3x12_PcbScrew_1.brep",
-   "vol": 156.09788497524286
+   "file": "Screw_M3x16_PcbScrew_1_H1.brep",
+   "vol": 184.37221885755102
   },
   {
-   "name": "Standoff_M3_5mm_PcbScrew_1",
+   "name": "Standoff_M3_10mm_PcbScrew_1_H1",
    "group": "hardware",
    "color": [
     0.75,
     0.75,
     0.78
    ],
-   "file": "Standoff_M3_5mm_PcbScrew_1.brep",
-   "vol": 95.64342496951105
+   "file": "Standoff_M3_10mm_PcbScrew_1_H1.brep",
+   "vol": 181.5479127128939
   },
   {
-   "name": "Insert_M3x5.7_PcbScrew_2",
+   "name": "Insert_M3x5.7_PcbScrew_2_H2",
    "group": "hardware",
    "color": [
     0.85,
     0.65,
     0.2
    ],
-   "file": "Insert_M3x5.7_PcbScrew_2.brep",
+   "file": "Insert_M3x5.7_PcbScrew_2_H2.brep",
    "vol": 54.43751750140392
   },
   {
-   "name": "Screw_M3x12_PcbScrew_2",
+   "name": "Screw_M3x16_PcbScrew_2_H2",
    "group": "hardware",
    "color": [
     0.55,
     0.55,
     0.6
    ],
-   "file": "Screw_M3x12_PcbScrew_2.brep",
-   "vol": 156.0978849752429
+   "file": "Screw_M3x16_PcbScrew_2_H2.brep",
+   "vol": 184.37221885755102
   },
   {
-   "name": "Standoff_M3_5mm_PcbScrew_2",
+   "name": "Standoff_M3_10mm_PcbScrew_2_H2",
    "group": "hardware",
    "color": [
     0.75,
     0.75,
     0.78
    ],
-   "file": "Standoff_M3_5mm_PcbScrew_2.brep",
-   "vol": 95.64342496951119
+   "file": "Standoff_M3_10mm_PcbScrew_2_H2.brep",
+   "vol": 181.54791271289398
   },
   {
-   "name": "Insert_M3x5.7_PcbScrew_3",
+   "name": "Insert_M3x5.7_PcbScrew_3_H3",
    "group": "hardware",
    "color": [
     0.85,
     0.65,
     0.2
    ],
-   "file": "Insert_M3x5.7_PcbScrew_3.brep",
-   "vol": 54.437517501403875
+   "file": "Insert_M3x5.7_PcbScrew_3_H3.brep",
+   "vol": 54.43751750140392
   },
   {
-   "name": "Screw_M3x12_PcbScrew_3",
+   "name": "Screw_M3x16_PcbScrew_3_H3",
    "group": "hardware",
    "color": [
     0.55,
     0.55,
     0.6
    ],
-   "file": "Screw_M3x12_PcbScrew_3.brep",
-   "vol": 156.09788497524295
+   "file": "Screw_M3x16_PcbScrew_3_H3.brep",
+   "vol": 184.37221885755105
   },
   {
-   "name": "Standoff_M3_5mm_PcbScrew_3",
+   "name": "Standoff_M3_10mm_PcbScrew_3_H3",
    "group": "hardware",
    "color": [
     0.75,
     0.75,
     0.78
    ],
-   "file": "Standoff_M3_5mm_PcbScrew_3.brep",
-   "vol": 95.64342496951122
+   "file": "Standoff_M3_10mm_PcbScrew_3_H3.brep",
+   "vol": 181.54791271289412
   },
   {
-   "name": "Insert_M3x5.7_PcbScrew_4",
+   "name": "Insert_M3x5.7_PcbScrew_4_H4",
    "group": "hardware",
    "color": [
     0.85,
     0.65,
     0.2
    ],
-   "file": "Insert_M3x5.7_PcbScrew_4.brep",
+   "file": "Insert_M3x5.7_PcbScrew_4_H4.brep",
+   "vol": 54.43751750140392
+  },
+  {
+   "name": "Screw_M3x16_PcbScrew_4_H4",
+   "group": "hardware",
+   "color": [
+    0.55,
+    0.55,
+    0.6
+   ],
+   "file": "Screw_M3x16_PcbScrew_4_H4.brep",
+   "vol": 184.37221885755102
+  },
+  {
+   "name": "Standoff_M3_10mm_PcbScrew_4_H4",
+   "group": "hardware",
+   "color": [
+    0.75,
+    0.75,
+    0.78
+   ],
+   "file": "Standoff_M3_10mm_PcbScrew_4_H4.brep",
+   "vol": 181.54791271289395
+  },
+  {
+   "name": "Insert_M3x5.7_PcbScrew_5_H5",
+   "group": "hardware",
+   "color": [
+    0.85,
+    0.65,
+    0.2
+   ],
+   "file": "Insert_M3x5.7_PcbScrew_5_H5.brep",
+   "vol": 54.43751750140391
+  },
+  {
+   "name": "Screw_M3x16_PcbScrew_5_H5",
+   "group": "hardware",
+   "color": [
+    0.55,
+    0.55,
+    0.6
+   ],
+   "file": "Screw_M3x16_PcbScrew_5_H5.brep",
+   "vol": 184.3722188575511
+  },
+  {
+   "name": "Standoff_M3_10mm_PcbScrew_5_H5",
+   "group": "hardware",
+   "color": [
+    0.75,
+    0.75,
+    0.78
+   ],
+   "file": "Standoff_M3_10mm_PcbScrew_5_H5.brep",
+   "vol": 181.5479127128938
+  },
+  {
+   "name": "Insert_M3x5.7_PcbScrew_6_H6",
+   "group": "hardware",
+   "color": [
+    0.85,
+    0.65,
+    0.2
+   ],
+   "file": "Insert_M3x5.7_PcbScrew_6_H6.brep",
+   "vol": 54.437517501403924
+  },
+  {
+   "name": "Screw_M3x16_PcbScrew_6_H6",
+   "group": "hardware",
+   "color": [
+    0.55,
+    0.55,
+    0.6
+   ],
+   "file": "Screw_M3x16_PcbScrew_6_H6.brep",
+   "vol": 184.37221885755102
+  },
+  {
+   "name": "Standoff_M3_10mm_PcbScrew_6_H6",
+   "group": "hardware",
+   "color": [
+    0.75,
+    0.75,
+    0.78
+   ],
+   "file": "Standoff_M3_10mm_PcbScrew_6_H6.brep",
+   "vol": 181.54791271289372
+  },
+  {
+   "name": "Insert_M3x5.7_PcbScrew_7_H7",
+   "group": "hardware",
+   "color": [
+    0.85,
+    0.65,
+    0.2
+   ],
+   "file": "Insert_M3x5.7_PcbScrew_7_H7.brep",
    "vol": 54.43751750140387
   },
   {
-   "name": "Screw_M3x12_PcbScrew_4",
+   "name": "Screw_M3x16_PcbScrew_7_H7",
    "group": "hardware",
    "color": [
     0.55,
     0.55,
     0.6
    ],
-   "file": "Screw_M3x12_PcbScrew_4.brep",
-   "vol": 156.09788497524295
+   "file": "Screw_M3x16_PcbScrew_7_H7.brep",
+   "vol": 184.37221885755116
   },
   {
-   "name": "Standoff_M3_5mm_PcbScrew_4",
+   "name": "Standoff_M3_10mm_PcbScrew_7_H7",
    "group": "hardware",
    "color": [
     0.75,
     0.75,
     0.78
    ],
-   "file": "Standoff_M3_5mm_PcbScrew_4.brep",
-   "vol": 95.64342496951114
+   "file": "Standoff_M3_10mm_PcbScrew_7_H7.brep",
+   "vol": 181.54791271289406
   },
   {
-   "name": "Insert_M3x5.7_PcbScrew_5",
+   "name": "Insert_M3x5.7_PcbScrew_8_H8",
    "group": "hardware",
    "color": [
     0.85,
     0.65,
     0.2
    ],
-   "file": "Insert_M3x5.7_PcbScrew_5.brep",
-   "vol": 54.437517501403924
-  },
-  {
-   "name": "Screw_M3x12_PcbScrew_5",
-   "group": "hardware",
-   "color": [
-    0.55,
-    0.55,
-    0.6
-   ],
-   "file": "Screw_M3x12_PcbScrew_5.brep",
-   "vol": 156.09788497524286
-  },
-  {
-   "name": "Standoff_M3_5mm_PcbScrew_5",
-   "group": "hardware",
-   "color": [
-    0.75,
-    0.75,
-    0.78
-   ],
-   "file": "Standoff_M3_5mm_PcbScrew_5.brep",
-   "vol": 95.64342496951105
-  },
-  {
-   "name": "Insert_M3x5.7_PcbScrew_6",
-   "group": "hardware",
-   "color": [
-    0.85,
-    0.65,
-    0.2
-   ],
-   "file": "Insert_M3x5.7_PcbScrew_6.brep",
+   "file": "Insert_M3x5.7_PcbScrew_8_H8.brep",
    "vol": 54.4375175014039
   },
   {
-   "name": "Screw_M3x12_PcbScrew_6",
+   "name": "Screw_M3x16_PcbScrew_8_H8",
    "group": "hardware",
    "color": [
     0.55,
     0.55,
     0.6
    ],
-   "file": "Screw_M3x12_PcbScrew_6.brep",
-   "vol": 156.09788497524295
+   "file": "Screw_M3x16_PcbScrew_8_H8.brep",
+   "vol": 184.37221885755113
   },
   {
-   "name": "Standoff_M3_5mm_PcbScrew_6",
+   "name": "Standoff_M3_10mm_PcbScrew_8_H8",
    "group": "hardware",
    "color": [
     0.75,
     0.75,
     0.78
    ],
-   "file": "Standoff_M3_5mm_PcbScrew_6.brep",
-   "vol": 95.64342496951105
+   "file": "Standoff_M3_10mm_PcbScrew_8_H8.brep",
+   "vol": 181.54791271289392
   },
   {
-   "name": "Insert_M3x5.7_PcbScrew_7",
+   "name": "Insert_M3x5.7_PcbScrew_9_H9",
    "group": "hardware",
    "color": [
     0.85,
     0.65,
     0.2
    ],
-   "file": "Insert_M3x5.7_PcbScrew_7.brep",
+   "file": "Insert_M3x5.7_PcbScrew_9_H9.brep",
+   "vol": 54.43751750140388
+  },
+  {
+   "name": "Screw_M3x16_PcbScrew_9_H9",
+   "group": "hardware",
+   "color": [
+    0.55,
+    0.55,
+    0.6
+   ],
+   "file": "Screw_M3x16_PcbScrew_9_H9.brep",
+   "vol": 184.3722188575511
+  },
+  {
+   "name": "Standoff_M3_10mm_PcbScrew_9_H9",
+   "group": "hardware",
+   "color": [
+    0.75,
+    0.75,
+    0.78
+   ],
+   "file": "Standoff_M3_10mm_PcbScrew_9_H9.brep",
+   "vol": 181.54791271289378
+  },
+  {
+   "name": "Insert_M3x5.7_PcbScrew_10_HA1",
+   "group": "hardware",
+   "color": [
+    0.85,
+    0.65,
+    0.2
+   ],
+   "file": "Insert_M3x5.7_PcbScrew_10_HA1.brep",
    "vol": 54.437517501403924
   },
   {
-   "name": "Screw_M3x12_PcbScrew_7",
+   "name": "Screw_M3x16_PcbScrew_10_HA1",
    "group": "hardware",
    "color": [
     0.55,
     0.55,
     0.6
    ],
-   "file": "Screw_M3x12_PcbScrew_7.brep",
-   "vol": 156.0978849752429
+   "file": "Screw_M3x16_PcbScrew_10_HA1.brep",
+   "vol": 184.372218857551
   },
   {
-   "name": "Standoff_M3_5mm_PcbScrew_7",
+   "name": "Standoff_M3_10mm_PcbScrew_10_HA1",
    "group": "hardware",
    "color": [
     0.75,
     0.75,
     0.78
    ],
-   "file": "Standoff_M3_5mm_PcbScrew_7.brep",
-   "vol": 95.64342496951122
+   "file": "Standoff_M3_10mm_PcbScrew_10_HA1.brep",
+   "vol": 181.54791271289372
   },
   {
-   "name": "Insert_M3x5.7_PcbScrew_8",
+   "name": "Insert_M3x5.7_PcbScrew_11_HA2",
    "group": "hardware",
    "color": [
     0.85,
     0.65,
     0.2
    ],
-   "file": "Insert_M3x5.7_PcbScrew_8.brep",
-   "vol": 54.4375175014039
-  },
-  {
-   "name": "Screw_M3x12_PcbScrew_8",
-   "group": "hardware",
-   "color": [
-    0.55,
-    0.55,
-    0.6
-   ],
-   "file": "Screw_M3x12_PcbScrew_8.brep",
-   "vol": 156.09788497524295
-  },
-  {
-   "name": "Standoff_M3_5mm_PcbScrew_8",
-   "group": "hardware",
-   "color": [
-    0.75,
-    0.75,
-    0.78
-   ],
-   "file": "Standoff_M3_5mm_PcbScrew_8.brep",
-   "vol": 95.64342496951102
-  },
-  {
-   "name": "Insert_M3x5.7_PcbScrew_9",
-   "group": "hardware",
-   "color": [
-    0.85,
-    0.65,
-    0.2
-   ],
-   "file": "Insert_M3x5.7_PcbScrew_9.brep",
-   "vol": 54.437517501403896
-  },
-  {
-   "name": "Screw_M3x12_PcbScrew_9",
-   "group": "hardware",
-   "color": [
-    0.55,
-    0.55,
-    0.6
-   ],
-   "file": "Screw_M3x12_PcbScrew_9.brep",
-   "vol": 156.09788497524283
-  },
-  {
-   "name": "Standoff_M3_5mm_PcbScrew_9",
-   "group": "hardware",
-   "color": [
-    0.75,
-    0.75,
-    0.78
-   ],
-   "file": "Standoff_M3_5mm_PcbScrew_9.brep",
-   "vol": 95.64342496951126
-  },
-  {
-   "name": "Insert_M3x5.7_PcbScrew_10",
-   "group": "hardware",
-   "color": [
-    0.85,
-    0.65,
-    0.2
-   ],
-   "file": "Insert_M3x5.7_PcbScrew_10.brep",
+   "file": "Insert_M3x5.7_PcbScrew_11_HA2.brep",
    "vol": 54.437517501403924
   },
   {
-   "name": "Screw_M3x12_PcbScrew_10",
+   "name": "Screw_M3x16_PcbScrew_11_HA2",
    "group": "hardware",
    "color": [
     0.55,
     0.55,
     0.6
    ],
-   "file": "Screw_M3x12_PcbScrew_10.brep",
-   "vol": 156.09788497524283
+   "file": "Screw_M3x16_PcbScrew_11_HA2.brep",
+   "vol": 184.372218857551
   },
   {
-   "name": "Standoff_M3_5mm_PcbScrew_10",
+   "name": "Standoff_M3_10mm_PcbScrew_11_HA2",
    "group": "hardware",
    "color": [
     0.75,
     0.75,
     0.78
    ],
-   "file": "Standoff_M3_5mm_PcbScrew_10.brep",
-   "vol": 95.64342496951107
+   "file": "Standoff_M3_10mm_PcbScrew_11_HA2.brep",
+   "vol": 181.54791271289372
   },
   {
    "name": "Insert_M3x5.7_LidScrew_1",
@@ -1164,7 +1494,7 @@
     0.6
    ],
    "file": "Screw_M3x10_LidScrew_3.brep",
-   "vol": 141.96071803408879
+   "vol": 141.96071803408876
   },
   {
    "name": "Insert_M3x5.7_LidScrew_4",
@@ -1186,7 +1516,7 @@
     0.6
    ],
    "file": "Screw_M3x10_LidScrew_4.brep",
-   "vol": 141.96071803408879
+   "vol": 141.96071803408876
   },
   {
    "name": "Insert_M3x5.7_LidScrew_5",
@@ -1208,7 +1538,7 @@
     0.6
    ],
    "file": "Screw_M3x10_LidScrew_5.brep",
-   "vol": 141.96071803408879
+   "vol": 141.96071803408876
   },
   {
    "name": "Insert_M3x5.7_LidScrew_6",
@@ -1230,7 +1560,7 @@
     0.6
    ],
    "file": "Screw_M3x10_LidScrew_6.brep",
-   "vol": 141.9607180340888
+   "vol": 141.96071803408879
   },
   {
    "name": "Insert_M3x5.7_LidScrew_7",
@@ -1252,7 +1582,95 @@
     0.6
    ],
    "file": "Screw_M3x10_LidScrew_7.brep",
-   "vol": 141.9607180340888
+   "vol": 141.96071803408879
+  },
+  {
+   "name": "Insert_M3x5.7_LidScrew_8",
+   "group": "hardware",
+   "color": [
+    0.85,
+    0.65,
+    0.2
+   ],
+   "file": "Insert_M3x5.7_LidScrew_8.brep",
+   "vol": 54.437517501403946
+  },
+  {
+   "name": "Screw_M3x10_LidScrew_8",
+   "group": "hardware",
+   "color": [
+    0.55,
+    0.55,
+    0.6
+   ],
+   "file": "Screw_M3x10_LidScrew_8.brep",
+   "vol": 141.96071803408876
+  },
+  {
+   "name": "Insert_M3x5.7_LidScrew_9",
+   "group": "hardware",
+   "color": [
+    0.85,
+    0.65,
+    0.2
+   ],
+   "file": "Insert_M3x5.7_LidScrew_9.brep",
+   "vol": 54.437517501403946
+  },
+  {
+   "name": "Screw_M3x10_LidScrew_9",
+   "group": "hardware",
+   "color": [
+    0.55,
+    0.55,
+    0.6
+   ],
+   "file": "Screw_M3x10_LidScrew_9.brep",
+   "vol": 141.96071803408876
+  },
+  {
+   "name": "Insert_M3x5.7_LidScrew_10",
+   "group": "hardware",
+   "color": [
+    0.85,
+    0.65,
+    0.2
+   ],
+   "file": "Insert_M3x5.7_LidScrew_10.brep",
+   "vol": 54.437517501403974
+  },
+  {
+   "name": "Screw_M3x10_LidScrew_10",
+   "group": "hardware",
+   "color": [
+    0.55,
+    0.55,
+    0.6
+   ],
+   "file": "Screw_M3x10_LidScrew_10.brep",
+   "vol": 141.96071803408873
+  },
+  {
+   "name": "Insert_M3x5.7_LidScrew_11",
+   "group": "hardware",
+   "color": [
+    0.85,
+    0.65,
+    0.2
+   ],
+   "file": "Insert_M3x5.7_LidScrew_11.brep",
+   "vol": 54.437517501403974
+  },
+  {
+   "name": "Screw_M3x10_LidScrew_11",
+   "group": "hardware",
+   "color": [
+    0.55,
+    0.55,
+    0.6
+   ],
+   "file": "Screw_M3x10_LidScrew_11.brep",
+   "vol": 141.96071803408873
   },
   {
    "name": "Insert_M3x5.7_Foot_1",
@@ -1390,8 +1808,9 @@
  "params": {
   "W": 163.0,
   "H": 100.0,
-  "D": 195.8,
+  "D": 206.6,
   "wall": 3.0,
+  "lid_t": 4.0,
   "pad_t": 11.0,
   "pad_w": 70.0,
   "drv_cx": 41.0,
@@ -1401,81 +1820,135 @@
   "cbore_d": 0.0,
   "cbore_h": 0.0,
   "ch_x": 58.0,
-  "ch_y0": 91.5917511832319,
+  "ch_y0": 101.39175118323189,
   "ch_top": 54.0,
   "roof": 3.0,
   "woof_cx": 0.0,
-  "woof_cy": 141.69587559161596,
+  "woof_cy": 151.49587559161594,
   "ap_w": 70.0,
   "ring_od": 86.0,
-  "ring_t": 4.5,
+  "ring_t": 5.5,
   "w_flange_od": 82.6,
   "w_flange_t": 4.0,
   "w_bc": 77.0,
   "w_hole": 3.5,
   "w_depth": 44.5,
   "boss_od": 8.0,
-  "boss_h": 4.5,
-  "pilot": 4.6,
+  "boss_h": 0.0,
+  "pilot": 4.0,
   "ins_od": 4.6,
   "ins_id": 3.0,
   "ins_l": 5.7,
-  "pcb_w": 136.9,
-  "pcb_d": 127.8,
+  "pcb_w": 127.5,
+  "pcb_d": 137.6,
   "pcb_t": 1.6,
   "pcb_cx": -3.5,
-  "pcb_cy": 128.4,
-  "pcb_hole": [
-   47.0,
-   29.5
-  ],
-  "standoff": 5.0,
+  "pcb_cy": 133.3,
+  "standoff": 10.0,
   "grille_t": 0.8,
   "hole_d": 2.0,
   "hole_pitch": 3.0,
+  "rocker_x": 66.0,
+  "rocker_z": 80.0,
+  "pcb_pilot_l": 6.7,
+  "w_recess": 1.0,
+  "w_recess_d": 83.4,
+  "drv_gasket": 0.5,
+  "drv_gasket_sq": 63.0,
+  "groove_w": 2.0,
+  "groove_d": 1.5,
+  "floor_groove": 1.0,
+  "groove_clr": 0.2,
+  "shelf_y0": 76.0,
+  "grom_x": 40.0,
+  "grom_z": 40.0,
+  "grom_d": 6.0,
+  "grom_boss_od": 14.0,
+  "grom_web": 1.6,
+  "grom_cb": 10.0,
+  "fillet_out": 2.0,
+  "fillet_in": 1.0,
+  "cut_chamfer": 0.5,
+  "usb_cut": [
+   12.0,
+   7.0,
+   2.0
+  ],
+  "jack_bore": 8.5,
+  "jack_cb": [
+   11.0,
+   2.5
+  ],
+  "sw100_bore": 5.0,
+  "min_web": 1.6,
+  "rocker_bore": 20.2,
+  "rocker_panel": 2.0,
+  "rocker_cb": 25.0,
+  "cell_r": 10.85,
+  "cell_l": 70.2,
+  "cradle_gap": 0.3,
   "pcb_holes": [
    [
-    -57.1,
-    -19.800000000000004
+    -10.6,
+    -39.6
    ],
    [
-    8.4,
-    -22.20000000000001
+    6.2,
+    -8.4
    ],
    [
-    -19.0,
-    48.8
+    19.2,
+    -39.5
    ],
    [
-    7.800000000000006,
-    7.799999999999997
+    -10.6,
+    -24.6
+   ],
+   [
+    61.2,
+    38.8
    ],
    [
     44.9,
-    -3.000000000000007
+    -15.2
    ],
    [
-    44.9,
-    4.799999999999997
+    -9.0,
+    53.7
    ],
    [
-    14.800000000000006,
-    -46.50000000000001
+    -30.1,
+    2.9
    ],
    [
-    45.9,
-    28.799999999999997
+    -55.25,
+    28.8
    ],
    [
-    -25.055000000000007,
-    -37.70499999999999
+    -37.495,
+    -50.805
    ],
    [
-    38.745000000000005,
-    -37.70499999999999
+    45.295,
+    -50.805
    ]
-  ]
+  ],
+  "pcb_hole_names": [
+   "H1",
+   "H2",
+   "H3",
+   "H4",
+   "H5",
+   "H6",
+   "H7",
+   "H8",
+   "H9",
+   "HA1",
+   "HA2"
+  ],
+  "YB": 202.6
  },
+ "detail": true,
  "standins": [
   "J5",
   "J9",
@@ -1483,144 +1956,682 @@
   "J11",
   "SW100"
  ],
+ "zfix": {
+  "L3": 1.399,
+  "U1": -5.408,
+  "L2": 1.399
+ },
+ "skipped": [
+  "lid web J1/SW100 0.41 mm < 1.6: openings joined (keyhole); no chamfer on the joining edges"
+ ],
+ "prints": [
+  {
+   "name": "shell",
+   "file": "ai-files/cad/print/DesktopSpeaker_shell.stl",
+   "orient": "baffle_down",
+   "supports": "none (cavity walls vertical; lid bosses have 45 deg lead-ins; cradle ribs start on the baffle)",
+   "size": [
+    163.0,
+    100.0,
+    202.6
+   ],
+   "volume_cm3": 384.2,
+   "facets": 15763,
+   "solids": 1,
+   "valid": true
+  },
+  {
+   "name": "lid",
+   "file": "ai-files/cad/print/DesktopSpeaker_lid.stl",
+   "orient": "outer_face_down",
+   "supports": "none (jack counterbore floors bridge 1.25 mm; chamfers on the bed side)",
+   "size": [
+    163.0,
+    100.0,
+    4.0
+   ],
+   "volume_cm3": 59.7,
+   "facets": 7718,
+   "solids": 1,
+   "valid": true
+  },
+  {
+   "name": "woofer_chamber_insert",
+   "file": "ai-files/cad/print/DesktopSpeaker_woofer_chamber_insert.stl",
+   "orient": "roof_down",
+   "supports": "none (shelf gussets and bosses grow from the roof)",
+   "size": [
+    122.0,
+    126.6,
+    55.0
+   ],
+   "volume_cm3": 100.9,
+   "facets": 6908,
+   "solids": 1,
+   "valid": true
+  }
+ ],
+ "lid_cutouts": [
+  {
+   "ref": "J1",
+   "kind": "USB-C plug clearance",
+   "shape": "rrect",
+   "cx": -1.77,
+   "cz": 70.25120000000001,
+   "w": 12.0,
+   "h": 7.0,
+   "r": 2.0,
+   "body": [
+    9.1,
+    3.36
+   ],
+   "body_ymax": 203.32
+  },
+  {
+   "ref": "J2",
+   "kind": "3.5 mm jack bore",
+   "shape": "circle",
+   "cx": 30.980000000000004,
+   "cz": 71.1012,
+   "d": 8.5,
+   "cb": [
+    11.0,
+    2.5
+   ],
+   "body": [
+    6.0,
+    6.0
+   ],
+   "body_ymax": 201.76
+  },
+  {
+   "ref": "J3",
+   "kind": "3.5 mm jack bore",
+   "shape": "circle",
+   "cx": 44.379999999999995,
+   "cz": 71.1012,
+   "d": 8.5,
+   "cb": [
+    11.0,
+    2.5
+   ],
+   "body": [
+    6.0,
+    6.0
+   ],
+   "body_ymax": 201.76
+  },
+  {
+   "ref": "SW100",
+   "kind": "tact plunger (stand-in)",
+   "shape": "circle",
+   "cx": -10.68,
+   "cz": 70.35,
+   "d": 5.0,
+   "body": [
+    2.5,
+    2.5
+   ],
+   "body_ymax": 204.6,
+   "joined": "J1"
+  },
+  {
+   "ref": "SW101",
+   "kind": "rocker D20 panel hole",
+   "shape": "circle",
+   "cx": 66.0,
+   "cz": 80.0,
+   "d": 20.2,
+   "body": [
+    19.6,
+    19.6
+   ],
+   "body_ymax": null
+  }
+ ],
+ "cradle": {
+  "rib_y1": 59.61848122046001,
+  "xs": -4.5,
+  "strap_w": 20,
+  "tunnel": [
+   22,
+   2.5
+  ]
+ },
+ "harness": {
+  "j5": [
+   [
+    64.0,
+    117.495,
+    73.1
+   ],
+   [
+    70.0,
+    117.495,
+    73.1
+   ],
+   [
+    70.0,
+    117.495,
+    17.85
+   ],
+   [
+    70.0,
+    33.0,
+    17.85
+   ],
+   [
+    39.0,
+    33.0,
+    17.85
+   ]
+  ],
+  "woofer": [
+   [
+    41.795,
+    69.69500000000002,
+    81.1
+   ],
+   [
+    41.795,
+    69.69500000000002,
+    84.6
+   ],
+   [
+    41.795,
+    60.000000000000014,
+    84.6
+   ],
+   [
+    41.795,
+    60.000000000000014,
+    40.0
+   ],
+   [
+    40.0,
+    60.000000000000014,
+    40.0
+   ],
+   [
+    40.0,
+    110.39175118323189,
+    40.0
+   ],
+   [
+    30.0,
+    119.99587559161594,
+    25.0
+   ]
+  ]
+ },
+ "screws": {
+  "M3x10": 23,
+  "M3x16": 11
+ },
+ "board_step": "ai-files/cad/parts/DesktopSpeaker-board.step",
  "pcb": {
-  "top": 68.1,
-  "bot": 66.5,
+  "top": 68.6,
+  "bot": 67.0,
   "cx": -3.5,
-  "cy": 128.4
+  "cy": 133.3,
+  "rear_edge": 202.1
  },
  "sites": [
   {
    "name": "DrvScrew_L1",
-   "kind": "drv"
+   "kind": "drv",
+   "body": "shell",
+   "p": [
+    -17.6,
+    11.0,
+    84.95
+   ],
+   "engage": 9.25,
+   "post": false
   },
   {
    "name": "DrvScrew_L2",
-   "kind": "drv"
+   "kind": "drv",
+   "body": "shell",
+   "p": [
+    -17.6,
+    11.0,
+    38.15
+   ],
+   "engage": 9.25,
+   "post": false
   },
   {
    "name": "DrvScrew_L3",
-   "kind": "drv"
+   "kind": "drv",
+   "body": "shell",
+   "p": [
+    -64.4,
+    11.0,
+    84.95
+   ],
+   "engage": 9.25,
+   "post": false
   },
   {
    "name": "DrvScrew_L4",
-   "kind": "drv"
+   "kind": "drv",
+   "body": "shell",
+   "p": [
+    -64.4,
+    11.0,
+    38.15
+   ],
+   "engage": 9.25,
+   "post": false
   },
   {
    "name": "DrvScrew_R1",
-   "kind": "drv"
+   "kind": "drv",
+   "body": "shell",
+   "p": [
+    64.4,
+    11.0,
+    84.95
+   ],
+   "engage": 9.25,
+   "post": false
   },
   {
    "name": "DrvScrew_R2",
-   "kind": "drv"
+   "kind": "drv",
+   "body": "shell",
+   "p": [
+    64.4,
+    11.0,
+    38.15
+   ],
+   "engage": 9.25,
+   "post": false
   },
   {
    "name": "DrvScrew_R3",
-   "kind": "drv"
+   "kind": "drv",
+   "body": "shell",
+   "p": [
+    17.6,
+    11.0,
+    84.95
+   ],
+   "engage": 9.25,
+   "post": false
   },
   {
    "name": "DrvScrew_R4",
-   "kind": "drv"
+   "kind": "drv",
+   "body": "shell",
+   "p": [
+    17.6,
+    11.0,
+    38.15
+   ],
+   "engage": 9.25,
+   "post": false
   },
   {
    "name": "WoofScrew_1",
-   "kind": "woof"
+   "kind": "woof",
+   "body": "shell",
+   "p": [
+    27.22,
+    178.72,
+    7.5
+   ],
+   "engage": 6.0,
+   "post": false
   },
   {
    "name": "WoofScrew_2",
-   "kind": "woof"
+   "kind": "woof",
+   "body": "shell",
+   "p": [
+    -27.22,
+    178.72,
+    7.5
+   ],
+   "engage": 6.0,
+   "post": false
   },
   {
    "name": "WoofScrew_3",
-   "kind": "woof"
+   "kind": "woof",
+   "body": "shell",
+   "p": [
+    -27.22,
+    124.27,
+    7.5
+   ],
+   "engage": 6.0,
+   "post": false
   },
   {
    "name": "WoofScrew_4",
-   "kind": "woof"
+   "kind": "woof",
+   "body": "shell",
+   "p": [
+    27.22,
+    124.27,
+    7.5
+   ],
+   "engage": 6.0,
+   "post": false
   },
   {
-   "name": "PcbScrew_1",
-   "kind": "pcb"
+   "name": "PcbScrew_1_H1",
+   "kind": "pcb",
+   "body": "insert",
+   "p": [
+    -14.1,
+    93.7,
+    57.0
+   ],
+   "engage": 4.4,
+   "post": false
   },
   {
-   "name": "PcbScrew_2",
-   "kind": "pcb"
+   "name": "PcbScrew_2_H2",
+   "kind": "pcb",
+   "body": "insert",
+   "p": [
+    2.7,
+    124.9,
+    57.0
+   ],
+   "engage": 4.4,
+   "post": false
   },
   {
-   "name": "PcbScrew_3",
-   "kind": "pcb"
+   "name": "PcbScrew_3_H3",
+   "kind": "pcb",
+   "body": "insert",
+   "p": [
+    15.7,
+    93.8,
+    57.0
+   ],
+   "engage": 4.4,
+   "post": false
   },
   {
-   "name": "PcbScrew_4",
-   "kind": "pcb"
+   "name": "PcbScrew_4_H4",
+   "kind": "pcb",
+   "body": "insert",
+   "p": [
+    -14.1,
+    108.7,
+    57.0
+   ],
+   "engage": 4.4,
+   "post": false
   },
   {
-   "name": "PcbScrew_5",
-   "kind": "pcb"
+   "name": "PcbScrew_5_H5",
+   "kind": "pcb",
+   "body": "insert",
+   "p": [
+    57.7,
+    172.1,
+    57.0
+   ],
+   "engage": 4.4,
+   "post": false
   },
   {
-   "name": "PcbScrew_6",
-   "kind": "pcb"
+   "name": "PcbScrew_6_H6",
+   "kind": "pcb",
+   "body": "insert",
+   "p": [
+    41.4,
+    118.1,
+    57.0
+   ],
+   "engage": 4.4,
+   "post": false
   },
   {
-   "name": "PcbScrew_7",
-   "kind": "pcb"
+   "name": "PcbScrew_7_H7",
+   "kind": "pcb",
+   "body": "insert",
+   "p": [
+    -12.5,
+    187.0,
+    57.0
+   ],
+   "engage": 4.4,
+   "post": false
   },
   {
-   "name": "PcbScrew_8",
-   "kind": "pcb"
+   "name": "PcbScrew_8_H8",
+   "kind": "pcb",
+   "body": "insert",
+   "p": [
+    -33.6,
+    136.2,
+    57.0
+   ],
+   "engage": 4.4,
+   "post": false
   },
   {
-   "name": "PcbScrew_9",
-   "kind": "pcb"
+   "name": "PcbScrew_9_H9",
+   "kind": "pcb",
+   "body": "insert",
+   "p": [
+    -58.75,
+    162.1,
+    57.0
+   ],
+   "engage": 4.4,
+   "post": false
   },
   {
-   "name": "PcbScrew_10",
-   "kind": "pcb"
+   "name": "PcbScrew_10_HA1",
+   "kind": "pcb",
+   "body": "insert",
+   "p": [
+    -40.99,
+    82.5,
+    57.0
+   ],
+   "engage": 4.4,
+   "post": false
+  },
+  {
+   "name": "PcbScrew_11_HA2",
+   "kind": "pcb",
+   "body": "insert",
+   "p": [
+    41.8,
+    82.5,
+    57.0
+   ],
+   "engage": 4.4,
+   "post": false
   },
   {
    "name": "LidScrew_1",
-   "kind": "lid"
+   "kind": "lid",
+   "body": "shell",
+   "p": [
+    -74.0,
+    202.6,
+    7.5
+   ],
+   "engage": 6.0,
+   "post": false
   },
   {
    "name": "LidScrew_2",
-   "kind": "lid"
+   "kind": "lid",
+   "body": "shell",
+   "p": [
+    74.0,
+    202.6,
+    7.5
+   ],
+   "engage": 6.0,
+   "post": false
   },
   {
    "name": "LidScrew_3",
-   "kind": "lid"
+   "kind": "lid",
+   "body": "shell",
+   "p": [
+    -74.0,
+    202.6,
+    92.5
+   ],
+   "engage": 6.0,
+   "post": false
   },
   {
    "name": "LidScrew_4",
-   "kind": "lid"
+   "kind": "lid",
+   "body": "shell",
+   "p": [
+    74.0,
+    202.6,
+    92.5
+   ],
+   "engage": 6.0,
+   "post": false
   },
   {
    "name": "LidScrew_5",
-   "kind": "lid"
+   "kind": "lid",
+   "body": "shell",
+   "p": [
+    0.0,
+    202.6,
+    92.5
+   ],
+   "engage": 6.0,
+   "post": false
   },
   {
    "name": "LidScrew_6",
-   "kind": "lid"
+   "kind": "lid",
+   "body": "shell",
+   "p": [
+    -50.0,
+    202.6,
+    7.5
+   ],
+   "engage": 6.0,
+   "post": false
   },
   {
    "name": "LidScrew_7",
-   "kind": "lid"
+   "kind": "lid",
+   "body": "shell",
+   "p": [
+    50.0,
+    202.6,
+    7.5
+   ],
+   "engage": 6.0,
+   "post": false
+  },
+  {
+   "name": "LidScrew_8",
+   "kind": "lid",
+   "body": "shell",
+   "p": [
+    -70.0,
+    202.6,
+    45.0
+   ],
+   "engage": 6.0,
+   "post": false
+  },
+  {
+   "name": "LidScrew_9",
+   "kind": "lid",
+   "body": "shell",
+   "p": [
+    70.0,
+    202.6,
+    45.0
+   ],
+   "engage": 6.0,
+   "post": false
+  },
+  {
+   "name": "LidScrew_10",
+   "kind": "lid",
+   "body": "insert",
+   "p": [
+    -30.0,
+    202.6,
+    50.0
+   ],
+   "engage": 6.0,
+   "post": false
+  },
+  {
+   "name": "LidScrew_11",
+   "kind": "lid",
+   "body": "insert",
+   "p": [
+    30.0,
+    202.6,
+    50.0
+   ],
+   "engage": 6.0,
+   "post": false
   },
   {
    "name": "Foot_1",
-   "kind": "foot"
+   "kind": "foot",
+   "body": "shell",
+   "p": [
+    -68.0,
+    25.0,
+    0.0
+   ],
+   "engage": null,
+   "post": false
   },
   {
    "name": "Foot_2",
-   "kind": "foot"
+   "kind": "foot",
+   "body": "shell",
+   "p": [
+    68.0,
+    25.0,
+    0.0
+   ],
+   "engage": null,
+   "post": false
   },
   {
    "name": "Foot_3",
-   "kind": "foot"
+   "kind": "foot",
+   "body": "shell",
+   "p": [
+    -68.0,
+    135.0,
+    0.0
+   ],
+   "engage": null,
+   "post": false
   },
   {
    "name": "Foot_4",
-   "kind": "foot"
+   "kind": "foot",
+   "body": "shell",
+   "p": [
+    68.0,
+    135.0,
+    0.0
+   ],
+   "engage": null,
+   "post": false
   }
  ]
 }

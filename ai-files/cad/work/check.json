@@ -1,24 +1,36 @@
 {
  "woof_gross": 581000.0000000001,
- "woof_disp": 55892.52403153225,
- "woof_net": 525107.4759684679,
- "main_gross": 2134308.4567951313,
- "main_disp": 219132.5572165379,
- "main_net": 1915175.8995785934,
- "total_internal": 2801068.4000000004,
- "ext": 3191540.0,
+ "woof_disp": 59548.82129197411,
+ "woof_net": 521451.178708026,
+ "main_gross": 2278936.856795131,
+ "main_disp": 235042.7231302921,
+ "main_net": 2043894.1336648392,
+ "total_internal": 2945696.8,
+ "ext": 3367580.0,
  "items_w": [
   [
    "Shell_Box",
-   9575.879026395844
+   10528.639757973287
+  ],
+  [
+   "Insert_woofer_chamber",
+   2069.7523719375363
   ],
   [
    "Woofer_W3-2052SC_standin",
    45411.47048022819
   ],
   [
+   "Harness_woofer_leads_schematic",
+   186.52896951702382
+  ],
+  [
+   "Grommet_6mm_standin",
+   57.396897781085585
+  ],
+  [
    "Insert_M3x5.7_WoofScrew_1",
-   42.97698750110835
+   42.97698750110833
   ],
   [
    "Screw_M3x10_WoofScrew_1",
@@ -30,11 +42,11 @@
   ],
   [
    "Screw_M3x10_WoofScrew_2",
-   131.35784282822337
+   131.3578428282234
   ],
   [
    "Insert_M3x5.7_WoofScrew_3",
-   42.97698750110836
+   42.976987501108376
   ],
   [
    "Screw_M3x10_WoofScrew_3",
@@ -42,11 +54,67 @@
   ],
   [
    "Insert_M3x5.7_WoofScrew_4",
-   42.976987501108376
+   42.97698750110836
   ],
   [
    "Screw_M3x10_WoofScrew_4",
    131.35784282822328
+  ],
+  [
+   "Insert_M3x5.7_PcbScrew_2_H2",
+   25.78619250066503
+  ],
+  [
+   "Screw_M3x16_PcbScrew_2_H2",
+   9.896016858807894
+  ],
+  [
+   "Insert_M3x5.7_PcbScrew_4_H4",
+   25.78619250066503
+  ],
+  [
+   "Screw_M3x16_PcbScrew_4_H4",
+   9.896016858807894
+  ],
+  [
+   "Insert_M3x5.7_PcbScrew_5_H5",
+   14.194802521675243
+  ],
+  [
+   "Screw_M3x16_PcbScrew_5_H5",
+   6.199557295077746
+  ],
+  [
+   "Insert_M3x5.7_PcbScrew_6_H6",
+   25.78619250066503
+  ],
+  [
+   "Screw_M3x16_PcbScrew_6_H6",
+   9.896016858807894
+  ],
+  [
+   "Insert_M3x5.7_PcbScrew_7_H7",
+   25.786192500665017
+  ],
+  [
+   "Screw_M3x16_PcbScrew_7_H7",
+   9.8960168588079
+  ],
+  [
+   "Insert_M3x5.7_PcbScrew_8_H8",
+   25.786192500665024
+  ],
+  [
+   "Screw_M3x16_PcbScrew_8_H8",
+   9.896016858807899
+  ],
+  [
+   "Insert_M3x5.7_PcbScrew_9_H9",
+   9.557331030735478
+  ],
+  [
+   "Screw_M3x16_PcbScrew_9_H9",
+   1.9346822753088029
   ],
   [
    "Insert_M3x5.7_LidScrew_6",
@@ -54,7 +122,7 @@
   ],
   [
    "Screw_M3x10_LidScrew_6",
-   49.48008429403927
+   42.411500823462234
   ],
   [
    "Insert_M3x5.7_LidScrew_7",
@@ -62,13 +130,33 @@
   ],
   [
    "Screw_M3x10_LidScrew_7",
-   49.48008429403927
+   42.411500823462234
+  ],
+  [
+   "Insert_M3x5.7_LidScrew_10",
+   54.43751750140398
+  ],
+  [
+   "Screw_M3x10_LidScrew_10",
+   42.411500823462205
+  ],
+  [
+   "Insert_M3x5.7_LidScrew_11",
+   54.43751750140398
+  ],
+  [
+   "Screw_M3x10_LidScrew_11",
+   42.411500823462205
   ]
  ],
  "items_m": [
   [
    "Shell_Box",
-   44168.01128426502
+   46881.04679281745
+  ],
+  [
+   "Insert_woofer_chamber",
+   12587.966239631862
   ],
   [
    "Driver_FrontL_ND65-4",
@@ -91,104 +179,196 @@
    2343.6
   ],
   [
-   "PCB_136.9x127.8x1.6",
-   27864.63236490887
+   "PCB_127.5x137.6x1.6",
+   26273.35384595907
   ],
   [
-   "PCB_U1",
-   366.7022977584923
+   "PCB_U15",
+   5.885366080836377
   ],
   [
-   "PCB_U3",
-   136.63488111154047
+   "PCB_U16",
+   6.480480466548713
   ],
   [
-   "PCB_U2",
-   107.97488460961478
+   "PCB_Q102",
+   4.402523112082192
   ],
   [
-   "PCB_U24",
-   49.35756285188196
+   "PCB_Q104",
+   4.402523112082188
   ],
   [
-   "PCB_L200",
-   429.3487369708282
+   "PCB_L202",
+   1095.1677316326077
   ],
   [
-   "PCB_C275",
-   500.09212403026316
+   "PCB_J2_3.5mm_jack",
+   283.2878405655523
+  ],
+  [
+   "PCB_Q101",
+   4.402523112082188
   ],
   [
    "PCB_L201",
    1095.1677316326075
   ],
   [
-   "PCB_L202",
-   1095.1677316326075
-  ],
-  [
-   "PCB_L203",
-   1095.167731632608
-  ],
-  [
-   "PCB_L204",
-   1095.167731632608
-  ],
-  [
-   "PCB_L205",
-   1095.1677316326077
+   "PCB_J6",
+   78.76443754666701
   ],
   [
    "PCB_L206",
+   1095.167731632607
+  ],
+  [
+   "PCB_Y200",
+   4.858760851885207
+  ],
+  [
+   "PCB_U14",
+   5.885366080836374
+  ],
+  [
+   "PCB_J1_USB-C",
+   120.04905670629527
+  ],
+  [
+   "PCB_L203",
+   1095.1677316326072
+  ],
+  [
+   "PCB_U20",
+   1.501023960033325
+  ],
+  [
+   "PCB_U4",
+   15.678858433849985
+  ],
+  [
+   "PCB_U22",
+   6.480480466548714
+  ],
+  [
+   "PCB_U19",
+   7.184804126147879
+  ],
+  [
+   "PCB_Q100",
+   4.402523112082191
+  ],
+  [
+   "PCB_U9",
+   8.516849413538278
+  ],
+  [
+   "PCB_Q103",
+   7.554232519623269
+  ],
+  [
+   "PCB_U3",
+   136.63488116654912
+  ],
+  [
+   "PCB_U8",
+   8.516849413538285
+  ],
+  [
+   "PCB_U11",
+   18.95050387061442
+  ],
+  [
+   "PCB_SW102",
+   1120.5192950663695
+  ],
+  [
+   "PCB_U13",
+   6.480480466548707
+  ],
+  [
+   "PCB_U10",
+   6.654939743903268
+  ],
+  [
+   "PCB_U23",
+   6.565613634439697
+  ],
+  [
+   "PCB_L204",
    1095.1677316326075
+  ],
+  [
+   "PCB_L200",
+   429.3487369708282
+  ],
+  [
+   "PCB_U21",
+   4.402523112082189
+  ],
+  [
+   "PCB_U2",
+   107.97488460961203
+  ],
+  [
+   "PCB_U5",
+   3.033440340866088
+  ],
+  [
+   "PCB_L3",
+   28.266196957809804
+  ],
+  [
+   "PCB_J4",
+   78.76443754666697
+  ],
+  [
+   "PCB_U1",
+   366.7022977584886
+  ],
+  [
+   "PCB_C275",
+   239.89359893574036
   ],
   [
    "PCB_L1",
    95.41091827620352
   ],
   [
-   "PCB_L2",
-   28.266196957809672
+   "PCB_U17",
+   6.480480466548712
   ],
   [
-   "PCB_L3",
-   28.266196957809672
+   "PCB_U12",
+   6.480480466548705
   ],
   [
-   "PCB_U4",
-   15.678858433849966
+   "PCB_L205",
+   1095.1677316326075
   ],
   [
-   "PCB_U11",
-   18.95050387061446
-  ],
-  [
-   "PCB_J4",
-   78.76443754666711
-  ],
-  [
-   "PCB_J6",
-   78.76443754666714
+   "PCB_Y170",
+   4.858760851885206
   ],
   [
    "PCB_J8",
-   98.45554693333631
+   98.45554693333648
   ],
   [
-   "PCB_SW102",
-   1120.5192950663682
-  ],
-  [
-   "PCB_J1_USB-C",
-   120.04905670629608
-  ],
-  [
-   "PCB_J2_3.5mm_jack",
-   283.28784056555196
+   "PCB_U24",
+   49.35756285188245
   ],
   [
    "PCB_J3_3.5mm_jack",
-   283.2878405655523
+   283.2878405655518
+  ],
+  [
+   "PCB_L2",
+   28.2661969578098
+  ],
+  [
+   "PCB_smallparts_root",
+   239.0121562183878
   ],
   [
    "PCB_J5_MicroFit3_standin",
@@ -196,11 +376,11 @@
   ],
   [
    "PCB_J9_JST_B2P-VH_standin",
-   959.9085000000001
+   959.9085000000007
   ],
   [
    "PCB_J10_JST_B2P-VH_standin",
-   959.9085000000003
+   959.9085000000002
   ],
   [
    "PCB_J11_JST_B2P-VH_standin",
@@ -216,11 +396,15 @@
   ],
   [
    "SW101_rocker_D20_standin",
-   5732.652610564513
+   5430.934052113749
   ],
   [
    "Harness_J5_to_pack_schematic",
-   1775.2699389259492
+   2214.175912343707
+  ],
+  [
+   "Harness_woofer_leads_schematic",
+   709.9077821936614
   ],
   [
    "Insert_M3x5.7_DrvScrew_L1",
@@ -287,124 +471,108 @@
    133.12498869586753
   ],
   [
-   "Insert_M3x5.7_PcbScrew_1",
-   47.933180485821566
-  ],
-  [
-   "Screw_M3x12_PcbScrew_1",
-   151.8499625393075
-  ],
-  [
-   "Standoff_M3_5mm_PcbScrew_1",
-   95.64342496951099
-  ],
-  [
-   "Insert_M3x5.7_PcbScrew_2",
-   42.97698750110837
-  ],
-  [
-   "Screw_M3x12_PcbScrew_2",
-   149.73615985172353
-  ],
-  [
-   "Standoff_M3_5mm_PcbScrew_2",
-   95.64342496951113
-  ],
-  [
-   "Insert_M3x5.7_PcbScrew_3",
-   42.97698750110834
-  ],
-  [
-   "Screw_M3x12_PcbScrew_3",
-   149.73615985172358
-  ],
-  [
-   "Standoff_M3_5mm_PcbScrew_3",
-   95.64342496951119
-  ],
-  [
-   "Insert_M3x5.7_PcbScrew_4",
-   42.976987501108354
-  ],
-  [
-   "Screw_M3x12_PcbScrew_4",
-   149.7361598517236
-  ],
-  [
-   "Standoff_M3_5mm_PcbScrew_4",
-   95.64342496951109
-  ],
-  [
-   "Insert_M3x5.7_PcbScrew_5",
-   42.976987501108376
-  ],
-  [
-   "Screw_M3x12_PcbScrew_5",
-   149.73615985172353
-  ],
-  [
-   "Standoff_M3_5mm_PcbScrew_5",
-   95.64342496951102
-  ],
-  [
-   "Insert_M3x5.7_PcbScrew_6",
-   42.976987501108354
-  ],
-  [
-   "Screw_M3x12_PcbScrew_6",
-   149.73615985172358
-  ],
-  [
-   "Standoff_M3_5mm_PcbScrew_6",
-   95.64342496951099
-  ],
-  [
-   "Insert_M3x5.7_PcbScrew_7",
+   "Insert_M3x5.7_PcbScrew_1_H1",
    54.43751750140396
   ],
   [
-   "Screw_M3x12_PcbScrew_7",
-   156.09788497524298
+   "Screw_M3x16_PcbScrew_1_H1",
+   184.3722188575511
   ],
   [
-   "Standoff_M3_5mm_PcbScrew_7",
-   95.64342496951114
+   "Standoff_M3_10mm_PcbScrew_1_H1",
+   181.54791271289395
   ],
   [
-   "Insert_M3x5.7_PcbScrew_8",
-   42.976987501108354
+   "Screw_M3x16_PcbScrew_2_H2",
+   153.27045158701205
   ],
   [
-   "Screw_M3x12_PcbScrew_8",
-   149.73615985172358
+   "Standoff_M3_10mm_PcbScrew_2_H2",
+   181.54791271289383
   ],
   [
-   "Standoff_M3_5mm_PcbScrew_8",
-   95.64342496951097
+   "Insert_M3x5.7_PcbScrew_3_H3",
+   54.43751750140396
   ],
   [
-   "Insert_M3x5.7_PcbScrew_9",
-   50.50478994665447
+   "Screw_M3x16_PcbScrew_3_H3",
+   184.37221885755113
   ],
   [
-   "Screw_M3x12_PcbScrew_9",
-   155.1850876034494
+   "Standoff_M3_10mm_PcbScrew_3_H3",
+   181.54791271289398
   ],
   [
-   "Standoff_M3_5mm_PcbScrew_9",
-   95.64342496951119
+   "Screw_M3x16_PcbScrew_4_H4",
+   153.27045158701205
   ],
   [
-   "Insert_M3x5.7_PcbScrew_10",
-   50.50478994665447
+   "Standoff_M3_10mm_PcbScrew_4_H4",
+   181.54791271289395
   ],
   [
-   "Screw_M3x12_PcbScrew_10",
-   155.1850876034492
+   "Screw_M3x16_PcbScrew_5_H5",
+   153.27045158701216
   ],
   [
-   "Standoff_M3_5mm_PcbScrew_10",
-   95.64342496951099
+   "Standoff_M3_10mm_PcbScrew_5_H5",
+   181.54791271289372
+  ],
+  [
+   "Screw_M3x16_PcbScrew_6_H6",
+   153.27045158701205
+  ],
+  [
+   "Standoff_M3_10mm_PcbScrew_6_H6",
+   181.5479127128936
+  ],
+  [
+   "Screw_M3x16_PcbScrew_7_H7",
+   153.27045158701213
+  ],
+  [
+   "Standoff_M3_10mm_PcbScrew_7_H7",
+   181.547912712894
+  ],
+  [
+   "Screw_M3x16_PcbScrew_8_H8",
+   153.27045158701216
+  ],
+  [
+   "Standoff_M3_10mm_PcbScrew_8_H8",
+   181.54791271289375
+  ],
+  [
+   "Screw_M3x16_PcbScrew_9_H9",
+   153.2704515870121
+  ],
+  [
+   "Standoff_M3_10mm_PcbScrew_9_H9",
+   181.54791271289375
+  ],
+  [
+   "Insert_M3x5.7_PcbScrew_10_HA1",
+   54.43751750140397
+  ],
+  [
+   "Screw_M3x16_PcbScrew_10_HA1",
+   184.3722188575511
+  ],
+  [
+   "Standoff_M3_10mm_PcbScrew_10_HA1",
+   181.5479127128936
+  ],
+  [
+   "Insert_M3x5.7_PcbScrew_11_HA2",
+   54.43751750140397
+  ],
+  [
+   "Screw_M3x16_PcbScrew_11_HA2",
+   184.3722188575511
+  ],
+  [
+   "Standoff_M3_10mm_PcbScrew_11_HA2",
+   181.5479127128936
   ],
   [
    "Insert_M3x5.7_LidScrew_1",
@@ -412,7 +580,7 @@
   ],
   [
    "Screw_M3x10_LidScrew_1",
-   49.48008429403927
+   42.41150082346224
   ],
   [
    "Insert_M3x5.7_LidScrew_2",
@@ -420,7 +588,7 @@
   ],
   [
    "Screw_M3x10_LidScrew_2",
-   49.48008429403927
+   42.41150082346224
   ],
   [
    "Insert_M3x5.7_LidScrew_3",
@@ -428,7 +596,7 @@
   ],
   [
    "Screw_M3x10_LidScrew_3",
-   49.48008429403927
+   42.411500823462234
   ],
   [
    "Insert_M3x5.7_LidScrew_4",
@@ -436,7 +604,7 @@
   ],
   [
    "Screw_M3x10_LidScrew_4",
-   49.48008429403927
+   42.411500823462234
   ],
   [
    "Insert_M3x5.7_LidScrew_5",
@@ -444,7 +612,23 @@
   ],
   [
    "Screw_M3x10_LidScrew_5",
-   49.48008429403925
+   42.41150082346222
+  ],
+  [
+   "Insert_M3x5.7_LidScrew_8",
+   54.43751750140396
+  ],
+  [
+   "Screw_M3x10_LidScrew_8",
+   42.411500823462234
+  ],
+  [
+   "Insert_M3x5.7_LidScrew_9",
+   54.43751750140396
+  ],
+  [
+   "Screw_M3x10_LidScrew_9",
+   42.411500823462234
   ],
   [
    "Insert_M3x5.7_Foot_1",
@@ -482,46 +666,412 @@
  "overlaps": [],
  "intended": [
   [
-   "PCB_136.9x127.8x1.6",
+   "Shell_Box",
+   "Insert_M3x5.7_DrvScrew_L1",
+   23.1,
+   "heat-set insert (OD 4.6) melted into a 4.0 mm pilot"
+  ],
+  [
+   "Shell_Box",
+   "Insert_M3x5.7_DrvScrew_L2",
+   23.1,
+   "heat-set insert (OD 4.6) melted into a 4.0 mm pilot"
+  ],
+  [
+   "Shell_Box",
+   "Insert_M3x5.7_DrvScrew_L3",
+   23.1,
+   "heat-set insert (OD 4.6) melted into a 4.0 mm pilot"
+  ],
+  [
+   "Shell_Box",
+   "Insert_M3x5.7_DrvScrew_L4",
+   23.1,
+   "heat-set insert (OD 4.6) melted into a 4.0 mm pilot"
+  ],
+  [
+   "Shell_Box",
+   "Insert_M3x5.7_DrvScrew_R1",
+   23.1,
+   "heat-set insert (OD 4.6) melted into a 4.0 mm pilot"
+  ],
+  [
+   "Shell_Box",
+   "Insert_M3x5.7_DrvScrew_R2",
+   23.1,
+   "heat-set insert (OD 4.6) melted into a 4.0 mm pilot"
+  ],
+  [
+   "Shell_Box",
+   "Insert_M3x5.7_DrvScrew_R3",
+   23.1,
+   "heat-set insert (OD 4.6) melted into a 4.0 mm pilot"
+  ],
+  [
+   "Shell_Box",
+   "Insert_M3x5.7_DrvScrew_R4",
+   23.1,
+   "heat-set insert (OD 4.6) melted into a 4.0 mm pilot"
+  ],
+  [
+   "Shell_Box",
+   "Insert_M3x5.7_WoofScrew_1",
+   23.1,
+   "heat-set insert (OD 4.6) melted into a 4.0 mm pilot"
+  ],
+  [
+   "Shell_Box",
+   "Insert_M3x5.7_WoofScrew_2",
+   23.1,
+   "heat-set insert (OD 4.6) melted into a 4.0 mm pilot"
+  ],
+  [
+   "Shell_Box",
+   "Insert_M3x5.7_WoofScrew_3",
+   23.1,
+   "heat-set insert (OD 4.6) melted into a 4.0 mm pilot"
+  ],
+  [
+   "Shell_Box",
+   "Insert_M3x5.7_WoofScrew_4",
+   23.1,
+   "heat-set insert (OD 4.6) melted into a 4.0 mm pilot"
+  ],
+  [
+   "Shell_Box",
+   "Insert_M3x5.7_LidScrew_1",
+   23.1,
+   "heat-set insert (OD 4.6) melted into a 4.0 mm pilot"
+  ],
+  [
+   "Shell_Box",
+   "Insert_M3x5.7_LidScrew_2",
+   23.1,
+   "heat-set insert (OD 4.6) melted into a 4.0 mm pilot"
+  ],
+  [
+   "Shell_Box",
+   "Insert_M3x5.7_LidScrew_3",
+   23.1,
+   "heat-set insert (OD 4.6) melted into a 4.0 mm pilot"
+  ],
+  [
+   "Shell_Box",
+   "Insert_M3x5.7_LidScrew_4",
+   23.1,
+   "heat-set insert (OD 4.6) melted into a 4.0 mm pilot"
+  ],
+  [
+   "Shell_Box",
+   "Insert_M3x5.7_LidScrew_5",
+   23.1,
+   "heat-set insert (OD 4.6) melted into a 4.0 mm pilot"
+  ],
+  [
+   "Shell_Box",
+   "Insert_M3x5.7_LidScrew_6",
+   23.1,
+   "heat-set insert (OD 4.6) melted into a 4.0 mm pilot"
+  ],
+  [
+   "Shell_Box",
+   "Insert_M3x5.7_LidScrew_7",
+   23.1,
+   "heat-set insert (OD 4.6) melted into a 4.0 mm pilot"
+  ],
+  [
+   "Shell_Box",
+   "Insert_M3x5.7_LidScrew_8",
+   23.1,
+   "heat-set insert (OD 4.6) melted into a 4.0 mm pilot"
+  ],
+  [
+   "Shell_Box",
+   "Insert_M3x5.7_LidScrew_9",
+   23.1,
+   "heat-set insert (OD 4.6) melted into a 4.0 mm pilot"
+  ],
+  [
+   "Shell_Box",
+   "Insert_M3x5.7_Foot_1",
+   23.1,
+   "heat-set insert (OD 4.6) melted into a 4.0 mm pilot"
+  ],
+  [
+   "Shell_Box",
+   "Insert_M3x5.7_Foot_2",
+   23.1,
+   "heat-set insert (OD 4.6) melted into a 4.0 mm pilot"
+  ],
+  [
+   "Shell_Box",
+   "Insert_M3x5.7_Foot_3",
+   23.1,
+   "heat-set insert (OD 4.6) melted into a 4.0 mm pilot"
+  ],
+  [
+   "Shell_Box",
+   "Insert_M3x5.7_Foot_4",
+   23.1,
+   "heat-set insert (OD 4.6) melted into a 4.0 mm pilot"
+  ],
+  [
+   "Insert_woofer_chamber",
+   "Insert_M3x5.7_PcbScrew_1_H1",
+   23.1,
+   "heat-set insert (OD 4.6) melted into a 4.0 mm pilot"
+  ],
+  [
+   "Insert_woofer_chamber",
+   "Insert_M3x5.7_PcbScrew_2_H2",
+   23.1,
+   "heat-set insert (OD 4.6) melted into a 4.0 mm pilot"
+  ],
+  [
+   "Insert_woofer_chamber",
+   "Insert_M3x5.7_PcbScrew_3_H3",
+   23.1,
+   "heat-set insert (OD 4.6) melted into a 4.0 mm pilot"
+  ],
+  [
+   "Insert_woofer_chamber",
+   "Insert_M3x5.7_PcbScrew_4_H4",
+   23.1,
+   "heat-set insert (OD 4.6) melted into a 4.0 mm pilot"
+  ],
+  [
+   "Insert_woofer_chamber",
+   "Insert_M3x5.7_PcbScrew_5_H5",
+   23.1,
+   "heat-set insert (OD 4.6) melted into a 4.0 mm pilot"
+  ],
+  [
+   "Insert_woofer_chamber",
+   "Insert_M3x5.7_PcbScrew_6_H6",
+   23.1,
+   "heat-set insert (OD 4.6) melted into a 4.0 mm pilot"
+  ],
+  [
+   "Insert_woofer_chamber",
+   "Insert_M3x5.7_PcbScrew_7_H7",
+   23.1,
+   "heat-set insert (OD 4.6) melted into a 4.0 mm pilot"
+  ],
+  [
+   "Insert_woofer_chamber",
+   "Insert_M3x5.7_PcbScrew_8_H8",
+   23.1,
+   "heat-set insert (OD 4.6) melted into a 4.0 mm pilot"
+  ],
+  [
+   "Insert_woofer_chamber",
+   "Insert_M3x5.7_PcbScrew_10_HA1",
+   23.1,
+   "heat-set insert (OD 4.6) melted into a 4.0 mm pilot"
+  ],
+  [
+   "Insert_woofer_chamber",
+   "Insert_M3x5.7_PcbScrew_11_HA2",
+   23.1,
+   "heat-set insert (OD 4.6) melted into a 4.0 mm pilot"
+  ],
+  [
+   "Insert_woofer_chamber",
+   "Insert_M3x5.7_LidScrew_10",
+   23.1,
+   "heat-set insert (OD 4.6) melted into a 4.0 mm pilot"
+  ],
+  [
+   "Insert_woofer_chamber",
+   "Insert_M3x5.7_LidScrew_11",
+   23.1,
+   "heat-set insert (OD 4.6) melted into a 4.0 mm pilot"
+  ],
+  [
+   "Insert_woofer_chamber",
+   "Insert_M3x5.7_PcbScrew_9_H9",
+   22.92,
+   "heat-set insert (OD 4.6) melted into a 4.0 mm pilot"
+  ],
+  [
+   "PCB_127.5x137.6x1.6",
    "PCB_J2_3.5mm_jack",
-   8.61,
+   3.72,
    "through-hole/mid-mount pins and body below PCB top (model pins sit in the board)"
   ],
   [
-   "PCB_136.9x127.8x1.6",
+   "PCB_127.5x137.6x1.6",
    "PCB_J3_3.5mm_jack",
-   8.61,
-   "through-hole/mid-mount pins and body below PCB top (model pins sit in the board)"
-  ],
-  [
-   "PCB_136.9x127.8x1.6",
-   "PCB_SW102",
-   5.09,
-   "through-hole/mid-mount pins and body below PCB top (model pins sit in the board)"
-  ],
-  [
-   "PCB_136.9x127.8x1.6",
-   "PCB_J8",
-   3.28,
-   "through-hole/mid-mount pins and body below PCB top (model pins sit in the board)"
-  ],
-  [
-   "PCB_136.9x127.8x1.6",
-   "PCB_J4",
-   2.62,
-   "through-hole/mid-mount pins and body below PCB top (model pins sit in the board)"
-  ],
-  [
-   "PCB_136.9x127.8x1.6",
-   "PCB_J6",
-   2.62,
-   "through-hole/mid-mount pins and body below PCB top (model pins sit in the board)"
-  ],
-  [
-   "PCB_136.9x127.8x1.6",
-   "PCB_J1_USB-C",
-   0.96,
+   3.72,
    "through-hole/mid-mount pins and body below PCB top (model pins sit in the board)"
   ]
+ ],
+ "clearances": [
+  {
+   "a": "Battery_Cell1_21700_50S",
+   "b": "Driver_FrontL_ND65-4",
+   "mm": 6.98,
+   "need": 3.0
+  },
+  {
+   "a": "Battery_Cell1_21700_50S",
+   "b": "Driver_FrontR_ND65-4",
+   "mm": 7.36,
+   "need": 3.0
+  },
+  {
+   "a": "Battery_Cell1_21700_50S",
+   "b": "PCB_127.5x137.6x1.6",
+   "mm": 56.33,
+   "need": 3.0
+  },
+  {
+   "a": "Battery_Cell2_21700_50S",
+   "b": "Driver_FrontL_ND65-4",
+   "mm": 17.63,
+   "need": 3.0
+  },
+  {
+   "a": "Battery_Cell2_21700_50S",
+   "b": "Driver_FrontR_ND65-4",
+   "mm": 17.63,
+   "need": 3.0
+  },
+  {
+   "a": "Battery_Cell2_21700_50S",
+   "b": "PCB_127.5x137.6x1.6",
+   "mm": 45.24,
+   "need": 3.0
+  },
+  {
+   "a": "Battery_PCM_board",
+   "b": "Driver_FrontL_ND65-4",
+   "mm": 48.73,
+   "need": 3.0
+  },
+  {
+   "a": "Battery_PCM_board",
+   "b": "Driver_FrontR_ND65-4",
+   "mm": 5.49,
+   "need": 3.0
+  },
+  {
+   "a": "Battery_PCM_board",
+   "b": "PCB_127.5x137.6x1.6",
+   "mm": 44.25,
+   "need": 3.0
+  },
+  {
+   "a": "Harness_J5_to_pack_schematic",
+   "b": "woofer chamber air (sealed)",
+   "mm": 10.0,
+   "need": 0.01
+  },
+  {
+   "a": "Harness_J5_to_pack_schematic",
+   "b": "Insert_woofer_chamber",
+   "mm": 7.0,
+   "need": 0.01
+  }
+ ],
+ "lid_cutouts": [
+  {
+   "ref": "J1",
+   "kind": "USB-C plug clearance",
+   "cut": [
+    12.0,
+    7.0
+   ],
+   "centre": [
+    -1.77,
+    70.25
+   ],
+   "body_section": [
+    9.1,
+    3.36
+   ],
+   "radial_margin": 1.45,
+   "min_dist_connector_to_lid": 1.53,
+   "enters_lid": true,
+   "wall_clearance": 1.53,
+   "body_ymax": 203.32,
+   "ok": true
+  },
+  {
+   "ref": "J2",
+   "kind": "3.5 mm jack bore",
+   "cut": 8.5,
+   "centre": [
+    30.98,
+    71.1
+   ],
+   "body_section": [
+    6.0,
+    6.0
+   ],
+   "radial_margin": 1.25,
+   "min_dist_connector_to_lid": 1.51,
+   "enters_lid": false,
+   "wall_clearance": null,
+   "body_ymax": 201.76,
+   "ok": true
+  },
+  {
+   "ref": "J3",
+   "kind": "3.5 mm jack bore",
+   "cut": 8.5,
+   "centre": [
+    44.38,
+    71.1
+   ],
+   "body_section": [
+    6.0,
+    6.0
+   ],
+   "radial_margin": 1.25,
+   "min_dist_connector_to_lid": 1.51,
+   "enters_lid": false,
+   "wall_clearance": null,
+   "body_ymax": 201.76,
+   "ok": true
+  },
+  {
+   "ref": "SW100",
+   "kind": "tact plunger (stand-in)",
+   "cut": 5.0,
+   "centre": [
+    -10.68,
+    70.35
+   ],
+   "body_section": [
+    2.5,
+    2.5
+   ],
+   "radial_margin": 1.25,
+   "min_dist_connector_to_lid": 1.25,
+   "enters_lid": true,
+   "wall_clearance": 1.25,
+   "body_ymax": 204.6,
+   "ok": true
+  },
+  {
+   "ref": "SW101",
+   "kind": "rocker D20 panel hole",
+   "cut": 20.2,
+   "centre": [
+    66.0,
+    80.0
+   ],
+   "body_section": [
+    19.6,
+    19.6
+   ],
+   "radial_margin": 0.3,
+   "min_dist_connector_to_lid": 0.0,
+   "enters_lid": true,
+   "wall_clearance": 0.0,
+   "body_ymax": null,
+   "ok": "panel fit (snap-in body sits in the hole by design)"
+  }
  ]
 }

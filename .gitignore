@@ -31,3 +31,11 @@ ai-files/pcb/work-v10d/cad/
 ai-files/pcb/work-v10d/review/
 ai-files/pcb/work-v10d/*.log
 ai-files/helpers/*.so
+
+# Derived CAD outputs (rebuilt by ai-files/cad/build_speaker_cad.py in seconds; FCStd, STL, renders stay tracked)
+ai-files/cad/work/brep/
+ai-files/cad/work/__pycache__/
+ai-files/cad/__pycache__/
+ai-files/cad/DesktopSpeaker_internal.step
+ai-files/cad/parts/DesktopSpeaker-board.step
+ai-files/cad/*.FCBak

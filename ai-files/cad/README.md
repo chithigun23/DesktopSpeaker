@@ -1,17 +1,12 @@
-# DesktopSpeaker internal CAD (2026-10-06)
+# DesktopSpeaker internal CAD (v11 2026-10-12; first version 2026-10-06)
+
+**Current entry point and state: see the v11 section at the end.** The sections in between are the v3-v10 history.
 
 Parametric FreeCAD model of the enclosure, drivers, 2P 21700 pack, estimated PCB with real KiCad STEP parts, and hardware.
 Only the PCB size is an estimate (`pcb-size-estimate.md`). Nothing in the KiCad project folders was touched; no PCB layout was made.
 
-## Rebuild (from the project root)
-```
-PATH=/home/chithi/Desktop/DesktopSpeaker/ai-files/helpers/bin:$PATH
-kicad-cli sch export netlist --format kicadxml -o ai-files/cad/work/net.xml DesktopSpeaker-kicad/DesktopSpeaker.kicad_sch
-python3 ai-files/cad/pcb_estimate.py            # courtyard sum -> work/pcb_estimate.json
-freecadcmd ai-files/cad/build_speaker_cad.py    # model -> DesktopSpeaker_internal.FCStd/.step, work/brep, work/meta.json (about 10 s)
-freecadcmd ai-files/cad/check_cad.py            # interference.md, volumes.md
-freecadcmd ai-files/cad/render_cad.py           # renders/*.png (about 2 min; FreeCAD tessellation + matplotlib)
-```
+## Rebuild (v3-v10, historical; v11 commands are in the v11 section)
+v3-v10 read the schematic netlist (`work/net.xml`) and placed per-footprint KiCad models from `layout.json`; v11 uses the routed-board STEP instead.
 All parameters are in the dict `P` at the top of the build script. Axes: X = long side, Y = depth (0 = front outer face), Z = up (0 = outer bottom of the box; feet go to -15). Layout and sites are in the script (LAYOUT, `sites`).
 
 ## Result
@@ -52,3 +47,42 @@ Pilot holes are modelled at 4.6 mm (= insert OD) so inserts show no overlap; rea
 
 ## v8 (2026-10-06)
 PCB holes now 10 (`layout.json` holes); holes outside the woofer chamber roof get printed 8 mm posts from the main floor; PCB screws are M3x12. Board 121.1 x 127.4 mm, outer 163 x 100 x 195 mm, woofer chamber net 0.525 L, main 1.917 L; rocker stand-in raised to z 78 (was overlapping the board corner); check_cad: 0 unintended overlaps. See reports/pcb-placement-v8-2026-10-06.md.
+
+## v11 (2026-10-12): built from the routed board, print-ready
+
+### Rebuild (from the project root; one entry point = `build_speaker_cad.py`)
+```
+K="flatpak run --filesystem=/home/chithi/Desktop/DesktopSpeaker --filesystem=/tmp"
+# 1. layout frame from the routed board (outline, 11 holes, courtyard rects, antenna keep-out)
+$K --command=python3 org.kicad.KiCad ai-files/helpers/board_to_layout.py BOARD.kicad_pcb ai-files/pcb/layout.json ai-files/pcb/work-v10d/layout-v10d.json
+# 2. board STEP in the layout frame (copy the board next to DesktopSpeaker.kicad_pro + fp-lib-table + a kicad-library symlink so ${KIPRJMOD} resolves)
+$K --command=kicad-cli org.kicad.KiCad pcb export step --force --subst-models --user-origin 147.25x88.8mm \
+   --output ai-files/cad/parts/DesktopSpeaker-board.step COPY/DesktopSpeaker.kicad_pcb
+# 3. model, checks, renders
+freecadcmd ai-files/cad/build_speaker_cad.py   # DETAIL=1 (default): print-ready; DETAIL=0: v10 enclosure logic on the real board (about 20 s)
+freecadcmd ai-files/cad/check_cad.py           # interference.md, volumes.md, clearances, lid cutout check (about 1 min)
+freecadcmd ai-files/cad/render_cad.py          # renders/*.png incl. print_*.png and rear_lid_drawing.png (about 2.5 min)
+```
+Outputs: `DesktopSpeaker_internal.FCStd/.step` (named solids, assembly), `print/DesktopSpeaker_{shell,lid,woofer_chamber_insert}.stl` (binary, in print orientation), `work/meta.json` (sites, cutouts, prints, skipped operations).
+Frame: layout u = x_board - 147.25, v = 88.8 - y_board; CAD X = u - 3.5 (`pcb_cx`), CAD Y = 133.3 + v (board front edge fixed at CAD y 64.5), PCB bottom z 67.0 (DETAIL=1; 66.5 for DETAIL=0).
+
+### What comes from the board
+- `ai-files/pcb/layout.json` is now generated from the routed board (`helpers/board_to_layout.py`; stale v9b kept as `pcb/layout-v9b.json`). Same schema as `work-v10d/layout-v10d.json`, plus `side`/`fpid` per part and all 349 footprints (v10d listed 103). Outline 127.5 x 137.6, 11 holes and the antenna keep-out are identical to v10d; part origins identical except C106 (moved 1.24 mm by routing); courtyard rects differ by up to 2 mm (v10d rects were generator rects, now real courtyards).
+- PCB body and all modelled components come from `parts/DesktopSpeaker-board.step` (686 solids, assigned to references by courtyard). Large parts are separate objects; small passives are grouped per sheet (`PCB_smallparts_<sheet>`). Stand-ins remain for J5, J9-J11, SW100 (+ plunger), SW101 and the PCM board (no models).
+- Library model faults found and corrected in the CAD only (library not touched): BM83 (U1) STEP floats 5.41 mm above the board; Coilcraft XFL4015 (L2, L3) STEP sits 1.40 mm inside the board (rotate 90 about X, wrong pivot).
+
+### Print-ready detailing (DETAIL=1)
+- **Bodies**: main shell (163 x 100 x 202.6, front baffle on the bed), woofer chamber insert (122 x 126.6 x 55, roof on the bed), rear lid (163 x 100 x 4, outer face on the bed). No supports for any body. FDM 0.4 nozzle, PETG or ASA, 3 mm walls, 8 mm bosses, heat-set pilots 4.0 x (insert + 1 mm) for M3 x 5.7.
+- **Why three bodies**: printed baffle-down, the v10 one-piece shell had an unsupported 116 x 54 mm partition, a roof that starts in mid-air and 58 mm cantilever posts under H1/H3/HA1/HA2. The chamber (partition, side walls, roof) is now a separate insert printed roof-down; its roof is extended forward as a 3 mm shelf with three 45 deg gussets that carries the four front PCB holes, so no posts are needed. The insert drops 1 mm into 0.2 mm-clearance grooves in the shell floor and is bonded/sealed there; its rear rim seals on the lid gasket.
+- **Lid seal**: foam gasket groove 2 x 1.5 in the lid (outer loop on the wall land + inverted U on the insert rim, joining the floor run), chosen over tongue-and-groove because the 3 mm walls cannot take a groove, a tongue would collide with the board rear edge (0.5 mm) and the USB-C receptacle (0.72 mm into the lid), and foam tolerates the bonded insert position. 11 lid screws (7 corner/edge + 2 side pockets + 2 into the insert roof); use nylon sealing washers.
+- **PCB stack**: insert roof/shelf top z 57.0 (flat) -> 10 mm hex spacer -> PCB 1.6 -> M3x16 (4.4 mm in a 5.7 insert); pilots 6.7 deep end 1.0 mm above the chamber air in bosses below the roof.
+- **Drivers**: 0.5 mm gasket recess on the pad rear faces (63 mm square inside the 64 mm flange, minus the aperture and 7 mm around each screw). Woofer: ring pad 5.5 with an 83.4 x 1.0 flange recess (flange seat unchanged at z 7.5).
+- **Woofer leads**: J11 -> in front of the board edge -> 6 mm grommet hole in a 14 mm boss on the partition front face (10 mm counterbore leaves a 1.6 mm web for a snap grommet) at X 40, Z 40.
+- **Battery**: printed cradle in the shell: two ribs (front lip, falling arc, 45 deg rising flank so they print along +Y), two end stops (1 mm from the cells/PCM), front and rear strap anchors with 22 x 2.5 tunnels for a 20 mm strap. Pack harness J5 -> right side pocket (X 70) -> along the floor at z 17.85 -> PCM end; 7 mm from the insert, 10 mm from the chamber air.
+- **Fillets/chamfers**: 2 mm on the shell front vertical edges and the lid outer vertical edges, 1 mm on the 8 cavity edges, 0.5 mm x 45 deg on all lid cutout rims (cut tools: `makeChamfer` fails on this lid). Not attempted: fillets on bosses, pads, ribs and the insert.
+- **Rear-lid cutouts** from the board STEP: USB-C 12 x 7 R2 (receptacle section 9.1 x 3.36, margin 1.45), jacks 8.5 (nose 6.0, margin 1.25) with 11 x 2.5 outside counterbores so plug bodies reach the jacks (jack face 0.84 mm behind the lid), SW100 5.0 (plunger 2.5 stand-in), rocker 20.2 with a 25 mm inside counterbore (2.0 mm panel). **SW100 is only 8.9 mm from J1**: the web would be 0.41 mm, so both openings are joined into one keyhole. Drawing: `renders/rear_lid_drawing.png`.
+- Results (`volumes.md`, `interference.md`): see the tables there and `ai-files/reports/cad-v11-print-ready.md`.
+
+### Open
+- SW102 encoder shaft top is 3.9 mm below the top wall (z 93.1 vs 97.0): no knob access through the enclosure. Needs a longer shaft or an extension and a top-wall bore (not modelled).
+- Woofer (no drawing), rocker (panel thickness, body), PCM size/position, grommet part, SW100 plunger height (no STEP), J5/J9-J11 bodies, plug body sizes: assumptions as listed in the report.

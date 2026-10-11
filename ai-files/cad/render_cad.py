@@ -99,7 +99,7 @@ def cutitems(keep,axis,val,exclude=(),filt=None):
             v,f=tess(o['name'],sh,'cut%d_%s'%(axis,val))
         it.append((o['name'],o['color'],v,f,(0,0,0)))
     return it
-ex_open=('Lid_rear','SW101_rocker_D20_standin')
+ex_open=('Lid_rear','SW101_rocker_D20_standin','Gasket_lid_foam_3mm')
 render(cutitems('le',2,H-3.5,exclude=ex_open+tuple(),filt=lambda o:o['group']!='lid'),-25,50,'open_top_view.png','Top wall and lid removed (section z=96.5): drivers, battery, woofer chamber roof with PCB on standoffs',section=(2,H-3.5))
 render(cutitems('le',2,75.0,exclude=ex_open),0,90,'section_z75_top.png','Section z = 75 mm, view from above: PCB zone (z 66.5-68.1 board), connectors toward lid at top of image, drivers at bottom',section=(2,75.0))
 render(cutitems('le',2,15.0,exclude=ex_open),0,90,'section_z15_top.png','Section z = 15 mm, view from above: battery pack + harness under the drivers, woofer chamber and woofer ring',section=(2,15.0))
@@ -112,9 +112,71 @@ def off(o):
     if n.startswith('Driver') or n.startswith('Insert_M3x5.7_Drv') or n.startswith('Screw_M3x10_Drv'): return (0,-40,0)
     if n.startswith('Woofer') or n.startswith('Grille_woofer') or 'WoofScrew' in n: return (0,0,-70)
     if g in ('pcb','pcb_parts') or 'Standoff' in n or 'PcbScrew' in n: return (0,0,60)
-    if g=='lid' or 'LidScrew' in n or n.startswith('SW101'): return (0,80,0)
+    if g=='lid' or 'LidScrew' in n or n.startswith('SW101') or n.startswith('Gasket_lid'): return (0,80,0)
+    if g=='insert': return (0,0,25)
     if g=='battery': return (0,0,-30)
     if n.startswith('Foot_'): return (0,0,-25)
     return (0,0,0)
 render(base_items(offsets=off),-35,25,'exploded_front_right.png','Exploded: grille, drivers (forward), PCB (up), battery (down), woofer+grille (down), lid (rear)')
 render(base_items(offsets=off),140,28,'exploded_rear_left.png','Exploded, rear/left view')
+
+# ---------------------------------------------------------------- print bodies (DETAIL builds): print orientation views + rear-lid drawing
+if m.get('detail'):
+    S={o['name']:s for o,s in OBJ}
+    def oriented(shape,how):
+        s=shape.copy()
+        if how=='baffle_down': s.rotate(V(0,0,0),V(1,0,0),90)
+        elif how=='outer_face_down': s.rotate(V(0,0,0),V(1,0,0),-90)
+        elif how=='roof_down': s.rotate(V(0,0,0),V(1,0,0),180)
+        bb=s.BoundBox; s.translate(V(-(bb.XMin+bb.XMax)/2,-(bb.YMin+bb.YMax)/2,-bb.ZMin)); return s
+    bed=Part.makeBox(240,240,1,V(-120,-120,-1))
+    bv,bf=bed.tessellate(1.0); bed_it=('bed',(0.85,0.85,0.8),np.array([[p.x,p.y,p.z] for p in bv]),np.array(bf,int).reshape(-1,3),(0,0,0))
+    for nm,how,fn,ttl,az,el in (('Shell_Box','baffle_down','print_shell.png','Print: main shell, front baffle on the bed (Z up = enclosure +Y), no supports',-30,28),
+                                ('Insert_woofer_chamber','roof_down','print_insert.png','Print: woofer chamber insert, roof on the bed (upside down), no supports',-30,35),
+                                ('Lid_rear','outer_face_down','print_lid.png','Print: rear lid, outer face on the bed; gasket groove and rocker counterbore on top',-20,50)):
+        s=oriented(S[nm],how); v,f=tess(nm+how,s)
+        render([(nm,(0.75,0.55,0.25),v,f,(0,0,0))],az,el,fn,ttl)
+    # rear lid drawing with cutout dimensions (outer face, view from behind = looking along -Y, X to the left is -X... drawn as seen from the rear: X mirrored)
+    lid=S['Lid_rear']; Dd=P['D']; Wd=P['W']; Hd=P['H']; YB=P['YB']
+    fig,ax=plt.subplots(figsize=(15,10),dpi=110); ax.set_aspect('equal')
+    def faces_at(y,tol=1e-4):
+        return [f for f in lid.Faces if abs(f.BoundBox.YMin-y)<tol and abs(f.BoundBox.YMax-y)<tol]
+    def draw_face(f,**kw):
+        for w in f.Wires:
+            pts=w.discretize(Deflection=0.02)
+            ax.plot([-p.x for p in pts],[p.z for p in pts],**kw)
+    for f in faces_at(Dd): draw_face(f,color='k',lw=1.1)
+    for f in faces_at(YB+P['groove_d']): draw_face(f,color='#1f6fb4',lw=0.7,ls='--')
+    for f in faces_at(Dd-P['jack_cb'][1]): draw_face(f,color='#555',lw=0.7,ls=':')
+    for f in faces_at(Dd-P['rocker_panel']): draw_face(f,color='#555',lw=0.7,ls=':')
+    def dim_h(x0,x1,z,txt):
+        ax.annotate('',xy=(-x1,z),xytext=(-x0,z),arrowprops=dict(arrowstyle='<->',lw=0.6,color='#a33'))
+        ax.text(-(x0+x1)/2,z+0.8,txt,ha='center',va='bottom',fontsize=7,color='#a33')
+    def dim_v(x,z0,z1,txt):
+        ax.annotate('',xy=(-x,z1),xytext=(-x,z0),arrowprops=dict(arrowstyle='<->',lw=0.6,color='#a33'))
+        ax.text(-x+0.8,(z0+z1)/2,txt,ha='left',va='center',fontsize=7,color='#a33',rotation=90)
+    yl=-8; rows=[]
+    for i,c in enumerate(sorted(m['lid_cutouts'],key=lambda c:-c['cx'])):
+        cx,cz=c['cx'],c['cz']
+        if c['shape']=='rrect': lab='%s %.1f x %.1f R%.1f'%(c['ref'],c['w'],c['h'],c['r'])
+        else:
+            lab='%s dia %.1f'%(c['ref'],c['d'])
+            if c.get('cb') and c['ref'] in ('J2','J3'): lab+=' (cbore dia %.0f x %.1f outside)'%tuple(c['cb'])
+            if c.get('joined'): lab+=' (joined to the J1 opening: web < 1.6)'
+            if c['ref']=='SW101': lab+=' (inside cbore dia %.0f, panel %.1f)'%(P['rocker_cb'],P['rocker_panel'])
+        ax.plot([-cx],[cz],'+',color='#a33',ms=6)
+        ax.text(-cx+1.2,cz+1.2,'%d'%(i+1),fontsize=8,color='#a33',weight='bold')
+        rows.append('%d  %s: X %.2f, Z %.2f'%(i+1,lab,Wd/2-cx,cz))
+        ax.plot([-cx,-cx],[cz,yl+1],color='#a33',lw=0.3,ls='-')
+        ax.text(-cx,yl-0.5,'%.2f'%(Wd/2-cx),ha='center',va='top',fontsize=6.5,color='#a33',rotation=90)
+    for s in m['sites']:
+        if s['kind']=='lid':
+            x,_,z=s['p']; ax.plot([-x],[z],'x',color='#1f6fb4',ms=4)
+            ax.text(-x+1.5,z+1.2,'M3 (%.1f, %.1f)'%(Wd/2-x,z),fontsize=6,color='#1f6fb4')
+    ax.text(-Wd/2+28,40,'Cutouts (centre from the left edge seen from behind, from the bottom):\n'+'\n'.join(rows),fontsize=8,va='top',ha='left',family='monospace',
+            bbox=dict(fc='white',ec='#bbb',lw=0.5))
+    dim_h(-Wd/2,Wd/2,Hd+4,'%.1f'%Wd); dim_v(Wd/2+4,0,Hd,'%.1f'%Hd)
+    ax.text(-Wd/2+2,-21,'Rear lid %.0f mm PETG/ASA, viewed from behind (outside). Solid: outer face and cutouts (0.5 mm x 45 deg chamfers). Dashed blue: gasket groove %.0f x %.1f on the inner face; dotted: counterbores. X measured from the left edge as seen from behind (= %.1f - X_cad); Z from the bottom. Lid screws: dia 3.4 clearance, M3x10 into heat-set inserts.'%(P['lid_t'],P['groove_w'],P['groove_d'],Wd/2),
+            fontsize=7.5,ha='left',wrap=True)
+    ax.set_xlim(-Wd/2-10,Wd/2+12); ax.set_ylim(-26,Hd+10); ax.axis('off')
+    fig.savefig(OUT+'rear_lid_drawing.png',facecolor='white',bbox_inches='tight'); plt.close(fig); print('wrote rear_lid_drawing.png')

@@ -1,1550 +1,5668 @@
 {
  "board": {
-  "w": 136.9,
-  "d": 127.8,
+  "w": 127.5,
+  "d": 137.6,
   "u0": -61.0,
-  "u1": 75.9,
-  "v0": -63.9,
-  "v1": 63.9,
+  "u1": 66.5,
+  "v0": -68.8,
+  "v1": 68.8,
   "corner_r": 3.0,
-  "rear_edge_cad_y": 192.3,
-  "centre_cad_y": 128.4,
-  "v_design_offset": -63.9
+  "rear_edge_cad_y": 202.1,
+  "centre_cad_y": 133.3,
+  "v_design_offset": -68.8
  },
  "holes": [
   {
    "name": "H1",
-   "u": -57.1,
-   "v": -19.800000000000004
+   "u": -10.6,
+   "v": -39.6
   },
   {
    "name": "H2",
-   "u": 8.4,
-   "v": -22.20000000000001
+   "u": 6.2,
+   "v": -8.4
   },
   {
    "name": "H3",
-   "u": -19.0,
-   "v": 48.8
+   "u": 19.2,
+   "v": -39.5
   },
   {
    "name": "H4",
-   "u": 7.800000000000006,
-   "v": 7.799999999999997
+   "u": -10.6,
+   "v": -24.6
   },
   {
    "name": "H5",
-   "u": 44.9,
-   "v": -3.000000000000007
+   "u": 61.2,
+   "v": 38.8
   },
   {
    "name": "H6",
    "u": 44.9,
-   "v": 4.799999999999997
+   "v": -15.2
   },
   {
    "name": "H7",
-   "u": 14.800000000000006,
-   "v": -46.50000000000001
+   "u": -9.0,
+   "v": 53.7
+  },
+  {
+   "name": "H8",
+   "u": -30.1,
+   "v": 2.9
   },
   {
    "name": "H9",
-   "u": 45.9,
-   "v": 28.799999999999997
+   "u": -55.25,
+   "v": 28.8
   },
   {
    "name": "HA1",
-   "u": -25.055000000000007,
-   "v": -37.70499999999999
+   "u": -37.495,
+   "v": -50.805
   },
   {
    "name": "HA2",
-   "u": 38.745000000000005,
-   "v": -37.70499999999999
+   "u": 45.295,
+   "v": -50.805
   }
  ],
  "parts": {
-  "U1": {
-   "origin_u": -47.395,
-   "origin_v": 50.035,
+  "C2": {
+   "origin_u": -4.95,
+   "origin_v": 35.4,
    "rot": 90,
-   "cy_u": -52.367,
-   "cy_v": 50.035,
+   "cy_u": -4.95,
+   "cy_v": 35.4,
    "rect": [
-    -69.0,
-    41.335,
-    -35.735,
-    58.735
-   ]
+    -5.975,
+    33.475,
+    -3.925,
+    37.325
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
   },
-  "U15": {
-   "origin_u": 66.055,
-   "origin_v": -8.685,
-   "rot": 0,
-   "cy_u": 66.055,
-   "cy_v": -8.685,
+  "C5": {
+   "origin_u": -1.47,
+   "origin_v": 53.15,
+   "rot": 90,
+   "cy_u": -1.47,
+   "cy_v": 53.15,
    "rect": [
-    64.31,
-    -10.58,
-    67.8,
-    -6.79
-   ]
+    -2.495,
+    51.225,
+    -0.445,
+    55.075
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
   },
-  "U3": {
-   "origin_u": -40.935,
-   "origin_v": 13.195,
-   "rot": 0,
-   "cy_u": -40.935,
-   "cy_v": 13.195,
+  "C6": {
+   "origin_u": -15.48,
+   "origin_v": 36.0,
+   "rot": 90,
+   "cy_u": -15.48,
+   "cy_v": 36.0,
    "rect": [
-    -47.68,
-    6.45,
-    -34.19,
-    19.94
-   ]
+    -16.505,
+    34.075,
+    -14.455,
+    37.925
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
   },
-  "J6": {
-   "origin_u": -58.685,
-   "origin_v": 21.505,
-   "rot": 0,
-   "cy_u": -58.685,
-   "cy_v": 17.695,
+  "C100": {
+   "origin_u": -1.1,
+   "origin_v": -31.27,
+   "rot": 180,
+   "cy_u": -1.1,
+   "cy_v": -31.27,
    "rect": [
-    -60.5,
-    12.07,
-    -56.87,
-    23.32
-   ]
+    -3.025,
+    -32.295,
+    0.825,
+    -30.245
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
   },
-  "J7": {
-   "origin_u": -56.185,
-   "origin_v": 6.195,
-   "rot": 0,
-   "cy_u": -56.435,
-   "cy_v": 6.195,
+  "C101": {
+   "origin_u": 0.97,
+   "origin_v": -27.73,
+   "rot": 90,
+   "cy_u": 0.97,
+   "cy_v": -27.73,
    "rect": [
-    -60.48,
-    1.9,
-    -52.39,
-    10.49
-   ]
+    -0.055,
+    -29.655,
+    1.995,
+    -25.805
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
   },
-  "U6": {
-   "origin_u": -25.055,
-   "origin_v": -52.205,
-   "rot": 0,
-   "cy_u": -25.055,
-   "cy_v": -52.205,
+  "C102": {
+   "origin_u": -0.33,
+   "origin_v": -34.435,
+   "rot": 180,
+   "cy_u": -0.33,
+   "cy_v": -34.435,
    "rect": [
-    -27.998,
-    -55.147,
-    -22.113,
-    -49.262
-   ]
+    -2.255,
+    -35.46,
+    1.595,
+    -33.41
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
   },
-  "J9": {
-   "origin_u": -42.535,
-   "origin_v": -58.155,
-   "rot": 0,
-   "cy_u": -40.555,
-   "cy_v": -58.705,
+  "C103": {
+   "origin_u": 0.65,
+   "origin_v": -32.85,
+   "rot": 180,
+   "cy_u": 0.65,
+   "cy_v": -32.85,
    "rect": [
-    -45.03,
-    -63.5,
-    -36.08,
-    -53.91
-   ]
+    -0.485,
+    -33.355,
+    1.785,
+    -32.345
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
   },
-  "J10": {
-   "origin_u": -11.535,
-   "origin_v": -58.155,
-   "rot": 0,
-   "cy_u": -9.555,
-   "cy_v": -58.705,
+  "C104": {
+   "origin_u": 7.67,
+   "origin_v": -27.73,
+   "rot": 90,
+   "cy_u": 7.67,
+   "cy_v": -27.73,
    "rect": [
-    -14.03,
-    -63.5,
-    -5.08,
-    -53.91
-   ]
+    6.645,
+    -29.655,
+    8.695,
+    -25.805
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
   },
-  "U7": {
-   "origin_u": 36.745,
-   "origin_v": -52.205,
-   "rot": 0,
-   "cy_u": 36.745,
-   "cy_v": -52.205,
+  "C105": {
+   "origin_u": 10.07,
+   "origin_v": -27.73,
+   "rot": 90,
+   "cy_u": 10.07,
+   "cy_v": -27.73,
    "rect": [
-    33.803,
-    -55.147,
-    39.688,
-    -49.262
-   ]
+    9.045,
+    -29.655,
+    11.095,
+    -25.805
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
   },
-  "J11": {
-   "origin_u": 47.665,
-   "origin_v": -58.155,
-   "rot": 0,
-   "cy_u": 49.645,
-   "cy_v": -58.705,
-   "rect": [
-    45.17,
-    -63.5,
-    54.12,
-    -53.91
-   ]
-  },
-  "U25": {
-   "origin_u": 32.735,
-   "origin_v": -20.795,
+  "C106": {
+   "origin_u": 9.95,
+   "origin_v": -34.34,
    "rot": 270,
-   "cy_u": 32.735,
-   "cy_v": -20.795,
+   "cy_u": 9.95,
+   "cy_v": -34.34,
    "rect": [
-    30.39,
-    -23.64,
-    35.08,
-    -17.95
-   ]
+    8.925,
+    -36.265,
+    10.975,
+    -32.415
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
   },
-  "L200": {
-   "origin_u": 24.735,
-   "origin_v": -20.295,
-   "rot": 0,
-   "cy_u": 24.735,
-   "cy_v": -20.295,
+  "C107": {
+   "origin_u": 12.47,
+   "origin_v": -27.73,
+   "rot": 90,
+   "cy_u": 12.47,
+   "cy_v": -27.73,
    "rect": [
-    20.59,
-    -24.59,
-    28.88,
-    -16.0
-   ]
+    11.445,
+    -29.655,
+    13.495,
+    -25.805
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+  },
+  "C108": {
+   "origin_u": -1.43,
+   "origin_v": -27.73,
+   "rot": 90,
+   "cy_u": -1.43,
+   "cy_v": -27.73,
+   "rect": [
+    -2.455,
+    -29.655,
+    -0.405,
+    -25.805
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+  },
+  "C109": {
+   "origin_u": -0.18,
+   "origin_v": -38.39,
+   "rot": 270,
+   "cy_u": -0.18,
+   "cy_v": -38.39,
+   "rect": [
+    -1.205,
+    -40.315,
+    0.845,
+    -36.465
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+  },
+  "C110": {
+   "origin_u": 8.5,
+   "origin_v": -36.2,
+   "rot": 270,
+   "cy_u": 8.5,
+   "cy_v": -36.2,
+   "rect": [
+    7.995,
+    -37.335,
+    9.005,
+    -35.065
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C111": {
+   "origin_u": 2.32,
+   "origin_v": -39.23,
+   "rot": 270,
+   "cy_u": 2.32,
+   "cy_v": -39.23,
+   "rect": [
+    1.295,
+    -41.155,
+    3.345,
+    -37.305
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+  },
+  "C112": {
+   "origin_u": -3.83,
+   "origin_v": -27.73,
+   "rot": 90,
+   "cy_u": -3.83,
+   "cy_v": -27.73,
+   "rect": [
+    -4.855,
+    -29.655,
+    -2.805,
+    -25.805
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+  },
+  "C120": {
+   "origin_u": -46.65,
+   "origin_v": -1.95,
+   "rot": 0,
+   "cy_u": -46.65,
+   "cy_v": -1.95,
+   "rect": [
+    -47.785,
+    -2.455,
+    -45.515,
+    -1.445
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C122": {
+   "origin_u": -34.69,
+   "origin_v": 14.02,
+   "rot": 0,
+   "cy_u": -34.69,
+   "cy_v": 14.02,
+   "rect": [
+    -35.825,
+    13.515,
+    -33.555,
+    14.525
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C123": {
+   "origin_u": -32.243,
+   "origin_v": 13.97,
+   "rot": 0,
+   "cy_u": -32.242,
+   "cy_v": 13.97,
+   "rect": [
+    -33.377,
+    13.465,
+    -31.108,
+    14.475
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C124": {
+   "origin_u": -56.7,
+   "origin_v": 14.82,
+   "rot": 90,
+   "cy_u": -56.7,
+   "cy_v": 14.82,
+   "rect": [
+    -57.205,
+    13.685,
+    -56.195,
+    15.955
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C125": {
+   "origin_u": -52.6,
+   "origin_v": 14.82,
+   "rot": 90,
+   "cy_u": -52.6,
+   "cy_v": 14.82,
+   "rect": [
+    -53.105,
+    13.685,
+    -52.095,
+    15.955
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C126": {
+   "origin_u": -44.6,
+   "origin_v": 7.1,
+   "rot": 90,
+   "cy_u": -44.6,
+   "cy_v": 7.1,
+   "rect": [
+    -45.105,
+    5.965,
+    -44.095,
+    8.235
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C130": {
+   "origin_u": -44.34,
+   "origin_v": 14.92,
+   "rot": 270,
+   "cy_u": -44.34,
+   "cy_v": 14.92,
+   "rect": [
+    -44.845,
+    13.785,
+    -43.835,
+    16.055
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C131": {
+   "origin_u": -51.24,
+   "origin_v": 7.52,
+   "rot": 0,
+   "cy_u": -51.24,
+   "cy_v": 7.52,
+   "rect": [
+    -52.375,
+    7.015,
+    -50.105,
+    8.025
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C132": {
+   "origin_u": -46.44,
+   "origin_v": 17.02,
+   "rot": 180,
+   "cy_u": -46.44,
+   "cy_v": 17.02,
+   "rect": [
+    -47.575,
+    16.515,
+    -45.305,
+    17.525
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C140": {
+   "origin_u": -56.62,
+   "origin_v": -12.77,
+   "rot": 270,
+   "cy_u": -56.62,
+   "cy_v": -12.77,
+   "rect": [
+    -57.645,
+    -14.695,
+    -55.595,
+    -10.845
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+  },
+  "C141": {
+   "origin_u": -53.38,
+   "origin_v": -16.17,
+   "rot": 180,
+   "cy_u": -53.38,
+   "cy_v": -16.17,
+   "rect": [
+    -55.305,
+    -17.195,
+    -51.455,
+    -15.145
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+  },
+  "C142": {
+   "origin_u": -49.35,
+   "origin_v": -17.25,
+   "rot": 0,
+   "cy_u": -49.35,
+   "cy_v": -17.25,
+   "rect": [
+    -51.275,
+    -18.275,
+    -47.425,
+    -16.225
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+  },
+  "C150": {
+   "origin_u": -30.43,
+   "origin_v": 55.34,
+   "rot": 180,
+   "cy_u": -30.43,
+   "cy_v": 55.34,
+   "rect": [
+    -32.355,
+    54.315,
+    -28.505,
+    56.365
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+  },
+  "C152": {
+   "origin_u": -29.7,
+   "origin_v": 48.35,
+   "rot": 270,
+   "cy_u": -29.7,
+   "cy_v": 48.35,
+   "rect": [
+    -30.725,
+    46.425,
+    -28.675,
+    50.275
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+  },
+  "C153": {
+   "origin_u": -27.6,
+   "origin_v": 48.35,
+   "rot": 270,
+   "cy_u": -27.6,
+   "cy_v": 48.35,
+   "rect": [
+    -28.625,
+    46.425,
+    -26.575,
+    50.275
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+  },
+  "C154": {
+   "origin_u": -33.89,
+   "origin_v": 45.84,
+   "rot": 90,
+   "cy_u": -33.89,
+   "cy_v": 45.84,
+   "rect": [
+    -34.915,
+    43.915,
+    -32.865,
+    47.765
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+  },
+  "C160": {
+   "origin_u": 30.95,
+   "origin_v": 1.15,
+   "rot": 270,
+   "cy_u": 30.95,
+   "cy_v": 1.15,
+   "rect": [
+    30.445,
+    0.015,
+    31.455,
+    2.285
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C161": {
+   "origin_u": 29.69,
+   "origin_v": 4.55,
+   "rot": 90,
+   "cy_u": 29.69,
+   "cy_v": 4.55,
+   "rect": [
+    28.665,
+    2.625,
+    30.715,
+    6.475
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+  },
+  "C162": {
+   "origin_u": 30.29,
+   "origin_v": -1.65,
+   "rot": 270,
+   "cy_u": 30.29,
+   "cy_v": -1.65,
+   "rect": [
+    29.785,
+    -2.785,
+    30.795,
+    -0.515
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C170": {
+   "origin_u": 5.2,
+   "origin_v": 24.32,
+   "rot": 0,
+   "cy_u": 5.2,
+   "cy_v": 24.32,
+   "rect": [
+    4.065,
+    23.815,
+    6.335,
+    24.825
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C171": {
+   "origin_u": 9.56,
+   "origin_v": 24.32,
+   "rot": 0,
+   "cy_u": 9.56,
+   "cy_v": 24.32,
+   "rect": [
+    8.425,
+    23.815,
+    10.695,
+    24.825
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C172": {
+   "origin_u": 5.65,
+   "origin_v": 35.04,
+   "rot": 180,
+   "cy_u": 5.65,
+   "cy_v": 35.04,
+   "rect": [
+    4.515,
+    34.535,
+    6.785,
+    35.545
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C173": {
+   "origin_u": 11.96,
+   "origin_v": 35.64,
+   "rot": 90,
+   "cy_u": 11.96,
+   "cy_v": 35.64,
+   "rect": [
+    11.455,
+    34.505,
+    12.465,
+    36.775
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C174": {
+   "origin_u": 13.46,
+   "origin_v": 32.54,
+   "rot": 270,
+   "cy_u": 13.46,
+   "cy_v": 32.54,
+   "rect": [
+    12.955,
+    31.405,
+    13.965,
+    33.675
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C175": {
+   "origin_u": 8.26,
+   "origin_v": 22.42,
+   "rot": 180,
+   "cy_u": 8.26,
+   "cy_v": 22.42,
+   "rect": [
+    6.335,
+    21.395,
+    10.185,
+    23.445
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+  },
+  "C176": {
+   "origin_u": 14.86,
+   "origin_v": 26.32,
+   "rot": 0,
+   "cy_u": 14.86,
+   "cy_v": 26.32,
+   "rect": [
+    12.935,
+    25.295,
+    16.785,
+    27.345
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+  },
+  "C177": {
+   "origin_u": 6.21,
+   "origin_v": 36.94,
+   "rot": 90,
+   "cy_u": 6.21,
+   "cy_v": 36.94,
+   "rect": [
+    5.705,
+    35.805,
+    6.715,
+    38.075
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C178": {
+   "origin_u": 11.91,
+   "origin_v": 38.24,
+   "rot": 90,
+   "cy_u": 11.91,
+   "cy_v": 38.24,
+   "rect": [
+    11.405,
+    37.105,
+    12.415,
+    39.375
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C181": {
+   "origin_u": -14.58,
+   "origin_v": 31.8,
+   "rot": 270,
+   "cy_u": -14.58,
+   "cy_v": 31.8,
+   "rect": [
+    -15.605,
+    29.875,
+    -13.555,
+    33.725
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+  },
+  "C182": {
+   "origin_u": -7.75,
+   "origin_v": 36.7,
+   "rot": 90,
+   "cy_u": -7.75,
+   "cy_v": 36.7,
+   "rect": [
+    -8.255,
+    35.565,
+    -7.245,
+    37.835
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C183": {
+   "origin_u": -8.85,
+   "origin_v": 36.7,
+   "rot": 90,
+   "cy_u": -8.85,
+   "cy_v": 36.7,
+   "rect": [
+    -9.355,
+    35.565,
+    -8.345,
+    37.835
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C184": {
+   "origin_u": -11.75,
+   "origin_v": 37.9,
+   "rot": 180,
+   "cy_u": -11.75,
+   "cy_v": 37.9,
+   "rect": [
+    -13.675,
+    36.875,
+    -9.825,
+    38.925
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+  },
+  "C186": {
+   "origin_u": 13.88,
+   "origin_v": 37.38,
+   "rot": 90,
+   "cy_u": 13.88,
+   "cy_v": 37.38,
+   "rect": [
+    12.855,
+    35.455,
+    14.905,
+    39.305
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+  },
+  "C187": {
+   "origin_u": 17.16,
+   "origin_v": 35.28,
+   "rot": 0,
+   "cy_u": 17.16,
+   "cy_v": 35.28,
+   "rect": [
+    15.235,
+    34.255,
+    19.085,
+    36.305
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+  },
+  "C190": {
+   "origin_u": -31.8,
+   "origin_v": 48.4,
+   "rot": 270,
+   "cy_u": -31.8,
+   "cy_v": 48.4,
+   "rect": [
+    -32.825,
+    46.475,
+    -30.775,
+    50.325
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+  },
+  "C191": {
+   "origin_u": -34.43,
+   "origin_v": 52.44,
+   "rot": 0,
+   "cy_u": -34.43,
+   "cy_v": 52.44,
+   "rect": [
+    -35.565,
+    51.935,
+    -33.295,
+    52.945
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C192": {
+   "origin_u": -34.43,
+   "origin_v": 54.44,
+   "rot": 0,
+   "cy_u": -34.43,
+   "cy_v": 54.44,
+   "rect": [
+    -35.565,
+    53.935,
+    -33.295,
+    54.945
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C193": {
+   "origin_u": -34.43,
+   "origin_v": 51.14,
+   "rot": 0,
+   "cy_u": -34.43,
+   "cy_v": 51.14,
+   "rect": [
+    -35.565,
+    50.635,
+    -33.295,
+    51.645
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C194": {
+   "origin_u": -52.09,
+   "origin_v": 44.23,
+   "rot": 180,
+   "cy_u": -52.09,
+   "cy_v": 44.23,
+   "rect": [
+    -54.015,
+    43.205,
+    -50.165,
+    45.255
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+  },
+  "C195": {
+   "origin_u": -51.82,
+   "origin_v": 41.44,
+   "rot": 0,
+   "cy_u": -51.82,
+   "cy_v": 41.44,
+   "rect": [
+    -53.745,
+    40.415,
+    -49.895,
+    42.465
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+  },
+  "C200": {
+   "origin_u": 14.1,
+   "origin_v": 9.8,
+   "rot": 180,
+   "cy_u": 14.1,
+   "cy_v": 9.8,
+   "rect": [
+    12.965,
+    9.295,
+    15.235,
+    10.305
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C201": {
+   "origin_u": 14.1,
+   "origin_v": 11.1,
+   "rot": 180,
+   "cy_u": 14.1,
+   "cy_v": 11.1,
+   "rect": [
+    12.965,
+    10.595,
+    15.235,
+    11.605
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C202": {
+   "origin_u": 14.1,
+   "origin_v": 7.2,
+   "rot": 180,
+   "cy_u": 14.1,
+   "cy_v": 7.2,
+   "rect": [
+    12.965,
+    6.695,
+    15.235,
+    7.705
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C203": {
+   "origin_u": 14.1,
+   "origin_v": 8.5,
+   "rot": 180,
+   "cy_u": 14.1,
+   "cy_v": 8.5,
+   "rect": [
+    12.965,
+    7.995,
+    15.235,
+    9.005
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C204": {
+   "origin_u": 43.94,
+   "origin_v": 49.2,
+   "rot": 270,
+   "cy_u": 43.94,
+   "cy_v": 49.2,
+   "rect": [
+    43.435,
+    48.065,
+    44.445,
+    50.335
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C205": {
+   "origin_u": 45.24,
+   "origin_v": 47.4,
+   "rot": 270,
+   "cy_u": 45.24,
+   "cy_v": 47.4,
+   "rect": [
+    44.735,
+    46.265,
+    45.745,
+    48.535
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C206": {
+   "origin_u": 8.7,
+   "origin_v": 10.45,
+   "rot": 0,
+   "cy_u": 8.7,
+   "cy_v": 10.45,
+   "rect": [
+    7.565,
+    9.945,
+    9.835,
+    10.955
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C207": {
+   "origin_u": 8.7,
+   "origin_v": 11.75,
+   "rot": 0,
+   "cy_u": 8.7,
+   "cy_v": 11.75,
+   "rect": [
+    7.565,
+    11.245,
+    9.835,
+    12.255
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C208": {
+   "origin_u": 8.7,
+   "origin_v": 7.85,
+   "rot": 0,
+   "cy_u": 8.7,
+   "cy_v": 7.85,
+   "rect": [
+    7.565,
+    7.345,
+    9.835,
+    8.355
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C209": {
+   "origin_u": 8.7,
+   "origin_v": 9.15,
+   "rot": 0,
+   "cy_u": 8.7,
+   "cy_v": 9.15,
+   "rect": [
+    7.565,
+    8.645,
+    9.835,
+    9.655
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C210": {
+   "origin_u": 5.9,
+   "origin_v": -1.18,
+   "rot": 180,
+   "cy_u": 5.9,
+   "cy_v": -1.18,
+   "rect": [
+    4.765,
+    -1.685,
+    7.035,
+    -0.675
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C211": {
+   "origin_u": 8.4,
+   "origin_v": 0.02,
+   "rot": 270,
+   "cy_u": 8.4,
+   "cy_v": 0.02,
+   "rect": [
+    7.895,
+    -1.115,
+    8.905,
+    1.155
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C212": {
+   "origin_u": 4.85,
+   "origin_v": 8.45,
+   "rot": 90,
+   "cy_u": 4.85,
+   "cy_v": 8.45,
+   "rect": [
+    4.345,
+    7.315,
+    5.355,
+    9.585
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C213": {
+   "origin_u": 0.1,
+   "origin_v": 7.95,
+   "rot": 180,
+   "cy_u": 0.1,
+   "cy_v": 7.95,
+   "rect": [
+    -1.035,
+    7.445,
+    1.235,
+    8.455
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C214": {
+   "origin_u": -1.85,
+   "origin_v": 11.85,
+   "rot": 90,
+   "cy_u": -1.85,
+   "cy_v": 11.85,
+   "rect": [
+    -2.875,
+    9.925,
+    -0.825,
+    13.775
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+  },
+  "C215": {
+   "origin_u": 3.8,
+   "origin_v": 8.45,
+   "rot": 90,
+   "cy_u": 3.8,
+   "cy_v": 8.45,
+   "rect": [
+    3.295,
+    7.315,
+    4.305,
+    9.585
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C216": {
+   "origin_u": 8.75,
+   "origin_v": 13.6,
+   "rot": 0,
+   "cy_u": 8.75,
+   "cy_v": 13.6,
+   "rect": [
+    6.825,
+    12.575,
+    10.675,
+    14.625
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+  },
+  "C217": {
+   "origin_u": -1.4,
+   "origin_v": 5.75,
+   "rot": 270,
+   "cy_u": -1.4,
+   "cy_v": 5.75,
+   "rect": [
+    -1.905,
+    4.615,
+    -0.895,
+    6.885
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C218": {
+   "origin_u": -5.7,
+   "origin_v": 14.85,
+   "rot": 0,
+   "cy_u": -5.7,
+   "cy_v": 14.85,
+   "rect": [
+    -7.625,
+    13.825,
+    -3.775,
+    15.875
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+  },
+  "C219": {
+   "origin_u": -1.8,
+   "origin_v": 8.35,
+   "rot": 90,
+   "cy_u": -1.8,
+   "cy_v": 8.35,
+   "rect": [
+    -2.305,
+    7.215,
+    -1.295,
+    9.485
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C220": {
+   "origin_u": -2.0,
+   "origin_v": 3.85,
+   "rot": 180,
+   "cy_u": -2.0,
+   "cy_v": 3.85,
+   "rect": [
+    -3.135,
+    3.345,
+    -0.865,
+    4.355
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C221": {
+   "origin_u": 24.96,
+   "origin_v": 39.41,
+   "rot": 0,
+   "cy_u": 24.96,
+   "cy_v": 39.41,
+   "rect": [
+    23.825,
+    38.905,
+    26.095,
+    39.915
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C222": {
+   "origin_u": 28.232,
+   "origin_v": 37.51,
+   "rot": 270,
+   "cy_u": 28.233,
+   "cy_v": 37.51,
+   "rect": [
+    27.727,
+    36.375,
+    28.738,
+    38.645
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C223": {
+   "origin_u": -4.3,
+   "origin_v": 5.85,
+   "rot": 180,
+   "cy_u": -4.3,
+   "cy_v": 5.85,
+   "rect": [
+    -6.225,
+    4.825,
+    -2.375,
+    6.875
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+  },
+  "C224": {
+   "origin_u": 24.06,
+   "origin_v": 33.91,
+   "rot": 270,
+   "cy_u": 24.06,
+   "cy_v": 33.91,
+   "rect": [
+    23.555,
+    32.775,
+    24.565,
+    35.045
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C225": {
+   "origin_u": 39.13,
+   "origin_v": 39.36,
+   "rot": 180,
+   "cy_u": 39.13,
+   "cy_v": 39.36,
+   "rect": [
+    37.995,
+    38.855,
+    40.265,
+    39.865
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C226": {
+   "origin_u": 0.35,
+   "origin_v": 9.05,
+   "rot": 180,
+   "cy_u": 0.35,
+   "cy_v": 9.05,
+   "rect": [
+    -0.785,
+    8.545,
+    1.485,
+    9.555
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C227": {
+   "origin_u": 2.65,
+   "origin_v": 14.2,
+   "rot": 0,
+   "cy_u": 2.65,
+   "cy_v": 14.2,
+   "rect": [
+    1.515,
+    13.695,
+    3.785,
+    14.705
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C230": {
+   "origin_u": 24.34,
+   "origin_v": 29.7,
+   "rot": 0,
+   "cy_u": 24.34,
+   "cy_v": 29.7,
+   "rect": [
+    23.205,
+    29.195,
+    25.475,
+    30.205
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C231": {
+   "origin_u": 28.64,
+   "origin_v": 25.93,
+   "rot": 270,
+   "cy_u": 28.64,
+   "cy_v": 25.93,
+   "rect": [
+    28.135,
+    24.795,
+    29.145,
+    27.065
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C232": {
+   "origin_u": 24.34,
+   "origin_v": 17.01,
+   "rot": 0,
+   "cy_u": 24.34,
+   "cy_v": 17.01,
+   "rect": [
+    23.205,
+    16.505,
+    25.475,
+    17.515
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C233": {
+   "origin_u": 26.95,
+   "origin_v": 18.6,
+   "rot": 180,
+   "cy_u": 26.95,
+   "cy_v": 18.6,
+   "rect": [
+    25.815,
+    18.095,
+    28.085,
+    19.105
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C234": {
+   "origin_u": 45.24,
+   "origin_v": 50.0,
+   "rot": 270,
+   "cy_u": 45.24,
+   "cy_v": 50.0,
+   "rect": [
+    44.735,
+    48.865,
+    45.745,
+    51.135
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C235": {
+   "origin_u": 47.44,
+   "origin_v": 48.0,
+   "rot": 0,
+   "cy_u": 47.44,
+   "cy_v": 48.0,
+   "rect": [
+    46.305,
+    47.495,
+    48.575,
+    48.505
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C236": {
+   "origin_u": 44.89,
+   "origin_v": 25.82,
+   "rot": 270,
+   "cy_u": 44.89,
+   "cy_v": 25.82,
+   "rect": [
+    43.865,
+    23.895,
+    45.915,
+    27.745
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+  },
+  "C237": {
+   "origin_u": 37.045,
+   "origin_v": 28.982,
+   "rot": 90,
+   "cy_u": 37.045,
+   "cy_v": 28.982,
+   "rect": [
+    36.54,
+    27.847,
+    37.55,
+    30.117
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C238": {
+   "origin_u": 26.04,
+   "origin_v": 30.1,
+   "rot": 90,
+   "cy_u": 26.04,
+   "cy_v": 30.1,
+   "rect": [
+    25.535,
+    28.965,
+    26.545,
+    31.235
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C239": {
+   "origin_u": 39.29,
+   "origin_v": 27.73,
+   "rot": 0,
+   "cy_u": 39.29,
+   "cy_v": 27.73,
+   "rect": [
+    38.155,
+    27.225,
+    40.425,
+    28.235
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C240": {
+   "origin_u": 40.54,
+   "origin_v": 24.83,
+   "rot": 0,
+   "cy_u": 40.54,
+   "cy_v": 24.83,
+   "rect": [
+    39.405,
+    24.325,
+    41.675,
+    25.335
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C241": {
+   "origin_u": 48.69,
+   "origin_v": 27.62,
+   "rot": 180,
+   "cy_u": 48.69,
+   "cy_v": 27.62,
+   "rect": [
+    47.555,
+    27.115,
+    49.825,
+    28.125
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C243": {
+   "origin_u": 52.25,
+   "origin_v": 24.65,
+   "rot": 0,
+   "cy_u": 52.25,
+   "cy_v": 24.65,
+   "rect": [
+    51.115,
+    24.145,
+    53.385,
+    25.155
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C244": {
+   "origin_u": 51.19,
+   "origin_v": 20.72,
+   "rot": 0,
+   "cy_u": 51.19,
+   "cy_v": 20.72,
+   "rect": [
+    50.055,
+    20.215,
+    52.325,
+    21.225
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C245": {
+   "origin_u": 53.14,
+   "origin_v": 22.87,
+   "rot": 270,
+   "cy_u": 53.14,
+   "cy_v": 22.87,
+   "rect": [
+    52.635,
+    21.735,
+    53.645,
+    24.005
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C246": {
+   "origin_u": 45.17,
+   "origin_v": 52.55,
+   "rot": 270,
+   "cy_u": 45.17,
+   "cy_v": 52.55,
+   "rect": [
+    44.665,
+    51.415,
+    45.675,
+    53.685
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C260": {
+   "origin_u": 3.11,
+   "origin_v": -62.54,
+   "rot": 270,
+   "cy_u": 3.11,
+   "cy_v": -62.54,
+   "rect": [
+    2.605,
+    -63.675,
+    3.615,
+    -61.405
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C261": {
+   "origin_u": 7.21,
+   "origin_v": -63.74,
+   "rot": 0,
+   "cy_u": 7.21,
+   "cy_v": -63.74,
+   "rect": [
+    5.285,
+    -64.765,
+    9.135,
+    -62.715
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+  },
+  "C262": {
+   "origin_u": -4.45,
+   "origin_v": -64.2,
+   "rot": 270,
+   "cy_u": -4.45,
+   "cy_v": -64.2,
+   "rect": [
+    -5.475,
+    -66.125,
+    -3.425,
+    -62.275
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+  },
+  "C263": {
+   "origin_u": 3.81,
+   "origin_v": -65.95,
+   "rot": 270,
+   "cy_u": 3.81,
+   "cy_v": -65.95,
+   "rect": [
+    2.785,
+    -67.875,
+    4.835,
+    -64.025
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+  },
+  "C264": {
+   "origin_u": 7.21,
+   "origin_v": -66.14,
+   "rot": 0,
+   "cy_u": 7.21,
+   "cy_v": -66.14,
+   "rect": [
+    5.285,
+    -67.165,
+    9.135,
+    -65.115
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+  },
+  "C265": {
+   "origin_u": 6.49,
+   "origin_v": -53.41,
+   "rot": 90,
+   "cy_u": 6.49,
+   "cy_v": -53.41,
+   "rect": [
+    5.465,
+    -55.335,
+    7.515,
+    -51.485
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+  },
+  "C266": {
+   "origin_u": 4.39,
+   "origin_v": -62.58,
+   "rot": 270,
+   "cy_u": 4.39,
+   "cy_v": -62.58,
+   "rect": [
+    3.885,
+    -63.715,
+    4.895,
+    -61.445
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C267": {
+   "origin_u": 3.3,
+   "origin_v": -54.4,
+   "rot": 90,
+   "cy_u": 3.3,
+   "cy_v": -54.4,
+   "rect": [
+    2.795,
+    -55.535,
+    3.805,
+    -53.265
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C268": {
+   "origin_u": 9.8,
+   "origin_v": -51.75,
+   "rot": 90,
+   "cy_u": 9.8,
+   "cy_v": -51.75,
+   "rect": [
+    9.295,
+    -52.885,
+    10.305,
+    -50.615
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C269": {
+   "origin_u": 10.9,
+   "origin_v": -54.1,
+   "rot": 90,
+   "cy_u": 10.9,
+   "cy_v": -54.1,
+   "rect": [
+    10.395,
+    -55.235,
+    11.405,
+    -52.965
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C270": {
+   "origin_u": 10.49,
+   "origin_v": -60.15,
+   "rot": 270,
+   "cy_u": 10.49,
+   "cy_v": -60.15,
+   "rect": [
+    9.465,
+    -62.075,
+    11.515,
+    -58.225
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+  },
+  "C271": {
+   "origin_u": -31.1,
+   "origin_v": -33.8,
+   "rot": 90,
+   "cy_u": -31.1,
+   "cy_v": -33.8,
+   "rect": [
+    -32.125,
+    -35.725,
+    -30.075,
+    -31.875
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+  },
+  "C272": {
+   "origin_u": -43.75,
+   "origin_v": -35.4,
+   "rot": 90,
+   "cy_u": -43.75,
+   "cy_v": -35.4,
+   "rect": [
+    -44.775,
+    -37.325,
+    -42.725,
+    -33.475
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+  },
+  "C273": {
+   "origin_u": 53.31,
+   "origin_v": -42.05,
+   "rot": 0,
+   "cy_u": 53.31,
+   "cy_v": -42.05,
+   "rect": [
+    51.385,
+    -43.075,
+    55.235,
+    -41.025
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+  },
+  "C274": {
+   "origin_u": 37.19,
+   "origin_v": -39.95,
+   "rot": 180,
+   "cy_u": 37.19,
+   "cy_v": -39.95,
+   "rect": [
+    35.265,
+    -40.975,
+    39.115,
+    -38.925
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
   },
   "C275": {
-   "origin_u": 46.235,
-   "origin_v": -20.795,
+   "origin_u": 19.45,
+   "origin_v": -63.3,
    "rot": 0,
-   "cy_u": 46.235,
-   "cy_v": -20.795,
+   "cy_u": 19.45,
+   "cy_v": -63.3,
    "rect": [
-    40.94,
-    -25.24,
-    51.53,
-    -16.35
-   ]
+    14.155,
+    -66.895,
+    24.745,
+    -59.705
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:CP_Elec_8x10"
   },
-  "U4": {
-   "origin_u": -6.405,
-   "origin_v": -15.575,
-   "rot": 0,
-   "cy_u": -6.405,
-   "cy_v": -15.575,
-   "rect": [
-    -8.9,
-    -18.07,
-    -3.91,
-    -13.08
-   ]
-  },
-  "L1": {
-   "origin_u": -6.405,
-   "origin_v": -5.075,
-   "rot": 0,
-   "cy_u": -6.405,
-   "cy_v": -5.075,
-   "rect": [
-    -9.95,
-    -8.37,
-    -2.86,
-    -1.78
-   ]
-  },
-  "Q103": {
-   "origin_u": -11.825,
-   "origin_v": 5.365,
-   "rot": 0,
-   "cy_u": -11.825,
-   "cy_v": 5.365,
-   "rect": [
-    -13.875,
-    3.42,
-    -9.775,
-    7.31
-   ]
-  },
-  "J5": {
-   "origin_u": 66.435,
-   "origin_v": -47.405,
-   "rot": 270,
-   "cy_u": 70.4,
-   "cy_v": -50.405,
-   "rect": [
-    64.9,
-    -57.28,
-    75.9,
-    -43.53
-   ]
-  },
-  "SW101": {
-   "origin_u": 72.65,
-   "origin_v": -32.605,
+  "C276": {
+   "origin_u": -33.1,
+   "origin_v": -40.05,
    "rot": 90,
-   "cy_u": 72.65,
-   "cy_v": -32.605,
+   "cy_u": -33.1,
+   "cy_v": -40.05,
    "rect": [
-    69.405,
-    -42.65,
-    75.895,
-    -22.56
-   ]
+    -33.605,
+    -41.185,
+    -32.595,
+    -38.915
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
   },
-  "SW102": {
-   "origin_u": 19.41,
-   "origin_v": 4.765,
-   "rot": 0,
-   "cy_u": 26.66,
-   "cy_v": 2.265,
+  "C277": {
+   "origin_u": 10.38,
+   "origin_v": -64.15,
+   "rot": 90,
+   "cy_u": 10.38,
+   "cy_v": -64.15,
    "rect": [
-    17.865,
-    -4.88,
-    35.455,
-    9.41
-   ]
+    9.355,
+    -66.075,
+    11.405,
+    -62.225
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
   },
-  "SW100": {
-   "origin_u": -19.78,
-   "origin_v": 58.655,
-   "rot": 0,
-   "cy_u": -19.78,
-   "cy_v": 60.155,
+  "C278": {
+   "origin_u": -43.25,
+   "origin_v": -40.56,
+   "rot": 180,
+   "cy_u": -43.25,
+   "cy_v": -40.56,
    "rect": [
-    -22.555,
-    56.41,
-    -17.005,
-    63.9
-   ]
+    -44.385,
+    -41.065,
+    -42.115,
+    -40.055
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
   },
-  "U12": {
-   "origin_u": 6.495,
-   "origin_v": 14.865,
-   "rot": 0,
-   "cy_u": 6.495,
-   "cy_v": 14.865,
-   "rect": [
-    4.4,
-    13.12,
-    8.59,
-    16.61
-   ]
-  },
-  "U20": {
-   "origin_u": -21.54,
-   "origin_v": 32.273,
-   "rot": 0,
-   "cy_u": -21.54,
-   "cy_v": 32.273,
-   "rect": [
-    -22.905,
-    30.927,
-    -20.175,
-    33.618
-   ]
-  },
-  "U13": {
-   "origin_u": -14.04,
-   "origin_v": 32.273,
-   "rot": 0,
-   "cy_u": -14.04,
-   "cy_v": 32.273,
-   "rect": [
-    -16.135,
-    30.527,
-    -11.945,
-    34.018
-   ]
-  },
-  "U16": {
-   "origin_u": -6.54,
-   "origin_v": 32.273,
-   "rot": 0,
-   "cy_u": -6.54,
-   "cy_v": 32.273,
-   "rect": [
-    -8.635,
-    30.527,
-    -4.445,
-    34.018
-   ]
-  },
-  "U17": {
-   "origin_u": -21.54,
-   "origin_v": 24.273,
-   "rot": 0,
-   "cy_u": -21.54,
-   "cy_v": 24.273,
-   "rect": [
-    -23.635,
-    22.527,
-    -19.445,
-    26.018
-   ]
-  },
-  "U21": {
-   "origin_u": -14.04,
-   "origin_v": 24.273,
-   "rot": 0,
-   "cy_u": -14.04,
-   "cy_v": 24.273,
-   "rect": [
-    -16.015,
-    22.527,
-    -12.065,
-    26.018
-   ]
-  },
-  "Q104": {
-   "origin_u": -6.54,
-   "origin_v": 24.273,
-   "rot": 0,
-   "cy_u": -6.54,
-   "cy_v": 24.273,
-   "rect": [
-    -8.515,
-    22.527,
-    -4.565,
-    26.018
-   ]
-  },
-  "U5": {
-   "origin_u": -14.04,
-   "origin_v": 17.773,
-   "rot": 0,
-   "cy_u": -14.04,
-   "cy_v": 17.773,
-   "rect": [
-    -15.13,
-    16.42,
-    -12.95,
-    19.125
-   ]
-  },
-  "U14": {
-   "origin_u": -53.125,
-   "origin_v": -8.475,
-   "rot": 0,
-   "cy_u": -53.125,
-   "cy_v": -8.475,
-   "rect": [
-    -54.87,
-    -10.37,
-    -51.38,
-    -6.58
-   ]
-  },
-  "U24": {
-   "origin_u": 58.257,
-   "origin_v": 48.015,
-   "rot": 0,
-   "cy_u": 58.257,
-   "cy_v": 48.015,
-   "rect": [
-    54.362,
-    43.82,
-    62.152,
-    52.21
-   ]
-  },
-  "U22": {
-   "origin_u": 17.347,
-   "origin_v": 14.865,
-   "rot": 0,
-   "cy_u": 17.347,
-   "cy_v": 14.865,
-   "rect": [
-    15.252,
-    13.12,
-    19.442,
-    16.61
-   ]
-  },
-  "U23": {
-   "origin_u": 30.347,
-   "origin_v": 14.865,
-   "rot": 0,
-   "cy_u": 30.347,
-   "cy_v": 14.865,
-   "rect": [
-    28.252,
-    13.12,
-    32.442,
-    16.61
-   ]
-  },
-  "U2": {
-   "origin_u": 61.135,
-   "origin_v": 18.685,
-   "rot": 0,
-   "cy_u": 61.135,
-   "cy_v": 18.685,
-   "rect": [
-    55.99,
-    14.017,
-    66.28,
-    23.352
-   ]
-  },
-  "J2": {
-   "origin_u": 13.875,
-   "origin_v": 54.505,
+  "C279": {
+   "origin_u": 14.71,
+   "origin_v": -56.9,
    "rot": 270,
-   "cy_u": 13.875,
-   "cy_v": 56.455,
+   "cy_u": 14.71,
+   "cy_v": -56.9,
    "rect": [
-    7.675,
-    49.31,
-    20.075,
-    63.6
-   ]
+    13.685,
+    -58.825,
+    15.735,
+    -54.975
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
   },
-  "J3": {
-   "origin_u": 27.275,
-   "origin_v": 54.505,
+  "C280": {
+   "origin_u": -33.19,
+   "origin_v": -33.4,
+   "rot": 90,
+   "cy_u": -33.19,
+   "cy_v": -33.4,
+   "rect": [
+    -34.215,
+    -35.325,
+    -32.165,
+    -31.475
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+  },
+  "C281": {
+   "origin_u": -33.19,
+   "origin_v": -37.75,
+   "rot": 0,
+   "cy_u": -33.19,
+   "cy_v": -37.75,
+   "rect": [
+    -34.325,
+    -38.255,
+    -32.055,
+    -37.245
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C282": {
+   "origin_u": -33.19,
+   "origin_v": -36.45,
+   "rot": 0,
+   "cy_u": -33.19,
+   "cy_v": -36.45,
+   "rect": [
+    -34.325,
+    -36.955,
+    -32.055,
+    -35.945
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C283": {
+   "origin_u": -42.35,
+   "origin_v": -38.45,
+   "rot": 180,
+   "cy_u": -42.35,
+   "cy_v": -38.45,
+   "rect": [
+    -43.485,
+    -38.955,
+    -41.215,
+    -37.945
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C284": {
+   "origin_u": -42.35,
+   "origin_v": -39.5,
+   "rot": 180,
+   "cy_u": -42.35,
+   "cy_v": -39.5,
+   "rect": [
+    -43.485,
+    -40.005,
+    -41.215,
+    -38.995
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C285": {
+   "origin_u": -33.05,
+   "origin_v": -42.4,
+   "rot": 0,
+   "cy_u": -33.05,
+   "cy_v": -42.4,
+   "rect": [
+    -34.185,
+    -42.905,
+    -31.915,
+    -41.895
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C286": {
+   "origin_u": -37.45,
+   "origin_v": -44.51,
+   "rot": 180,
+   "cy_u": -37.45,
+   "cy_v": -44.51,
+   "rect": [
+    -38.585,
+    -45.015,
+    -36.315,
+    -44.005
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C287": {
+   "origin_u": -43.25,
+   "origin_v": -43.45,
+   "rot": 180,
+   "cy_u": -43.25,
+   "cy_v": -43.45,
+   "rect": [
+    -44.385,
+    -43.955,
+    -42.115,
+    -42.945
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C288": {
+   "origin_u": -37.55,
+   "origin_v": -45.81,
+   "rot": 0,
+   "cy_u": -37.55,
+   "cy_v": -45.81,
+   "rect": [
+    -38.685,
+    -46.315,
+    -36.415,
+    -45.305
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C289": {
+   "origin_u": 49.69,
+   "origin_v": -40.05,
+   "rot": 90,
+   "cy_u": 49.69,
+   "cy_v": -40.05,
+   "rect": [
+    49.185,
+    -41.185,
+    50.195,
+    -38.915
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C290": {
+   "origin_u": 12.58,
+   "origin_v": -60.15,
    "rot": 270,
-   "cy_u": 27.275,
-   "cy_v": 56.455,
+   "cy_u": 12.58,
+   "cy_v": -60.15,
    "rect": [
-    21.075,
-    49.31,
-    33.475,
-    63.6
-   ]
+    11.555,
+    -62.075,
+    13.605,
+    -58.225
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
   },
-  "U8": {
-   "origin_u": -1.855,
-   "origin_v": 28.822,
-   "rot": 0,
-   "cy_u": -1.855,
-   "cy_v": 28.822,
+  "C291": {
+   "origin_u": 39.65,
+   "origin_v": -41.65,
+   "rot": 270,
+   "cy_u": 39.65,
+   "cy_v": -41.65,
    "rect": [
-    -3.4,
-    25.702,
-    -0.31,
-    31.942
-   ]
+    39.145,
+    -42.785,
+    40.155,
+    -40.515
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
   },
-  "U9": {
-   "origin_u": 10.145,
-   "origin_v": 28.822,
-   "rot": 0,
-   "cy_u": 10.145,
-   "cy_v": 28.822,
+  "C292": {
+   "origin_u": 12.47,
+   "origin_v": -64.15,
+   "rot": 90,
+   "cy_u": 12.47,
+   "cy_v": -64.15,
    "rect": [
-    8.6,
-    25.702,
-    11.69,
-    31.942
-   ]
+    11.445,
+    -66.075,
+    13.495,
+    -62.225
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
   },
-  "U10": {
-   "origin_u": 22.145,
-   "origin_v": 28.822,
+  "C293": {
+   "origin_u": 52.61,
+   "origin_v": -39.65,
    "rot": 0,
-   "cy_u": 22.145,
-   "cy_v": 28.822,
+   "cy_u": 52.61,
+   "cy_v": -39.65,
    "rect": [
-    20.045,
-    26.722,
-    24.245,
-    30.922
-   ]
+    50.685,
+    -40.675,
+    54.535,
+    -38.625
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
   },
-  "U11": {
-   "origin_u": -32.39,
-   "origin_v": -9.738,
+  "C294": {
+   "origin_u": 49.61,
+   "origin_v": -37.75,
    "rot": 0,
-   "cy_u": -32.39,
-   "cy_v": -9.738,
+   "cy_u": 49.61,
+   "cy_v": -37.75,
    "rect": [
-    -35.885,
-    -12.233,
-    -28.895,
-    -7.243
-   ]
+    48.475,
+    -38.255,
+    50.745,
+    -37.245
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C295": {
+   "origin_u": 49.61,
+   "origin_v": -36.45,
+   "rot": 0,
+   "cy_u": 49.61,
+   "cy_v": -36.45,
+   "rect": [
+    48.475,
+    -36.955,
+    50.745,
+    -35.945
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C296": {
+   "origin_u": 40.44,
+   "origin_v": -38.45,
+   "rot": 180,
+   "cy_u": 40.44,
+   "cy_v": -38.45,
+   "rect": [
+    39.305,
+    -38.955,
+    41.575,
+    -37.945
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C297": {
+   "origin_u": 40.44,
+   "origin_v": -39.5,
+   "rot": 180,
+   "cy_u": 40.44,
+   "cy_v": -39.5,
+   "rect": [
+    39.305,
+    -40.005,
+    41.575,
+    -38.995
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C298": {
+   "origin_u": 48.75,
+   "origin_v": -43.3,
+   "rot": 0,
+   "cy_u": 48.75,
+   "cy_v": -43.3,
+   "rect": [
+    47.615,
+    -43.805,
+    49.885,
+    -42.795
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C299": {
+   "origin_u": 45.35,
+   "origin_v": -44.51,
+   "rot": 180,
+   "cy_u": 45.35,
+   "cy_v": -44.51,
+   "rect": [
+    44.215,
+    -45.015,
+    46.485,
+    -44.005
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C300": {
+   "origin_u": 39.54,
+   "origin_v": -43.45,
+   "rot": 180,
+   "cy_u": 39.54,
+   "cy_v": -43.45,
+   "rect": [
+    38.405,
+    -43.955,
+    40.675,
+    -42.945
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C301": {
+   "origin_u": 45.25,
+   "origin_v": -45.81,
+   "rot": 0,
+   "cy_u": 45.25,
+   "cy_v": -45.81,
+   "rect": [
+    44.115,
+    -46.315,
+    46.385,
+    -45.305
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C302": {
+   "origin_u": -16.28,
+   "origin_v": -46.1,
+   "rot": 270,
+   "cy_u": -16.28,
+   "cy_v": -46.1,
+   "rect": [
+    -17.305,
+    -48.025,
+    -15.255,
+    -44.175
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+  },
+  "C303": {
+   "origin_u": -16.22,
+   "origin_v": -50.4,
+   "rot": 90,
+   "cy_u": -16.22,
+   "cy_v": -50.4,
+   "rect": [
+    -17.245,
+    -52.325,
+    -15.195,
+    -48.475
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+  },
+  "C304": {
+   "origin_u": -58.71,
+   "origin_v": -46.1,
+   "rot": 270,
+   "cy_u": -58.71,
+   "cy_v": -46.1,
+   "rect": [
+    -59.735,
+    -48.025,
+    -57.685,
+    -44.175
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+  },
+  "C305": {
+   "origin_u": -58.77,
+   "origin_v": -50.4,
+   "rot": 90,
+   "cy_u": -58.77,
+   "cy_v": -50.4,
+   "rect": [
+    -59.795,
+    -52.325,
+    -57.745,
+    -48.475
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+  },
+  "C306": {
+   "origin_u": 60.87,
+   "origin_v": -42.4,
+   "rot": 180,
+   "cy_u": 60.87,
+   "cy_v": -42.4,
+   "rect": [
+    58.945,
+    -43.425,
+    62.795,
+    -41.375
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+  },
+  "C307": {
+   "origin_u": 29.72,
+   "origin_v": -42.4,
+   "rot": 0,
+   "cy_u": 29.72,
+   "cy_v": -42.4,
+   "rect": [
+    27.795,
+    -43.425,
+    31.645,
+    -41.375
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+  },
+  "C308": {
+   "origin_u": -41.39,
+   "origin_v": -10.135,
+   "rot": 270,
+   "cy_u": -41.39,
+   "cy_v": -10.135,
+   "rect": [
+    -41.895,
+    -11.27,
+    -40.885,
+    -9.0
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C309": {
+   "origin_u": -41.39,
+   "origin_v": -14.135,
+   "rot": 90,
+   "cy_u": -41.39,
+   "cy_v": -14.135,
+   "rect": [
+    -41.895,
+    -15.27,
+    -40.885,
+    -13.0
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C310": {
+   "origin_u": -19.89,
+   "origin_v": -14.135,
+   "rot": 90,
+   "cy_u": -19.89,
+   "cy_v": -14.135,
+   "rect": [
+    -20.395,
+    -15.27,
+    -19.385,
+    -13.0
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C311": {
+   "origin_u": 6.59,
+   "origin_v": -30.27,
+   "rot": 0,
+   "cy_u": 6.59,
+   "cy_v": -30.27,
+   "rect": [
+    5.455,
+    -30.775,
+    7.725,
+    -29.765
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C312": {
+   "origin_u": 2.05,
+   "origin_v": -30.27,
+   "rot": 180,
+   "cy_u": 2.05,
+   "cy_v": -30.27,
+   "rect": [
+    0.915,
+    -30.775,
+    3.185,
+    -29.765
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C313": {
+   "origin_u": 2.8,
+   "origin_v": -36.5,
+   "rot": 0,
+   "cy_u": 2.8,
+   "cy_v": -36.5,
+   "rect": [
+    1.665,
+    -37.005,
+    3.935,
+    -35.995
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C314": {
+   "origin_u": 8.95,
+   "origin_v": -58.85,
+   "rot": 270,
+   "cy_u": 8.95,
+   "cy_v": -58.85,
+   "rect": [
+    8.445,
+    -59.985,
+    9.455,
+    -57.715
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+  },
+  "C315": {
+   "origin_u": -4.05,
+   "origin_v": 29.8,
+   "rot": 270,
+   "cy_u": -4.05,
+   "cy_v": 29.8,
+   "rect": [
+    -5.245,
+    27.455,
+    -2.855,
+    32.145
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:PD_C_1206"
+  },
+  "C316": {
+   "origin_u": 4.8,
+   "origin_v": 51.007,
+   "rot": 270,
+   "cy_u": 4.8,
+   "cy_v": 51.007,
+   "rect": [
+    3.775,
+    49.082,
+    5.825,
+    52.932
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+  },
+  "D1": {
+   "origin_u": -2.02,
+   "origin_v": 59.46,
+   "rot": 0,
+   "cy_u": -2.015,
+   "cy_v": 59.435,
+   "rect": [
+    -2.665,
+    58.585,
+    -1.365,
+    60.285
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:TPD2E2U06DRLR"
+  },
+  "D5": {
+   "origin_u": 6.48,
+   "origin_v": 56.945,
+   "rot": 0,
+   "cy_u": 6.48,
+   "cy_v": 56.945,
+   "rect": [
+    4.505,
+    55.2,
+    8.455,
+    58.69
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:ESDA25L"
+  },
+  "D6": {
+   "origin_u": 2.13,
+   "origin_v": 55.945,
+   "rot": 90,
+   "cy_u": 2.13,
+   "cy_v": 55.945,
+   "rect": [
+    0.835,
+    54.57,
+    3.425,
+    57.32
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:TVS2200DRVR"
+  },
+  "D7": {
+   "origin_u": -0.925,
+   "origin_v": 29.7,
+   "rot": 270,
+   "cy_u": -0.925,
+   "cy_v": 29.7,
+   "rect": [
+    -2.12,
+    27.305,
+    0.27,
+    32.095
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:PD_D_SOD123"
+  },
+  "D200": {
+   "origin_u": 25.475,
+   "origin_v": 55.755,
+   "rot": 180,
+   "cy_u": 25.475,
+   "cy_v": 55.755,
+   "rect": [
+    23.5,
+    54.01,
+    27.45,
+    57.5
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:PESD5V0S2BT"
+  },
+  "D201": {
+   "origin_u": 47.875,
+   "origin_v": 51.255,
+   "rot": 0,
+   "cy_u": 47.875,
+   "cy_v": 51.255,
+   "rect": [
+    45.9,
+    49.51,
+    49.85,
+    53.0
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:PESD5V0S2BT"
+  },
+  "FB200": {
+   "origin_u": -2.1,
+   "origin_v": 2.45,
+   "rot": 0,
+   "cy_u": -2.1,
+   "cy_v": 2.45,
+   "rect": [
+    -3.255,
+    1.935,
+    -0.945,
+    2.965
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
   },
   "J1": {
-   "origin_u": -9.47,
-   "origin_v": 60.015,
+   "origin_u": 1.73,
+   "origin_v": 64.915,
    "rot": 180,
-   "cy_u": -9.47,
-   "cy_v": 60.897,
+   "cy_u": 1.73,
+   "cy_v": 66.33,
    "rect": [
-    -14.6,
-    56.645,
-    -4.34,
-    65.15
-   ]
+    -2.785,
+    62.61,
+    6.245,
+    70.05
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:TYPE-C-31-M-12"
+  },
+  "J2": {
+   "origin_u": 34.475,
+   "origin_v": 59.405,
+   "rot": 270,
+   "cy_u": 34.475,
+   "cy_v": 61.355,
+   "rect": [
+    28.43,
+    54.21,
+    40.52,
+    68.5
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:PJ-307"
+  },
+  "J3": {
+   "origin_u": 47.875,
+   "origin_v": 59.405,
+   "rot": 270,
+   "cy_u": 47.875,
+   "cy_v": 61.355,
+   "rect": [
+    41.83,
+    54.21,
+    53.92,
+    68.5
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:PJ-307"
   },
   "J4": {
-   "origin_u": 0.13,
-   "origin_v": 60.807,
+   "origin_u": 11.33,
+   "origin_v": 65.707,
    "rot": 0,
-   "cy_u": 0.13,
-   "cy_v": 56.997,
+   "cy_u": 11.33,
+   "cy_v": 61.897,
    "rect": [
-    -1.685,
-    51.372,
-    1.945,
-    62.622
-   ]
+    9.515,
+    56.272,
+    13.145,
+    67.522
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:PD_SERVICE_HDR"
   },
-  "L201": {
-   "origin_u": -52.955,
-   "origin_v": -37.705,
-   "rot": 180,
-   "cy_u": -52.955,
-   "cy_v": -37.705,
+  "J5": {
+   "origin_u": 57.035,
+   "origin_v": -12.805,
+   "rot": 270,
+   "cy_u": 61.0,
+   "cy_v": -15.805,
    "rect": [
-    -60.5,
-    -44.3,
-    -45.41,
-    -31.11
-   ]
+    55.5,
+    -22.68,
+    66.5,
+    -8.93
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:Molex_Micro-Fit_3.0_43650-0300_1x03_P3.00mm_Horizontal"
   },
-  "L202": {
-   "origin_u": -37.055,
-   "origin_v": -37.705,
-   "rot": 180,
-   "cy_u": -37.055,
-   "cy_v": -37.705,
-   "rect": [
-    -44.6,
-    -44.3,
-    -29.51,
-    -31.11
-   ]
-  },
-  "L204": {
-   "origin_u": -13.055,
-   "origin_v": -37.705,
+  "J6": {
+   "origin_u": 21.015,
+   "origin_v": 8.805,
    "rot": 0,
-   "cy_u": -13.055,
-   "cy_v": -37.705,
-   "rect": [
-    -20.6,
-    -44.3,
-    -5.51,
-    -31.11
-   ]
-  },
-  "L203": {
-   "origin_u": 2.845,
-   "origin_v": -37.705,
-   "rot": 0,
-   "cy_u": 2.845,
-   "cy_v": -37.705,
-   "rect": [
-    -4.7,
-    -44.3,
-    10.39,
-    -31.11
-   ]
-  },
-  "L205": {
-   "origin_u": 26.745,
-   "origin_v": -37.705,
-   "rot": 180,
-   "cy_u": 26.745,
-   "cy_v": -37.705,
+   "cy_u": 21.015,
+   "cy_v": 4.995,
    "rect": [
     19.2,
-    -44.3,
-    34.29,
-    -31.11
-   ]
+    -0.63,
+    22.83,
+    10.62
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:PinHeader_1x04_P2.54mm_Vertical"
   },
-  "L206": {
-   "origin_u": 50.745,
-   "origin_v": -37.705,
+  "J7": {
+   "origin_u": 23.515,
+   "origin_v": -6.505,
    "rot": 0,
-   "cy_u": 50.745,
-   "cy_v": -37.705,
+   "cy_u": 23.265,
+   "cy_v": -6.505,
    "rect": [
-    43.2,
-    -44.3,
-    58.29,
-    -31.11
-   ]
+    19.22,
+    -10.8,
+    27.31,
+    -2.21
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:Tag-Connect_TC2030-IDC-FP_2x03_P1.27mm_Vertical"
   },
   "J8": {
-   "origin_u": -44.447,
-   "origin_v": 33.035,
+   "origin_u": -44.448,
+   "origin_v": 37.935,
    "rot": 90,
    "cy_u": -39.367,
-   "cy_v": 33.035,
+   "cy_v": 37.935,
    "rect": [
     -46.263,
-    31.22,
+    36.12,
     -32.472,
-    34.85
-   ]
+    39.75
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:PinHeader_1x05_P2.54mm_Vertical"
   },
-  "L3": {
-   "origin_u": 66.805,
-   "origin_v": -3.185,
-   "rot": 90,
-   "cy_u": 66.805,
-   "cy_v": -3.185,
+  "J9": {
+   "origin_u": -17.515,
+   "origin_v": -64.155,
+   "rot": 180,
+   "cy_u": -19.495,
+   "cy_v": -63.605,
    "rect": [
-    64.46,
-    -5.53,
-    69.15,
-    -0.84
-   ]
+    -23.97,
+    -68.4,
+    -15.02,
+    -58.81
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:JST_B2P_VH_1x02_P3.96mm_Vertical"
   },
-  "Q100": {
-   "origin_u": -19.325,
-   "origin_v": 5.365,
+  "J10": {
+   "origin_u": -57.475,
+   "origin_v": -63.055,
    "rot": 0,
-   "cy_u": -19.325,
-   "cy_v": 5.365,
+   "cy_u": -55.495,
+   "cy_v": -63.605,
    "rect": [
-    -21.3,
-    3.62,
-    -17.35,
-    7.11
-   ]
+    -59.97,
+    -68.4,
+    -51.02,
+    -58.81
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:JST_B2P_VH_1x02_P3.96mm_Vertical"
   },
-  "Q101": {
-   "origin_u": -4.325,
-   "origin_v": 5.365,
+  "J11": {
+   "origin_u": 47.275,
+   "origin_v": -64.155,
+   "rot": 180,
+   "cy_u": 45.295,
+   "cy_v": -63.605,
+   "rect": [
+    40.82,
+    -68.4,
+    49.77,
+    -58.81
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:JST_B2P_VH_1x02_P3.96mm_Vertical"
+  },
+  "L1": {
+   "origin_u": 4.32,
+   "origin_v": -21.23,
    "rot": 0,
-   "cy_u": -4.325,
-   "cy_v": 5.365,
+   "cy_u": 4.32,
+   "cy_v": -21.23,
    "rect": [
-    -6.3,
-    3.62,
-    -2.35,
-    7.11
-   ]
-  },
-  "Q102": {
-   "origin_u": -5.262,
-   "origin_v": 9.815,
-   "rot": 270,
-   "cy_u": -5.262,
-   "cy_v": 9.815,
-   "rect": [
-    -7.007,
-    7.84,
-    -3.517,
-    11.79
-   ]
+    0.775,
+    -24.525,
+    7.865,
+    -17.935
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:Bourns_SRN6045TA-2R2Y"
   },
   "L2": {
    "origin_u": -47.875,
-   "origin_v": -8.475,
+   "origin_v": -12.275,
    "rot": 0,
    "cy_u": -47.875,
-   "cy_v": -8.475,
+   "cy_v": -12.275,
    "rect": [
     -50.22,
-    -10.82,
+    -14.62,
     -45.53,
-    -6.13
-   ]
+    -9.93
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:Coilcraft_XFL4015-471MEC"
   },
-  "Y200": {
-   "origin_u": 46.895,
-   "origin_v": 53.515,
-   "rot": 90,
-   "cy_u": 46.895,
-   "cy_v": 53.515,
-   "rect": [
-    45.1,
-    51.37,
-    48.69,
-    55.66
-   ]
-  },
-  "Y170": {
-   "origin_u": 56.465,
-   "origin_v": 27.645,
+  "L3": {
+   "origin_u": -24.94,
+   "origin_v": 52.74,
    "rot": 0,
-   "cy_u": 56.465,
-   "cy_v": 27.645,
+   "cy_u": -24.94,
+   "cy_v": 52.74,
    "rect": [
-    54.32,
-    25.85,
-    58.61,
-    29.44
-   ]
+    -27.285,
+    50.395,
+    -22.595,
+    55.085
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:Coilcraft_XFL4015-471MEC"
   },
-  "D200": {
-   "origin_u": 4.875,
-   "origin_v": 50.855,
+  "L200": {
+   "origin_u": -2.065,
+   "origin_v": -57.895,
+   "rot": 0,
+   "cy_u": -2.065,
+   "cy_v": -57.895,
+   "rect": [
+    -6.21,
+    -62.19,
+    2.08,
+    -53.6
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:L_Coilcraft_XAL7070-XXX"
+  },
+  "L201": {
+   "origin_u": -22.506,
+   "origin_v": -36.8,
+   "rot": 0,
+   "cy_u": -22.506,
+   "cy_v": -36.8,
+   "rect": [
+    -30.051,
+    -43.395,
+    -14.961,
+    -30.205
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:L_Sunlord_MWSA1265S"
+  },
+  "L202": {
+   "origin_u": -25.445,
+   "origin_v": -50.805,
+   "rot": 0,
+   "cy_u": -25.445,
+   "cy_v": -50.805,
+   "rect": [
+    -32.99,
+    -57.4,
+    -17.9,
+    -44.21
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:L_Sunlord_MWSA1265S"
+  },
+  "L203": {
+   "origin_u": -52.484,
+   "origin_v": -36.8,
    "rot": 180,
-   "cy_u": 4.875,
-   "cy_v": 50.855,
+   "cy_u": -52.484,
+   "cy_v": -36.8,
    "rect": [
-    2.9,
-    49.11,
-    6.85,
-    52.6
-   ]
+    -60.029,
+    -43.395,
+    -44.939,
+    -30.205
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:L_Sunlord_MWSA1265S"
   },
-  "D201": {
-   "origin_u": 27.275,
-   "origin_v": 46.355,
+  "L204": {
+   "origin_u": -49.545,
+   "origin_v": -50.805,
+   "rot": 180,
+   "cy_u": -49.545,
+   "cy_v": -50.805,
+   "rect": [
+    -57.09,
+    -57.4,
+    -42.0,
+    -44.21
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:L_Sunlord_MWSA1265S"
+  },
+  "L205": {
+   "origin_u": 57.345,
+   "origin_v": -50.805,
    "rot": 0,
-   "cy_u": 27.275,
-   "cy_v": 46.355,
+   "cy_u": 57.345,
+   "cy_v": -50.805,
    "rect": [
-    25.3,
-    44.61,
-    29.25,
-    48.1
-   ]
+    49.8,
+    -57.4,
+    64.89,
+    -44.21
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:L_Sunlord_MWSA1265S"
   },
-  "D7": {
-   "origin_u": -23.465,
-   "origin_v": -13.038,
+  "L206": {
+   "origin_u": 33.245,
+   "origin_v": -50.805,
+   "rot": 180,
+   "cy_u": 33.245,
+   "cy_v": -50.805,
+   "rect": [
+    25.7,
+    -57.4,
+    40.79,
+    -44.21
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:L_Sunlord_MWSA1265S"
+  },
+  "LOGO1": {
+   "origin_u": 25.95,
+   "origin_v": 33.65,
+   "rot": 180,
+   "cy_u": 25.95,
+   "cy_v": 33.65,
+   "rect": [
+    7.024,
+    12.799,
+    44.876,
+    54.501
+   ],
+   "side": "B",
+   "fpid": "DesktopSpeaker:Logo_Orwellian"
+  },
+  "Q100": {
+   "origin_u": 17.775,
+   "origin_v": -21.935,
+   "rot": 0,
+   "cy_u": 17.775,
+   "cy_v": -21.935,
+   "rect": [
+    15.8,
+    -23.68,
+    19.75,
+    -20.19
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:2N7002"
+  },
+  "Q101": {
+   "origin_u": 32.775,
+   "origin_v": -21.935,
+   "rot": 0,
+   "cy_u": 32.775,
+   "cy_v": -21.935,
+   "rect": [
+    30.8,
+    -23.68,
+    34.75,
+    -20.19
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:2N7002"
+  },
+  "Q102": {
+   "origin_u": 31.838,
+   "origin_v": -17.485,
    "rot": 270,
-   "cy_u": -23.465,
-   "cy_v": -13.038,
+   "cy_u": 31.838,
+   "cy_v": -17.485,
    "rect": [
-    -24.66,
-    -15.433,
-    -22.27,
-    -10.643
-   ]
+    30.093,
+    -19.46,
+    33.583,
+    -15.51
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:2N7002"
   },
-  "D1": {
-   "origin_u": -13.22,
-   "origin_v": 54.56,
+  "Q103": {
+   "origin_u": 25.275,
+   "origin_v": -21.935,
    "rot": 0,
-   "cy_u": -13.22,
-   "cy_v": 54.545,
+   "cy_u": 25.275,
+   "cy_v": -21.935,
    "rect": [
-    -14.345,
-    53.685,
-    -12.095,
-    55.405
-   ]
+    23.23,
+    -23.88,
+    27.32,
+    -19.99
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:CSD17579Q3A_DNH0008A"
   },
-  "D5": {
-   "origin_u": -4.72,
-   "origin_v": 52.045,
+  "Q104": {
+   "origin_u": -39.64,
+   "origin_v": 6.572,
    "rot": 0,
-   "cy_u": -4.72,
-   "cy_v": 52.045,
+   "cy_u": -39.64,
+   "cy_v": 6.572,
    "rect": [
-    -6.695,
-    50.3,
-    -2.745,
-    53.79
-   ]
+    -41.615,
+    4.828,
+    -37.665,
+    8.317
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:2N7002"
   },
-  "D6": {
-   "origin_u": -9.07,
-   "origin_v": 51.045,
+  "R10": {
+   "origin_u": -12.05,
+   "origin_v": 28.57,
+   "rot": 0,
+   "cy_u": -12.05,
+   "cy_v": 28.57,
+   "rect": [
+    -13.205,
+    28.055,
+    -10.895,
+    29.085
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R11": {
+   "origin_u": -11.55,
+   "origin_v": 27.27,
+   "rot": 0,
+   "cy_u": -11.55,
+   "cy_v": 27.27,
+   "rect": [
+    -12.705,
+    26.755,
+    -10.395,
+    27.785
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R12": {
+   "origin_u": -15.15,
+   "origin_v": 40.5,
    "rot": 90,
-   "cy_u": -9.07,
-   "cy_v": 51.045,
+   "cy_u": -15.15,
+   "cy_v": 40.5,
    "rect": [
-    -10.365,
-    49.645,
-    -7.775,
-    52.445
-   ]
+    -15.665,
+    39.345,
+    -14.635,
+    41.655
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
   },
-  "U19": {
-   "origin_u": -9.47,
-   "origin_v": 46.397,
+  "R13": {
+   "origin_u": -7.58,
+   "origin_v": 28.6,
    "rot": 0,
-   "cy_u": -9.47,
-   "cy_v": 46.397,
+   "cy_u": -7.58,
+   "cy_v": 28.6,
    "rect": [
-    -11.465,
-    44.602,
-    -7.475,
-    48.192
-   ]
+    -8.735,
+    28.085,
+    -6.425,
+    29.115
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R14": {
+   "origin_u": -13.98,
+   "origin_v": 28.0,
+   "rot": 90,
+   "cy_u": -13.98,
+   "cy_v": 28.0,
+   "rect": [
+    -14.495,
+    26.845,
+    -13.465,
+    29.155
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R15": {
+   "origin_u": -15.28,
+   "origin_v": 27.4,
+   "rot": 90,
+   "cy_u": -15.28,
+   "cy_v": 27.4,
+   "rect": [
+    -15.795,
+    26.245,
+    -14.765,
+    28.555
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R16": {
+   "origin_u": -16.58,
+   "origin_v": 32.6,
+   "rot": 270,
+   "cy_u": -16.58,
+   "cy_v": 32.6,
+   "rect": [
+    -17.095,
+    31.445,
+    -16.065,
+    33.755
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R17": {
+   "origin_u": -8.98,
+   "origin_v": 27.2,
+   "rot": 0,
+   "cy_u": -8.98,
+   "cy_v": 27.2,
+   "rect": [
+    -10.135,
+    26.685,
+    -7.825,
+    27.715
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R18": {
+   "origin_u": -13.65,
+   "origin_v": 40.5,
+   "rot": 90,
+   "cy_u": -13.65,
+   "cy_v": 40.5,
+   "rect": [
+    -14.165,
+    39.345,
+    -13.135,
+    41.655
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R100": {
+   "origin_u": 6.12,
+   "origin_v": -40.28,
+   "rot": 0,
+   "cy_u": 6.12,
+   "cy_v": -40.28,
+   "rect": [
+    4.965,
+    -40.795,
+    7.275,
+    -39.765
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R101": {
+   "origin_u": 53.535,
+   "origin_v": -15.305,
+   "rot": 90,
+   "cy_u": 53.535,
+   "cy_v": -15.305,
+   "rect": [
+    53.02,
+    -16.46,
+    54.05,
+    -14.15
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R102": {
+   "origin_u": 12.15,
+   "origin_v": -34.34,
+   "rot": 0,
+   "cy_u": 12.15,
+   "cy_v": -34.34,
+   "rect": [
+    10.995,
+    -34.855,
+    13.305,
+    -33.825
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R103": {
+   "origin_u": 5.02,
+   "origin_v": -38.18,
+   "rot": 90,
+   "cy_u": 5.02,
+   "cy_v": -38.18,
+   "rect": [
+    4.505,
+    -39.335,
+    5.535,
+    -37.025
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R106": {
+   "origin_u": 30.29,
+   "origin_v": -4.1,
+   "rot": 90,
+   "cy_u": 30.29,
+   "cy_v": -4.1,
+   "rect": [
+    29.775,
+    -5.255,
+    30.805,
+    -2.945
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R107": {
+   "origin_u": 17.44,
+   "origin_v": -19.49,
+   "rot": 0,
+   "cy_u": 17.44,
+   "cy_v": -19.49,
+   "rect": [
+    16.285,
+    -20.005,
+    18.595,
+    -18.975
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R108": {
+   "origin_u": 7.42,
+   "origin_v": -37.98,
+   "rot": 90,
+   "cy_u": 7.42,
+   "cy_v": -37.98,
+   "rect": [
+    6.905,
+    -39.135,
+    7.935,
+    -36.825
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R109": {
+   "origin_u": 35.51,
+   "origin_v": -22.54,
+   "rot": 270,
+   "cy_u": 35.51,
+   "cy_v": -22.54,
+   "rect": [
+    34.995,
+    -23.695,
+    36.025,
+    -21.385
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R110": {
+   "origin_u": 29.34,
+   "origin_v": -20.02,
+   "rot": 90,
+   "cy_u": 29.34,
+   "cy_v": -20.02,
+   "rect": [
+    28.825,
+    -21.175,
+    29.855,
+    -18.865
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R111": {
+   "origin_u": 34.29,
+   "origin_v": -17.05,
+   "rot": 270,
+   "cy_u": 34.29,
+   "cy_v": -17.05,
+   "rect": [
+    33.775,
+    -18.205,
+    34.805,
+    -15.895
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R112": {
+   "origin_u": 23.82,
+   "origin_v": -25.41,
+   "rot": 180,
+   "cy_u": 23.82,
+   "cy_v": -25.41,
+   "rect": [
+    22.665,
+    -25.925,
+    24.975,
+    -24.895
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R113": {
+   "origin_u": -11.68,
+   "origin_v": 64.055,
+   "rot": 90,
+   "cy_u": -11.68,
+   "cy_v": 64.055,
+   "rect": [
+    -12.195,
+    62.9,
+    -11.165,
+    65.21
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R120": {
+   "origin_u": -42.94,
+   "origin_v": 14.82,
+   "rot": 270,
+   "cy_u": -42.94,
+   "cy_v": 14.82,
+   "rect": [
+    -43.455,
+    13.665,
+    -42.425,
+    15.975
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R121": {
+   "origin_u": -48.34,
+   "origin_v": 17.72,
+   "rot": 270,
+   "cy_u": -48.34,
+   "cy_v": 17.72,
+   "rect": [
+    -48.855,
+    16.565,
+    -47.825,
+    18.875
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R122": {
+   "origin_u": -54.54,
+   "origin_v": 9.02,
+   "rot": 180,
+   "cy_u": -54.54,
+   "cy_v": 9.02,
+   "rect": [
+    -55.695,
+    8.505,
+    -53.385,
+    9.535
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R124": {
+   "origin_u": -56.88,
+   "origin_v": 12.52,
+   "rot": 0,
+   "cy_u": -56.88,
+   "cy_v": 12.52,
+   "rect": [
+    -58.035,
+    12.005,
+    -55.725,
+    13.035
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R125": {
+   "origin_u": -54.28,
+   "origin_v": 11.72,
+   "rot": 0,
+   "cy_u": -54.28,
+   "cy_v": 11.72,
+   "rect": [
+    -55.435,
+    11.205,
+    -53.125,
+    12.235
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R126": {
+   "origin_u": -43.64,
+   "origin_v": 12.82,
+   "rot": 180,
+   "cy_u": -43.64,
+   "cy_v": 12.82,
+   "rect": [
+    -44.795,
+    12.305,
+    -42.485,
+    13.335
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R127": {
+   "origin_u": -41.18,
+   "origin_v": 9.02,
+   "rot": 180,
+   "cy_u": -41.18,
+   "cy_v": 9.02,
+   "rect": [
+    -42.335,
+    8.505,
+    -40.025,
+    9.535
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R140": {
+   "origin_u": -49.98,
+   "origin_v": -15.67,
+   "rot": 180,
+   "cy_u": -49.98,
+   "cy_v": -15.67,
+   "rect": [
+    -51.135,
+    -16.185,
+    -48.825,
+    -15.155
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R141": {
+   "origin_u": -56.23,
+   "origin_v": -9.97,
+   "rot": 180,
+   "cy_u": -56.23,
+   "cy_v": -9.97,
+   "rect": [
+    -57.385,
+    -10.485,
+    -55.075,
+    -9.455
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R142": {
+   "origin_u": -55.32,
+   "origin_v": -8.67,
+   "rot": 180,
+   "cy_u": -55.32,
+   "cy_v": -8.67,
+   "rect": [
+    -56.475,
+    -9.185,
+    -54.165,
+    -8.155
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R150": {
+   "origin_u": -34.05,
+   "origin_v": 48.75,
+   "rot": 0,
+   "cy_u": -34.05,
+   "cy_v": 48.75,
+   "rect": [
+    -35.205,
+    48.235,
+    -32.895,
+    49.265
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R151": {
+   "origin_u": -33.98,
+   "origin_v": 49.84,
+   "rot": 180,
+   "cy_u": -33.98,
+   "cy_v": 49.84,
+   "rect": [
+    -35.135,
+    49.325,
+    -32.825,
+    50.355
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R152": {
+   "origin_u": -27.88,
+   "origin_v": 55.84,
+   "rot": 90,
+   "cy_u": -27.88,
+   "cy_v": 55.84,
+   "rect": [
+    -28.395,
+    54.685,
+    -27.365,
+    56.995
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R153": {
+   "origin_u": -31.28,
+   "origin_v": 57.34,
+   "rot": 180,
+   "cy_u": -31.28,
+   "cy_v": 57.34,
+   "rect": [
+    -32.435,
+    56.825,
+    -30.125,
+    57.855
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R154": {
+   "origin_u": -29.23,
+   "origin_v": 40.14,
+   "rot": 0,
+   "cy_u": -29.23,
+   "cy_v": 40.14,
+   "rect": [
+    -30.385,
+    39.625,
+    -28.075,
+    40.655
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R160": {
+   "origin_u": 45.04,
+   "origin_v": 8.65,
+   "rot": 90,
+   "cy_u": 45.04,
+   "cy_v": 8.65,
+   "rect": [
+    44.525,
+    7.495,
+    45.555,
+    9.805
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R170": {
+   "origin_u": 3.3,
+   "origin_v": 23.62,
+   "rot": 90,
+   "cy_u": 3.3,
+   "cy_v": 23.62,
+   "rect": [
+    2.785,
+    22.465,
+    3.815,
+    24.775
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R171": {
+   "origin_u": 1.8,
+   "origin_v": 29.22,
+   "rot": 270,
+   "cy_u": 1.8,
+   "cy_v": 29.22,
+   "rect": [
+    1.285,
+    28.065,
+    2.315,
+    30.375
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R172": {
+   "origin_u": 1.75,
+   "origin_v": 26.62,
+   "rot": 270,
+   "cy_u": 1.75,
+   "cy_v": 26.62,
+   "rect": [
+    1.235,
+    25.465,
+    2.265,
+    27.775
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R173": {
+   "origin_u": 1.8,
+   "origin_v": 31.567,
+   "rot": 90,
+   "cy_u": 1.8,
+   "cy_v": 31.567,
+   "rect": [
+    1.285,
+    30.412,
+    2.315,
+    32.722
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R174": {
+   "origin_u": 5.61,
+   "origin_v": 38.94,
+   "rot": 0,
+   "cy_u": 5.61,
+   "cy_v": 38.94,
+   "rect": [
+    4.455,
+    38.425,
+    6.765,
+    39.455
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R175": {
+   "origin_u": 10.78,
+   "origin_v": 40.38,
+   "rot": 180,
+   "cy_u": 10.78,
+   "cy_v": 40.38,
+   "rect": [
+    9.625,
+    39.865,
+    11.935,
+    40.895
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R176": {
+   "origin_u": 18.365,
+   "origin_v": 37.182,
+   "rot": 180,
+   "cy_u": 18.365,
+   "cy_v": 37.182,
+   "rect": [
+    17.21,
+    36.667,
+    19.52,
+    37.697
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R180": {
+   "origin_u": -54.892,
+   "origin_v": 42.435,
+   "rot": 270,
+   "cy_u": -54.892,
+   "cy_v": 42.435,
+   "rect": [
+    -55.407,
+    41.28,
+    -54.377,
+    43.59
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R181": {
+   "origin_u": -51.317,
+   "origin_v": 39.435,
+   "rot": 180,
+   "cy_u": -51.317,
+   "cy_v": 39.435,
+   "rect": [
+    -52.472,
+    38.92,
+    -50.162,
+    39.95
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R182": {
+   "origin_u": -37.65,
+   "origin_v": 42.8,
+   "rot": 180,
+   "cy_u": -37.65,
+   "cy_v": 42.8,
+   "rect": [
+    -38.805,
+    42.285,
+    -36.495,
+    43.315
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R183": {
+   "origin_u": -33.93,
+   "origin_v": 57.74,
+   "rot": 180,
+   "cy_u": -33.93,
+   "cy_v": 57.74,
+   "rect": [
+    -35.085,
+    57.225,
+    -32.775,
+    58.255
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R184": {
+   "origin_u": -34.33,
+   "origin_v": 59.04,
+   "rot": 0,
+   "cy_u": -34.33,
+   "cy_v": 59.04,
+   "rect": [
+    -35.485,
+    58.525,
+    -33.175,
+    59.555
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R185": {
+   "origin_u": -47.95,
+   "origin_v": 64.34,
+   "rot": 180,
+   "cy_u": -47.95,
+   "cy_v": 64.34,
+   "rect": [
+    -49.105,
+    63.825,
+    -46.795,
+    64.855
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R186": {
+   "origin_u": -35.03,
+   "origin_v": 61.84,
+   "rot": 90,
+   "cy_u": -35.03,
+   "cy_v": 61.84,
+   "rect": [
+    -35.545,
+    60.685,
+    -34.515,
+    62.995
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R187": {
+   "origin_u": -53.85,
+   "origin_v": 64.34,
+   "rot": 0,
+   "cy_u": -53.85,
+   "cy_v": 64.34,
+   "rect": [
+    -55.005,
+    63.825,
+    -52.695,
+    64.855
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R200": {
+   "origin_u": 11.75,
+   "origin_v": 9.8,
+   "rot": 180,
+   "cy_u": 11.75,
+   "cy_v": 9.8,
+   "rect": [
+    10.595,
+    9.285,
+    12.905,
+    10.315
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R201": {
+   "origin_u": 11.75,
+   "origin_v": 11.1,
+   "rot": 180,
+   "cy_u": 11.75,
+   "cy_v": 11.1,
+   "rect": [
+    10.595,
+    10.585,
+    12.905,
+    11.615
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R202": {
+   "origin_u": 11.75,
+   "origin_v": 7.2,
+   "rot": 180,
+   "cy_u": 11.75,
+   "cy_v": 7.2,
+   "rect": [
+    10.595,
+    6.685,
+    12.905,
+    7.715
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R203": {
+   "origin_u": 11.75,
+   "origin_v": 8.5,
+   "rot": 180,
+   "cy_u": 11.75,
+   "cy_v": 8.5,
+   "rect": [
+    10.595,
+    7.985,
+    12.905,
+    9.015
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R204": {
+   "origin_u": 8.5,
+   "origin_v": -1.88,
+   "rot": 180,
+   "cy_u": 8.5,
+   "cy_v": -1.88,
+   "rect": [
+    7.345,
+    -2.395,
+    9.655,
+    -1.365
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R205": {
+   "origin_u": 9.7,
+   "origin_v": 0.12,
+   "rot": 90,
+   "cy_u": 9.7,
+   "cy_v": 0.12,
+   "rect": [
+    9.185,
+    -1.035,
+    10.215,
+    1.275
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R206": {
+   "origin_u": 1.795,
+   "origin_v": -1.868,
+   "rot": 270,
+   "cy_u": 1.795,
+   "cy_v": -1.868,
+   "rect": [
+    1.28,
+    -3.023,
+    2.31,
+    -0.713
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R207": {
+   "origin_u": 0.495,
+   "origin_v": -1.868,
+   "rot": 270,
+   "cy_u": 0.495,
+   "cy_v": -1.868,
+   "rect": [
+    -0.02,
+    -3.023,
+    1.01,
+    -0.713
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R208": {
+   "origin_u": -0.805,
+   "origin_v": -1.868,
+   "rot": 270,
+   "cy_u": -0.805,
+   "cy_v": -1.868,
+   "rect": [
+    -1.32,
+    -3.023,
+    -0.29,
+    -0.713
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R209": {
+   "origin_u": 5.65,
+   "origin_v": -3.2,
+   "rot": 90,
+   "cy_u": 5.65,
+   "cy_v": -3.2,
+   "rect": [
+    5.135,
+    -4.355,
+    6.165,
+    -2.045
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R210": {
+   "origin_u": -7.4,
+   "origin_v": 9.45,
+   "rot": 270,
+   "cy_u": -7.4,
+   "cy_v": 9.45,
+   "rect": [
+    -7.915,
+    8.295,
+    -6.885,
+    10.605
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R211": {
+   "origin_u": 3.35,
+   "origin_v": -3.65,
+   "rot": 0,
+   "cy_u": 3.35,
+   "cy_v": -3.65,
+   "rect": [
+    2.195,
+    -4.165,
+    4.505,
+    -3.135
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R212": {
+   "origin_u": 36.36,
+   "origin_v": 34.51,
+   "rot": 180,
+   "cy_u": 36.36,
+   "cy_v": 34.51,
+   "rect": [
+    35.205,
+    33.995,
+    37.515,
+    35.025
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R220": {
+   "origin_u": 28.84,
+   "origin_v": 27.83,
+   "rot": 0,
+   "cy_u": 28.84,
+   "cy_v": 27.83,
+   "rect": [
+    27.685,
+    27.315,
+    29.995,
+    28.345
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R221": {
+   "origin_u": 29.94,
+   "origin_v": 25.86,
+   "rot": 90,
+   "cy_u": 29.94,
+   "cy_v": 25.86,
+   "rect": [
+    29.425,
+    24.705,
+    30.455,
+    27.015
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R222": {
+   "origin_u": 25.05,
+   "origin_v": 15.2,
+   "rot": 270,
+   "cy_u": 25.05,
+   "cy_v": 15.2,
+   "rect": [
+    24.535,
+    14.045,
+    25.565,
+    16.355
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R223": {
+   "origin_u": 26.35,
+   "origin_v": 16.4,
+   "rot": 270,
+   "cy_u": 26.35,
+   "cy_v": 16.4,
+   "rect": [
+    25.835,
+    15.245,
+    26.865,
+    17.555
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R224": {
+   "origin_u": 43.24,
+   "origin_v": 51.13,
+   "rot": 180,
+   "cy_u": 43.24,
+   "cy_v": 51.13,
+   "rect": [
+    42.085,
+    50.615,
+    44.395,
+    51.645
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R225": {
+   "origin_u": 42.64,
+   "origin_v": 49.13,
+   "rot": 90,
+   "cy_u": 42.64,
+   "cy_v": 49.13,
+   "rect": [
+    42.125,
+    47.975,
+    43.155,
+    50.285
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R226": {
+   "origin_u": 25.24,
+   "origin_v": 28.4,
+   "rot": 180,
+   "cy_u": 25.24,
+   "cy_v": 28.4,
+   "rect": [
+    24.085,
+    27.885,
+    26.395,
+    28.915
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R227": {
+   "origin_u": 27.34,
+   "origin_v": 25.03,
+   "rot": 90,
+   "cy_u": 27.34,
+   "cy_v": 25.03,
+   "rect": [
+    26.825,
+    23.875,
+    27.855,
+    26.185
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R228": {
+   "origin_u": 23.74,
+   "origin_v": 19.01,
+   "rot": 90,
+   "cy_u": 23.74,
+   "cy_v": 19.01,
+   "rect": [
+    23.225,
+    17.855,
+    24.255,
+    20.165
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R229": {
+   "origin_u": 27.34,
+   "origin_v": 20.81,
+   "rot": 90,
+   "cy_u": 27.34,
+   "cy_v": 20.81,
+   "rect": [
+    26.825,
+    19.655,
+    27.855,
+    21.965
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R230": {
+   "origin_u": 39.34,
+   "origin_v": 22.91,
+   "rot": 270,
+   "cy_u": 39.34,
+   "cy_v": 22.91,
+   "rect": [
+    38.825,
+    21.755,
+    39.855,
+    24.065
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R231": {
+   "origin_u": 34.74,
+   "origin_v": 24.41,
+   "rot": 270,
+   "cy_u": 34.74,
+   "cy_v": 24.41,
+   "rect": [
+    34.225,
+    23.255,
+    35.255,
+    25.565
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R232": {
+   "origin_u": 46.79,
+   "origin_v": 28.02,
+   "rot": 90,
+   "cy_u": 46.79,
+   "cy_v": 28.02,
+   "rect": [
+    46.275,
+    26.865,
+    47.305,
+    29.175
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R233": {
+   "origin_u": 45.49,
+   "origin_v": 29.22,
+   "rot": 90,
+   "cy_u": 45.49,
+   "cy_v": 29.22,
+   "rect": [
+    44.975,
+    28.065,
+    46.005,
+    30.375
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R234": {
+   "origin_u": 27.94,
+   "origin_v": 22.81,
+   "rot": 0,
+   "cy_u": 27.94,
+   "cy_v": 22.81,
+   "rect": [
+    26.785,
+    22.295,
+    29.095,
+    23.325
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R235": {
+   "origin_u": 34.74,
+   "origin_v": 20.81,
+   "rot": 270,
+   "cy_u": 34.74,
+   "cy_v": 20.81,
+   "rect": [
+    34.225,
+    19.655,
+    35.255,
+    21.965
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R236": {
+   "origin_u": 51.99,
+   "origin_v": 26.32,
+   "rot": 90,
+   "cy_u": 51.99,
+   "cy_v": 26.32,
+   "rect": [
+    51.475,
+    25.165,
+    52.505,
+    27.475
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R237": {
+   "origin_u": 46.79,
+   "origin_v": 20.72,
+   "rot": 180,
+   "cy_u": 46.79,
+   "cy_v": 20.72,
+   "rect": [
+    45.635,
+    20.205,
+    47.945,
+    21.235
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R238": {
+   "origin_u": 49.19,
+   "origin_v": 19.22,
+   "rot": 270,
+   "cy_u": 49.19,
+   "cy_v": 19.22,
+   "rect": [
+    48.675,
+    18.065,
+    49.705,
+    20.375
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R239": {
+   "origin_u": 30.97,
+   "origin_v": 51.75,
+   "rot": 90,
+   "cy_u": 30.97,
+   "cy_v": 51.75,
+   "rect": [
+    30.455,
+    50.595,
+    31.485,
+    52.905
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R240": {
+   "origin_u": 32.57,
+   "origin_v": 52.35,
+   "rot": 270,
+   "cy_u": 32.57,
+   "cy_v": 52.35,
+   "rect": [
+    32.055,
+    51.195,
+    33.085,
+    53.505
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R241": {
+   "origin_u": 41.17,
+   "origin_v": 50.75,
+   "rot": 90,
+   "cy_u": 41.17,
+   "cy_v": 50.75,
+   "rect": [
+    40.655,
+    49.595,
+    41.685,
+    51.905
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R242": {
+   "origin_u": 43.17,
+   "origin_v": 52.55,
+   "rot": 180,
+   "cy_u": 43.17,
+   "cy_v": 52.55,
+   "rect": [
+    42.015,
+    52.035,
+    44.325,
+    53.065
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R243": {
+   "origin_u": 50.54,
+   "origin_v": 51.4,
+   "rot": 270,
+   "cy_u": 50.54,
+   "cy_v": 51.4,
+   "rect": [
+    50.025,
+    50.245,
+    51.055,
+    52.555
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R244": {
+   "origin_u": 49.74,
+   "origin_v": 48.2,
+   "rot": 270,
+   "cy_u": 49.74,
+   "cy_v": 48.2,
+   "rect": [
+    49.225,
+    47.045,
+    50.255,
+    49.355
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R250": {
+   "origin_u": 13.1,
+   "origin_v": -54.1,
+   "rot": 270,
+   "cy_u": 13.1,
+   "cy_v": -54.1,
+   "rect": [
+    12.585,
+    -55.255,
+    13.615,
+    -52.945
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R251": {
+   "origin_u": 12.0,
+   "origin_v": -54.1,
+   "rot": 90,
+   "cy_u": 12.0,
+   "cy_v": -54.1,
+   "rect": [
+    11.485,
+    -55.255,
+    12.515,
+    -52.945
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R252": {
+   "origin_u": 3.05,
+   "origin_v": -57.75,
+   "rot": 270,
+   "cy_u": 3.05,
+   "cy_v": -57.75,
+   "rect": [
+    2.535,
+    -58.905,
+    3.565,
+    -56.595
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R253": {
+   "origin_u": 8.7,
+   "origin_v": -54.1,
+   "rot": 90,
+   "cy_u": 8.7,
+   "cy_v": -54.1,
+   "rect": [
+    8.185,
+    -55.255,
+    9.215,
+    -52.945
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R254": {
+   "origin_u": 9.8,
+   "origin_v": -54.1,
+   "rot": 90,
+   "cy_u": 9.8,
+   "cy_v": -54.1,
+   "rect": [
+    9.285,
+    -55.255,
+    10.315,
+    -52.945
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R255": {
+   "origin_u": 1.81,
+   "origin_v": -51.84,
+   "rot": 90,
+   "cy_u": 1.81,
+   "cy_v": -51.84,
+   "rect": [
+    1.295,
+    -52.995,
+    2.325,
+    -50.685
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R256": {
+   "origin_u": 8.8,
+   "origin_v": -61.55,
+   "rot": 270,
+   "cy_u": 8.8,
+   "cy_v": -61.55,
+   "rect": [
+    8.285,
+    -62.705,
+    9.315,
+    -60.395
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R257": {
+   "origin_u": -40.55,
+   "origin_v": -33.0,
+   "rot": 270,
+   "cy_u": -40.55,
+   "cy_v": -33.0,
+   "rect": [
+    -41.065,
+    -34.155,
+    -40.035,
+    -31.845
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R258": {
+   "origin_u": 35.95,
+   "origin_v": -19.6,
+   "rot": 270,
+   "cy_u": 35.95,
+   "cy_v": -19.6,
+   "rect": [
+    35.435,
+    -20.755,
+    36.465,
+    -18.445
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R259": {
+   "origin_u": 37.52,
+   "origin_v": -7.58,
+   "rot": 270,
+   "cy_u": 37.52,
+   "cy_v": -7.58,
+   "rect": [
+    37.005,
+    -8.735,
+    38.035,
+    -6.425
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R261": {
+   "origin_u": 49.61,
+   "origin_v": -35.2,
+   "rot": 180,
+   "cy_u": 49.61,
+   "cy_v": -35.2,
+   "rect": [
+    48.455,
+    -35.715,
+    50.765,
+    -34.685
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "R262": {
+   "origin_u": -31.15,
+   "origin_v": -38.39,
+   "rot": 90,
+   "cy_u": -31.15,
+   "cy_v": -38.39,
+   "rect": [
+    -31.665,
+    -39.545,
+    -30.635,
+    -37.235
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+  },
+  "SW100": {
+   "origin_u": -7.18,
+   "origin_v": 63.555,
+   "rot": 0,
+   "cy_u": -7.18,
+   "cy_v": 65.055,
+   "rect": [
+    -9.725,
+    61.31,
+    -4.635,
+    68.8
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:TE_1977066-1_Tact_RA_SMD"
+  },
+  "SW101": {
+   "origin_u": 63.25,
+   "origin_v": 1.995,
+   "rot": 90,
+   "cy_u": 63.25,
+   "cy_v": 1.995,
+   "rect": [
+    60.005,
+    -8.05,
+    66.495,
+    12.04
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:SHOUHAN_KCD1-201-R_Rocker_D20_Panel"
+  },
+  "SW102": {
+   "origin_u": -37.89,
+   "origin_v": -9.635,
+   "rot": 0,
+   "cy_u": -30.64,
+   "cy_v": -12.135,
+   "rect": [
+    -39.435,
+    -19.28,
+    -21.845,
+    -4.99
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:RotaryEncoder_Alps_EC11E-Switch_Vertical_H20mm_MountingHoles"
   },
   "TP1": {
-   "origin_u": -26.59,
-   "origin_v": -3.813,
+   "origin_u": -5.05,
+   "origin_v": 39.925,
    "rot": 0,
-   "cy_u": -26.59,
-   "cy_v": -3.813,
+   "cy_u": -5.05,
+   "cy_v": 39.925,
    "rect": [
-    -28.785,
-    -5.208,
-    -24.395,
-    -2.418
-   ]
+    -7.245,
+    38.53,
+    -2.855,
+    41.32
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:TestPoint_Keystone_5015_Micro_Mini"
   },
   "TP2": {
-   "origin_u": -12.505,
-   "origin_v": -6.875,
-   "rot": 90,
-   "cy_u": -12.505,
-   "cy_v": -6.875,
+   "origin_u": 11.72,
+   "origin_v": -37.685,
+   "rot": 0,
+   "cy_u": 11.72,
+   "cy_v": -37.685,
    "rect": [
-    -13.9,
-    -9.07,
-    -11.11,
-    -4.68
-   ]
+    9.525,
+    -39.08,
+    13.915,
+    -36.29
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:TestPoint_Keystone_5015_Micro_Mini"
   },
   "TP3": {
-   "origin_u": -10.602,
-   "origin_v": 19.273,
+   "origin_u": -43.703,
+   "origin_v": 1.572,
    "rot": 90,
-   "cy_u": -10.602,
-   "cy_v": 19.273,
+   "cy_u": -43.703,
+   "cy_v": 1.572,
    "rect": [
-    -11.997,
-    17.078,
-    -9.207,
-    21.467
-   ]
+    -45.097,
+    -0.623,
+    -42.308,
+    3.767
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:TestPoint_Keystone_5015_Micro_Mini"
   },
   "TP4": {
-   "origin_u": -18.172,
-   "origin_v": 20.29,
+   "origin_u": -51.272,
+   "origin_v": 2.59,
    "rot": 0,
-   "cy_u": -18.172,
-   "cy_v": 20.29,
+   "cy_u": -51.273,
+   "cy_v": 2.59,
    "rect": [
-    -20.367,
-    18.895,
-    -15.977,
-    21.685
-   ]
+    -53.468,
+    1.195,
+    -49.078,
+    3.985
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:TestPoint_Keystone_5015_Micro_Mini"
   },
   "TP5": {
-   "origin_u": -39.815,
-   "origin_v": -3.538,
+   "origin_u": -15.775,
+   "origin_v": 24.7,
    "rot": 0,
-   "cy_u": -39.815,
-   "cy_v": -3.538,
+   "cy_u": -15.775,
+   "cy_v": 24.7,
    "rect": [
-    -42.01,
-    -4.933,
-    -37.62,
-    -2.143
-   ]
+    -17.97,
+    23.305,
+    -13.58,
+    26.095
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:TestPoint_Keystone_5015_Micro_Mini"
   },
   "TP6": {
-   "origin_u": 43.895,
-   "origin_v": 45.948,
-   "rot": 90,
-   "cy_u": 43.895,
-   "cy_v": 45.948,
+   "origin_u": -7.005,
+   "origin_v": 12.245,
+   "rot": 0,
+   "cy_u": -7.005,
+   "cy_v": 12.245,
    "rect": [
-    42.5,
-    43.753,
-    45.29,
-    48.143
-   ]
+    -9.2,
+    10.85,
+    -4.81,
+    13.64
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:TestPoint_Keystone_5015_Micro_Mini"
   },
   "TP7": {
    "origin_u": -49.375,
-   "origin_v": -3.475,
+   "origin_v": -7.275,
    "rot": 0,
    "cy_u": -49.375,
-   "cy_v": -3.475,
+   "cy_v": -7.275,
    "rect": [
     -51.57,
-    -4.87,
+    -8.67,
     -47.18,
-    -2.08
-   ]
+    -5.88
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:TestPoint_Keystone_5015_Micro_Mini"
   },
   "TP8": {
-   "origin_u": 63.757,
-   "origin_v": 38.015,
+   "origin_u": 15.995,
+   "origin_v": -0.118,
    "rot": 0,
-   "cy_u": 63.757,
-   "cy_v": 38.015,
+   "cy_u": 15.995,
+   "cy_v": -0.117,
    "rect": [
-    61.562,
-    36.62,
-    65.952,
-    39.41
-   ]
+    13.8,
+    -1.513,
+    18.19,
+    1.278
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:TestPoint_Keystone_5015_Micro_Mini"
   },
   "TP9": {
-   "origin_u": 61.805,
-   "origin_v": -15.685,
-   "rot": 90,
-   "cy_u": 61.805,
-   "cy_v": -15.685,
+   "origin_u": -31.435,
+   "origin_v": 42.235,
+   "rot": 0,
+   "cy_u": -31.435,
+   "cy_v": 42.235,
    "rect": [
-    60.41,
-    -17.88,
-    63.2,
-    -13.49
-   ]
+    -33.63,
+    40.84,
+    -29.24,
+    43.63
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:TestPoint_Keystone_5015_Micro_Mini"
   },
   "TP10": {
-   "origin_u": -42.465,
-   "origin_v": -48.455,
+   "origin_u": -37.585,
+   "origin_v": -57.755,
    "rot": 0,
-   "cy_u": -42.465,
-   "cy_v": -48.455,
+   "cy_u": -37.585,
+   "cy_v": -57.755,
    "rect": [
-    -44.66,
-    -49.85,
-    -40.27,
-    -47.06
-   ]
+    -39.78,
+    -59.15,
+    -35.39,
+    -56.36
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:TestPoint_Keystone_5015_Micro_Mini"
   },
   "TP11": {
-   "origin_u": -17.305,
-   "origin_v": -17.575,
-   "rot": 90,
-   "cy_u": -17.305,
-   "cy_v": -17.575,
+   "origin_u": 5.92,
+   "origin_v": -42.385,
+   "rot": 0,
+   "cy_u": 5.92,
+   "cy_v": -42.385,
    "rect": [
-    -18.7,
-    -19.77,
-    -15.91,
-    -15.38
-   ]
+    3.725,
+    -43.78,
+    8.115,
+    -40.99
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:TestPoint_Keystone_5015_Micro_Mini"
   },
   "TP12": {
-   "origin_u": 58.717,
-   "origin_v": 35.515,
+   "origin_u": -0.25,
+   "origin_v": -9.7,
    "rot": 0,
-   "cy_u": 58.717,
-   "cy_v": 35.515,
+   "cy_u": -0.25,
+   "cy_v": -9.7,
    "rect": [
-    56.522,
-    34.12,
-    60.912,
-    36.91
-   ]
+    -2.445,
+    -11.095,
+    1.945,
+    -8.305
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:TestPoint_Keystone_5015_Micro_Mini"
   },
   "TP13": {
-   "origin_u": 72.217,
-   "origin_v": 45.515,
-   "rot": 90,
-   "cy_u": 72.217,
-   "cy_v": 45.515,
+   "origin_u": -0.25,
+   "origin_v": -6.7,
+   "rot": 0,
+   "cy_u": -0.25,
+   "cy_v": -6.7,
    "rect": [
-    70.822,
-    43.32,
-    73.612,
-    47.71
-   ]
+    -2.445,
+    -8.095,
+    1.945,
+    -5.305
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:TestPoint_Keystone_5015_Micro_Mini"
   },
   "TP14": {
-   "origin_u": 68.217,
-   "origin_v": 39.015,
-   "rot": 90,
-   "cy_u": 68.217,
-   "cy_v": 39.015,
+   "origin_u": -0.25,
+   "origin_v": -12.7,
+   "rot": 0,
+   "cy_u": -0.25,
+   "cy_v": -12.7,
    "rect": [
-    66.822,
-    36.82,
-    69.612,
-    41.21
-   ]
+    -2.445,
+    -14.095,
+    1.945,
+    -11.305
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:TestPoint_Keystone_5015_Micro_Mini"
   },
   "TP15": {
-   "origin_u": -43.185,
-   "origin_v": 23.87,
+   "origin_u": 36.515,
+   "origin_v": 11.17,
    "rot": 0,
-   "cy_u": -43.185,
-   "cy_v": 23.87,
+   "cy_u": 36.515,
+   "cy_v": 11.17,
    "rect": [
-    -45.38,
-    22.475,
-    -40.99,
-    25.265
-   ]
+    34.32,
+    9.775,
+    38.71,
+    12.565
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:TestPoint_Keystone_5015_Micro_Mini"
   },
   "TP16": {
-   "origin_u": -37.685,
-   "origin_v": 22.37,
+   "origin_u": 42.015,
+   "origin_v": 9.67,
    "rot": 0,
-   "cy_u": -37.685,
-   "cy_v": 22.37,
+   "cy_u": 42.015,
+   "cy_v": 9.67,
    "rect": [
-    -39.88,
-    20.975,
-    -35.49,
-    23.765
-   ]
+    39.82,
+    8.275,
+    44.21,
+    11.065
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:TestPoint_Keystone_5015_Micro_Mini"
   },
   "TP17": {
-   "origin_u": -32.185,
-   "origin_v": 7.52,
+   "origin_u": 47.515,
+   "origin_v": -5.18,
    "rot": 90,
-   "cy_u": -32.185,
-   "cy_v": 7.52,
+   "cy_u": 47.515,
+   "cy_v": -5.18,
    "rect": [
-    -33.58,
-    5.325,
-    -30.79,
-    9.715
-   ]
+    46.12,
+    -7.375,
+    48.91,
+    -2.985
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:TestPoint_Keystone_5015_Micro_Mini"
   },
   "TP18": {
-   "origin_u": -32.185,
-   "origin_v": 12.52,
+   "origin_u": 47.515,
+   "origin_v": -0.18,
    "rot": 90,
-   "cy_u": -32.185,
-   "cy_v": 12.52,
+   "cy_u": 47.515,
+   "cy_v": -0.18,
    "rect": [
-    -33.58,
-    10.325,
-    -30.79,
-    14.715
-   ]
+    46.12,
+    -2.375,
+    48.91,
+    2.015
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:TestPoint_Keystone_5015_Micro_Mini"
   },
   "TP19": {
-   "origin_u": -46.11,
-   "origin_v": 4.445,
+   "origin_u": 33.09,
+   "origin_v": -8.255,
    "rot": 0,
-   "cy_u": -46.11,
-   "cy_v": 4.445,
+   "cy_u": 33.09,
+   "cy_v": -8.255,
    "rect": [
-    -48.305,
-    3.05,
-    -43.915,
-    5.84
-   ]
+    30.895,
+    -9.65,
+    35.285,
+    -6.86
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:TestPoint_Keystone_5015_Micro_Mini"
   },
   "TP20": {
-   "origin_u": -8.305,
-   "origin_v": -47.615,
-   "rot": 90,
-   "cy_u": -8.305,
-   "cy_v": -47.615,
+   "origin_u": -37.245,
+   "origin_v": -60.595,
+   "rot": 0,
+   "cy_u": -37.245,
+   "cy_v": -60.595,
    "rect": [
-    -9.7,
-    -49.81,
-    -6.91,
-    -45.42
-   ]
+    -39.44,
+    -61.99,
+    -35.05,
+    -59.2
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:TestPoint_Keystone_5015_Micro_Mini"
   },
   "TP21": {
-   "origin_u": -32.185,
-   "origin_v": 18.02,
+   "origin_u": 47.515,
+   "origin_v": 5.32,
    "rot": 90,
-   "cy_u": -32.185,
-   "cy_v": 18.02,
+   "cy_u": 47.515,
+   "cy_v": 5.32,
    "rect": [
-    -33.58,
-    15.825,
-    -30.79,
-    20.215
-   ]
+    46.12,
+    3.125,
+    48.91,
+    7.515
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:TestPoint_Keystone_5015_Micro_Mini"
   },
   "TP22": {
-   "origin_u": -39.435,
-   "origin_v": 61.133,
+   "origin_u": -31.935,
+   "origin_v": 64.282,
    "rot": 0,
-   "cy_u": -39.435,
-   "cy_v": 61.133,
+   "cy_u": -31.935,
+   "cy_v": 64.282,
    "rect": [
-    -41.63,
-    59.737,
-    -37.24,
-    62.528
-   ]
+    -34.13,
+    62.887,
+    -29.74,
+    65.677
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:TestPoint_Keystone_5015_Micro_Mini"
   },
   "TP23": {
-   "origin_u": -28.891,
-   "origin_v": -17.238,
+   "origin_u": -9.851,
+   "origin_v": 23.5,
    "rot": 0,
-   "cy_u": -28.89,
-   "cy_v": -17.238,
+   "cy_u": -9.85,
+   "cy_v": 23.5,
    "rect": [
-    -30.934,
-    -19.28,
-    -26.846,
-    -15.195
-   ]
+    -11.894,
+    21.458,
+    -7.806,
+    25.542
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:TestPoint_Keystone_5010-5014_Multipurpose"
   },
   "TP24": {
-   "origin_u": -25.055,
-   "origin_v": -31.706,
+   "origin_u": -41.995,
+   "origin_v": -63.756,
    "rot": 90,
-   "cy_u": -25.055,
-   "cy_v": -31.705,
+   "cy_u": -41.994,
+   "cy_v": -63.756,
    "rect": [
-    -27.097,
-    -33.749,
-    -23.013,
-    -29.661
-   ]
+    -44.037,
+    -65.799,
+    -39.95,
+    -61.714
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:TestPoint_Keystone_5010-5014_Multipurpose"
   },
   "TP25": {
-   "origin_u": -48.435,
-   "origin_v": 22.694,
+   "origin_u": 31.265,
+   "origin_v": 9.994,
    "rot": 90,
-   "cy_u": -48.435,
-   "cy_v": 22.695,
+   "cy_u": 31.266,
+   "cy_v": 9.994,
    "rect": [
-    -50.477,
-    20.651,
-    -46.393,
-    24.739
-   ]
+    29.223,
+    7.951,
+    33.31,
+    12.036
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:TestPoint_Keystone_5010-5014_Multipurpose"
+  },
+  "TP26": {
+   "origin_u": -6.25,
+   "origin_v": -2.1,
+   "rot": 0,
+   "cy_u": -6.249,
+   "cy_v": -2.1,
+   "rect": [
+    -8.292,
+    -4.142,
+    -4.205,
+    -0.058
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:TestPoint_Keystone_5010-5014_Multipurpose"
+  },
+  "TP27": {
+   "origin_u": -1.25,
+   "origin_v": -43.2,
+   "rot": 0,
+   "cy_u": -1.249,
+   "cy_v": -43.2,
+   "rect": [
+    -3.292,
+    -45.242,
+    0.795,
+    -41.158
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:TestPoint_Keystone_5010-5014_Multipurpose"
+  },
+  "U1": {
+   "origin_u": -47.395,
+   "origin_v": 54.935,
+   "rot": 90,
+   "cy_u": -52.955,
+   "cy_v": 54.935,
+   "rect": [
+    -69.0,
+    47.39,
+    -36.91,
+    62.48
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:BM83SM1-00TA"
+  },
+  "U2": {
+   "origin_u": 7.635,
+   "origin_v": 29.685,
+   "rot": 0,
+   "cy_u": 7.635,
+   "cy_v": 29.685,
+   "rect": [
+    2.49,
+    26.99,
+    12.78,
+    32.38
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:PCM2902CDBR"
+  },
+  "U3": {
+   "origin_u": 38.765,
+   "origin_v": 0.495,
+   "rot": 0,
+   "cy_u": 38.765,
+   "cy_v": 0.495,
+   "rect": [
+    32.02,
+    -6.25,
+    45.51,
+    7.24
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:STM32G071RBT6"
+  },
+  "U4": {
+   "origin_u": 4.32,
+   "origin_v": -33.385,
+   "rot": 0,
+   "cy_u": 4.32,
+   "cy_v": -33.385,
+   "rect": [
+    1.825,
+    -35.88,
+    6.815,
+    -30.89
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:BQ25792RQMR"
+  },
+  "U5": {
+   "origin_u": -47.14,
+   "origin_v": 0.072,
+   "rot": 0,
+   "cy_u": -47.14,
+   "cy_v": 0.072,
+   "rect": [
+    -48.185,
+    -0.972,
+    -46.095,
+    1.117
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:MAX17048G+T10"
+  },
+  "U6": {
+   "origin_u": -37.495,
+   "origin_v": -40.005,
+   "rot": 180,
+   "cy_u": -37.495,
+   "cy_v": -40.005,
+   "rect": [
+    -40.04,
+    -42.55,
+    -34.95,
+    -37.46
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:TAS5825MRHBR"
+  },
+  "U7": {
+   "origin_u": 45.295,
+   "origin_v": -40.005,
+   "rot": 180,
+   "cy_u": 45.295,
+   "cy_v": -40.005,
+   "rect": [
+    42.75,
+    -42.55,
+    47.84,
+    -37.46
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:TAS5825MRHBR"
+  },
+  "U8": {
+   "origin_u": 25.045,
+   "origin_v": 23.522,
+   "rot": 0,
+   "cy_u": 25.045,
+   "cy_v": 23.522,
+   "rect": [
+    23.5,
+    21.977,
+    26.59,
+    25.067
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:TS5A23157DGSR"
+  },
+  "U9": {
+   "origin_u": 37.045,
+   "origin_v": 23.522,
+   "rot": 0,
+   "cy_u": 37.045,
+   "cy_v": 23.522,
+   "rect": [
+    35.5,
+    21.977,
+    38.59,
+    25.067
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:TS5A23157DGSR"
+  },
+  "U10": {
+   "origin_u": 49.045,
+   "origin_v": 23.522,
+   "rot": 0,
+   "cy_u": 49.045,
+   "cy_v": 23.522,
+   "rect": [
+    47.5,
+    21.977,
+    50.59,
+    25.067
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:TPA6132A2RTER"
+  },
+  "U11": {
+   "origin_u": -9.85,
+   "origin_v": 33.0,
+   "rot": 0,
+   "cy_u": -9.85,
+   "cy_v": 33.0,
+   "rect": [
+    -13.345,
+    30.505,
+    -6.355,
+    35.495
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:TPS25730D"
+  },
+  "U12": {
+   "origin_u": -34.05,
+   "origin_v": 11.57,
+   "rot": 0,
+   "cy_u": -34.05,
+   "cy_v": 11.57,
+   "rect": [
+    -36.145,
+    9.825,
+    -31.955,
+    13.315
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:TPS7A0230PDBVR"
+  },
+  "U13": {
+   "origin_u": -47.14,
+   "origin_v": 14.572,
+   "rot": 0,
+   "cy_u": -47.14,
+   "cy_v": 14.572,
+   "rect": [
+    -49.235,
+    12.828,
+    -45.045,
+    16.317
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:TS5A3167DBVR"
+  },
+  "U14": {
+   "origin_u": -53.125,
+   "origin_v": -12.275,
+   "rot": 0,
+   "cy_u": -53.125,
+   "cy_v": -12.275,
+   "rect": [
+    -54.87,
+    -14.17,
+    -51.38,
+    -10.38
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:TPS63802DLAR"
+  },
+  "U15": {
+   "origin_u": -30.185,
+   "origin_v": 52.235,
+   "rot": 0,
+   "cy_u": -30.185,
+   "cy_v": 52.235,
+   "rect": [
+    -31.93,
+    50.34,
+    -28.44,
+    54.13
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:TPS63802DLAR"
+  },
+  "U16": {
+   "origin_u": -39.64,
+   "origin_v": 14.572,
+   "rot": 0,
+   "cy_u": -39.64,
+   "cy_v": 14.572,
+   "rect": [
+    -41.735,
+    12.828,
+    -37.545,
+    16.317
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:TS5A3167DBVR"
+  },
+  "U17": {
+   "origin_u": -54.64,
+   "origin_v": 6.572,
+   "rot": 0,
+   "cy_u": -54.64,
+   "cy_v": 6.572,
+   "rect": [
+    -56.735,
+    4.828,
+    -52.545,
+    8.317
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:TS5A3167DBVR"
+  },
+  "U19": {
+   "origin_u": 1.73,
+   "origin_v": 51.297,
+   "rot": 0,
+   "cy_u": 1.73,
+   "cy_v": 51.297,
+   "rect": [
+    -0.265,
+    49.502,
+    3.725,
+    53.092
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:TPS7B8450QWDRBRQ1_WSON-8"
+  },
+  "U20": {
+   "origin_u": -54.64,
+   "origin_v": 14.572,
+   "rot": 0,
+   "cy_u": -54.64,
+   "cy_v": 14.572,
+   "rect": [
+    -56.005,
+    13.227,
+    -53.275,
+    15.918
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:TPS2116DRLR"
+  },
+  "U21": {
+   "origin_u": -47.14,
+   "origin_v": 6.572,
+   "rot": 0,
+   "cy_u": -47.14,
+   "cy_v": 6.572,
+   "rect": [
+    -49.115,
+    4.828,
+    -45.165,
+    8.317
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:TPS3839G33DBZR"
+  },
+  "U22": {
+   "origin_u": 25.595,
+   "origin_v": 36.96,
+   "rot": 0,
+   "cy_u": 25.595,
+   "cy_v": 36.96,
+   "rect": [
+    23.5,
+    35.215,
+    27.69,
+    38.705
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:TPS7A2033PDBVR"
+  },
+  "U23": {
+   "origin_u": 38.595,
+   "origin_v": 36.96,
+   "rot": 0,
+   "cy_u": 38.595,
+   "cy_v": 36.96,
+   "rect": [
+    36.5,
+    35.215,
+    40.69,
+    38.705
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:TPS22917DBVR"
+  },
+  "U24": {
+   "origin_u": 3.495,
+   "origin_v": 3.382,
+   "rot": 270,
+   "cy_u": 3.495,
+   "cy_v": 3.383,
+   "rect": [
+    -0.7,
+    -0.513,
+    7.69,
+    7.278
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:PCM1862DBTR"
+  },
+  "U25": {
+   "origin_u": 5.935,
+   "origin_v": -58.395,
+   "rot": 270,
+   "cy_u": 5.935,
+   "cy_v": -58.395,
+   "rect": [
+    3.59,
+    -61.24,
+    8.28,
+    -55.55
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:TPS61088RHLR"
+  },
+  "Y170": {
+   "origin_u": 9.106,
+   "origin_v": 36.791,
+   "rot": 0,
+   "cy_u": 9.106,
+   "cy_v": 36.791,
+   "rect": [
+    6.961,
+    34.996,
+    11.251,
+    38.586
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:Crystal_SMD_3225-4Pin_3.2x2.5mm"
+  },
+  "Y200": {
+   "origin_u": 1.4,
+   "origin_v": 11.6,
+   "rot": 0,
+   "cy_u": 1.4,
+   "cy_v": 11.6,
+   "rect": [
+    -0.745,
+    9.805,
+    3.545,
+    13.395
+   ],
+   "side": "F",
+   "fpid": "DesktopSpeaker:Crystal_SMD_3225-4Pin_3.2x2.5mm"
   }
  },
  "sheets": {
+  "C2": "",
+  "C5": "",
+  "C6": "",
+  "C100": "",
+  "C101": "",
+  "C102": "",
+  "C103": "",
+  "C104": "",
+  "C105": "",
+  "C106": "",
+  "C107": "",
+  "C108": "",
+  "C109": "",
+  "C110": "",
+  "C111": "",
+  "C112": "",
+  "C120": "",
+  "C122": "",
+  "C123": "",
+  "C124": "",
+  "C125": "",
+  "C126": "",
+  "C130": "",
+  "C131": "",
+  "C132": "",
+  "C140": "",
+  "C141": "",
+  "C142": "",
+  "C150": "",
+  "C152": "",
+  "C153": "",
+  "C154": "",
+  "C160": "",
+  "C161": "",
+  "C162": "",
+  "C170": "",
+  "C171": "",
+  "C172": "",
+  "C173": "",
+  "C174": "",
+  "C175": "",
+  "C176": "",
+  "C177": "",
+  "C178": "",
+  "C181": "",
+  "C182": "",
+  "C183": "",
+  "C184": "",
+  "C186": "",
+  "C187": "",
+  "C190": "",
+  "C191": "",
+  "C192": "",
+  "C193": "",
+  "C194": "",
+  "C195": "",
+  "C200": "",
+  "C201": "",
+  "C202": "",
+  "C203": "",
+  "C204": "",
+  "C205": "",
+  "C206": "",
+  "C207": "",
+  "C208": "",
+  "C209": "",
+  "C210": "",
+  "C211": "",
+  "C212": "",
+  "C213": "",
+  "C214": "",
+  "C215": "",
+  "C216": "",
+  "C217": "",
+  "C218": "",
+  "C219": "",
+  "C220": "",
+  "C221": "",
+  "C222": "",
+  "C223": "",
+  "C224": "",
+  "C225": "",
+  "C226": "",
+  "C227": "",
+  "C230": "",
+  "C231": "",
+  "C232": "",
+  "C233": "",
+  "C234": "",
+  "C235": "",
+  "C236": "",
+  "C237": "",
+  "C238": "",
+  "C239": "",
+  "C240": "",
+  "C241": "",
+  "C243": "",
+  "C244": "",
+  "C245": "",
+  "C246": "",
+  "C260": "",
+  "C261": "",
+  "C262": "",
+  "C263": "",
+  "C264": "",
+  "C265": "",
+  "C266": "",
+  "C267": "",
+  "C268": "",
+  "C269": "",
+  "C270": "",
+  "C271": "",
+  "C272": "",
+  "C273": "",
+  "C274": "",
+  "C275": "",
+  "C276": "",
+  "C277": "",
+  "C278": "",
+  "C279": "",
+  "C280": "",
+  "C281": "",
+  "C282": "",
+  "C283": "",
+  "C284": "",
+  "C285": "",
+  "C286": "",
+  "C287": "",
+  "C288": "",
+  "C289": "",
+  "C290": "",
+  "C291": "",
+  "C292": "",
+  "C293": "",
+  "C294": "",
+  "C295": "",
+  "C296": "",
+  "C297": "",
+  "C298": "",
+  "C299": "",
+  "C300": "",
+  "C301": "",
+  "C302": "",
+  "C303": "",
+  "C304": "",
+  "C305": "",
+  "C306": "",
+  "C307": "",
+  "C308": "",
+  "C309": "",
+  "C310": "",
+  "C311": "",
+  "C312": "",
+  "C313": "",
+  "C314": "",
+  "C315": "",
+  "C316": "",
   "D1": "",
+  "D5": "",
+  "D6": "",
+  "D7": "",
+  "D200": "",
+  "D201": "",
+  "FB200": "",
   "J1": "",
-  "C2": "USB_PD",
-  "C5": "USB_PD",
-  "C6": "USB_PD",
-  "C181": "USB_PD",
-  "C182": "USB_PD",
-  "C183": "USB_PD",
-  "C184": "USB_PD",
-  "D5": "USB_PD",
-  "D6": "USB_PD",
-  "D7": "USB_PD",
-  "J4": "USB_PD",
-  "R10": "USB_PD",
-  "R11": "USB_PD",
-  "R12": "USB_PD",
-  "R13": "USB_PD",
-  "R14": "USB_PD",
-  "R15": "USB_PD",
-  "R16": "USB_PD",
-  "R17": "USB_PD",
-  "R18": "USB_PD",
-  "TP1": "USB_PD",
-  "TP5": "USB_PD",
-  "TP23": "USB_PD",
-  "U11": "USB_PD",
-  "U19": "USB_PD",
-  "C100": "Battery_Charger",
-  "C101": "Battery_Charger",
-  "C102": "Battery_Charger",
-  "C103": "Battery_Charger",
-  "C104": "Battery_Charger",
-  "C105": "Battery_Charger",
-  "C106": "Battery_Charger",
-  "C107": "Battery_Charger",
-  "C108": "Battery_Charger",
-  "C109": "Battery_Charger",
-  "C110": "Battery_Charger",
-  "C111": "Battery_Charger",
-  "C112": "Battery_Charger",
-  "J5": "Battery_Charger",
-  "L1": "Battery_Charger",
-  "Q100": "Battery_Charger",
-  "Q101": "Battery_Charger",
-  "Q102": "Battery_Charger",
-  "Q103": "Battery_Charger",
-  "R100": "Battery_Charger",
-  "R101": "Battery_Charger",
-  "R102": "Battery_Charger",
-  "R103": "Battery_Charger",
-  "R106": "Battery_Charger",
-  "R107": "Battery_Charger",
-  "R108": "Battery_Charger",
-  "R109": "Battery_Charger",
-  "R110": "Battery_Charger",
-  "R111": "Battery_Charger",
-  "R112": "Battery_Charger",
-  "R113": "Battery_Charger",
-  "SW100": "Battery_Charger",
-  "SW101": "Battery_Charger",
-  "TP2": "Battery_Charger",
-  "TP11": "Battery_Charger",
-  "U4": "Battery_Charger",
-  "C120": "Fuel_Gauge_Power",
-  "C122": "Fuel_Gauge_Power",
-  "C123": "Fuel_Gauge_Power",
-  "C124": "Fuel_Gauge_Power",
-  "C125": "Fuel_Gauge_Power",
-  "C126": "Fuel_Gauge_Power",
-  "C130": "Fuel_Gauge_Power",
-  "C131": "Fuel_Gauge_Power",
-  "C132": "Fuel_Gauge_Power",
-  "Q104": "Fuel_Gauge_Power",
-  "R120": "Fuel_Gauge_Power",
-  "R121": "Fuel_Gauge_Power",
-  "R122": "Fuel_Gauge_Power",
-  "R124": "Fuel_Gauge_Power",
-  "R125": "Fuel_Gauge_Power",
-  "R126": "Fuel_Gauge_Power",
-  "R127": "Fuel_Gauge_Power",
-  "TP3": "Fuel_Gauge_Power",
-  "TP4": "Fuel_Gauge_Power",
-  "U5": "Fuel_Gauge_Power",
-  "U12": "Fuel_Gauge_Power",
-  "U13": "Fuel_Gauge_Power",
-  "U16": "Fuel_Gauge_Power",
-  "U17": "Fuel_Gauge_Power",
-  "U20": "Fuel_Gauge_Power",
-  "U21": "Fuel_Gauge_Power",
-  "C150": "Bluetooth_Power",
-  "C152": "Bluetooth_Power",
-  "C153": "Bluetooth_Power",
-  "C154": "Bluetooth_Power",
-  "L3": "Bluetooth_Power",
-  "R150": "Bluetooth_Power",
-  "R151": "Bluetooth_Power",
-  "R152": "Bluetooth_Power",
-  "R153": "Bluetooth_Power",
-  "R154": "Bluetooth_Power",
-  "TP9": "Bluetooth_Power",
-  "U15": "Bluetooth_Power",
-  "C140": "Logic_Audio_Power",
-  "C141": "Logic_Audio_Power",
-  "C142": "Logic_Audio_Power",
-  "L2": "Logic_Audio_Power",
-  "R140": "Logic_Audio_Power",
-  "R141": "Logic_Audio_Power",
-  "R142": "Logic_Audio_Power",
-  "TP7": "Logic_Audio_Power",
-  "U14": "Logic_Audio_Power",
-  "C160": "MCU",
-  "C161": "MCU",
-  "C162": "MCU",
-  "C308": "MCU",
-  "C309": "MCU",
-  "C310": "MCU",
-  "J6": "MCU",
-  "J7": "MCU",
-  "R160": "MCU",
-  "SW102": "MCU",
-  "TP15": "MCU",
-  "TP16": "MCU",
-  "TP17": "MCU",
-  "TP18": "MCU",
-  "TP19": "MCU",
-  "TP21": "MCU",
-  "TP25": "MCU",
-  "U3": "MCU",
-  "C170": "USB_Audio",
-  "C171": "USB_Audio",
-  "C172": "USB_Audio",
-  "C173": "USB_Audio",
-  "C174": "USB_Audio",
-  "C175": "USB_Audio",
-  "C176": "USB_Audio",
-  "C177": "USB_Audio",
-  "C178": "USB_Audio",
-  "C186": "USB_Audio",
-  "C187": "USB_Audio",
-  "R170": "USB_Audio",
-  "R171": "USB_Audio",
-  "R172": "USB_Audio",
-  "R173": "USB_Audio",
-  "R174": "USB_Audio",
-  "R175": "USB_Audio",
-  "R176": "USB_Audio",
-  "U2": "USB_Audio",
-  "Y170": "USB_Audio",
-  "C190": "Bluetooth",
-  "C191": "Bluetooth",
-  "C192": "Bluetooth",
-  "C193": "Bluetooth",
-  "C194": "Bluetooth",
-  "C195": "Bluetooth",
-  "J8": "Bluetooth",
-  "R180": "Bluetooth",
-  "R181": "Bluetooth",
-  "R182": "Bluetooth",
-  "R183": "Bluetooth",
-  "R184": "Bluetooth",
-  "R185": "Bluetooth",
-  "R186": "Bluetooth",
-  "R187": "Bluetooth",
-  "TP22": "Bluetooth",
-  "U1": "Bluetooth",
-  "C200": "Source_Select_ADC",
-  "C201": "Source_Select_ADC",
-  "C202": "Source_Select_ADC",
-  "C203": "Source_Select_ADC",
-  "C204": "Source_Select_ADC",
-  "C205": "Source_Select_ADC",
-  "C206": "Source_Select_ADC",
-  "C207": "Source_Select_ADC",
-  "C208": "Source_Select_ADC",
-  "C209": "Source_Select_ADC",
-  "C210": "Source_Select_ADC",
-  "C211": "Source_Select_ADC",
-  "C212": "Source_Select_ADC",
-  "C213": "Source_Select_ADC",
-  "C214": "Source_Select_ADC",
-  "C215": "Source_Select_ADC",
-  "C216": "Source_Select_ADC",
-  "C217": "Source_Select_ADC",
-  "C218": "Source_Select_ADC",
-  "C219": "Source_Select_ADC",
-  "C220": "Source_Select_ADC",
-  "C221": "Source_Select_ADC",
-  "C222": "Source_Select_ADC",
-  "C223": "Source_Select_ADC",
-  "C224": "Source_Select_ADC",
-  "C225": "Source_Select_ADC",
-  "C226": "Source_Select_ADC",
-  "C227": "Source_Select_ADC",
-  "FB200": "Source_Select_ADC",
-  "R200": "Source_Select_ADC",
-  "R201": "Source_Select_ADC",
-  "R202": "Source_Select_ADC",
-  "R203": "Source_Select_ADC",
-  "R204": "Source_Select_ADC",
-  "R205": "Source_Select_ADC",
-  "R206": "Source_Select_ADC",
-  "R207": "Source_Select_ADC",
-  "R208": "Source_Select_ADC",
-  "R209": "Source_Select_ADC",
-  "R210": "Source_Select_ADC",
-  "R211": "Source_Select_ADC",
-  "R212": "Source_Select_ADC",
-  "TP6": "Source_Select_ADC",
-  "TP8": "Source_Select_ADC",
-  "TP12": "Source_Select_ADC",
-  "TP13": "Source_Select_ADC",
-  "TP14": "Source_Select_ADC",
-  "U22": "Source_Select_ADC",
-  "U23": "Source_Select_ADC",
-  "U24": "Source_Select_ADC",
-  "Y200": "Source_Select_ADC",
-  "C230": "Headphone_Aux",
-  "C231": "Headphone_Aux",
-  "C232": "Headphone_Aux",
-  "C233": "Headphone_Aux",
-  "C234": "Headphone_Aux",
-  "C235": "Headphone_Aux",
-  "C236": "Headphone_Aux",
-  "C237": "Headphone_Aux",
-  "C238": "Headphone_Aux",
-  "C239": "Headphone_Aux",
-  "C240": "Headphone_Aux",
-  "C241": "Headphone_Aux",
-  "C243": "Headphone_Aux",
-  "C244": "Headphone_Aux",
-  "C245": "Headphone_Aux",
-  "C246": "Headphone_Aux",
-  "D200": "Headphone_Aux",
-  "D201": "Headphone_Aux",
-  "J2": "Headphone_Aux",
-  "J3": "Headphone_Aux",
-  "R220": "Headphone_Aux",
-  "R221": "Headphone_Aux",
-  "R222": "Headphone_Aux",
-  "R223": "Headphone_Aux",
-  "R224": "Headphone_Aux",
-  "R225": "Headphone_Aux",
-  "R226": "Headphone_Aux",
-  "R227": "Headphone_Aux",
-  "R228": "Headphone_Aux",
-  "R229": "Headphone_Aux",
-  "R230": "Headphone_Aux",
-  "R231": "Headphone_Aux",
-  "R232": "Headphone_Aux",
-  "R233": "Headphone_Aux",
-  "R234": "Headphone_Aux",
-  "R235": "Headphone_Aux",
-  "R236": "Headphone_Aux",
-  "R237": "Headphone_Aux",
-  "R238": "Headphone_Aux",
-  "R239": "Headphone_Aux",
-  "R240": "Headphone_Aux",
-  "R241": "Headphone_Aux",
-  "R242": "Headphone_Aux",
-  "R243": "Headphone_Aux",
-  "R244": "Headphone_Aux",
-  "U8": "Headphone_Aux",
-  "U9": "Headphone_Aux",
-  "U10": "Headphone_Aux",
-  "C260": "Amplifiers",
-  "C261": "Amplifiers",
-  "C262": "Amplifiers",
-  "C263": "Amplifiers",
-  "C264": "Amplifiers",
-  "C265": "Amplifiers",
-  "C266": "Amplifiers",
-  "C267": "Amplifiers",
-  "C268": "Amplifiers",
-  "C269": "Amplifiers",
-  "C270": "Amplifiers",
-  "C271": "Amplifiers",
-  "C272": "Amplifiers",
-  "C273": "Amplifiers",
-  "C274": "Amplifiers",
-  "C275": "Amplifiers",
-  "C276": "Amplifiers",
-  "C277": "Amplifiers",
-  "C278": "Amplifiers",
-  "C279": "Amplifiers",
-  "C280": "Amplifiers",
-  "C281": "Amplifiers",
-  "C282": "Amplifiers",
-  "C283": "Amplifiers",
-  "C284": "Amplifiers",
-  "C285": "Amplifiers",
-  "C286": "Amplifiers",
-  "C287": "Amplifiers",
-  "C288": "Amplifiers",
-  "C289": "Amplifiers",
-  "C290": "Amplifiers",
-  "C291": "Amplifiers",
-  "C292": "Amplifiers",
-  "C293": "Amplifiers",
-  "C294": "Amplifiers",
-  "C295": "Amplifiers",
-  "C296": "Amplifiers",
-  "C297": "Amplifiers",
-  "C298": "Amplifiers",
-  "C299": "Amplifiers",
-  "C300": "Amplifiers",
-  "C301": "Amplifiers",
-  "C302": "Amplifiers",
-  "C303": "Amplifiers",
-  "C304": "Amplifiers",
-  "C305": "Amplifiers",
-  "C306": "Amplifiers",
-  "C307": "Amplifiers",
-  "J9": "Amplifiers",
-  "J10": "Amplifiers",
-  "J11": "Amplifiers",
-  "L200": "Amplifiers",
-  "L201": "Amplifiers",
-  "L202": "Amplifiers",
-  "L203": "Amplifiers",
-  "L204": "Amplifiers",
-  "L205": "Amplifiers",
-  "L206": "Amplifiers",
-  "R250": "Amplifiers",
-  "R251": "Amplifiers",
-  "R252": "Amplifiers",
-  "R253": "Amplifiers",
-  "R254": "Amplifiers",
-  "R255": "Amplifiers",
-  "R256": "Amplifiers",
-  "R257": "Amplifiers",
-  "R258": "Amplifiers",
-  "R259": "Amplifiers",
-  "R261": "Amplifiers",
-  "R262": "Amplifiers",
-  "TP10": "Amplifiers",
-  "TP20": "Amplifiers",
-  "TP24": "Amplifiers",
-  "U6": "Amplifiers",
-  "U7": "Amplifiers",
-  "U25": "Amplifiers"
+  "J2": "",
+  "J3": "",
+  "J4": "",
+  "J5": "",
+  "J6": "",
+  "J7": "",
+  "J8": "",
+  "J9": "",
+  "J10": "",
+  "J11": "",
+  "L1": "",
+  "L2": "",
+  "L3": "",
+  "L200": "",
+  "L201": "",
+  "L202": "",
+  "L203": "",
+  "L204": "",
+  "L205": "",
+  "L206": "",
+  "LOGO1": "",
+  "Q100": "",
+  "Q101": "",
+  "Q102": "",
+  "Q103": "",
+  "Q104": "",
+  "R10": "",
+  "R11": "",
+  "R12": "",
+  "R13": "",
+  "R14": "",
+  "R15": "",
+  "R16": "",
+  "R17": "",
+  "R18": "",
+  "R100": "",
+  "R101": "",
+  "R102": "",
+  "R103": "",
+  "R106": "",
+  "R107": "",
+  "R108": "",
+  "R109": "",
+  "R110": "",
+  "R111": "",
+  "R112": "",
+  "R113": "",
+  "R120": "",
+  "R121": "",
+  "R122": "",
+  "R124": "",
+  "R125": "",
+  "R126": "",
+  "R127": "",
+  "R140": "",
+  "R141": "",
+  "R142": "",
+  "R150": "",
+  "R151": "",
+  "R152": "",
+  "R153": "",
+  "R154": "",
+  "R160": "",
+  "R170": "",
+  "R171": "",
+  "R172": "",
+  "R173": "",
+  "R174": "",
+  "R175": "",
+  "R176": "",
+  "R180": "",
+  "R181": "",
+  "R182": "",
+  "R183": "",
+  "R184": "",
+  "R185": "",
+  "R186": "",
+  "R187": "",
+  "R200": "",
+  "R201": "",
+  "R202": "",
+  "R203": "",
+  "R204": "",
+  "R205": "",
+  "R206": "",
+  "R207": "",
+  "R208": "",
+  "R209": "",
+  "R210": "",
+  "R211": "",
+  "R212": "",
+  "R220": "",
+  "R221": "",
+  "R222": "",
+  "R223": "",
+  "R224": "",
+  "R225": "",
+  "R226": "",
+  "R227": "",
+  "R228": "",
+  "R229": "",
+  "R230": "",
+  "R231": "",
+  "R232": "",
+  "R233": "",
+  "R234": "",
+  "R235": "",
+  "R236": "",
+  "R237": "",
+  "R238": "",
+  "R239": "",
+  "R240": "",
+  "R241": "",
+  "R242": "",
+  "R243": "",
+  "R244": "",
+  "R250": "",
+  "R251": "",
+  "R252": "",
+  "R253": "",
+  "R254": "",
+  "R255": "",
+  "R256": "",
+  "R257": "",
+  "R258": "",
+  "R259": "",
+  "R261": "",
+  "R262": "",
+  "SW100": "",
+  "SW101": "",
+  "SW102": "",
+  "TP1": "",
+  "TP2": "",
+  "TP3": "",
+  "TP4": "",
+  "TP5": "",
+  "TP6": "",
+  "TP7": "",
+  "TP8": "",
+  "TP9": "",
+  "TP10": "",
+  "TP11": "",
+  "TP12": "",
+  "TP13": "",
+  "TP14": "",
+  "TP15": "",
+  "TP16": "",
+  "TP17": "",
+  "TP18": "",
+  "TP19": "",
+  "TP20": "",
+  "TP21": "",
+  "TP22": "",
+  "TP23": "",
+  "TP24": "",
+  "TP25": "",
+  "TP26": "",
+  "TP27": "",
+  "U1": "",
+  "U2": "",
+  "U3": "",
+  "U4": "",
+  "U5": "",
+  "U6": "",
+  "U7": "",
+  "U8": "",
+  "U9": "",
+  "U10": "",
+  "U11": "",
+  "U12": "",
+  "U13": "",
+  "U14": "",
+  "U15": "",
+  "U16": "",
+  "U17": "",
+  "U19": "",
+  "U20": "",
+  "U21": "",
+  "U22": "",
+  "U23": "",
+  "U24": "",
+  "U25": "",
+  "Y170": "",
+  "Y200": ""
  },
  "owner": {
   "C2": "U11",
   "C5": "U19",
   "C6": "U11",
   "C181": "U11",
-  "C182": "D5",
-  "C183": "D5",
+  "C182": "U11",
+  "C183": "U11",
   "C184": "U11",
   "R10": "U11",
   "R11": "U11",
@@ -1743,16 +5861,16 @@
   "C267": "U25",
   "C268": "U25",
   "C269": "U25",
-  "C270": "U6",
+  "C270": "U25",
   "C271": "U6",
   "C272": "U6",
-  "C273": "U6",
-  "C274": "U6",
+  "C273": "U7",
+  "C274": "U7",
   "C275": "U6",
   "C276": "U6",
-  "C277": "U6",
+  "C277": "U25",
   "C278": "U6",
-  "C279": "U6",
+  "C279": "U25",
   "C280": "U6",
   "C281": "U6",
   "C282": "U6",
@@ -1762,12 +5880,12 @@
   "C286": "U6",
   "C287": "U6",
   "C288": "U6",
-  "C289": "U6",
-  "C290": "U6",
-  "C291": "U6",
-  "C292": "U6",
-  "C293": "U6",
-  "C294": "U6",
+  "C289": "U7",
+  "C290": "U25",
+  "C291": "U7",
+  "C292": "U25",
+  "C293": "U7",
+  "C294": "U7",
   "C295": "U7",
   "C296": "U7",
   "C297": "U7",
@@ -1796,217 +5914,15 @@
  },
  "antenna": {
   "u0": -61.0,
-  "u1": -58.394999999999996,
-  "v0": 42.035,
-  "v1": 58.035
+  "u1": -58.395,
+  "v0": 46.935,
+  "v1": 62.935
  },
  "failed": [],
- "noslot": [
-  "C281",
-  "C294",
-  "C276",
-  "C278",
-  "C289",
-  "C291",
-  "C282",
-  "C283",
-  "C284",
-  "C293",
-  "C274",
-  "C295",
-  "C296",
-  "C297",
-  "C266",
-  "C268",
-  "C269",
-  "R250",
-  "R251",
-  "R254",
-  "C100",
-  "C181",
-  "C217",
-  "C219",
-  "C220",
-  "C222",
-  "C215",
-  "C206",
-  "C207",
-  "C208",
-  "C209",
-  "C210",
-  "C211",
-  "C213",
-  "C226",
-  "C227",
-  "C212",
-  "C223",
-  "C214",
-  "C171",
-  "C177",
-  "C178",
-  "C170",
-  "C172",
-  "C173",
-  "C174",
-  "C160",
-  "C221",
-  "C224",
-  "C225",
-  "C237",
-  "C238",
-  "C241",
-  "C243",
-  "C244",
-  "C122",
-  "C125",
-  "C124",
-  "C191",
-  "C192",
-  "C193",
-  "C190",
-  "FB200",
-  "C285",
-  "C286",
-  "C287",
-  "C288",
-  "R257",
-  "R262",
-  "C298",
-  "C299",
-  "C300",
-  "C301",
-  "R258",
-  "R261",
-  "C267",
-  "R252",
-  "R253",
-  "R256",
-  "R255",
-  "C260",
-  "C261",
-  "C262",
-  "C103",
-  "C110",
-  "R102",
-  "R103",
-  "R100",
-  "R108",
-  "R12",
-  "R13",
-  "R18",
-  "R10",
-  "R11",
-  "R16",
-  "R17",
-  "R14",
-  "R15",
-  "R200",
-  "R201",
-  "R202",
-  "R203",
-  "R204",
-  "R205",
-  "R206",
-  "R207",
-  "R208",
-  "R211",
-  "R209",
-  "R210",
-  "R171",
-  "R172",
-  "R170",
-  "R174",
-  "R175",
-  "R176",
-  "R173",
-  "C240",
-  "C245",
-  "R236",
-  "R237",
-  "R238",
-  "R232",
-  "C195",
-  "R183",
-  "R187",
-  "R184",
-  "R180",
-  "R181",
-  "R150",
-  "R151",
-  "R152",
-  "R153",
-  "R140",
-  "R141",
-  "R142",
-  "R106",
-  "R259",
-  "R226",
-  "R227",
-  "R228",
-  "R229",
-  "R220",
-  "R221",
-  "R222",
-  "R234",
-  "C239",
-  "R230",
-  "R231",
-  "R235",
-  "R212",
-  "C204",
-  "C205",
-  "C234",
-  "C235",
-  "C308",
-  "C309",
-  "C310",
-  "C182",
-  "C183",
-  "C246",
-  "C162",
-  "C120",
-  "C126",
-  "C123",
-  "C130",
-  "C131",
-  "C132",
-  "C142",
-  "R112",
-  "R113",
-  "R185",
-  "R240",
-  "R242",
-  "R107",
-  "R110",
-  "R111",
-  "R122",
-  "R124",
-  "R125",
-  "R127",
-  "R182",
-  "R186",
-  "R224",
-  "R225",
-  "R239",
-  "R101",
-  "R109",
-  "R160",
-  "R241",
-  "R120",
-  "R121",
-  "R126",
-  "R243",
-  "R244",
-  "R233",
-  "R154",
-  "C201",
-  "C202",
-  "C203",
-  "C200",
-  "C233",
-  "R223",
-  "C230",
-  "C231",
-  "C232"
- ]
+ "noslot": [],
+ "source": {
+  "board": "DesktopSpeaker-kicad/DesktopSpeaker.kicad_pcb (committed R6o, e526e7d)",
+  "frame": "u = x - 147.25, v = 88.8000 - y (mm)",
+  "generator": "board_to_layout.py"
+ }
 }
