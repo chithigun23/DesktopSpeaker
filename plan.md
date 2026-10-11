@@ -13,16 +13,11 @@ Updated: 2026-10-05. Use this checklist with `AGENTS.md` and `ai-files/HANDOVER.
 - Use automatic USB-A source detection with a conservative fallback; a 2 A label alone does not grant USB host current.
 - Custom PCB for internal electronics. Placement and routing (R6m) exist and are adopted; see "PCB status" below.
 
-## PCB status (2026-10-10)
-
-Active power stack is TPS25730D + BQ25792 (STUSB4500/BQ25895 entries below are history). Details: `ai-files/HANDOVER.md` summary.
-- [x] Placement v10d accepted; routing R6a-R6m adopted (07bf4f4, ef4ed75, 7cf76ea). Gates: ERC 0 (U11 VIN_3V3 exclusion), DRC only 4 USB items + silk, open edges only J7 NRST/SWCLK.
-- [x] Catch-all `*` netclass removed from the project (composite class names made SIGNAL rules misfire; 75 false errors).
-- Standing: BAT_INT 6 A RMS / 8 A 1 s; USB full-speed waiver documented (17.3 mm uncoupled, relax rule to 18 mm; DRC exclusion pending); 3 via-in-pad accepted (R10.2, R224.1, C215.1); C101/C108 PMID GND via 2.5 mm accepted; 7 inherited corner hits; long nets accepted.
-- [ ] Confirm: delete J7 (duplicate of J6, last 2 open nets); cap firmware charge current at 3 A.
-- [ ] User GUI: Update PCB from Schematic, Edit > Teardrops (ratio 0.5, max length 1.0/0.6 mm, max width 2.0, 5 curve points), refill zones; then re-run DRC/strict/sliver gates.
-- [ ] Fab outputs (gerbers, drill, pos, BOM), JLC order. Open: TPS61088_zh.pdf and PESD5V0S2BT.pdf missing; SW100 land pattern still TE-drawing draft; pack unselected; SW101/SW102 no stock; partial BOM subtotal only.
-- Bench order: see HANDOVER "Bench order" (10 steps).
+## PCB status (2026-10-12)
+- Board: R6q with teardrops in `DesktopSpeaker-kicad/DesktopSpeaker.kicad_pcb` (commit cfea017): DRC 0/0, 0 open edges, USB FS waiver rule, 360 footprints, 888 vias, 1825 teardrops. Routing history R6a-R6q in `ai-files/reports/pcb-routing-*.md`.
+- Fab outputs R8 in `ai-files/fab/out/` (gerbers, drills, position files, checked by `helpers/fab_check.py`); order options `ai-files/fab/ORDER-NOTES.md`; assembly BOM `ai-files/bom/DesktopSpeaker_JLC_BOM.csv` (`helpers/jlc_bom.py`).
+- Open (user): JLC preview and order; battery pack quotes (Keeppower / CM Batteries, NTC); rocker GRB112B802BR1 from Digi-Key; bench items in HANDOVER.
+- Enclosure CAD v11 (print-ready STLs) in `ai-files/cad/`; knob dish and R6q rebuild in progress.
 
 ## 1. USB-C power delivery — PARTIAL
 
