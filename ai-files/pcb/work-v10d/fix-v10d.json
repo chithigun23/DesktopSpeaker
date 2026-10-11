@@ -1,0 +1,817 @@
+{
+ "vias": [
+  [
+   151.57,
+   116.6,
+   "GND",
+   "U4 pin 27 PGND via column (B1)"
+  ],
+  [
+   151.57,
+   117.5,
+   "GND",
+   "U4 pin 27 PGND via column (B1)"
+  ],
+  [
+   151.57,
+   118.4,
+   "GND",
+   "U4 pin 27 PGND via column (B1)"
+  ],
+  [
+   143.02,
+   114.3,
+   "GND",
+   "C112 GND pad, 2 vias to In1 (B1)"
+  ],
+  [
+   143.82,
+   114.3,
+   "GND",
+   "C112 GND pad, 2 vias to In1 (B1)"
+  ],
+  [
+   145.42,
+   114.3,
+   "GND",
+   "C108 GND pad, 2 vias to In1 (B1)"
+  ],
+  [
+   146.22,
+   114.3,
+   "GND",
+   "C108 GND pad, 2 vias to In1 (B1)"
+  ],
+  [
+   147.82,
+   114.3,
+   "GND",
+   "C101 GND pad, 2 vias to In1 (B1)"
+  ],
+  [
+   148.62,
+   114.3,
+   "GND",
+   "C101 GND pad, 2 vias to In1 (B1)"
+  ],
+  [
+   154.52,
+   114.3,
+   "GND",
+   "C104 GND pad, 2 vias to In1 (B1)"
+  ],
+  [
+   155.32,
+   114.3,
+   "GND",
+   "C104 GND pad, 2 vias to In1 (B1)"
+  ],
+  [
+   156.92,
+   114.3,
+   "GND",
+   "C105 GND pad, 2 vias to In1 (B1)"
+  ],
+  [
+   157.72,
+   114.3,
+   "GND",
+   "C105 GND pad, 2 vias to In1 (B1)"
+  ],
+  [
+   159.32,
+   114.3,
+   "GND",
+   "C107 GND pad, 2 vias to In1 (B1)"
+  ],
+  [
+   160.12,
+   114.3,
+   "GND",
+   "C107 GND pad, 2 vias to In1 (B1)"
+  ],
+  [
+   143.85,
+   119.6,
+   "GND",
+   "C100 GND pad (B1)"
+  ],
+  [
+   143.85,
+   120.55,
+   "GND",
+   "C100 GND pad (B1)"
+  ],
+  [
+   149.1,
+   130.1,
+   "GND",
+   "C111 GND pad (B1)"
+  ],
+  [
+   150.05,
+   130.1,
+   "GND",
+   "C111 GND pad (B1)"
+  ],
+  [
+   158.1,
+   123.2,
+   "GND",
+   "C106 GND pad"
+  ],
+  [
+   158.1,
+   124.05,
+   "GND",
+   "C106 GND pad"
+  ],
+  [
+   157.9,
+   120.25,
+   "BAT_INT",
+   "C106 BAT pad / U4 pins 22-23 to the In2 BAT_INT pour, 8-via field (v10d M2)"
+  ],
+  [
+   157.9,
+   121.05,
+   "BAT_INT",
+   "C106 BAT pad / U4 pins 22-23 to the In2 BAT_INT pour, 8-via field (v10d M2)"
+  ],
+  [
+   158.7,
+   120.25,
+   "BAT_INT",
+   "C106 BAT pad / U4 pins 22-23 to the In2 BAT_INT pour, 8-via field (v10d M2)"
+  ],
+  [
+   158.7,
+   121.05,
+   "BAT_INT",
+   "C106 BAT pad / U4 pins 22-23 to the In2 BAT_INT pour, 8-via field (v10d M2)"
+  ],
+  [
+   159.5,
+   120.25,
+   "BAT_INT",
+   "C106 BAT pad / U4 pins 22-23 to the In2 BAT_INT pour, 8-via field (v10d M2)"
+  ],
+  [
+   159.5,
+   121.05,
+   "BAT_INT",
+   "C106 BAT pad / U4 pins 22-23 to the In2 BAT_INT pour, 8-via field (v10d M2)"
+  ],
+  [
+   160.3,
+   120.25,
+   "BAT_INT",
+   "C106 BAT pad / U4 pins 22-23 to the In2 BAT_INT pour, 8-via field (v10d M2)"
+  ],
+  [
+   160.3,
+   121.05,
+   "BAT_INT",
+   "C106 BAT pad / U4 pins 22-23 to the In2 BAT_INT pour, 8-via field (v10d M2)"
+  ],
+  [
+   146.45,
+   121.75,
+   "SW1",
+   "C103 SW1 pad via pair (B2)"
+  ],
+  [
+   150.1,
+   115.2,
+   "SW1",
+   "C103 SW1 via pair, channel end (B2)"
+  ],
+  [
+   156.55,
+   125.57,
+   "SW2",
+   "C110 SW2 pad via pair (B2)"
+  ],
+  [
+   153.0,
+   115.2,
+   "SW2",
+   "C110 SW2 via pair, channel end (B2)"
+  ],
+  [
+   155.1,
+   123.35,
+   "Net-(U4-BATP)",
+   "BATP escape via (pin 18 -> R112 on an inner/bottom layer); v10d M3: 0.35 mm down so BTST2 passes over it"
+  ],
+  [
+   103.3,
+   127.25,
+   "GND",
+   "U6 GVDD/AVDD cap GND pad"
+  ],
+  [
+   103.3,
+   128.3,
+   "GND",
+   "U6 GVDD/AVDD cap GND pad"
+  ],
+  [
+   102.6,
+   128.85,
+   "GND",
+   "U6 PVDD 0.1 uF GND pad to In1 (v10d m3: outer via up/left, OUT_B+ neck wider)"
+  ],
+  [
+   186.09,
+   127.25,
+   "GND",
+   "U7 GVDD/AVDD cap GND pad"
+  ],
+  [
+   186.09,
+   128.3,
+   "GND",
+   "U7 GVDD/AVDD cap GND pad"
+  ],
+  [
+   117.55,
+   42.4,
+   "GND",
+   "C152 GND pad"
+  ],
+  [
+   119.65,
+   42.4,
+   "GND",
+   "C153 GND pad"
+  ],
+  [
+   114.9,
+   128.4,
+   "GND",
+   "C276 GND pad to In1 (v10d B2)"
+  ],
+  [
+   197.69,
+   128.4,
+   "GND",
+   "C289 GND pad to In1 (v10d B2)"
+  ],
+  [
+   138.4,
+   50.55,
+   "GND",
+   "C183 GND pad (v10d B3)"
+  ],
+  [
+   139.5,
+   50.55,
+   "GND",
+   "C182 GND pad (v10d B3)"
+  ],
+  [
+   140.7,
+   53.45,
+   "GND",
+   "U11 corner GND pins 26/27 (v10d B3)"
+  ],
+  [
+   136.55,
+   49.5,
+   "/USB_VBUS",
+   "C184 VBUS pad feed from the B.Cu/In2 USB_VBUS copper (v10d B3)"
+  ],
+  [
+   134.45,
+   49.45,
+   "GND",
+   "C184 GND pad (v10d B3)"
+  ],
+  [
+   131.45,
+   47.7,
+   "GND",
+   "R12 GND pad (v10d B3)"
+  ],
+  [
+   134.25,
+   47.7,
+   "GND",
+   "R18 GND pad (v10d B3)"
+  ],
+  [
+   132.85,
+   46.6,
+   "PD_PLUG_EVENT",
+   "U11 pin 37 PD_PLUG_EVENT to R16/U3 on an inner/bottom layer (v10d B3)"
+  ],
+  [
+   148.45,
+   120.0,
+   "VBUS_PD",
+   "U4 VBUS_PD pins 2/3/8/9 to the In2 VBUS_PD island (v10d M1)"
+  ],
+  [
+   148.45,
+   120.7,
+   "VBUS_PD",
+   "U4 VBUS_PD pins 2/3/8/9 to the In2 VBUS_PD island (v10d M1)"
+  ],
+  [
+   148.55,
+   125.0,
+   "VBUS_PD",
+   "U4 VBUS_PD pins 2/3/8/9 to the In2 VBUS_PD island (v10d M1)"
+  ],
+  [
+   148.25,
+   127.0,
+   "VBUS_PD",
+   "U4 VBUS_PD pins 2/3/8/9 to the In2 VBUS_PD island (v10d M1)"
+  ],
+  [
+   147.85,
+   118.75,
+   "GND",
+   "C312 (PMID 0.1 uF) GND pad (v10d m1)"
+  ],
+  [
+   155.4,
+   119.1,
+   "GND",
+   "C311 (SYS 0.1 uF) GND pad (v10d m1)"
+  ],
+  [
+   168.0,
+   109.3,
+   "BAT_INT",
+   "Q103 pins 1-3 BAT_INT 9-via field (v10d M2)"
+  ],
+  [
+   168.0,
+   110.1,
+   "BAT_INT",
+   "Q103 pins 1-3 BAT_INT 9-via field (v10d M2)"
+  ],
+  [
+   168.0,
+   110.9,
+   "BAT_INT",
+   "Q103 pins 1-3 BAT_INT 9-via field (v10d M2)"
+  ],
+  [
+   168.8,
+   109.3,
+   "BAT_INT",
+   "Q103 pins 1-3 BAT_INT 9-via field (v10d M2)"
+  ],
+  [
+   168.8,
+   110.1,
+   "BAT_INT",
+   "Q103 pins 1-3 BAT_INT 9-via field (v10d M2)"
+  ],
+  [
+   168.8,
+   110.9,
+   "BAT_INT",
+   "Q103 pins 1-3 BAT_INT 9-via field (v10d M2)"
+  ],
+  [
+   169.6,
+   109.3,
+   "BAT_INT",
+   "Q103 pins 1-3 BAT_INT 9-via field (v10d M2)"
+  ],
+  [
+   169.6,
+   110.1,
+   "BAT_INT",
+   "Q103 pins 1-3 BAT_INT 9-via field (v10d M2)"
+  ],
+  [
+   169.6,
+   110.9,
+   "BAT_INT",
+   "Q103 pins 1-3 BAT_INT 9-via field (v10d M2)"
+  ],
+  [
+   161.2,
+   116.4,
+   "SYS_RAW",
+   "SYS_RAW field at C104-C107 to the In2/B.Cu SYS pour (v10d M2)"
+  ],
+  [
+   162.0,
+   116.4,
+   "SYS_RAW",
+   "SYS_RAW field at C104-C107 to the In2/B.Cu SYS pour (v10d M2)"
+  ],
+  [
+   162.8,
+   116.4,
+   "SYS_RAW",
+   "SYS_RAW field at C104-C107 to the In2/B.Cu SYS pour (v10d M2)"
+  ],
+  [
+   161.2,
+   117.2,
+   "SYS_RAW",
+   "SYS_RAW field at C104-C107 to the In2/B.Cu SYS pour (v10d M2)"
+  ],
+  [
+   162.0,
+   117.2,
+   "SYS_RAW",
+   "SYS_RAW field at C104-C107 to the In2/B.Cu SYS pour (v10d M2)"
+  ],
+  [
+   162.8,
+   117.2,
+   "SYS_RAW",
+   "SYS_RAW field at C104-C107 to the In2/B.Cu SYS pour (v10d M2)"
+  ],
+  [
+   161.2,
+   118.0,
+   "SYS_RAW",
+   "SYS_RAW field at C104-C107 to the In2/B.Cu SYS pour (v10d M2)"
+  ],
+  [
+   162.0,
+   118.0,
+   "SYS_RAW",
+   "SYS_RAW field at C104-C107 to the In2/B.Cu SYS pour (v10d M2)"
+  ],
+  [
+   140.35,
+   144.2,
+   "SYS_RAW",
+   "SYS_RAW field beside the L200 pad 1 (v10d M2)"
+  ],
+  [
+   140.35,
+   145.0,
+   "SYS_RAW",
+   "SYS_RAW field beside the L200 pad 1 (v10d M2)"
+  ],
+  [
+   140.35,
+   145.8,
+   "SYS_RAW",
+   "SYS_RAW field beside the L200 pad 1 (v10d M2)"
+  ],
+  [
+   140.35,
+   146.6,
+   "SYS_RAW",
+   "SYS_RAW field beside the L200 pad 1 (v10d M2)"
+  ],
+  [
+   140.35,
+   147.4,
+   "SYS_RAW",
+   "SYS_RAW field beside the L200 pad 1 (v10d M2)"
+  ],
+  [
+   140.35,
+   148.2,
+   "SYS_RAW",
+   "SYS_RAW field beside the L200 pad 1 (v10d M2)"
+  ],
+  [
+   140.35,
+   149.0,
+   "SYS_RAW",
+   "SYS_RAW field beside the L200 pad 1 (v10d M2)"
+  ],
+  [
+   157.2,
+   155.35,
+   "PVDD_AMP",
+   "U25 output block (C277/C292 PVDD pads) to the PVDD pour (v10d M2)"
+  ],
+  [
+   158.0,
+   155.35,
+   "PVDD_AMP",
+   "U25 output block (C277/C292 PVDD pads) to the PVDD pour (v10d M2)"
+  ],
+  [
+   158.8,
+   155.35,
+   "PVDD_AMP",
+   "U25 output block (C277/C292 PVDD pads) to the PVDD pour (v10d M2)"
+  ],
+  [
+   159.6,
+   155.35,
+   "PVDD_AMP",
+   "U25 output block (C277/C292 PVDD pads) to the PVDD pour (v10d M2)"
+  ],
+  [
+   160.4,
+   155.35,
+   "PVDD_AMP",
+   "U25 output block (C277/C292 PVDD pads) to the PVDD pour (v10d M2)"
+  ],
+  [
+   161.1,
+   151.3,
+   "PVDD_AMP",
+   "C275 PVDD pad to the PVDD pour (v10d M2)"
+  ],
+  [
+   161.1,
+   152.1,
+   "PVDD_AMP",
+   "C275 PVDD pad to the PVDD pour (v10d M2)"
+  ],
+  [
+   161.1,
+   152.9,
+   "PVDD_AMP",
+   "C275 PVDD pad to the PVDD pour (v10d M2)"
+  ],
+  [
+   116.0,
+   124.85,
+   "PVDD_AMP",
+   "C271 PVDD pad (v10d M2)"
+  ],
+  [
+   116.8,
+   124.85,
+   "PVDD_AMP",
+   "C271 PVDD pad (v10d M2)"
+  ],
+  [
+   102.7,
+   126.3,
+   "PVDD_AMP",
+   "C272 PVDD pad (v10d M2)"
+  ],
+  [
+   103.5,
+   126.3,
+   "PVDD_AMP",
+   "C272 PVDD pad (v10d M2)"
+  ],
+  [
+   199.2,
+   132.3,
+   "PVDD_AMP",
+   "C273 PVDD pad (v10d M2)"
+  ],
+  [
+   200.0,
+   132.3,
+   "PVDD_AMP",
+   "C273 PVDD pad (v10d M2)"
+  ],
+  [
+   144.75,
+   56.5,
+   "VBUS_PD",
+   "C315 VBUS pad / U11 pin 20 to the VBUS_PD trunk (v10d M2)"
+  ],
+  [
+   144.75,
+   57.3,
+   "VBUS_PD",
+   "C315 VBUS pad / U11 pin 20 to the VBUS_PD trunk (v10d M2)"
+  ],
+  [
+   144.75,
+   58.1,
+   "VBUS_PD",
+   "C315 VBUS pad / U11 pin 20 to the VBUS_PD trunk (v10d M2)"
+  ],
+  [
+   144.75,
+   58.9,
+   "VBUS_PD",
+   "C315 VBUS pad / U11 pin 20 to the VBUS_PD trunk (v10d M2)"
+  ],
+  [
+   157.4,
+   77.05,
+   "GND",
+   "C207 GND pad (v10d M4)"
+  ],
+  [
+   157.4,
+   78.35,
+   "GND",
+   "C206 GND pad (v10d M4)"
+  ],
+  [
+   157.4,
+   79.65,
+   "GND",
+   "C209 GND pad (v10d M4)"
+  ],
+  [
+   157.4,
+   80.95,
+   "GND",
+   "C208 GND pad (v10d M4)"
+  ],
+  [
+   173.29,
+   57.25,
+   "GND",
+   "C238 GND pad (v10d M5)"
+  ],
+  [
+   184.29,
+   58.3,
+   "GND",
+   "C237 GND pad (v10d M5)"
+  ],
+  [
+   170.5,
+   61.9,
+   "Net-(U8-COM1)",
+   "U8 COM1 (pin 10) to U9 pin 9 on B.Cu (v10d M5)"
+  ],
+  [
+   182.6,
+   61.85,
+   "HP_L",
+   "U9 HP_L (pin 10) to C239 on B.Cu (v10d M5)"
+  ],
+  [
+   184.95,
+   61.35,
+   "Net-(U8-COM2)",
+   "U9 COM2 (pin 7) from U8 on B.Cu, beside V+ (v10d M5)"
+  ],
+  [
+   186.05,
+   131.0,
+   "GND",
+   "C291 GND pad to In1 (v10d B1)"
+  ],
+  [
+   115.4,
+   129.45,
+   "PVDD_AMP",
+   "U6 PVDD pin 3/4 and 21/22 lane to the In2 PVDD island (v10d B1)"
+  ],
+  [
+   116.2,
+   129.45,
+   "PVDD_AMP",
+   "U6 PVDD pin 3/4 and 21/22 lane to the In2 PVDD island (v10d B1)"
+  ],
+  [
+   106.2,
+   129.3,
+   "PVDD_AMP",
+   "U6 PVDD pin 3/4 and 21/22 lane to the In2 PVDD island (v10d B1)"
+  ],
+  [
+   105.4,
+   129.3,
+   "PVDD_AMP",
+   "U6 PVDD pin 3/4 and 21/22 lane to the In2 PVDD island (v10d B1)"
+  ],
+  [
+   148.3,
+   128.0,
+   "VBUS_PD",
+   "U4 VBUS_PD pins 2/3/8/9 to the In2 VBUS_PD island, 6 vias (v10d m5)"
+  ],
+  [
+   147.65,
+   124.6,
+   "VBUS_PD",
+   "U4 VBUS_PD pins 2/3/8/9 to the In2 VBUS_PD island, 6 vias (v10d m5)"
+  ]
+ ],
+ "moved": [
+  "C100",
+  "C101",
+  "C103",
+  "C104",
+  "C105",
+  "C106",
+  "C107",
+  "C108",
+  "C110",
+  "C111",
+  "C112",
+  "C120",
+  "C123",
+  "C126",
+  "C140",
+  "C142",
+  "C152",
+  "C153",
+  "C154",
+  "C160",
+  "C161",
+  "C162",
+  "C182",
+  "C183",
+  "C184",
+  "C190",
+  "C2",
+  "C201",
+  "C202",
+  "C203",
+  "C206",
+  "C207",
+  "C208",
+  "C209",
+  "C212",
+  "C214",
+  "C215",
+  "C216",
+  "C222",
+  "C226",
+  "C227",
+  "C230",
+  "C233",
+  "C237",
+  "C238",
+  "C239",
+  "C261",
+  "C262",
+  "C264",
+  "C268",
+  "C269",
+  "C270",
+  "C271",
+  "C272",
+  "C274",
+  "C275",
+  "C276",
+  "C277",
+  "C278",
+  "C279",
+  "C280",
+  "C282",
+  "C283",
+  "C284",
+  "C285",
+  "C287",
+  "C289",
+  "C290",
+  "C291",
+  "C292",
+  "C293",
+  "C295",
+  "C296",
+  "C297",
+  "C298",
+  "C299",
+  "C300",
+  "C301",
+  "C311",
+  "C312",
+  "C313",
+  "C314",
+  "C315",
+  "C316",
+  "L1",
+  "L3",
+  "R10",
+  "R100",
+  "R102",
+  "R106",
+  "R108",
+  "R11",
+  "R12",
+  "R13",
+  "R150",
+  "R152",
+  "R17",
+  "R173",
+  "R18",
+  "R200",
+  "R201",
+  "R202",
+  "R203",
+  "R211",
+  "R223",
+  "R226",
+  "R250",
+  "R251",
+  "R253",
+  "R254",
+  "R256",
+  "R257",
+  "R258",
+  "R261",
+  "TP10",
+  "TP12",
+  "TP13",
+  "TP14",
+  "TP26",
+  "TP27",
+  "Y200"
+ ]
+}

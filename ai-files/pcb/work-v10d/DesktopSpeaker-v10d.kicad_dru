@@ -1,0 +1,67 @@
+(version 1)
+# DesktopSpeaker custom rules (drafted from ai-files/reports/pcb-layout-rules-audio.md sec. 7, routing plan ai-files/reports/pcb-routing-plan.md)
+# Later rules override earlier ones. Pads are excluded from the wide-clearance rules so fine-pitch escapes stay possible.
+
+# 1. Audio analogue: 0.5 mm to other-net tracks/vias/zones (3x width; GND pours/fence may approach to the class clearance)
+(rule audio_clear
+  (condition "A.NetClass == 'AUDIO' && B.NetClass != 'AUDIO' && B.NetClass != 'GND' && A.Type != 'Pad' && B.Type != 'Pad'")
+  (constraint clearance (min 0.5mm)))
+
+# 2. High-voltage (22 V TVS rail) and battery copper
+(rule vbus_clear
+  (condition "A.NetClass == 'POWER_HI' && A.Type != 'Pad' && B.Type != 'Pad'")
+  (constraint clearance (min 0.4mm)))
+
+# 2b. PVDD and speaker outputs (12 V)
+(rule pvdd_clear
+  (condition "(A.NetClass == 'PVDD' || A.NetClass == 'SPK_OUT') && A.Type != 'Pad' && B.Type != 'Pad'")
+  (constraint clearance (min 0.3mm)))
+
+# 3. Switching nodes keep 1.0 mm from other nets (planning goal 2 mm); L2 GND below stays solid
+(rule switch_clear
+  (condition "A.NetClass == 'SWITCH' && B.NetClass != 'SWITCH' && B.NetClass != 'GND' && A.Type != 'Pad' && B.Type != 'Pad'")
+  (constraint clearance (min 1.0mm)))
+
+# 4. I2S / clocks 0.4 mm (2x track) to other nets
+(rule clk_clear
+  (condition "A.NetClass == 'I2S_CLK' && B.NetClass != 'I2S_CLK' && B.NetClass != 'GND' && A.Type != 'Pad' && B.Type != 'Pad'")
+  (constraint clearance (min 0.4mm)))
+
+# 5. Minimum widths (DRC floors; routed trunks must follow the plan table, pad stubs may be narrower than the table minimum)
+(rule width_power
+  (condition "A.NetClass == 'POWER_HI' || A.NetClass == 'PVDD' || A.NetClass == 'SPK_OUT'")
+  (constraint track_width (min 0.5mm)))
+(rule width_5v
+  (condition "A.NetClass == 'PWR_5V' || A.NetClass == 'SWITCH'")
+  (constraint track_width (min 0.4mm)))
+(rule width_audio
+  (condition "A.NetClass == 'AUDIO' || A.NetClass == 'I2S_CLK' || A.NetClass == 'USB'")
+  (constraint track_width (min 0.25mm)))
+
+# 6. USB 90 ohm pair (0.25 / 0.15 over L2, confirm in JLC calculator)
+(rule usb_diff
+  (condition "A.NetClass == 'USB'")
+  (constraint diff_pair_gap (min 0.15mm) (opt 0.15mm) (max 0.25mm))
+  (constraint diff_pair_uncoupled (max 3mm))
+  (constraint skew (max 0.5mm)))
+
+# 7. BM83 antenna keep-out: nothing on any layer
+(rule rf_keepout
+  (condition "A.insideArea('BM83_ANTENNA_KEEPOUT')")
+  (constraint disallow track via zone))
+
+# 8. Vias: JLC-safe drill / annular ring
+(rule via_min
+  (condition "A.Type == 'Via'")
+  (constraint hole_size (min 0.3mm))
+  (constraint via_diameter (min 0.6mm)))
+
+# 9. Fine-pitch exception for J1 / U11 / U19 (JLC min 0.10 mm)
+(rule fine_pitch
+  (condition "A.Type == 'Pad' && B.Type == 'Pad' && (A.Parent == 'J1' || A.Parent == 'U11' || A.Parent == 'U19')")
+  (constraint clearance (min 0.1mm)))
+
+# 10. Hole to copper edge for plated mounting holes
+(rule edge_hole
+  (condition "A.Type == 'Via' || A.Type == 'Pad'")
+  (constraint edge_clearance (min 0.5mm)))
