@@ -1,6 +1,6 @@
 # JLCPCB order notes (draft 2026-10-12, before the final teardrop pass)
 
-Final gerber/drill/position files are produced by `ai-files/helpers/fab_export.sh DesktopSpeaker-kicad/DesktopSpeaker.kicad_pcb ai-files/fab/out R7` after the teardrop pass and the DRC/gate re-run. The notes below are the order options; they do not change with teardrops.
+Final gerber/drill/position files are produced by `ai-files/helpers/fab_export.sh` (current set: R8, 2026-10-12 02:42, from the teardropped R6q board, DRC 0/0). The notes below are the order options; they do not change with teardrops.
 
 ## Board
 | Option | Value | Why |
