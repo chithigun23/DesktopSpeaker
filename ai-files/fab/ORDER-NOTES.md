@@ -24,8 +24,8 @@ Final gerber/drill/position files are produced by `ai-files/helpers/fab_export.s
 - BOM: `ai-files/bom/DesktopSpeaker_JLC_BOM.csv` (90 lines, 318 placements), notes in `ai-files/bom/jlc-assembly-notes.md`.
 - CPL: `<TAG>-pos-jlc.csv` from `fab_export.sh`; all parts top side; 27 test points appear in the CPL but have no BOM line (JLC will flag them, ignore).
 - Through-hole: J4, J6, J8 headers; J5 Micro-Fit; J9-J11 JST VH; C275 electrolytic; SW102 encoder; J2/J3 jacks; J1 USB-C hybrid pins. Either JLC THT assembly or hand soldering.
-- Not assembled: SW101 panel rocker (wired), R256 (DNP, fit 0R at the bench for forced PWM on U25), J7 (Tag-Connect footprint only).
-- Stock risk at 2026-10-10: BM83SM1-00TA (U1) stock 1, SW102 EC11E15244G1 stock 0 (alternatives EC11E18244A5/AU, 36 detent / 18 pulse), SW101 stock 0. Re-check every line at order time.
+- Not assembled: SW101 panel rocker CW GRB112B802BR1 (Digi-Key, wired), R256 (DNP, fit 0R at the bench for forced PWM on U25), J7 (Tag-Connect footprint only).
+- Stock risk at 2026-10-10: BM83SM1-00TA (U1) stock 1, SW102 now EC11E18244AU C202365 (398 in stock 2026-10-12), SW101 now a Digi-Key part. Re-check every line at order time.
 
 ## Before ordering (checklist)
 1. Teardrop pass in the GUI, refill, save; coordinator gates (DRC 0/0, strict, sliver, islands, corners).
