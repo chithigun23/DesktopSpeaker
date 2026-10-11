@@ -77,7 +77,7 @@ Outer 163 x 100 x 206.6 mm (lid +1 mm). Detailing costs 0.004 L in the woofer ch
 - **Grommet**: a 6 mm hole and 1.6 mm panel snap grommet with ID >= 3.4 is not selected; leads assumed 2 x 0.5 mm2 (3.0 mm bundle).
 - **SW100** (TE 1977066-1): no STEP; plunger 2.5 mm dia at PCB top + 1.75, 2.5 mm proud of the board edge (assumed). The tip ends 2.0 mm below the lid outer face, so it is a pin-press (paperclip) button.
 - J5, J9-J11 bodies are courtyard boxes. Plug bodies are assumed to be USB-C overmold <= 12 x 7 and 3.5 mm plug <= 11 mm dia in the counterbore. The foam cord (3 mm closed cell) and the sealing washers are not sourced.
-- Library STEP offsets for BM83 and XFL4015 are wrong (corrected in the CAD only; see 1).
+- Library STEP offsets for BM83 and XFL4015 were wrong; fixed in the library and the board on 2026-10-12 (commit 6052ec2, offsets z -5.41 and z 1.5, verified by STEP re-export). The CAD-side correction is now redundant and should be removed on the next rebuild.
 
 ## 5. Not finished / known gaps
 - **SW102 encoder**: the shaft does not reach the top wall. It needs a longer shaft variant or an extension, plus a top-wall bore and knob. Not modelled, because the part change is a schematic/BOM decision.
