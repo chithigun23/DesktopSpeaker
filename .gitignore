@@ -10,3 +10,21 @@ node_modules
 # Local recovery snapshots; reviewed project history is retained in Git
 ai-files/backups/
 ai-files/pcb/work-p0/
+
+# Intermediate routing/placement boards and logs (only *-final sets are tracked)
+ai-files/pcb/work-r6/*
+!ai-files/pcb/work-r6/R6*-final.*
+ai-files/pcb/work-p1/
+ai-files/pcb/work-p2/
+ai-files/pcb/work-p3/
+ai-files/pcb/work-review/
+ai-files/pcb/work-v10/
+ai-files/pcb/work-v10b/
+ai-files/pcb/work-v10c/
+ai-files/pcb/work-v10-review/
+ai-files/pcb/work-v10b-review/
+ai-files/pcb/work-v10c-review/
+ai-files/pcb/work-v10d/cad/
+ai-files/pcb/work-v10d/review/
+ai-files/pcb/work-v10d/*.log
+ai-files/helpers/*.so

@@ -54,8 +54,18 @@
 (rule usb_diff
   (condition "A.NetClass == 'USB'")
   (constraint diff_pair_gap (min 0.15mm) (opt 0.15mm) (max 0.25mm))
-  (constraint diff_pair_uncoupled (max 6mm))
-  (constraint skew (max 0.5mm)))
+)
+
+# 6b. R6o USB full-speed waiver (user-accepted, waived 2026-10-10):
+#     USB is 12 Mbps full speed (PCM2902C), where length matching is not critical (bit time 83 ns).
+#     Physical DP/DN skew is about 0.2 mm; KiCad's skew figure (~2.9 mm) includes the via barrel heights.
+#     Uncoupled length 17.3 mm is dominated by the J1 contact interleave, the D1 ESD array and the R171/R172 series resistors.
+#     Scoped to the /USB_DP and /USB_DN nets only (the short Net-(U2-D+)/Net-(U2-D-) stubs between R171/R172 and U2 are
+#     not a routed pair and are no longer length-checked). Pair gap (6, 17) and width (5, 18) rules are unchanged.
+(rule usb_fs_waiver
+  (condition "A.NetName == '/USB_DP' || A.NetName == '/USB_DN'")
+  (constraint diff_pair_uncoupled (max 18mm))
+  (constraint skew (max 3.5mm)))
 
 # 7. BM83 antenna keep-out: nothing on any layer
 (rule rf_keepout

@@ -1,0 +1,91 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-10-11T21:40:28",
+    "ignored_checks": [
+        {
+            "description": "Footprint has no courtyard defined",
+            "key": "missing_courtyard"
+        },
+        {
+            "description": "Track endpoint not centered on via",
+            "key": "track_not_centered_on_via"
+        },
+        {
+            "description": "Tuning profile track geometries",
+            "key": "tuning_profile_track_geometries"
+        },
+        {
+            "description": "Footprint doesn't match symbol's footprint filters",
+            "key": "footprint_filters_mismatch"
+        },
+        {
+            "description": "Footprint component type doesn't match footprint pads",
+            "key": "footprint_type_mismatch"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.0.6",
+    "schematic_parity": [],
+    "source": "R6o-finalsp.kicad_pcb",
+    "unconnected_items": [],
+    "violations": [
+        {
+            "description": "Track width (rule 'width_audio' min width 0.2500 mm; actual 0.2000 mm)",
+            "items": [
+                {
+                    "description": "Track [Net-(U24-XI)] on F.Cu, length 1.2048 mm",
+                    "pos": {
+                        "x": 148.8225,
+                        "y": 79.225
+                    },
+                    "uuid": "2ef5549a-fcca-47f1-8a4a-4d6e8e8181d0"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'width_audio' min width 0.2500 mm; actual 0.2000 mm)",
+            "items": [
+                {
+                    "description": "Track [Net-(U24-VINR2)] on F.Cu, length 1.0263 mm",
+                    "pos": {
+                        "x": 157.37625,
+                        "y": 80.3
+                    },
+                    "uuid": "e7c6755e-d99f-4a0e-8e37-e8fd3c389a5d"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Differential pair gap out of range (usb_diff maximum gap 0.2500 mm; actual 1.1750 mm)",
+            "items": [
+                {
+                    "description": "Track [/USB_DP] on F.Cu, length 1.1500 mm",
+                    "pos": {
+                        "x": 149.05,
+                        "y": 57.83
+                    },
+                    "uuid": "35e2b037-bb84-4514-b59b-d41aa20ec0d8"
+                },
+                {
+                    "description": "Track [/USB_DN] on F.Cu, length 1.0702 mm",
+                    "pos": {
+                        "x": 147.625,
+                        "y": 58.809633
+                    },
+                    "uuid": "7cebbc29-c862-454f-96b5-f0d50de964e8"
+                }
+            ],
+            "severity": "error",
+            "type": "diff_pair_gap_out_of_range"
+        }
+    ]
+}
