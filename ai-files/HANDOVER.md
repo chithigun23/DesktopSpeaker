@@ -20,7 +20,7 @@ Schematic and board are both complete. The PCB (placement plus routing) exists, 
 - C241 (U10 VDD) is 2.2 uF (CL05A225KP5NNNC, LCSC open); C240 stays 1 uF. CHG_VIO_3V0 is NOT dangling: it feeds R106.1 (CHG_INT pull-up) and the root `3V_AO` label; the name is a misnomer (BQ25792 has no VIO).
 
 ### Recommended, awaiting user confirmation
-- Delete J7 (Tag-Connect duplicate of J6; its NRST/SWCLK are the last 2 open nets).
+- J7 (Tag-Connect TC2030 footprint, no part) STAYS and is routed (user decision 2026-10-10, R6n).
 - Cap firmware charge current at 3 A (U4 PGND pin 27 via loading).
 
 ### Open items
@@ -29,6 +29,16 @@ Schematic and board are both complete. The PCB (placement plus routing) exists, 
 - Pack unselected; SW101/SW102 have no stock; BOM 93 of 101 rows coded, 6 unresolved, 11 below order quantity; subtotals ($101.69 fitted / $124.59 in-stock order) are partial, not a product cost; stock is a 2026-10-10 snapshot.
 - Unverified: TVS2200 clamp above TPS25730D 28 V abs max (surge immunity unproven), PFM acoustics, boost compensation (calculated only), BM83 sequencing, all bench behaviour.
 - `reports/mcu-pin-allocation.md` line 8 still lists the cut C163/C164.
+
+### Corrections to older sections (2026-10-12, from the bench-plan cross-check against the netlist)
+- PD: the board requests 5-20 V at up to 3 A (TPS25730D ADCIN1 GND, ADCIN2 = LDO_3V3 -> 20 V, ADCIN4 10k/210k -> 3 A); the STUSB4500-era "5/9 V only / program the NVM" text below is history. BQ25792 input is rated for the full range.
+- J4 pin 1 is LDO_3V3, an output of U11 with about 5 mA budget, not external programmer power; J4 reaches only the PD controller's I2C. Charger and gauge I2C are on TP15/TP16, audio I2C on TP17/TP18.
+- Charge current: not hard-capped; recommended firmware default 4 A or less until the U4 PGND via area is checked on the bench (R6n); the bench plan starts at 0.5 A and stops at 3 A.
+- TP13 = I2S_SDATA, TP14 = I2S_LRCK after the r6e pin swap (older TP list is stale).
+- Headphone/aux mux is TS5A23157 (U8/U9); TS5A3167 (U13/U16/U17) isolate the gauge bus.
+- VBUS_PD bulk: C315 47 uF plus the rest gives about 97 uF nominal against the TPS25730 100 uF maximum; attach inrush is a bench check (A2.6).
+- Standby: the 35-37 uA figure is BQ25895-era; BQ25792 is 17/24 uA (typ/max) on and 11/16 uA in ship mode, with the gauge and U21 still powered in ship mode.
+- PD_SINK_EN reads LOW when the sink path is enabled.
 
 ### Remaining steps to fabrication
 1. DONE: R6q board with teardrops (02:41, commit below), DRC 0/0; fab outputs R8 (`ai-files/fab/out/`: R8-gerbers.zip 11 layers + PTH/NPTH drills + maps, R8-drill-report.txt, R8-pos-jlc.csv / R8-pos-kicad.csv), checked by `helpers/fab_check.py`. Assembly BOM `ai-files/bom/DesktopSpeaker_JLC_BOM.csv` (regenerate after any field change: `kicad-cli sch export bom` + grouping, see `bom/jlc-assembly-notes.md`). Order options `ai-files/fab/ORDER-NOTES.md`.
