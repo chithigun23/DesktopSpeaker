@@ -15,7 +15,7 @@ Updated: 2026-10-05. Use this checklist with `AGENTS.md` and `ai-files/HANDOVER.
 
 ## PCB status (2026-10-12)
 - Board: R6q with teardrops in `DesktopSpeaker-kicad/DesktopSpeaker.kicad_pcb` (commit cfea017): DRC 0/0, 0 open edges, USB FS waiver rule, 360 footprints, 888 vias, 1825 teardrops. Routing history R6a-R6q in `ai-files/reports/pcb-routing-*.md`.
-- Fab outputs R8 in `ai-files/fab/out/` (gerbers, drills, position files, checked by `helpers/fab_check.py`); order options `ai-files/fab/ORDER-NOTES.md`; assembly BOM `ai-files/bom/DesktopSpeaker_JLC_BOM.csv` (`helpers/jlc_bom.py`).
+- Fab outputs R9 in `ai-files/fab/out/` (gerbers, drills, position files, checked by `helpers/fab_check.py`); order options `ai-files/fab/ORDER-NOTES.md`; assembly BOM `ai-files/bom/DesktopSpeaker_JLC_BOM.csv` (`helpers/jlc_bom.py`).
 - Open (user): JLC preview and order; battery pack quotes (Keeppower / CM Batteries, NTC); rocker GRB112B802BR1 from Digi-Key; bench items in HANDOVER.
 - Enclosure CAD v11 (print-ready STLs) in `ai-files/cad/`; knob dish and R6q rebuild in progress.
 

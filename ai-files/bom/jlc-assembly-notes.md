@@ -5,4 +5,4 @@
 - Position file: `helpers/fab_export.sh` writes `<TAG>-pos-jlc.csv` (Designator, Mid X, Mid Y, Layer, Rotation, mm) from the board; it lists 347 placements = 318 BOM placements + 27 test points. All parts are on the top side (single-side assembly).
 - Rotation: JLC's footprint zero may differ from KiCad's for some packages (connectors, SOT-23, polarised caps); check the JLC preview before confirming the order and fix rotations in the CPL, not in the board.
 - Through-hole parts (J4/J6/J8 headers, J5 Micro-Fit, J9-J11 JST VH, C275 electrolytic, SW102 encoder, J2/J3 jacks, J1 USB-C hybrid) need JLC's THT/extended assembly option or hand soldering.
-- Stock caveats from the sourcing pass still apply: SW102 EC11E15244G1 (C370970) and SW101 had zero LCSC stock on 2026-10-10 (in-stock alternatives EC11E18244A5/AU are 36 detent / 18 pulse); BM83 stock 1; re-check every line at order time.
+- Stock caveats: SW102 is now Alps EC11E18244AU C202365 (398 in stock on 2026-10-12); SW101 is a Digi-Key panel part (not assembled); BM83 stock was 1 on 2026-10-10; re-check every line at order time.
