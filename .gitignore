@@ -48,3 +48,6 @@ ai-files/pcb/work-r7/
 ai-files/pcb/work-r8/*
 !ai-files/pcb/work-r8/*-final.*
 !ai-files/pcb/work-r8/R8-placement.*
+ai-files/pcb/work-r9/*
+!ai-files/pcb/work-r9/R9-0.*
+!ai-files/pcb/work-r9/R9-final.*
