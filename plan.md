@@ -13,6 +13,10 @@ Updated: 2026-10-05. Use this checklist with `AGENTS.md` and `ai-files/HANDOVER.
 - Use automatic USB-A source detection with a conservative fallback; a 2 A label alone does not grant USB host current.
 - Custom PCB for internal electronics. Placement and routing (R6m) exist and are adopted; see "PCB status" below.
 
+## PCB status (2026-11-01 update)
+- R6q review (artifact "Routing Review R6q", `ai-files/reports/routing-review-r6q.md`) found the routing does not meet the owner standard (0/45/90 only, shortest runs, route by importance). Decision: restart routing with a placement pass first (R8 placement, then staged routing). Do NOT order the board as it stands unless the user decides to run it as a prototype. Rulebook artifact and `pcb-layout-best-practices.md` section 14 define the acceptance numbers.
+- Open BOM items: U1, U2, U19 show 0 stock at LCSC/JLC (2026-11-01); SW100 land pattern disagrees with the TE drawing; TPS61088 and PESD5V0S2BT datasheets missing.
+
 ## PCB status (2026-10-12)
 - Board: R6q with teardrops in `DesktopSpeaker-kicad/DesktopSpeaker.kicad_pcb` (commit cfea017): DRC 0/0, 0 open edges, USB FS waiver rule, 360 footprints, 888 vias, 1825 teardrops. Routing history R6a-R6q in `ai-files/reports/pcb-routing-*.md`.
 - Fab outputs R9 in `ai-files/fab/out/` (gerbers, drills, position files, checked by `helpers/fab_check.py`); order options `ai-files/fab/ORDER-NOTES.md`; assembly BOM `ai-files/bom/DesktopSpeaker_JLC_BOM.csv` (`helpers/jlc_bom.py`).

@@ -1,0 +1,669 @@
+{
+ "ref": {
+  "Bcu_total": {
+   "island": 656.2,
+   "void": 664.2,
+   "GND": 1018.1
+  },
+  "Fcu_over_In1": {
+   "GND": 2678.9,
+   "void": 161.9
+  },
+  "Bcu_sensitive": {
+   "/AUD_SCL": {
+    "void": 23.4,
+    "GND": 26.4,
+    "island": 9.0
+   },
+   "/AUD_SDA": {
+    "island": 62.4,
+    "void": 16.7,
+    "GND": 27.8
+   },
+   "/BT_AUDIO_L": {
+    "GND": 10.9,
+    "void": 4.6
+   },
+   "/BT_AUDIO_R": {
+    "void": 4.3,
+    "GND": 3.8
+   },
+   "/Headphone_Aux/HP_OUTL": {
+    "void": 5.8,
+    "GND": 11.5
+   },
+   "/Headphone_Aux/VMID_HP": {
+    "GND": 14.1,
+    "void": 2.0
+   },
+   "/I2S_BCK": {
+    "void": 1.9,
+    "GND": 0.5
+   },
+   "/I2S_LRCK": {
+    "void": 4.5,
+    "GND": 0.4,
+    "island": 1.6
+   },
+   "/I2S_SDATA": {
+    "void": 14.2,
+    "GND": 17.2,
+    "island": 9.1
+   },
+   "/USB_AUDIO_L": {
+    "void": 3.2
+   },
+   "/USB_AUDIO_R": {
+    "GND": 6.3,
+    "void": 5.4
+   },
+   "/USB_DN": {
+    "void": 1.0,
+    "GND": 0.5
+   }
+  }
+ },
+ "par": [
+  {
+   "a": "/I2S_BCK",
+   "b": "/I2S_LRCK",
+   "layer": "F.Cu",
+   "mm": 85.9,
+   "min_gap": 0.2
+  },
+  {
+   "a": "/I2S_BCK",
+   "b": "/I2S_SDATA",
+   "layer": "F.Cu",
+   "mm": 61.8,
+   "min_gap": 0.2
+  },
+  {
+   "a": "/USB_DN",
+   "b": "/USB_DP",
+   "layer": "F.Cu",
+   "mm": 34.0,
+   "min_gap": 0.15
+  },
+  {
+   "a": "/AMP_FAULT_N",
+   "b": "/MCU/ENC_SW",
+   "layer": "B.Cu",
+   "mm": 32.7,
+   "min_gap": 0.219
+  },
+  {
+   "a": "/Battery_Charger/CE_N",
+   "b": "Net-(U4-BATP)",
+   "layer": "B.Cu",
+   "mm": 16.0,
+   "min_gap": 0.205
+  },
+  {
+   "a": "/AUD_SDA",
+   "b": "/Battery_Charger/CE_N",
+   "layer": "B.Cu",
+   "mm": 13.4,
+   "min_gap": 0.213
+  },
+  {
+   "a": "/PDCTRL_SCL",
+   "b": "/PDCTRL_SDA",
+   "layer": "B.Cu",
+   "mm": 11.0,
+   "min_gap": 0.233
+  },
+  {
+   "a": "/CTRL_SCL",
+   "b": "Net-(U4-QON)",
+   "layer": "B.Cu",
+   "mm": 9.3,
+   "min_gap": 0.214
+  },
+  {
+   "a": "/BT_UART_TX",
+   "b": "/CHG_QON_SENSE",
+   "layer": "B.Cu",
+   "mm": 8.9,
+   "min_gap": 0.215
+  },
+  {
+   "a": "/AUD_SCL",
+   "b": "/AUD_SDA",
+   "layer": "F.Cu",
+   "mm": 8.8,
+   "min_gap": 0.207
+  },
+  {
+   "a": "/Bluetooth/BT_SYS_CFG",
+   "b": "/Bluetooth/BT_TXD_M",
+   "layer": "B.Cu",
+   "mm": 8.7,
+   "min_gap": 0.215
+  },
+  {
+   "a": "/PDCTRL_SCL",
+   "b": "/PDCTRL_SDA",
+   "layer": "F.Cu",
+   "mm": 5.7,
+   "min_gap": 0.211
+  },
+  {
+   "a": "/MCU/SWDIO",
+   "b": "/PDCTRL_SDA",
+   "layer": "F.Cu",
+   "mm": 3.6,
+   "min_gap": 0.254
+  },
+  {
+   "a": "/AUD_SDA",
+   "b": "/CTRL_SDA",
+   "layer": "B.Cu",
+   "mm": 2.8,
+   "min_gap": 0.205
+  },
+  {
+   "a": "/MCU/SWCLK",
+   "b": "/MCU/SWDIO",
+   "layer": "F.Cu",
+   "mm": 2.7,
+   "min_gap": 0.23
+  },
+  {
+   "a": "/CODEC_PWR_EN",
+   "b": "/PD_SINK_EN",
+   "layer": "In2.Cu",
+   "mm": 2.4,
+   "min_gap": 0.24
+  },
+  {
+   "a": "/CTRL_SCL",
+   "b": "/CTRL_SDA",
+   "layer": "F.Cu",
+   "mm": 2.3,
+   "min_gap": 0.235
+  },
+  {
+   "a": "Net-(U6-BST_B-)",
+   "b": "Net-(U6-OUT_B-)",
+   "layer": "F.Cu",
+   "mm": 2.3,
+   "min_gap": 0.2
+  },
+  {
+   "a": "Net-(U7-BST_B-)",
+   "b": "Net-(U7-OUT_B+)",
+   "layer": "F.Cu",
+   "mm": 2.3,
+   "min_gap": 0.2
+  },
+  {
+   "a": "/HP_EN",
+   "b": "/MCU/SWCLK",
+   "layer": "F.Cu",
+   "mm": 2.1,
+   "min_gap": 0.293
+  },
+  {
+   "a": "/PD_PLUG_EVENT",
+   "b": "Net-(U11-ADC4)",
+   "layer": "B.Cu",
+   "mm": 2.1,
+   "min_gap": 0.227
+  },
+  {
+   "a": "/3V3_AUDIO",
+   "b": "/MCU/ENC_A",
+   "layer": "In2.Cu",
+   "mm": 2.0,
+   "min_gap": 0.217
+  },
+  {
+   "a": "Net-(U24-VINL1)",
+   "b": "Net-(U24-VINR1)",
+   "layer": "F.Cu",
+   "mm": 2.0,
+   "min_gap": 0.25
+  },
+  {
+   "a": "/BT_PWR_EN",
+   "b": "/BT_UART_RX",
+   "layer": "In2.Cu",
+   "mm": 1.9,
+   "min_gap": 0.275
+  },
+  {
+   "a": "Net-(U24-XI)",
+   "b": "Net-(U24-XO)",
+   "layer": "F.Cu",
+   "mm": 1.7,
+   "min_gap": 0.23
+  }
+ ],
+ "ang": {
+  "len_ge5mm_by_class": {
+   "exact": 1964,
+   "0.6-5": 1080,
+   "5-15": 931,
+   "15-22.5": 727
+  },
+  "joints_lt80": 36,
+  "joints_lt30": 8,
+  "acute": [
+   {
+    "deg": 9,
+    "layer": "In2.Cu",
+    "net": "/3V3_AUDIO",
+    "x": 174.2,
+    "y": 59.1
+   },
+   {
+    "deg": 14,
+    "layer": "In2.Cu",
+    "net": "/Fuel_Gauge_Power/BAT_PACK",
+    "x": 104.156,
+    "y": 89.3
+   },
+   {
+    "deg": 16,
+    "layer": "F.Cu",
+    "net": "/5V_LOGIC",
+    "x": 184.708,
+    "y": 50.89
+   },
+   {
+    "deg": 24,
+    "layer": "F.Cu",
+    "net": "GND",
+    "x": 136.435,
+    "y": 56.875
+   },
+   {
+    "deg": 27,
+    "layer": "In2.Cu",
+    "net": "/3V_AO",
+    "x": 178.4,
+    "y": 93.3
+   },
+   {
+    "deg": 27,
+    "layer": "In2.Cu",
+    "net": "/Fuel_Gauge_Power/BAT_PACK",
+    "x": 104.0,
+    "y": 89.15
+   },
+   {
+    "deg": 27,
+    "layer": "F.Cu",
+    "net": "/5V_CODEC",
+    "x": 163.245,
+    "y": 88.918
+   },
+   {
+    "deg": 29,
+    "layer": "F.Cu",
+    "net": "/5V_LOGIC",
+    "x": 94.907,
+    "y": 104.97
+   },
+   {
+    "deg": 31,
+    "layer": "F.Cu",
+    "net": "/Amplifiers/PVDD_AMP",
+    "x": 199.523,
+    "y": 130.85
+   },
+   {
+    "deg": 32,
+    "layer": "F.Cu",
+    "net": "GND",
+    "x": 193.995,
+    "y": 65.028
+   },
+   {
+    "deg": 32,
+    "layer": "F.Cu",
+    "net": "/Bluetooth/BT_TXD_M",
+    "x": 110.315,
+    "y": 29.365
+   },
+   {
+    "deg": 35,
+    "layer": "F.Cu",
+    "net": "/5V_LOGIC",
+    "x": 97.875,
+    "y": 96.075
+   },
+   {
+    "deg": 37,
+    "layer": "F.Cu",
+    "net": "/Amplifiers/PVDD_AMP",
+    "x": 103.5,
+    "y": 125.237
+   },
+   {
+    "deg": 38,
+    "layer": "F.Cu",
+    "net": "/3V_AO",
+    "x": 177.54,
+    "y": 93.498
+   },
+   {
+    "deg": 40,
+    "layer": "F.Cu",
+    "net": "/3V_AO",
+    "x": 188.42,
+    "y": 38.648
+   },
+   {
+    "deg": 40,
+    "layer": "F.Cu",
+    "net": "/MCU/ENC_SW",
+    "x": 127.36,
+    "y": 103.502
+   },
+   {
+    "deg": 41,
+    "layer": "F.Cu",
+    "net": "/3V3_AUDIO",
+    "x": 114.06,
+    "y": 123.237
+   },
+   {
+    "deg": 45,
+    "layer": "B.Cu",
+    "net": "/AUD_SDA",
+    "x": 125.9,
+    "y": 113.75
+   },
+   {
+    "deg": 45,
+    "layer": "F.Cu",
+    "net": "GND",
+    "x": 186.09,
+    "y": 127.25
+   },
+   {
+    "deg": 45,
+    "layer": "F.Cu",
+    "net": "/I2S_BCK",
+    "x": 147.75,
+    "y": 91.08
+   },
+   {
+    "deg": 52,
+    "layer": "F.Cu",
+    "net": "/CTRL_SDA",
+    "x": 98.81,
+    "y": 74.228
+   },
+   {
+    "deg": 53,
+    "layer": "F.Cu",
+    "net": "/Battery_Charger/ILIM_HIZ",
+    "x": 180.963,
+    "y": 110.735
+   },
+   {
+    "deg": 57,
+    "layer": "F.Cu",
+    "net": "Net-(C305-Pad1)",
+    "x": 92.08,
+    "y": 139.605
+   },
+   {
+    "deg": 61,
+    "layer": "F.Cu",
+    "net": "/5V_CODEC",
+    "x": 186.982,
+    "y": 51.84
+   },
+   {
+    "deg": 62,
+    "layer": "F.Cu",
+    "net": "/3V3_AUDIO",
+    "x": 143.988,
+    "y": 82.95
+   },
+   {
+    "deg": 63,
+    "layer": "F.Cu",
+    "net": "/AUX_R",
+    "x": 194.188,
+    "y": 38.495
+   },
+   {
+    "deg": 63,
+    "layer": "F.Cu",
+    "net": "/3V3_AUDIO",
+    "x": 178.22,
+    "y": 37.648
+   },
+   {
+    "deg": 63,
+    "layer": "F.Cu",
+    "net": "/5V_CODEC",
+    "x": 150.55,
+    "y": 65.778
+   },
+   {
+    "deg": 64,
+    "layer": "F.Cu",
+    "net": "/3V3_AUDIO",
+    "x": 173.29,
+    "y": 59.267
+   },
+   {
+    "deg": 68,
+    "layer": "F.Cu",
+    "net": "/AUX_L",
+    "x": 197.79,
+    "y": 36.803
+   },
+   {
+    "deg": 68,
+    "layer": "F.Cu",
+    "net": "/USB_PD/LDO_3V3",
+    "x": 130.67,
+    "y": 56.797
+   },
+   {
+    "deg": 69,
+    "layer": "F.Cu",
+    "net": "/HP_EN",
+    "x": 197.045,
+    "y": 63.778
+   },
+   {
+    "deg": 71,
+    "layer": "F.Cu",
+    "net": "/SYS_RAW",
+    "x": 117.115,
+    "y": 35.565
+   },
+   {
+    "deg": 75,
+    "layer": "F.Cu",
+    "net": "GND",
+    "x": 154.667,
+    "y": 31.855
+   },
+   {
+    "deg": 78,
+    "layer": "F.Cu",
+    "net": "Net-(Q104-G)",
+    "x": 106.672,
+    "y": 81.278
+   },
+   {
+    "deg": 79,
+    "layer": "F.Cu",
+    "net": "/USB_PD/LDO_3V3",
+    "x": 137.673,
+    "y": 61.6
+   }
+  ]
+ },
+ "gvia": {
+  "sensitive_vias": 52,
+  "worst": [
+   [
+    8.9,
+    "/AUD_SCL",
+    163.7,
+    97.8
+   ],
+   [
+    8.3,
+    "/AUD_SDA",
+    128.6,
+    115.5
+   ],
+   [
+    7.9,
+    "/Fuel_Gauge_Power/USB_AUX_5V",
+    145.6,
+    38.0
+   ],
+   [
+    6.2,
+    "/AUD_SDA",
+    125.9,
+    113.8
+   ],
+   [
+    5.8,
+    "/AUD_SCL",
+    124.8,
+    111.2
+   ],
+   [
+    5.5,
+    "/AUD_SCL",
+    123.3,
+    109.8
+   ],
+   [
+    5.1,
+    "/AUD_SDA",
+    136.5,
+    88.5
+   ],
+   [
+    5.0,
+    "/AUD_SDA",
+    124.2,
+    111.8
+   ],
+   [
+    4.9,
+    "/Fuel_Gauge_Power/USB_AUX_5V",
+    134.8,
+    38.6
+   ],
+   [
+    4.8,
+    "/AUD_SCL",
+    137.5,
+    108.1
+   ],
+   [
+    4.5,
+    "/AUD_SDA",
+    188.2,
+    106.2
+   ],
+   [
+    4.0,
+    "/AUX_DET",
+    189.4,
+    36.0
+   ],
+   [
+    3.5,
+    "/USB_DN",
+    149.8,
+    27.9
+   ],
+   [
+    3.1,
+    "/Headphone_Aux/VMID_HP",
+    189.9,
+    38.4
+   ],
+   [
+    2.9,
+    "/AUD_SDA",
+    140.4,
+    93.8
+   ]
+  ]
+ },
+ "sw": [
+  {
+   "victim": "/Battery_Charger/ILIM_HIZ",
+   "sw": "/Battery_Charger/SW2",
+   "layer": "F.Cu",
+   "mm": 0.78
+  },
+  {
+   "victim": "/Battery_Charger/ILIM_HIZ",
+   "sw": "/Battery_Charger/SW2",
+   "layer": "B.Cu",
+   "mm": 1.15
+  },
+  {
+   "victim": "Net-(U14-FB)",
+   "sw": "Net-(U14-L2)",
+   "layer": "F.Cu",
+   "mm": 1.35
+  },
+  {
+   "victim": "Net-(U15-FB)",
+   "sw": "Net-(U15-L2)",
+   "layer": "F.Cu",
+   "mm": 1.45
+  },
+  {
+   "victim": "Net-(U14-FB)",
+   "sw": "Net-(U14-L1)",
+   "layer": "F.Cu",
+   "mm": 1.7
+  },
+  {
+   "victim": "Net-(U15-FB)",
+   "sw": "Net-(U15-L1)",
+   "layer": "F.Cu",
+   "mm": 1.7
+  },
+  {
+   "victim": "/Battery_Charger/TS_SENSE",
+   "sw": "/Battery_Charger/SW2",
+   "layer": "F.Cu",
+   "mm": 1.86
+  },
+  {
+   "victim": "/Battery_Charger/PROG",
+   "sw": "/Battery_Charger/SW2",
+   "layer": "F.Cu",
+   "mm": 2.03
+  },
+  {
+   "victim": "/Battery_Charger/PROG",
+   "sw": "/Battery_Charger/SW1",
+   "layer": "F.Cu",
+   "mm": 2.7
+  },
+  {
+   "victim": "/Battery_Charger/ILIM_HIZ",
+   "sw": "/Battery_Charger/SW1",
+   "layer": "F.Cu",
+   "mm": 3.5
+  }
+ ],
+ "bm83": {
+  "GND": 2.3,
+  "Net-(U1-SYS_PWR)": 2.0,
+  "/Bluetooth/BT_RXD_M": 10.6
+ }
+}

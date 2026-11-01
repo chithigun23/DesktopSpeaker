@@ -11,15 +11,15 @@ Final gerber/drill/position files are produced by `ai-files/helpers/fab_export.s
 | Inner copper | 0.5 oz | design assumption (15 K rise accepted for the 8 A paths with In2 pours in parallel with F.Cu); 1 oz inner is an allowed upgrade, no re-route needed |
 | Surface finish | ENIG | fine-pitch QFN/VQFN (TAS5825M, BQ25792, TPS25730D, PCM1862) and the BM83 module; HASL acceptable only if ENIG is unavailable |
 | Impedance control | No | USB is full speed (12 Mbit/s), pair kept at 0.25 / 0.15 mm (about 92 ohm by calculation); accepted by the user (USB FS waiver in `DesktopSpeaker.kicad_dru`) |
-| Via covering | Tented (solder mask over vias) | default; the 43 fine vias 0.5/0.2 mm in neck areas and 3 vias in SMD pads (R10.2, R224.1, C215.1, user-accepted) stay tented; the via-in-pad ones may wick a little solder, inspect after assembly |
+| Via covering | Tented (solder mask over vias) | default; the 42 fine vias 0.5/0.2 mm in neck areas and 3 vias in SMD pads (R10.2, R224.1, C215.1, user-accepted) stay tented; the via-in-pad ones may wick a little solder, inspect after assembly |
 | Min drill / via hole option | 0.2 mm (select the 0.2 mm via-hole option on the order form) | 42 fine vias (0.5/0.2) in neck areas and 8 x 0.2 mm PTH in the U11 thermal pad |
 | Min track / clearance | 0.15 / 0.15 mm class, used only in neck areas; general 0.2 mm+ | rules file |
 | Solder mask / silk colour | user choice (green/white is cheapest) | silk is on F and B |
-| Mark on PCB / order number | "Remove mark" (there is no JLCJLCJLCJLC placeholder on the silk, so "specify location" is not possible; the back carries the Orwellian logo) | cosmetic |
+| Mark on PCB / order number | "Remove mark" or "Order number" (there is no JLCJLCJLCJLC text on the silk, so "Specify location" is not possible; the back carries the Orwellian logo; release-review-r8.md item 6e) | cosmetic |
 | Material | FR-4 TG150 (JLC standard for 4-layer) | |
 | Confirm production file | Yes | lets you check the preview before fabrication |
 | Gold fingers / castellations | none | |
-| Board outline | 127.5 x 137.6 mm (outline; bounding box with the 0.1 mm line width 127.6 x 137.7), 3 mm corner radius; 11 M3 mounting holes (3.2 mm PTH, GND), 4 x 2.375 mm NPTH for J7 Tag-Connect legs | from Edge.Cuts |
+| Board outline | 127.5 x 137.6 mm (outline; bounding box with the 0.1 mm line width 127.6 x 137.7), 3 mm corner radius; 11 M3 mounting holes (3.2 mm PTH, GND), 24 NPTH (release-review-r8.md item 3): J2 5 x 1.2 mm, J3 5 x 1.2 mm, J1 2 x 0.6 mm, J7 4 x 2.375 mm (Tag-Connect legs) + 3 x 0.991 mm, SW102 2.2 x 1.6 mm slot + 2.1 mm, SW100 2 x 0.9 mm, J5 3.0 mm; 10 slots in the drill file (9 PTH, 1 NPTH) | from Edge.Cuts and drill files |
 | Panel | single piece | |
 
 ## Assembly (if JLC SMT is used)

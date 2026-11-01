@@ -41,3 +41,9 @@
 
 - User explicitly requests ongoing `git add`, commit and push at reviewed milestones. Preserve user edits and do not force-push. Keep active project files, libraries, plan, handover, BOM, preview and useful evidence tracked; exclude execution caches/dependencies and local recovery snapshots.
 - Check the existing branch/remote and review staged changes before committing. Record pushed milestones in the single handover.
+
+## Routing standard
+
+- Routing and review of the board follow `ai-files/reports/pcb-layout-best-practices.md` section 14 (added after the R6q review in `ai-files/reports/routing-review-r6q.md`): reference plane under every signal, I2S spacing at least 0.6 mm, exact 0/45/90 degree routing only (user standard: shortest runs, routed in order of importance), no sharp joints, additive custom DRC rules proven with a sentinel. A clean DRC is not proof of quality; run `ai-files/helpers/r7_metrics.py`.
+- Headless KiCad: use `~/Applications/kicad.AppImage kicad-cli ...` and `python3.11 script.py` (never `python3`, which opens the GUI). The user's screens: main screen is theirs, left vertical for KiCad/apps, right for artifacts.
+- Routing restart (2026-11-01): parts without a location constraint may be moved, including the MCU. Fixed: connectors J1-J3, J5, J9-J11, mounting/lid-screw holes, controls SW100-SW102, BM83 at the antenna edge, amplifiers beside their speaker connectors. Record every move and regenerate position files and fab output afterwards.

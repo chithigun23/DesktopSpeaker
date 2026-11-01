@@ -42,3 +42,9 @@ ai-files/cad/__pycache__/
 ai-files/cad/DesktopSpeaker_internal.step
 ai-files/cad/parts/DesktopSpeaker-board.step
 ai-files/cad/*.FCBak
+
+# Routing restart working copies (only reviewed finals are tracked)
+ai-files/pcb/work-r7/
+ai-files/pcb/work-r8/*
+!ai-files/pcb/work-r8/*-final.*
+!ai-files/pcb/work-r8/R8-placement.*
