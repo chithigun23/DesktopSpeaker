@@ -1,0 +1,33 @@
+<section id="ext"><h2>What others have done with automated and AI routing</h2>
+<p class="intro">A research agent searched papers, vendor pages, forums and blogs. Most benchmark papers are 2026 preprints or workshop papers that are not peer reviewed. Quilter, Flux and Cadence results are vendor claims: no independent review of any of them was found. Reddit was blocked.</p>
+<div class="tblwrap"><table><thead><tr><th>Work</th><th>What it showed</th></tr></thead><tbody>
+<tr><td><b>PCBWorld</b> (arXiv 2607.05915, 679 real boards)</td><td>Defines success as zero unconnected nets and zero DRC errors. Freerouting scores 0.80 on 99 real boards and 0.78 on 10 larger ones. Every LLM agent scores 0.00 on the larger boards. LLMs without engine feedback averaged 34.6 DRC violations per board against 1.3 with feedback. Failures logged: vias on pads, wrong-layer endpoints, cross-net shorts, stranded segments, routes over the board edge, invented waypoints. Return paths, angles and signal integrity are not scored.</td></tr>
+<tr><td><b>PCB Gym</b> (NeurIPS 2026 workshop poster)</td><td>Frontier LLMs produced DRC-valid, fully routed boards on 32.1% of attempts, and often routed power rails like ordinary signals.</td></tr>
+<tr><td><b>PCBInnoBench, OmniRouting, HWE-Bench</b></td><td>Edit tasks on real KiCad projects: best agent 22.0% guided, 7.3% unguided. Routing agents show weak path planning and poor rule adherence. For schematics, hallucinated connections and reused net labels.</td></tr>
+<tr><td><b>Freerouting</b></td><td>Strongest rule-based baseline. Known to insert 90-degree bends at pins (GitHub issue #36); the &ldquo;restrict pin exit directions&rdquo; option fixed it for one user.</td></tr>
+<tr><td><b>KiCadRoutingTools</b> (octilinear A*)</td><td>Author reports it is about ten times faster than Freerouting on one complex board. PCBWorld scored it 0.74 and 0.20 on two board sets, so it collapses on larger boards.</td></tr>
+<tr><td><b>Quilter, JITX, TopoR</b></td><td>Do not hold 45 degrees by design. Your 0/45/90 rule is a preference, not an industry norm, so no tool's output can be accepted without an angle check. Quilter&rsquo;s own blog says a board can be fully connected and pass DRC and still have return-path breaks and excessive coupling.</td></tr>
+<tr><td><b>DeepPCB, 2023 EEVblog test</b></td><td>Incomplete routing and &ldquo;weirdly shaped traces&rdquo;. An old beta; it may have improved.</td></tr>
+<tr><td><b>Claude with Freerouting on an ADE9000 board</b> (blog, May 2026)</td><td>The closest match to our pipeline. The author&rsquo;s main worry was &ldquo;false confidence&rdquo;: cleaner visuals and plausible routes delay a human noticing that analog intent is violated. He lists return-current continuity and decoupling loop geometry as mandatory hand checks.</td></tr>
+<tr><td><b>EEVblog &ldquo;Claude Code for pcb design?&rdquo;</b> (page 1 only)</td><td>&ldquo;The LLM has no eyes and very little concept of spatial relationships.&rdquo; A 2025 Hacker News thread on an LLM-built board flagged a minimum-width power trace and a missing regulator bypass cap.</td></tr>
+</tbody></table></div>
+
+<h3 style="margin-top:18px">Where AI routing goes wrong most, and the rule that answers it</h3>
+<div class="tblwrap"><table><thead><tr><th>#</th><th>Failure</th><th>Evidence</th><th>Our rule</th></tr></thead><tbody>
+<tr><td class="n">1</td><td>&ldquo;Clean DRC&rdquo; or a complete ratsnest is taken as good: return paths, coupling and intent are not checked</td><td>Many sources</td><td class="id">AG2, AG5, VF1</td></tr>
+<tr><td class="n">2</td><td>A partial result presented as finished; opens, shorts and dangling copper</td><td>Many sources</td><td class="id">AG9, AG10</td></tr>
+<tr><td class="n">3</td><td>Odd geometry: arbitrary angles, 90-degree bends at pins, detours, colinear stubs</td><td>Many sources</td><td class="id">GE1&ndash;GE7, LE1&ndash;LE3</td></tr>
+<tr><td class="n">4</td><td>The LLM has no spatial sense, invents coordinates, and depends on engine feedback</td><td>Many sources</td><td class="id">AG11, AG13</td></tr>
+<tr><td class="n">5</td><td>Quality collapses on larger, denser or faster boards; best-of-N hides it</td><td>Many sources</td><td class="id">AG12, AG14</td></tr>
+<tr><td class="n">6</td><td>Power treated as signal: minimum-width power traces, no current capacity</td><td>Few to many</td><td class="id">PW2, PW5, OR1</td></tr>
+<tr><td class="n">7</td><td>Signals over plane splits and broken reference planes</td><td>General engineering; few AI reports</td><td class="id">LA1&ndash;LA5</td></tr>
+<tr><td class="n">8</td><td>Decoupling placement and loop geometry ignored</td><td>Few</td><td class="id">PL3, PW1, VI2</td></tr>
+<tr><td class="n">9</td><td>Reward hacking: rules edited, scorers overwritten</td><td>General LLM agents (METR: 30% of runs); no PCB case found</td><td class="id">AG1, AG2</td></tr>
+<tr><td class="n">10</td><td>Hallucinated pins, nets and labels</td><td>Few</td><td class="id">AG11</td></tr>
+<tr><td class="n">11</td><td>Search stalls, timeouts leave partial work</td><td>Few</td><td class="id">AG9, AG13</td></tr>
+<tr><td class="n">12</td><td>Acute angles and slivers</td><td>Consensus, low severity</td><td class="id">GE4, MF1</td></tr>
+<tr><td class="n">13</td><td>Antenna keep-outs, thermal and creepage ignored</td><td>Vendor-stated limits</td><td class="id">MF2, FO2</td></tr>
+<tr><td class="n">14</td><td>Stale zone fills at measurement time</td><td>Our own history; consensus</td><td class="id">AG6, VF1</td></tr>
+<tr><td class="n">15</td><td>Loss in the Specctra import and export round trip</td><td>Few</td><td class="id">AG9, AG11</td></tr>
+<tr><td class="n">16</td><td>Differential pair and length matching ignored</td><td>Single to few</td><td class="id">SP1, VF2</td></tr>
+</tbody></table></div></section>

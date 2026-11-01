@@ -1,0 +1,25 @@
+<p class="intro">Sources: KiCad forum, EEVblog, Hackaday and similar threads read by a research agent. Reddit, Electronics Stack Exchange and the TI E2E forum were blocked, so those voices are missing. Items the agent saw only as search snippets are leads, not confirmed quotes. Where people agree strongly it is tagged below; where they split, both sides are given.</p>
+<div class="cols">
+<div class="panel"><h3>Ten pieces of advice that came up most</h3><ol>
+<li>Placement decides routing: move parts rather than contort traces.</li>
+<li>Route the critical nets first (power loops, clocks, analog) and never ship autorouter output unreviewed.</li>
+<li>Keep a contiguous ground plane directly under the main signal layer and route no signals through it.</li>
+<li>Think in return currents: above a few kHz the return flows right under the trace.</li>
+<li>Make the switching hot loop the smallest thing on the board.</li>
+<li>Keep feedback and other sensitive traces away from the switch node and inductor.</li>
+<li>Decoupling caps at the pins, with the ground via next to the cap pad.</li>
+<li>Do not split the ground plane; partition by placement.</li>
+<li>Keep class-D filters and snubbers tight to the IC over a solid plane.</li>
+<li>45 versus 90 degrees is not electrically critical at these speeds. Use few bends and avoid acute angles for neatness and density.</li></ol></div>
+<div class="panel"><h3>Where engineers disagree</h3><ul>
+<li><b>Splitting AGND and DGND, or a star ground.</b> For: low-frequency accuracy and noise isolation. Against: high-frequency return currents ignore the split. Our rule follows the majority: one plane, partition by placement.</li>
+<li><b>3W versus 3H crosstalk spacing.</b> One source calls 3W misleading and prefers 3H. Our rule uses the height above the plane (SP1), which is the 3H form.</li>
+<li><b>Pours versus planes and cutting the plane</b> (0 &Omega; jumpers, a small hole under the switch node). No consensus, so the rulebook keeps In1 uncut.</li></ul>
+<p class="note" style="margin-top:8px">Teardrops and the 20H rule are also disputed, with lower stakes.</p></div>
+<div class="panel"><h3>What the rulebook took from them</h3><ul>
+<li>PL7 and LE3: fix long nets by moving parts.</li><li>OR1: staged order, critical nets first.</li>
+<li>LA1&ndash;LA5: ground plane under signals, return-current thinking, ground via at each layer change (one Hackaday commenter; adopted as a strict rule because a vendor-neutral reason supports it).</li>
+<li>PW1 and SP3: hot loop first, feedback away from switch nodes.</li>
+<li>GE3 and GE4: the forum view is that angle is a neatness and density matter. Your 45-degree standard is kept; acute joints are banned on manufacturing grounds.</li>
+<li>One KiCad-forum TDR measurement showed reflections at 45-degree bends on USB; it is a single data point and is not used as a rule.</li>
+<li>Boost and buck-boost review threads put a cut ground plane and the hot loop at the top of reviewer complaints, then decoupling placement (about six threads, a small sample). ST&rsquo;s class-D article gives 7.5 mm between unshielded output inductors over a full plane; that figure is checked in the placement pass.</li></ul></div></div>
