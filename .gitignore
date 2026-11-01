@@ -58,3 +58,10 @@ ai-files/pcb/work-r10/*
 !ai-files/pcb/work-r10/scripts/
 !ai-files/pcb/work-r10/plan-it3.json
 !ai-files/pcb/work-r10/it3.metrics.json
+ai-files/pcb/work-route/*
+!ai-files/pcb/work-route/RT-1.kicad_pcb
+!ai-files/pcb/work-route/RT-1.kicad_pro
+!ai-files/pcb/work-route/RT-1.kicad_dru
+!ai-files/pcb/work-route/RT-1.gates.json
+!ai-files/pcb/work-route/scripts/
+ai-files/pcb/work-oct2/
