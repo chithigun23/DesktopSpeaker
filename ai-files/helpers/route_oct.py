@@ -16,7 +16,19 @@ Geometry guarantees (by construction, re-measured by route_oct_check.py):
   * every pad is left along its axis for at least 0.3 mm beyond the pad edge (stub), fine-pitch IC pads only outward
   * no T-junction except at a pad stub; post-pass merges colinear segments and never shortcuts
 Rules: clearances from route_oct_rules.py (transcription of the frozen .kicad_dru, SHA-256 checked), edge 0.5 mm,
-keep-outs (antenna, BKO_* on B.Cu, J7 no-via), no In1/In2 routing, SP1 halo 0.6 mm for I2S_CLK and USB classes.
+keep-outs (antenna, BKO_* on B.Cu, J7 no-via), no In1/In2 routing.
+Router-side rules added 2026-11-02 (section 9 of routing-toolchain-oct-2026-11-01.md; stricter than DRC, no rule file change):
+  * module keep-out (--module-keepout U1:0.5): no F.Cu track or via inside the BM83 pad rectangle shrunk by 0.5 mm;
+    the module's own pads (+0.15 mm) are cut out so their stubs can leave outward
+  * SP1/GE9 halo (--halo 0.6): tracks of classes AUDIO, I2S_CLK, USB and /AUD_SDA, /AUD_SCL keep a 0.6 mm edge gap to every
+    other signal track and vice versa, outside neck areas and outside 1.2 mm of the connection's own pads
+  * near-parallel cost (--par-gap 0.4 --par-pen): extra cost per cell within 0.4 mm of another signal net's track
+  * LA2/LA5: sensitive nets may use B.Cu only over In2 GND (--sens-bcu gnd); every via of a sensitive net gets a GND
+    stitching via within --stitch 1.5 mm (placed legally; via sites without a legal stitch spot are pruned before A*)
+  * SP3 (--sp3 2.0): FB/COMP/ILIM/PROG/TS/EN/CE nets of switching ICs keep 2.0 mm to SWITCH/BOOT copper (beyond 0.75 mm of
+    the stub nodes; the stubs themselves use the DRC value)
+  * pour guard: a connection that would cut a via-anchored F/B.Cu GND fill piece into an un-anchored part is rejected
+  * self-avoidance: a path that touches itself, or whose via has no stitch spot, is re-searched with that part blocked
 """
 import sys, os, json, math, time, argparse, hashlib, uuid, ctypes, itertools, collections, re, subprocess
 import numpy as np
@@ -39,9 +51,18 @@ RL = ['F.Cu', 'B.Cu']                    # routing layers
 ALLCU = ['F.Cu', 'In1.Cu', 'In2.Cu', 'B.Cu']
 SENSITIVE_CLS = {'USB', 'I2S_CLK', 'AUDIO'}
 SENSITIVE_NETS = {'/AUD_SDA', '/AUD_SCL'}
-SPACE = {'I2S_CLK': 0.6, 'USB': 0.6}   # SP1 edge gap to other signal tracks (halo), applied outside neck areas
+HALO_CLS = {'I2S_CLK', 'USB', 'AUDIO'}   # SP1/GE9 edge gap to other signal tracks (halo), applied outside neck areas
+HALO_NETS = {'/AUD_SDA', '/AUD_SCL'}
+HALO = [0.6]                             # set from --halo
 FORBID_ISLAND_CLS = {'POWER_HI', 'PVDD', 'SPK_OUT'}
 VIA_D, VIA_DR = 0.6, 0.3
+SW_CLS = ('SWITCH', 'BOOT')
+SP3_TOK = re.compile(r'(?<![A-Z0-9])(FB|COMP|ILIM|PROG|TS|EN|CE)(?![A-Z0-9])')
+STITCH_RE = re.compile(r'I2S|AUD_S|BT_AUDIO|HP_OUT|VMID|USB_D|USB_AUDIO|AUX|U24-VIN|XI\)?$|XO\)?$')   # r7_metrics gvia set
+
+
+def space_of(net, cls):
+    return HALO[0] if (cls in HALO_CLS or net in HALO_NETS) and HALO[0] > 0 else None
 
 
 def dang(a, b):
@@ -142,7 +163,7 @@ class Index:
 
 # ---------------------------------------------------------------- board model
 class Board:
-    def __init__(self, geo, dru, pro, core):
+    def __init__(self, geo, dru, pro, core, args=None):
         self.L = core
         D = json.load(open(geo))
         ok, h = RU.check_dru(dru)
@@ -226,7 +247,53 @@ class Board:
         self.R_in2o = self.raster_full([g for n, c, g, td in self.zfill['In2.Cu'] if n != 'GND'])
         self.R_in2f = self.raster_full([g for n, c, g, td in self.zfill['In2.Cu'] if c in FORBID_ISLAND_CLS])
         self.buf_cache = {}
-        print('board model: %d items, lattice %dx%d, rasters %.1fs' % (self.nid, self.GW, self.GH, time.time() - t0), flush=True)
+        # ---- module keep-out (BM83: no top-layer routing under the module), own pads cut out for their outward stubs
+        self.mod_ko = []
+        for spec in (args.module_keepout.split(',') if args and args.module_keepout else []):
+            ref, sh = spec.split(':'); sh = float(sh)
+            pp = [mkpolys(p['poly']['F.Cu']) for p in D['pads'] if p['ref'] == ref and 'F.Cu' in p['poly']]
+            pp = [g for g in pp if g is not None]
+            if not pp:
+                continue
+            bd = unary_union(pp).bounds
+            rect = box(bd[0] + sh, bd[1] + sh, bd[2] - sh, bd[3] - sh)
+            g = rect.difference(unary_union([q.buffer(0.15, 8) for q in pp]))
+            self.keepouts.append(dict(name='MODULE_KO_' + ref, layers=['F.Cu'], no_tracks=True, no_vias=True, geom=g))
+            self.mod_ko.append((ref, rect.bounds))
+            print('module keep-out %s: F.Cu rect %.3f,%.3f - %.3f,%.3f (pad rectangle shrunk %.2f mm), own pads cut out' % ((ref,) + rect.bounds + (sh,)), flush=True)
+        # ---- SP3 victim nets: FB/COMP/ILIM/PROG/TS/EN/CE nets that touch a switching IC (part with a SWITCH/BOOT pad)
+        swrefs = {p['ref'] for p in D['pads'] if p['cls'] in SW_CLS and p['ref'][:1] == 'U'}
+        npads = collections.defaultdict(set)
+        for p in D['pads']:
+            if p['net']:
+                npads[p['net']].add(p['ref'])
+        self.sp3 = sorted(n for n, refs in npads.items() if SP3_TOK.search(n.upper()) and refs & swrefs and n not in RU.CRIT_NETS
+                          and self.netcls.get(n) in RU.SIGCLS)
+        print('SP3 nets (switch-node distance %.1f mm, router side): %s' % (args.sp3 if args else 0, ' '.join(self.sp3)), flush=True)
+        # ---- legal GND stitching via centres need In1 GND and In2 GND copper around the whole via pad
+        g1 = unary_union([g for n, c, g, td in self.zfill['In1.Cu'] if n == 'GND']); g2 = unary_union([g for n, c, g, td in self.zfill['In2.Cu'] if n == 'GND'])
+        self.gnd12 = g1.intersection(g2).buffer(-VIA_D / 2 - 0.01, 8) if (not g1.is_empty and not g2.is_empty) else Polygon()
+        self.gnd12_p = prep(self.gnd12)
+        self.R_gnd12 = self.raster_full([self.gnd12])
+        # ---- pour guard: F/B.Cu GND fill pieces anchored by a GND via or plated GND hole
+        anch = [it.geom for l in ('F.Cu',) for it in self.idx[l].items.values() if it.kind == 'via' and it.net == 'GND'] + \
+               [it.geom for it in self.idx['F.Cu'].items.values() if it.kind == 'hole' and it.net == 'GND' and it.typ == 'Hole']
+        self.anchor0 = unary_union(anch) if anch else Polygon()
+        self.gpieces = []
+        for l in ('F.Cu', 'B.Cu'):
+            gp = [it.geom for it in self.idx[l].items.values() if it.kind == 'pad' and it.net == 'GND']
+            for z in D['zones']:
+                if z['net'] != 'GND' or z['teardrop'] or l not in z['fills']:
+                    continue
+                g = mkpolys(z['fills'][l])
+                if g is None:
+                    continue
+                for pc in (g.geoms if hasattr(g, 'geoms') else [g]):
+                    if pc.area < 0.05 or not pc.intersects(self.anchor0):
+                        continue
+                    self.gpieces.append(dict(layer=l, name=z['name'] or 'GND zone', geom=pc, bounds=pc.bounds,
+                                             pads=unary_union([q for q in gp if q.intersects(pc)]) if gp else Polygon()))
+        print('board model: %d items, lattice %dx%d, rasters %.1fs, %d anchored GND F/B pieces' % (self.nid, self.GW, self.GH, time.time() - t0, len(self.gpieces)), flush=True)
 
     def _id(self):
         self.nid += 1
@@ -279,6 +346,10 @@ class Router:
         self.soft = set()                                # nets treated as passable-with-penalty (conflict search)
         self.recs = {}
         self.rrr_log = []
+        self.sp3set = set(B.sp3) if args.sp3 > 0 else set()
+        self.xblock = []                                 # per-connection retry blocks: (layer, geom) for tracks
+        self.xnovia = []                                 # per-connection retry blocks: via sites (x, y) mm
+        self.stats = collections.Counter()
 
     # ---- per net profile
     def prof(self, net):
@@ -286,9 +357,10 @@ class Router:
         o = self.opts.get(net, {})
         w = float(o.get('width', self.B.cls_w.get(cls, 0.25)))
         sens = cls in SENSITIVE_CLS or net in SENSITIVE_NETS
-        bcu = o.get('bcu', 'no' if sens else 'yes')
+        bcu = o.get('bcu', self.a.sens_bcu if sens else 'yes')
         Lmm = max(0.4, 3 * w)
-        return dict(net=net, cls=cls, w=w, sens=sens, bcu=bcu, space=SPACE.get(cls), pair=o.get('pair'),
+        return dict(net=net, cls=cls, w=w, sens=sens, bcu=bcu, space=space_of(net, cls), pair=o.get('pair'),
+                    sp3=net in self.sp3set, stitch=self.a.stitch > 0 and (sens or bool(STITCH_RE.search(net))),
                     Lo=int(math.ceil(Lmm / G - 1e-9)), Ld=int(math.ceil(Lmm / (G * math.sqrt(2)) - 1e-9)))
 
     # ---- exact checks
@@ -348,6 +420,138 @@ class Router:
             if (k['no_vias'] or bko or (k['no_tracks'] and k['name'] == 'BM83_ANTENNA_KEEPOUT')) and k['geom'].distance(p) < r + 1e-3:
                 return False
         return True
+
+    # ---- GND stitching vias (LA5)
+    PFG = dict(cls='GND', net='GND')
+
+    def gnd_pts(self, x, y, R):
+        """centres of GND vias and plated GND holes within R of (x, y)"""
+        out = []
+        for it in self.B.idx['F.Cu'].query((x - R, y - R, x + R, y + R)):
+            if it.kind == 'hole' and it.net == 'GND' and it.typ == 'Hole':
+                c = it.geom.centroid; out.append((c.x, c.y))
+        return out
+
+    def stitchable(self, pf, x0i, y0i, W, H, OFF, sl, q):
+        """bool raster of via sites that have a GND via / plated GND hole within --stitch mm, or a legal free GND via spot in the
+        annulus [0.8 mm, --stitch] (legality as via_ok_exact for net GND, plus In1 and In2 GND copper around the via pad)"""
+        B = self.B; R = self.a.stitch; r = VIA_D / 2
+        GB = np.zeros((H, W), np.uint8)
+        for l in ALLCU:
+            for it in B.idx[l].query(q):
+                if it.kind == 'zone' and it.net == 'GND':
+                    continue
+                if it.dyn and it.net in self.soft:
+                    continue
+                if it.kind == 'hole':
+                    need = RU.HOLE_HOLE + VIA_DR / 2 if it.net == 'GND' else max(RU.HOLE_HOLE + VIA_DR / 2, (RU.EDGE if it.typ == 'NPTH' else RU.HOLE_CLR) + r)
+                elif it.kind == 'pad' and it.smd:
+                    need = r + (0.25 if it.net == 'GND' else max(0.25, RU.clr_strict('GND', 'GND', it.cls, it.typ)))
+                elif it.net == 'GND':
+                    continue
+                else:
+                    need = r + RU.clr_strict('GND', 'GND', it.cls, it.typ)
+                B.fill(GB, B.buffered(it, need + 0.01), x0i, y0i, 1, OFF)
+        for k in B.keepouts:
+            if k['no_vias'] or (k['no_tracks'] and k['name'] == 'BM83_ANTENNA_KEEPOUT'):
+                B.fill(GB, k['geom'].buffer(r + 0.01, 8), x0i, y0i, 1, OFF)
+        inner = np.zeros((H, W), np.uint8)
+        B.fill(inner, B.edge_inner(RU.EDGE + r + 0.01), x0i, y0i, 1, OFF)
+        g12 = np.zeros((H, W), np.uint8)
+        B.fill(g12, B.gnd12, x0i, y0i, 1, OFF)
+        GV = (GB == 0) & (inner == 1) & (g12 == 1)
+        Rc = int(math.ceil(R / G))
+        yy, xx = np.mgrid[-Rc:Rc + 1, -Rc:Rc + 1]; d = np.hypot(xx, yy) * G
+        out = np.zeros((H, W), bool)
+        if GV.any():
+            K = ((d >= VIA_D + 0.2 + 0.02) & (d <= R - 0.02)).astype(np.float32)
+            s = (H + 2 * Rc, W + 2 * Rc)
+            C = np.fft.irfft2(np.fft.rfft2(GV.astype(np.float32), s=s) * np.fft.rfft2(K, s=s), s=s)[Rc:Rc + H, Rc:Rc + W]
+            out |= C > 0.5
+        # existing GND vias / plated GND holes
+        ox, oy = OFF
+        bx = (x0i * G + ox, y0i * G + oy, (x0i + W) * G + ox, (y0i + H) * G + oy)
+        disc = (d <= R - 0.02)
+        for (cx, cy) in self.gnd_pts((bx[0] + bx[2]) / 2, (bx[1] + bx[3]) / 2, max(bx[2] - bx[0], bx[3] - bx[1]) / 2 + R):
+            ix = int(round((cx - ox) / G)) - x0i; iy = int(round((cy - oy) / G)) - y0i
+            a0, a1, b0, b1 = iy - Rc, iy + Rc + 1, ix - Rc, ix + Rc + 1
+            c0, c1, e0, e1 = max(0, a0), min(H, a1), max(0, b0), min(W, b1)
+            if c0 < c1 and e0 < e1:
+                out[c0:c1, e0:e1] |= disc[c0 - a0:c1 - a0, e0 - b0:e1 - b0]
+        return out
+
+    def gnd_via_ok(self, x, y, pf, segs, vias, placed):
+        if not self.B.gnd12_p.contains(Point(x, y)):
+            return False
+        if not self.via_ok_exact(x, y, self.PFG):
+            return False
+        p = Point(x, y); r = VIA_D / 2
+        for l, a, b, w in segs:
+            ln = LineString([(a[0] / 1e6, a[1] / 1e6), (b[0] / 1e6, b[1] / 1e6)]) if a != b else Point(a[0] / 1e6, a[1] / 1e6)
+            if p.distance(ln) < r + w / 2 + RU.clr_strict('GND', 'GND', pf['cls'], 'Track') - TOL:
+                return False
+        for v in vias:
+            if math.hypot(x - v[0] / 1e6, y - v[1] / 1e6) < max(VIA_D + RU.clr_strict('GND', 'GND', pf['cls'], 'Via'), RU.HOLE_HOLE + VIA_DR) - TOL:
+                return False
+        for (qx, qy) in placed:
+            if math.hypot(x - qx, y - qy) < RU.HOLE_HOLE + VIA_DR + 0.05:
+                return False
+        return True
+
+    def place_stitches(self, pf, segs, vias):
+        """GND via within --stitch mm of every via of a stitched net; returns (list of (x, y) mm, None) or (None, failing via)"""
+        if not pf['stitch'] or not vias:
+            return [], None
+        R = self.a.stitch; placed = []
+        for v in vias:
+            vx, vy = v[0] / 1e6, v[1] / 1e6
+            if any(math.hypot(vx - x, vy - y) <= R for x, y in self.gnd_pts(vx, vy, R + 0.1) + placed):
+                continue
+            ok = False
+            for rr in np.arange(VIA_D + 0.25, R + 1e-9, 0.05):
+                n = max(16, int(2 * math.pi * rr / 0.1))
+                for k in range(n):
+                    t = 2 * math.pi * k / n
+                    x = round(vx + rr * math.cos(t), 4); y = round(vy + rr * math.sin(t), 4)
+                    if self.gnd_via_ok(x, y, pf, segs, vias, placed):
+                        placed.append((x, y)); ok = True; break
+                if ok:
+                    break
+            if not ok:
+                return None, (vx, vy)
+        return placed, None
+
+    # ---- pour guard
+    def pour_ok(self, pf, segs, vias, stitches):
+        """reject copper that cuts a via-anchored F/B.Cu GND fill piece so that a part holding a GND pad (or > 0.3 mm2) loses
+        every via anchor; fill model: zone clearance 0.2 mm + half width around new copper, 0.2 mm minimum width"""
+        B = self.B
+        if not B.gpieces or not self.a.pour_guard:
+            return True, None
+        for l in ('F.Cu', 'B.Cu'):
+            new = [LineString([(a[0] / 1e6, a[1] / 1e6), (b[0] / 1e6, b[1] / 1e6)]).buffer(w / 2 + 0.2, 8) for ll, a, b, w in segs if ll == l and a != b]
+            new += [Point(v[0] / 1e6, v[1] / 1e6).buffer(VIA_D / 2 + 0.2, 8) for v in vias]
+            if not new:
+                continue
+            nu = unary_union(new); nb = nu.bounds
+            for pc in B.gpieces:
+                if pc['layer'] != l:
+                    continue
+                b = pc['bounds']
+                if b[0] > nb[2] or b[2] < nb[0] or b[1] > nb[3] or b[3] < nb[1] or not pc['geom'].intersects(nu):
+                    continue
+                old = [it.geom.buffer(0.2, 8) for it in B.idx[l].query(b) if it.dyn and it.kind in ('track', 'via') and it.net != 'GND' and not isinstance(it.owner, tuple)]
+                cut = unary_union(old + [nu])
+                after = pc['geom'].difference(cut).buffer(-0.1, 8).buffer(0.1, 8)
+                anch = [B.anchor0] + [Point(x, y).buffer(VIA_D / 2) for x, y in stitches] + \
+                       [it.geom for it in B.idx[l].query(b) if it.dyn and it.kind == 'via' and it.net == 'GND']
+                an = unary_union(anch)
+                for c in (after.geoms if hasattr(after, 'geoms') else [after]):
+                    if c.is_empty or c.intersects(an):
+                        continue
+                    if c.area > 0.3 or (not pc['pads'].is_empty and c.intersects(pc['pads'])):
+                        return False, ('%s %.2f,%.2f' % (pc['name'], c.centroid.x, c.centroid.y), l, pc['geom'])
+        return True, None
 
     # ---- pad exits
     def pad_key(self, p):
@@ -536,7 +740,8 @@ class Router:
         q = (wb[0] - Rq, wb[1] - Rq, wb[2] + Rq, wb[3] + Rq)
         for li, l in enumerate(RL):
             OB2 = np.zeros((H, W), np.uint8)  # soft keep-away around pads of nets still to route
-            OB = np.zeros((H, W), np.uint8)   # bit1 strict, bit2 neck, bit4 halo, bit8 own, bit16 keepout
+            OB3 = np.zeros((H, W), np.uint8)  # near-parallel band of other signal nets' tracks (cost)
+            OB = np.zeros((H, W), np.uint8)   # bit1 strict, bit2 neck, bit4 halo, bit8 own, bit16 keepout, bit32 soft, bit64 SP3, bit128 retry block
             for it in B.idx[l].query(q):
                 if it.kind == 'zone' and it.net == 'GND':
                     continue
@@ -560,9 +765,17 @@ class Router:
                 else:
                     B.fill(OB, B.buffered(it, cs + w / 2 + M), x0i, y0i, 1, OFF)
                     B.fill(OB, B.buffered(it, cn + w / 2 + M), x0i, y0i, 2, OFF)
-                if it.kind == 'track' and it.sig and it.net != pf['pair'] and (pf['space'] or SPACE.get(it.cls)):
-                    sp = max(pf['space'] or 0, SPACE.get(it.cls) or 0)
-                    B.fill(OB, B.buffered(it, sp + w / 2 + M), x0i, y0i, 4, OFF)
+                if it.kind == 'track' and it.sig and it.net != pf['pair']:
+                    sp = max(pf['space'] or 0, space_of(it.net, it.cls) or 0)
+                    if sp > 0:
+                        B.fill(OB, B.buffered(it, sp + w / 2 + M), x0i, y0i, 4, OFF)
+                    if self.a.par_pen > 0 and self.a.par_gap > 0:
+                        B.fill(OB3, B.buffered(it, self.a.par_gap + w / 2), x0i, y0i, 1, OFF)
+                if pf['sp3'] and it.cls in SW_CLS:
+                    B.fill(OB, B.buffered(it, self.a.sp3 + w / 2 + M), x0i, y0i, 64, OFF)
+            for xl, g in self.xblock:
+                if xl == l:
+                    B.fill(OB, g.buffer(w / 2 + M, 8), x0i, y0i, 128, OFF)
             for k in B.keepouts:
                 if l not in k['layers']:
                     continue
@@ -572,7 +785,8 @@ class Router:
             inner = np.zeros((H, W), np.uint8)
             B.fill(inner, B.edge_inner(RU.EDGE + w / 2 + M), x0i, y0i, 1, OFF)
             blocked = ((OB & 1).astype(bool) & ~neck) | ((OB & 2).astype(bool) & neck) | ((OB & 4).astype(bool) & ~neck & ~dhalo) \
-                | ((OB & 8).astype(bool) & ~down) | (OB & 16).astype(bool) | ~inner.astype(bool)
+                | ((OB & 8).astype(bool) & ~down) | (OB & 16).astype(bool) | ~inner.astype(bool) \
+                | ((OB & 64).astype(bool) & ~down) | ((OB & 128).astype(bool) & ~down)
             fr = ~blocked
             if l == 'F.Cu':
                 cost[li] = 1.0 + self.a.f_void * (1 - B.R_in1g[sl])
@@ -587,6 +801,8 @@ class Router:
             free[li] = fr
             if self.a.pad_pen > 0:
                 cost[li][OB2.astype(bool)] += self.a.pad_pen
+            if self.a.par_pen > 0:
+                cost[li][OB3.astype(bool) & ~dhalo] += self.a.par_pen
             if self.soft:
                 cost[li][(OB & 32).astype(bool)] += self.a.soft_pen
         # attraction to the pair partner
@@ -632,7 +848,12 @@ class Router:
                     B.fill(VB, k['geom'].buffer(r + 0.005, 8), x0i, y0i, 1, OFF)
             inner = np.zeros((H, W), np.uint8)
             B.fill(inner, B.edge_inner(RU.EDGE + r + 0.005), x0i, y0i, 1, OFF)
-            viaok = ((VB == 0) & (inner == 1) & free[0].astype(bool) & free[1].astype(bool)).astype(np.uint8)
+            for (vx, vy) in self.xnovia:
+                B.fill(VB, Point(vx, vy).buffer(0.12, 8), x0i, y0i, 1, OFF)
+            viaok = ((VB == 0) & (inner == 1) & free[0].astype(bool) & free[1].astype(bool))
+            if pf['stitch'] and viaok.any():
+                viaok &= self.stitchable(pf, x0i, y0i, W, H, OFF, sl, q)
+            viaok = viaok.astype(np.uint8)
         return dict(off=self.off, x0i=x0i, y0i=y0i, W=W, H=H, free=np.ascontiguousarray(free), cost=np.ascontiguousarray(cost), viaok=np.ascontiguousarray(viaok), hmin=hmin)
 
     def open_corridors(self, pf, win, node, layer, dirs):
@@ -700,8 +921,9 @@ class Router:
         for e in exits:
             if (e['layer'], e['d']) not in used_dirs:
                 opts.append(('fresh', e))
+        nofresh = not opts      # every legal exit direction of the pad is used (e.g. module pads whose inward side is kept out)
         for u in self.used.get(k, []):
-            if not u['single'] or u.get('off') != self.off:
+            if not (u['single'] or (nofresh and u.get('node') is not None)) or u.get('off') != self.off:
                 continue
             ub = (u['sdir'] + 4) % 8  # stub direction from node towards the pad
             back = u['back']         # direction from node along the arriving route
@@ -881,6 +1103,7 @@ class Router:
                 if li != lj or {ai, bi} & {aj, bj}:
                     continue
                 if gi.distance(gj) < 0.2 + (wi + wj) / 2 - TOL:
+                    self._touch = (lj, gj.buffer(0.2 + wj / 2, 8))
                     return False, 'path touches itself'
         for l, a, b, w in segs:
             ok, why = self.seg_ok([(a[0] / 1e6, a[1] / 1e6), (b[0] / 1e6, b[1] / 1e6)], w, l, pf)
@@ -892,7 +1115,15 @@ class Router:
                 return False, 'via (%.3f,%.3f)' % (v[0] / 1e6, v[1] / 1e6)
         return True, None
 
-    def commit(self, pf, segs, vias):
+    def commit(self, pf, segs, vias, stitches=()):
+        for (x, y) in stitches:
+            p = (x, y); a = (int(round(x * 1e6)), int(round(y * 1e6)))
+            for l in ALLCU:
+                it = Item(self.B._id(), 'via', 'Via', 'GND', 'GND', l, Point(p).buffer(VIA_D / 2, 16), dyn=True, owner=pf['net'])
+                self.B._add(it); self.netcopper[pf['net']].append(it)
+                ih = Item(self.B._id(), 'hole', 'Hole', 'GND', 'GND', l, Point(p).buffer(VIA_DR / 2, 16), dyn=True, owner=pf['net'])
+                self.B._add(ih)
+            self.out_vias.append(dict(a=a, net='GND', owner=pf['net']))
         for l, a, b, w in segs:
             pa = (a[0] / 1e6, a[1] / 1e6); pb = (b[0] / 1e6, b[1] / 1e6)
             g = LineString([pa, pb]).buffer(w / 2, 16)
@@ -954,7 +1185,7 @@ class Router:
         for p in pads:
             self.off = (int(round(p['x'] * 1e6)) % GN, int(round(p['y'] * 1e6)) % GN)
             ex = self.exits(p, pf)
-            single.append(bool(ex) and all(e['single'] for e in ex))
+            single.append(bool(ex) and (all(e['single'] for e in ex) or len({(e['layer'], e['d']) for e in ex}) == 1))
         order = self.chain(pads, single)
         okc = 0
         for i in range(len(order) - 1):
@@ -971,14 +1202,37 @@ class Router:
                 okc += 1; rec['conns'].append(clog)
                 continue
             res, err = self.route_conn(pf, A, B_, clog['tries'])
-            if res is not None:
+            attempt = 0; stitches = []
+            while res is not None:
                 path, sm, eB = res
                 segs, vias = self.build_copper(pf, path, sm, eB)
                 ok, why = self.verify(pf, segs, vias)
+                if ok:
+                    stitches, bad = self.place_stitches(pf, segs, vias)
+                    if stitches is None:
+                        ok = False; why = 'no GND stitch spot for via (%.3f,%.3f)' % bad; self.xnovia.append(bad); self.stats['stitch_fail'] += 1
+                if ok:
+                    okp, info = self.pour_ok(pf, segs, vias, stitches)
+                    if not okp:
+                        ok = False; why = 'would isolate GND pour ' + info[0]; self.xblock.append((info[1], info[2])); self.stats['pour_reject'] += 1
+                elif why == 'path touches itself':
+                    self.xblock.append(self._touch); self.stats['self_touch'] += 1
+                if ok or attempt >= self.a.retries or not (why.startswith('no GND stitch') or why.startswith('would isolate') or why == 'path touches itself'):
+                    break
+                attempt += 1
+                clog.setdefault('retries', []).append(why)
+                res, err = self.route_conn(pf, A, B_, clog['tries'])
+                if res is None:
+                    why = 'retry: ' + str(err)
+            self.xblock = []; self.xnovia = []
+            if res is not None or attempt:
                 if not ok:
                     clog['status'] = 'verify failed: ' + why
                 else:
-                    self.commit(pf, segs, vias)
+                    if attempt:
+                        self.stats['retry_ok'] += 1
+                    self.commit(pf, segs, vias, stitches)
+                    clog['stitch'] = len(stitches)
                     kind, eA, n2 = sm
                     if kind == 'fresh':
                         self.used.setdefault(self.pad_key(A), []).append(dict(eA, back=path[1][3] if len(path) > 1 else eA['sdir']))
@@ -1000,15 +1254,15 @@ class Router:
         return [self.pad_key(p) for p in self.B.pads if p['net'] == net]
 
     def snapshot(self, nets):
-        return {n: dict(items=list(self.netcopper.get(n, [])), segs=[s for s in self.out_segs if s['net'] == n], vias=[v for v in self.out_vias if v['net'] == n],
+        return {n: dict(items=list(self.netcopper.get(n, [])), segs=[s for s in self.out_segs if s['net'] == n], vias=[v for v in self.out_vias if v['net'] == n or v.get('owner') == n],
                         used={k: list(self.used[k]) for k in self.net_pads(n) if k in self.used}, rec=self.recs.get(n)) for n in nets}
 
     def ripup(self, net):
         for it in self.netcopper.pop(net, []):
             self.B.idx[it.layer].remove(it)
         self.out_segs = [s for s in self.out_segs if s['net'] != net]
-        self.out_vias = [v for v in self.out_vias if v['net'] != net]
-        holes = [it for l in ALLCU for it in list(self.B.idx[l].items.values()) if it.dyn and it.kind == 'hole' and it.net == net]
+        self.out_vias = [v for v in self.out_vias if v['net'] != net and v.get('owner') != net]
+        holes = [it for l in ALLCU for it in list(self.B.idx[l].items.values()) if it.dyn and it.kind == 'hole' and (it.net == net or it.owner == net)]
         for it in holes:
             self.B.idx[it.layer].remove(it)
         for k in self.net_pads(net):
@@ -1020,7 +1274,7 @@ class Router:
             for it in S['items']:
                 self.B._add(it)
                 if it.kind == 'via':
-                    self.B._add(Item(self.B._id(), 'hole', 'Hole', it.net, it.cls, it.layer, it.geom.centroid.buffer(VIA_DR / 2, 16), dyn=True))
+                    self.B._add(Item(self.B._id(), 'hole', 'Hole', it.net, it.cls, it.layer, it.geom.centroid.buffer(VIA_DR / 2, 16), dyn=True, owner=it.owner))
             self.netcopper[n] = list(S['items']); self.out_segs += S['segs']; self.out_vias += S['vias']
             self.used.update({k: list(v) for k, v in S['used'].items()})
             if S['rec'] is not None:
@@ -1051,8 +1305,8 @@ class Router:
                     if it.layer != l:
                         continue
                     c = RU.clr_strict(pf['cls'], net, it.cls, it.typ)
-                    if it.kind == 'track' and (pf['space'] or SPACE.get(it.cls)):
-                        c = max(c, pf['space'] or 0, SPACE.get(it.cls) or 0)
+                    if it.kind == 'track' and (pf['space'] or space_of(it.net, it.cls)):
+                        c = max(c, pf['space'] or 0, space_of(it.net, it.cls) or 0)
                     if line.distance(it.geom) < c + w / 2:
                         hit.add(n); break
         for v in vias:
@@ -1172,6 +1426,16 @@ def main():
     ap.add_argument('--rrr-time', type=float, default=900, help='time budget of rip-up rounds per stage, s')
     ap.add_argument('--soft-pen', type=float, default=20.0, help='cost per cell crossing ripable copper in the conflict search')
     ap.add_argument('--debug-png', default=None, help='directory for PNG dumps of failed connection windows (last margin)')
+    ap.add_argument('--module-keepout', default='U1:0.5', help='REF:shrink[,..] no F.Cu track/via inside the pad rectangle of REF shrunk by shrink mm ("" = off)')
+    ap.add_argument('--halo', type=float, default=0.6, help='edge gap of AUDIO/I2S_CLK/USB/AUD I2C tracks to other signal tracks outside neck areas (0 = off)')
+    ap.add_argument('--par-gap', type=float, default=0.4, help='near-parallel band: edge gap to another signal net track that costs extra')
+    ap.add_argument('--par-pen', type=float, default=0.5, help='extra cost per cell inside the near-parallel band (0 = off)')
+    ap.add_argument('--sens-bcu', default='gnd', choices=['no', 'gnd', 'yes'], help='B.Cu policy of sensitive nets without an explicit bcu= (gnd = LA2)')
+    ap.add_argument('--stitch', type=float, default=1.5, help='GND stitching via within this distance of every sensitive-net via (0 = off)')
+    ap.add_argument('--sp3', type=float, default=2.0, help='SP3 distance of FB/COMP/ILIM/PROG/TS/EN/CE nets of switchers to SWITCH/BOOT copper (0 = off)')
+    ap.add_argument('--pour-guard', type=int, default=1, help='reject connections that cut an anchored F/B.Cu GND fill piece (0 = off)')
+    ap.add_argument('--retries', type=int, default=2, help='re-searches per connection after self-touch / no stitch spot / pour cut')
+    ap.add_argument('--allow-pour-flag', action='store_true', help='route on top of an earlier stage flagged by route_oct_pourcheck.py')
     a = ap.parse_args()
     a.margins = [float(x) for x in a.margins.split(',')]
     stem = os.path.splitext(a.board)[0]
@@ -1191,8 +1455,19 @@ def main():
         if h != man['stages'][st]['copper_sha256']:
             raise SystemExit('LOCK VIOLATION: copper of stage %s changed (hash %s != %s)' % (st, h, man['stages'][st]['copper_sha256']))
         print('lock ok', st, n, 'items', flush=True)
+        sv = man['stages'][st].get('stitch_vias', [])
+        if sv:
+            have = {t[2] for t in LK.copper_items(a.board, ['GND']) if t[0] == 'via'}
+            miss = [x for x in sv if x not in have]
+            if miss:
+                raise SystemExit('LOCK VIOLATION: %d GND stitching vias of stage %s missing, e.g. %s' % (len(miss), st, miss[0]))
+            print('lock ok', st, len(sv), 'stitching vias', flush=True)
+        pc = man['stages'][st].get('pour_check')
+        if pc and not pc.get('ok', True) and not a.allow_pour_flag:
+            raise SystemExit('stage %s is flagged by the pour check (%s); fix it or pass --allow-pour-flag' % (st, '; '.join(pc.get('new', [])[:3])))
     core = load_core(workdir)
-    B = Board(a.geo, a.dru, a.pro, core)
+    HALO[0] = a.halo
+    B = Board(a.geo, a.dru, a.pro, core, a)
     R = Router(B, a, opts)
     later = [n for st in names[names.index(a.stage):] for n in stages[st]]
     if not a.no_reserve:
@@ -1206,17 +1481,19 @@ def main():
     write_board(a.board, a.out, R.out_segs, R.out_vias)
     h, n = LK.copper_hash(a.out, stages[a.stage])
     nconn = sum(len(r['conns']) for r in recs); okc = sum(1 for r in recs for c in r['conns'] if c['status'] == 'ok')
+    stv = ['%.6f %.6f' % (v['a'][0] / 1e6, v['a'][1] / 1e6) for v in R.out_vias if v.get('owner')]
     summ = dict(stage=a.stage, nets=stages[a.stage], complete_nets=sum(1 for r in recs if r['status'] == 'complete'), conns=nconn, conns_ok=okc,
-                segments=len(R.out_segs), vias=len(R.out_vias), runtime_s=round(time.time() - T0, 1),
-                params={k: getattr(a, k) for k in ('via_cost', 'turn_cost', 'dir_pen', 'bcu_cost', 'b_island', 'b_void', 'f_void', 'pair_attract', 'pair_avoid', 'margins', 'max_exp', 'no_reserve', 'pad_pen', 'pad_halo', 'max_offsets', 'hweight', 'hweight_cells', 'ripup', 'rrr_max', 'rrr_time', 'soft_pen')})
+                segments=len(R.out_segs), vias=len(R.out_vias) - len(stv), stitch_vias=len(stv), runtime_s=round(time.time() - T0, 1),
+                stats=dict(R.stats), sp3_nets=B.sp3, module_keepout=B.mod_ko,
+                params={k: getattr(a, k) for k in ('via_cost', 'turn_cost', 'dir_pen', 'bcu_cost', 'b_island', 'b_void', 'f_void', 'pair_attract', 'pair_avoid', 'margins', 'max_exp', 'no_reserve', 'pad_pen', 'pad_halo', 'max_offsets', 'hweight', 'hweight_cells', 'ripup', 'rrr_max', 'rrr_time', 'soft_pen', 'module_keepout', 'halo', 'par_gap', 'par_pen', 'sens_bcu', 'stitch', 'sp3', 'pour_guard', 'retries')})
     man['stages'][a.stage] = dict(summ, input_board=os.path.abspath(a.board), output_board=os.path.abspath(a.out),
                                   output_sha256=hashlib.sha256(open(a.out, 'rb').read()).hexdigest(), copper_sha256=h, copper_items=n,
-                                  dru_sha256=RU.check_dru(a.dru)[1], pro_sha256=hashlib.sha256(open(a.pro, 'rb').read()).hexdigest())
+                                  stitch_vias=stv, dru_sha256=RU.check_dru(a.dru)[1], pro_sha256=hashlib.sha256(open(a.pro, 'rb').read()).hexdigest())
     json.dump(man, open(a.manifest, 'w'), indent=1)
     if a.log:
         json.dump(dict(summary=summ, nets=recs, rrr=R.rrr_log), open(a.log, 'w'), indent=1)
-    print('STAGE %s: nets complete %d/%d, connections %d/%d, %d segments, %d vias, %.1f s%s' % (
-        a.stage, summ['complete_nets'], len(stages[a.stage]), okc, nconn, len(R.out_segs), len(R.out_vias), summ['runtime_s'],
+    print('STAGE %s: nets complete %d/%d, connections %d/%d, %d segments, %d vias (+%d GND stitching), %.1f s%s' % (
+        a.stage, summ['complete_nets'], len(stages[a.stage]), okc, nconn, len(R.out_segs), summ['vias'], len(stv), summ['runtime_s'],
         '' if okc == nconn else '  PARTIAL'), flush=True)
 
 

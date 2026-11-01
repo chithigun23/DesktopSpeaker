@@ -268,3 +268,90 @@ The router's own checker is not independent (AG15), so `r7_metrics.py` was run o
 - Confirmed: whole-board joints under 80 deg unchanged (26), exact-angle length for the stripped signal nets 100 %, B.Cu sensitive length 1.2 mm, F.Cu over In1 void 72.6 mm of 2,545 mm.
 
 Decision (coordinator): geometry engine = go, unattended router = no-go. Next: placement pass R10 to remove the topology conflicts (I2S order, AUD I2C crossing, USB-C/D1 order, escape lanes), then router re-run with a BM83 keep-out and a halo for audio-vs-digital, then templated/hand escapes. LA2 (sensitive nets on B.Cu over In2 GND with stitching vias) is already allowed by the rulebook, so it is the default, not a new decision.
+
+## 9. Router upgrade: BM83 keep-out, spacing, stitching, SP3, pour guard (2026-11-02)
+
+Agent: "Router upgrade: BM83 keep-out and spacing". Scratch boards in `ai-files/pcb/work-oct2/` (copies of `work-r10/R10-0.*`, about 220 MB, do not commit). Nothing in `DesktopSpeaker-kicad/`, `work-r10/` or `work-route/` was edited. No rule, net class or board-setup value was changed: every board's `.kicad_dru`/`.kicad_pro` hash equals the project files (checker key `rules`), and the sentinel fires on every final board. `route_oct_rules.py` and `route_oct_export.py` are unchanged. Nothing committed.
+
+**Code changes.** All new rules live on the router side and are stricter than DRC. Every one can be switched off by an option; the defaults are the new behaviour.
+
+| change | option (default) | how |
+|---|---|---|
+| BM83 keep-out | `--module-keepout U1:0.5` | F.Cu track and via keep-out = U1 pad rectangle (89.095-111.315 x 25.365-42.365) shrunk 0.5 mm, minus U1 pads + 0.15 mm. A module pad's stub can only leave outward. Existing power/GND copper is untouched. |
+| GE9/SP halo | `--halo 0.6` | Classes AUDIO, I2S_CLK and USB, plus /AUD_SDA and /AUD_SCL, keep a 0.6 mm edge gap to every other signal track, and vice versa. Applies outside neck areas and beyond 1.2 mm of the connection's own pads. The pair partner is exempt. Before this, only I2S_CLK and USB had the halo. |
+| near-parallel cost | `--par-gap 0.4 --par-pen 0.5` | Extra cost of 0.5 per cell within 0.4 mm of another net's signal track (cost only, never blocks). |
+| LA2 | `--sens-bcu gnd` | A sensitive net without an explicit `bcu=` may use B.Cu, but only over In2 GND (before: F.Cu only). |
+| LA5 stitching | `--stitch 1.5` | Every via of a sensitive net (or a net matching r7's gvia set) gets a GND via within 1.5 mm, unless an existing GND via or plated GND hole is already that close. Legality is `via_ok_exact` for net GND, plus In1 and In2 GND copper around the via pad, plus clearance to the new path. Before A*, via sites with no legal spot in the 0.8-1.5 mm annulus are pruned (FFT annulus convolution). A failed placement blocks that via site and re-searches. Stitches are owned by their signal net (rip-up/restore), written as GND vias, and listed per stage in the manifest (`stitch_vias`); later stages check that they are still present. |
+| SP3 | `--sp3 2.0` | Victim nets are found automatically: name token FB, COMP, ILIM, PROG, TS, EN or CE, on a U-part that has a SWITCH/BOOT pad, and not one of the 4 nets the rule file names. Found: /5V_LOGIC_EN, /AMP_BOOST_EN, /BT_PWR_EN, CE_N, ILIM_HIZ, PROG, TS_SENSE, U14-FB, U15-FB. These keep 2.0 mm to SWITCH/BOOT copper (hard raster). The stubs and the first 0.75 mm after them keep the DRC value of 1.0 mm. |
+| pour guard | `--pour-guard 1` | A connection is rejected (and re-searched with the patch blocked) if it would cut a GND via-anchored F/B.Cu GND fill piece into a part with no GND via that holds a GND pad or is larger than 0.3 mm². Fill model: 0.2 mm zone clearance plus half the track width, 0.2 mm minimum width. |
+| pour check | `helpers/route_oct_pourcheck.py`, called by `route_oct_stage.sh` | Compares the "foreign" unconnected DRC items (nets not in the net file) of the stage input and the refilled output. The signature is nets plus zone names without the planes, because KiCad changes the representative item between runs. Any new item flags the stage in the manifest, and the next stage refuses to run unless `--allow-pour-flag` is given. |
+| self-avoidance (cheap) | `--retries 2` | A path that touches itself is re-searched with the touching segment (+0.2 mm) blocked. |
+| branch rule (iteration 2) | - | A pad whose every legal exit direction is used may branch at its stub node. For example a BM83 pad: its inward exit is now kept out, so before this the second connection got "no exit". Pads with a single legal direction go to the chain ends. |
+
+New independent check `helpers/route_oct_parcheck.py`. It does not import the router.
+- Near-parallel runs: same layer, edge gap < 0.4 mm, more than 3 mm per net pair.
+- Stitch distance for every sensitive via.
+- F.Cu length and vias inside the BM83 rectangle shrunk 0.5 mm, with the module's own pad copper excepted.
+
+**Trial.** Board R10-0. Procedure as in section 1 (`work-oct2/prep_h0.sh`, `run_s12.sh`, `verify.sh`). Net file `P-hard-nets.txt`, the same body as `work-r10/I3-hard-nets.txt`. Parameters: `--via-cost 1.5 --pair-avoid 1 --hweight 1 --max-exp 3e7`.
+
+| run | code | S1 /31 | S2 /95 | nets complete S1 / S2 | vias (+GND stitch) | runtime S1 / S2 |
+|---|---|---|---|---|---|---|
+| B0 | frozen original (`work-oct2/orig/`) | 22 | 46 | 8 / 10 | 6 (+0) | 100 / 178 s |
+| N1s | iteration 1, `--sens-bcu no` (strict, cost of the new constraints only) | 22 | 43 | 8 / 10 | 6 (+3) | 123 / 285 s |
+| N1 | iteration 1, defaults | 22 | 54 | 8 / 16 | 51 (+31) | 387 / 906 s |
+| **N2** | iteration 2 (branch rule), defaults = **final** | **22** | **55** | 8 / 16 | 49 (+30) | 385 / 1240 s |
+
+- B0 reproduces the R10 report baseline (22/31, 46/95).
+- Under the strict layer policy, the new constraints cost 3 S2 connections (N1s), mainly the 0.6 mm audio halo in the U8/U9/U24 block. LA2 hops with stitching gain 11 back (N1).
+- N2 completes more than the baseline. AG13: 2 of 3 tuning iterations used; all runs are logged here.
+
+**Checks on N2-2 (S1+S2).** Checker `route_oct_check.py`, `r7_metrics.py`, `route_oct_parcheck.py` and DRC.
+
+| check | B0-2 | N2-2 |
+|---|---|---|
+| exact 0/45/90 share, max deviation | 100.000 %, 0.0000 deg | 100.000 %, 0.0000 deg |
+| shorts / dangling / joints < 90 / 90-deg away from pads / colinear / bend spacing / pad exit | 0 each | 0 each |
+| T-junctions | 0 | 1 (AUD_SDA at 135.4,72.6: a branch at the stub node of a B-variant exit of U3-31, about 1 mm from the pad. The branch logic is original; this layout only occurs now.) |
+| DRC violations | 8: USB pair only (gap 6, skew 1, uncoupled 1) | 8: the same USB pair items. **0 clearance/width/edge/hole errors** |
+| DRC unconnected, total | 227 | 217 |
+| pour check S1 / S2 | **FAIL S1**: GND_U24_PATCH_F cut off (as in Hga-3) / OK | OK / OK. The guard rejected 6 (S1) + 5 (S2) candidate paths and re-searched them. |
+| BM83 F.Cu track of routed nets inside the shrunk rectangle / vias | 0 / 0 (no BT nets in S1/S2) | 0 / 0. r7 `bm83`: only the inherited GND 2.3 and SYS_PWR 2.0 mm. |
+| near-parallel < 0.4 mm over 3 mm, pairs with a sensitive net | 3: DP/DN 7.85 (the pair), HP_OUTL/HP_TIPSW 7.72 mm at 0.25, AUD_SCL/AUD_SDA 4.65 mm at 0.20 | **1: DP/DN 7.85 mm (the intended pair)**. Other pairs: 0. |
+| checker parallel < 0.6 mm outside necks (I2S/USB) | 0.0 mm | 0.0 mm |
+| sensitive vias / farther than 1.5 mm from a GND via | 6 / 4 (DP vias 2.8-4.1 mm) | **49 / 0** (max 1.498 mm). r7 `gvia` worst entries USB_AUX_5V 4.9/3.8 mm are inherited power vias (r7 regex matches "AUX"). |
+| sensitive B.Cu total / over non-GND In2 | 19.6 / 2.7 mm | 136.2 / 27.6 mm. All of it lies inside via or TH-pad antipads: 23.5 mm within 1 mm of a via, 5.7 mm at the J3/J4 TH pads, the same in the stripped board. 0 mm elsewhere. |
+| locks, rule hashes, sentinel | ok / equal / FIRES | ok / equal / FIRES |
+| length / octilinear min, complete nets: median, p95 | 1.032, 5.20 (n=19) | 1.100, 3.06 (n=24) |
+| r7 whole-board joints < 80 deg | 22 | 22 (all inherited power copper) |
+
+**Targeted S3 test for the BM83 keep-out and SP3.** Stage S3 with only the 6 BM83 nets and the 9 SP3 nets, routed on B0-2 (`P-s3k-nets.txt`).
+
+| run | conns /29 | BM83 F.Cu of these nets (parcheck / r7) | BM83 nets closed /10 | SP3 nets closed /19 | notes |
+|---|---|---|---|---|---|
+| B0k (original) | 15 | **36.3 mm** (BT_RST_M 15.7, RXD_M 12.8, TXD_M 7.8) / 31.2 mm | 10 | 5 | reproduces the coordinator's finding |
+| N1k (iteration 1) | 12 | 0 / 0 | 7 | 5 | BT_RST_M, TXD_M: "no exit": second connection at a module pad whose inward exit is kept out |
+| **N2k (final)** | **14** | **0 / 0** | 9 | 5 | BT_RST_M and TXD_M now leave outward and branch. BT_RXD_M U1-29 > R182-2 has no path outside the module (-1 vs baseline; the baseline path was illegal under the module). |
+
+- **SP3 on N2k.** TS_SENSE runs 2.15 mm (F.Cu) and 3.31 mm (B.Cu) from SW2.
+- The U14-FB track is 2.08 mm from U14-L2 beyond its stub.
+- The 1.43 mm that r7 reports is the 0.65 mm pad stub of U14-4. U14 pins 4 (FB) and 7 (L2) are 1.65 mm apart centre to centre, so this is IC pin geometry, not routing.
+- SP3 nets closed are unchanged against the baseline.
+- N2k checker: 100 % exact, DRC USB pair items only, locks ok, pour check OK.
+- One joint under 90 deg inside the pad copper of R186-1 (BT_TXD_M): a 0.007 mm centre dogleg of the arriving track meets the second track, which started on another lattice origin. This is the section 5 defect class; it is still open when the two connections use different origins.
+
+**Open problems.**
+1. **Runtime.** S2 takes 3.5-7x longer (1240 s vs 178 s). A* on two layers dominates (129 of 167 s in a profiled S1); the stitch prefilter adds about 8 %.
+2. **I2S BCK and LRCK are still 1/3 each.** LA2 did not open them: the U6/U7 legs run in BKO_U6/BKO_U7 (no B.Cu) and through the TP/R hub. Templated B.Cu hops are still needed (R10 report section 3).
+3. **USB.** The D- template is still missing (Net-(U2-D-) 0/1, USB_DN 1/3).
+4. **BT_RXD_M** (U1-29 to R182-2) has no path outside the module on F.Cu, because B.Cu under the module is BKO_BM83. This needs a placement nudge of R182/TP22 or a hand escape.
+5. **Two checker items.** The B-stub branch T-junction and the in-pad dogleg acute joint with mixed lattice origins.
+6. **The pour guard is an approximate fill model.** The DRC-based pour check is the authoritative gate. Its plane list (`GND_BCU, GND_IN1, GND_IN2_BG`) is board specific.
+7. **Not run yet.** The full S3 (77 nets) under the new rules.
+
+Files:
+- **Helpers:** `helpers/route_oct.py` (changed), `helpers/route_oct_stage.sh` (pour-check call appended), `helpers/route_oct_pourcheck.py` (new), `helpers/route_oct_parcheck.py` (new).
+- **Work folder `pcb/work-oct2/`:**
+  - scripts `prep_h0.sh`, `run_s12.sh`, `verify.sh`;
+  - boards and logs `B0-*`, `N1-*`, `N1s-*`, `N2-*`, `*k-3*`;
+  - `orig/` (frozen original router), `v1/` (iteration-1 router).

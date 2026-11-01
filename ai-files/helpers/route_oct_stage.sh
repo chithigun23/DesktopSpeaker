@@ -15,3 +15,5 @@ cp -f $W/base.kicad_pro $OUT-raw.kicad_pro; cp -f $W/base.kicad_dru $OUT-raw.kic
 $K python3.11 $H/route_oct_refill.py $OUT-raw.kicad_pcb $OUT.kicad_pcb 2>&1 | grep -v "memory leak" | tail -1
 cp -f $W/base.kicad_pro $OUT.kicad_pro; cp -f $W/base.kicad_dru $OUT.kicad_dru   # pristine project copies (pcbnew SaveBoard rewrites the .kicad_pro)
 $K kicad-cli pcb drc --severity-all --format json --all-track-errors -o $OUT.drc.json $OUT.kicad_pcb 2>&1 | grep -v "memory leak" | tail -1
+# pour-connectivity check (flags the stage in the manifest if non-routed copper such as a GND patch got cut off)
+$PY $H/route_oct_pourcheck.py $IN.drc.json $OUT.drc.json $NETS --manifest ${ROUTE_OCT_MANIFEST:-manifest.json} --stage $ST
