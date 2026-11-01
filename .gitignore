@@ -51,3 +51,10 @@ ai-files/pcb/work-r8/*
 ai-files/pcb/work-r9/*
 !ai-files/pcb/work-r9/R9-0.*
 !ai-files/pcb/work-r9/R9-final.*
+ai-files/pcb/work-oct/
+ai-files/pcb/work-trial/
+ai-files/pcb/work-r10/*
+!ai-files/pcb/work-r10/R10-0.*
+!ai-files/pcb/work-r10/scripts/
+!ai-files/pcb/work-r10/plan-it3.json
+!ai-files/pcb/work-r10/it3.metrics.json
