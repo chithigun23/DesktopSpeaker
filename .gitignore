@@ -65,3 +65,13 @@ ai-files/pcb/work-route/*
 !ai-files/pcb/work-route/RT-1.gates.json
 !ai-files/pcb/work-route/scripts/
 ai-files/pcb/work-oct2/
+ai-files/pcb/work-route2/*
+!ai-files/pcb/work-route2/RT-2.kicad_pcb
+!ai-files/pcb/work-route2/RT-2.kicad_pro
+!ai-files/pcb/work-route2/RT-2.kicad_dru
+!ai-files/pcb/work-route2/RT-2.manifest.json
+!ai-files/pcb/work-route2/RT-2.unrouted.md
+!ai-files/pcb/work-route2/*.sh
+!ai-files/pcb/work-route2/*.py
+!ai-files/pcb/work-route2/evidence/
+ai-files/pcb/work-route2/evidence/*.svg
