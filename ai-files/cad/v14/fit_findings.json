@@ -1,0 +1,959 @@
+{
+ "verdict": "v14 rebuilt from RT-14 (routing draft, 12 unconnected, DRC 0) with the v13 pipeline and the 2-cell (1S2P) enclosure unchanged: 0 unintended overlaps (164 solids, 89 intended), woofer chamber net 0.525 L, main 1.962 L, lid cutouts aligned, three print bodies valid without supports. The four v13 footprint errors are fixed on RT-14. SW100 actuator now ends at the board edge: 0.50 mm behind the lid inner face, 4.50 mm behind the outer face, so a lid plunger is still needed. Woofer screw engagement stays marginal (M3x20).",
+ "findings": [
+  {
+   "severity": "problem",
+   "title": "SW100: actuator at the board edge, still 4.50 mm behind the lid outer face (lid plunger needed)",
+   "detail": "RT-14 redrawn TE 1977066-1 footprint moved the switch 2.295 mm toward the rear edge (y 25.245 -> 22.95). Measured in CAD: actuator (dia 2.0, axis 1.70 above the board top, X -14.68 Z 70.30) tip at Y 202.10 = board rear edge (0.00 mm past it), 0.50 mm short of the lid inner face (Y 202.6) and 4.50 mm behind the lid outer face (Y 206.6). v13 (draft footprint): 2.80 / 6.80 mm. The 5.0 bore is centred on the actuator axis (radial 1.5); the nearest switch geometry is 1.35 mm from the lid. A fingertip cannot reach it: a printed plunger must bridge 4.50 mm (lid 4.0 + 0.5 gap) plus its own protrusion and travel. Only 0.5 mm is free behind the lid, so a retaining collar would need a counterbore in the lid inner face (owner decision; not modelled, v14 keeps the v13 lid). Switch travel not extracted (TE PDF is a drawing without text)."
+  },
+  {
+   "severity": "ok",
+   "title": "TP20 moved 40.8 mm (RT-14) clears every enclosure body",
+   "detail": "TP20 (Keystone 5015, 1.5 above the board) from (110.155, 149.645) to (123.9, 111.25): nearest body the H4 PCB spacer 8.54 mm (its M3x16 head 8.77), 11.6 mm to the insert roof under the board, 11.99 mm to the shell; woofer harness tube 70.6 mm (J5 harness farther); 26.9 mm under the top wall. In v13 it was 22.9 mm from the shell."
+  },
+  {
+   "severity": "ok",
+   "title": "All 42 references changed since RT-3 (v13 board) clear the enclosure",
+   "detail": "Exact distance to every enclosure body (no bounding-box prefilter). Tightest moved parts: TP2 2.55 mm to the H3 M3x16 head (v13 3.52), TP14 3.06 / TP12 3.15 to the H2 head (swapped places, v13 3.15 / 3.06), SW100 1.35 to the lid, R113 4.74 to the lid, C106 5.53 to the H3 head. R225 (5.79 mm move) and R142 (2.42) are 11.6 mm above the woofer-chamber insert roof (12.05 / 13.8 to the next body). C230-C240, R220-R238, U8, U9 (jack/headphone switch block re-placed, 2.2-10 mm moves) all 11.6 mm to the insert roof and >= 17.9 mm to screws/woofer. Full list in moved_parts."
+  },
+  {
+   "severity": "fixed",
+   "title": "C275 now CP_Elec_6.3x7.7 (case D8 land and model)",
+   "detail": "Same position (166.7, 152.1). Model 7.7 above the board, 20.7 mm under the top wall, 12.06 mm to the insert roof, 13.39 mm to the right ND65, 21.8 mm to the woofer harness. pcb.glb component box still differs 1.0 mm from the FreeCAD placement (exporter difference, as v12/v13)."
+  },
+  {
+   "severity": "fixed",
+   "title": "J2/J3 PJ-307 front pegs now in their NPTH holes",
+   "detail": "Footprint NPTH at x -4.75 (was -5.75). In CAD the two 0.448 mm3 peg/board collisions per jack are gone (J2/J3 vs board 3.72 -> 2.82 mm3; the remaining 2.82 is the jack nose below the board top at the rear edge, intended class as v13). Lid bores unchanged: radial 1.25, 1.51 mm from the lid."
+  },
+  {
+   "severity": "fixed",
+   "title": "U1 BM83 pad 56 at +4.77",
+   "detail": "Pad-only change; the module model and its y -0.427 offset are unchanged, 6.05 mm from the shell."
+  },
+  {
+   "severity": "decision",
+   "title": "Woofer screws: M3x20 gives only 3.4-4.4 mm thread in the 5.7 mm insert (unchanged from v13)",
+   "detail": "Stack: head on the frame back (z 19.60) through the 13.3 frame block and the 3.3 gasket. M3x20 engages 3.4 mm with the gasket free, 4.4 mm with 1 mm compression (1.1-1.5 d; tip 2.3 mm above the pilot floor). Raising the seat to fit longer screws pushes the magnet into the roof (3.25 mm left). Options: accept M3x20 (gasket compresses), or M3x22 (DIN 912; 5.4-6.4 mm, still inside the 6.7 pilot) if the owner can source it. Frame thickness and gasket are photo estimates (+-1.5): measure before printing."
+  },
+  {
+   "severity": "note",
+   "title": "fit.json 'nearest' is prefiltered",
+   "detail": "fit_check.py lists only bodies whose box lies within 6 mm, so for parts far from everything it reports the shell (27.9 mm) although the insert roof under the board is 11.6 mm away. The moved-part distances above are exact (scratch script, all bodies). Two distance artefacts guarded: C244, R223 vs the woofer harness (true about 40 mm)."
+  },
+  {
+   "severity": "note",
+   "title": "KiCad GLB vs STEP export differ for two models (unchanged)",
+   "detail": "pcb.glb component boxes match the FreeCAD placement within 0.005 mm for J1, J2, J3, J5, J9, J11, SW100, U1, U2, U24, TP1 (TP23 0.11); SW102 0.77 and C275 1.0."
+  }
+ ],
+ "moved_parts": [
+  {
+   "ref": "C106",
+   "moved_mm": 1.65,
+   "rot_deg": [
+    -90.0,
+    -90.0
+   ],
+   "old_xy": [
+    157.2,
+    122.84
+   ],
+   "new_xy": [
+    158.85,
+    122.84
+   ],
+   "min_to_enclosure_mm": 5.53,
+   "nearest_body": "Screw_M3x16_PcbScrew_3_H3",
+   "harness_mm": 40.9
+  },
+  {
+   "ref": "C110",
+   "moved_mm": 0.292,
+   "rot_deg": [
+    -90.0,
+    -90.0
+   ],
+   "old_xy": [
+    155.75,
+    125.0
+   ],
+   "new_xy": [
+    155.6,
+    124.75
+   ],
+   "min_to_enclosure_mm": 8.19,
+   "nearest_body": "Standoff_M3_10mm_PcbScrew_3_H3",
+   "harness_mm": 43.63
+  },
+  {
+   "ref": "C212",
+   "moved_mm": 0.35,
+   "rot_deg": [
+    90.0,
+    90.0
+   ],
+   "old_xy": [
+    152.45,
+    80.199999
+   ],
+   "new_xy": [
+    152.1,
+    80.199999
+   ],
+   "note": "no own solid: C212 sits 0.14 mm from C215 and its model is assigned to C215 in the per-reference split (C215 group: 11.6 mm to the insert)"
+  },
+  {
+   "ref": "C230",
+   "moved_mm": 5.761,
+   "rot_deg": [
+    0.0,
+    -90.0
+   ],
+   "old_xy": [
+    171.34,
+    59.1
+   ],
+   "new_xy": [
+    176.6,
+    61.45
+   ],
+   "min_to_enclosure_mm": 11.6,
+   "nearest_body": "Insert_woofer_chamber",
+   "harness_mm": 43.09
+  },
+  {
+   "ref": "C231",
+   "moved_mm": 5.413,
+   "rot_deg": [
+    -90.0,
+    -90.0
+   ],
+   "old_xy": [
+    175.89,
+    62.919999
+   ],
+   "new_xy": [
+    181.1,
+    61.45
+   ],
+   "min_to_enclosure_mm": 11.6,
+   "nearest_body": "Insert_woofer_chamber",
+   "harness_mm": 42.11
+  },
+  {
+   "ref": "C232",
+   "moved_mm": 5.85,
+   "rot_deg": [
+    0.0,
+    0.0
+   ],
+   "old_xy": [
+    171.59,
+    71.79
+   ],
+   "new_xy": [
+    176.5,
+    74.97
+   ],
+   "min_to_enclosure_mm": 11.6,
+   "nearest_body": "Insert_woofer_chamber",
+   "harness_mm": 40.0
+  },
+  {
+   "ref": "C233",
+   "moved_mm": 8.062,
+   "rot_deg": [
+    180.0,
+    180.0
+   ],
+   "old_xy": [
+    173.95,
+    70.4
+   ],
+   "new_xy": [
+    180.5,
+    75.1
+   ],
+   "min_to_enclosure_mm": 11.6,
+   "nearest_body": "Insert_woofer_chamber",
+   "harness_mm": 38.97
+  },
+  {
+   "ref": "C236",
+   "moved_mm": 0.81,
+   "rot_deg": [
+    -90.0,
+    -90.0
+   ],
+   "old_xy": [
+    191.69,
+    62.98
+   ],
+   "new_xy": [
+    190.9,
+    62.8
+   ],
+   "min_to_enclosure_mm": 11.6,
+   "nearest_body": "Insert_woofer_chamber",
+   "harness_mm": 41.03
+  },
+  {
+   "ref": "C237",
+   "moved_mm": 7.465,
+   "rot_deg": [
+    90.0,
+    180.0
+   ],
+   "old_xy": [
+    184.295,
+    59.8175
+   ],
+   "new_xy": [
+    185.4,
+    67.2
+   ],
+   "min_to_enclosure_mm": 11.6,
+   "nearest_body": "Insert_woofer_chamber",
+   "harness_mm": 40.21
+  },
+  {
+   "ref": "C238",
+   "moved_mm": 7.111,
+   "rot_deg": [
+    90.0,
+    0.0
+   ],
+   "old_xy": [
+    173.29,
+    58.7
+   ],
+   "new_xy": [
+    179.1,
+    62.8
+   ],
+   "min_to_enclosure_mm": 11.6,
+   "nearest_body": "Insert_woofer_chamber",
+   "harness_mm": 42.18
+  },
+  {
+   "ref": "C239",
+   "moved_mm": 7.095,
+   "rot_deg": [
+    0.0,
+    0.0
+   ],
+   "old_xy": [
+    186.54,
+    61.07
+   ],
+   "new_xy": [
+    192.0,
+    65.6
+   ],
+   "min_to_enclosure_mm": 11.6,
+   "nearest_body": "Insert_woofer_chamber",
+   "harness_mm": 40.58
+  },
+  {
+   "ref": "C240",
+   "moved_mm": 5.187,
+   "rot_deg": [
+    0.0,
+    0.0
+   ],
+   "old_xy": [
+    187.79,
+    63.97
+   ],
+   "new_xy": [
+    192.0,
+    67.0
+   ],
+   "min_to_enclosure_mm": 11.6,
+   "nearest_body": "Insert_woofer_chamber",
+   "harness_mm": 40.23
+  },
+  {
+   "ref": "C275",
+   "moved_mm": 0.0,
+   "rot_deg": [
+    0.0,
+    0.0
+   ],
+   "old_xy": [
+    166.7,
+    152.1
+   ],
+   "new_xy": [
+    166.7,
+    152.1
+   ],
+   "footprint": [
+    "CP_Elec_8x10",
+    "CP_Elec_6.3x7.7"
+   ],
+   "min_to_enclosure_mm": 12.06,
+   "nearest_body": "Insert_woofer_chamber",
+   "harness_mm": 21.82
+  },
+  {
+   "ref": "R102",
+   "moved_mm": 3.55,
+   "rot_deg": [
+    0.0,
+    -90.0
+   ],
+   "old_xy": [
+    160.0,
+    122.64
+   ],
+   "new_xy": [
+    156.95,
+    124.457
+   ],
+   "min_to_enclosure_mm": 7.09,
+   "nearest_body": "Screw_M3x16_PcbScrew_3_H3",
+   "harness_mm": 42.59
+  },
+  {
+   "ref": "R110",
+   "moved_mm": 0.0,
+   "rot_deg": [
+    90.0,
+    -90.0
+   ],
+   "old_xy": [
+    176.59,
+    108.82
+   ],
+   "new_xy": [
+    176.59,
+    108.82
+   ],
+   "min_to_enclosure_mm": 11.6,
+   "nearest_body": "Insert_woofer_chamber",
+   "harness_mm": 32.48
+  },
+  {
+   "ref": "R113",
+   "moved_mm": 0.08,
+   "rot_deg": [
+    90.0,
+    90.0
+   ],
+   "old_xy": [
+    131.419999,
+    24.745
+   ],
+   "new_xy": [
+    131.34,
+    24.745
+   ],
+   "min_to_enclosure_mm": 4.74,
+   "nearest_body": "Lid_rear",
+   "harness_mm": 83.82
+  },
+  {
+   "ref": "R142",
+   "moved_mm": 2.42,
+   "rot_deg": [
+    180.0,
+    180.0
+   ],
+   "old_xy": [
+    91.93,
+    97.42
+   ],
+   "new_xy": [
+    91.9,
+    95.0
+   ],
+   "min_to_enclosure_mm": 11.6,
+   "nearest_body": "Insert_woofer_chamber",
+   "harness_mm": 102.0
+  },
+  {
+   "ref": "R209",
+   "moved_mm": 0.011,
+   "rot_deg": [
+    90.0,
+    90.0
+   ],
+   "old_xy": [
+    152.95,
+    91.95
+   ],
+   "new_xy": [
+    152.94,
+    91.945
+   ],
+   "min_to_enclosure_mm": 2.01,
+   "nearest_body": "Screw_M3x16_PcbScrew_2_H2",
+   "harness_mm": 49.43
+  },
+  {
+   "ref": "R220",
+   "moved_mm": 2.219,
+   "rot_deg": [
+    0.0,
+    180.0
+   ],
+   "old_xy": [
+    176.09,
+    60.97
+   ],
+   "new_xy": [
+    174.7,
+    62.7
+   ],
+   "min_to_enclosure_mm": 11.6,
+   "nearest_body": "Insert_woofer_chamber",
+   "harness_mm": 43.34
+  },
+  {
+   "ref": "R221",
+   "moved_mm": 5.116,
+   "rot_deg": [
+    90.0,
+    -90.0
+   ],
+   "old_xy": [
+    177.19,
+    62.94
+   ],
+   "new_xy": [
+    182.3,
+    62.7
+   ],
+   "min_to_enclosure_mm": 11.6,
+   "nearest_body": "Insert_woofer_chamber",
+   "harness_mm": 41.62
+  },
+  {
+   "ref": "R222",
+   "moved_mm": 2.836,
+   "rot_deg": [
+    -90.0,
+    90.0
+   ],
+   "old_xy": [
+    172.3,
+    73.6
+   ],
+   "new_xy": [
+    175.1,
+    73.15
+   ],
+   "min_to_enclosure_mm": 11.6,
+   "nearest_body": "Insert_woofer_chamber",
+   "harness_mm": 40.87
+  },
+  {
+   "ref": "R223",
+   "moved_mm": 8.846,
+   "rot_deg": [
+    -90.0,
+    90.0
+   ],
+   "old_xy": [
+    173.6,
+    72.4
+   ],
+   "new_xy": [
+    182.35,
+    73.7
+   ],
+   "min_to_enclosure_mm": 11.6,
+   "nearest_body": "Insert_woofer_chamber",
+   "harness_mm": 38.95
+  },
+  {
+   "ref": "R225",
+   "moved_mm": 5.786,
+   "rot_deg": [
+    90.0,
+    180.0
+   ],
+   "old_xy": [
+    189.739999,
+    40.37
+   ],
+   "new_xy": [
+    194.4,
+    43.8
+   ],
+   "min_to_enclosure_mm": 11.6,
+   "nearest_body": "Insert_woofer_chamber",
+   "harness_mm": 49.38
+  },
+  {
+   "ref": "R226",
+   "moved_mm": 5.68,
+   "rot_deg": [
+    180.0,
+    -90.0
+   ],
+   "old_xy": [
+    171.84,
+    60.8
+   ],
+   "new_xy": [
+    176.6,
+    63.9
+   ],
+   "min_to_enclosure_mm": 11.6,
+   "nearest_body": "Insert_woofer_chamber",
+   "harness_mm": 42.53
+  },
+  {
+   "ref": "R227",
+   "moved_mm": 6.511,
+   "rot_deg": [
+    90.0,
+    -90.0
+   ],
+   "old_xy": [
+    174.59,
+    63.77
+   ],
+   "new_xy": [
+    181.1,
+    63.9
+   ],
+   "min_to_enclosure_mm": 11.6,
+   "nearest_body": "Insert_woofer_chamber",
+   "harness_mm": 41.52
+  },
+  {
+   "ref": "R228",
+   "moved_mm": 7.907,
+   "rot_deg": [
+    90.0,
+    90.0
+   ],
+   "old_xy": [
+    169.69,
+    70.29
+   ],
+   "new_xy": [
+    177.1,
+    73.05
+   ],
+   "min_to_enclosure_mm": 11.6,
+   "nearest_body": "Insert_woofer_chamber",
+   "harness_mm": 40.28
+  },
+  {
+   "ref": "R229",
+   "moved_mm": 7.474,
+   "rot_deg": [
+    90.0,
+    90.0
+   ],
+   "old_xy": [
+    174.59,
+    67.99
+   ],
+   "new_xy": [
+    179.9,
+    73.25
+   ],
+   "min_to_enclosure_mm": 11.6,
+   "nearest_body": "Insert_woofer_chamber",
+   "harness_mm": 39.53
+  },
+  {
+   "ref": "R230",
+   "moved_mm": 8.755,
+   "rot_deg": [
+    -90.0,
+    -90.0
+   ],
+   "old_xy": [
+    186.69,
+    65.94
+   ],
+   "new_xy": [
+    187.2,
+    57.2
+   ],
+   "min_to_enclosure_mm": 11.6,
+   "nearest_body": "Insert_woofer_chamber",
+   "harness_mm": 42.76
+  },
+  {
+   "ref": "R231",
+   "moved_mm": 7.72,
+   "rot_deg": [
+    -90.0,
+    -90.0
+   ],
+   "old_xy": [
+    181.99,
+    64.39
+   ],
+   "new_xy": [
+    184.8,
+    57.2
+   ],
+   "min_to_enclosure_mm": 11.6,
+   "nearest_body": "Insert_woofer_chamber",
+   "harness_mm": 42.9
+  },
+  {
+   "ref": "R234",
+   "moved_mm": 8.824,
+   "rot_deg": [
+    0.0,
+    0.0
+   ],
+   "old_xy": [
+    175.19,
+    65.99
+   ],
+   "new_xy": [
+    181.9,
+    71.72
+   ],
+   "min_to_enclosure_mm": 11.6,
+   "nearest_body": "Insert_woofer_chamber",
+   "harness_mm": 39.52
+  },
+  {
+   "ref": "R235",
+   "moved_mm": 9.99,
+   "rot_deg": [
+    -90.0,
+    90.0
+   ],
+   "old_xy": [
+    181.99,
+    67.99
+   ],
+   "new_xy": [
+    183.4,
+    58.1
+   ],
+   "min_to_enclosure_mm": 11.6,
+   "nearest_body": "Insert_woofer_chamber",
+   "harness_mm": 42.74
+  },
+  {
+   "ref": "R237",
+   "moved_mm": 4.838,
+   "rot_deg": [
+    180.0,
+    0.0
+   ],
+   "old_xy": [
+    193.79,
+    67.98
+   ],
+   "new_xy": [
+    197.0,
+    71.6
+   ],
+   "min_to_enclosure_mm": 11.6,
+   "nearest_body": "Insert_woofer_chamber",
+   "harness_mm": 35.49
+  },
+  {
+   "ref": "R238",
+   "moved_mm": 3.265,
+   "rot_deg": [
+    -90.0,
+    0.0
+   ],
+   "old_xy": [
+    196.44,
+    69.58
+   ],
+   "new_xy": [
+    199.6,
+    70.4
+   ],
+   "min_to_enclosure_mm": 11.6,
+   "nearest_body": "Insert_woofer_chamber",
+   "harness_mm": 35.39
+  },
+  {
+   "ref": "R258",
+   "moved_mm": 5.727,
+   "rot_deg": [
+    -90.0,
+    -90.0
+   ],
+   "old_xy": [
+    183.2,
+    108.4
+   ],
+   "new_xy": [
+    185.6,
+    113.6
+   ],
+   "min_to_enclosure_mm": 8.07,
+   "nearest_body": "Standoff_M3_10mm_PcbScrew_6_H6",
+   "harness_mm": 28.8
+  },
+  {
+   "ref": "R262",
+   "moved_mm": 5.399,
+   "rot_deg": [
+    90.0,
+    -90.0
+   ],
+   "old_xy": [
+    116.0,
+    127.34
+   ],
+   "new_xy": [
+    111.505,
+    124.35
+   ],
+   "min_to_enclosure_mm": 11.6,
+   "nearest_body": "Insert_woofer_chamber",
+   "harness_mm": 82.51
+  },
+  {
+   "ref": "SW100",
+   "moved_mm": 2.295,
+   "rot_deg": [
+    0.0,
+    0.0
+   ],
+   "old_xy": [
+    136.07,
+    25.245
+   ],
+   "new_xy": [
+    136.07,
+    22.95
+   ],
+   "min_to_enclosure_mm": 1.35,
+   "nearest_body": "Lid_rear",
+   "harness_mm": 80.7
+  },
+  {
+   "ref": "TP12",
+   "moved_mm": 3.1,
+   "rot_deg": [
+    0.0,
+    0.0
+   ],
+   "old_xy": [
+    146.35,
+    98.5
+   ],
+   "new_xy": [
+    146.35,
+    95.4
+   ],
+   "min_to_enclosure_mm": 3.15,
+   "nearest_body": "Screw_M3x16_PcbScrew_2_H2",
+   "harness_mm": 53.05
+  },
+  {
+   "ref": "TP14",
+   "moved_mm": 3.1,
+   "rot_deg": [
+    0.0,
+    0.0
+   ],
+   "old_xy": [
+    146.35,
+    95.4
+   ],
+   "new_xy": [
+    146.35,
+    98.5
+   ],
+   "min_to_enclosure_mm": 3.06,
+   "nearest_body": "Screw_M3x16_PcbScrew_2_H2",
+   "harness_mm": 52.65
+  },
+  {
+   "ref": "TP2",
+   "moved_mm": 1.0,
+   "rot_deg": [
+    0.0,
+    0.0
+   ],
+   "old_xy": [
+    158.97,
+    126.485
+   ],
+   "new_xy": [
+    159.97,
+    126.485
+   ],
+   "min_to_enclosure_mm": 2.55,
+   "nearest_body": "Screw_M3x16_PcbScrew_3_H3",
+   "harness_mm": 39.54
+  },
+  {
+   "ref": "TP20",
+   "moved_mm": 40.781,
+   "rot_deg": [
+    0.0,
+    0.0
+   ],
+   "old_xy": [
+    110.155,
+    149.645
+   ],
+   "new_xy": [
+    123.9,
+    111.25
+   ],
+   "min_to_enclosure_mm": 8.54,
+   "nearest_body": "Standoff_M3_10mm_PcbScrew_4_H4",
+   "harness_mm": 70.58
+  },
+  {
+   "ref": "U8",
+   "moved_mm": 6.992,
+   "rot_deg": [
+    0.0,
+    0.0
+   ],
+   "old_xy": [
+    172.295,
+    65.2775
+   ],
+   "new_xy": [
+    178.5,
+    68.5
+   ],
+   "min_to_enclosure_mm": 11.6,
+   "nearest_body": "Insert_woofer_chamber",
+   "harness_mm": 40.29
+  },
+  {
+   "ref": "U9",
+   "moved_mm": 3.345,
+   "rot_deg": [
+    0.0,
+    180.0
+   ],
+   "old_xy": [
+    184.295,
+    65.2775
+   ],
+   "new_xy": [
+    186.0,
+    62.4
+   ],
+   "min_to_enclosure_mm": 11.6,
+   "nearest_body": "Insert_woofer_chamber",
+   "harness_mm": 40.77
+  }
+ ],
+ "screw_table": [
+  {
+   "site": "ND65 drivers (x8)",
+   "screw": "M3x10",
+   "stack": "head, flange 0.75 (maker STEP)",
+   "engage_mm": 9.25,
+   "insert": "5.7 in the 11 mm pad, pilot 10",
+   "verdict": "ok (unchanged)"
+  },
+  {
+   "site": "Woofer (x4)",
+   "screw": "M3x20",
+   "stack": "head on the frame back, frame 13.3 + gasket 3.3",
+   "engage_mm": "3.4 free / 4.4 at 1 mm compression",
+   "insert": "5.7 in the floor + outside boss, pilot 6.7, 1.0 skin",
+   "verdict": "marginal: M3x22 gives 5.4-6.4"
+  },
+  {
+   "site": "PCB (x11)",
+   "screw": "M3x16",
+   "stack": "head, PCB 1.6, 10 mm spacer",
+   "engage_mm": 4.4,
+   "insert": "5.7 under the insert roof, pilot 6.7",
+   "verdict": "ok (unchanged)"
+  },
+  {
+   "site": "Lid (x11)",
+   "screw": "M3x10",
+   "stack": "head, lid 4",
+   "engage_mm": 6.0,
+   "insert": "5.7, pilot 8",
+   "verdict": "ok (unchanged)"
+  },
+  {
+   "site": "Feet (x4)",
+   "screw": "Wurth 971120321 stud",
+   "stack": "M3 x 6 male stud",
+   "engage_mm": 6.0,
+   "insert": "5.7, pilot 6.5",
+   "verdict": "ok (unchanged)"
+  }
+ ],
+ "parameter_changes": [
+  "None: v14 uses the v13 parameters (2-cell 1S2P pack, woofer chamber, lid). Only the board changed (RT-3 -> RT-14)."
+ ],
+ "changes_vs_v13": [
+  "Board RT-3 -> RT-14 (routing draft): 42 references changed position/rotation/footprint (TP20 40.8 mm, jack-switch block C230-C240/R220-R238/U8/U9, R225, R142, R262, SW100 2.30 mm, TP2/TP12/TP14, C275 footprint)",
+  "Footprint fixes on RT-14: J2/J3 front pegs, U1 pad 56, SW100 (TE drawing), C275 (CP_Elec_6.3x7.7)",
+  "SW100 actuator tip: 2.30 mm inside the board edge -> at the edge; to lid inner face 2.80 -> 0.50 mm, to outer face 6.80 -> 4.50 mm; switch to lid 3.17 -> 1.35 mm",
+  "Solids 164 -> 164; unintended 0 -> 0; intended 89 -> 89 (J2/J3 vs board 3.72 -> 2.82 mm3: pegs now in their holes)",
+  "Woofer net 0.525 -> 0.525 L, main net 1.962 -> 1.962 L; print bodies unchanged (380.5 / 59.5 / 102.4 cm3)",
+  "pcb_copper.glb 18.1 -> 24.9 MB (RT-14 copper); enclosure.glb 13.8 MB, pcb.glb 15.4 MB"
+ ],
+ "checks": [
+  {
+   "check": "Model accuracy audit coverage (board)",
+   "result": "340 / 346 within 0.5 mm",
+   "detail": "6 unverified: L200 (XAL7070, Coilcraft drawing blocked), TP23-TP27 (Keystone 5010-5014, no maker drawing)"
+  },
+  {
+   "check": "Footprint errors found by the audit",
+   "result": "PASS",
+   "detail": "0 open: J2/J3 pegs, U1 pad 56, SW100, C275 fixed on RT-14"
+  },
+  {
+   "check": "Woofer chamber net volume",
+   "result": "PASS",
+   "detail": "0.525 L (target 0.525 +- 0.05; window 0.45-0.60)"
+  },
+  {
+   "check": "Print bodies (shell, lid, insert)",
+   "result": "PASS",
+   "detail": "3 valid single solids, no supports"
+  },
+  {
+   "check": "Moved parts (RT-3 -> RT-14) vs enclosure",
+   "result": "PASS",
+   "detail": "42 references, minimum TP2 2.55 mm (H3 screw head); TP20 8.54 mm"
+  },
+  {
+   "check": "Woofer screw thread engagement",
+   "result": "marginal",
+   "detail": "M3x20: 3.4-4.4 mm in a 5.7 mm insert"
+  },
+  {
+   "check": "SW100 reachable through the lid",
+   "result": "FAIL",
+   "detail": "actuator at the board edge, 0.50 mm behind the lid inner face, 4.50 mm behind the outer face: lid plunger needed"
+  }
+ ],
+ "assumptions": [
+  "Woofer W3-2052SC: models-v13 model from Parts Express data (square 82.55, bolt circle 96.52, cutout 76.2, depth 44.45) plus photo estimates +-1.5 mm (gasket 3.3, frame block 13.3, holes 3.4, magnet 35.5 x 14.5, basket 72, pigtail rib). Gasket modelled uncompressed.",
+  "Cells: Samsung INR21700-50S model at datasheet max (21.25 x 70.62); cap/button geometry assumed. PCM board 3 x 43.4 x 18 box (not sourced).",
+  "Placeholders (parts not selected): knob D30 x 14, rubber feet 12 x 3, lid foam gasket, grommet, PCM; harness tubes are schematic.",
+  "ND65-4 maker STEP accepted with its known deviations (flange 0.9 mm wider in y, holes 0.35 mm off the cone axis): accuracy 'estimated'.",
+  "Board parts: models-v13 models via the project library; RT-14 carries the footprint fixes (J2/J3, U1 pad 56, SW100, C275).",
+  "Masses: printed bodies at 100 % infill PETG 1.27 g/cm3; drivers/woofer from maker listings; PCB estimated.",
+  "Enclosure: the 2-cell (1S2P) v13 design; the 4-cell variant (ai-files/cad/v13p4) is not included."
+ ],
+ "open_items": [
+  "Owner: caliper the W3-2052SC (frame thickness, gasket, hole pattern, depth) before printing; choose M3x20 (marginal) or source M3x22 for the woofer.",
+  "Owner: approve a printed SW100 lid plunger (bridges 4.50 mm: 4.0 lid + 0.5 gap; needs a collar pocket in the lid inner face) or another press solution; check the TE switch travel.",
+  "Owner: J11 is a JST VH header; the woofer pigtail is JST-PH style: make a PH-to-VH adapter lead or re-terminate.",
+  "Owner: select the knob, rubber feet, PCM board, gasket materials and grommet (still placeholders).",
+  "Check the TC2030 programming cable access through the rear opening with the real cable (unchanged).",
+  "Routing is a draft (RT-14, 12 unconnected): pcb_copper.glb shows the copper routed so far."
+ ]
+}

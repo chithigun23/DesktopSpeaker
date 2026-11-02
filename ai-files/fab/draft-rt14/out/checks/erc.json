@@ -1,0 +1,3705 @@
+{
+    "$schema": "https://schemas.kicad.org/erc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-11-03T08:17:30",
+    "ignored_checks": [
+        {
+            "description": "Global label only appears once in the schematic",
+            "key": "single_global_label"
+        },
+        {
+            "description": "Four connection points are joined together",
+            "key": "four_way_junction"
+        },
+        {
+            "description": "SPICE model issue",
+            "key": "simulation_model_issue"
+        },
+        {
+            "description": "Assigned footprint doesn't match footprint filters",
+            "key": "footprint_filter"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.0.7",
+    "sheets": [
+        {
+            "path": "/",
+            "uuid_path": "/feda53ed-537d-4f88-9436-c6075776255b",
+            "violations": [
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR801 [GND]",
+                            "pos": {
+                                "x": 114.3,
+                                "y": 266.7
+                            },
+                            "uuid": "f9bc1fdb-aa5a-4c4d-9cfa-efe57f0ac4ea"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR1017 [GND]",
+                            "pos": {
+                                "x": 30.48,
+                                "y": 130.81
+                            },
+                            "uuid": "cf875ff7-a34a-4e38-bae9-c3c182ee7c55"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR1018 [GND]",
+                            "pos": {
+                                "x": 41.91,
+                                "y": 130.81
+                            },
+                            "uuid": "3f9cbdaf-f01f-450e-9fb2-4d64fe82ca8b"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR1019 [GND]",
+                            "pos": {
+                                "x": 44.45,
+                                "y": 140.97
+                            },
+                            "uuid": "cd4c106f-a293-49b3-bb3d-5349d12ae59d"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR1020 [GND]",
+                            "pos": {
+                                "x": 44.45,
+                                "y": 151.13
+                            },
+                            "uuid": "07eb4cf4-4305-4e14-988f-07c335f25635"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR1021 [GND]",
+                            "pos": {
+                                "x": 44.45,
+                                "y": 161.29
+                            },
+                            "uuid": "aac66dd2-5b55-4a8b-a5bb-94588d198660"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR1022 [GND]",
+                            "pos": {
+                                "x": 44.45,
+                                "y": 171.45
+                            },
+                            "uuid": "75cc370f-64c4-4492-9cfa-3a6bb8d9cb0a"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR1023 [GND]",
+                            "pos": {
+                                "x": 44.45,
+                                "y": 181.61
+                            },
+                            "uuid": "d5bce5e8-13f9-4469-99a7-afef9380c728"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR1001 [GND]",
+                            "pos": {
+                                "x": 149.86,
+                                "y": 72.39
+                            },
+                            "uuid": "8a0a5005-8c8f-4cf2-ae99-eec34aa2ea2c"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR1002 [GND]",
+                            "pos": {
+                                "x": 162.56,
+                                "y": 41.91
+                            },
+                            "uuid": "9de5a6e4-fedc-49fd-894e-0eb7a9d26262"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR1003 [GND]",
+                            "pos": {
+                                "x": 213.36,
+                                "y": 123.19
+                            },
+                            "uuid": "eeb9696c-da32-459c-b030-31d7085bec97"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR1004 [GND]",
+                            "pos": {
+                                "x": 226.06,
+                                "y": 92.71
+                            },
+                            "uuid": "147bbf12-1609-4c11-a594-37c74e2b782f"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR1005 [GND]",
+                            "pos": {
+                                "x": 264.16,
+                                "y": 87.63
+                            },
+                            "uuid": "148cc7a4-5546-4e54-bf40-04a52da095ec"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR1007 [GND]",
+                            "pos": {
+                                "x": 269.24,
+                                "y": 146.05
+                            },
+                            "uuid": "3aa641e0-d7a9-4b51-913b-e43b0aa60e6c"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR1014 [GND]",
+                            "pos": {
+                                "x": 275.59,
+                                "y": 170.18
+                            },
+                            "uuid": "d10e6a73-7570-4ed0-962a-ee0e8b1f82de"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR1015 [GND]",
+                            "pos": {
+                                "x": 288.29,
+                                "y": 170.18
+                            },
+                            "uuid": "b890d559-09e3-43bc-87dd-0521c8d9c626"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR1013 [GND]",
+                            "pos": {
+                                "x": 307.34,
+                                "y": 179.07
+                            },
+                            "uuid": "6a0d9c69-0cdd-46ac-a24e-5e459f60cb4a"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR1008 [GND]",
+                            "pos": {
+                                "x": 312.42,
+                                "y": 118.11
+                            },
+                            "uuid": "946353f8-a74c-4e7a-b80e-ea18b3c0958d"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR1009 [GND]",
+                            "pos": {
+                                "x": 312.42,
+                                "y": 125.73
+                            },
+                            "uuid": "e853ab20-d669-42b0-aed4-6ad6505f9923"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR1010 [GND]",
+                            "pos": {
+                                "x": 330.2,
+                                "y": 113.03
+                            },
+                            "uuid": "b9503593-42bf-4916-b2c1-7164580230d9"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR1011 [GND]",
+                            "pos": {
+                                "x": 337.82,
+                                "y": 143.51
+                            },
+                            "uuid": "559dd7a8-f7fc-4a2d-83fb-16eb1ccc28da"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR1012 [GND]",
+                            "pos": {
+                                "x": 340.36,
+                                "y": 166.37
+                            },
+                            "uuid": "e5fd430b-bc04-4626-a528-0cdc907a2597"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR1016 [GND]",
+                            "pos": {
+                                "x": 372.11,
+                                "y": 186.69
+                            },
+                            "uuid": "d7f6e88f-fce9-48ba-a262-72c71a22f2f4"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR20 [GND]",
+                            "pos": {
+                                "x": 40.64,
+                                "y": 187.96
+                            },
+                            "uuid": "527303fa-233a-417a-acdb-e6178b21444f"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR15 [GND]",
+                            "pos": {
+                                "x": 50.8,
+                                "y": 114.3
+                            },
+                            "uuid": "a7c0fadc-20bc-4b55-af74-66c90781363a"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR16 [GND]",
+                            "pos": {
+                                "x": 50.8,
+                                "y": 127.0
+                            },
+                            "uuid": "7ab76573-9e81-43cf-b366-0d41ac813e27"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR2008 [GND]",
+                            "pos": {
+                                "x": 63.5,
+                                "y": 68.58
+                            },
+                            "uuid": "d8c4a000-7f1c-410d-a518-204ffd25d3fd"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR17 [GND]",
+                            "pos": {
+                                "x": 71.12,
+                                "y": 177.8
+                            },
+                            "uuid": "88d35942-cc91-459e-b649-b220b12ee5ba"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR03 [GND]",
+                            "pos": {
+                                "x": 88.9,
+                                "y": 72.39
+                            },
+                            "uuid": "598022a9-71c3-4ef6-89af-fbf0f9ed35cf"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR14 [GND]",
+                            "pos": {
+                                "x": 91.44,
+                                "y": 124.46
+                            },
+                            "uuid": "8905319e-d267-4e5f-87fe-a88602247b42"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR19 [GND]",
+                            "pos": {
+                                "x": 96.52,
+                                "y": 182.88
+                            },
+                            "uuid": "3193055d-cf19-479f-ba14-1c14937a28f1"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR02 [GND]",
+                            "pos": {
+                                "x": 114.3,
+                                "y": 71.12
+                            },
+                            "uuid": "668a2ffb-04bf-4a71-9383-b386dcc27d9b"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR06 [GND]",
+                            "pos": {
+                                "x": 116.84,
+                                "y": 124.46
+                            },
+                            "uuid": "92dc8a7b-f847-42f1-84b9-e52f86aa3b77"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR18 [GND]",
+                            "pos": {
+                                "x": 124.46,
+                                "y": 165.1
+                            },
+                            "uuid": "aa7714c1-c2e9-46ca-88a7-18a59cf27f5a"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR1211 [GND]",
+                            "pos": {
+                                "x": 134.62,
+                                "y": 55.88
+                            },
+                            "uuid": "5b3e7259-9893-4cc7-9206-52125db6572b"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR01 [GND]",
+                            "pos": {
+                                "x": 134.62,
+                                "y": 69.85
+                            },
+                            "uuid": "e165efcf-f748-4a4a-980c-79a32ff663ec"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR04 [GND]",
+                            "pos": {
+                                "x": 139.7,
+                                "y": 101.6
+                            },
+                            "uuid": "eadd2099-7bc2-45b9-9df2-1abdf83ff988"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR05 [GND]",
+                            "pos": {
+                                "x": 139.7,
+                                "y": 111.76
+                            },
+                            "uuid": "eb342f71-b1f6-442f-8c33-22be653711d5"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR13 [GND]",
+                            "pos": {
+                                "x": 147.32,
+                                "y": 132.08
+                            },
+                            "uuid": "081dc21c-cdf3-4a8e-b28f-2e4b2dc09743"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR11 [GND]",
+                            "pos": {
+                                "x": 152.4,
+                                "y": 143.51
+                            },
+                            "uuid": "71ec87e1-44f1-4a1d-a6cc-d9c1af0f1f4a"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR07 [GND]",
+                            "pos": {
+                                "x": 170.18,
+                                "y": 58.42
+                            },
+                            "uuid": "b7655ec8-8426-40ab-93f4-9e3b634411d2"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR08 [GND]",
+                            "pos": {
+                                "x": 195.58,
+                                "y": 58.42
+                            },
+                            "uuid": "a16ec037-cda5-4ef9-bf5c-5c4e21ccbea5"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR12 [GND]",
+                            "pos": {
+                                "x": 203.2,
+                                "y": 106.68
+                            },
+                            "uuid": "f1ad71ea-45cf-405f-afdf-bfa9af383620"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR2007 [GND]",
+                            "pos": {
+                                "x": 228.6,
+                                "y": 76.2
+                            },
+                            "uuid": "d37a1116-f5e2-4d33-a039-4b6866af4493"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR10 [GND]",
+                            "pos": {
+                                "x": 255.27,
+                                "y": 58.42
+                            },
+                            "uuid": "bdc95447-8c0f-435e-a68f-97f64453ef8f"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR967 [GND]",
+                            "pos": {
+                                "x": 58.42,
+                                "y": 38.1
+                            },
+                            "uuid": "9fca00a1-9305-4dfa-b844-25fab1b60cad"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR962 [GND]",
+                            "pos": {
+                                "x": 77.47,
+                                "y": 81.28
+                            },
+                            "uuid": "90267d11-9020-4ec6-97bb-6404e907ecc8"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR966 [GND]",
+                            "pos": {
+                                "x": 80.01,
+                                "y": 53.34
+                            },
+                            "uuid": "d954f9a3-1a43-4b9c-9887-182ddc4d2059"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR951 [GND]",
+                            "pos": {
+                                "x": 96.52,
+                                "y": 127.0
+                            },
+                            "uuid": "1ef59bd0-3f6d-40cd-bf50-8daa29b902d4"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR952 [GND]",
+                            "pos": {
+                                "x": 96.52,
+                                "y": 139.7
+                            },
+                            "uuid": "e78c3542-b3b2-4a37-a7b4-51c17b518a6a"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR953 [GND]",
+                            "pos": {
+                                "x": 96.52,
+                                "y": 152.4
+                            },
+                            "uuid": "6821556e-dc33-465f-b124-ff2c0ef1f0b1"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR954 [GND]",
+                            "pos": {
+                                "x": 96.52,
+                                "y": 165.1
+                            },
+                            "uuid": "056c2c88-d324-448a-98fa-631561522882"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR955 [GND]",
+                            "pos": {
+                                "x": 96.52,
+                                "y": 177.8
+                            },
+                            "uuid": "03de02e9-4efd-48aa-b3c6-d530dec80a39"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR956 [GND]",
+                            "pos": {
+                                "x": 96.52,
+                                "y": 190.5
+                            },
+                            "uuid": "0f126615-1599-4d24-a2bd-940d57385d61"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR968 [GND]",
+                            "pos": {
+                                "x": 114.3,
+                                "y": 55.88
+                            },
+                            "uuid": "d389c3b1-c27a-43f8-879a-838a9354852f"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR963 [GND]",
+                            "pos": {
+                                "x": 114.3,
+                                "y": 91.44
+                            },
+                            "uuid": "a6ae7b33-8d18-4d71-8dd6-6fae52c0fe40"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR964 [GND]",
+                            "pos": {
+                                "x": 129.54,
+                                "y": 81.28
+                            },
+                            "uuid": "97d2d705-59b0-4a2c-8d0e-456d33cd2ff3"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR969 [GND]",
+                            "pos": {
+                                "x": 134.62,
+                                "y": 53.34
+                            },
+                            "uuid": "07aacfd7-2871-4b34-9467-0b0b0fdece6a"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR965 [GND]",
+                            "pos": {
+                                "x": 139.7,
+                                "y": 81.28
+                            },
+                            "uuid": "df3189c5-4932-4bd9-84ba-e2165866ee84"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR971 [GND]",
+                            "pos": {
+                                "x": 160.02,
+                                "y": 93.98
+                            },
+                            "uuid": "5cca6ca1-2852-44e7-a4d2-1f110ee7d874"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR957 [GND]",
+                            "pos": {
+                                "x": 162.56,
+                                "y": 226.06
+                            },
+                            "uuid": "5eb41425-7ab0-4cab-a091-8d8de35db5a7"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR970 [GND]",
+                            "pos": {
+                                "x": 170.18,
+                                "y": 93.98
+                            },
+                            "uuid": "ab6d4808-ab3d-4954-b394-481d31e4c761"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR958 [GND]",
+                            "pos": {
+                                "x": 177.8,
+                                "y": 248.92
+                            },
+                            "uuid": "6d7348bf-4714-4a8a-8037-31509c72de37"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'Device' was not found at '/home/chithi/kicad-libs/symbols/Device.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol FB200 [FerriteBead_Small]",
+                            "pos": {
+                                "x": 180.34,
+                                "y": 76.2
+                            },
+                            "uuid": "2487249c-b663-4993-beb2-273a05837ac8"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR959 [GND]",
+                            "pos": {
+                                "x": 190.5,
+                                "y": 246.38
+                            },
+                            "uuid": "579b94a7-f83e-4a59-9713-76d56972236d"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR960 [GND]",
+                            "pos": {
+                                "x": 203.2,
+                                "y": 248.92
+                            },
+                            "uuid": "9138981a-5ffa-4e81-acc1-a8257bbf7763"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR972 [GND]",
+                            "pos": {
+                                "x": 205.74,
+                                "y": 93.98
+                            },
+                            "uuid": "bb0a482b-93e3-4522-bb18-56b27bb23d8b"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR961 [GND]",
+                            "pos": {
+                                "x": 213.36,
+                                "y": 248.92
+                            },
+                            "uuid": "2103ac80-9cf4-4a90-b142-b7715c16f3c6"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR973 [GND]",
+                            "pos": {
+                                "x": 215.9,
+                                "y": 93.98
+                            },
+                            "uuid": "8b6c5f78-b24b-4e13-8932-5092cfa79178"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR977 [GND]",
+                            "pos": {
+                                "x": 223.52,
+                                "y": 223.52
+                            },
+                            "uuid": "03a857b9-f46b-4a2b-85c0-3b4e9a9f28e4"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR978 [GND]",
+                            "pos": {
+                                "x": 236.22,
+                                "y": 236.22
+                            },
+                            "uuid": "76063918-0d2d-4997-be3b-2e552d4e2cec"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR974 [GND]",
+                            "pos": {
+                                "x": 238.76,
+                                "y": 93.98
+                            },
+                            "uuid": "ee68fd01-f3f0-4894-9ed2-1c091f96ae7f"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'Device' was not found at '/home/chithi/kicad-libs/symbols/Device.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol Y200 [Crystal_GND24]",
+                            "pos": {
+                                "x": 246.38,
+                                "y": 215.9
+                            },
+                            "uuid": "e4d1625f-7420-4072-b3bb-793533bf2599"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR979 [GND]",
+                            "pos": {
+                                "x": 246.38,
+                                "y": 220.98
+                            },
+                            "uuid": "98f3df34-47ed-47fd-9bc6-b52baa5d7d26"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR975 [GND]",
+                            "pos": {
+                                "x": 248.92,
+                                "y": 93.98
+                            },
+                            "uuid": "c2685779-aa68-489a-b81f-94918090fada"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR976 [GND]",
+                            "pos": {
+                                "x": 251.46,
+                                "y": 193.04
+                            },
+                            "uuid": "38bf3f0f-7022-420a-8df3-5fc2f2088b6a"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR051 [GND]",
+                            "pos": {
+                                "x": 64.77,
+                                "y": 195.58
+                            },
+                            "uuid": "2258f7bd-edc4-4c93-abfb-b98fe2f66d9c"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR050 [GND]",
+                            "pos": {
+                                "x": 87.63,
+                                "y": 193.04
+                            },
+                            "uuid": "9dd23bd4-7f47-463d-809e-1d71f9689589"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR046 [GND]",
+                            "pos": {
+                                "x": 111.76,
+                                "y": 185.42
+                            },
+                            "uuid": "612ef302-56c2-412a-a04b-f508f20a2e3f"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR049 [GND]",
+                            "pos": {
+                                "x": 121.92,
+                                "y": 215.9
+                            },
+                            "uuid": "7907037e-8249-422d-a14f-4db730fd171d"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR047 [GND]",
+                            "pos": {
+                                "x": 127.0,
+                                "y": 185.42
+                            },
+                            "uuid": "0a2eb19a-21d1-480f-8fcd-7c2a2e367ea9"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR048 [GND]",
+                            "pos": {
+                                "x": 137.16,
+                                "y": 213.36
+                            },
+                            "uuid": "a1d8d696-faa0-4591-bc54-91a2e5a69ec2"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR027 [GND]",
+                            "pos": {
+                                "x": 147.32,
+                                "y": 109.22
+                            },
+                            "uuid": "d9c4e948-d7e3-4cd6-8976-1e5d8ec99eb0"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR044 [GND]",
+                            "pos": {
+                                "x": 160.02,
+                                "y": 173.99
+                            },
+                            "uuid": "658139eb-6c54-4ef5-a70a-61117cf1db08"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR028 [GND]",
+                            "pos": {
+                                "x": 167.64,
+                                "y": 109.22
+                            },
+                            "uuid": "b0ccd89e-8652-4109-9c84-b034475a7935"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR045 [GND]",
+                            "pos": {
+                                "x": 182.88,
+                                "y": 185.42
+                            },
+                            "uuid": "20675648-c48c-47a2-b084-a8a7dce34de6"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR043 [GND]",
+                            "pos": {
+                                "x": 185.42,
+                                "y": 142.24
+                            },
+                            "uuid": "1d714cdb-8516-49cc-a207-2c9351c0b8ab"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR2003 [GND]",
+                            "pos": {
+                                "x": 187.96,
+                                "y": 109.22
+                            },
+                            "uuid": "a0d273ac-63e9-4022-912c-c0ee3e0a330e"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'Switch' was not found at '/home/chithi/kicad-libs/symbols/Switch.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol SW100 [SW_Push]",
+                            "pos": {
+                                "x": 190.5,
+                                "y": 142.24
+                            },
+                            "uuid": "0f641738-50c0-4632-920a-26f4729ea9e3"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR042 [GND]",
+                            "pos": {
+                                "x": 217.17,
+                                "y": 152.4
+                            },
+                            "uuid": "3dc6981a-3e44-4d3a-9813-b0c9a793b8ee"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR030 [GND]",
+                            "pos": {
+                                "x": 264.16,
+                                "y": 91.44
+                            },
+                            "uuid": "18446eba-3398-4c11-8753-a740b6f0f345"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR034 [GND]",
+                            "pos": {
+                                "x": 264.16,
+                                "y": 109.22
+                            },
+                            "uuid": "8ea0fdef-7180-4965-b38e-2fc376133f16"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR031 [GND]",
+                            "pos": {
+                                "x": 284.48,
+                                "y": 91.44
+                            },
+                            "uuid": "78923309-e5e7-42f0-ab46-8239061b128f"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR035 [GND]",
+                            "pos": {
+                                "x": 284.48,
+                                "y": 109.22
+                            },
+                            "uuid": "60752f57-c4af-4315-80b7-097318d822cc"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR2004 [GND]",
+                            "pos": {
+                                "x": 299.72,
+                                "y": 53.34
+                            },
+                            "uuid": "9cec1b1b-61cf-4804-8cb8-2734cc6c00d2"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'Device' was not found at '/home/chithi/kicad-libs/symbols/Device.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol L1 [L]",
+                            "pos": {
+                                "x": 299.72,
+                                "y": 116.84
+                            },
+                            "uuid": "ec7c19fd-4cfa-418e-815b-9fc987b0415c"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR032 [GND]",
+                            "pos": {
+                                "x": 304.8,
+                                "y": 91.44
+                            },
+                            "uuid": "6cb388de-4b7f-402e-a08d-d51929b95c97"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR040 [GND]",
+                            "pos": {
+                                "x": 304.8,
+                                "y": 139.7
+                            },
+                            "uuid": "bcb8175f-9dca-4870-b9f3-e2a6c1096606"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'Switch' was not found at '/home/chithi/kicad-libs/symbols/Switch.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol SW101 [SW_SPST]",
+                            "pos": {
+                                "x": 307.34,
+                                "y": 152.4
+                            },
+                            "uuid": "a8404534-5091-4a06-9c21-640e48e694d2"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR2005 [GND]",
+                            "pos": {
+                                "x": 320.04,
+                                "y": 53.34
+                            },
+                            "uuid": "cf87080b-f8e2-4d8b-b83d-786f4ea75f96"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR2002 [GND]",
+                            "pos": {
+                                "x": 327.66,
+                                "y": 91.44
+                            },
+                            "uuid": "079442b6-71fa-4b8e-8d6e-80f85d088d8a"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR2001 [GND]",
+                            "pos": {
+                                "x": 327.66,
+                                "y": 137.16
+                            },
+                            "uuid": "980324eb-e1cc-428d-9f18-3117ad8cfa65"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR041 [GND]",
+                            "pos": {
+                                "x": 340.36,
+                                "y": 157.48
+                            },
+                            "uuid": "9463e189-3453-4cf8-844f-3d1c7bb2fc90"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR037 [GND]",
+                            "pos": {
+                                "x": 345.44,
+                                "y": 137.16
+                            },
+                            "uuid": "1fc5d820-1e00-45cf-a6ea-48aedd242776"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'Connector_Generic' was not found at '/home/chithi/kicad-libs/symbols/Connector_Generic.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol J5 [Conn_01x03]",
+                            "pos": {
+                                "x": 345.44,
+                                "y": 154.94
+                            },
+                            "uuid": "bf698e54-1257-448b-b6e9-f4110fd952d9"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR038 [GND]",
+                            "pos": {
+                                "x": 365.76,
+                                "y": 137.16
+                            },
+                            "uuid": "aea931d5-5036-4d4d-a4b9-1e39d219c282"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR039 [GND]",
+                            "pos": {
+                                "x": 386.08,
+                                "y": 137.16
+                            },
+                            "uuid": "e2f68c71-8f84-47b1-9bad-d279c3e305da"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR509 [GND]",
+                            "pos": {
+                                "x": 48.26,
+                                "y": 184.15
+                            },
+                            "uuid": "7dd7b3a5-91fa-4809-9426-408265dbd4e4"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR508 [GND]",
+                            "pos": {
+                                "x": 69.85,
+                                "y": 146.05
+                            },
+                            "uuid": "6cb30a28-2b9b-4d0e-a672-2b9a12e28158"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR502 [GND]",
+                            "pos": {
+                                "x": 76.2,
+                                "y": 64.77
+                            },
+                            "uuid": "1ffd9666-3827-46ac-a3e9-f46735f6e1b6"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR510 [GND]",
+                            "pos": {
+                                "x": 137.16,
+                                "y": 111.76
+                            },
+                            "uuid": "4646e80d-a84f-48fb-bc89-93d89ca4ab25"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'Device' was not found at '/home/chithi/kicad-libs/symbols/Device.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol L3 [L]",
+                            "pos": {
+                                "x": 139.7,
+                                "y": 60.96
+                            },
+                            "uuid": "4f8c9001-1c7e-43cc-b0ee-b68301be2736"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR511 [GND]",
+                            "pos": {
+                                "x": 142.24,
+                                "y": 111.76
+                            },
+                            "uuid": "b488c77b-e45d-4f03-ae9d-7d2373961f81"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR506 [GND]",
+                            "pos": {
+                                "x": 187.96,
+                                "y": 124.46
+                            },
+                            "uuid": "039ea3a8-431a-467c-986f-bf9f51a5a085"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR507 [GND]",
+                            "pos": {
+                                "x": 203.2,
+                                "y": 143.51
+                            },
+                            "uuid": "fc15b582-8b02-400e-8245-fbba0a1b6f64"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR503 [GND]",
+                            "pos": {
+                                "x": 218.44,
+                                "y": 102.87
+                            },
+                            "uuid": "b8987b07-886b-46a2-b895-2bc3955e033a"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR504 [GND]",
+                            "pos": {
+                                "x": 241.3,
+                                "y": 102.87
+                            },
+                            "uuid": "f7e8ab80-ad90-47f5-af30-e7d16910a37f"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR505 [GND]",
+                            "pos": {
+                                "x": 264.16,
+                                "y": 102.87
+                            },
+                            "uuid": "a57c4067-cca2-49be-8d71-67fc08d4b693"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR1105 [GND]",
+                            "pos": {
+                                "x": 71.12,
+                                "y": 142.24
+                            },
+                            "uuid": "d55d6685-376f-40ad-982d-55b401964150"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR1104 [GND]",
+                            "pos": {
+                                "x": 83.82,
+                                "y": 142.24
+                            },
+                            "uuid": "8c297b33-26c7-450f-b4ce-e0548f95b005"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR1103 [GND]",
+                            "pos": {
+                                "x": 96.52,
+                                "y": 142.24
+                            },
+                            "uuid": "52906101-077a-4472-8b2f-055a372ed890"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR1102 [GND]",
+                            "pos": {
+                                "x": 109.22,
+                                "y": 142.24
+                            },
+                            "uuid": "63068df4-ec94-428a-9e43-51a8ff003e23"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR1107 [GND]",
+                            "pos": {
+                                "x": 111.76,
+                                "y": 203.2
+                            },
+                            "uuid": "d76861b9-020c-4a03-a497-5445d7e5e676"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR1212 [GND]",
+                            "pos": {
+                                "x": 114.3,
+                                "y": 129.54
+                            },
+                            "uuid": "5b06fc6f-a397-4fc4-abc7-17ff02af8810"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR1106 [GND]",
+                            "pos": {
+                                "x": 116.84,
+                                "y": 167.64
+                            },
+                            "uuid": "6e8856d5-90bb-4326-86b2-54174a01cb8d"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR1101 [GND]",
+                            "pos": {
+                                "x": 121.92,
+                                "y": 142.24
+                            },
+                            "uuid": "7d741304-8ddd-4586-8f85-da388e428828"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR1120 [GND]",
+                            "pos": {
+                                "x": 129.54,
+                                "y": 208.28
+                            },
+                            "uuid": "45106172-79c6-432a-965b-d366d81a9c03"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR1121 [GND]",
+                            "pos": {
+                                "x": 149.86,
+                                "y": 208.28
+                            },
+                            "uuid": "48d97e4a-3f79-4643-b4c9-e5e81bc457e5"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR1108 [GND]",
+                            "pos": {
+                                "x": 154.94,
+                                "y": 144.78
+                            },
+                            "uuid": "728d67a8-11a8-4cca-bc68-15845b850b77"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR1109 [GND]",
+                            "pos": {
+                                "x": 157.48,
+                                "y": 165.1
+                            },
+                            "uuid": "83743d66-3a39-41d9-90c7-3ff2e5792e3b"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR1116 [GND]",
+                            "pos": {
+                                "x": 157.48,
+                                "y": 185.42
+                            },
+                            "uuid": "ef4d9779-e23e-4104-ae60-19af47c36e5b"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR1118 [GND]",
+                            "pos": {
+                                "x": 157.48,
+                                "y": 198.12
+                            },
+                            "uuid": "4a2a1d8d-6026-4058-b7ab-a049a1af96ba"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR1119 [GND]",
+                            "pos": {
+                                "x": 157.48,
+                                "y": 210.82
+                            },
+                            "uuid": "8ef1fad9-c54f-4a09-8c6e-259a39592da8"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR1110 [GND]",
+                            "pos": {
+                                "x": 170.18,
+                                "y": 157.48
+                            },
+                            "uuid": "2ce6a104-b1c2-4f59-b307-a0d92fe66091"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR1117 [GND]",
+                            "pos": {
+                                "x": 172.72,
+                                "y": 177.8
+                            },
+                            "uuid": "012eac99-afac-46ef-9789-d4474b183732"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR1111 [GND]",
+                            "pos": {
+                                "x": 185.42,
+                                "y": 157.48
+                            },
+                            "uuid": "ae040427-cdc5-41f3-832f-76d155d35b4d"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR1112 [GND]",
+                            "pos": {
+                                "x": 200.66,
+                                "y": 157.48
+                            },
+                            "uuid": "04a013ab-da4a-49b2-baaf-a3b3c57c1ab0"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR1113 [GND]",
+                            "pos": {
+                                "x": 215.9,
+                                "y": 157.48
+                            },
+                            "uuid": "785db0f4-f1e9-4f6e-a8ac-fa9a5e090895"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR1114 [GND]",
+                            "pos": {
+                                "x": 231.14,
+                                "y": 157.48
+                            },
+                            "uuid": "b76402a2-932a-493f-bbf0-6ab67d911883"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR1115 [GND]",
+                            "pos": {
+                                "x": 246.38,
+                                "y": 157.48
+                            },
+                            "uuid": "6937c3f2-582d-415c-a742-eaffc1e73d26"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR2006 [GND]",
+                            "pos": {
+                                "x": 266.7,
+                                "y": 157.48
+                            },
+                            "uuid": "2600a445-626e-4cee-86d6-b07c132de69b"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR1122 [GND]",
+                            "pos": {
+                                "x": 274.32,
+                                "y": 121.92
+                            },
+                            "uuid": "46d7c024-6664-4364-9c5d-cb0202b64374"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR1125 [GND]",
+                            "pos": {
+                                "x": 287.02,
+                                "y": 78.74
+                            },
+                            "uuid": "ec0c5244-bf5c-4f14-8b3f-3fd25b2b406d"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR1140 [GND]",
+                            "pos": {
+                                "x": 287.02,
+                                "y": 175.26
+                            },
+                            "uuid": "6d50423a-3f14-4cf2-a4e2-95725ae3e2f8"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR1138 [GND]",
+                            "pos": {
+                                "x": 287.02,
+                                "y": 218.44
+                            },
+                            "uuid": "645d351c-75b1-4a81-8971-cfd2b036fef3"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR1123 [GND]",
+                            "pos": {
+                                "x": 294.64,
+                                "y": 121.92
+                            },
+                            "uuid": "9f89da4f-0250-4790-ae80-3ee466287626"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR1124 [GND]",
+                            "pos": {
+                                "x": 299.72,
+                                "y": 78.74
+                            },
+                            "uuid": "3fd62dbf-db5e-420b-bfb5-ce7de0dbaef2"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR1130 [GND]",
+                            "pos": {
+                                "x": 299.72,
+                                "y": 160.02
+                            },
+                            "uuid": "59681c06-9b66-4967-bbbf-9ba007f71aed"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR1139 [GND]",
+                            "pos": {
+                                "x": 299.72,
+                                "y": 175.26
+                            },
+                            "uuid": "d3efcc48-0efa-4d98-97b4-10f647e01abb"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR1145 [GND]",
+                            "pos": {
+                                "x": 299.72,
+                                "y": 256.54
+                            },
+                            "uuid": "7e6f2c6e-6033-4c21-80f1-801efce3cc8e"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR1131 [GND]",
+                            "pos": {
+                                "x": 307.34,
+                                "y": 160.02
+                            },
+                            "uuid": "c1058b4c-c0d1-4e44-bf77-4b72f73ae3fd"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR1146 [GND]",
+                            "pos": {
+                                "x": 307.34,
+                                "y": 256.54
+                            },
+                            "uuid": "0a063e90-5ca3-46cc-8a6f-a2bfdf18e3fb"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR1132 [GND]",
+                            "pos": {
+                                "x": 327.66,
+                                "y": 160.02
+                            },
+                            "uuid": "221709ff-501c-4d81-add9-1e8e3e8afdce"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR1147 [GND]",
+                            "pos": {
+                                "x": 327.66,
+                                "y": 256.54
+                            },
+                            "uuid": "40acdfff-1fbc-49cc-9304-38e5d6631395"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR1126 [GND]",
+                            "pos": {
+                                "x": 335.28,
+                                "y": 78.74
+                            },
+                            "uuid": "9f3b0c2d-4f38-4c70-b126-d5f4ae604d7a"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR1141 [GND]",
+                            "pos": {
+                                "x": 335.28,
+                                "y": 175.26
+                            },
+                            "uuid": "58b76919-8ac6-47c2-9475-a4914952ca2e"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR1133 [GND]",
+                            "pos": {
+                                "x": 337.82,
+                                "y": 152.4
+                            },
+                            "uuid": "63e6ae59-3356-4d54-9ac8-3344fb3258d0"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR1148 [GND]",
+                            "pos": {
+                                "x": 337.82,
+                                "y": 248.92
+                            },
+                            "uuid": "92261819-55c2-4174-b26f-cc93a0724bc3"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR1127 [GND]",
+                            "pos": {
+                                "x": 350.52,
+                                "y": 78.74
+                            },
+                            "uuid": "06654397-2273-4c53-ad14-06297c6a202b"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR1142 [GND]",
+                            "pos": {
+                                "x": 350.52,
+                                "y": 175.26
+                            },
+                            "uuid": "f606f5ea-504e-437e-aa88-9e470450e6cb"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR1128 [GND]",
+                            "pos": {
+                                "x": 365.76,
+                                "y": 78.74
+                            },
+                            "uuid": "c49026e1-0c7f-46ce-8f24-db5f59606655"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR1143 [GND]",
+                            "pos": {
+                                "x": 365.76,
+                                "y": 175.26
+                            },
+                            "uuid": "6e78ddee-694c-4e13-9e94-05f042a02236"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR1129 [GND]",
+                            "pos": {
+                                "x": 381.0,
+                                "y": 78.74
+                            },
+                            "uuid": "2e3191b9-fa4c-4b7c-939d-d46b2188529b"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR1144 [GND]",
+                            "pos": {
+                                "x": 381.0,
+                                "y": 175.26
+                            },
+                            "uuid": "216c61af-42f7-436a-8355-ba40bc1a93f8"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR1134 [GND]",
+                            "pos": {
+                                "x": 391.16,
+                                "y": 104.14
+                            },
+                            "uuid": "998b61e5-29d4-4c9a-9752-14f89f7d1db6"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR1135 [GND]",
+                            "pos": {
+                                "x": 391.16,
+                                "y": 119.38
+                            },
+                            "uuid": "f73d997c-f8f5-4231-9232-16808929c227"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR1136 [GND]",
+                            "pos": {
+                                "x": 391.16,
+                                "y": 137.16
+                            },
+                            "uuid": "4d2f69bd-48cf-4e59-b32e-c1de9c1f9d54"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR1137 [GND]",
+                            "pos": {
+                                "x": 391.16,
+                                "y": 152.4
+                            },
+                            "uuid": "e9876b2d-6ad7-4c85-be75-45f5fe88ae85"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR1149 [GND]",
+                            "pos": {
+                                "x": 391.16,
+                                "y": 203.2
+                            },
+                            "uuid": "8d796a75-85e4-44d9-9fb2-36d6ca33e55f"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR1150 [GND]",
+                            "pos": {
+                                "x": 391.16,
+                                "y": 228.6
+                            },
+                            "uuid": "8ad58484-5726-4551-a885-e1c3fe33c2ad"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR905 [GND]",
+                            "pos": {
+                                "x": 85.09,
+                                "y": 139.7
+                            },
+                            "uuid": "4093a737-fdba-473d-a6aa-5fed7e66eb1b"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'Connector_Generic' was not found at '/home/chithi/kicad-libs/symbols/Connector_Generic.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol J8 [Conn_01x05]",
+                            "pos": {
+                                "x": 92.71,
+                                "y": 134.62
+                            },
+                            "uuid": "9399de62-d705-4bd2-9d03-291b180ebc41"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR903 [GND]",
+                            "pos": {
+                                "x": 110.49,
+                                "y": 123.19
+                            },
+                            "uuid": "70a2c9a5-b258-4a3d-8b50-7610ddc288e3"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR904 [GND]",
+                            "pos": {
+                                "x": 115.57,
+                                "y": 153.67
+                            },
+                            "uuid": "d16748cc-8ba0-4048-b8b0-2e34d953a288"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR902 [GND]",
+                            "pos": {
+                                "x": 118.11,
+                                "y": 73.66
+                            },
+                            "uuid": "4b79eb8b-abcd-4ae5-b728-938ccbd7dd67"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR901 [GND]",
+                            "pos": {
+                                "x": 130.81,
+                                "y": 73.66
+                            },
+                            "uuid": "ecdb4963-9e91-45dc-86a2-5566bef19045"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR909 [GND]",
+                            "pos": {
+                                "x": 181.61,
+                                "y": 148.59
+                            },
+                            "uuid": "0e0910c4-0bc7-4f07-95fd-c6e9f15d96ad"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR908 [GND]",
+                            "pos": {
+                                "x": 194.31,
+                                "y": 140.97
+                            },
+                            "uuid": "0b958e5c-7967-4e99-9d49-920374f2a493"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR906 [GND]",
+                            "pos": {
+                                "x": 207.01,
+                                "y": 120.65
+                            },
+                            "uuid": "bcf4c9c0-c37e-4fd5-9241-e67b156006a8"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR907 [GND]",
+                            "pos": {
+                                "x": 207.01,
+                                "y": 133.35
+                            },
+                            "uuid": "f1b7e187-0903-42fe-bbb3-b5b5ba44e70a"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR221 [GND]",
+                            "pos": {
+                                "x": 35.56,
+                                "y": 38.1
+                            },
+                            "uuid": "c5e8d05b-01ec-460d-8458-f59389723254"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR224 [GND]",
+                            "pos": {
+                                "x": 45.72,
+                                "y": 124.46
+                            },
+                            "uuid": "34ae70df-b202-4301-9f8d-aa9c96ce4db1"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR223 [GND]",
+                            "pos": {
+                                "x": 48.26,
+                                "y": 49.53
+                            },
+                            "uuid": "fec72fe6-6325-4c84-aeed-7ec08bb194b4"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR225 [GND]",
+                            "pos": {
+                                "x": 55.88,
+                                "y": 134.62
+                            },
+                            "uuid": "781e2007-fc50-48b0-adb6-130bfa2026ef"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR222 [GND]",
+                            "pos": {
+                                "x": 66.04,
+                                "y": 55.88
+                            },
+                            "uuid": "e687a89b-d792-411d-8ab9-8632809a9459"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR226 [GND]",
+                            "pos": {
+                                "x": 88.9,
+                                "y": 139.7
+                            },
+                            "uuid": "4944dfb6-fd4a-4d07-a3ba-2fb8e13574d3"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR220 [GND]",
+                            "pos": {
+                                "x": 93.98,
+                                "y": 55.88
+                            },
+                            "uuid": "3ea920aa-51c5-4461-8ab8-021f810db530"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR227 [GND]",
+                            "pos": {
+                                "x": 104.14,
+                                "y": 139.7
+                            },
+                            "uuid": "24329a17-3f4f-448d-8c9d-48e071a2d423"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR102 [GND]",
+                            "pos": {
+                                "x": 105.41,
+                                "y": 53.34
+                            },
+                            "uuid": "beeb0701-4299-4f85-a842-58432ba5f43b"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR104 [GND]",
+                            "pos": {
+                                "x": 120.65,
+                                "y": 99.06
+                            },
+                            "uuid": "59165da5-8a8c-46d7-9ca9-dd9f3d36083f"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR105 [GND]",
+                            "pos": {
+                                "x": 151.13,
+                                "y": 99.06
+                            },
+                            "uuid": "4c47d943-3f0c-4e56-9121-ee58ea914bd6"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR106 [GND]",
+                            "pos": {
+                                "x": 156.21,
+                                "y": 119.38
+                            },
+                            "uuid": "613fb54f-bcaa-4b24-9349-4412a72ee5c8"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR103 [GND]",
+                            "pos": {
+                                "x": 175.26,
+                                "y": 52.07
+                            },
+                            "uuid": "b50ac61f-9274-4eae-9cf4-6782873190d0"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR108 [GND]",
+                            "pos": {
+                                "x": 198.12,
+                                "y": 109.22
+                            },
+                            "uuid": "6efec175-11d1-4ab0-822c-905629d39137"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR107 [GND]",
+                            "pos": {
+                                "x": 200.66,
+                                "y": 95.25
+                            },
+                            "uuid": "e2ab13c9-e04c-4837-b073-9ef37615651c"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR110 [GND]",
+                            "pos": {
+                                "x": 215.9,
+                                "y": 81.28
+                            },
+                            "uuid": "ebccb87e-1c5e-404e-9cb0-d21e9d374ac1"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR113 [GND]",
+                            "pos": {
+                                "x": 215.9,
+                                "y": 116.84
+                            },
+                            "uuid": "94d40e17-f43e-4f6a-a102-fb0c10654ad9"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR116 [GND]",
+                            "pos": {
+                                "x": 215.9,
+                                "y": 154.94
+                            },
+                            "uuid": "7478b22c-28c5-4619-8997-08e1934517c6"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR112 [GND]",
+                            "pos": {
+                                "x": 265.43,
+                                "y": 99.06
+                            },
+                            "uuid": "956091f2-7283-4a71-9d38-3804077887c4"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR115 [GND]",
+                            "pos": {
+                                "x": 265.43,
+                                "y": 132.08
+                            },
+                            "uuid": "0547c85d-0a8c-41bb-8fba-ee61322c7a9c"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR118 [GND]",
+                            "pos": {
+                                "x": 265.43,
+                                "y": 157.48
+                            },
+                            "uuid": "991bde77-04ce-44c5-962f-4f584ebf354d"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR142 [GND]",
+                            "pos": {
+                                "x": 69.85,
+                                "y": 135.89
+                            },
+                            "uuid": "85e64399-c083-44b0-a6f6-3d35296b4ffb"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR140 [GND]",
+                            "pos": {
+                                "x": 76.2,
+                                "y": 67.31
+                            },
+                            "uuid": "003910e9-2641-4c23-9d49-bb4c07d94c93"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'Device' was not found at '/home/chithi/kicad-libs/symbols/Device.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol L2 [L]",
+                            "pos": {
+                                "x": 139.7,
+                                "y": 76.2
+                            },
+                            "uuid": "1405641c-3068-4042-8035-9969076861ed"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR143 [GND]",
+                            "pos": {
+                                "x": 139.7,
+                                "y": 118.11
+                            },
+                            "uuid": "859bf2de-f543-4af8-8b75-4a588a25499b"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR144 [GND]",
+                            "pos": {
+                                "x": 187.96,
+                                "y": 127.0
+                            },
+                            "uuid": "7891676b-5b43-4147-873a-887651399180"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR145 [GND]",
+                            "pos": {
+                                "x": 208.28,
+                                "y": 90.17
+                            },
+                            "uuid": "a5f322f5-a14c-4dfb-8992-2f542b356e1c"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR146 [GND]",
+                            "pos": {
+                                "x": 231.14,
+                                "y": 90.17
+                            },
+                            "uuid": "58520bdb-dee6-4cfc-a926-496c70eba951"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR1204 [GND]",
+                            "pos": {
+                                "x": 63.5,
+                                "y": 137.16
+                            },
+                            "uuid": "78f81571-a895-4897-bcbb-4e18ae37c8d4"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR1201 [GND]",
+                            "pos": {
+                                "x": 66.04,
+                                "y": 157.48
+                            },
+                            "uuid": "a0d518cf-451b-4f81-a3fe-fe27485e3546"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR1203 [GND]",
+                            "pos": {
+                                "x": 76.2,
+                                "y": 152.4
+                            },
+                            "uuid": "d1e72dad-c667-465e-83e9-60bca91b8acf"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR1213 [GND]",
+                            "pos": {
+                                "x": 83.82,
+                                "y": 124.46
+                            },
+                            "uuid": "747b8ecb-e4aa-4f1f-9db7-e1c055fa1a1f"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR1205 [GND]",
+                            "pos": {
+                                "x": 86.36,
+                                "y": 132.08
+                            },
+                            "uuid": "dc0bdf9b-dc7c-4b73-a2b8-cca37dabe3ca"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR1206 [GND]",
+                            "pos": {
+                                "x": 86.36,
+                                "y": 139.7
+                            },
+                            "uuid": "6ff4ee01-6862-4385-8315-d071f74709c0"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR1202 [GND]",
+                            "pos": {
+                                "x": 86.36,
+                                "y": 157.48
+                            },
+                            "uuid": "2344bac7-89dc-460a-bf13-f87155fe7f3b"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR601 [GND]",
+                            "pos": {
+                                "x": 96.52,
+                                "y": 125.73
+                            },
+                            "uuid": "3282b509-7b2f-4dd8-947d-d1d581d2de96"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR603 [GND]",
+                            "pos": {
+                                "x": 113.03,
+                                "y": 73.66
+                            },
+                            "uuid": "85b3dac1-40d8-41c9-8f3e-823c3619fd57"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR602 [GND]",
+                            "pos": {
+                                "x": 125.73,
+                                "y": 73.66
+                            },
+                            "uuid": "d0900006-a9c6-4102-aced-614d4a4741da"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR912 [GND]",
+                            "pos": {
+                                "x": 129.54,
+                                "y": 171.45
+                            },
+                            "uuid": "cae2a3f3-77ae-4279-a875-13e8fb813275"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR610 [GND]",
+                            "pos": {
+                                "x": 182.88,
+                                "y": 71.12
+                            },
+                            "uuid": "80690dfe-7ab6-40b6-9bc4-8e4e387e35b5"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR605 [GND]",
+                            "pos": {
+                                "x": 185.42,
+                                "y": 83.82
+                            },
+                            "uuid": "52ede1ec-7718-4e2e-8c76-a154ffae9f58"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'Connector_Generic' was not found at '/home/chithi/kicad-libs/symbols/Connector_Generic.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol J7 [Conn_01x06]",
+                            "pos": {
+                                "x": 190.5,
+                                "y": 66.04
+                            },
+                            "uuid": "fe4128b2-89f9-4515-a3a5-a88097a3b4cd"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR611 [GND]",
+                            "pos": {
+                                "x": 223.52,
+                                "y": 71.12
+                            },
+                            "uuid": "675791a8-0a46-4ab2-ae45-5130fb60463e"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'Connector_Generic' was not found at '/home/chithi/kicad-libs/symbols/Connector_Generic.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol J6 [Conn_01x04]",
+                            "pos": {
+                                "x": 228.6,
+                                "y": 66.04
+                            },
+                            "uuid": "86c55ad8-b633-4eb0-abee-648772657874"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR703 [GND]",
+                            "pos": {
+                                "x": 71.12,
+                                "y": 139.7
+                            },
+                            "uuid": "ecac08cf-7b45-4990-b77f-7368b3f8d3a0"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR702 [GND]",
+                            "pos": {
+                                "x": 81.28,
+                                "y": 111.76
+                            },
+                            "uuid": "91a94027-7d4b-42e5-9697-a3482da7367d"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR704 [GND]",
+                            "pos": {
+                                "x": 81.28,
+                                "y": 144.78
+                            },
+                            "uuid": "5451e096-6dc6-42ac-bd06-3dc5b0977e42"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR701 [GND]",
+                            "pos": {
+                                "x": 93.98,
+                                "y": 76.2
+                            },
+                            "uuid": "bdaa68e1-84ca-4d76-a8d6-81a7f3308f8d"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR708 [GND]",
+                            "pos": {
+                                "x": 106.68,
+                                "y": 152.4
+                            },
+                            "uuid": "65e1b6e1-c055-4249-8d01-3e3e7fa7e820"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR705 [GND]",
+                            "pos": {
+                                "x": 137.16,
+                                "y": 160.02
+                            },
+                            "uuid": "aeabc8fe-9632-4095-b6f6-7dedd099f42f"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR706 [GND]",
+                            "pos": {
+                                "x": 147.32,
+                                "y": 160.02
+                            },
+                            "uuid": "504657e5-1a87-4ffe-a33c-c114f708a557"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR707 [GND]",
+                            "pos": {
+                                "x": 157.48,
+                                "y": 160.02
+                            },
+                            "uuid": "faa467a5-9506-4295-b961-076ca1d6afb3"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR709 [GND]",
+                            "pos": {
+                                "x": 170.18,
+                                "y": 96.52
+                            },
+                            "uuid": "a17b2b2c-6360-4aeb-83cd-83590ae0b2d4"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR712 [GND]",
+                            "pos": {
+                                "x": 180.34,
+                                "y": 124.46
+                            },
+                            "uuid": "ec3a5174-1f27-42e8-bf1f-dd14d86ae87f"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR713 [GND]",
+                            "pos": {
+                                "x": 180.34,
+                                "y": 137.16
+                            },
+                            "uuid": "fe96fbf6-793c-4a3b-b70d-a32fa93369cb"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR710 [GND]",
+                            "pos": {
+                                "x": 187.96,
+                                "y": 109.22
+                            },
+                            "uuid": "8e393622-8096-404e-b48f-1482ef0ce661"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'Device' was not found at '/home/chithi/kicad-libs/symbols/Device.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol Y170 [Crystal_GND24]",
+                            "pos": {
+                                "x": 198.12,
+                                "y": 88.9
+                            },
+                            "uuid": "01cf8537-1ade-493f-bb95-3d928e571550"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The symbol library 'power' was not found at '/home/chithi/kicad-libs/symbols/power.kicad_sym'",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR711 [GND]",
+                            "pos": {
+                                "x": 198.12,
+                                "y": 93.98
+                            },
+                            "uuid": "d8df608c-a289-4c3d-9b0e-38a0fd384ec9"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                }
+            ]
+        },
+        {
+            "path": "/USB_PD/",
+            "uuid_path": "/feda53ed-537d-4f88-9436-c6075776255b/f38b7023-3d53-43ea-b3db-e2c826d87b35",
+            "violations": [
+                {
+                    "comment": "By design: U11 (TPS25730D) pin 38 VIN_3V3 is unused and pulled to GND through R12 100k (net VIN_LOW), as on the TI EVM; the core runs from the internal VBUS LDO. No supply drives the pin, so a PWR_FLAG would misstate the net. Keyed to U11 pin position and sheet path; re-check if U11 moves. See ai-files/reports/erc-cleanup.md.",
+                    "description": "Input Power pin not driven by any Output Power pins",
+                    "excluded": true,
+                    "items": [
+                        {
+                            "description": "Symbol U11 Pin 38 [VIN_3V3, Power input, Line]",
+                            "pos": {
+                                "x": 184.15,
+                                "y": 71.12
+                            },
+                            "uuid": "abd26e7f-62be-4d53-a91b-735f5442d1e2"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "power_pin_not_driven"
+                }
+            ]
+        },
+        {
+            "path": "/Battery_Charger/",
+            "uuid_path": "/feda53ed-537d-4f88-9436-c6075776255b/a7066d55-4393-49f1-9dcb-c2e9f1db9549",
+            "violations": [
+                {
+                    "description": "Local and global labels have same name",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR046 Pin 1 [Power input, Line]",
+                            "pos": {
+                                "x": 111.76,
+                                "y": 185.42
+                            },
+                            "uuid": "0210dd98-d18d-4054-971a-457222f943cc"
+                        },
+                        {
+                            "description": "Label 'GND'",
+                            "pos": {
+                                "x": 76.2,
+                                "y": 257.81
+                            },
+                            "uuid": "51dc3f4f-f0dd-4468-a87c-cd3646434a9f"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "same_local_global_label"
+                }
+            ]
+        },
+        {
+            "path": "/Fuel_Gauge_Power/",
+            "uuid_path": "/feda53ed-537d-4f88-9436-c6075776255b/9c37a727-9991-421a-8f6e-77dd39bb53fa",
+            "violations": []
+        },
+        {
+            "path": "/Bluetooth_Power/",
+            "uuid_path": "/feda53ed-537d-4f88-9436-c6075776255b/f761c113-2c86-429a-8773-5f4b423ef275",
+            "violations": []
+        },
+        {
+            "path": "/Logic_Audio_Power/",
+            "uuid_path": "/feda53ed-537d-4f88-9436-c6075776255b/31d56ed5-71f9-4c5a-b590-b5d5119f00f9",
+            "violations": []
+        },
+        {
+            "path": "/MCU/",
+            "uuid_path": "/feda53ed-537d-4f88-9436-c6075776255b/4ab2b160-efba-45d8-be2c-c7b2862cfacf",
+            "violations": []
+        },
+        {
+            "path": "/USB_Audio/",
+            "uuid_path": "/feda53ed-537d-4f88-9436-c6075776255b/54e0bbc5-df7c-4047-acfa-4732ab128bc4",
+            "violations": []
+        },
+        {
+            "path": "/Bluetooth/",
+            "uuid_path": "/feda53ed-537d-4f88-9436-c6075776255b/cc34ef9a-e98e-4641-98b8-a2a9303b711c",
+            "violations": []
+        },
+        {
+            "path": "/Source_Select_ADC/",
+            "uuid_path": "/feda53ed-537d-4f88-9436-c6075776255b/d9a0d73a-f008-4736-b4b9-6b3427051836",
+            "violations": []
+        },
+        {
+            "path": "/Headphone_Aux/",
+            "uuid_path": "/feda53ed-537d-4f88-9436-c6075776255b/07901b33-a7e7-4327-b949-fc2abc1e14b5",
+            "violations": []
+        },
+        {
+            "path": "/Amplifiers/",
+            "uuid_path": "/feda53ed-537d-4f88-9436-c6075776255b/1c0e824e-98ce-4806-8137-f590f469c175",
+            "violations": []
+        }
+    ],
+    "source": "DesktopSpeaker.kicad_sch"
+}

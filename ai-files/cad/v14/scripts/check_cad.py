@@ -1,0 +1,171 @@
+"""Interference + volume + clearance check.  Run: freecadcmd ai-files/cad/check_cad.py  -> interference.md, volumes.md, work/check.json"""
+import json, itertools, os, Part, FreeCAD as App
+from FreeCAD import Vector as V
+import os
+CAD = os.environ.get('CAD_OUT', '/home/chithi/Desktop/DesktopSpeaker/ai-files/cad/v14/').rstrip('/') + '/'; W = CAD + 'work/'
+m = json.load(open(W + 'meta.json')); P = m['params']; DETAIL = m.get('detail', False)
+S = {o['name']: (o, Part.read(W + 'brep/' + o['file'])) for o in m['objs']}
+names = list(S)
+def intended(a, b):
+    ga, gb = S[a][0]['group'], S[b][0]['group']
+    pair = {ga, gb}
+    if pair == {'pcb', 'pcb_parts'}:
+        return 'through-hole/mid-mount pins and body below PCB top (model pins sit in the board)'
+    ia, ib = a.startswith('Insert_M3x5.7_'), b.startswith('Insert_M3x5.7_')
+    if (ia and gb in ('shell', 'insert')) or (ib and ga in ('shell', 'insert')):
+        return 'heat-set insert (OD 4.6) melted into a 4.0 mm pilot'
+    if {a, b} == {'Knob_D30x14_standin', 'PCB_SW102'}:
+        return 'knob on the encoder D-shaft (fit; the stand-in bore is round)'
+    # v13: models-v13 inserts/spacers/studs carry the 2.5 mm thread minor bore, screws/studs the 3.0 mm major: thread engagement
+    sa_, sb_ = site_of(a), site_of(b)
+    if sa_ and sa_ == sb_ and {a.split('_')[0], b.split('_')[0]} in ({'Screw', 'Insert'}, {'Screw', 'Standoff'}, {'Foot', 'Insert'}):
+        return 'M3 thread engaged in the insert / spacer thread (modelled plain: male 3.0 vs female minor 2.5)'
+    return None
+SITES = sorted([s_['name'] for s_ in m['sites']], key=len, reverse=True)
+def site_of(n):
+    for sn in SITES:
+        if n.endswith('_' + sn):
+            return sn
+    return None
+rows = []; intend = []
+THR = 0.5
+for a, b in itertools.combinations(names, 2):
+    sa, sb = S[a][1], S[b][1]
+    if not sa.BoundBox.intersect(sb.BoundBox): continue
+    try: v = sa.common(sb).Volume
+    except Exception as e: v = -1
+    if v > THR or v < 0:
+        why = intended(a, b)
+        (intend if why else rows).append((a, b, round(v, 2), why))
+rows.sort(key=lambda r: -r[2]); intend.sort(key=lambda r: -r[2])
+# ---- volumes
+t = P['wall']; Wd, Hd, Dd = P['W'], P['H'], P['D']; YB = P.get('YB', Dd - t)
+def box(x0, x1, y0, y1, z0, z1): return Part.makeBox(x1 - x0, y1 - y0, z1 - z0, V(x0, y0, z0))
+cav = box(-Wd / 2 + t, Wd / 2 - t, t, YB, t, Hd - t)
+chx = P['ch_x']; RB = P['ch_top'] + P['roof']
+ch_in = box(-chx, chx, P['ch_y0'] + t, YB, t, P['ch_top'])
+FRONT_AIR = None
+if os.path.exists(W + 'woofer_front_air.brep'):       # v13: air in front of the cone belongs to the outside, not to the sealed chamber
+    FRONT_AIR = Part.read(W + 'woofer_front_air.brep')
+    ch_in = ch_in.cut(FRONT_AIR)
+ch_out = box(-chx - t, chx + t, P['ch_y0'], YB, t, RB)
+main = cav.cut(ch_out)
+import os
+DISH = m.get('dish')
+env = None
+if DISH and os.path.exists(W + 'dish_envelope.brep'):
+    env = Part.read(W + 'dish_envelope.brep')
+    main_nodish = main
+    main = main.cut(env)          # dish well + pocket air are outside the main chamber
+def disp(region):
+    tot = 0; items = []
+    for n, (o, s) in S.items():
+        if not s.BoundBox.intersect(region.BoundBox): continue
+        v = s.common(region).Volume
+        if v > 0.5: items.append((n, v)); tot += v
+    return tot, items
+dw, iw = disp(ch_in); dm, im = disp(main)
+gw, gm = ch_in.Volume, main.Volume
+# ---- clearances (battery, harness, lid cutouts)
+def dist(a, b):
+    return S[a][1].distToShape(S[b][1])[0] if a in S and b in S else None
+clr = []
+pcb = [n for n in S if S[n][0]['group'] == 'pcb'][0]
+for c in ('Battery_Cell1_21700_50S', 'Battery_Cell2_21700_50S', 'Battery_PCM_board'):
+    for o in ('Driver_FrontL_ND65-4', 'Driver_FrontR_ND65-4', pcb):
+        clr.append(dict(a=c, b=o, mm=round(dist(c, o), 2), need=3.0))
+# v13: woofer (square frame) vs the chamber insert, the lid and the PCB screw bosses/screws; the harness end at the pigtail rib
+wf = [n for n in S if n.startswith('Woofer_')]
+if wf:
+    for o in ['Insert_woofer_chamber', 'Lid_rear'] + [n for n in S if n.startswith(('Screw_M3x16_PcbScrew', 'Insert_M3x5.7_PcbScrew', 'Insert_M3x5.7_LidScrew_6', 'Insert_M3x5.7_LidScrew_7',
+                                                                            'Screw_M3x10_LidScrew_6', 'Screw_M3x10_LidScrew_7', 'Grommet_', 'Harness_woofer'))]:
+        if o in S:
+            d_ = dist(wf[0], o)
+            if d_ is not None and d_ < 15:
+                clr.append(dict(a=wf[0], b=o, mm=round(d_, 2), need=0.5))
+harness = [n for n in S if n.startswith('Harness_')]
+for h in harness:
+    if 'woofer' in h: continue      # woofer leads enter the chamber through the grommet by design
+    clr.append(dict(a=h, b='woofer chamber air (sealed)', mm=round(S[h][1].distToShape(ch_in)[0], 2), need=0.01))
+    if 'Insert_woofer_chamber' in S and 'woofer' not in h:
+        clr.append(dict(a=h, b='Insert_woofer_chamber', mm=round(dist(h, 'Insert_woofer_chamber'), 2), need=0.01))
+dishc = []
+if env is not None:
+    for n, (o, sh) in S.items():
+        if n in ('Shell_Box',) or n.startswith('Knob_'): continue
+        if not sh.BoundBox.isValid(): continue
+        bb = env.BoundBox; bb.enlarge(15)
+        if not bb.intersect(sh.BoundBox): continue
+        near = [so for so in (sh.Solids or [sh]) if bb.intersect(so.BoundBox)]
+        if near:
+            dishc.append((round(min(env.distToShape(so)[0] for so in near), 2), n))
+    dishc.sort()
+    for x, z, nm in [(s_['p'][0], s_['p'][2], s_['name']) for s_ in m['sites'] if s_['kind'] == 'lid']:
+        pass
+lidc = []
+conn = {'J1': 'PCB_J1_USB-C', 'J2': 'PCB_J2_3.5mm_jack', 'J3': 'PCB_J3_3.5mm_jack', 'SW100': 'PCB_SW100_plunger', 'SW101': 'SW101_rocker_D20_standin'}
+for c_ in m.get('lid_cutouts', []):
+    if c_.get('src'):
+        conn[c_['ref']] = c_['src']
+conn['SW101'] = [n for n in S if n.startswith('SW101')][0]
+lid = S['Lid_rear'][1]
+for c in m.get('lid_cutouts', []):
+    cs = S[conn[c['ref']]][1]
+    d_all = lid.distToShape(cs)[0]
+    bw, bh = c['body']
+    if c['shape'] == 'rrect':
+        radial = min((c['w'] - bw) / 2, (c['h'] - bh) / 2)
+    else:
+        radial = (c['d'] - max(bw, bh)) / 2
+    # radial clearance measured in the lid: connector section inside the lid slab vs the lid
+    slab = box(-500, 500, YB - 0.01, Dd + 5, -500, 500)
+    inside = cs.common(slab)
+    d_wall = lid.distToShape(inside)[0] if inside.Volume > 1e-4 else None
+    lidc.append(dict(ref=c['ref'], kind=c['kind'], cut=(c.get('w'), c.get('h')) if c['shape'] == 'rrect' else c['d'],
+                     centre=(round(c['cx'], 2), round(c['cz'], 2)), body_section=c['body'], radial_margin=round(radial, 2),
+                     min_dist_connector_to_lid=round(d_all, 2), enters_lid=inside.Volume > 1e-4, wall_clearance=None if d_wall is None else round(d_wall, 2),
+                     body_ymax=c.get('body_ymax'), ok=('panel fit (snap-in body sits in the hole by design)' if c['ref'] == 'SW101' else radial >= 1.0)))
+out = dict(woof_front_air=(FRONT_AIR.Volume if FRONT_AIR is not None else 0), woof_gross=gw, woof_disp=dw, woof_net=gw - dw, main_gross=gm, main_disp=dm, main_net=gm - dm, total_internal=cav.Volume,
+           ext=Wd * Hd * Dd, dish=DISH, dish_clear=dishc[:12], dish_loss=(main_nodish.Volume - main.Volume) if env is not None else 0, items_w=iw, items_m=im, overlaps=rows, intended=intend, clearances=clr, lid_cutouts=lidc)
+json.dump(out, open(W + 'check.json', 'w'), indent=1)
+with open(CAD + 'volumes.md', 'w') as f:
+    f.write('# Internal volumes (generated by check_cad.py, %s)\n\nOuter %.0f x %.0f x %.1f mm (X x Z x Y, lid included), wall %.0f mm, lid %.0f mm; external volume %.2f L; total internal cavity %.3f L.\n\n'
+            % ('v14 print-ready (DETAIL=1)' if DETAIL else 'v11 refresh (DETAIL=0)', Wd, Hd, Dd, t, P.get('lid_t', t), Wd * Hd * Dd / 1e6, cav.Volume / 1e6))
+    f.write('| Chamber | Gross (L) | Displaced by parts/bosses/pads (L) | Net (L) | Target |\n|---|---|---|---|---|\n')
+    f.write('| Woofer (sealed, own chamber; rear wall = lid) | %.3f | %.3f | **%.3f** | 0.45-0.60 |\n' % (gw / 1e6, dw / 1e6, (gw - dw) / 1e6))
+    if FRONT_AIR is not None:
+        f.write('| (excluded: air in front of the woofer cone, open to the outside through the aperture) | %.4f | | | |\n' % (FRONT_AIR.Volume / 1e6))
+    f.write('| Main (2 front drivers + battery + PCB, shared) | %.3f | %.3f | **%.3f** | >= 0.80 |\n\n' % (gm / 1e6, dm / 1e6, (gm - dm) / 1e6))
+    if env is not None:
+        f.write('Encoder knob dish (top wall, centre X %.2f Y %.2f): the well envelope removes %.4f L from the main gross volume (pocket air + well material).\n\n' % (DISH['cx'], DISH['cy'], (main_nodish.Volume - main.Volume) / 1e6))
+    f.write('Walls and partitions between the chambers are not counted in either (gross = air region bounded by the wall inner faces).\n\n')
+    for ttl, it in (('Woofer chamber displacement', iw), ('Main chamber displacement', im)):
+        f.write('## %s (mm3, >0.5)\n\n' % ttl)
+        for n, v in sorted(it, key=lambda x: -x[1])[:25]: f.write('- %s: %.0f\n' % (n, v))
+        f.write('\n')
+with open(CAD + 'interference.md', 'w') as f:
+    f.write('# Interference check (generated by check_cad.py, %s)\n\nPairwise Boolean common volume of all %d solids, threshold %.1f mm3.\n\n' % ('DETAIL=1' if DETAIL else 'DETAIL=0', len(names), THR))
+    f.write('## Unintended overlaps (%d)\n\n' % len(rows))
+    f.write('| A | B | mm3 |\n|---|---|---|\n')
+    for a, b, v, _ in rows: f.write('| %s | %s | %.2f |\n' % (a, b, v))
+    groups = {}
+    for a, b, v, why in intend: groups.setdefault(why, []).append((a, b, v))
+    f.write('\n## Intended overlaps (%d)\n\n' % len(intend))
+    for why, lst in groups.items():
+        f.write('### %s (%d)\n\n| A | B | mm3 |\n|---|---|---|\n' % (why, len(lst)))
+        for a, b, v in lst: f.write('| %s | %s | %.2f |\n' % (a, b, v))
+        f.write('\n')
+    f.write('## Clearances\n\n| A | B | min distance mm | required |\n|---|---|---|---|\n')
+    for c in clr: f.write('| %s | %s | %.2f | %s |\n' % (c['a'], c['b'], c['mm'], ('>= %.0f' % c['need']) if c['need'] >= 1 else '> 0 (no contact)'))
+    if dishc:
+        f.write('\n## Knob dish well envelope: nearest objects\n\n| Object | min distance mm |\n|---|---|\n')
+        for d_, n_ in dishc[:12]: f.write('| %s | %.2f |\n' % (n_, d_))
+    f.write('\n## Rear-lid cutouts vs connector bodies (1 mm radial clearance required)\n\n| Ref | Cutout | Centre X, Z | Body section W x H | Radial margin mm | Connector enters lid | Wall clearance in lid mm | Min distance connector-lid mm | OK |\n|---|---|---|---|---|---|---|---|---|\n')
+    for c in lidc:
+        f.write('| %s | %s %s | %.2f, %.2f | %.2f x %.2f | %.2f | %s | %s | %.2f | %s |\n' % (c['ref'], c['kind'], c['cut'], c['centre'][0], c['centre'][1], c['body_section'][0], c['body_section'][1],
+                c['radial_margin'], 'yes' if c['enters_lid'] else 'no', '-' if c['wall_clearance'] is None else '%.2f' % c['wall_clearance'], c['min_dist_connector_to_lid'], c['ok'] if isinstance(c['ok'], str) else ('yes' if c['ok'] else 'NO')))
+print('unintended', len(rows), 'intended', len(intend)); print(json.dumps({k: round(v / 1e6, 3) for k, v in out.items() if k.startswith(('woof', 'main', 'total'))}))
+for r in rows[:40]: print(r[:3])
+for c in clr: print('CLR', c)
+for c in lidc: print('LID', c)
+print('DISH', DISH, 'loss_L', round(out['dish_loss'] / 1e6, 4)); print('DISHCLR', dishc[:12])

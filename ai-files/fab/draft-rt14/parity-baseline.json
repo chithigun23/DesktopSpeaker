@@ -1,0 +1,3650 @@
+{
+ "source": "RT-14 (ai-files/pcb/work-route14/RT-14.kicad_pcb) vs project schematic, kicad-cli 10.0.7, 2026-11-03; identical to the RT-9p inherited set (243)",
+ "schematic_parity": [
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint D1",
+     "pos": {
+      "x": 145.23,
+      "y": 29.34
+     },
+     "uuid": "5eb211cb-cf4c-4bbf-a3a3-6d9dd49540aa"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint J1",
+     "pos": {
+      "x": 148.98,
+      "y": 23.885
+     },
+     "uuid": "2fd90744-79dc-4ad6-9a66-2ac6420def29"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Field 'Datasheet' differs (PCB: '', Schematic: '${KIPRJMOD}/../ai-files/datasheets/TDK_C2012X7R1H475KT0A0E.pdf')",
+   "items": [
+    {
+     "description": "Footprint C5",
+     "pos": {
+      "x": 145.78,
+      "y": 35.65
+     },
+     "uuid": "a529d13c-def3-432a-94c3-6682ccc05524"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'Manufacturer' in footprint",
+   "items": [
+    {
+     "description": "Footprint C6",
+     "pos": {
+      "x": 131.77,
+      "y": 52.8
+     },
+     "uuid": "503da9ab-0b75-4f9e-bb69-620f621a91fc"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'Manufacturer' in footprint",
+   "items": [
+    {
+     "description": "Footprint C181",
+     "pos": {
+      "x": 132.67,
+      "y": 57.0
+     },
+     "uuid": "52b20231-c89e-487f-b97c-0dbda5f44da5"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'Manufacturer' in footprint",
+   "items": [
+    {
+     "description": "Footprint C184",
+     "pos": {
+      "x": 135.5,
+      "y": 50.9
+     },
+     "uuid": "91122ae5-8ae2-44da-9e44-f59b56fdf50d"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'Manufacturer' in footprint",
+   "items": [
+    {
+     "description": "Footprint D5",
+     "pos": {
+      "x": 153.73,
+      "y": 31.855
+     },
+     "uuid": "de05ed25-bb34-495e-88bf-3ed753d1d91e"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'Manufacturer' in footprint",
+   "items": [
+    {
+     "description": "Footprint D7",
+     "pos": {
+      "x": 146.325,
+      "y": 59.1
+     },
+     "uuid": "95abdaa5-d52d-4942-bcab-a8c4560fdc0a"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'Manufacturer' in footprint",
+   "items": [
+    {
+     "description": "Footprint R11",
+     "pos": {
+      "x": 135.7,
+      "y": 61.53
+     },
+     "uuid": "0ca9acec-f784-472e-8b18-c47ee065fb62"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'Manufacturer' in footprint",
+   "items": [
+    {
+     "description": "Footprint R12",
+     "pos": {
+      "x": 132.1,
+      "y": 48.3
+     },
+     "uuid": "17e96f42-7930-4d72-b557-2206f32b0d6d"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'Manufacturer' in footprint",
+   "items": [
+    {
+     "description": "Footprint R13",
+     "pos": {
+      "x": 139.67,
+      "y": 60.2
+     },
+     "uuid": "28c47e9a-b73d-4c73-863b-aa40c7991df4"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'Manufacturer' in footprint",
+   "items": [
+    {
+     "description": "Footprint R14",
+     "pos": {
+      "x": 133.27,
+      "y": 60.8
+     },
+     "uuid": "7f80ee62-8a62-41ea-a6d1-f6a1a2644e44"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'Manufacturer' in footprint",
+   "items": [
+    {
+     "description": "Footprint R15",
+     "pos": {
+      "x": 131.97,
+      "y": 61.25
+     },
+     "uuid": "b432cd31-572c-45c2-81e9-d15616293a4d"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'Manufacturer' in footprint",
+   "items": [
+    {
+     "description": "Footprint R16",
+     "pos": {
+      "x": 130.67,
+      "y": 56.2
+     },
+     "uuid": "e678a75b-f592-46a0-853d-169e47c73b96"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'Manufacturer' in footprint",
+   "items": [
+    {
+     "description": "Footprint R17",
+     "pos": {
+      "x": 138.32,
+      "y": 61.6
+     },
+     "uuid": "5b1143d4-1c5d-474a-be6a-c9a8032c9302"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'Manufacturer' in footprint",
+   "items": [
+    {
+     "description": "Footprint R18",
+     "pos": {
+      "x": 133.6,
+      "y": 48.3
+     },
+     "uuid": "1dc6ca06-4601-41e5-9804-384ffc7e6b7c"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Footprint attributes don't match symbol: 'Exclude from bill of materials' settings differ",
+   "items": [
+    {
+     "description": "Footprint TP1",
+     "pos": {
+      "x": 142.2,
+      "y": 48.875
+     },
+     "uuid": "1443cb2d-10af-4829-908b-ec34d0ea1ce3"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_mismatch"
+  },
+  {
+   "description": "Field 'Description' differs (PCB: '', Schematic: 'Debug test point (excluded from BOM; hand-fitted loop)')",
+   "items": [
+    {
+     "description": "Footprint TP1",
+     "pos": {
+      "x": 142.2,
+      "y": 48.875
+     },
+     "uuid": "1443cb2d-10af-4829-908b-ec34d0ea1ce3"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Footprint attributes don't match symbol: 'Exclude from bill of materials' settings differ",
+   "items": [
+    {
+     "description": "Footprint TP5",
+     "pos": {
+      "x": 131.475,
+      "y": 64.1
+     },
+     "uuid": "8afbbc95-d0ad-4727-b500-5f01097f8b77"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_mismatch"
+  },
+  {
+   "description": "Field 'Description' differs (PCB: '', Schematic: 'Debug test point (excluded from BOM; hand-fitted loop)')",
+   "items": [
+    {
+     "description": "Footprint TP5",
+     "pos": {
+      "x": 131.475,
+      "y": 64.1
+     },
+     "uuid": "8afbbc95-d0ad-4727-b500-5f01097f8b77"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Footprint attributes don't match symbol: 'Exclude from bill of materials' settings differ",
+   "items": [
+    {
+     "description": "Footprint TP23",
+     "pos": {
+      "x": 137.398726,
+      "y": 65.599999
+     },
+     "uuid": "836258e2-6455-40a8-bfb9-06b7e74f82e7"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_mismatch"
+  },
+  {
+   "description": "Field 'Description' differs (PCB: '', Schematic: 'Debug test point (excluded from BOM; hand-fitted loop)')",
+   "items": [
+    {
+     "description": "Footprint TP23",
+     "pos": {
+      "x": 137.398726,
+      "y": 65.599999
+     },
+     "uuid": "836258e2-6455-40a8-bfb9-06b7e74f82e7"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'Manufacturer' in footprint",
+   "items": [
+    {
+     "description": "Footprint U11",
+     "pos": {
+      "x": 137.4,
+      "y": 55.8
+     },
+     "uuid": "58df927b-3cca-41a0-ab75-a17fb62b4581"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "No pad found for pin 21 (/Battery_Charger/VBUS_PD) in schematic",
+   "items": [
+    {
+     "description": "Footprint U11",
+     "pos": {
+      "x": 137.4,
+      "y": 55.8
+     },
+     "uuid": "58df927b-3cca-41a0-ab75-a17fb62b4581"
+    }
+   ],
+   "severity": "warning",
+   "type": "net_conflict"
+  },
+  {
+   "description": "No pad found for pin 22 (/Battery_Charger/VBUS_PD) in schematic",
+   "items": [
+    {
+     "description": "Footprint U11",
+     "pos": {
+      "x": 137.4,
+      "y": 55.8
+     },
+     "uuid": "58df927b-3cca-41a0-ab75-a17fb62b4581"
+    }
+   ],
+   "severity": "warning",
+   "type": "net_conflict"
+  },
+  {
+   "description": "No pad found for pin 24 (/USB_VBUS) in schematic",
+   "items": [
+    {
+     "description": "Footprint U11",
+     "pos": {
+      "x": 137.4,
+      "y": 55.8
+     },
+     "uuid": "58df927b-3cca-41a0-ab75-a17fb62b4581"
+    }
+   ],
+   "severity": "warning",
+   "type": "net_conflict"
+  },
+  {
+   "description": "No pad found for pin 25 (/USB_VBUS) in schematic",
+   "items": [
+    {
+     "description": "Footprint U11",
+     "pos": {
+      "x": 137.4,
+      "y": 55.8
+     },
+     "uuid": "58df927b-3cca-41a0-ab75-a17fb62b4581"
+    }
+   ],
+   "severity": "warning",
+   "type": "net_conflict"
+  },
+  {
+   "description": "No pad found for pin 33 (/USB_VBUS) in schematic",
+   "items": [
+    {
+     "description": "Footprint U11",
+     "pos": {
+      "x": 137.4,
+      "y": 55.8
+     },
+     "uuid": "58df927b-3cca-41a0-ab75-a17fb62b4581"
+    }
+   ],
+   "severity": "warning",
+   "type": "net_conflict"
+  },
+  {
+   "description": "No pad found for pin 35 (GND) in schematic",
+   "items": [
+    {
+     "description": "Footprint U11",
+     "pos": {
+      "x": 137.4,
+      "y": 55.8
+     },
+     "uuid": "58df927b-3cca-41a0-ab75-a17fb62b4581"
+    }
+   ],
+   "severity": "warning",
+   "type": "net_conflict"
+  },
+  {
+   "description": "Missing symbol field 'Manufacturer' in footprint",
+   "items": [
+    {
+     "description": "Footprint U19",
+     "pos": {
+      "x": 148.98,
+      "y": 37.502544
+     },
+     "uuid": "396252d7-6c47-410a-b9e8-24987cb780b4"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'LCSC' in footprint",
+   "items": [
+    {
+     "description": "Footprint C102",
+     "pos": {
+      "x": 146.92,
+      "y": 123.235
+     },
+     "uuid": "f599e668-bcac-4bbe-a797-cae61d35be8d"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Field 'Datasheet' differs (PCB: '${KIPRJMOD}/../ai-files/datasheets/YAGEO_C107093_CC0603KRX7R9BB473.pdf', Schematic: '${KIPRJMOD}/../ai-files/datasheets/Murata_GRM155R71H473KE14D.pdf')",
+   "items": [
+    {
+     "description": "Footprint C103",
+     "pos": {
+      "x": 147.9,
+      "y": 121.65
+     },
+     "uuid": "ce52cbfd-685f-45a7-adcd-1ecdfd2426c7"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'LCSC' in footprint",
+   "items": [
+    {
+     "description": "Footprint C104",
+     "pos": {
+      "x": 154.92,
+      "y": 116.53
+     },
+     "uuid": "9b694da8-b82b-4324-a01e-648c616384be"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'LCSC' in footprint",
+   "items": [
+    {
+     "description": "Footprint C105",
+     "pos": {
+      "x": 157.32,
+      "y": 116.53
+     },
+     "uuid": "1eb45fac-d0c6-45b5-ac03-cfe278c7b9f2"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'LCSC' in footprint",
+   "items": [
+    {
+     "description": "Footprint C106",
+     "pos": {
+      "x": 158.85,
+      "y": 122.84
+     },
+     "uuid": "35c85d46-c94b-4f56-9d57-1f41d4e2dd18"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'LCSC' in footprint",
+   "items": [
+    {
+     "description": "Footprint C107",
+     "pos": {
+      "x": 159.72,
+      "y": 116.53
+     },
+     "uuid": "aeb3f721-09df-47a2-8770-251e08d5698b"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'LCSC' in footprint",
+   "items": [
+    {
+     "description": "Footprint C109",
+     "pos": {
+      "x": 147.07,
+      "y": 127.19
+     },
+     "uuid": "d942d1ba-ebc7-44f2-b564-389d7dc513b7"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Field 'Datasheet' differs (PCB: 'https://www.yageo.com/upload/media/product/productspec/capacitor/CC0603KRX7R9BB473.pdf', Schematic: '${KIPRJMOD}/../ai-files/datasheets/Murata_GRM155R71H473KE14D.pdf')",
+   "items": [
+    {
+     "description": "Footprint C110",
+     "pos": {
+      "x": 155.6,
+      "y": 124.75
+     },
+     "uuid": "c4790f43-18c4-4abe-93e7-612c5a39bc0e"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'Manufacturer' in footprint",
+   "items": [
+    {
+     "description": "Footprint J5",
+     "pos": {
+      "x": 204.285,
+      "y": 101.605
+     },
+     "uuid": "c4b07e90-c8a7-4a2d-bd87-585999c469cf"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint L1",
+     "pos": {
+      "x": 151.57,
+      "y": 110.03
+     },
+     "uuid": "d99bb71f-c364-4b04-a038-6b91f2d4e826"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint Q101",
+     "pos": {
+      "x": 180.025,
+      "y": 110.735
+     },
+     "uuid": "1567b600-bedc-4a90-92d2-e33a87282d5f"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint Q102",
+     "pos": {
+      "x": 179.0875,
+      "y": 106.285
+     },
+     "uuid": "06bbdfb9-2bf7-4466-9b65-a903b43f779b"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint Q103",
+     "pos": {
+      "x": 172.525,
+      "y": 110.735
+     },
+     "uuid": "4a05ec1b-db36-4049-9a5d-f6dbbd1d3dde"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Field 'Datasheet' differs (PCB: '${KIPRJMOD}/../ai-files/datasheets/SAE_1RC0603F_series.pdf', Schematic: '${KIPRJMOD}/../ai-files/datasheets/UNI_ROYAL_0402WGF_series.pdf')",
+   "items": [
+    {
+     "description": "Footprint R100",
+     "pos": {
+      "x": 153.37,
+      "y": 128.93
+     },
+     "uuid": "ab6dc1c7-6a0e-4d3b-bd68-bcbe06ae7f50"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Field 'Datasheet' differs (PCB: '${KIPRJMOD}/../ai-files/datasheets/SAE_1RC0603F_series.pdf', Schematic: '${KIPRJMOD}/../ai-files/datasheets/Yageo_AC0402FR_series.pdf')",
+   "items": [
+    {
+     "description": "Footprint R101",
+     "pos": {
+      "x": 200.785,
+      "y": 104.105
+     },
+     "uuid": "e4b03386-0fc2-4ff5-b82c-49f6d4a091d0"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint R103",
+     "pos": {
+      "x": 152.27,
+      "y": 126.98
+     },
+     "uuid": "f7dd796b-1b09-4699-b2a8-ab97a77969db"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint R106",
+     "pos": {
+      "x": 122.4,
+      "y": 84.5
+     },
+     "uuid": "49238eb7-1136-46b9-8e1b-6f5c50af9ff3"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint R107",
+     "pos": {
+      "x": 164.69,
+      "y": 108.14
+     },
+     "uuid": "69b6d9be-f020-450e-8f2c-847d22293fab"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint R109",
+     "pos": {
+      "x": 182.86,
+      "y": 111.34
+     },
+     "uuid": "96d16409-960b-41fa-ae77-fc190a656404"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint R110",
+     "pos": {
+      "x": 176.59,
+      "y": 108.82
+     },
+     "uuid": "85fe4b8d-4c17-4118-a492-b3bbab4aaf59"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint R111",
+     "pos": {
+      "x": 181.69,
+      "y": 105.6
+     },
+     "uuid": "620f9efe-393d-4921-9fa8-947ba467e035"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint R113",
+     "pos": {
+      "x": 131.34,
+      "y": 24.745
+     },
+     "uuid": "cfe8657c-34cd-43f3-bbd5-7474a9253754"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'Manufacturer' in footprint",
+   "items": [
+    {
+     "description": "Footprint SW100",
+     "pos": {
+      "x": 136.07,
+      "y": 22.95
+     },
+     "uuid": "bea2c07d-52f3-4d67-a15b-293e9bd77088"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'Manufacturer' in footprint",
+   "items": [
+    {
+     "description": "Footprint SW101",
+     "pos": {
+      "x": 210.5,
+      "y": 86.805
+     },
+     "uuid": "3beb5f8a-f09e-4945-8954-308669825ef1"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Footprint attributes don't match symbol: 'Exclude from bill of materials' settings differ",
+   "items": [
+    {
+     "description": "Footprint TP2",
+     "pos": {
+      "x": 159.97,
+      "y": 126.485
+     },
+     "uuid": "51406a8a-eec6-4f4d-9215-33c5b26ff62a"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_mismatch"
+  },
+  {
+   "description": "Field 'Description' differs (PCB: '', Schematic: 'Debug test point (excluded from BOM; hand-fitted loop)')",
+   "items": [
+    {
+     "description": "Footprint TP2",
+     "pos": {
+      "x": 159.97,
+      "y": 126.485
+     },
+     "uuid": "51406a8a-eec6-4f4d-9215-33c5b26ff62a"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Footprint attributes don't match symbol: 'Exclude from bill of materials' settings differ",
+   "items": [
+    {
+     "description": "Footprint TP11",
+     "pos": {
+      "x": 153.17,
+      "y": 131.185
+     },
+     "uuid": "0d2bbbab-e692-4d90-95d3-fee56321afcc"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_mismatch"
+  },
+  {
+   "description": "Field 'Description' differs (PCB: '', Schematic: 'Debug test point (excluded from BOM; hand-fitted loop)')",
+   "items": [
+    {
+     "description": "Footprint TP11",
+     "pos": {
+      "x": 153.17,
+      "y": 131.185
+     },
+     "uuid": "0d2bbbab-e692-4d90-95d3-fee56321afcc"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Footprint attributes don't match symbol: 'Exclude from bill of materials' settings differ",
+   "items": [
+    {
+     "description": "Footprint TP26",
+     "pos": {
+      "x": 141.0,
+      "y": 90.9
+     },
+     "uuid": "c06135a9-123c-429f-a152-6f83e054dc12"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_mismatch"
+  },
+  {
+   "description": "Field 'Description' differs (PCB: '', Schematic: 'Debug test point (excluded from BOM; hand-fitted loop)')",
+   "items": [
+    {
+     "description": "Footprint TP26",
+     "pos": {
+      "x": 141.0,
+      "y": 90.9
+     },
+     "uuid": "c06135a9-123c-429f-a152-6f83e054dc12"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Footprint attributes don't match symbol: 'Exclude from bill of materials' settings differ",
+   "items": [
+    {
+     "description": "Footprint TP27",
+     "pos": {
+      "x": 144.25,
+      "y": 132.05
+     },
+     "uuid": "d14cbe32-ba3d-4923-8e2a-c66180f2d489"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_mismatch"
+  },
+  {
+   "description": "Field 'Description' differs (PCB: '', Schematic: 'Debug test point (excluded from BOM; hand-fitted loop)')",
+   "items": [
+    {
+     "description": "Footprint TP27",
+     "pos": {
+      "x": 144.25,
+      "y": 132.05
+     },
+     "uuid": "d14cbe32-ba3d-4923-8e2a-c66180f2d489"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint U4",
+     "pos": {
+      "x": 151.57,
+      "y": 122.185
+     },
+     "uuid": "349dc2cb-dcf9-4d40-a574-17150c24caab"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint C120",
+     "pos": {
+      "x": 100.6,
+      "y": 90.75
+     },
+     "uuid": "1b1cf2d2-cc02-4da4-b118-1a7a2d4f3e8d"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint C122",
+     "pos": {
+      "x": 112.41,
+      "y": 74.78
+     },
+     "uuid": "c74f8c4f-0407-4abe-92e6-ff162e16134b"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint C123",
+     "pos": {
+      "x": 115.0075,
+      "y": 74.83
+     },
+     "uuid": "e0d330d6-2201-49b7-9005-ac179312b251"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint C124",
+     "pos": {
+      "x": 90.55,
+      "y": 73.98
+     },
+     "uuid": "e7cb686c-11dc-4909-8918-6214cc3a5525"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint C125",
+     "pos": {
+      "x": 94.65,
+      "y": 73.98
+     },
+     "uuid": "b766d7e4-ee86-4531-a776-2d68a05da561"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'ki_keywords' in footprint",
+   "items": [
+    {
+     "description": "Footprint C126",
+     "pos": {
+      "x": 102.75,
+      "y": 81.7
+     },
+     "uuid": "a3cd53ad-6b9f-4063-abbb-b917c86d4c7e"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint C130",
+     "pos": {
+      "x": 102.91,
+      "y": 73.88
+     },
+     "uuid": "8f81200b-acff-4bc8-bd32-d6bbde819028"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint C131",
+     "pos": {
+      "x": 96.01,
+      "y": 81.28
+     },
+     "uuid": "09c48249-b7b1-4574-beda-d5a63b2c9c1d"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint C132",
+     "pos": {
+      "x": 100.81,
+      "y": 71.78
+     },
+     "uuid": "d3604b2d-c829-41d1-984f-5c43a33342f7"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint Q104",
+     "pos": {
+      "x": 107.61,
+      "y": 82.2275
+     },
+     "uuid": "0a0cd04d-3239-4ddf-8ea0-cf9e64ee9a9d"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'Manufacturer' in footprint",
+   "items": [
+    {
+     "description": "Footprint R125",
+     "pos": {
+      "x": 92.97,
+      "y": 77.08
+     },
+     "uuid": "799d1711-46ed-44dc-8566-73a2011179c3"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'ki_fp_filters' in footprint",
+   "items": [
+    {
+     "description": "Footprint R126",
+     "pos": {
+      "x": 103.61,
+      "y": 75.98
+     },
+     "uuid": "fe0228dd-748d-4575-aa09-10672a6f15c9"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'ki_fp_filters' in footprint",
+   "items": [
+    {
+     "description": "Footprint R127",
+     "pos": {
+      "x": 106.07,
+      "y": 79.63
+     },
+     "uuid": "89b41306-e158-4a6d-83e0-417e31648af4"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Footprint attributes don't match symbol: 'Exclude from bill of materials' settings differ",
+   "items": [
+    {
+     "description": "Footprint TP3",
+     "pos": {
+      "x": 104.0975,
+      "y": 87.2275
+     },
+     "uuid": "c8ed8357-78ad-47b3-a1e4-cd603ec17214"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_mismatch"
+  },
+  {
+   "description": "Field 'Description' differs (PCB: '', Schematic: 'Debug test point (excluded from BOM; hand-fitted loop)')",
+   "items": [
+    {
+     "description": "Footprint TP3",
+     "pos": {
+      "x": 104.0975,
+      "y": 87.2275
+     },
+     "uuid": "c8ed8357-78ad-47b3-a1e4-cd603ec17214"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Footprint attributes don't match symbol: 'Exclude from bill of materials' settings differ",
+   "items": [
+    {
+     "description": "Footprint TP4",
+     "pos": {
+      "x": 95.2775,
+      "y": 86.21
+     },
+     "uuid": "7cc1924b-6b7a-4446-acee-87df7a9edc49"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_mismatch"
+  },
+  {
+   "description": "Field 'Description' differs (PCB: '', Schematic: 'Debug test point (excluded from BOM; hand-fitted loop)')",
+   "items": [
+    {
+     "description": "Footprint TP4",
+     "pos": {
+      "x": 95.2775,
+      "y": 86.21
+     },
+     "uuid": "7cc1924b-6b7a-4446-acee-87df7a9edc49"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint U5",
+     "pos": {
+      "x": 100.11,
+      "y": 88.7275
+     },
+     "uuid": "9de0aea4-b4a9-4f50-9fbd-8df52651b2b4"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'Manufacturer' in footprint",
+   "items": [
+    {
+     "description": "Footprint U20",
+     "pos": {
+      "x": 92.61,
+      "y": 74.2275
+     },
+     "uuid": "3471c2ea-6ef5-4ff0-bcd7-c0678ab280bf"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'Manufacturer' in footprint",
+   "items": [
+    {
+     "description": "Footprint U21",
+     "pos": {
+      "x": 100.11,
+      "y": 82.2275
+     },
+     "uuid": "7ad17522-4abe-4819-ae4f-eadc7ff63eec"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'LCSC' in footprint",
+   "items": [
+    {
+     "description": "Footprint C150",
+     "pos": {
+      "x": 116.619999,
+      "y": 33.46
+     },
+     "uuid": "9d569a49-d995-4adf-9503-ff1a8b25da1b"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'LCSC' in footprint",
+   "items": [
+    {
+     "description": "Footprint C152",
+     "pos": {
+      "x": 117.55,
+      "y": 40.45
+     },
+     "uuid": "69001f27-1212-40aa-b9b7-9604f82fe04e"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'LCSC' in footprint",
+   "items": [
+    {
+     "description": "Footprint C153",
+     "pos": {
+      "x": 119.85,
+      "y": 40.45
+     },
+     "uuid": "c6aaba88-bb1f-43e4-8074-81e18bfd805d"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'LCSC' in footprint",
+   "items": [
+    {
+     "description": "Footprint C154",
+     "pos": {
+      "x": 113.36,
+      "y": 42.96
+     },
+     "uuid": "b33317e4-c016-4592-b62c-37acdf4ed6b2"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Field 'Datasheet' differs (PCB: '${KIPRJMOD}/../ai-files/datasheets/FOJAN_FRC0603_resistors.pdf', Schematic: '${KIPRJMOD}/../ai-files/datasheets/UNI_ROYAL_0402WGF_series.pdf')",
+   "items": [
+    {
+     "description": "Footprint R150",
+     "pos": {
+      "x": 113.2,
+      "y": 40.05
+     },
+     "uuid": "ffdcbc15-e8e4-444e-9c4c-c37bb02884b2"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Field 'Datasheet' differs (PCB: '${KIPRJMOD}/../ai-files/datasheets/Yageo_AC0603FR-0791KL.pdf', Schematic: '${KIPRJMOD}/../ai-files/datasheets/Yageo_AC0402FR_series.pdf')",
+   "items": [
+    {
+     "description": "Footprint R151",
+     "pos": {
+      "x": 113.27,
+      "y": 38.96
+     },
+     "uuid": "f8dcc31c-6386-4c39-898e-4c44e7991103"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint R152",
+     "pos": {
+      "x": 119.37,
+      "y": 32.96
+     },
+     "uuid": "47e66b36-504b-458e-93c4-892c3fba0275"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint R153",
+     "pos": {
+      "x": 115.97,
+      "y": 31.46
+     },
+     "uuid": "d2021bf3-5416-414f-b9f7-cb2f95df4346"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint R154",
+     "pos": {
+      "x": 118.02,
+      "y": 48.809999
+     },
+     "uuid": "7e118712-a64c-4682-ad16-d241588bec60"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Footprint attributes don't match symbol: 'Exclude from bill of materials' settings differ",
+   "items": [
+    {
+     "description": "Footprint TP9",
+     "pos": {
+      "x": 116.615,
+      "y": 46.565
+     },
+     "uuid": "570cc238-cd80-4dd5-8c50-620942355cdc"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_mismatch"
+  },
+  {
+   "description": "Field 'Description' differs (PCB: '', Schematic: 'Debug test point (excluded from BOM; hand-fitted loop)')",
+   "items": [
+    {
+     "description": "Footprint TP9",
+     "pos": {
+      "x": 116.615,
+      "y": 46.565
+     },
+     "uuid": "570cc238-cd80-4dd5-8c50-620942355cdc"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'LCSC' in footprint",
+   "items": [
+    {
+     "description": "Footprint C140",
+     "pos": {
+      "x": 90.63,
+      "y": 101.57
+     },
+     "uuid": "aea453fc-4292-49ce-98d2-24950ed2208c"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'LCSC' in footprint",
+   "items": [
+    {
+     "description": "Footprint C141",
+     "pos": {
+      "x": 93.87,
+      "y": 104.97
+     },
+     "uuid": "139606ca-806d-4ba3-a1ac-f64fb7d27328"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'LCSC' in footprint",
+   "items": [
+    {
+     "description": "Footprint C142",
+     "pos": {
+      "x": 97.9,
+      "y": 106.05
+     },
+     "uuid": "f894303c-b3a1-4479-a21b-7bdb4ec6e88b"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint R142",
+     "pos": {
+      "x": 91.9,
+      "y": 95.0
+     },
+     "uuid": "be7080a4-8b10-4b26-981d-22baaa278f07"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Footprint attributes don't match symbol: 'Exclude from bill of materials' settings differ",
+   "items": [
+    {
+     "description": "Footprint TP7",
+     "pos": {
+      "x": 97.875,
+      "y": 96.075
+     },
+     "uuid": "36567db9-f9fc-43e6-bebc-754fdb79d7f4"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_mismatch"
+  },
+  {
+   "description": "Field 'Description' differs (PCB: '', Schematic: 'Debug test point (excluded from BOM; hand-fitted loop)')",
+   "items": [
+    {
+     "description": "Footprint TP7",
+     "pos": {
+      "x": 97.875,
+      "y": 96.075
+     },
+     "uuid": "36567db9-f9fc-43e6-bebc-754fdb79d7f4"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint C160",
+     "pos": {
+      "x": 128.0,
+      "y": 84.65
+     },
+     "uuid": "fa2e04cc-e31d-4743-aace-f919d6ac4aa5"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint C162",
+     "pos": {
+      "x": 131.199999,
+      "y": 84.65
+     },
+     "uuid": "56878860-eae0-49df-9d63-743695da37fd"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'Manufacturer' in footprint",
+   "items": [
+    {
+     "description": "Footprint J6",
+     "pos": {
+      "x": 168.265,
+      "y": 79.995
+     },
+     "uuid": "271f672e-de31-4fff-a669-d3d6f2e37e53"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'Manufacturer' in footprint",
+   "items": [
+    {
+     "description": "Footprint J7",
+     "pos": {
+      "x": 122.1,
+      "y": 64.05
+     },
+     "uuid": "3eb2def1-6e9f-45fe-9898-6574a9fdcbcf"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint R160",
+     "pos": {
+      "x": 120.7,
+      "y": 70.3
+     },
+     "uuid": "f76c9b8c-c384-4524-ae7c-f6e25adcbc17"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Field 'MPN' differs (PCB: 'EC11E15244G1', Schematic: 'EC11E18244AU')",
+   "items": [
+    {
+     "description": "Footprint SW102",
+     "pos": {
+      "x": 109.36,
+      "y": 98.435
+     },
+     "uuid": "5b31d3d6-923b-4ba5-90f0-0bdba8fe75b6"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Footprint attributes don't match symbol: 'Exclude from bill of materials' settings differ",
+   "items": [
+    {
+     "description": "Footprint TP15",
+     "pos": {
+      "x": 138.0,
+      "y": 97.0
+     },
+     "uuid": "abc0ad3a-edc3-4740-a428-806911d61952"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_mismatch"
+  },
+  {
+   "description": "Field 'Description' differs (PCB: '', Schematic: 'Debug test point (excluded from BOM; hand-fitted loop)')",
+   "items": [
+    {
+     "description": "Footprint TP15",
+     "pos": {
+      "x": 138.0,
+      "y": 97.0
+     },
+     "uuid": "abc0ad3a-edc3-4740-a428-806911d61952"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Footprint attributes don't match symbol: 'Exclude from bill of materials' settings differ",
+   "items": [
+    {
+     "description": "Footprint TP16",
+     "pos": {
+      "x": 133.75,
+      "y": 96.25
+     },
+     "uuid": "33098a99-b7d4-4f23-bc81-65edc8623b18"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_mismatch"
+  },
+  {
+   "description": "Field 'Description' differs (PCB: '', Schematic: 'Debug test point (excluded from BOM; hand-fitted loop)')",
+   "items": [
+    {
+     "description": "Footprint TP16",
+     "pos": {
+      "x": 133.75,
+      "y": 96.25
+     },
+     "uuid": "33098a99-b7d4-4f23-bc81-65edc8623b18"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Footprint attributes don't match symbol: 'Exclude from bill of materials' settings differ",
+   "items": [
+    {
+     "description": "Footprint TP17",
+     "pos": {
+      "x": 137.0,
+      "y": 106.25
+     },
+     "uuid": "00cb6e4f-7904-41a5-89b8-7e424a25c578"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_mismatch"
+  },
+  {
+   "description": "Field 'Description' differs (PCB: '', Schematic: 'Debug test point (excluded from BOM; hand-fitted loop)')",
+   "items": [
+    {
+     "description": "Footprint TP17",
+     "pos": {
+      "x": 137.0,
+      "y": 106.25
+     },
+     "uuid": "00cb6e4f-7904-41a5-89b8-7e424a25c578"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Footprint attributes don't match symbol: 'Exclude from bill of materials' settings differ",
+   "items": [
+    {
+     "description": "Footprint TP18",
+     "pos": {
+      "x": 134.25,
+      "y": 102.0
+     },
+     "uuid": "0c128e3e-89f9-445b-82c8-8dfb9a0e7892"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_mismatch"
+  },
+  {
+   "description": "Field 'Description' differs (PCB: '', Schematic: 'Debug test point (excluded from BOM; hand-fitted loop)')",
+   "items": [
+    {
+     "description": "Footprint TP18",
+     "pos": {
+      "x": 134.25,
+      "y": 102.0
+     },
+     "uuid": "0c128e3e-89f9-445b-82c8-8dfb9a0e7892"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Footprint attributes don't match symbol: 'Exclude from bill of materials' settings differ",
+   "items": [
+    {
+     "description": "Footprint TP19",
+     "pos": {
+      "x": 133.0,
+      "y": 87.5
+     },
+     "uuid": "a20c1053-850e-4307-876a-611005e7d1b0"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_mismatch"
+  },
+  {
+   "description": "Field 'Description' differs (PCB: '', Schematic: 'Debug test point (excluded from BOM; hand-fitted loop)')",
+   "items": [
+    {
+     "description": "Footprint TP19",
+     "pos": {
+      "x": 133.0,
+      "y": 87.5
+     },
+     "uuid": "a20c1053-850e-4307-876a-611005e7d1b0"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Footprint attributes don't match symbol: 'Exclude from bill of materials' settings differ",
+   "items": [
+    {
+     "description": "Footprint TP21",
+     "pos": {
+      "x": 115.5,
+      "y": 68.0
+     },
+     "uuid": "21801356-2a91-4648-8381-cedc2734f599"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_mismatch"
+  },
+  {
+   "description": "Field 'Description' differs (PCB: '', Schematic: 'Debug test point (excluded from BOM; hand-fitted loop)')",
+   "items": [
+    {
+     "description": "Footprint TP21",
+     "pos": {
+      "x": 115.5,
+      "y": 68.0
+     },
+     "uuid": "21801356-2a91-4648-8381-cedc2734f599"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Footprint attributes don't match symbol: 'Exclude from bill of materials' settings differ",
+   "items": [
+    {
+     "description": "Footprint TP25",
+     "pos": {
+      "x": 178.515,
+      "y": 78.806273
+     },
+     "uuid": "b7cda867-7e0c-4ee0-afa7-777ec9c2b0cc"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_mismatch"
+  },
+  {
+   "description": "Field 'Description' differs (PCB: '', Schematic: 'Debug test point (excluded from BOM; hand-fitted loop)')",
+   "items": [
+    {
+     "description": "Footprint TP25",
+     "pos": {
+      "x": 178.515,
+      "y": 78.806273
+     },
+     "uuid": "b7cda867-7e0c-4ee0-afa7-777ec9c2b0cc"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint U3",
+     "pos": {
+      "x": 128.0,
+      "y": 76.5
+     },
+     "uuid": "544aebea-67e4-4323-aed0-f5fb11b3ee3c"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint C170",
+     "pos": {
+      "x": 152.6,
+      "y": 64.48
+     },
+     "uuid": "b073d19c-90c9-44c2-a92e-d942223f5ea5"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint C171",
+     "pos": {
+      "x": 156.81,
+      "y": 64.48
+     },
+     "uuid": "742d34d0-8001-4a4c-a9ec-ec0adf519ce2"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint C172",
+     "pos": {
+      "x": 152.9,
+      "y": 53.76
+     },
+     "uuid": "6846c1f1-4524-44b1-9317-cc95b7fcca24"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint C173",
+     "pos": {
+      "x": 159.21,
+      "y": 53.16
+     },
+     "uuid": "6680d981-aa0e-4e4b-90ed-eaf3ed0b1210"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint C174",
+     "pos": {
+      "x": 160.71,
+      "y": 56.26
+     },
+     "uuid": "65c69a3a-4e34-4d06-bac3-7b8c7dba3fa4"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint C175",
+     "pos": {
+      "x": 155.51,
+      "y": 66.38
+     },
+     "uuid": "ee86044a-6912-4dd3-9fbf-e52196f957e9"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint C176",
+     "pos": {
+      "x": 162.11,
+      "y": 62.48
+     },
+     "uuid": "4e6375e2-f109-43fd-9b88-09db8e0b6302"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Field 'Datasheet' differs (PCB: '', Schematic: '${KIPRJMOD}/../ai-files/datasheets/FOJAN_FCC0402N330J500AT.pdf')",
+   "items": [
+    {
+     "description": "Footprint C177",
+     "pos": {
+      "x": 153.36,
+      "y": 51.81
+     },
+     "uuid": "99927ccc-4899-4ea6-9a53-60e129fa35f5"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Field 'Datasheet' differs (PCB: '', Schematic: '${KIPRJMOD}/../ai-files/datasheets/FOJAN_FCC0402N330J500AT.pdf')",
+   "items": [
+    {
+     "description": "Footprint C178",
+     "pos": {
+      "x": 159.26,
+      "y": 50.56
+     },
+     "uuid": "a78b70a4-3363-49d2-8e54-bab387dcd3c5"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint R173",
+     "pos": {
+      "x": 149.05,
+      "y": 57.2325
+     },
+     "uuid": "c7029c0c-c157-4808-b02d-bd33b4d63399"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint R175",
+     "pos": {
+      "x": 158.03,
+      "y": 48.42
+     },
+     "uuid": "60364352-56d2-4485-a017-62ffb40b9abc"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint R176",
+     "pos": {
+      "x": 165.615,
+      "y": 51.6175
+     },
+     "uuid": "d584e905-e4b4-4e3c-8b92-0ee98928812f"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint U2",
+     "pos": {
+      "x": 154.885,
+      "y": 59.115
+     },
+     "uuid": "961f5386-bb0b-4129-a351-f82b691446ff"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Field 'Datasheet' differs (PCB: '', Schematic: '${KIPRJMOD}/../ai-files/datasheets/KYX_K3A120002010.pdf')",
+   "items": [
+    {
+     "description": "Footprint Y170",
+     "pos": {
+      "x": 156.35553,
+      "y": 52.00915
+     },
+     "uuid": "f12c11ed-c4c3-4a14-987f-f7c4a1d8d26c"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint C190",
+     "pos": {
+      "x": 115.45,
+      "y": 40.4
+     },
+     "uuid": "9bd20daf-9ae4-4cc3-98bf-dc9d9be98420"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint C191",
+     "pos": {
+      "x": 112.82,
+      "y": 36.36
+     },
+     "uuid": "1703afc2-6081-4c41-bef5-592d991c5a95"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint C192",
+     "pos": {
+      "x": 112.82,
+      "y": 34.36
+     },
+     "uuid": "b5c8fba1-262d-4a55-8c27-ec2e19f0d23a"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint C193",
+     "pos": {
+      "x": 112.82,
+      "y": 37.66
+     },
+     "uuid": "440cb78f-8a62-46ea-a1d8-25a91810e18c"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'Manufacturer' in footprint",
+   "items": [
+    {
+     "description": "Footprint J8",
+     "pos": {
+      "x": 102.8025,
+      "y": 50.865
+     },
+     "uuid": "f1b45a8f-034b-45af-9bfb-fad0abf42c93"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint R180",
+     "pos": {
+      "x": 92.3575,
+      "y": 46.365
+     },
+     "uuid": "47f8159e-68bd-4ded-b032-37efc32de085"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint R181",
+     "pos": {
+      "x": 95.9325,
+      "y": 49.365
+     },
+     "uuid": "1b9ba6c3-24fe-4bce-8617-6c5cd3114659"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint R182",
+     "pos": {
+      "x": 109.6,
+      "y": 46.0
+     },
+     "uuid": "aedbf5b8-355b-4584-b919-18e77086eb6e"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint R183",
+     "pos": {
+      "x": 113.32,
+      "y": 31.06
+     },
+     "uuid": "5dea05c0-9296-43c5-bc92-712994538e84"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint R184",
+     "pos": {
+      "x": 112.92,
+      "y": 29.76
+     },
+     "uuid": "6b0fc4c6-e1b6-4b73-9a67-4ef07ad71e2e"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Pad net (Net-(U1-P0_0/UART_TX_IND)) doesn't match net given by schematic (Net-(U1-P0_0{slash}UART_TX_IND))",
+   "items": [
+    {
+     "description": "Pad 1 [Net-(U1-P0_0/UART_TX_IND)] of R187 on F.Cu",
+     "pos": {
+      "x": 92.6025,
+      "y": 24.36
+     },
+     "uuid": "4c62b66b-2a30-48ee-b601-14b30df8ac48"
+    }
+   ],
+   "severity": "warning",
+   "type": "net_conflict"
+  },
+  {
+   "description": "Footprint attributes don't match symbol: 'Exclude from bill of materials' settings differ",
+   "items": [
+    {
+     "description": "Footprint TP22",
+     "pos": {
+      "x": 115.315,
+      "y": 24.5175
+     },
+     "uuid": "fe54e365-ab41-4f1e-8f5f-79f1f246fcf4"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_mismatch"
+  },
+  {
+   "description": "Field 'Description' differs (PCB: '', Schematic: 'Debug test point (excluded from BOM; hand-fitted loop)')",
+   "items": [
+    {
+     "description": "Footprint TP22",
+     "pos": {
+      "x": 115.315,
+      "y": 24.5175
+     },
+     "uuid": "fe54e365-ab41-4f1e-8f5f-79f1f246fcf4"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint U1",
+     "pos": {
+      "x": 99.855,
+      "y": 33.865
+     },
+     "uuid": "d274d4e8-a57b-4cd3-87f9-f92100fe1cbf"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Pad net (unconnected-(U1-P1_6/PWM1-Pad41)) doesn't match net given by schematic (unconnected-(U1-P1_6{slash}PWM1-Pad41))",
+   "items": [
+    {
+     "description": "Pad 41 [unconnected-(U1-P1_6/PWM1-Pad41)] of U1 on F.Cu",
+     "pos": {
+      "x": 98.395,
+      "y": 26.365
+     },
+     "uuid": "7de7e96a-ca19-47ca-a685-4332b79b5e93"
+    }
+   ],
+   "severity": "warning",
+   "type": "net_conflict"
+  },
+  {
+   "description": "Pad net (unconnected-(U1-P1_2/TDI_CPU/SCL-Pad46)) doesn't match net given by schematic (unconnected-(U1-P1_2{slash}TDI_CPU{slash}SCL-Pad46))",
+   "items": [
+    {
+     "description": "Pad 46 [unconnected-(U1-P1_2/TDI_CPU/SCL-Pad46)] of U1 on F.Cu",
+     "pos": {
+      "x": 93.395,
+      "y": 26.365
+     },
+     "uuid": "8a96b4bd-0ea5-41c9-b6d6-d1dab1b936fb"
+    }
+   ],
+   "severity": "warning",
+   "type": "net_conflict"
+  },
+  {
+   "description": "Pad net (unconnected-(U1-P1_3/TCK_CPU/SDA-Pad47)) doesn't match net given by schematic (unconnected-(U1-P1_3{slash}TCK_CPU{slash}SDA-Pad47))",
+   "items": [
+    {
+     "description": "Pad 47 [unconnected-(U1-P1_3/TCK_CPU/SDA-Pad47)] of U1 on F.Cu",
+     "pos": {
+      "x": 92.395,
+      "y": 26.365
+     },
+     "uuid": "1bf534e3-e146-4ece-88ea-ae1f335a6b37"
+    }
+   ],
+   "severity": "warning",
+   "type": "net_conflict"
+  },
+  {
+   "description": "Pad net (unconnected-(U1-P3_7/UART_CTS-Pad48)) doesn't match net given by schematic (unconnected-(U1-P3_7{slash}UART_CTS-Pad48))",
+   "items": [
+    {
+     "description": "Pad 48 [unconnected-(U1-P3_7/UART_CTS-Pad48)] of U1 on F.Cu",
+     "pos": {
+      "x": 91.395,
+      "y": 26.365
+     },
+     "uuid": "76154f57-edd7-4930-9f3f-be874d0cd23c"
+    }
+   ],
+   "severity": "warning",
+   "type": "net_conflict"
+  },
+  {
+   "description": "Pad net (Net-(U1-P0_0/UART_TX_IND)) doesn't match net given by schematic (Net-(U1-P0_0{slash}UART_TX_IND))",
+   "items": [
+    {
+     "description": "Pad 49 [Net-(U1-P0_0/UART_TX_IND)] of U1 on F.Cu",
+     "pos": {
+      "x": 90.395,
+      "y": 26.365
+     },
+     "uuid": "44eea7e9-7709-4abb-bc71-5408546235fe"
+    }
+   ],
+   "severity": "warning",
+   "type": "net_conflict"
+  },
+  {
+   "description": "Field 'Datasheet' differs (PCB: '', Schematic: '${KIPRJMOD}/../ai-files/datasheets/Murata_GRM1555C1H103JE01D.pdf')",
+   "items": [
+    {
+     "description": "Footprint C206",
+     "pos": {
+      "x": 155.95,
+      "y": 78.35
+     },
+     "uuid": "10e5296a-b047-4ec6-a1f6-5ee0b1932de6"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Field 'Datasheet' differs (PCB: '', Schematic: '${KIPRJMOD}/../ai-files/datasheets/Murata_GRM1555C1H103JE01D.pdf')",
+   "items": [
+    {
+     "description": "Footprint C207",
+     "pos": {
+      "x": 155.95,
+      "y": 77.05
+     },
+     "uuid": "5c2a32af-6ef6-4eaf-ab2d-430fc781137a"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Field 'Datasheet' differs (PCB: '', Schematic: '${KIPRJMOD}/../ai-files/datasheets/Murata_GRM1555C1H103JE01D.pdf')",
+   "items": [
+    {
+     "description": "Footprint C208",
+     "pos": {
+      "x": 155.95,
+      "y": 81.0
+     },
+     "uuid": "efd1f1ab-b20d-4790-83d7-367f17f05e52"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Field 'Datasheet' differs (PCB: '', Schematic: '${KIPRJMOD}/../ai-files/datasheets/Murata_GRM1555C1H103JE01D.pdf')",
+   "items": [
+    {
+     "description": "Footprint C209",
+     "pos": {
+      "x": 155.95,
+      "y": 79.65
+     },
+     "uuid": "cdaeb508-e8f0-46dc-8d3d-a839251f5268"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Field 'Datasheet' differs (PCB: '', Schematic: '${KIPRJMOD}/../ai-files/datasheets/Murata_GRM1555C1H103JE01D.pdf')",
+   "items": [
+    {
+     "description": "Footprint C210",
+     "pos": {
+      "x": 153.15,
+      "y": 89.98
+     },
+     "uuid": "a263e84f-6806-4642-a3ca-b205c64e8c1b"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Field 'Datasheet' differs (PCB: '', Schematic: '${KIPRJMOD}/../ai-files/datasheets/Murata_GRM1555C1H103JE01D.pdf')",
+   "items": [
+    {
+     "description": "Footprint C211",
+     "pos": {
+      "x": 155.65,
+      "y": 88.78
+     },
+     "uuid": "b447bd07-81a3-4e68-9c54-beb57d58bc6a"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint C212",
+     "pos": {
+      "x": 152.1,
+      "y": 80.199999
+     },
+     "uuid": "ccd7c533-d783-4370-a56d-3344f9d3efe4"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint C213",
+     "pos": {
+      "x": 147.35,
+      "y": 80.85
+     },
+     "uuid": "e5e3ede7-5331-4854-b583-c1f9f9b7dd3c"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint C214",
+     "pos": {
+      "x": 145.15,
+      "y": 76.1
+     },
+     "uuid": "8fb5d3c1-a291-4b75-ab29-3f1b457ccc27"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint C215",
+     "pos": {
+      "x": 151.05,
+      "y": 80.35
+     },
+     "uuid": "88b04a0d-1141-463b-8a8f-799c57fcec2c"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint C216",
+     "pos": {
+      "x": 156.0,
+      "y": 75.2
+     },
+     "uuid": "4cdb3827-fdb3-452b-a8fd-b88df880e3ba"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint C217",
+     "pos": {
+      "x": 145.85,
+      "y": 83.05
+     },
+     "uuid": "719602d7-890d-4633-8d20-89396501e1e7"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint C218",
+     "pos": {
+      "x": 141.55,
+      "y": 73.95
+     },
+     "uuid": "86ad183a-19ce-45dd-bc87-f2ae5ebabfdf"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint C219",
+     "pos": {
+      "x": 145.45,
+      "y": 80.45
+     },
+     "uuid": "e48e0dcb-b4f6-4c99-a4a2-f210ee31d3d7"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint C220",
+     "pos": {
+      "x": 145.25,
+      "y": 84.95
+     },
+     "uuid": "bc16bf0a-cdf7-4a40-8a7d-4ecf47d48165"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint C221",
+     "pos": {
+      "x": 172.21,
+      "y": 49.39
+     },
+     "uuid": "c51180b2-3121-4dc8-9dfa-dfc278d0f7ea"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint C222",
+     "pos": {
+      "x": 175.4825,
+      "y": 51.29
+     },
+     "uuid": "c698a072-ebb6-4bf0-900b-77642957e24a"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint C223",
+     "pos": {
+      "x": 142.95,
+      "y": 82.95
+     },
+     "uuid": "7898fda6-6472-41b7-9edf-6b495462d35d"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint C224",
+     "pos": {
+      "x": 171.31,
+      "y": 54.89
+     },
+     "uuid": "8bf2aa77-e433-4819-a153-26e33c59425b"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint C225",
+     "pos": {
+      "x": 186.38,
+      "y": 49.44
+     },
+     "uuid": "6f2c23bd-496d-4a9a-a565-13a135321b0c"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Field 'Datasheet' differs (PCB: '', Schematic: '${KIPRJMOD}/../ai-files/datasheets/Murata_GRM1555C1H103JE01D.pdf')",
+   "items": [
+    {
+     "description": "Footprint C226",
+     "pos": {
+      "x": 147.6,
+      "y": 79.75
+     },
+     "uuid": "a3758ecd-32e6-4693-a395-53c02d1f7893"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Field 'Datasheet' differs (PCB: '', Schematic: '${KIPRJMOD}/../ai-files/datasheets/Murata_GRM1555C1H103JE01D.pdf')",
+   "items": [
+    {
+     "description": "Footprint C227",
+     "pos": {
+      "x": 149.9,
+      "y": 74.6
+     },
+     "uuid": "79a3cdd4-6d1e-41cc-9bce-cfd0c18340e6"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint R211",
+     "pos": {
+      "x": 145.2,
+      "y": 88.1
+     },
+     "uuid": "3ac7861a-47cf-427e-b2f8-6f4849ef6c6c"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint R212",
+     "pos": {
+      "x": 183.61,
+      "y": 54.29
+     },
+     "uuid": "4abb072d-094c-4243-bd1b-c2f6a7274a64"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Footprint attributes don't match symbol: 'Exclude from bill of materials' settings differ",
+   "items": [
+    {
+     "description": "Footprint TP6",
+     "pos": {
+      "x": 140.245,
+      "y": 76.705
+     },
+     "uuid": "4284bd35-4a66-4b72-bb3a-6bc4fca584fd"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_mismatch"
+  },
+  {
+   "description": "Field 'Description' differs (PCB: '', Schematic: 'Debug test point (excluded from BOM; hand-fitted loop)')",
+   "items": [
+    {
+     "description": "Footprint TP6",
+     "pos": {
+      "x": 140.245,
+      "y": 76.705
+     },
+     "uuid": "4284bd35-4a66-4b72-bb3a-6bc4fca584fd"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Footprint attributes don't match symbol: 'Exclude from bill of materials' settings differ",
+   "items": [
+    {
+     "description": "Footprint TP8",
+     "pos": {
+      "x": 163.245,
+      "y": 88.9175
+     },
+     "uuid": "6803bb63-8c42-402e-b7f2-4823d567a1bf"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_mismatch"
+  },
+  {
+   "description": "Field 'Description' differs (PCB: '', Schematic: 'Debug test point (excluded from BOM; hand-fitted loop)')",
+   "items": [
+    {
+     "description": "Footprint TP8",
+     "pos": {
+      "x": 163.245,
+      "y": 88.9175
+     },
+     "uuid": "6803bb63-8c42-402e-b7f2-4823d567a1bf"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Footprint attributes don't match symbol: 'Exclude from bill of materials' settings differ",
+   "items": [
+    {
+     "description": "Footprint TP12",
+     "pos": {
+      "x": 146.35,
+      "y": 95.4
+     },
+     "uuid": "fe8bacde-2e23-4a10-bae0-f2657d923eae"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_mismatch"
+  },
+  {
+   "description": "Field 'Description' differs (PCB: '', Schematic: 'Debug test point (excluded from BOM; hand-fitted loop)')",
+   "items": [
+    {
+     "description": "Footprint TP12",
+     "pos": {
+      "x": 146.35,
+      "y": 95.4
+     },
+     "uuid": "fe8bacde-2e23-4a10-bae0-f2657d923eae"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Value (TP13) doesn't match symbol value (I2S_LRCK)",
+   "items": [
+    {
+     "description": "Footprint TP13",
+     "pos": {
+      "x": 146.35,
+      "y": 101.6
+     },
+     "uuid": "9312471e-4600-4a7e-8848-94cee6665988"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_mismatch"
+  },
+  {
+   "description": "Footprint attributes don't match symbol: 'Exclude from bill of materials' settings differ",
+   "items": [
+    {
+     "description": "Footprint TP13",
+     "pos": {
+      "x": 146.35,
+      "y": 101.6
+     },
+     "uuid": "9312471e-4600-4a7e-8848-94cee6665988"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_mismatch"
+  },
+  {
+   "description": "Field 'Description' differs (PCB: '', Schematic: 'Debug test point (excluded from BOM; hand-fitted loop)')",
+   "items": [
+    {
+     "description": "Footprint TP13",
+     "pos": {
+      "x": 146.35,
+      "y": 101.6
+     },
+     "uuid": "9312471e-4600-4a7e-8848-94cee6665988"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Value (TP14) doesn't match symbol value (I2S_SDATA)",
+   "items": [
+    {
+     "description": "Footprint TP14",
+     "pos": {
+      "x": 146.35,
+      "y": 98.5
+     },
+     "uuid": "7c64210c-187e-4476-91e9-1c45cb5c8d80"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_mismatch"
+  },
+  {
+   "description": "Footprint attributes don't match symbol: 'Exclude from bill of materials' settings differ",
+   "items": [
+    {
+     "description": "Footprint TP14",
+     "pos": {
+      "x": 146.35,
+      "y": 98.5
+     },
+     "uuid": "7c64210c-187e-4476-91e9-1c45cb5c8d80"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_mismatch"
+  },
+  {
+   "description": "Field 'Description' differs (PCB: '', Schematic: 'Debug test point (excluded from BOM; hand-fitted loop)')",
+   "items": [
+    {
+     "description": "Footprint TP14",
+     "pos": {
+      "x": 146.35,
+      "y": 98.5
+     },
+     "uuid": "7c64210c-187e-4476-91e9-1c45cb5c8d80"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'Manufacturer' in footprint",
+   "items": [
+    {
+     "description": "Footprint U22",
+     "pos": {
+      "x": 172.845,
+      "y": 51.84
+     },
+     "uuid": "36d7aaa5-77f0-4563-94f2-e29dccf14736"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'Manufacturer' in footprint",
+   "items": [
+    {
+     "description": "Footprint U23",
+     "pos": {
+      "x": 185.845,
+      "y": 51.84
+     },
+     "uuid": "6217982c-445d-4313-aaf4-9683f3822409"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'Manufacturer' in footprint",
+   "items": [
+    {
+     "description": "Footprint U24",
+     "pos": {
+      "x": 150.745,
+      "y": 85.4175
+     },
+     "uuid": "f1f0048b-2be4-492a-b8b2-a61032d6ce53"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Pad net (unconnected-(U24-GPIO3/INTC-Pad19)) doesn't match net given by schematic (unconnected-(U24-GPIO3{slash}INTC-Pad19))",
+   "items": [
+    {
+     "description": "Pad 19 [unconnected-(U24-GPIO3/INTC-Pad19)] of U24 on F.Cu",
+     "pos": {
+      "x": 148.745,
+      "y": 88.28
+     },
+     "uuid": "afe81c32-f55b-42ec-812e-beef0c115e7b"
+    }
+   ],
+   "severity": "warning",
+   "type": "net_conflict"
+  },
+  {
+   "description": "Pad net (unconnected-(U24-GPIO2/INTB-Pad20)) doesn't match net given by schematic (unconnected-(U24-GPIO2{slash}INTB-Pad20))",
+   "items": [
+    {
+     "description": "Pad 20 [unconnected-(U24-GPIO2/INTB-Pad20)] of U24 on F.Cu",
+     "pos": {
+      "x": 149.245,
+      "y": 88.28
+     },
+     "uuid": "f231e1a0-a1fe-42fd-89bf-1a058371b4cd"
+    }
+   ],
+   "severity": "warning",
+   "type": "net_conflict"
+  },
+  {
+   "description": "Pad net (unconnected-(U24-MISO/GPIO0-Pad22)) doesn't match net given by schematic (unconnected-(U24-MISO{slash}GPIO0-Pad22))",
+   "items": [
+    {
+     "description": "Pad 22 [unconnected-(U24-MISO/GPIO0-Pad22)] of U24 on F.Cu",
+     "pos": {
+      "x": 150.245,
+      "y": 88.28
+     },
+     "uuid": "0e4c6cef-08c2-443b-8bd3-4074db92b8b8"
+    }
+   ],
+   "severity": "warning",
+   "type": "net_conflict"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint C230",
+     "pos": {
+      "x": 176.6,
+      "y": 61.45
+     },
+     "uuid": "8e530eb1-667d-4b79-9fa4-441229f0c9b6"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint C231",
+     "pos": {
+      "x": 181.1,
+      "y": 61.45
+     },
+     "uuid": "5545816a-b92a-4c98-8594-1a2651d0bd80"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint C232",
+     "pos": {
+      "x": 176.5,
+      "y": 74.97
+     },
+     "uuid": "12d5447e-ffc8-4f9a-9496-4cea2654ed89"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint C233",
+     "pos": {
+      "x": 180.5,
+      "y": 75.1
+     },
+     "uuid": "203932e0-6eba-40b1-bd19-bfbb5bf61935"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint C234",
+     "pos": {
+      "x": 192.34,
+      "y": 38.8
+     },
+     "uuid": "f4e6f96c-a312-4ce5-b987-2fb0b3d7252b"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint C235",
+     "pos": {
+      "x": 194.69,
+      "y": 40.8
+     },
+     "uuid": "5d79fd65-d02f-4e7b-830c-d01a407b2ff6"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint C237",
+     "pos": {
+      "x": 185.4,
+      "y": 67.2
+     },
+     "uuid": "0d33859c-fe54-4362-acd2-44e7c07cf795"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint C238",
+     "pos": {
+      "x": 179.1,
+      "y": 62.8
+     },
+     "uuid": "87ccc696-8193-4d05-b0e6-0d74b1f020da"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint C239",
+     "pos": {
+      "x": 192.0,
+      "y": 65.6
+     },
+     "uuid": "e7cd23fa-c6b5-4269-9abc-1bec62d36f65"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint C240",
+     "pos": {
+      "x": 192.0,
+      "y": 67.0
+     },
+     "uuid": "f63168a5-b027-47e0-9dbd-b08b770785df"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint C245",
+     "pos": {
+      "x": 200.39,
+      "y": 66.13
+     },
+     "uuid": "68d0888c-3ad7-487a-afe9-d5841928557b"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint C246",
+     "pos": {
+      "x": 192.42,
+      "y": 36.25
+     },
+     "uuid": "78a39567-6ac0-4c31-bbd6-882e2770f29d"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint J2",
+     "pos": {
+      "x": 181.725,
+      "y": 29.395
+     },
+     "uuid": "0bbf6980-11d8-4116-aca8-21494779b042"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint J3",
+     "pos": {
+      "x": 195.125,
+      "y": 29.395
+     },
+     "uuid": "f5ca4bd3-766e-4235-b206-c23ebb48f05b"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint R220",
+     "pos": {
+      "x": 174.7,
+      "y": 62.7
+     },
+     "uuid": "7a92789f-3acf-4ed1-ade3-c7989dbbe1b2"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint R221",
+     "pos": {
+      "x": 182.3,
+      "y": 62.7
+     },
+     "uuid": "727524ed-53b5-4e04-a4f6-18575927245c"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint R222",
+     "pos": {
+      "x": 175.1,
+      "y": 73.15
+     },
+     "uuid": "1a5a8f30-3373-408d-82bd-3241d1bff361"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint R223",
+     "pos": {
+      "x": 182.35,
+      "y": 73.7
+     },
+     "uuid": "6330ecbf-f1a6-4464-bf6f-17895efc3a73"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint R224",
+     "pos": {
+      "x": 190.49,
+      "y": 37.67
+     },
+     "uuid": "979683c9-572a-4f69-93ae-5242f100695e"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint R225",
+     "pos": {
+      "x": 194.4,
+      "y": 43.8
+     },
+     "uuid": "be4d056d-3c7d-4693-af19-50c18941c291"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint R234",
+     "pos": {
+      "x": 181.9,
+      "y": 71.72
+     },
+     "uuid": "2161f43e-1c25-4ba9-bd3a-cbd567352e69"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint R235",
+     "pos": {
+      "x": 183.4,
+      "y": 58.1
+     },
+     "uuid": "d4846d24-4599-43c3-b44c-ac5519ebddf6"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint R236",
+     "pos": {
+      "x": 199.34,
+      "y": 62.379999
+     },
+     "uuid": "40da5743-59bc-4cd0-82f0-1f46f692f033"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint R237",
+     "pos": {
+      "x": 197.0,
+      "y": 71.6
+     },
+     "uuid": "1f631796-0336-4e2a-9f02-112b49561fa0"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint R238",
+     "pos": {
+      "x": 199.6,
+      "y": 70.4
+     },
+     "uuid": "01420d09-fe04-4da5-99c7-35fcf3ae5817"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint R239",
+     "pos": {
+      "x": 178.17,
+      "y": 37.15
+     },
+     "uuid": "70c8216f-9bf5-4f19-b3ca-932940386820"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint R242",
+     "pos": {
+      "x": 190.42,
+      "y": 36.3
+     },
+     "uuid": "51cd4c32-d266-4296-99c9-672e4ad11b45"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint R243",
+     "pos": {
+      "x": 197.94,
+      "y": 37.4
+     },
+     "uuid": "de5e5248-1409-40d0-b992-d6101ce30425"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint R244",
+     "pos": {
+      "x": 196.99,
+      "y": 40.6
+     },
+     "uuid": "e1f16f93-d805-43c8-b15c-fe4ab21d1a6e"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint U8",
+     "pos": {
+      "x": 178.5,
+      "y": 68.5
+     },
+     "uuid": "55608a03-b3c3-40e4-b7ef-716ff71fd92e"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint U9",
+     "pos": {
+      "x": 186.0,
+      "y": 62.4
+     },
+     "uuid": "49825d59-234a-4595-b386-8840541cb035"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint U10",
+     "pos": {
+      "x": 196.295,
+      "y": 65.2775
+     },
+     "uuid": "5c34a245-ef56-425d-9612-44e2a629aae6"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint C260",
+     "pos": {
+      "x": 150.36,
+      "y": 151.34
+     },
+     "uuid": "8c80affd-6aa0-400c-ac2b-ab8bb635e477"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint C261",
+     "pos": {
+      "x": 154.46,
+      "y": 152.54
+     },
+     "uuid": "aa5555ed-7987-4528-9426-49a4de25e31a"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint C262",
+     "pos": {
+      "x": 142.8,
+      "y": 153.0
+     },
+     "uuid": "16c656a1-c0d0-494c-a4e1-abbdc342e240"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint C263",
+     "pos": {
+      "x": 151.06,
+      "y": 154.75
+     },
+     "uuid": "cae5d9dd-7ccf-4993-a03e-ce6e490bcaba"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint C264",
+     "pos": {
+      "x": 154.46,
+      "y": 154.94
+     },
+     "uuid": "863e7c93-1bab-432e-86da-521719706e23"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint C265",
+     "pos": {
+      "x": 153.74,
+      "y": 142.21
+     },
+     "uuid": "4c72deaa-15b2-4336-9785-23eea90f9a0f"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Field 'Datasheet' differs (PCB: '', Schematic: '${KIPRJMOD}/../ai-files/datasheets/Murata_GRM155R71H473KE14D.pdf')",
+   "items": [
+    {
+     "description": "Footprint C266",
+     "pos": {
+      "x": 151.69,
+      "y": 151.38
+     },
+     "uuid": "12344fb1-3fd2-496f-8aa5-73227b327c9a"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint C267",
+     "pos": {
+      "x": 150.55,
+      "y": 143.1
+     },
+     "uuid": "9837fd79-b924-4d42-bb5e-39e0ce4e8fff"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Field 'Datasheet' differs (PCB: '', Schematic: '${KIPRJMOD}/../ai-files/datasheets/Samsung_CL05B682KB5NNNC.pdf')",
+   "items": [
+    {
+     "description": "Footprint C268",
+     "pos": {
+      "x": 157.05,
+      "y": 140.55
+     },
+     "uuid": "7b646fdd-2706-4cf4-97c3-89afb7670be0"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint C270",
+     "pos": {
+      "x": 157.74,
+      "y": 148.95
+     },
+     "uuid": "cf21f9e8-8c3b-464a-8c8c-1d95e91ad522"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint C276",
+     "pos": {
+      "x": 114.15,
+      "y": 128.85
+     },
+     "uuid": "87f6f954-988a-4acb-b0c1-61900637f334"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Missing symbol field 'MPN' in footprint",
+   "items": [
+    {
+     "description": "Footprint C278",
+     "pos": {
+      "x": 104.0,
+      "y": 129.36
+     },
+     "uuid": "814cff77-0408-4870-ac76-c1bfba670d45"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_field_mismatch"
+  },
+  {
+   "description": "Footprint attributes don't match symbol: 'Exclude from bill of materials' settings differ",
+   "items": [
+    {
+     "description": "Footprint TP10",
+     "pos": {
+      "x": 109.665,
+      "y": 146.555
+     },
+     "uuid": "2bdbc68c-3932-4e71-989b-fe36e4ed38d7"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_mismatch"
+  },
+  {
+   "description": "Footprint attributes don't match symbol: 'Exclude from bill of materials' settings differ",
+   "items": [
+    {
+     "description": "Footprint TP20",
+     "pos": {
+      "x": 123.9,
+      "y": 111.25
+     },
+     "uuid": "2b18f440-c330-40a7-a102-9fc786e9dc5c"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_mismatch"
+  },
+  {
+   "description": "Footprint attributes don't match symbol: 'Exclude from bill of materials' settings differ",
+   "items": [
+    {
+     "description": "Footprint TP24",
+     "pos": {
+      "x": 105.255,
+      "y": 152.556273
+     },
+     "uuid": "11f09d82-7e2e-41e5-9220-b78c9b145008"
+    }
+   ],
+   "severity": "warning",
+   "type": "footprint_symbol_mismatch"
+  }
+ ]
+}

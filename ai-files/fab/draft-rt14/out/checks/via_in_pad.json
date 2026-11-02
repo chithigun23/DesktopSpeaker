@@ -1,0 +1,131 @@
+{
+ "exposed_pad_vias": {
+  "U25.21": 8,
+  "U6.33": 16,
+  "U7.33": 16
+ },
+ "via_in_pad": [
+  {
+   "via": [
+    151.15,
+    80.7
+   ],
+   "drill": 0.3,
+   "via_net": "Net-(U24-AVDD)",
+   "pad": "C215.1",
+   "pad_net": "Net-(U24-AVDD)",
+   "centre_in_pad": true,
+   "hole_to_pad_mm": 0.0
+  },
+  {
+   "via": [
+    98.795,
+    24.365
+   ],
+   "drill": 0.3,
+   "via_net": "/Bluetooth/BT_RST_M",
+   "pad": "R185.2",
+   "pad_net": "/Bluetooth/BT_RST_M",
+   "centre_in_pad": true,
+   "hole_to_pad_mm": 0.0
+  }
+ ],
+ "via_at_pad_edge": [
+  {
+   "via": [
+    109.61,
+    75.1775
+   ],
+   "drill": 0.3,
+   "via_net": "/Fuel_Gauge_Power/GAUGE_ISO_N",
+   "pad": "U16.4",
+   "pad_net": "/Fuel_Gauge_Power/GAUGE_ISO_N",
+   "centre_in_pad": false,
+   "hole_to_pad_mm": 0.0
+  },
+  {
+   "via": [
+    186.09,
+    128.3
+   ],
+   "drill": 0.3,
+   "via_net": "/Amplifiers/PVDD_AMP",
+   "pad": "C274.1",
+   "pad_net": "/Amplifiers/PVDD_AMP",
+   "centre_in_pad": false,
+   "hole_to_pad_mm": 0.0
+  },
+  {
+   "via": [
+    153.45,
+    92.25
+   ],
+   "drill": 0.3,
+   "via_net": "/3V3_AUDIO",
+   "pad": "R209.1",
+   "pad_net": "/3V3_AUDIO",
+   "centre_in_pad": false,
+   "hole_to_pad_mm": 0.053
+  },
+  {
+   "via": [
+    156.5,
+    61.35
+   ],
+   "drill": 0.3,
+   "via_net": "Net-(U2-VCCCI)",
+   "pad": "U2.10",
+   "pad_net": "Net-(U2-VCCCI)",
+   "centre_in_pad": false,
+   "hole_to_pad_mm": 0.069
+  },
+  {
+   "via": [
+    150.72,
+    124.65
+   ],
+   "drill": 0.3,
+   "via_net": "GND",
+   "pad": "U4.10",
+   "pad_net": "GND",
+   "centre_in_pad": false,
+   "hole_to_pad_mm": 0.131
+  },
+  {
+   "via": [
+    148.794,
+    122.578
+   ],
+   "drill": 0.3,
+   "via_net": "/Battery_Charger/REGN",
+   "pad": "C102.1",
+   "pad_net": "/Battery_Charger/REGN",
+   "centre_in_pad": false,
+   "hole_to_pad_mm": 0.132
+  },
+  {
+   "via": [
+    102.85,
+    75.1
+   ],
+   "drill": 0.3,
+   "via_net": "GND",
+   "pad": "C130.2",
+   "pad_net": "GND",
+   "centre_in_pad": false,
+   "hole_to_pad_mm": 0.135
+  },
+  {
+   "via": [
+    114.72,
+    31.5
+   ],
+   "drill": 0.3,
+   "via_net": "GND",
+   "pad": "R153.2",
+   "pad_net": "GND",
+   "centre_in_pad": false,
+   "hole_to_pad_mm": 0.145
+  }
+ ]
+}

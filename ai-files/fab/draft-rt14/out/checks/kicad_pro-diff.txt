@@ -1,0 +1,1 @@
+board-side .kicad_pro vs pristine project .kicad_pro: 0 differing keys

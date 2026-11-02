@@ -1,0 +1,1637 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-11-03T08:17:17",
+    "ignored_checks": [
+        {
+            "description": "Footprint has no courtyard defined",
+            "key": "missing_courtyard"
+        },
+        {
+            "description": "Track endpoint not centered on via",
+            "key": "track_not_centered_on_via"
+        },
+        {
+            "description": "Tuning profile track geometries",
+            "key": "tuning_profile_track_geometries"
+        },
+        {
+            "description": "Footprint doesn't match symbol's footprint filters",
+            "key": "footprint_filters_mismatch"
+        },
+        {
+            "description": "Footprint component type doesn't match footprint pads",
+            "key": "footprint_type_mismatch"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.0.7",
+    "schematic_parity": [],
+    "source": "SA.kicad_pcb",
+    "unconnected_items": [
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad 23 [/AUD_SDA] of U24 on F.Cu",
+                    "pos": {
+                        "x": 150.745,
+                        "y": 88.28
+                    },
+                    "uuid": "2d0d2242-b4e6-42b2-9cc9-c71e0801696b"
+                },
+                {
+                    "description": "Track [/AUD_SDA] on In2.Cu, length 2.5456 mm",
+                    "pos": {
+                        "x": 139.05,
+                        "y": 83.0975
+                    },
+                    "uuid": "1ef8db78-016c-47ad-81be-b9632f76aa22"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad 15 [/AUD_SDA] of U7 on F.Cu",
+                    "pos": {
+                        "x": 191.295,
+                        "y": 126.395
+                    },
+                    "uuid": "b25202dd-eca6-4a22-948e-554d2f8d6703"
+                },
+                {
+                    "description": "Pad 23 [/AUD_SDA] of U24 on F.Cu",
+                    "pos": {
+                        "x": 150.745,
+                        "y": 88.28
+                    },
+                    "uuid": "2d0d2242-b4e6-42b2-9cc9-c71e0801696b"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad 1 [Net-(C205-Pad2)] of R205 on F.Cu",
+                    "pos": {
+                        "x": 156.95,
+                        "y": 89.2775
+                    },
+                    "uuid": "bdababe0-3d83-464f-b6b7-e0220a9ba3ad"
+                },
+                {
+                    "description": "Pad 2 [Net-(C205-Pad2)] of C205 on F.Cu",
+                    "pos": {
+                        "x": 192.89,
+                        "y": 42.3675
+                    },
+                    "uuid": "3ef5a040-5070-4aa2-b6d9-04195ab9345a"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad 1 [/I2S_BCK] of TP12 on F.Cu",
+                    "pos": {
+                        "x": 146.35,
+                        "y": 95.4
+                    },
+                    "uuid": "03f25034-4bc8-495d-b9c9-13d9f3deecbf"
+                },
+                {
+                    "description": "Pad 13 [/I2S_BCK] of U6 on F.Cu",
+                    "pos": {
+                        "x": 109.505,
+                        "y": 126.395
+                    },
+                    "uuid": "44f7afe8-326b-4d2c-98cd-c517fcca9e9e"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad 13 [/I2S_BCK] of U7 on F.Cu",
+                    "pos": {
+                        "x": 192.295,
+                        "y": 126.395
+                    },
+                    "uuid": "9abe1eff-11a5-4527-a85f-4efe05707020"
+                },
+                {
+                    "description": "Track [/I2S_BCK] on F.Cu, length 0.9000 mm",
+                    "pos": {
+                        "x": 147.15,
+                        "y": 93.75
+                    },
+                    "uuid": "be02426c-fbf1-4ce2-93ff-b15b7f34a182"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [/Battery_Charger/ILIM_HIZ] on F.Cu, length 0.6500 mm",
+                    "pos": {
+                        "x": 153.42,
+                        "y": 123.385
+                    },
+                    "uuid": "3ff3a55b-c1f4-48cf-bd89-577167a8f1f2"
+                },
+                {
+                    "description": "Track [/Battery_Charger/ILIM_HIZ] on F.Cu, length 1.8975 mm",
+                    "pos": {
+                        "x": 180.9625,
+                        "y": 110.735
+                    },
+                    "uuid": "1fed07c2-bdab-4b1b-b07a-9f689f6d9968"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad 1 [Net-(C204-Pad2)] of R204 on F.Cu",
+                    "pos": {
+                        "x": 156.3475,
+                        "y": 90.73
+                    },
+                    "uuid": "2c6728ec-deea-4e21-ab0e-d969295489c8"
+                },
+                {
+                    "description": "Pad 2 [Net-(C204-Pad2)] of C204 on F.Cu",
+                    "pos": {
+                        "x": 191.14,
+                        "y": 40.1675
+                    },
+                    "uuid": "795c9480-2b93-4dc6-bb08-93b24c38d90c"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [/HP_G0] on F.Cu, length 3.7000 mm",
+                    "pos": {
+                        "x": 164.6025,
+                        "y": 66.6
+                    },
+                    "uuid": "8efe6574-50d0-4653-84a9-c8800d21ece4"
+                },
+                {
+                    "description": "Track [/HP_G0] on In2.Cu, length 4.0000 mm",
+                    "pos": {
+                        "x": 171.0,
+                        "y": 41.0
+                    },
+                    "uuid": "beb70e1e-5e37-4ae7-8bf3-89d6b2f9b95c"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad 1 [/USB_AUDIO_L] of C200 on F.Cu",
+                    "pos": {
+                        "x": 162.0175,
+                        "y": 79.0
+                    },
+                    "uuid": "12d1f2b1-ee6b-4a52-bc38-c80c5a29ffd5"
+                },
+                {
+                    "description": "Track [/USB_AUDIO_L] on F.Cu, length 7.1418 mm",
+                    "pos": {
+                        "x": 174.55,
+                        "y": 60.8825
+                    },
+                    "uuid": "77685b41-08b9-4119-8279-4cb3edea0f24"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [Net-(U14-FB)] on F.Cu, length 0.7500 mm",
+                    "pos": {
+                        "x": 93.275,
+                        "y": 97.025
+                    },
+                    "uuid": "4951de41-2ba9-4dd3-84e8-7d62411882be"
+                },
+                {
+                    "description": "Track [Net-(U14-FB)] on In2.Cu, length 4.0000 mm",
+                    "pos": {
+                        "x": 171.0,
+                        "y": 42.5
+                    },
+                    "uuid": "849b62f9-e37d-432f-a050-faf9113f37b5"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad 47 [/HP_EN] of U3 on F.Cu",
+                    "pos": {
+                        "x": 124.75,
+                        "y": 70.825
+                    },
+                    "uuid": "9651c5d7-07d1-433a-b050-c5d69cc5a0df"
+                },
+                {
+                    "description": "Pad 13 [/HP_EN] of U10 on F.Cu",
+                    "pos": {
+                        "x": 197.045,
+                        "y": 63.7775
+                    },
+                    "uuid": "84756a5e-256d-451e-bb20-a24751138c07"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad 1 [/HP_SEL_B] of R235 on F.Cu",
+                    "pos": {
+                        "x": 183.4,
+                        "y": 58.6975
+                    },
+                    "uuid": "ae2ca811-f1a9-4ab2-ade9-55b4baf7b69d"
+                },
+                {
+                    "description": "Pad 51 [/HP_SEL_B] of U3 on F.Cu",
+                    "pos": {
+                        "x": 122.325,
+                        "y": 73.75
+                    },
+                    "uuid": "3121488e-6765-4654-a0e6-071bf7c7050c"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad 29 [/AUX_DET] of U3 on F.Cu",
+                    "pos": {
+                        "x": 133.675,
+                        "y": 74.25
+                    },
+                    "uuid": "8fc27569-8dd3-4df5-acf0-f7d0aadad984"
+                },
+                {
+                    "description": "Pad 2 [/AUX_DET] of R242 on F.Cu",
+                    "pos": {
+                        "x": 189.8225,
+                        "y": 36.3
+                    },
+                    "uuid": "26fa0bb1-35ee-4a8d-bfc7-b8ae47a7619d"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [/USB_AUDIO_R] on F.Cu, length 1.5556 mm",
+                    "pos": {
+                        "x": 168.75,
+                        "y": 56.4325
+                    },
+                    "uuid": "6ec85e78-b0f7-47f9-9f35-c19338fc7aca"
+                },
+                {
+                    "description": "Pad 1 [/USB_AUDIO_R] of C201 on F.Cu",
+                    "pos": {
+                        "x": 162.0175,
+                        "y": 77.65
+                    },
+                    "uuid": "936225b6-21e3-4365-a201-29ed55bcc6a4"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        }
+    ],
+    "violations": [
+        {
+            "description": "Items not allowed (rule 'in2_power_only')",
+            "items": [
+                {
+                    "description": "Track [Net-(U14-FB)] on In2.Cu, length 4.0000 mm",
+                    "pos": {
+                        "x": 171.0,
+                        "y": 42.5
+                    },
+                    "uuid": "849b62f9-e37d-432f-a050-faf9113f37b5"
+                }
+            ],
+            "severity": "error",
+            "type": "items_not_allowed"
+        },
+        {
+            "description": "Clearance violation (rule 'neck_u11' clearance 0.1500 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "Track [Net-(U14-FB)] on In2.Cu, length 4.0000 mm",
+                    "pos": {
+                        "x": 171.0,
+                        "y": 42.5
+                    },
+                    "uuid": "849b62f9-e37d-432f-a050-faf9113f37b5"
+                },
+                {
+                    "description": "Zone 'GND_IN2_BG' [GND] on In2.Cu, priority 0",
+                    "pos": {
+                        "x": 210.918344,
+                        "y": 20.00236
+                    },
+                    "uuid": "2aae0f9a-cef9-410e-9af9-e912ff909430"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (rule 'neck_u11' clearance 0.1500 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "Track [/HP_G0] on In2.Cu, length 4.0000 mm",
+                    "pos": {
+                        "x": 171.0,
+                        "y": 41.0
+                    },
+                    "uuid": "beb70e1e-5e37-4ae7-8bf3-89d6b2f9b95c"
+                },
+                {
+                    "description": "Zone 'GND_IN2_BG' [GND] on In2.Cu, priority 0",
+                    "pos": {
+                        "x": 210.918344,
+                        "y": 20.00236
+                    },
+                    "uuid": "2aae0f9a-cef9-410e-9af9-e912ff909430"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Track width (rule 'sentinel_route_oct' min width 5.0000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Track [/I2S_LRCK] on F.Cu, length 11.7500 mm",
+                    "pos": {
+                        "x": 116.4,
+                        "y": 117.0
+                    },
+                    "uuid": "03e16744-4a2b-427f-a008-fd831b374e9b"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'sentinel_route_oct' min width 5.0000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Track [/I2S_LRCK] on F.Cu, length 0.7778 mm",
+                    "pos": {
+                        "x": 149.645,
+                        "y": 103.7975
+                    },
+                    "uuid": "1e42e651-f17f-4b33-af65-1138d7bc23bc"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'sentinel_route_oct' min width 5.0000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Track [/I2S_LRCK] on F.Cu, length 1.1000 mm",
+                    "pos": {
+                        "x": 137.45,
+                        "y": 107.7
+                    },
+                    "uuid": "233cb6b8-5166-436c-b12c-d61cdc678862"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'sentinel_route_oct' min width 5.0000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Track [/I2S_LRCK] on F.Cu, length 0.9899 mm",
+                    "pos": {
+                        "x": 138.745,
+                        "y": 104.4975
+                    },
+                    "uuid": "2496cd77-41ff-444a-b07e-539235c70056"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'sentinel_route_oct' min width 5.0000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Track [/I2S_LRCK] on F.Cu, length 0.9970 mm",
+                    "pos": {
+                        "x": 142.895,
+                        "y": 97.047
+                    },
+                    "uuid": "27f6a1d4-d318-4a53-b1ce-ac398234ec05"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'sentinel_route_oct' min width 5.0000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Track [/I2S_LRCK] on F.Cu, length 10.2000 mm",
+                    "pos": {
+                        "x": 139.445,
+                        "y": 103.7975
+                    },
+                    "uuid": "2818c83a-62da-4250-ad98-68286648d2f8"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'sentinel_route_oct' min width 5.0000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Track [/I2S_LRCK] on F.Cu, length 2.1920 mm",
+                    "pos": {
+                        "x": 144.445,
+                        "y": 92.4975
+                    },
+                    "uuid": "3a4acc28-dbf3-446d-af57-e076a6d5a760"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'sentinel_route_oct' min width 5.0000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Track [/I2S_LRCK] on F.Cu, length 1.9500 mm",
+                    "pos": {
+                        "x": 146.395,
+                        "y": 92.4975
+                    },
+                    "uuid": "3ec8a67b-a8ef-46dc-8157-69f39551bd43"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'sentinel_route_oct' min width 5.0000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Track [/I2S_LRCK] on F.Cu, length 1.2000 mm",
+                    "pos": {
+                        "x": 143.6,
+                        "y": 97.752
+                    },
+                    "uuid": "51b14dbb-39b1-40ed-b801-8db21359c392"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'sentinel_route_oct' min width 5.0000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Track [/I2S_LRCK] on F.Cu, length 0.6475 mm",
+                    "pos": {
+                        "x": 192.795,
+                        "y": 125.7475
+                    },
+                    "uuid": "62dda3cd-393a-4b61-a67d-88e7ba878418"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'sentinel_route_oct' min width 5.0000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Track [/I2S_LRCK] on F.Cu, length 15.8392 mm",
+                    "pos": {
+                        "x": 182.145,
+                        "y": 102.4475
+                    },
+                    "uuid": "76078419-7f60-4828-ad2f-d0ea41175e07"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'sentinel_route_oct' min width 5.0000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Track [/I2S_LRCK] on F.Cu, length 0.7778 mm",
+                    "pos": {
+                        "x": 138.55,
+                        "y": 107.7
+                    },
+                    "uuid": "9585c440-5383-45e5-a73a-1ffb1b519099"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'sentinel_route_oct' min width 5.0000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Track [/I2S_LRCK] on F.Cu, length 0.7778 mm",
+                    "pos": {
+                        "x": 193.345,
+                        "y": 125.1975
+                    },
+                    "uuid": "9c868cce-ca9b-4b99-b948-7cf841ead509"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'sentinel_route_oct' min width 5.0000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Track [/I2S_LRCK] on F.Cu, length 9.0439 mm",
+                    "pos": {
+                        "x": 110.005,
+                        "y": 123.395
+                    },
+                    "uuid": "a6a5181e-6da6-41c4-b8bf-664cab5a9b5c"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'sentinel_route_oct' min width 5.0000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Track [/I2S_LRCK] on F.Cu, length 11.5500 mm",
+                    "pos": {
+                        "x": 193.345,
+                        "y": 113.6475
+                    },
+                    "uuid": "a8e4ed14-1c71-46bb-9e61-32a74410871d"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'sentinel_route_oct' min width 5.0000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Track [/I2S_LRCK] on F.Cu, length 3.0000 mm",
+                    "pos": {
+                        "x": 142.895,
+                        "y": 94.0475
+                    },
+                    "uuid": "ab9ecd45-ada7-49bd-acd5-7640cfdf4602"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'sentinel_route_oct' min width 5.0000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Track [/I2S_LRCK] on F.Cu, length 3.0000 mm",
+                    "pos": {
+                        "x": 110.005,
+                        "y": 126.395
+                    },
+                    "uuid": "d23f3a2a-cdc7-4662-b6d7-db5f9d353a6c"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'sentinel_route_oct' min width 5.0000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Track [/I2S_LRCK] on F.Cu, length 6.6468 mm",
+                    "pos": {
+                        "x": 142.895,
+                        "y": 97.0475
+                    },
+                    "uuid": "e1deeda5-2210-4380-ac79-2e48f2bd2651"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'sentinel_route_oct' min width 5.0000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Track [/I2S_LRCK] on F.Cu, length 2.9500 mm",
+                    "pos": {
+                        "x": 139.1,
+                        "y": 107.15
+                    },
+                    "uuid": "e8450721-e0ab-43f1-aa88-d3b78e2a1bbb"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'sentinel_route_oct' min width 5.0000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Track [/I2S_LRCK] on F.Cu, length 30.1500 mm",
+                    "pos": {
+                        "x": 150.195,
+                        "y": 103.2475
+                    },
+                    "uuid": "e8c5a98e-dacb-4b26-b95c-df2b9ab460b8"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'sentinel_route_oct' min width 5.0000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Track [/I2S_LRCK] on F.Cu, length 13.1522 mm",
+                    "pos": {
+                        "x": 128.15,
+                        "y": 117.0
+                    },
+                    "uuid": "f3f1a4e1-1191-4f30-9c12-c5fd00df35ee"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'sentinel_route_oct' min width 5.0000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Track [/I2S_LRCK] on B.Cu, length 0.7778 mm",
+                    "pos": {
+                        "x": 138.195,
+                        "y": 101.7475
+                    },
+                    "uuid": "02c876c7-52b1-4d10-9bbb-7126e17f530e"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'sentinel_route_oct' min width 5.0000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Track [/I2S_LRCK] on B.Cu, length 2.2000 mm",
+                    "pos": {
+                        "x": 138.745,
+                        "y": 102.2975
+                    },
+                    "uuid": "3153a8a3-3e5f-4375-93b7-0463f0040d5e"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'sentinel_route_oct' min width 5.0000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Track [/I2S_LRCK] on B.Cu, length 1.0000 mm",
+                    "pos": {
+                        "x": 180.345,
+                        "y": 103.2475
+                    },
+                    "uuid": "819eb6ef-b510-4c88-84ed-6a8de27547ad"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'sentinel_route_oct' min width 5.0000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Track [/I2S_LRCK] on B.Cu, length 1.1314 mm",
+                    "pos": {
+                        "x": 181.345,
+                        "y": 103.2475
+                    },
+                    "uuid": "bd9874fc-d5f6-4d1e-a9f0-54b6fd817699"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'sentinel_route_oct' min width 5.0000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Track [/I2S_BCK] on F.Cu, length 0.6575 mm",
+                    "pos": {
+                        "x": 147.745,
+                        "y": 93.155
+                    },
+                    "uuid": "87a786d8-0844-4189-8b31-95bf938b2ff2"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'sentinel_route_oct' min width 5.0000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Track [/I2S_BCK] on F.Cu, length 0.9000 mm",
+                    "pos": {
+                        "x": 147.15,
+                        "y": 93.75
+                    },
+                    "uuid": "be02426c-fbf1-4ce2-93ff-b15b7f34a182"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'sentinel_route_oct' min width 5.0000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Track [/I2S_BCK] on F.Cu, length 0.8415 mm",
+                    "pos": {
+                        "x": 147.15,
+                        "y": 93.75
+                    },
+                    "uuid": "ec159c89-519b-4ced-a028-a8d430ca41cf"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'sentinel_route_oct' min width 5.0000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Track [/I2S_SDATA] on F.Cu, length 0.7778 mm",
+                    "pos": {
+                        "x": 148.0,
+                        "y": 99.85
+                    },
+                    "uuid": "1029c5f4-78fe-4dcf-9fd7-ab7292d78ebb"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'sentinel_route_oct' min width 5.0000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Track [/I2S_SDATA] on F.Cu, length 11.2500 mm",
+                    "pos": {
+                        "x": 192.345,
+                        "y": 113.9475
+                    },
+                    "uuid": "1a94efcd-6782-4708-9716-f0623f02ae9c"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'sentinel_route_oct' min width 5.0000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Track [/I2S_SDATA] on F.Cu, length 8.7700 mm",
+                    "pos": {
+                        "x": 116.385,
+                        "y": 114.595
+                    },
+                    "uuid": "217c6437-09f1-4d1a-8dcc-73062f4f0eda"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'sentinel_route_oct' min width 5.0000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Track [/I2S_SDATA] on F.Cu, length 28.6378 mm",
+                    "pos": {
+                        "x": 172.095,
+                        "y": 93.6975
+                    },
+                    "uuid": "2ac82488-370f-418b-a06b-c1779de24d1c"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'sentinel_route_oct' min width 5.0000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Track [/I2S_SDATA] on F.Cu, length 19.2500 mm",
+                    "pos": {
+                        "x": 152.845,
+                        "y": 93.6975
+                    },
+                    "uuid": "2b1cbbe6-ec9c-475d-8fec-f4bcb8f11dee"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'sentinel_route_oct' min width 5.0000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Track [/I2S_SDATA] on F.Cu, length 0.7778 mm",
+                    "pos": {
+                        "x": 146.35,
+                        "y": 100.4
+                    },
+                    "uuid": "2d66d361-299d-46ee-9569-431fbdb8ed3c"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'sentinel_route_oct' min width 5.0000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Track [/I2S_SDATA] on F.Cu, length 0.6975 mm",
+                    "pos": {
+                        "x": 149.095,
+                        "y": 93.195
+                    },
+                    "uuid": "468de954-3d9e-49e7-84ce-a8f901bf7abf"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'sentinel_route_oct' min width 5.0000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Track [/I2S_SDATA] on F.Cu, length 0.7500 mm",
+                    "pos": {
+                        "x": 149.65,
+                        "y": 94.5
+                    },
+                    "uuid": "4defdbb1-a4aa-49f4-a1ae-817a904e8e08"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'sentinel_route_oct' min width 5.0000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Track [/I2S_SDATA] on F.Cu, length 2.0000 mm",
+                    "pos": {
+                        "x": 144.35,
+                        "y": 101.6
+                    },
+                    "uuid": "4e63e0c7-eba1-4e0b-9cf0-2903f6b5dac3"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'sentinel_route_oct' min width 5.0000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Track [/I2S_SDATA] on F.Cu, length 0.7778 mm",
+                    "pos": {
+                        "x": 192.345,
+                        "y": 125.1975
+                    },
+                    "uuid": "560f94dc-844b-4794-8728-52402ff53043"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'sentinel_route_oct' min width 5.0000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Track [/I2S_SDATA] on F.Cu, length 1.4779 mm",
+                    "pos": {
+                        "x": 143.305,
+                        "y": 102.645
+                    },
+                    "uuid": "5fe77dab-945a-48ef-9ac6-8a68decc2d74"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'sentinel_route_oct' min width 5.0000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Track [/I2S_SDATA] on F.Cu, length 1.1000 mm",
+                    "pos": {
+                        "x": 146.9,
+                        "y": 99.85
+                    },
+                    "uuid": "72d412b8-98c7-44da-ac49-60404a73114b"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'sentinel_route_oct' min width 5.0000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Track [/I2S_SDATA] on F.Cu, length 3.7000 mm",
+                    "pos": {
+                        "x": 148.55,
+                        "y": 99.3
+                    },
+                    "uuid": "897f2298-682d-4d40-96b1-f2cb764cefb3"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'sentinel_route_oct' min width 5.0000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Track [/I2S_SDATA] on F.Cu, length 2.5500 mm",
+                    "pos": {
+                        "x": 149.095,
+                        "y": 92.4975
+                    },
+                    "uuid": "93c0e67e-a8c0-45a9-8ec5-17b7af7513f4"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'sentinel_route_oct' min width 5.0000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Track [/I2S_SDATA] on F.Cu, length 4.4200 mm",
+                    "pos": {
+                        "x": 109.005,
+                        "y": 126.395
+                    },
+                    "uuid": "9cf9a635-698c-4241-a6d9-62dbab7bf265"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'sentinel_route_oct' min width 5.0000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Track [/I2S_SDATA] on F.Cu, length 1.5556 mm",
+                    "pos": {
+                        "x": 148.55,
+                        "y": 95.6
+                    },
+                    "uuid": "a3f2482c-18a0-4438-b097-e69e917283e6"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'sentinel_route_oct' min width 5.0000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Track [/I2S_SDATA] on F.Cu, length 0.7849 mm",
+                    "pos": {
+                        "x": 149.65,
+                        "y": 93.75
+                    },
+                    "uuid": "aa4d8c76-0f41-4f42-8306-3f698f0225d0"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'sentinel_route_oct' min width 5.0000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Track [/I2S_SDATA] on F.Cu, length 1.6971 mm",
+                    "pos": {
+                        "x": 151.645,
+                        "y": 92.4975
+                    },
+                    "uuid": "ab629679-15ab-4854-956c-8239a4284de5"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'sentinel_route_oct' min width 5.0000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Track [/I2S_SDATA] on F.Cu, length 16.8999 mm",
+                    "pos": {
+                        "x": 125.155,
+                        "y": 114.595
+                    },
+                    "uuid": "af67fde4-5b7d-4d72-8968-029f85fb7491"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'sentinel_route_oct' min width 5.0000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Track [/I2S_SDATA] on F.Cu, length 0.6475 mm",
+                    "pos": {
+                        "x": 191.795,
+                        "y": 125.7475
+                    },
+                    "uuid": "c1fc887d-648b-4595-977d-b013a0e0b890"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'sentinel_route_oct' min width 5.0000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Track [/I2S_SDATA] on F.Cu, length 6.2000 mm",
+                    "pos": {
+                        "x": 137.105,
+                        "y": 102.645
+                    },
+                    "uuid": "dd24e822-5e6d-4075-9ba3-a8c8a4aec014"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'sentinel_route_oct' min width 5.0000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Track [/I2S_SDATA] on F.Cu, length 1.2000 mm",
+                    "pos": {
+                        "x": 146.35,
+                        "y": 101.6
+                    },
+                    "uuid": "ddba8d0d-f023-465a-aaf6-2db3ed4214b8"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'sentinel_route_oct' min width 5.0000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Track [/I2S_SDATA] on F.Cu, length 10.4369 mm",
+                    "pos": {
+                        "x": 109.005,
+                        "y": 121.975
+                    },
+                    "uuid": "eda66551-d7a2-4ad4-8610-acbb075c23e7"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'sentinel_route_oct' min width 5.0000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Track [Net-(U24-XI)] on F.Cu, length 0.7000 mm",
+                    "pos": {
+                        "x": 148.1675,
+                        "y": 79.75
+                    },
+                    "uuid": "0a1561b6-6e08-4339-85a8-de10942e6fa3"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'sentinel_route_oct' min width 5.0000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Track [Net-(U24-XI)] on F.Cu, length 1.2728 mm",
+                    "pos": {
+                        "x": 148.8675,
+                        "y": 79.75
+                    },
+                    "uuid": "83c01d37-e66e-426d-ae53-6eb265276bed"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'sentinel_route_oct' min width 5.0000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Track [Net-(U24-XI)] on F.Cu, length 0.0318 mm",
+                    "pos": {
+                        "x": 149.7675,
+                        "y": 82.5325
+                    },
+                    "uuid": "c101ed91-d1fc-4223-ade9-980f9729b5a7"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'sentinel_route_oct' min width 5.0000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Track [Net-(U24-XI)] on F.Cu, length 1.7000 mm",
+                    "pos": {
+                        "x": 148.1675,
+                        "y": 78.05
+                    },
+                    "uuid": "cf972bd1-4954-4aa4-888f-48583661916f"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'sentinel_route_oct' min width 5.0000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Track [Net-(U24-XI)] on F.Cu, length 1.8825 mm",
+                    "pos": {
+                        "x": 149.7675,
+                        "y": 80.65
+                    },
+                    "uuid": "d4eb4243-47c3-40fc-a12f-34bd1628f85e"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'sentinel_route_oct' min width 5.0000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Track [Net-(U24-XO)] on F.Cu, length 1.5450 mm",
+                    "pos": {
+                        "x": 150.9,
+                        "y": 78.645
+                    },
+                    "uuid": "3026f97d-6c90-4291-b27c-12783ea399fc"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'sentinel_route_oct' min width 5.0000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Track [Net-(U24-XO)] on F.Cu, length 0.9263 mm",
+                    "pos": {
+                        "x": 150.245,
+                        "y": 79.3
+                    },
+                    "uuid": "3fb3a699-a1cf-4ac9-89c6-c3ab0bb67b07"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'sentinel_route_oct' min width 5.0000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Track [Net-(U24-XO)] on F.Cu, length 0.2500 mm",
+                    "pos": {
+                        "x": 150.45,
+                        "y": 76.65
+                    },
+                    "uuid": "60de1e4d-cc08-498a-8bfe-d875bdb3d739"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'sentinel_route_oct' min width 5.0000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Track [Net-(U24-XO)] on F.Cu, length 0.6364 mm",
+                    "pos": {
+                        "x": 150.9,
+                        "y": 77.1
+                    },
+                    "uuid": "6fc18c0e-9be7-4a62-bf8e-a6eb041702cc"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'sentinel_route_oct' min width 5.0000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Track [Net-(U24-XO)] on F.Cu, length 1.7500 mm",
+                    "pos": {
+                        "x": 149.3325,
+                        "y": 74.6
+                    },
+                    "uuid": "b674ff45-520e-49d5-b9d4-6d8bba3c7bfc"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'sentinel_route_oct' min width 5.0000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Track [Net-(U24-XO)] on F.Cu, length 3.2550 mm",
+                    "pos": {
+                        "x": 150.245,
+                        "y": 82.555
+                    },
+                    "uuid": "f14b507b-0b8e-45c6-8a6a-bf83b022d4b1"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'sentinel_route_oct' min width 5.0000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Track [Net-(U24-DOUT)] on F.Cu, length 1.0725 mm",
+                    "pos": {
+                        "x": 148.245,
+                        "y": 89.3525
+                    },
+                    "uuid": "035b9b0e-9735-4ed3-b963-83b27bb758e0"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'sentinel_route_oct' min width 5.0000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Track [Net-(U24-DOUT)] on F.Cu, length 1.2021 mm",
+                    "pos": {
+                        "x": 149.095,
+                        "y": 90.2025
+                    },
+                    "uuid": "1b05d89c-c5b6-4fbb-8404-4acc6c9e23bc"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'sentinel_route_oct' min width 5.0000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Track [Net-(U24-DOUT)] on F.Cu, length 1.1000 mm",
+                    "pos": {
+                        "x": 149.095,
+                        "y": 91.3025
+                    },
+                    "uuid": "c69e4632-442a-48f3-a2fe-1dc45106b20d"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'sentinel_route_oct' min width 5.0000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Track [Net-(U2-XTI)] on F.Cu, length 2.7959 mm",
+                    "pos": {
+                        "x": 155.25553,
+                        "y": 52.85915
+                    },
+                    "uuid": "47e7a2fa-092b-409a-9bcf-c36b1bada3bf"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'sentinel_route_oct' min width 5.0000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Track [Net-(U2-XTI)] on F.Cu, length 0.6300 mm",
+                    "pos": {
+                        "x": 152.73,
+                        "y": 52.3775
+                    },
+                    "uuid": "703899f0-ab25-40d5-99c3-ba8381d0bb68"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'sentinel_route_oct' min width 5.0000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Track [Net-(U2-XTI)] on F.Cu, length 0.8733 mm",
+                    "pos": {
+                        "x": 152.1125,
+                        "y": 51.76
+                    },
+                    "uuid": "95638235-ca5a-4109-ad2d-90d73212f03d"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'sentinel_route_oct' min width 5.0000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Track [Net-(U2-XTI)] on F.Cu, length 1.8500 mm",
+                    "pos": {
+                        "x": 152.1125,
+                        "y": 49.91
+                    },
+                    "uuid": "cd88c83b-59a5-49c9-a589-f1bf614d9585"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'sentinel_route_oct' min width 5.0000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Track [Net-(U2-XTI)] on F.Cu, length 1.8955 mm",
+                    "pos": {
+                        "x": 153.36,
+                        "y": 52.3775
+                    },
+                    "uuid": "e3ea7f1c-fd86-4adc-bae6-b45197afec60"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'sentinel_route_oct' min width 5.0000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Track [Net-(U2-XTO)] on F.Cu, length 2.1213 mm",
+                    "pos": {
+                        "x": 155.7075,
+                        "y": 49.91
+                    },
+                    "uuid": "3bde7bd6-d9ff-4008-9399-6890c990170a"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'sentinel_route_oct' min width 5.0000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Track [Net-(U2-XTO)] on F.Cu, length 0.7071 mm",
+                    "pos": {
+                        "x": 156.4,
+                        "y": 51.7
+                    },
+                    "uuid": "49b06a52-7435-4240-99a7-13da0a45722d"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'sentinel_route_oct' min width 5.0000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Track [Net-(U2-XTO)] on F.Cu, length 1.8000 mm",
+                    "pos": {
+                        "x": 159.26,
+                        "y": 50.9
+                    },
+                    "uuid": "6ec27f74-65f2-4b89-96a5-4c50ac5f80d0"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'sentinel_route_oct' min width 5.0000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Track [Net-(U2-XTO)] on F.Cu, length 1.8150 mm",
+                    "pos": {
+                        "x": 156.4,
+                        "y": 53.515
+                    },
+                    "uuid": "7679a7d1-7b5e-4c5b-94f4-955f71053ff3"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'sentinel_route_oct' min width 5.0000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Track [Net-(U2-XTO)] on F.Cu, length 0.7566 mm",
+                    "pos": {
+                        "x": 155.865,
+                        "y": 54.05
+                    },
+                    "uuid": "b3e2d6c6-a797-467a-8931-310946d01d80"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'sentinel_route_oct' min width 5.0000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Track [Net-(U2-XTO)] on F.Cu, length 1.6050 mm",
+                    "pos": {
+                        "x": 155.865,
+                        "y": 55.655
+                    },
+                    "uuid": "df0325ae-aa8c-4b85-b229-c163f7136464"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'sentinel_route_oct' min width 5.0000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Track [Net-(U2-XTO)] on F.Cu, length 2.4000 mm",
+                    "pos": {
+                        "x": 153.3075,
+                        "y": 49.91
+                    },
+                    "uuid": "f66a4ffa-b949-47da-abed-d80c9e47d6c9"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'sentinel_route_oct' min width 5.0000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Track [Net-(U24-LRCK)] on F.Cu, length 1.2021 mm",
+                    "pos": {
+                        "x": 146.395,
+                        "y": 90.2025
+                    },
+                    "uuid": "4894ef46-2223-4159-b7eb-d47638878ad7"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'sentinel_route_oct' min width 5.0000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Track [Net-(U24-LRCK)] on F.Cu, length 1.1000 mm",
+                    "pos": {
+                        "x": 146.395,
+                        "y": 91.3025
+                    },
+                    "uuid": "99fd2f86-cdd0-4a6f-a361-19cd4fdfe48b"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'sentinel_route_oct' min width 5.0000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Track [Net-(U24-LRCK)] on F.Cu, length 1.0725 mm",
+                    "pos": {
+                        "x": 147.245,
+                        "y": 89.3525
+                    },
+                    "uuid": "d77d0348-37c8-46f3-b0ba-4569798f9ae8"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'sentinel_route_oct' min width 5.0000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Track [Net-(U24-BCK)] on F.Cu, length 3.0225 mm",
+                    "pos": {
+                        "x": 147.745,
+                        "y": 88.28
+                    },
+                    "uuid": "d33778aa-f542-46e8-ae4d-5abbf2ad293f"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        }
+    ]
+}

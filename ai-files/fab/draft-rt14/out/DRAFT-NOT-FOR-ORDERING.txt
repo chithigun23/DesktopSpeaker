@@ -1,0 +1,3 @@
+DRAFT - NOT FOR ORDERING.
+Generated 2026-11-03T08:16:53+11:00 from /home/chithi/Desktop/DesktopSpeaker/ai-files/pcb/work-route14/RT-14.kicad_pcb (a200d97b78fc53ee).
+The board is not finished (see checks/gates.txt); regenerate with regen_final.sh on the final board.

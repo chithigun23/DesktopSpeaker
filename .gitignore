@@ -199,3 +199,10 @@ ai-files/pcb/work-route14/*
 !ai-files/pcb/work-route14/scripts/
 !ai-files/pcb/work-route14/evidence/
 !ai-files/pcb/work-route14/t/RT-14.gates.txt
+ai-files/fab/draft-rt14/work/
+ai-files/fab/draft-rt14/out/*.step
+ai-files/cad/v14/web-staging/
+ai-files/cad/v14/*/work/
+ai-files/cad/v14/work/
+ai-files/cad/v14/*.step
+ai-files/cad/v14/*.FCStd

@@ -1,0 +1,795 @@
+** Drc report for DesktopSpeaker.kicad_pcb **
+** Created on 2026-11-03T08:17:22 **
+** Report includes: Errors, Warnings, Exclusions **
+
+** Found 0 DRC violations **
+
+** Found 12 unconnected pads **
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(150.7450 mm, 88.2800 mm): Pad 23 [/AUD_SDA] of U24 on F.Cu
+    @(139.0500 mm, 83.0975 mm): Track [/AUD_SDA] on In2.Cu, length 2.5456 mm
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(191.2950 mm, 126.3950 mm): Pad 15 [/AUD_SDA] of U7 on F.Cu
+    @(150.7450 mm, 88.2800 mm): Pad 23 [/AUD_SDA] of U24 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(156.9500 mm, 89.2775 mm): Pad 1 [Net-(C205-Pad2)] of R205 on F.Cu
+    @(192.8900 mm, 42.3675 mm): Pad 2 [Net-(C205-Pad2)] of C205 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(146.3500 mm, 95.4000 mm): Pad 1 [/I2S_BCK] of TP12 on F.Cu
+    @(109.5050 mm, 126.3950 mm): Pad 13 [/I2S_BCK] of U6 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(192.2950 mm, 126.3950 mm): Pad 13 [/I2S_BCK] of U7 on F.Cu
+    @(147.1500 mm, 93.7500 mm): Track [/I2S_BCK] on F.Cu, length 0.9000 mm
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(153.4200 mm, 123.3850 mm): Track [/Battery_Charger/ILIM_HIZ] on F.Cu, length 0.6500 mm
+    @(180.9625 mm, 110.7350 mm): Track [/Battery_Charger/ILIM_HIZ] on F.Cu, length 1.8975 mm
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(156.3475 mm, 90.7300 mm): Pad 1 [Net-(C204-Pad2)] of R204 on F.Cu
+    @(191.1400 mm, 40.1675 mm): Pad 2 [Net-(C204-Pad2)] of C204 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(162.0175 mm, 79.0000 mm): Pad 1 [/USB_AUDIO_L] of C200 on F.Cu
+    @(174.5500 mm, 60.8825 mm): Track [/USB_AUDIO_L] on F.Cu, length 7.1418 mm
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(124.7500 mm, 70.8250 mm): Pad 47 [/HP_EN] of U3 on F.Cu
+    @(197.0450 mm, 63.7775 mm): Track [/HP_EN] on F.Cu, length 0.8485 mm
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(183.4000 mm, 58.6975 mm): Pad 1 [/HP_SEL_B] of R235 on F.Cu
+    @(122.3250 mm, 73.7500 mm): Pad 51 [/HP_SEL_B] of U3 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(133.6750 mm, 74.2500 mm): Pad 29 [/AUX_DET] of U3 on F.Cu
+    @(189.8225 mm, 36.3000 mm): Pad 2 [/AUX_DET] of R242 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(168.7500 mm, 56.4325 mm): Track [/USB_AUDIO_R] on F.Cu, length 1.5556 mm
+    @(162.0175 mm, 77.6500 mm): Pad 1 [/USB_AUDIO_R] of C201 on F.Cu
+
+** Found 243 Footprint errors **
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(145.2300 mm, 29.3400 mm): Footprint D1
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(148.9800 mm, 23.8850 mm): Footprint J1
+[footprint_symbol_field_mismatch]: Field 'Datasheet' differs (PCB: '', Schematic: '${KIPRJMOD}/../ai-files/datasheets/TDK_C2012X7R1H475KT0A0E.pdf')
+    Local override; warning
+    @(145.7800 mm, 35.6500 mm): Footprint C5
+[footprint_symbol_field_mismatch]: Missing symbol field 'Manufacturer' in footprint
+    Local override; warning
+    @(131.7700 mm, 52.8000 mm): Footprint C6
+[footprint_symbol_field_mismatch]: Missing symbol field 'Manufacturer' in footprint
+    Local override; warning
+    @(132.6700 mm, 57.0000 mm): Footprint C181
+[footprint_symbol_field_mismatch]: Missing symbol field 'Manufacturer' in footprint
+    Local override; warning
+    @(135.5000 mm, 50.9000 mm): Footprint C184
+[footprint_symbol_field_mismatch]: Missing symbol field 'Manufacturer' in footprint
+    Local override; warning
+    @(153.7300 mm, 31.8550 mm): Footprint D5
+[footprint_symbol_field_mismatch]: Missing symbol field 'Manufacturer' in footprint
+    Local override; warning
+    @(146.3250 mm, 59.1000 mm): Footprint D7
+[footprint_symbol_field_mismatch]: Missing symbol field 'Manufacturer' in footprint
+    Local override; warning
+    @(135.7000 mm, 61.5300 mm): Footprint R11
+[footprint_symbol_field_mismatch]: Missing symbol field 'Manufacturer' in footprint
+    Local override; warning
+    @(132.1000 mm, 48.3000 mm): Footprint R12
+[footprint_symbol_field_mismatch]: Missing symbol field 'Manufacturer' in footprint
+    Local override; warning
+    @(139.6700 mm, 60.2000 mm): Footprint R13
+[footprint_symbol_field_mismatch]: Missing symbol field 'Manufacturer' in footprint
+    Local override; warning
+    @(133.2700 mm, 60.8000 mm): Footprint R14
+[footprint_symbol_field_mismatch]: Missing symbol field 'Manufacturer' in footprint
+    Local override; warning
+    @(131.9700 mm, 61.2500 mm): Footprint R15
+[footprint_symbol_field_mismatch]: Missing symbol field 'Manufacturer' in footprint
+    Local override; warning
+    @(130.6700 mm, 56.2000 mm): Footprint R16
+[footprint_symbol_field_mismatch]: Missing symbol field 'Manufacturer' in footprint
+    Local override; warning
+    @(138.3200 mm, 61.6000 mm): Footprint R17
+[footprint_symbol_field_mismatch]: Missing symbol field 'Manufacturer' in footprint
+    Local override; warning
+    @(133.6000 mm, 48.3000 mm): Footprint R18
+[footprint_symbol_mismatch]: Footprint attributes don't match symbol: 'Exclude from bill of materials' settings differ
+    Local override; warning
+    @(142.2000 mm, 48.8750 mm): Footprint TP1
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Debug test point (excluded from BOM; hand-fitted loop)')
+    Local override; warning
+    @(142.2000 mm, 48.8750 mm): Footprint TP1
+[footprint_symbol_mismatch]: Footprint attributes don't match symbol: 'Exclude from bill of materials' settings differ
+    Local override; warning
+    @(131.4750 mm, 64.1000 mm): Footprint TP5
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Debug test point (excluded from BOM; hand-fitted loop)')
+    Local override; warning
+    @(131.4750 mm, 64.1000 mm): Footprint TP5
+[footprint_symbol_mismatch]: Footprint attributes don't match symbol: 'Exclude from bill of materials' settings differ
+    Local override; warning
+    @(137.3987 mm, 65.6000 mm): Footprint TP23
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Debug test point (excluded from BOM; hand-fitted loop)')
+    Local override; warning
+    @(137.3987 mm, 65.6000 mm): Footprint TP23
+[footprint_symbol_field_mismatch]: Missing symbol field 'Manufacturer' in footprint
+    Local override; warning
+    @(137.4000 mm, 55.8000 mm): Footprint U11
+[net_conflict]: No pad found for pin 21 (/Battery_Charger/VBUS_PD) in schematic
+    Local override; warning
+    @(137.4000 mm, 55.8000 mm): Footprint U11
+[net_conflict]: No pad found for pin 22 (/Battery_Charger/VBUS_PD) in schematic
+    Local override; warning
+    @(137.4000 mm, 55.8000 mm): Footprint U11
+[net_conflict]: No pad found for pin 24 (/USB_VBUS) in schematic
+    Local override; warning
+    @(137.4000 mm, 55.8000 mm): Footprint U11
+[net_conflict]: No pad found for pin 25 (/USB_VBUS) in schematic
+    Local override; warning
+    @(137.4000 mm, 55.8000 mm): Footprint U11
+[net_conflict]: No pad found for pin 33 (/USB_VBUS) in schematic
+    Local override; warning
+    @(137.4000 mm, 55.8000 mm): Footprint U11
+[net_conflict]: No pad found for pin 35 (GND) in schematic
+    Local override; warning
+    @(137.4000 mm, 55.8000 mm): Footprint U11
+[footprint_symbol_field_mismatch]: Missing symbol field 'Manufacturer' in footprint
+    Local override; warning
+    @(148.9800 mm, 37.5025 mm): Footprint U19
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC' in footprint
+    Local override; warning
+    @(146.9200 mm, 123.2350 mm): Footprint C102
+[footprint_symbol_field_mismatch]: Field 'Datasheet' differs (PCB: '${KIPRJMOD}/../ai-files/datasheets/YAGEO_C107093_CC0603KRX7R9BB473.pdf', Schematic: '${KIPRJMOD}/../ai-files/datasheets/Murata_GRM155R71H473KE14D.pdf')
+    Local override; warning
+    @(147.9000 mm, 121.6500 mm): Footprint C103
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC' in footprint
+    Local override; warning
+    @(154.9200 mm, 116.5300 mm): Footprint C104
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC' in footprint
+    Local override; warning
+    @(157.3200 mm, 116.5300 mm): Footprint C105
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC' in footprint
+    Local override; warning
+    @(158.8500 mm, 122.8400 mm): Footprint C106
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC' in footprint
+    Local override; warning
+    @(159.7200 mm, 116.5300 mm): Footprint C107
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC' in footprint
+    Local override; warning
+    @(147.0700 mm, 127.1900 mm): Footprint C109
+[footprint_symbol_field_mismatch]: Field 'Datasheet' differs (PCB: 'https://www.yageo.com/upload/media/product/productspec/capacitor/CC0603KRX7R9BB473.pdf', Schematic: '${KIPRJMOD}/../ai-files/datasheets/Murata_GRM155R71H473KE14D.pdf')
+    Local override; warning
+    @(155.6000 mm, 124.7500 mm): Footprint C110
+[footprint_symbol_field_mismatch]: Missing symbol field 'Manufacturer' in footprint
+    Local override; warning
+    @(204.2850 mm, 101.6050 mm): Footprint J5
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(151.5700 mm, 110.0300 mm): Footprint L1
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(180.0250 mm, 110.7350 mm): Footprint Q101
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(179.0875 mm, 106.2850 mm): Footprint Q102
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(172.5250 mm, 110.7350 mm): Footprint Q103
+[footprint_symbol_field_mismatch]: Field 'Datasheet' differs (PCB: '${KIPRJMOD}/../ai-files/datasheets/SAE_1RC0603F_series.pdf', Schematic: '${KIPRJMOD}/../ai-files/datasheets/UNI_ROYAL_0402WGF_series.pdf')
+    Local override; warning
+    @(153.3700 mm, 128.9300 mm): Footprint R100
+[footprint_symbol_field_mismatch]: Field 'Datasheet' differs (PCB: '${KIPRJMOD}/../ai-files/datasheets/SAE_1RC0603F_series.pdf', Schematic: '${KIPRJMOD}/../ai-files/datasheets/Yageo_AC0402FR_series.pdf')
+    Local override; warning
+    @(200.7850 mm, 104.1050 mm): Footprint R101
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(152.2700 mm, 126.9800 mm): Footprint R103
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(122.4000 mm, 84.5000 mm): Footprint R106
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(164.6900 mm, 108.1400 mm): Footprint R107
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(182.8600 mm, 111.3400 mm): Footprint R109
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(176.5900 mm, 108.8200 mm): Footprint R110
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(181.6900 mm, 105.6000 mm): Footprint R111
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(131.3400 mm, 24.7450 mm): Footprint R113
+[footprint_symbol_field_mismatch]: Missing symbol field 'Manufacturer' in footprint
+    Local override; warning
+    @(136.0700 mm, 22.9500 mm): Footprint SW100
+[footprint_symbol_field_mismatch]: Missing symbol field 'Manufacturer' in footprint
+    Local override; warning
+    @(210.5000 mm, 86.8050 mm): Footprint SW101
+[footprint_symbol_mismatch]: Footprint attributes don't match symbol: 'Exclude from bill of materials' settings differ
+    Local override; warning
+    @(159.9700 mm, 126.4850 mm): Footprint TP2
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Debug test point (excluded from BOM; hand-fitted loop)')
+    Local override; warning
+    @(159.9700 mm, 126.4850 mm): Footprint TP2
+[footprint_symbol_mismatch]: Footprint attributes don't match symbol: 'Exclude from bill of materials' settings differ
+    Local override; warning
+    @(153.1700 mm, 131.1850 mm): Footprint TP11
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Debug test point (excluded from BOM; hand-fitted loop)')
+    Local override; warning
+    @(153.1700 mm, 131.1850 mm): Footprint TP11
+[footprint_symbol_mismatch]: Footprint attributes don't match symbol: 'Exclude from bill of materials' settings differ
+    Local override; warning
+    @(141.0000 mm, 90.9000 mm): Footprint TP26
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Debug test point (excluded from BOM; hand-fitted loop)')
+    Local override; warning
+    @(141.0000 mm, 90.9000 mm): Footprint TP26
+[footprint_symbol_mismatch]: Footprint attributes don't match symbol: 'Exclude from bill of materials' settings differ
+    Local override; warning
+    @(144.2500 mm, 132.0500 mm): Footprint TP27
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Debug test point (excluded from BOM; hand-fitted loop)')
+    Local override; warning
+    @(144.2500 mm, 132.0500 mm): Footprint TP27
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(151.5700 mm, 122.1850 mm): Footprint U4
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(100.6000 mm, 90.7500 mm): Footprint C120
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(112.4100 mm, 74.7800 mm): Footprint C122
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(115.0075 mm, 74.8300 mm): Footprint C123
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(90.5500 mm, 73.9800 mm): Footprint C124
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(94.6500 mm, 73.9800 mm): Footprint C125
+[footprint_symbol_field_mismatch]: Missing symbol field 'ki_keywords' in footprint
+    Local override; warning
+    @(102.7500 mm, 81.7000 mm): Footprint C126
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(102.9100 mm, 73.8800 mm): Footprint C130
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(96.0100 mm, 81.2800 mm): Footprint C131
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(100.8100 mm, 71.7800 mm): Footprint C132
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(107.6100 mm, 82.2275 mm): Footprint Q104
+[footprint_symbol_field_mismatch]: Missing symbol field 'Manufacturer' in footprint
+    Local override; warning
+    @(92.9700 mm, 77.0800 mm): Footprint R125
+[footprint_symbol_field_mismatch]: Missing symbol field 'ki_fp_filters' in footprint
+    Local override; warning
+    @(103.6100 mm, 75.9800 mm): Footprint R126
+[footprint_symbol_field_mismatch]: Missing symbol field 'ki_fp_filters' in footprint
+    Local override; warning
+    @(106.0700 mm, 79.6300 mm): Footprint R127
+[footprint_symbol_mismatch]: Footprint attributes don't match symbol: 'Exclude from bill of materials' settings differ
+    Local override; warning
+    @(104.0975 mm, 87.2275 mm): Footprint TP3
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Debug test point (excluded from BOM; hand-fitted loop)')
+    Local override; warning
+    @(104.0975 mm, 87.2275 mm): Footprint TP3
+[footprint_symbol_mismatch]: Footprint attributes don't match symbol: 'Exclude from bill of materials' settings differ
+    Local override; warning
+    @(95.2775 mm, 86.2100 mm): Footprint TP4
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Debug test point (excluded from BOM; hand-fitted loop)')
+    Local override; warning
+    @(95.2775 mm, 86.2100 mm): Footprint TP4
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(100.1100 mm, 88.7275 mm): Footprint U5
+[footprint_symbol_field_mismatch]: Missing symbol field 'Manufacturer' in footprint
+    Local override; warning
+    @(92.6100 mm, 74.2275 mm): Footprint U20
+[footprint_symbol_field_mismatch]: Missing symbol field 'Manufacturer' in footprint
+    Local override; warning
+    @(100.1100 mm, 82.2275 mm): Footprint U21
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC' in footprint
+    Local override; warning
+    @(116.6200 mm, 33.4600 mm): Footprint C150
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC' in footprint
+    Local override; warning
+    @(117.5500 mm, 40.4500 mm): Footprint C152
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC' in footprint
+    Local override; warning
+    @(119.8500 mm, 40.4500 mm): Footprint C153
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC' in footprint
+    Local override; warning
+    @(113.3600 mm, 42.9600 mm): Footprint C154
+[footprint_symbol_field_mismatch]: Field 'Datasheet' differs (PCB: '${KIPRJMOD}/../ai-files/datasheets/FOJAN_FRC0603_resistors.pdf', Schematic: '${KIPRJMOD}/../ai-files/datasheets/UNI_ROYAL_0402WGF_series.pdf')
+    Local override; warning
+    @(113.2000 mm, 40.0500 mm): Footprint R150
+[footprint_symbol_field_mismatch]: Field 'Datasheet' differs (PCB: '${KIPRJMOD}/../ai-files/datasheets/Yageo_AC0603FR-0791KL.pdf', Schematic: '${KIPRJMOD}/../ai-files/datasheets/Yageo_AC0402FR_series.pdf')
+    Local override; warning
+    @(113.2700 mm, 38.9600 mm): Footprint R151
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(119.3700 mm, 32.9600 mm): Footprint R152
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(115.9700 mm, 31.4600 mm): Footprint R153
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(118.0200 mm, 48.8100 mm): Footprint R154
+[footprint_symbol_mismatch]: Footprint attributes don't match symbol: 'Exclude from bill of materials' settings differ
+    Local override; warning
+    @(116.6150 mm, 46.5650 mm): Footprint TP9
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Debug test point (excluded from BOM; hand-fitted loop)')
+    Local override; warning
+    @(116.6150 mm, 46.5650 mm): Footprint TP9
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC' in footprint
+    Local override; warning
+    @(90.6300 mm, 101.5700 mm): Footprint C140
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC' in footprint
+    Local override; warning
+    @(93.8700 mm, 104.9700 mm): Footprint C141
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC' in footprint
+    Local override; warning
+    @(97.9000 mm, 106.0500 mm): Footprint C142
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(91.9000 mm, 95.0000 mm): Footprint R142
+[footprint_symbol_mismatch]: Footprint attributes don't match symbol: 'Exclude from bill of materials' settings differ
+    Local override; warning
+    @(97.8750 mm, 96.0750 mm): Footprint TP7
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Debug test point (excluded from BOM; hand-fitted loop)')
+    Local override; warning
+    @(97.8750 mm, 96.0750 mm): Footprint TP7
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(128.0000 mm, 84.6500 mm): Footprint C160
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(131.2000 mm, 84.6500 mm): Footprint C162
+[footprint_symbol_field_mismatch]: Missing symbol field 'Manufacturer' in footprint
+    Local override; warning
+    @(168.2650 mm, 79.9950 mm): Footprint J6
+[footprint_symbol_field_mismatch]: Missing symbol field 'Manufacturer' in footprint
+    Local override; warning
+    @(122.1000 mm, 64.0500 mm): Footprint J7
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(120.7000 mm, 70.3000 mm): Footprint R160
+[footprint_symbol_field_mismatch]: Field 'MPN' differs (PCB: 'EC11E15244G1', Schematic: 'EC11E18244AU')
+    Local override; warning
+    @(109.3600 mm, 98.4350 mm): Footprint SW102
+[footprint_symbol_mismatch]: Footprint attributes don't match symbol: 'Exclude from bill of materials' settings differ
+    Local override; warning
+    @(138.0000 mm, 97.0000 mm): Footprint TP15
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Debug test point (excluded from BOM; hand-fitted loop)')
+    Local override; warning
+    @(138.0000 mm, 97.0000 mm): Footprint TP15
+[footprint_symbol_mismatch]: Footprint attributes don't match symbol: 'Exclude from bill of materials' settings differ
+    Local override; warning
+    @(133.7500 mm, 96.2500 mm): Footprint TP16
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Debug test point (excluded from BOM; hand-fitted loop)')
+    Local override; warning
+    @(133.7500 mm, 96.2500 mm): Footprint TP16
+[footprint_symbol_mismatch]: Footprint attributes don't match symbol: 'Exclude from bill of materials' settings differ
+    Local override; warning
+    @(137.0000 mm, 106.2500 mm): Footprint TP17
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Debug test point (excluded from BOM; hand-fitted loop)')
+    Local override; warning
+    @(137.0000 mm, 106.2500 mm): Footprint TP17
+[footprint_symbol_mismatch]: Footprint attributes don't match symbol: 'Exclude from bill of materials' settings differ
+    Local override; warning
+    @(134.2500 mm, 102.0000 mm): Footprint TP18
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Debug test point (excluded from BOM; hand-fitted loop)')
+    Local override; warning
+    @(134.2500 mm, 102.0000 mm): Footprint TP18
+[footprint_symbol_mismatch]: Footprint attributes don't match symbol: 'Exclude from bill of materials' settings differ
+    Local override; warning
+    @(133.0000 mm, 87.5000 mm): Footprint TP19
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Debug test point (excluded from BOM; hand-fitted loop)')
+    Local override; warning
+    @(133.0000 mm, 87.5000 mm): Footprint TP19
+[footprint_symbol_mismatch]: Footprint attributes don't match symbol: 'Exclude from bill of materials' settings differ
+    Local override; warning
+    @(115.5000 mm, 68.0000 mm): Footprint TP21
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Debug test point (excluded from BOM; hand-fitted loop)')
+    Local override; warning
+    @(115.5000 mm, 68.0000 mm): Footprint TP21
+[footprint_symbol_mismatch]: Footprint attributes don't match symbol: 'Exclude from bill of materials' settings differ
+    Local override; warning
+    @(178.5150 mm, 78.8063 mm): Footprint TP25
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Debug test point (excluded from BOM; hand-fitted loop)')
+    Local override; warning
+    @(178.5150 mm, 78.8063 mm): Footprint TP25
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(128.0000 mm, 76.5000 mm): Footprint U3
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(152.6000 mm, 64.4800 mm): Footprint C170
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(156.8100 mm, 64.4800 mm): Footprint C171
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(152.9000 mm, 53.7600 mm): Footprint C172
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(159.2100 mm, 53.1600 mm): Footprint C173
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(160.7100 mm, 56.2600 mm): Footprint C174
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(155.5100 mm, 66.3800 mm): Footprint C175
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(162.1100 mm, 62.4800 mm): Footprint C176
+[footprint_symbol_field_mismatch]: Field 'Datasheet' differs (PCB: '', Schematic: '${KIPRJMOD}/../ai-files/datasheets/FOJAN_FCC0402N330J500AT.pdf')
+    Local override; warning
+    @(153.3600 mm, 51.8100 mm): Footprint C177
+[footprint_symbol_field_mismatch]: Field 'Datasheet' differs (PCB: '', Schematic: '${KIPRJMOD}/../ai-files/datasheets/FOJAN_FCC0402N330J500AT.pdf')
+    Local override; warning
+    @(159.2600 mm, 50.5600 mm): Footprint C178
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(149.0500 mm, 57.2325 mm): Footprint R173
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(158.0300 mm, 48.4200 mm): Footprint R175
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(165.6150 mm, 51.6175 mm): Footprint R176
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(154.8850 mm, 59.1150 mm): Footprint U2
+[footprint_symbol_field_mismatch]: Field 'Datasheet' differs (PCB: '', Schematic: '${KIPRJMOD}/../ai-files/datasheets/KYX_K3A120002010.pdf')
+    Local override; warning
+    @(156.3555 mm, 52.0091 mm): Footprint Y170
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(115.4500 mm, 40.4000 mm): Footprint C190
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(112.8200 mm, 36.3600 mm): Footprint C191
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(112.8200 mm, 34.3600 mm): Footprint C192
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(112.8200 mm, 37.6600 mm): Footprint C193
+[footprint_symbol_field_mismatch]: Missing symbol field 'Manufacturer' in footprint
+    Local override; warning
+    @(102.8025 mm, 50.8650 mm): Footprint J8
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(92.3575 mm, 46.3650 mm): Footprint R180
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(95.9325 mm, 49.3650 mm): Footprint R181
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(109.6000 mm, 46.0000 mm): Footprint R182
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(113.3200 mm, 31.0600 mm): Footprint R183
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(112.9200 mm, 29.7600 mm): Footprint R184
+[net_conflict]: Pad net (Net-(U1-P0_0/UART_TX_IND)) doesn't match net given by schematic (Net-(U1-P0_0{slash}UART_TX_IND))
+    Local override; warning
+    @(92.6025 mm, 24.3600 mm): Pad 1 [Net-(U1-P0_0/UART_TX_IND)] of R187 on F.Cu
+[footprint_symbol_mismatch]: Footprint attributes don't match symbol: 'Exclude from bill of materials' settings differ
+    Local override; warning
+    @(115.3150 mm, 24.5175 mm): Footprint TP22
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Debug test point (excluded from BOM; hand-fitted loop)')
+    Local override; warning
+    @(115.3150 mm, 24.5175 mm): Footprint TP22
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(99.8550 mm, 33.8650 mm): Footprint U1
+[net_conflict]: Pad net (unconnected-(U1-P1_6/PWM1-Pad41)) doesn't match net given by schematic (unconnected-(U1-P1_6{slash}PWM1-Pad41))
+    Local override; warning
+    @(98.3950 mm, 26.3650 mm): Pad 41 [unconnected-(U1-P1_6/PWM1-Pad41)] of U1 on F.Cu
+[net_conflict]: Pad net (unconnected-(U1-P1_2/TDI_CPU/SCL-Pad46)) doesn't match net given by schematic (unconnected-(U1-P1_2{slash}TDI_CPU{slash}SCL-Pad46))
+    Local override; warning
+    @(93.3950 mm, 26.3650 mm): Pad 46 [unconnected-(U1-P1_2/TDI_CPU/SCL-Pad46)] of U1 on F.Cu
+[net_conflict]: Pad net (unconnected-(U1-P1_3/TCK_CPU/SDA-Pad47)) doesn't match net given by schematic (unconnected-(U1-P1_3{slash}TCK_CPU{slash}SDA-Pad47))
+    Local override; warning
+    @(92.3950 mm, 26.3650 mm): Pad 47 [unconnected-(U1-P1_3/TCK_CPU/SDA-Pad47)] of U1 on F.Cu
+[net_conflict]: Pad net (unconnected-(U1-P3_7/UART_CTS-Pad48)) doesn't match net given by schematic (unconnected-(U1-P3_7{slash}UART_CTS-Pad48))
+    Local override; warning
+    @(91.3950 mm, 26.3650 mm): Pad 48 [unconnected-(U1-P3_7/UART_CTS-Pad48)] of U1 on F.Cu
+[net_conflict]: Pad net (Net-(U1-P0_0/UART_TX_IND)) doesn't match net given by schematic (Net-(U1-P0_0{slash}UART_TX_IND))
+    Local override; warning
+    @(90.3950 mm, 26.3650 mm): Pad 49 [Net-(U1-P0_0/UART_TX_IND)] of U1 on F.Cu
+[footprint_symbol_field_mismatch]: Field 'Datasheet' differs (PCB: '', Schematic: '${KIPRJMOD}/../ai-files/datasheets/Murata_GRM1555C1H103JE01D.pdf')
+    Local override; warning
+    @(155.9500 mm, 78.3500 mm): Footprint C206
+[footprint_symbol_field_mismatch]: Field 'Datasheet' differs (PCB: '', Schematic: '${KIPRJMOD}/../ai-files/datasheets/Murata_GRM1555C1H103JE01D.pdf')
+    Local override; warning
+    @(155.9500 mm, 77.0500 mm): Footprint C207
+[footprint_symbol_field_mismatch]: Field 'Datasheet' differs (PCB: '', Schematic: '${KIPRJMOD}/../ai-files/datasheets/Murata_GRM1555C1H103JE01D.pdf')
+    Local override; warning
+    @(155.9500 mm, 81.0000 mm): Footprint C208
+[footprint_symbol_field_mismatch]: Field 'Datasheet' differs (PCB: '', Schematic: '${KIPRJMOD}/../ai-files/datasheets/Murata_GRM1555C1H103JE01D.pdf')
+    Local override; warning
+    @(155.9500 mm, 79.6500 mm): Footprint C209
+[footprint_symbol_field_mismatch]: Field 'Datasheet' differs (PCB: '', Schematic: '${KIPRJMOD}/../ai-files/datasheets/Murata_GRM1555C1H103JE01D.pdf')
+    Local override; warning
+    @(153.1500 mm, 89.9800 mm): Footprint C210
+[footprint_symbol_field_mismatch]: Field 'Datasheet' differs (PCB: '', Schematic: '${KIPRJMOD}/../ai-files/datasheets/Murata_GRM1555C1H103JE01D.pdf')
+    Local override; warning
+    @(155.6500 mm, 88.7800 mm): Footprint C211
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(152.1000 mm, 80.2000 mm): Footprint C212
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(147.3500 mm, 80.8500 mm): Footprint C213
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(145.1500 mm, 76.1000 mm): Footprint C214
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(151.0500 mm, 80.3500 mm): Footprint C215
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(156.0000 mm, 75.2000 mm): Footprint C216
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(145.8500 mm, 83.0500 mm): Footprint C217
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(141.5500 mm, 73.9500 mm): Footprint C218
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(145.4500 mm, 80.4500 mm): Footprint C219
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(145.2500 mm, 84.9500 mm): Footprint C220
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(172.2100 mm, 49.3900 mm): Footprint C221
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(175.4825 mm, 51.2900 mm): Footprint C222
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(142.9500 mm, 82.9500 mm): Footprint C223
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(171.3100 mm, 54.8900 mm): Footprint C224
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(186.3800 mm, 49.4400 mm): Footprint C225
+[footprint_symbol_field_mismatch]: Field 'Datasheet' differs (PCB: '', Schematic: '${KIPRJMOD}/../ai-files/datasheets/Murata_GRM1555C1H103JE01D.pdf')
+    Local override; warning
+    @(147.6000 mm, 79.7500 mm): Footprint C226
+[footprint_symbol_field_mismatch]: Field 'Datasheet' differs (PCB: '', Schematic: '${KIPRJMOD}/../ai-files/datasheets/Murata_GRM1555C1H103JE01D.pdf')
+    Local override; warning
+    @(149.9000 mm, 74.6000 mm): Footprint C227
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(145.2000 mm, 88.1000 mm): Footprint R211
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(183.6100 mm, 54.2900 mm): Footprint R212
+[footprint_symbol_mismatch]: Footprint attributes don't match symbol: 'Exclude from bill of materials' settings differ
+    Local override; warning
+    @(140.2450 mm, 76.7050 mm): Footprint TP6
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Debug test point (excluded from BOM; hand-fitted loop)')
+    Local override; warning
+    @(140.2450 mm, 76.7050 mm): Footprint TP6
+[footprint_symbol_mismatch]: Footprint attributes don't match symbol: 'Exclude from bill of materials' settings differ
+    Local override; warning
+    @(163.2450 mm, 88.9175 mm): Footprint TP8
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Debug test point (excluded from BOM; hand-fitted loop)')
+    Local override; warning
+    @(163.2450 mm, 88.9175 mm): Footprint TP8
+[footprint_symbol_mismatch]: Footprint attributes don't match symbol: 'Exclude from bill of materials' settings differ
+    Local override; warning
+    @(146.3500 mm, 95.4000 mm): Footprint TP12
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Debug test point (excluded from BOM; hand-fitted loop)')
+    Local override; warning
+    @(146.3500 mm, 95.4000 mm): Footprint TP12
+[footprint_symbol_mismatch]: Value (TP13) doesn't match symbol value (I2S_LRCK)
+    Local override; warning
+    @(146.3500 mm, 101.6000 mm): Footprint TP13
+[footprint_symbol_mismatch]: Footprint attributes don't match symbol: 'Exclude from bill of materials' settings differ
+    Local override; warning
+    @(146.3500 mm, 101.6000 mm): Footprint TP13
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Debug test point (excluded from BOM; hand-fitted loop)')
+    Local override; warning
+    @(146.3500 mm, 101.6000 mm): Footprint TP13
+[footprint_symbol_mismatch]: Value (TP14) doesn't match symbol value (I2S_SDATA)
+    Local override; warning
+    @(146.3500 mm, 98.5000 mm): Footprint TP14
+[footprint_symbol_mismatch]: Footprint attributes don't match symbol: 'Exclude from bill of materials' settings differ
+    Local override; warning
+    @(146.3500 mm, 98.5000 mm): Footprint TP14
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Debug test point (excluded from BOM; hand-fitted loop)')
+    Local override; warning
+    @(146.3500 mm, 98.5000 mm): Footprint TP14
+[footprint_symbol_field_mismatch]: Missing symbol field 'Manufacturer' in footprint
+    Local override; warning
+    @(172.8450 mm, 51.8400 mm): Footprint U22
+[footprint_symbol_field_mismatch]: Missing symbol field 'Manufacturer' in footprint
+    Local override; warning
+    @(185.8450 mm, 51.8400 mm): Footprint U23
+[footprint_symbol_field_mismatch]: Missing symbol field 'Manufacturer' in footprint
+    Local override; warning
+    @(150.7450 mm, 85.4175 mm): Footprint U24
+[net_conflict]: Pad net (unconnected-(U24-GPIO3/INTC-Pad19)) doesn't match net given by schematic (unconnected-(U24-GPIO3{slash}INTC-Pad19))
+    Local override; warning
+    @(148.7450 mm, 88.2800 mm): Pad 19 [unconnected-(U24-GPIO3/INTC-Pad19)] of U24 on F.Cu
+[net_conflict]: Pad net (unconnected-(U24-GPIO2/INTB-Pad20)) doesn't match net given by schematic (unconnected-(U24-GPIO2{slash}INTB-Pad20))
+    Local override; warning
+    @(149.2450 mm, 88.2800 mm): Pad 20 [unconnected-(U24-GPIO2/INTB-Pad20)] of U24 on F.Cu
+[net_conflict]: Pad net (unconnected-(U24-MISO/GPIO0-Pad22)) doesn't match net given by schematic (unconnected-(U24-MISO{slash}GPIO0-Pad22))
+    Local override; warning
+    @(150.2450 mm, 88.2800 mm): Pad 22 [unconnected-(U24-MISO/GPIO0-Pad22)] of U24 on F.Cu
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(176.6000 mm, 61.4500 mm): Footprint C230
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(181.1000 mm, 61.4500 mm): Footprint C231
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(176.5000 mm, 74.9700 mm): Footprint C232
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(180.5000 mm, 75.1000 mm): Footprint C233
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(192.3400 mm, 38.8000 mm): Footprint C234
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(194.6900 mm, 40.8000 mm): Footprint C235
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(185.4000 mm, 67.2000 mm): Footprint C237
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(179.1000 mm, 62.8000 mm): Footprint C238
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(192.0000 mm, 65.6000 mm): Footprint C239
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(192.0000 mm, 67.0000 mm): Footprint C240
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(200.3900 mm, 66.1300 mm): Footprint C245
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(192.4200 mm, 36.2500 mm): Footprint C246
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(181.7250 mm, 29.3950 mm): Footprint J2
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(195.1250 mm, 29.3950 mm): Footprint J3
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(174.7000 mm, 62.7000 mm): Footprint R220
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(182.3000 mm, 62.7000 mm): Footprint R221
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(175.1000 mm, 73.1500 mm): Footprint R222
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(182.3500 mm, 73.7000 mm): Footprint R223
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(190.4900 mm, 37.6700 mm): Footprint R224
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(194.4000 mm, 43.8000 mm): Footprint R225
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(181.9000 mm, 71.7200 mm): Footprint R234
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(183.4000 mm, 58.1000 mm): Footprint R235
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(199.3400 mm, 62.3800 mm): Footprint R236
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(197.0000 mm, 71.6000 mm): Footprint R237
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(199.6000 mm, 70.4000 mm): Footprint R238
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(178.1700 mm, 37.1500 mm): Footprint R239
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(190.4200 mm, 36.3000 mm): Footprint R242
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(197.9400 mm, 37.4000 mm): Footprint R243
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(196.9900 mm, 40.6000 mm): Footprint R244
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(178.5000 mm, 68.5000 mm): Footprint U8
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(186.0000 mm, 62.4000 mm): Footprint U9
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(196.2950 mm, 65.2775 mm): Footprint U10
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(150.3600 mm, 151.3400 mm): Footprint C260
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(154.4600 mm, 152.5400 mm): Footprint C261
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(142.8000 mm, 153.0000 mm): Footprint C262
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(151.0600 mm, 154.7500 mm): Footprint C263
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(154.4600 mm, 154.9400 mm): Footprint C264
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(153.7400 mm, 142.2100 mm): Footprint C265
+[footprint_symbol_field_mismatch]: Field 'Datasheet' differs (PCB: '', Schematic: '${KIPRJMOD}/../ai-files/datasheets/Murata_GRM155R71H473KE14D.pdf')
+    Local override; warning
+    @(151.6900 mm, 151.3800 mm): Footprint C266
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(150.5500 mm, 143.1000 mm): Footprint C267
+[footprint_symbol_field_mismatch]: Field 'Datasheet' differs (PCB: '', Schematic: '${KIPRJMOD}/../ai-files/datasheets/Samsung_CL05B682KB5NNNC.pdf')
+    Local override; warning
+    @(157.0500 mm, 140.5500 mm): Footprint C268
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(157.7400 mm, 148.9500 mm): Footprint C270
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(114.1500 mm, 128.8500 mm): Footprint C276
+[footprint_symbol_field_mismatch]: Missing symbol field 'MPN' in footprint
+    Local override; warning
+    @(104.0000 mm, 129.3600 mm): Footprint C278
+[footprint_symbol_mismatch]: Footprint attributes don't match symbol: 'Exclude from bill of materials' settings differ
+    Local override; warning
+    @(109.6650 mm, 146.5550 mm): Footprint TP10
+[footprint_symbol_mismatch]: Footprint attributes don't match symbol: 'Exclude from bill of materials' settings differ
+    Local override; warning
+    @(123.9000 mm, 111.2500 mm): Footprint TP20
+[footprint_symbol_mismatch]: Footprint attributes don't match symbol: 'Exclude from bill of materials' settings differ
+    Local override; warning
+    @(105.2550 mm, 152.5563 mm): Footprint TP24
+
+** Ignored checks **
+    - Footprint has no courtyard defined
+    - Track endpoint not centered on via
+    - Tuning profile track geometries
+    - Footprint doesn't match symbol's footprint filters
+    - Footprint component type doesn't match footprint pads
+
+** End of Report **

@@ -1,11 +1,11 @@
 {
- "version": "v13",
- "date": "2026-11-02",
- "title": "DesktopSpeaker internal CAD v13 (board RT-3 + models-v13 accurate models)",
+ "version": "v14",
+ "date": "2026-11-03",
+ "title": "DesktopSpeaker internal CAD v14 (RT-14 draft): board RT-14 + models-v13 accurate models",
  "source": {
-  "board": "ai-files/pcb/work-cad13/RT-3.kicad_pcb",
-  "board_sha256": "d21fbfe7b5b0278546e81baa41df6fdcb48f485a9a1b3422626ff203e595fec7",
-  "cad_scripts": "ai-files/cad/v13/scripts/",
+  "board": "ai-files/pcb/work-cad14/RT-14.kicad_pcb",
+  "board_sha256": "a200d97b78fc53eeaad6d11fcd47fc5af484c4a6e827f496d3635e12cdc4eb9a",
+  "cad_scripts": "ai-files/cad/v14/scripts/",
   "models": "ai-files/cad/models-v13/3d/ (board models via the project library, enclosure models read directly)",
   "freecad": "1.0.0",
   "kicad": "10.0.7 (AppImage)"
@@ -32,10 +32,10 @@
   },
   "pcb": {
    "file": "pcb.glb",
-   "bytes": 15343312,
+   "bytes": 15368488,
    "units": "mm (root node PCB_<board> carries scale 1000 on the KiCad metre data)",
    "transform": {
-    "node": "PCB_RT-3",
+    "node": "PCB_RT-14",
     "scale": 1000,
     "translation": [
      -3.5,
@@ -44,7 +44,7 @@
     ],
     "note": "already applied in the file: load both files unchanged and they overlay"
    },
-   "triangles": 414949,
+   "triangles": 415736,
    "content": "kicad-cli pcb export glb --subst-models --include-pads --include-soldermask --include-silkscreen; components by reference designator",
    "layer_nodes": [
     "Board_body",
@@ -57,9 +57,9 @@
   },
   "pcb_copper": {
    "file": "pcb_copper.glb",
-   "bytes": 18132936,
+   "bytes": 24879916,
    "optional": true,
-   "content": "tracks + zones (outer layers) of the partially routed RT-3 board, same frame; optional layer: load on demand (not counted in the 40 MB budget)"
+   "content": "tracks + zones (outer layers) of the RT-14 routing draft (12 connections still open), same frame; optional layer: load on demand (not counted in the 40 MB budget)"
   },
   "renders": [
    "renders/exploded.png",
@@ -451,7 +451,7 @@
  ],
  "pcb_group": {
   "key": "PCB",
-  "description": "Board RT-3 (placement R10, partial routing) with the models-v13 corrected library models (J1, J5, J9-J11, SW100, TP1-TP27, U1 offset, U2, U24)",
+  "description": "Board RT-14 routing draft (12 unconnected, DRC 0) with the models-v13 corrected library models (J1, J5, J9-J11, SW100, TP1-TP27, U1 offset, U2, U24) and the RT-14 footprint fixes (J2/J3, U1 pad 56, SW100, C275)",
   "explode_mm": [
    0,
    60,
@@ -502,7 +502,7 @@
     0,
     0
    ],
-   "model_source": "parametric design master (build_speaker_cad.py v13)",
+   "model_source": "parametric design master (build_speaker_cad.py v14)",
    "accuracy": "<0.5mm",
    "accuracy_note": "design master: the print is made from this model"
   },
@@ -532,7 +532,7 @@
     25,
     0
    ],
-   "model_source": "parametric design master (build_speaker_cad.py v13)",
+   "model_source": "parametric design master (build_speaker_cad.py v14)",
    "accuracy": "<0.5mm",
    "accuracy_note": "design master: the print is made from this model"
   },
@@ -922,7 +922,7 @@
     0,
     -80
    ],
-   "model_source": "parametric design master (build_speaker_cad.py v13)",
+   "model_source": "parametric design master (build_speaker_cad.py v14)",
    "accuracy": "<0.5mm",
    "accuracy_note": "design master: the print is made from this model"
   },
@@ -3739,46 +3739,47 @@
   "coverage_pct": 98.3,
   "summary": "340 of 346 physical board parts have a model within 0.5 mm of the datasheet; 6 unverified (L200, TP23, TP24, TP25, TP26, TP27)",
   "verified_means": "passives at class level (thickness codes from MPN/family datasheets); IC body envelopes vs the maker package drawing (nominal); leads sliced at board level vs pads (0.1 mm)",
-  "footprint_errors": [
+  "footprint_errors": [],
+  "footprint_fixes_rt14": [
    {
     "refs": [
      "J2",
      "J3"
     ],
     "footprint": "PJ-307",
-    "error": "front NPTH locating pegs at x -5.75, drawing -4.75 (1.0 mm off): the jack cannot seat as drawn",
-    "fix": "move both front NPTH (+-5.0) from x -5.75 to x -4.75 in PJ-307.kicad_mod and on the board",
-    "source": "datasheets/PJ-307.pdf (HOOYA PCB layout)"
+    "was": "front NPTH locating pegs at x -5.75 (1.0 mm off)",
+    "now": "front NPTH at x -4.75 as the HOOYA drawing",
+    "source": "datasheets/PJ-307.pdf"
    },
    {
     "refs": [
      "U1"
     ],
     "footprint": "BM83SM1-00TA",
-    "error": "GND pad 56 (1.78 sq) at local x +1.40, datasheet +4.77 (3.37 mm off); pad 57 correct",
-    "fix": "move pad 56 to (+4.77, +0.03)",
+    "was": "GND pad 56 at local x +1.40 (3.37 mm off)",
+    "now": "pad 56 at (+4.77, -0.03)",
     "source": "DS70005402D p.56 Fig. 8-2"
    },
    {
     "refs": [
      "SW100"
     ],
-    "footprint": "TE_1977066-1_Tact_RA_SMD (DRAFT)",
-    "error": "outer pads +-1.50 x 0.9 vs TE lands +-1.225 x 0.75; peg holes 1.5 from the pad row on the side away from the edge (TE 0.9, actuator side); bracket pads 1.2 x 1.3 at x +-1.2..2.5 missing; as drawn the actuator tip is 2.30 mm inside the board edge (6.80 mm behind the lid outer face)",
-    "fix": "redraw from TE drawing C1 p.1 with the actuator at the board edge",
+    "footprint": "TE_1977066-1_Tact_RA_SMD",
+    "was": "DRAFT (pads +-1.50, pegs on the wrong side, no bracket pads; actuator 2.30 mm inside the board edge)",
+    "now": "redrawn from TE rev C1: lands +-1.225 x 0.75, pegs 0.9 on the actuator side, bracket pads; actuator tip at the board edge (CAD: 0.00 mm)",
     "source": "TE 1977066-1 rev C1 p.1"
    },
    {
     "refs": [
      "C275"
     ],
-    "footprint": "CP_Elec_8x10",
-    "error": "part EEHZA1E101XP is case D8 (6.3 x 7.7) on an 8x10 land; terminals overlap the pads 2.4 of 3.0 mm",
-    "fix": "use the CP_Elec_6.3x7.7 land",
+    "footprint": "CP_Elec_6.3x7.7",
+    "was": "CP_Elec_8x10 land for a case D8 part",
+    "now": "CP_Elec_6.3x7.7 land and model",
     "source": "Panasonic EEH-ZA case D8"
    }
   ],
-  "footprint_errors_note": "Modelled as drawn by the footprint in CAD v13. Fixed on board RT-5 and in the project library on 2026-11-02 (J2/J3 pegs, U1 pad 56, SW100 redrawn from the TE drawing, C275 6.3 x 7.7 land); the next CAD rebuild (v14, from the final routed board) picks them up."
+  "footprint_errors_note": "v14: the four footprint errors of the v13 audit (J2/J3, U1 pad 56, SW100, C275) are fixed on RT-14; none open."
  },
  "pcb_nodes": [
   {
@@ -4687,12 +4688,12 @@
   },
   {
    "ref": "C275",
-   "footprint": "DesktopSpeaker:CP_Elec_8x10",
+   "footprint": "DesktopSpeaker:CP_Elec_6.3x7.7",
    "model_source": "CP_Elec_6.3x7.7.step (KiCad std CP_Elec_6.3x7.7)",
    "accuracy": "<0.5mm",
    "accuracy_note": "dev 0.0 mm (L x W x H vs datasheet 7.8x6.6x7.7)",
    "lead_check": "lat 0.00",
-   "footprint_error": "part EEHZA1E101XP is case D8 (6.3 x 7.7) on an 8x10 land; terminals overlap the pads 2.4 of 3.0 mm"
+   "footprint_fixed": "RT-14: CP_Elec_6.3x7.7 land and model"
   },
   {
    "ref": "C276",
@@ -5125,7 +5126,7 @@
    "accuracy": "<0.5mm",
    "accuracy_note": "dev 0.01 mm (L x W x H vs datasheet 14.2x12x5.5)",
    "lead_check": "pin-hole 1.00",
-   "footprint_error": "front NPTH locating pegs at x -5.75, drawing -4.75 (1.0 mm off): the jack cannot seat as drawn"
+   "footprint_fixed": "RT-14: front NPTH at x -4.75 as the HOOYA drawing"
   },
   {
    "ref": "J3",
@@ -5134,7 +5135,7 @@
    "accuracy": "<0.5mm",
    "accuracy_note": "dev 0.01 mm (L x W x H vs datasheet 14.2x12x5.5)",
    "lead_check": "pin-hole 1.00",
-   "footprint_error": "front NPTH locating pegs at x -5.75, drawing -4.75 (1.0 mm off): the jack cannot seat as drawn"
+   "footprint_fixed": "RT-14: front NPTH at x -4.75 as the HOOYA drawing"
   },
   {
    "ref": "J4",
@@ -6116,10 +6117,10 @@
    "ref": "SW100",
    "footprint": "DesktopSpeaker:TE_1977066-1_Tact_RA_SMD",
    "model_source": "TE_1977066-1.step (v13 built from drawing)",
-   "accuracy": "unverified",
-   "accuracy_note": "model within 0.05 mm of the TE drawing; placement unverified until the DRAFT footprint is corrected",
+   "accuracy": "<0.5mm",
+   "accuracy_note": "dev 0.05 mm (L x W x H vs datasheet 4.95x3.4x3.3)",
    "lead_check": "lat 0.33",
-   "footprint_error": "outer pads +-1.50 x 0.9 vs TE lands +-1.225 x 0.75; peg holes 1.5 from the pad row on the side away from the edge (TE 0.9, actuator side); bracket pads 1.2 x 1.3 at x +-1.2..2.5 missing; as drawn the actuator tip is 2.30 mm inside the board edge (6.80 mm behind the lid outer face)"
+   "footprint_fixed": "RT-14: redrawn from TE rev C1: lands +-1.225 x 0.75, pegs 0.9 on the actuator side, bracket pads; actuator tip at the board edge (CAD: 0.00 mm)"
   },
   {
    "ref": "SW102",
@@ -6352,7 +6353,7 @@
    "accuracy": "<0.5mm",
    "accuracy_note": "dev 0.007 mm (L x W x H vs datasheet 15x32x2.5)",
    "lead_check": "smd pads without lead: 56; lat 0.00",
-   "footprint_error": "GND pad 56 (1.78 sq) at local x +1.40, datasheet +4.77 (3.37 mm off); pad 57 correct"
+   "footprint_fixed": "RT-14: pad 56 at (+4.77, -0.03)"
   },
   {
    "ref": "U10",
@@ -6678,7 +6679,7 @@
   "print_bodies": [
    {
     "name": "shell",
-    "file": "ai-files/cad/v13/print/DesktopSpeaker_shell.stl",
+    "file": "ai-files/cad/v14/print/DesktopSpeaker_shell.stl",
     "orient": "baffle_down",
     "supports": "none (cavity walls vertical; lid bosses have 45 deg lead-ins; cradle ribs start on the baffle)",
     "size": [
@@ -6693,7 +6694,7 @@
    },
    {
     "name": "lid",
-    "file": "ai-files/cad/v13/print/DesktopSpeaker_lid.stl",
+    "file": "ai-files/cad/v14/print/DesktopSpeaker_lid.stl",
     "orient": "outer_face_down",
     "supports": "none (jack counterbore floors bridge 1.25 mm; chamfers on the bed side; rocker pocket on the top face)",
     "size": [
@@ -6708,7 +6709,7 @@
    },
    {
     "name": "woofer_chamber_insert",
-    "file": "ai-files/cad/v13/print/DesktopSpeaker_woofer_chamber_insert.stl",
+    "file": "ai-files/cad/v14/print/DesktopSpeaker_woofer_chamber_insert.stl",
     "orient": "roof_down",
     "supports": "none (shelf gussets and bosses grow from the roof)",
     "size": [
@@ -6943,10 +6944,10 @@
     2.0
    ],
    "radial_margin": 1.5,
-   "min_dist_connector_to_lid": 3.17,
+   "min_dist_connector_to_lid": 1.35,
    "enters_lid": false,
    "wall_clearance": null,
-   "body_ymax": 199.81,
+   "body_ymax": 202.1,
    "ok": true
   },
   {
@@ -7077,10 +7078,10 @@
    2.0,
    2.0
   ],
-  "tip_y": 199.805,
-  "tip_past_board_edge": -2.295,
-  "tip_to_lid_inner": 2.795,
-  "tip_to_lid_outer": 6.795
+  "tip_y": 202.1,
+  "tip_past_board_edge": 0.0,
+  "tip_to_lid_inner": 0.5,
+  "tip_to_lid_outer": 4.5
  },
  "screw_table": [
   {
@@ -7124,24 +7125,16 @@
    "verdict": "ok (unchanged)"
   }
  ],
- "changes_vs_v12": [
-  "Solids 165 -> 164; unintended 0 -> 0; intended 41 -> 89 (38 inserts, 2 J2/J3 pins, 49 thread engagements; the knob/shaft contact is now below the 0.5 mm3 threshold)",
-  "Woofer chamber net 0.525 -> 0.525 L (gross 0.581 -> 0.627; displaced 0.056 -> 0.103 + 0.020 front air); main chamber net 2.025 -> 1.962 L",
-  "Shell 385.6 -> 380.5 cm3 (print envelope 163 x 100 -> 104.7 x 202.6, the outside bosses), lid 59.5 -> 59.5, insert 100.9 -> 102.4 cm3; all valid single solids",
-  "Screws: M3x10 23 -> 19, M3x16 11 -> 11, M3x20 0 -> 4",
-  "J1 lid radial margin 1.45 -> 1.53 mm; SW100 now the real actuator (2.80 mm short of the lid)",
-  "enclosure.glb 10.0 -> 13.8 MB (325 k -> 475 k triangles; fluted inserts, detailed woofer); pcb.glb 15.5 -> 15.3 MB"
+ "changes_vs_v13": [
+  "Board RT-3 -> RT-14 (routing draft): 42 references changed position/rotation/footprint (TP20 40.8 mm, jack-switch block C230-C240/R220-R238/U8/U9, R225, R142, R262, SW100 2.30 mm, TP2/TP12/TP14, C275 footprint)",
+  "Footprint fixes on RT-14: J2/J3 front pegs, U1 pad 56, SW100 (TE drawing), C275 (CP_Elec_6.3x7.7)",
+  "SW100 actuator tip: 2.30 mm inside the board edge -> at the edge; to lid inner face 2.80 -> 0.50 mm, to outer face 6.80 -> 4.50 mm; switch to lid 3.17 -> 1.35 mm",
+  "Solids 164 -> 164; unintended 0 -> 0; intended 89 -> 89 (J2/J3 vs board 3.72 -> 2.82 mm3: pegs now in their holes)",
+  "Woofer net 0.525 -> 0.525 L, main net 1.962 -> 1.962 L; print bodies unchanged (380.5 / 59.5 / 102.4 cm3)",
+  "pcb_copper.glb 18.1 -> 24.9 MB (RT-14 copper); enclosure.glb 13.8 MB, pcb.glb 15.4 MB"
  ],
  "parameter_changes": [
-  "w_square 82.55, w_corner_r 4.0, w_bc 77 -> 96.52 (w_hole_sq 68.25), w_hole 3.5 -> 3.4, w_frame_t 13.3, w_gasket 3.3, w_total 47.75 (new: real W3-2052SC frame)",
-  "ring_t 5.5 -> 0, ring_od 86 -> none, w_recess 1.0 -> 0 (w_recess_d 83.4 unused), w_seat 0 (gasket on the floor inner face z 3.0)",
-  "w_screw M3x10 -> M3x20; woofer pilot 6.5 (zf-1) -> 6.7 (insert + 1); w_boss_od 8.0, w_boss_skin 1.0 -> outside bosses 4.7 mm below the floor",
-  "w_grille_d 90 -> 86; w_front_air_d 73.7 (front air excluded from the chamber volume)",
-  "CH_DISPLACED_L 0.056 -> 0.1224 L (env CH_DISP_L); chamber length 98.2 -> 109.4, ch_y0 101.39 -> 90.17",
-  "w_cy_off -2.0 -> +1.5 (woof_cy 151.50 -> 149.38)",
-  "cell_l 70.2 -> 70.7 (cell model 21.25 x 70.62 at max; cell_r 10.85 kept for the cradle so the 21.55 Molicel P45B also fits)",
-  "Hardware and rocker: parametric -> models-v13 STEP (screws, inserts, spacers, studs, rocker); knob, rubber feet, PCM, gaskets, grommet unchanged (not selected)",
-  "PCB stand-ins J5, J9-J11, SW100 + plunger removed (real models in the board STEP); SW100 lid bore centred on the TE actuator"
+  "None: v14 uses the v13 parameters (2-cell 1S2P pack, woofer chamber, lid). Only the board changed (RT-3 -> RT-14)."
  ],
  "tallest_parts": [
   {
@@ -7197,6 +7190,11 @@
  ],
  "closest_parts_to_enclosure": [
   {
+   "ref": "SW100",
+   "nearest": "Lid_rear",
+   "mm": 1.35
+  },
+  {
    "ref": "J2",
    "nearest": "Lid_rear",
    "mm": 1.51
@@ -7247,14 +7245,9 @@
    "mm": 2.43
   },
   {
-   "ref": "L202",
-   "nearest": "Screw_M3x16_PcbScrew_10_HA1",
-   "mm": 2.57
-  },
-  {
-   "ref": "L204",
-   "nearest": "Screw_M3x16_PcbScrew_10_HA1",
-   "mm": 2.57
+   "ref": "TP2",
+   "nearest": "Screw_M3x16_PcbScrew_3_H3",
+   "mm": 2.55
   }
  ],
  "glb_validation": {
@@ -7389,59 +7382,49 @@
  },
  "fit_findings": [
   {
+   "severity": "problem",
+   "title": "SW100: actuator at the board edge, still 4.50 mm behind the lid outer face (lid plunger needed)",
+   "detail": "RT-14 redrawn TE 1977066-1 footprint moved the switch 2.295 mm toward the rear edge (y 25.245 -> 22.95). Measured in CAD: actuator (dia 2.0, axis 1.70 above the board top, X -14.68 Z 70.30) tip at Y 202.10 = board rear edge (0.00 mm past it), 0.50 mm short of the lid inner face (Y 202.6) and 4.50 mm behind the lid outer face (Y 206.6). v13 (draft footprint): 2.80 / 6.80 mm. The 5.0 bore is centred on the actuator axis (radial 1.5); the nearest switch geometry is 1.35 mm from the lid. A fingertip cannot reach it: a printed plunger must bridge 4.50 mm (lid 4.0 + 0.5 gap) plus its own protrusion and travel. Only 0.5 mm is free behind the lid, so a retaining collar would need a counterbore in the lid inner face (owner decision; not modelled, v14 keeps the v13 lid). Switch travel not extracted (TE PDF is a drawing without text)."
+  },
+  {
+   "severity": "ok",
+   "title": "TP20 moved 40.8 mm (RT-14) clears every enclosure body",
+   "detail": "TP20 (Keystone 5015, 1.5 above the board) from (110.155, 149.645) to (123.9, 111.25): nearest body the H4 PCB spacer 8.54 mm (its M3x16 head 8.77), 11.6 mm to the insert roof under the board, 11.99 mm to the shell; woofer harness tube 70.6 mm (J5 harness farther); 26.9 mm under the top wall. In v13 it was 22.9 mm from the shell."
+  },
+  {
+   "severity": "ok",
+   "title": "All 42 references changed since RT-3 (v13 board) clear the enclosure",
+   "detail": "Exact distance to every enclosure body (no bounding-box prefilter). Tightest moved parts: TP2 2.55 mm to the H3 M3x16 head (v13 3.52), TP14 3.06 / TP12 3.15 to the H2 head (swapped places, v13 3.15 / 3.06), SW100 1.35 to the lid, R113 4.74 to the lid, C106 5.53 to the H3 head. R225 (5.79 mm move) and R142 (2.42) are 11.6 mm above the woofer-chamber insert roof (12.05 / 13.8 to the next body). C230-C240, R220-R238, U8, U9 (jack/headphone switch block re-placed, 2.2-10 mm moves) all 11.6 mm to the insert roof and >= 17.9 mm to screws/woofer. Full list in moved_parts."
+  },
+  {
    "severity": "fixed",
-   "title": "Woofer seat redesigned for the real Tang Band W3-2052SC (square frame, 68.25 square holes)",
-   "detail": "v12 round 86 ring pad, 83.4 x 1.0 flange recess and 77 mm bolt circle removed. The square 82.55 frame with its factory 3.3 mm foam gasket now seats directly on the floor inner face (z 3.0); aperture 76.2 kept; sealing land 3.18 mm on the flats (gasket inner 73.7 overhangs the aperture). Holes at r 48.26 (68.25 square): pilot edge 8.16 mm from the aperture (v12 pilots broke 1.6 mm into it), hole edge 5.45 mm from the frame edge. Inserts (Ruthex M3x5.7, pilot 4.0 x 6.7) sit in four teardrop bosses 4.7 mm below the outer floor (1.0 mm skin, chamber stays sealed; 45 deg point toward the baffle for support-free printing). Woofer grille 90 -> 86 (1.26 mm to the bosses). Magnet top z 50.75, 3.25 mm under the roof; frame 14.94 mm from the partition, 11.94 mm from the lid, 16.73 mm from the side walls."
+   "title": "C275 now CP_Elec_6.3x7.7 (case D8 land and model)",
+   "detail": "Same position (166.7, 152.1). Model 7.7 above the board, 20.7 mm under the top wall, 12.06 mm to the insert roof, 13.39 mm to the right ND65, 21.8 mm to the woofer harness. pcb.glb component box still differs 1.0 mm from the FreeCAD placement (exporter difference, as v12/v13)."
+  },
+  {
+   "severity": "fixed",
+   "title": "J2/J3 PJ-307 front pegs now in their NPTH holes",
+   "detail": "Footprint NPTH at x -4.75 (was -5.75). In CAD the two 0.448 mm3 peg/board collisions per jack are gone (J2/J3 vs board 3.72 -> 2.82 mm3; the remaining 2.82 is the jack nose below the board top at the rear edge, intended class as v13). Lid bores unchanged: radial 1.25, 1.51 mm from the lid."
+  },
+  {
+   "severity": "fixed",
+   "title": "U1 BM83 pad 56 at +4.77",
+   "detail": "Pad-only change; the module model and its y -0.427 offset are unchanged, 6.05 mm from the shell."
   },
   {
    "severity": "decision",
-   "title": "Woofer screws: M3x20 gives only 3.4-4.4 mm thread in the 5.7 mm insert",
+   "title": "Woofer screws: M3x20 gives only 3.4-4.4 mm thread in the 5.7 mm insert (unchanged from v13)",
    "detail": "Stack: head on the frame back (z 19.60) through the 13.3 frame block and the 3.3 gasket. M3x20 engages 3.4 mm with the gasket free, 4.4 mm with 1 mm compression (1.1-1.5 d; tip 2.3 mm above the pilot floor). Raising the seat to fit longer screws pushes the magnet into the roof (3.25 mm left). Options: accept M3x20 (gasket compresses), or M3x22 (DIN 912; 5.4-6.4 mm, still inside the 6.7 pilot) if the owner can source it. Frame thickness and gasket are photo estimates (+-1.5): measure before printing."
   },
   {
-   "severity": "fixed",
-   "title": "Woofer chamber volume: front-air correction and chamber lengthened 11.2 mm",
-   "detail": "The real woofer displaces 0.103 L (v12 stand-in 0.045). v13 also excludes the 0.020 L of air in front of the cone (gasket and frame opening, open to the outside), which v12 counted as chamber air (the v12 hollow stand-in cone made its 0.525 L nearer 0.485 L, estimate). Displacement parameter 0.056 -> 0.1224 L: chamber length 98.2 -> 109.4 mm, partition front face Y 101.39 -> 90.17, net 0.525 L (gross 0.627). Main chamber net 2.025 -> 1.962 L (target >= 0.8). Woofer centre Y 151.50 -> 149.38 (offset +1.5 from mid-chamber, was -2.0) so the H2 PCB-screw boss stays 2.88 mm from the magnet cup (it touched by 2.2 mm3 at the old offset)."
-  },
-  {
-   "severity": "problem",
-   "title": "SW100 actuator does not reach the lid (draft footprint)",
-   "detail": "With the TE 1977066-1 model on the footprint as drawn, the actuator (dia 2.0, axis 1.70 above the board top) ends 2.30 mm inside the board edge: 2.80 mm short of the lid inner face and 6.80 mm behind the lid outer face. The 5.0 lid bore (radial 1.5) only allows pressing with a pin. v12 assumed a stand-in plunger reaching into the lid. Fix in the footprint correction (actuator at the board edge: then 4.5 mm behind the outer face) and/or add a printed plunger in the lid."
-  },
-  {
-   "severity": "problem",
-   "title": "Footprint errors exposed by the accurate models (modelled as drawn, not fixed here)",
-   "detail": "J2/J3 PJ-307 front NPTH pegs 1.0 mm off (jack cannot seat); U1 BM83 GND pad 56 misplaced 3.37 mm; SW100 TE 1977066-1 DRAFT footprint (pads, pegs on the wrong side, bracket pads missing); C275 D8 can on a CP_Elec_8x10 land (2.4 of 3.0 mm overlap). The coordinator fixes them on the routed board."
-  },
-  {
-   "severity": "ok",
-   "title": "Rear-lid cutouts still aligned with the accurate connector models",
-   "detail": "J1 HRO TYPE-C-31-M-12 (stadium shell 8.94 x 3.16, was a 9.1 x 3.36 box): radial margin 1.45 -> 1.53 mm, wall clearance in the lid 1.53. J2/J3 8.5 bores 1.25 mm (unchanged model). SW100 bore centre moved 0.05 mm to the real actuator axis (Z 70.30). SW101 rocker: GRB112 model fits the 20.2 hole (0.2 radial), body 2.65 mm above the board top behind the panel, 22.4 deep, 3.87 mm from J3."
-  },
-  {
-   "severity": "ok",
-   "title": "New board-part models clear the enclosure",
-   "detail": "J9-J11 JST VH (10.9 tall, were 10.9 stand-ins) 17.5 mm under the top wall; J5 Micro-Fit (5.57) 1.55 mm from its harness tube (schematic); TP23-TP27 Keystone 5010-5014 (8.31 above the board) 20.1 mm under the top wall, TP27 4.10 mm from the H1 screw head; TP1-TP22 (1.5 high) >= 3.06 mm from the H2 screw head. U2 now 1.85 high (was 2.2), U24 1.1 (was 1.6). U1 moved 0.43 mm by the model offset fix: 6.05 mm from the shell. Tightest parts unchanged: C288/C301 2.00 mm, R209 2.01, R106 2.33 mm to M3x16 screw heads."
-  },
-  {
-   "severity": "ok",
-   "title": "Cells: Samsung INR21700-50S model at datasheet max",
-   "detail": "Model 21.25 x 70.62; cradle bay laid out for 70.7 (was 70.2): end stop and PCM moved +0.5 mm in X, 0.08 mm end gap at the PCM, 0.53 mm radial gap in the 22.3 cradle. Cell 1 to the left ND65 7.21 mm, PCM to the right ND65 5.43 mm (>= 3)."
-  },
-  {
-   "severity": "ok",
-   "title": "Hardware swapped for the audited models",
-   "detail": "34 screws (19 M3x10, 11 M3x16 from models-v13 STEP; 4 M3x20 generated with the same ISO 4762 geometry), 38 Ruthex M3x5.7 inserts, 11 Wurth 970100321 spacers, 4 Wurth 971120321 studs, GRB112B802BR1 rocker. Their 2.5 mm thread bores overlap the 3.0 mm screws: 49 intended thread-engagement overlaps (new category). Kept parametric (not selected, so not verified): knob D30 x 14, rubber feet 12 x 3, PCM board, lid gasket, grommet."
+   "severity": "note",
+   "title": "fit.json 'nearest' is prefiltered",
+   "detail": "fit_check.py lists only bodies whose box lies within 6 mm, so for parts far from everything it reports the shell (27.9 mm) although the insert roof under the board is 11.6 mm away. The moved-part distances above are exact (scratch script, all bodies). Two distance artefacts guarded: C244, R223 vs the woofer harness (true about 40 mm)."
   },
   {
    "severity": "note",
-   "title": "Distance artefact guarded",
-   "detail": "OCC distToShape returned 0.0 for C244, R235 and R238 vs the woofer harness tube (no common volume; true distance about 40 mm). fit_check.py now falls back to the vertex distance in that case and lists it in fit.json dist_artefacts."
-  },
-  {
-   "severity": "note",
-   "title": "KiCad GLB vs STEP export differ for two models (unchanged from v12)",
-   "detail": "pcb.glb component boxes match the FreeCAD placement within 0.005 mm for J1, J2, J3, J5, J9, J11, SW100, U1, U2, U24, TP1 (TP23 0.11), but SW102 0.77 and C275 1.0 (exporter treats sub-shapes differently)."
+   "title": "KiCad GLB vs STEP export differ for two models (unchanged)",
+   "detail": "pcb.glb component boxes match the FreeCAD placement within 0.005 mm for J1, J2, J3, J5, J9, J11, SW100, U1, U2, U24, TP1 (TP23 0.11); SW102 0.77 and C275 1.0."
   }
  ],
  "assumptions": [
@@ -7449,16 +7432,17 @@
   "Cells: Samsung INR21700-50S model at datasheet max (21.25 x 70.62); cap/button geometry assumed. PCM board 3 x 43.4 x 18 box (not sourced).",
   "Placeholders (parts not selected): knob D30 x 14, rubber feet 12 x 3, lid foam gasket, grommet, PCM; harness tubes are schematic.",
   "ND65-4 maker STEP accepted with its known deviations (flange 0.9 mm wider in y, holes 0.35 mm off the cone axis): accuracy 'estimated'.",
-  "Board parts: models-v13 models via the project library; footprint errors (J2/J3, U1 pad 56, SW100, C275) modelled as drawn.",
-  "Masses: printed bodies at 100 % infill PETG 1.27 g/cm3; drivers/woofer from maker listings; PCB estimated."
+  "Board parts: models-v13 models via the project library; RT-14 carries the footprint fixes (J2/J3, U1 pad 56, SW100, C275).",
+  "Masses: printed bodies at 100 % infill PETG 1.27 g/cm3; drivers/woofer from maker listings; PCB estimated.",
+  "Enclosure: the 2-cell (1S2P) v13 design; the 4-cell variant (ai-files/cad/v13p4) is not included."
  ],
  "open_items": [
   "Owner: caliper the W3-2052SC (frame thickness, gasket, hole pattern, depth) before printing; choose M3x20 (marginal) or source M3x22 for the woofer.",
-  "Coordinator: fix the J2/J3, U1 pad 56, SW100 and C275 footprints; place SW100 so its actuator reaches the board edge (or add a lid plunger).",
+  "Owner: approve a printed SW100 lid plunger (bridges 4.50 mm: 4.0 lid + 0.5 gap; needs a collar pocket in the lid inner face) or another press solution; check the TE switch travel.",
   "Owner: J11 is a JST VH header; the woofer pigtail is JST-PH style: make a PH-to-VH adapter lead or re-terminate.",
   "Owner: select the knob, rubber feet, PCM board, gasket materials and grommet (still placeholders).",
   "Check the TC2030 programming cable access through the rear opening with the real cable (unchanged).",
-  "Routing is partial (RT-3): pcb_copper.glb shows only the copper routed so far."
+  "Routing is a draft (RT-14, 12 unconnected): pcb_copper.glb shows the copper routed so far."
  ],
  "zfix": {},
  "skipped_operations": []

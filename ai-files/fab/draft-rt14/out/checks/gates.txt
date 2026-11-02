@@ -1,0 +1,29 @@
+GATE kicad_pro_review PASS 0 keys differ between RT-14.kicad_pro and the project .kicad_pro (exports use the project file; see checks/kicad_pro-diff.txt)
+GATE rules_file PASS proposed-project.kicad_dru c47d6aedae78
+GATE teardrops_current FAIL input 325 teardrop zones, headless regeneration 1886; zone layers differing 15 (rerun with --teardrops to export the regenerated teardrops, or redo them in the GUI)
+GATE zone_fill PASS fill was current (refill gives the same zone areas); exporting the board as given
+GATE teardrop_count INFO 325 teardrop zones on the exported board (old release board R6q/R9: 1825)
+GATE drc_violations PASS 0 {}
+GATE drc_unconnected FAIL 12
+GATE lib_footprint_mismatch PASS 0
+GATE schematic_parity PASS 243 issues ({'footprint_symbol_field_mismatch': 199, 'footprint_symbol_mismatch': 29, 'net_conflict': 15}), 0 new vs the inherited 243, 0 gone
+GATE cpl_exclusions PASS 345 rows (27 test points); excluded J7, LOGO1, R256, SW101, H*
+GATE cpl_single_side PASS bottom-side rows: none
+GATE bom_vs_committed PASS 90 lines / 318 placements vs committed 90 / 318; lines only in new 0, only in committed 0
+GATE bom_vs_board PASS 318 placements; footprint/ref mismatches 0 []; lines without LCSC code 0
+GATE cpl_vs_bom PASS CPL 345 = BOM 318 + 27 test points; BOM refs missing in CPL none; CPL refs without BOM line none
+GATE erc PASS 240 {'lib_symbol_issues': 238, 'power_pin_not_driven': 1, 'same_local_global_label': 1} (inherited set: 238 lib_symbol_issues, 1 power_pin_not_driven, 1 same_local_global_label)
+GATE step PASS 19M DRAFT-RT14-board.step
+GATE fab_files PASS missing []
+GATE fab_extents WARN outside the outline: ['F_Silkscreen.gto'] (F.Silkscreen: BM83 module outline overhangs the left edge by design; JLC clips silk)
+GATE fab_drill_hits PASS PTH 1034 = 70 pads + 964 vias; NPTH 24 = 24 pads
+GATE fab_paste_flashes INFO F.Paste flashes 1081, pads with F.Paste 1081 (regions for custom openings are not flashes)
+GATE fab_position_rows PASS CPL rows 345, board footprints not excluded/DNP 345
+GATE fab_gbrjob PASS 11 layers in the job file
+GATE fab_bside_smd PASS B-side SMD pads 2 (paste on B: 0): U11
+GATE stencil_area_ratio PASS 1085 apertures at 0.10 mm: 0 below AR 0.66 or aspect 1.5
+GATE stencil_thermal_pads WARN 10 of 11 exposed pads outside the HA windowing rules (see stencil report)
+GATE via_in_pad INFO exposed-pad vias 40 {'U25.21': 8, 'U6.33': 16, 'U7.33': 16} | via centre in a non-EP pad 2 ['C215.1', 'R185.2'] | hole within 0.15 mm of a pad 8
+GATE sentinel_rules_read PASS I2S_CLK 5 mm width sentinel fires 81 times
+GATE sentinel_rule21 PASS A: U14-FB In2 blocked True, HP_G0 In2 allowed True; B (rules 20/21 removed): HP_G0 blocked True; C: HP_G0 0.20 mm width rule True
+GATE sentinel_rule20 PASS SW100 hole_clearance violations with rule 20: 0, without: 4

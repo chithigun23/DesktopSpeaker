@@ -1,0 +1,20 @@
+files 16 missing []
+  F_Cu.gtl           flashes  2112 extents (87.49, -157.1, 213.25, -21.0) 
+  In1_Cu.g1          flashes  1034 extents (86.75, -157.1, 213.25, -20.5) 
+  In2_Cu.g2          flashes  1034 extents (86.75, -157.1, 213.25, -20.5) 
+  B_Cu.gbl           flashes  1036 extents (86.75, -157.1, 213.25, -20.5) 
+  F_Paste.gtp        flashes  1081 extents (87.73, -155.79, 210.22, -21.0) 
+  B_Paste.gbp        flashes     0 extents None 
+  F_Silkscreen.gto   flashes  1160 extents (78.27, -157.2, 213.35, -20.34) EXCEEDS OUTLINE
+  B_Silkscreen.gbo   flashes    86 extents (89.78, -152.96, 210.5, -21.41) 
+  F_Mask.gts         flashes  1160 extents (87.73, -155.79, 210.5, -21.0) 
+  B_Mask.gbs         flashes    86 extents (89.78, -152.96, 210.5, -21.41) 
+  Edge_Cuts.gm1      flashes     0 extents (86.25, -157.6, 213.75, -20.0) 
+board: SMD pads F 1072 B 2, PTH pads 70, NPTH 24, vias 964, pads with F.Paste 1081
+  PTH.drl: hits 1034 tools 13 dia [0.2, 0.3, 0.4, 0.8, 1.0, 1.02, 1.2, 1.3, 1.5, 1.6, 1.7, 3.2]
+  NPTH.drl: hits 24 tools 8 dia [0.6, 0.9, 0.991, 1.2, 1.6, 2.1, 2.375, 3.0]
+expected PTH hits (pads+vias, slots count once) ~ 1034 ; NPTH ~ 24
+position rows 345 vs footprints not excluded/DNP 345
+gbrjob layers 11 size {'X': 127.6, 'Y': 137.7}
+  B-side SMD pad: U11 39 paste False
+  B-side SMD pad: U11 40 paste False
