@@ -92,10 +92,10 @@ Labels:
 | Pack area under the PCB outline (plan view) | **0 %** | 18 % (878 mm²) | 33 % (2130 mm²) |
 | Vertical gap pack top → PCB bottom | 41.5 | 41.5 | 41.5 |
 | Main chamber net | 1.962 L | 1.934 L | 1.905 L |
-| Shell volume (PETG) | 380.5 cm³ | 382.4 cm³ (+1.9) | 382.0 cm³ (+1.5) |
+| Shell volume (PETG) | 380.5 cm³ | 382.4 cm³ (+1.9) | 387.0 cm³ (+6.5) |
 | Shell print: overhang > 45° off the bed (vs 2P) | 978 mm² (baseline) | **identical** | **+30 mm²**: two strap-tunnel ceilings, 2.5 x 6 mm bridges each; no support needed |
-| Estimated total mass / pack mass | 1740 g / 152 g | 1815 g / 224 g | 1886 g / 296 g |
-| CoM (x, y, z) | (−0.21, 88.94, 44.38) | (−0.20, 88.05, 43.16): Δy −0.9, Δz −1.2 | (−0.33, 87.72, 42.08): **Δy −1.2, Δz −2.3** |
+| Estimated total mass / pack mass | 1740 g / 152 g | 1815 g / 224 g | 1893 g / 296 g |
+| CoM (x, y, z) | (−0.21, 88.94, 44.38) | (−0.20, 88.05, 43.16): Δy −0.9, Δz −1.2 | (−0.33, 87.58, 41.96): **Δy −1.4, Δz −2.4** |
 
 Notes:
 - "Under the PCB footprint as today" is not true today. The v13 pack sits under the front drivers, in front of the PCB, which starts at y 64.5. In plan view, the 3P third row and the rear third of the 4P brick are under the front strip of the PCB outline, 41.5 mm below it. For y ≥ 76 the woofer-insert shelf (z 54-57) lies between.
@@ -279,7 +279,7 @@ A single NTC on a 4-cell brick is normal practice for 1S packs at these currents
 - Thermal: see 2.2. Charge heating per cell falls 4x at 4P. The 45 °C JEITA suspend and 40 °C derate are unchanged.
 - Shipping/airline (mention only): 72 Wh nominal (69 Wh at the 4.8 Ah rated minimum; 64.8 Wh with P45B) is under the 100 Wh airline limit. UN38.3 documentation is still required to ship the pack. The 2P RFQ already asks for it.
 - Cost: **unknown.** The BOM pack line (`hardware-buy-list.csv` row 32) is a quote placeholder ("TBD"), and no cell price is recorded in the BOM sources. The partial BOM subtotals do not include the pack.
-- Weight: +69 g (3P) / +138 g (4P) of cells [50S mass UNVERIFIED; P45B 70 g max DS]. Estimated product mass 1.74 → 1.82 / 1.89 kg.
+- Weight: +69 g (3P) / +138 g (4P) of cells [50S mass UNVERIFIED; P45B 70 g max DS]. Estimated product mass 1.74 → 1.82 / 1.89 kg (shell +2 g / +8 g PETG).
 
 ### 2.10 Runtime [EST]
 
