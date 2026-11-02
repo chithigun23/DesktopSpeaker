@@ -111,3 +111,10 @@ ai-files/pcb/work-route5/*
 !ai-files/pcb/work-route5/lib-proposed/
 !ai-files/pcb/work-route5/scripts/
 !ai-files/pcb/work-route5/evidence/
+ai-files/pcb/work-route6/*
+!ai-files/pcb/work-route6/RT-6.kicad_pcb
+!ai-files/pcb/work-route6/RT-6.kicad_pro
+!ai-files/pcb/work-route6/RT-6.kicad_dru
+!ai-files/pcb/work-route6/RT-6.gates.json
+!ai-files/pcb/work-route6/scripts/
+!ai-files/pcb/work-route6/evidence/

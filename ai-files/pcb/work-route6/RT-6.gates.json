@@ -1,0 +1,24 @@
+{
+ "footprints": 360,
+ "pads": 1194,
+ "moved": [
+  "C106",
+  "C110",
+  "R102",
+  "TP12",
+  "TP14",
+  "TP2"
+ ],
+ "moved_not_allowed": [],
+ "pad_net_diff": [],
+ "base_copper_items": 2929,
+ "new_copper_items": 2972,
+ "removed_or_changed": 76,
+ "unexpected_removed": [],
+ "locked_items": 2853,
+ "locked_sha256": "793c7e782e8c703e59229880d28599782c27a35401d8246e9e0e8aedabd4a54b",
+ "added_items": 119,
+ "new_segments": 95,
+ "new_length_mm": 248.218,
+ "new_not_exact": []
+}
