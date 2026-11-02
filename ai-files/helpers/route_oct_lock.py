@@ -8,7 +8,7 @@ BLK = re.compile(r'^\t\((segment|arc|via)$')
 
 
 def copper_items(path, nets):
-    nets = set(nets); lines = open(path, encoding='utf-8').read().split('\n'); out = []; i = 0
+    nets = set(nets) if nets is not None else None; lines = open(path, encoding='utf-8').read().split('\n'); out = []; i = 0
     while i < len(lines):
         m = BLK.match(lines[i])
         if not m:
@@ -23,7 +23,7 @@ def copper_items(path, nets):
                 d[mm.group(1)] = mm.group(2)
         net = d.get('net', '').strip('"')
         d = {k: ' '.join(('%.6f' % float(x)) if re.match(r'^-?[\d.]+$', x) else x for x in v.split()) for k, v in d.items()}
-        if net in nets:
+        if nets is None or net in nets:
             out.append((m.group(1), net, d.get('start', d.get('at', '')), d.get('end', ''), d.get('mid', ''), d.get('width', d.get('size', '')),
                         d.get('drill', ''), d.get('layer', d.get('layers', ''))))
         i = j + 1
@@ -34,6 +34,33 @@ def copper_hash(path, nets):
     items = copper_items(path, nets)
     h = hashlib.sha256('\n'.join('|'.join(t) for t in items).encode()).hexdigest()
     return h, len(items)
+
+
+def item_strings(path):
+    """canonical strings of every copper item (all nets) of a board, as a multiset (continuation-mode locks)"""
+    import collections
+    return collections.Counter('|'.join(t) for t in copper_items(path, None))
+
+
+def hash_strings(lst):
+    lst = sorted(lst)
+    return hashlib.sha256('\n'.join(lst).encode()).hexdigest(), len(lst)
+
+
+def cont_lock(path, man, skip=()):
+    """continuation manifest (mode 'continue'): stage C0 = hash of all copper of the input board; every later stage lists the
+    items it added. Lock ok when every added item of every stage is present and the remaining items hash to C0."""
+    have = item_strings(path); rest = have.copy(); res = {}
+    for s, info in man['stages'].items():
+        if s == 'C0' or s in skip:
+            continue
+        add = __import__('collections').Counter(info.get('added_items', []))
+        miss = add - have
+        res[s] = dict(ok=not miss, items=sum(add.values()), missing=sum(miss.values()))
+        rest -= add
+    h, n = hash_strings(list(rest.elements()))
+    res['C0'] = dict(ok=h == man['stages']['C0']['copper_sha256'], items=n)
+    return res
 
 
 if __name__ == '__main__':

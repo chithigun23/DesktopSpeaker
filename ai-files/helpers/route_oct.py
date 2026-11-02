@@ -29,6 +29,20 @@ Router-side rules added 2026-11-02 (section 9 of routing-toolchain-oct-2026-11-0
     the stub nodes; the stubs themselves use the DRC value)
   * pour guard: a connection that would cut a via-anchored F/B.Cu GND fill piece into an un-anchored part is rejected
   * self-avoidance: a path that touches itself, or whose via has no stitch spot, is re-searched with that part blocked
+Router fixes 2026-11-02 (section 10 of the report; every one can be switched off):
+  1 escape reservations: all fine-pitch pads of this and every later stage are reserved before the stage, with the neck
+    clearance between reservations and stubs (so a later-stage pad next to an earlier-stage pad keeps its lane); a pad left
+    unrouted gets its reservation back (released only when its own net uses it)
+  2 pad identity (ref, number, index): same-number pads of one part on one net are one electrical pin (no routing between
+    them; a connection goes to the nearest member)
+  3 continuation mode (--cont-drc DRC.json): route only the open connections (DRC unconnected_items) of an already routed
+    board; all existing copper is a locked obstacle (manifest C0 + per-stage added items); a connection may end on existing
+    copper of its own net at a pad, a via, or a segment tap (stub node: cheap; T in a segment: --tap-pen-mid, flagged)
+  4 rip-up (--rrr-mode new): only same-stage nets of this run that are not complete-and-short (ratio <= --rrr-keep-ratio);
+    kept only if connections increase and the group length ratio does not worsen
+  5 detour limit (--detour 2.5): longer paths are re-searched with a cheap via hop and with the other layer preferred; the
+    shortest is kept, still-long ones are accepted (no alternative) and listed in the stage summary (detours)
+  6 GND stitching along sensitive B.Cu runs (--run-stitch 6 --run-stitch-dist 1.5)
 """
 import sys, os, json, math, time, argparse, hashlib, uuid, ctypes, itertools, collections, re, subprocess
 import numpy as np
@@ -63,6 +77,15 @@ STITCH_RE = re.compile(r'I2S|AUD_S|BT_AUDIO|HP_OUT|VMID|USB_D|USB_AUDIO|AUX|U24-
 
 def space_of(net, cls):
     return HALO[0] if (cls in HALO_CLS or net in HALO_NETS) and HALO[0] > 0 else None
+
+
+def octi_xy(x1, y1, x2, y2):
+    dx = abs(x1 - x2); dy = abs(y1 - y2)
+    return max(dx, dy) + (math.sqrt(2) - 1) * min(dx, dy)
+
+
+def octi(a, b):
+    return octi_xy(a['x'], a['y'], b['x'], b['y'])
 
 
 def dang(a, b):
@@ -199,8 +222,12 @@ class Board:
             self.keepouts.append(dict(name=a['name'] or ('fp:' + a['ref']), layers=a['layers'], no_tracks=a['no_tracks'], no_vias=a['no_vias'], geom=g))
         self.neck = unary_union(neck) if neck else Polygon()
         self.neck_p = prep(self.neck)
-        # pads
+        # pads; identity = (ref, number, idx): pin stacks (SW100 "1" x2, U11 "40" x2) share ref+number (fix 2, 2026-11-02)
+        self.D = D
+        stk = collections.Counter((p['ref'], p['num']) for p in D['pads'])
+        seen = collections.Counter()
         for p in D['pads']:
+            p['idx'] = seen[(p['ref'], p['num'])]; seen[(p['ref'], p['num'])] += 1; p['nst'] = stk[(p['ref'], p['num'])]
             for l, pl in p['poly'].items():
                 g = mkpolys(pl)
                 if g is None:
@@ -350,6 +377,13 @@ class Router:
         self.xblock = []                                 # per-connection retry blocks: (layer, geom) for tracks
         self.xnovia = []                                 # per-connection retry blocks: via sites (x, y) mm
         self.stats = collections.Counter()
+        self.cont = False                                # continuation mode (fix 3): route only the open connections
+        self.layer_mul = [1.0, 1.0]                      # per-layer cost factor (detour alternatives, fix 5)
+        self.conn_terms = {}                             # (net, conn index) -> (terminals A, terminals B) for rip-up
+        self.detours = []                                # connections accepted above --detour x octilinear minimum
+        self.base_used = {}                              # continuation: pad exits used by existing copper
+        self.viaused = collections.defaultdict(lambda: collections.defaultdict(set))   # net -> (x_nm, y_nm) -> {(layer, dir)}
+        self.base_viaused = {}
 
     # ---- per net profile
     def prof(self, net):
@@ -379,6 +413,10 @@ class Router:
                 continue
             if it.kind == 'hole':
                 c = RU.EDGE if it.typ == 'NPTH' else RU.HOLE_CLR
+            elif it.dyn and isinstance(it.owner, tuple):
+                # escape reservation of another pad (not copper): neck clearance between reservations and stubs (fix 1);
+                # the A* window still keeps the strict clearance to reservations for the body of a route
+                c = RU.clr_neck(pf['cls'], pf['net'], it.cls, it.typ)
             else:
                 c = (RU.clr_neck if inneck else RU.clr_strict)(pf['cls'], pf['net'], it.cls, it.typ)
             if line.distance(it.geom) < c + w / 2 - TOL:
@@ -555,7 +593,11 @@ class Router:
 
     # ---- pad exits
     def pad_key(self, p):
-        return (p['ref'], p['num'])
+        return (p['ref'], p['num'], p.get('idx', 0))
+
+    @staticmethod
+    def pname(p):
+        return '%s-%s' % (p['ref'], p['num']) + ('#%d' % p['idx'] if p.get('nst', 1) > 1 else '')
 
     def exits(self, pad, pf):
         """candidate exits of a pad: list of dict(layer, pts_nm, width, node(ix,iy), sdir, arr(list of (dir, bits)), cost)"""
@@ -591,7 +633,7 @@ class Router:
 
     def pad_dirs(self, pad, l):
         """allowed exit directions of a pad on layer l (fine-pitch IC pads: outward along the long axis only), pad extents, bounds"""
-        k = (pad['ref'], pad['num'], l)
+        k = (pad['ref'], pad['num'], pad.get('idx', 0), l)
         if not hasattr(self, '_pdc'):
             self._pdc = {}
         if k in self._pdc:
@@ -687,7 +729,10 @@ class Router:
         return [(a, 1 | 2), ((a + 1) % 8, 1), ((a + 7) % 8, 1)]
 
     # ---- reservations of pad escapes (fine-pitch pads of nets still to route)
-    def reserve(self, nets):
+    def reserve(self, nets, only=None):
+        """fix 1: called once before the stage with the nets of this AND every later stage (stage order = priority); a pad's
+        exit is checked against earlier reservations with the neck clearance (seg_ok), so a later-stage pad next to an
+        earlier-stage pad keeps its lane; `only` = set of pad keys (re-reservation of pads left unrouted)"""
         n = 0
         for net in nets:
             pf = self.prof(net)
@@ -695,6 +740,8 @@ class Router:
                 if p['net'] != net:
                     continue
                 k = self.pad_key(p)
+                if only is not None and k not in only:
+                    continue
                 if k in self.used or k in self.reserved:
                     continue
                 self.off = (int(round(p['x'] * 1e6)) % GN, int(round(p['y'] * 1e6)) % GN)
@@ -746,7 +793,8 @@ class Router:
                 if it.kind == 'zone' and it.net == 'GND':
                     continue
                 if it.net == pf['net'] and it.net:
-                    if it.dyn and it.kind in ('track', 'via'):
+                    # own copper of this run; in continuation mode also the locked existing copper of the net (joinable only at taps)
+                    if (it.dyn or self.cont) and it.kind in ('track', 'via') and not (it.dyn and isinstance(it.owner, tuple)):
                         B.fill(OB, B.buffered(it, 0.2 + w / 2 + M), x0i, y0i, 8, OFF)
                     continue
                 if it.kind == 'pad' and it.net in self.pending and it.net != pf['net'] and self.a.pad_pen > 0:
@@ -805,6 +853,8 @@ class Router:
                 cost[li][OB3.astype(bool) & ~dhalo] += self.a.par_pen
             if self.soft:
                 cost[li][(OB & 32).astype(bool)] += self.a.soft_pen
+            if self.layer_mul[li] != 1.0:          # detour alternative: bias towards the other layer (fix 5)
+                cost[li] *= self.layer_mul[li]
         # attraction to the pair partner
         hmin = 1.0
         if pf['pair'] and self.netcopper.get(pf['pair']):
@@ -913,7 +963,115 @@ class Router:
         S = out[:4 * n].reshape(n, 4)
         return [(int(l), int(x) + x0i, int(y) + y0i, int(d)) for l, y, x, d in S], float(oc[0])
 
-    # ---- connection
+    # ---- terminals (2026-11-02): a connection runs from any terminal of side A to any terminal of side B.
+    #   pad : a pad (fresh exit, or branch at its own stub node as before)
+    #   via : an existing via of the net (continuation mode); start/arrival at >= 90 deg to the tracks already on it
+    #   seg : a lattice node on an existing straight track of the net (continuation mode); perpendicular branch only,
+    #         class 'stub' near a pad (stub node) or 'mid' (T-junction in a segment: high start cost, flagged)
+    def term_pad(self, p):
+        return dict(kind='pad', pad=p, x=p['x'], y=p['y'], name=self.pname(p))
+
+    def lattice_node(self, xn, yn):
+        ox, oy = self.off
+        if (xn - ox) % GN or (yn - oy) % GN:
+            return None
+        return ((xn - ox) // GN, (yn - oy) // GN)
+
+    def seg_nodes(self, t):
+        """lattice nodes (current origin) on the existing segment t with their perpendicular branch directions"""
+        ax, ay = t['a']; bx, by = t['b']; ux, uy = DIRS[t['d']]; ox, oy = self.off
+        Ln = max(abs(bx - ax), abs(by - ay))
+        if ux == 0:
+            if (ax - ox) % GN:
+                return []
+            t0 = ((oy - ay) * uy) % GN
+        elif uy == 0:
+            if (ay - oy) % GN:
+                return []
+            t0 = ((ox - ax) * ux) % GN
+        else:
+            tx = ((ox - ax) * ux) % GN; ty = ((oy - ay) * uy) % GN
+            if tx != ty:
+                return []
+            t0 = tx
+        nx, ny = t['near']; out = []
+        for tt in range(t0, Ln + 1, GN):
+            if tt * (1.414 if t['d'] & 1 else 1) < 300000 or (Ln - tt) * (1.414 if t['d'] & 1 else 1) < 300000:
+                continue
+            x = ax + ux * tt; y = ay + uy * tt; xm, ym = x / 1e6, y / 1e6
+            dn = math.hypot(xm - nx, ym - ny)
+            if dn > self.a.tap_radius:
+                continue
+            pt = Point(xm, ym)
+            if any(g.distance(pt) < 0.05 for g, c in t['pads']):
+                continue
+            stub = any(g.distance(pt) <= 0.3 + 0.75 for g, c in t['pads'])
+            out.append((dn, ((x - ox) // GN, (y - oy) // GN), 'stub' if stub else 'mid'))
+        out.sort()
+        return [(n, c) for d, n, c in out[:self.a.tap_nodes]]
+
+    def term_starts(self, pf, t, starts, smeta):
+        Lo, Ld = pf['Lo'], pf['Ld']
+        if t['kind'] == 'pad':
+            ex = self.exits(t['pad'], pf)
+            for kind, e in self.start_options(t['pad'], pf, ex):
+                li = RL.index(e['layer'])
+                if kind == 'fresh':
+                    starts.append((li, e['node'][0], e['node'][1], e['sdir'], e['cost'])); smeta.append((kind, e, None, t))
+                else:
+                    L = Ld if e['sdir'] & 1 else Lo; dx, dy = DIRS[e['sdir']]
+                    n2 = (e['node'][0] + dx * L, e['node'][1] + dy * L)
+                    starts.append((li, n2[0], n2[1], e['sdir'], L * (1.414 if e['sdir'] & 1 else 1) + 4)); smeta.append((kind, e, n2, t))
+            return
+        if t['kind'] == 'via':
+            node = self.lattice_node(t['xn'], t['yn'])
+            if node is None:
+                return
+            used = self.viaused[t['net']][(t['xn'], t['yn'])]
+            nodes = [(node, None, [(l, [d for d in range(8) if all(dang(d, u) >= 2 for ll, u in used if ll == l)]) for l in RL])]
+            pen = 0.0
+        else:
+            nodes = [(n, c, [(t['layer'], [(t['d'] + 2) % 8, (t['d'] + 6) % 8])]) for n, c in self.seg_nodes(t)]
+        for node, tcls, lds in nodes:
+            pen = 0.0 if tcls is None else (self.a.tap_pen_stub if tcls == 'stub' else self.a.tap_pen_mid)
+            for l, ds in lds:
+                if l == 'B.Cu' and pf['bcu'] == 'no':
+                    continue
+                li = RL.index(l)
+                for d in ds:
+                    L = Ld if d & 1 else Lo; dx, dy = DIRS[d]
+                    n2 = (node[0] + dx * L, node[1] + dy * L)
+                    e = dict(node=node, sdir=d, layer=l, tcls=tcls or 'via')
+                    starts.append((li, n2[0], n2[1], d, L * (1.414 if d & 1 else 1) + 4 + pen)); smeta.append(('tap', e, n2, t))
+
+    def term_targets(self, pf, t, targets, tmeta):
+        if t['kind'] == 'pad':
+            ex = self.exits(t['pad'], pf)
+            if self.cont:
+                ud = {(u['layer'], u['d']) for u in self.used.get(self.pad_key(t['pad']), [])}
+                ex = [e for e in ex if (e['layer'], e['d']) not in ud]
+            for e in ex:
+                targets.append((RL.index(e['layer']), e['node'][0], e['node'][1], e['arr'])); tmeta.append(('pad', e, t))
+            return
+        if t['kind'] == 'via':
+            node = self.lattice_node(t['xn'], t['yn'])
+            if node is None:
+                return
+            used = self.viaused[t['net']][(t['xn'], t['yn'])]
+            for l in RL:
+                if l == 'B.Cu' and pf['bcu'] == 'no':
+                    continue
+                arr = [(a, 1 | 2) for a in range(8) if all(dang((a + 4) % 8, u) >= 2 for ll, u in used if ll == l)]
+                if arr:
+                    targets.append((RL.index(l), node[0], node[1], arr))
+                    tmeta.append(('tap', dict(node=node, layer=l, arr=arr, tcls='via'), t))
+            return
+        if t['layer'] == 'B.Cu' and pf['bcu'] == 'no':
+            return
+        for node, tcls in self.seg_nodes(t):
+            arr = [((t['d'] + 6) % 8, 1), ((t['d'] + 2) % 8, 1)]
+            targets.append((RL.index(t['layer']), node[0], node[1], arr)); tmeta.append(('tap', dict(node=node, layer=t['layer'], arr=arr, tcls=tcls), t))
+
     def start_options(self, pad, pf, exits):
         """A* start states from a pad: fresh exits, plus T-branches at the stub node of a pad already used by this net"""
         k = self.pad_key(pad); opts = []
@@ -932,22 +1090,40 @@ class Router:
                     opts.append(('branch', dict(u, sdir=l)))
         return opts
 
-    def offsets(self, A, B_):
-        """lattice origins to try: put A's / B's centre on lattice lines (only coordinate differences matter for exact angles)"""
-        def c(p): return (int(round(p['x'] * 1e6)) % GN, int(round(p['y'] * 1e6)) % GN)
-        a, b = c(A), c(B_)
-        out = [u['off'] for u in self.used.get(self.pad_key(A), []) if u.get('single') and u.get('off') is not None]
-        for o in (a, b, (a[0], b[1]), (b[0], a[1])):
-            if o not in out:
+    def offsets_terms(self, TA, TB):
+        """lattice origins to try: put a terminal centre on lattice lines (only coordinate differences matter for exact angles);
+        for one pad on each side this is the original order (used origin of A, A, B, mixed)"""
+        def c(t): return (int(round(t['x'] * 1e6)) % GN, int(round(t['y'] * 1e6)) % GN)
+        out = []
+        for t in TA:
+            if t['kind'] == 'pad':
+                for u in self.used.get(self.pad_key(t['pad']), []):
+                    if u.get('single') and u.get('off') is not None and u['off'] not in out:
+                        out.append(u['off'])
+        ca = [c(t) for t in TA][:2]; cb = [c(t) for t in TB][:2]
+        for a in ca:
+            for b in cb:
+                for o in (a, b, (a[0], b[1]), (b[0], a[1])):
+                    if o not in out:
+                        out.append(o)
+        out = out[:8]
+        # continuation: origins that put an existing via centre or segment end of a terminal on the lattice (taps)
+        for t in TA + TB:
+            o = (t['xn'] % GN, t['yn'] % GN) if t['kind'] == 'via' else (t['a'][0] % GN, t['a'][1] % GN) if t['kind'] == 'seg' else None
+            if o is not None and o not in out:
                 out.append(o)
-        return out
+        return out[:14]
 
-    def route_conn(self, pf, A, B_, log):
+    def route_terms(self, pf, TA, TB, log):
         cands = []
-        for off in self.offsets(A, B_):
+        for off in self.offsets_terms(TA, TB):
             self.off = off
-            exA = self.exits(A, pf); exB = self.exits(B_, pf); soA = self.start_options(A, pf, exA)
-            score = (bool(soA) and bool(exB), sum(1 for k, e in soA if k == 'branch') + sum(1 for k, e in soA if e.get('var') == 'A') + sum(1 for e in exB if e['var'] == 'A'))
+            st, sm, tg, tm = [], [], [], []
+            for t in TA:
+                self.term_starts(pf, t, st, sm)
+            for t in TB:
+                self.term_targets(pf, t, tg, tm)
+            score = (bool(st) and bool(tg), sum(int(k != 'fresh') + int(e.get('var') == 'A') for k, e, n2, t in sm) + sum(1 for k, e, t in tm if k != 'pad' or e['var'] == 'A'))
             cands.append((score, off))
         cands.sort(key=lambda t: t[0], reverse=True)
         err = None
@@ -955,49 +1131,41 @@ class Router:
             if not score[0] and err is not None:
                 break
             self.off = off
-            res, err = self.route_conn_off(pf, A, B_, log)
+            res, err = self.route_terms_off(pf, TA, TB, log)
             if res is not None:
                 return res, None
         return None, err
 
-    def route_conn_off(self, pf, A, B_, log):
-        exA = self.exits(A, pf); exB = self.exits(B_, pf)
-        kA, kB = self.pad_key(A), self.pad_key(B_)
-        # prefer unused pads' own reservation; exits of pads not yet used
-        soA = self.start_options(A, pf, exA)
-        if not soA or not exB:
-            return None, 'no exit at %s' % ('%s-%s' % kA if not soA else '%s-%s' % kB)
+    def route_terms_off(self, pf, TA, TB, log):
+        starts, smeta, targets, tmeta = [], [], [], []
+        for t in TA:
+            self.term_starts(pf, t, starts, smeta)
+        for t in TB:
+            self.term_targets(pf, t, targets, tmeta)
+        if not starts or not targets:
+            return None, 'no exit at %s' % ('/'.join(t['name'] for t in TA) if not starts else '/'.join(t['name'] for t in TB))
         Lo, Ld = pf['Lo'], pf['Ld']
-        starts = []; smeta = []
-        for kind, e in soA:
-            li = RL.index(e['layer'])
-            if kind == 'fresh':
-                starts.append((li, e['node'][0], e['node'][1], e['sdir'], e['cost'])); smeta.append((kind, e, None))
-            else:
-                L = Ld if e['sdir'] & 1 else Lo; dx, dy = DIRS[e['sdir']]
-                n2 = (e['node'][0] + dx * L, e['node'][1] + dy * L)
-                starts.append((li, n2[0], n2[1], e['sdir'], L * (1.414 if e['sdir'] & 1 else 1) + 4)); smeta.append((kind, e, n2))
-        targets = [(RL.index(e['layer']), e['node'][0], e['node'][1], e['arr']) for e in exB]
         ox, oy = self.off
         def mm(ix, iy): return ((ix * GN + ox) / 1e6, (iy * GN + oy) / 1e6)
         pts = [mm(s[1], s[2]) for s in starts] + [mm(t[1], t[2]) for t in targets]
         xs = [p[0] for p in pts]; ys = [p[1] for p in pts]
-        discs_own = [mm(s[1], s[2]) + (0.75,) for s in starts] + [mm(*e['node']) + (0.75,) for k_, e, n2 in smeta if k_ == 'branch'] \
+        discs_own = [mm(s[1], s[2]) + (0.75,) for s in starts] + [mm(*e['node']) + (0.75,) for k_, e, n2, t in smeta if k_ != 'fresh'] \
             + [mm(t[1], t[2]) + (0.75,) for t in targets]
-        discs_halo = [(A['x'], A['y'], 1.2), (B_['x'], B_['y'], 1.2)]
+        discs_halo = [(t['x'], t['y'], 1.2) for t in TA + TB if t['kind'] in ('pad', 'via')]
         res = None
         for margin in self.a.margins:
             bbox = (min(xs) - margin, min(ys) - margin, max(xs) + margin, max(ys) + margin)
             win = self.window(pf, bbox, discs_own, discs_halo)
-            for kind, e, n2 in smeta:
+            for kind, e, n2, t in smeta:
                 if kind == 'fresh':
                     self.open_corridors(pf, win, e['node'], e['layer'], [e['sdir'], (e['sdir'] + 1) % 8, (e['sdir'] + 7) % 8])
-            for e in exB:
-                self.open_corridors(pf, win, e['node'], e['layer'], [(a + 4) % 8 for a, b in e['arr']])
-            # branch starts: forced run must be free
+            for k_, e, t in tmeta:
+                if k_ == 'pad':
+                    self.open_corridors(pf, win, e['node'], e['layer'], [(a + 4) % 8 for a, b in e['arr']])
+            # branch / tap starts: forced run must be free
             st2 = []
-            for s, (kind, e, n2) in zip(starts, smeta):
-                if kind == 'branch':
+            for s, (kind, e, n2, t) in zip(starts, smeta):
+                if kind != 'fresh':
                     li = s[0]; dx, dy = DIRS[e['sdir']]; L = Ld if e['sdir'] & 1 else Lo; okr = True
                     for j in range(1, L + 1):
                         x = e['node'][0] + dx * j - win['x0i']; y = e['node'][1] + dy * j - win['y0i']
@@ -1011,21 +1179,18 @@ class Router:
             path, info = self.astar(pf, win, sts, targets)
             log.append(dict(margin=margin, W=win['W'], H=win['H'], t=round(time.time() - t0, 2), ok=path is not None, info=info if path is None else round(info, 1)))
             if path is not None:
-                # identify start and target used
                 s0 = path[0]; i0 = next(i for i, s in enumerate(st2) if s is not None and (s[0], s[1], s[2], s[3]) == (s0[0], s0[1], s0[2], s0[3]))
                 tl = path[-1]
-                eB = next(e for e in exB if RL.index(e['layer']) == tl[0] and e['node'] == (tl[1], tl[2]) and any(d == tl[3] for d, b in e['arr']))
-                res = (path, smeta[i0], eB)
+                j0 = next(j for j, (k_, e, t) in enumerate(tmeta) if RL.index(e['layer']) == tl[0] and e['node'] == (tl[1], tl[2]) and any(d == tl[3] for d, b in e['arr']))
+                res = (path, smeta[i0], tmeta[j0])
                 break
         if res is None:
             if getattr(self.a, 'debug_png', None):
-                self.dump_png(win, sts, targets, '%s/%s_%s-%s_%s-%s.png' % (self.a.debug_png, pf['net'].strip('/').replace('/', '_'), A['ref'], A['num'], B_['ref'], B_['num']))
-                if sts:
-                    self.dump_png(win, sts, targets, '%s/%s_%s-%s_start.png' % (self.a.debug_png, pf['net'].strip('/').replace('/', '_'), A['ref'], A['num']), crop=(sts[0][2] - win['y0i'], sts[0][1] - win['x0i']))
-                t0 = targets[0]
-                self.dump_png(win, sts, targets, '%s/%s_%s-%s_tgt.png' % (self.a.debug_png, pf['net'].strip('/').replace('/', '_'), B_['ref'], B_['num']), crop=(t0[2] - win['y0i'], t0[1] - win['x0i']))
+                nm = pf['net'].strip('/').replace('/', '_')
+                self.dump_png(win, sts, targets, '%s/%s_%s-%s.png' % (self.a.debug_png, nm, TA[0]['name'], TB[0]['name']))
             return None, 'no path'
         return res, None
+
 
     def dump_png(self, win, sts, targets, path, crop=None):
         import zlib, struct
@@ -1049,8 +1214,8 @@ class Router:
         open(path, 'wb').write(b'\x89PNG\r\n\x1a\n' + ch(b'IHDR', struct.pack('>IIBBBBB', rgb.shape[1], H, 8, 2, 0, 0, 0)) + ch(b'IDAT', zlib.compress(raw, 6)) + ch(b'IEND', b''))
 
     # ---- copper from a path
-    def build_copper(self, pf, path, sm, eB):
-        kind, eA, n2 = sm
+    def build_copper(self, pf, path, sm, tm):
+        kind, eA, n2, tA = sm
         w = pf['w']; ox, oy = self.off
         pieces = []        # (layer, [(x_nm,y_nm), ...], width)
         vias = []
@@ -1060,7 +1225,7 @@ class Router:
             pieces.append((eA['layer'], [(eA['node'][0] * GN + ox, eA['node'][1] * GN + oy)], w))
         cur_l = RL[path[0][0]]
         route = [(path[0][1] * GN + ox, path[0][2] * GN + oy)]
-        if kind == 'branch':
+        if kind != 'fresh':
             route = [(eA['node'][0] * GN + ox, eA['node'][1] * GN + oy), (path[0][1] * GN + ox, path[0][2] * GN + oy)]
         segs_route = []
         for s in path[1:]:
@@ -1070,8 +1235,9 @@ class Router:
             route.append(p)
         segs_route.append((cur_l, route, w))
         pieces += segs_route
-        tp = list(reversed(eB['pts']))
-        pieces.append((eB['layer'], tp, eB['width']))
+        tkind, eB, tB = tm
+        if tkind == 'pad':
+            pieces.append((eB['layer'], list(reversed(eB['pts'])), eB['width']))
         # flatten into segments, merge colinear consecutive with same layer and width
         segs = []
         for l, pts, wd in pieces:
@@ -1089,7 +1255,7 @@ class Router:
             merged.append(s)
         return merged, vias
 
-    def verify(self, pf, segs, vias):
+    def verify(self, pf, segs, vias, terms=()):
         # self-consistency of the new path: holes of its own vias >= hole-to-hole apart, and no two non-adjacent
         # segments of the path closer than the clearance on one layer (A* has no self-avoidance)
         for i in range(len(vias)):
@@ -1113,7 +1279,104 @@ class Router:
         for v in vias:
             if not self.via_ok_exact(v[0] / 1e6, v[1] / 1e6, pf):
                 return False, 'via (%.3f,%.3f)' % (v[0] / 1e6, v[1] / 1e6)
+        if self.cont:
+            ok, why = self.verify_own(pf, segs, vias, terms)
+            if not ok:
+                return False, why
         return True, None
+
+    def verify_own(self, pf, segs, vias, terms):
+        """continuation mode: new copper may touch existing copper of its own net only at its two ends (the taps):
+        inside a terminal pad (+0.3 mm), within 0.6 mm of a terminal via, or within 0.45 mm of a segment tap node"""
+        if not segs and not vias:
+            return True, None
+        allow = []
+        for t in terms:
+            if t['kind'] == 'pad':
+                allow += [mkpolys(pl).buffer(0.3, 8) for l, pl in t['pad']['poly'].items() if mkpolys(pl) is not None]
+            elif t['kind'] == 'via':
+                allow.append(Point(t['x'], t['y']).buffer(VIA_D / 2 + 0.3, 8))
+        if segs:
+            for p in (segs[0][1], segs[-1][2]):
+                allow.append(Point(p[0] / 1e6, p[1] / 1e6).buffer(0.45, 8))
+        A = unary_union(allow) if allow else Polygon()
+        net = pf['net']
+        new = [(l, LineString([(a[0] / 1e6, a[1] / 1e6), (b[0] / 1e6, b[1] / 1e6)]).buffer(w / 2 + 0.1, 8) if a != b else Point(a[0] / 1e6, a[1] / 1e6).buffer(w / 2 + 0.1, 8)) for l, a, b, w in segs]
+        new += [(l, Point(v[0] / 1e6, v[1] / 1e6).buffer(VIA_D / 2 + 0.1, 8)) for v in vias for l in RL]
+        for l, g in new:
+            for it in self.B.idx[l].query(g.bounds):
+                if it.net != net or it.kind not in ('track', 'via') or (it.dyn and isinstance(it.owner, tuple)):
+                    continue
+                if it.dyn and it.owner == net:
+                    continue      # own stitching vias are GND (not this net); safety
+                inter = g.intersection(it.geom)
+                if inter.is_empty or inter.area < 1e-9:
+                    continue
+                if not A.buffer(1e-6).contains(inter):
+                    c = inter.centroid
+                    return False, 'touches own copper at (%.3f,%.3f)' % (c.x, c.y)
+        return True, None
+
+    # ---- GND stitching along sensitive B.Cu runs (fix 6, section 14.1)
+    def place_run_stitches(self, pf, segs, vias, placed):
+        """every point of a stitched net's B.Cu run within --run-stitch/2 (along the run) of a GND via that lies within
+        --run-stitch-dist of the track; missing stations are added as GND vias (legality as for via stitches)"""
+        if not pf['stitch'] or self.a.run_stitch <= 0:
+            return placed, None
+        half = self.a.run_stitch / 2.0; Rd = self.a.run_stitch_dist
+        placed = list(placed)
+        runs = []; cur = None
+        for l, a, b, w in segs:
+            if l != 'B.Cu':
+                cur = None; continue
+            pa = (a[0] / 1e6, a[1] / 1e6); pb = (b[0] / 1e6, b[1] / 1e6)
+            if cur is not None and cur[-1] == pa:
+                cur.append(pb)
+            else:
+                cur = [pa, pb]; runs.append(cur)
+        for run in runs:
+            line = LineString(run); Lr = line.length
+            if Lr < 1e-6:
+                continue
+            for it in range(40):
+                bd = line.bounds
+                c = ((bd[0] + bd[2]) / 2, (bd[1] + bd[3]) / 2); Rq = max(bd[2] - bd[0], bd[3] - bd[1]) / 2 + Rd + 0.1
+                gp = self.gnd_pts(c[0], c[1], Rq) + placed
+                pos = sorted(line.project(Point(q)) for q in gp if line.distance(Point(q)) <= Rd + 1e-6)
+                covered = 0.0; u = None
+                for p in pos:
+                    if p - half > covered + 1e-6:
+                        break
+                    covered = max(covered, p + half)
+                if covered >= Lr - 1e-6:
+                    u = None
+                else:
+                    u = covered
+                if u is None:
+                    break
+                ok = False
+                for tt in np.arange(min(Lr, u + half), max(0.0, u - half) - 1e-9, -0.25):
+                    p0 = line.interpolate(max(0.0, tt - 0.05)); p1 = line.interpolate(min(Lr, tt + 0.05)); pt = line.interpolate(tt)
+                    dx, dy = p1.x - p0.x, p1.y - p0.y; nn = math.hypot(dx, dy)
+                    if nn < 1e-9:
+                        continue
+                    nx, ny = -dy / nn, dx / nn
+                    for dd in (1.0, 1.15, 1.3, 1.45):
+                        for sgn in (1, -1):
+                            x = round(pt.x + sgn * dd * nx, 4); y = round(pt.y + sgn * dd * ny, 4)
+                            if line.distance(Point(x, y)) > Rd + 1e-6:
+                                continue
+                            if self.gnd_via_ok(x, y, pf, segs, vias, placed):
+                                placed.append((x, y)); ok = True; break
+                        if ok:
+                            break
+                    if ok:
+                        break
+                if not ok:
+                    q = line.interpolate(min(Lr, u + 0.5))
+                    return None, (q.x, q.y)
+                self.stats['run_stitch_vias'] += 1
+        return placed, None
 
     def commit(self, pf, segs, vias, stitches=()):
         for (x, y) in stitches:
@@ -1139,12 +1402,115 @@ class Router:
                 self.B._add(ih)
             self.out_vias.append(dict(a=v, net=pf['net']))
 
+    # ---- one connection: search + exact checks + stitching + pour guard, with re-searches (no commit)
+    def route_one(self, pf, TA, TB, clog):
+        res, err = self.route_terms(pf, TA, TB, clog['tries'])
+        attempt = 0; stitches = []; ok = False; why = err; segs = vias = None
+        while res is not None:
+            path, sm, tm = res
+            segs, vias = self.build_copper(pf, path, sm, tm)
+            ok, why = self.verify(pf, segs, vias, (sm[3], tm[2]))
+            if ok:
+                stitches, bad = self.place_stitches(pf, segs, vias)
+                if stitches is None:
+                    ok = False; why = 'no GND stitch spot for via (%.3f,%.3f)' % bad; self.xnovia.append(bad); self.stats['stitch_fail'] += 1
+            if ok:
+                st2, bad = self.place_run_stitches(pf, segs, vias, stitches)
+                if st2 is None:
+                    ok = False; why = 'no GND stitch spot along B.Cu run at (%.3f,%.3f)' % bad
+                    self.xblock.append(('B.Cu', Point(bad).buffer(1.5, 8))); self.stats['run_stitch_fail'] += 1
+                else:
+                    stitches = st2
+            if ok:
+                okp, info = self.pour_ok(pf, segs, vias, stitches)
+                if not okp:
+                    ok = False; why = 'would isolate GND pour ' + info[0]; self.xblock.append((info[1], info[2])); self.stats['pour_reject'] += 1
+            elif why == 'path touches itself':
+                self.xblock.append(self._touch); self.stats['self_touch'] += 1
+            if ok or attempt >= self.a.retries or not (why.startswith('no GND stitch') or why.startswith('would isolate') or why == 'path touches itself'):
+                break
+            attempt += 1
+            clog.setdefault('retries', []).append(why)
+            res, err = self.route_terms(pf, TA, TB, clog['tries'])
+            if res is None:
+                why = 'retry: ' + str(err)
+        self.xblock = []; self.xnovia = []
+        if res is not None or attempt:
+            if not ok:
+                return None, 'verify failed: ' + why
+            if attempt:
+                self.stats['retry_ok'] += 1
+            path, sm, tm = res
+            L = sum(math.hypot(b[0] - a[0], b[1] - a[1]) for l, a, b, w in segs) / 1e6
+            p0, p1 = segs[0][1], segs[-1][2]
+            om = octi_xy(p0[0] / 1e6, p0[1] / 1e6, p1[0] / 1e6, p1[1] / 1e6)
+            return dict(path=path, sm=sm, tm=tm, segs=segs, vias=vias, stitches=stitches, len=L, omin=om, ratio=L / om if om > 1e-6 else 1.0), None
+        return None, err
+
+    def route_conn_full(self, pf, TA, TB, clog):
+        """fix 5: a path longer than --detour x the octilinear minimum between its ends is re-searched with a cheap via hop and
+        with the other layer preferred; the shortest is kept, and if it is still a detour it is accepted (no alternative) and reported"""
+        r, err = self.route_one(pf, TA, TB, clog)
+        if r is None or self.a.detour <= 0 or r['ratio'] <= self.a.detour:
+            return r, err
+        alts = [('base', r)]
+        if pf['bcu'] != 'no':
+            vc = self.a.via_cost
+            for var in ('via', 'layer'):
+                if var == 'via':
+                    self.a.via_cost = min(vc, 0.3)
+                else:
+                    lf = sum(math.hypot(b[0] - a[0], b[1] - a[1]) for l, a, b, w in r['segs'] if l == 'F.Cu'); lb = r['len'] * 1e6 - lf
+                    self.layer_mul = [3.0, 1.0] if lf >= lb else [1.0, 3.0]
+                try:
+                    r2, e2 = self.route_one(pf, TA, TB, dict(tries=[]))
+                finally:
+                    self.a.via_cost = vc; self.layer_mul = [1.0, 1.0]
+                if r2 is not None:
+                    alts.append((var, r2))
+                    if r2['ratio'] <= self.a.detour:
+                        break
+        var, best = min(alts, key=lambda t: t[1]['ratio'])
+        clog['detour_alts'] = [(v, round(x['ratio'], 3)) for v, x in alts]
+        if best['ratio'] > self.a.detour:
+            clog['detour'] = round(best['ratio'], 3); self.stats['detour_accepted'] += 1
+            self.detours.append(dict(net=pf['net'], a=clog['a'], b=clog['b'], ratio=round(best['ratio'], 3), len=round(best['len'], 3), omin=round(best['omin'], 3), alts=clog['detour_alts']))
+        else:
+            clog['detour_fixed'] = var; self.stats['detour_fixed'] += 1
+        return best, None
+
+    def commit_conn(self, pf, r, clog):
+        self.commit(pf, r['segs'], r['vias'], r['stitches'])
+        path = r['path']; kind, eA, n2, tA = r['sm']; tk, eB, tB = r['tm']; net = pf['net']
+        if kind == 'fresh':
+            self.used.setdefault(self.pad_key(tA['pad']), []).append(dict(eA, back=path[1][3] if len(path) > 1 else eA['sdir']))
+        elif kind == 'tap':
+            if tA['kind'] == 'via':
+                self.viaused[net][(tA['xn'], tA['yn'])].add((eA['layer'], eA['sdir']))
+            else:
+                self.stats['tap_' + eA['tcls']] += 1; clog['tap_a'] = eA['tcls']
+        if tk == 'pad':
+            self.used.setdefault(self.pad_key(tB['pad']), []).append(dict(eB, back=(path[-1][3] + 4) % 8))
+        elif tB['kind'] == 'via':
+            self.viaused[net][(tB['xn'], tB['yn'])].add((eB['layer'], (path[-1][3] + 4) % 8))
+        else:
+            self.stats['tap_' + eB['tcls']] += 1; clog['tap_b'] = eB['tcls']
+        clog['stitch'] = len(r['stitches'])
+        clog['status'] = 'ok'; clog['segs'] = len(r['segs']); clog['vias'] = len(r['vias'])
+        clog['len'] = round(r['len'], 3); clog['omin'] = round(r['omin'], 3); clog['ratio'] = round(r['ratio'], 3)
+        clog['from'] = tA['name']; clog['to'] = tB['name']
+
+    def commit_direct(self, pf, dr, A, B_, clog):
+        segs, da, db, l = dr
+        self.commit(pf, segs, [])
+        self.used.setdefault(self.pad_key(A), []).append(dict(layer=l, d=da, sdir=da, single=False, node=None, back=da))
+        self.used.setdefault(self.pad_key(B_), []).append(dict(layer=l, d=db, sdir=db, single=False, node=None, back=db))
+        clog['status'] = 'ok'; clog['direct'] = True; clog['segs'] = 1; clog['vias'] = 0
+        L = math.hypot(segs[0][2][0] - segs[0][1][0], segs[0][2][1] - segs[0][1][1]) / 1e6
+        clog['len'] = round(L, 3); clog['omin'] = round(octi(A, B_), 3); clog['ratio'] = round(L / max(1e-6, octi(A, B_)), 3)
+
     # ---- chain order
-    def chain(self, pads, single):
-        n = len(pads)
-        def dist(i, j):
-            dx = abs(pads[i]['x'] - pads[j]['x']); dy = abs(pads[i]['y'] - pads[j]['y'])
-            return max(dx, dy) + (math.sqrt(2) - 1) * min(dx, dy)
+    def chain(self, n, dist, single):
         def cost(order):
             c = sum(dist(order[i], order[i + 1]) for i in range(n - 1))
             c += sum(50.0 for i in order[1:-1] if single[i])
@@ -1171,83 +1537,283 @@ class Router:
                 best = order
         return best
 
+    def rereserve(self, net, pads):
+        """fix 1: a pad whose connection failed keeps (gets back) its escape reservation; it is released only when its net uses it"""
+        if self.a.no_reserve:
+            return
+        keys = {self.pad_key(p) for p in pads if self.pad_key(p) not in self.used}
+        if keys:
+            self.reserve([net], only=keys)
+
     # ---- net
     def route_net(self, net):
+        if self.cont:
+            return self.route_net_cont(net)
         pf = self.prof(net)
         pads = [p for p in self.B.pads if p['net'] == net and any(l in p['poly'] for l in RL)]
-        rec = dict(net=net, cls=pf['cls'], w=pf['w'], pads=len(pads), conns=[], status='')
+        rec = dict(net=net, cls=pf['cls'], w=pf['w'], pads=len(pads), conns=[], status='', pinstack=0)
         t0 = time.time()
         if len(pads) < 2:
             rec['status'] = 'skip (<2 pads)'; return rec
         for p in pads:
             self.unreserve(self.pad_key(p))
-        single = []
+        grp = collections.OrderedDict()
         for p in pads:
-            self.off = (int(round(p['x'] * 1e6)) % GN, int(round(p['y'] * 1e6)) % GN)
-            ex = self.exits(p, pf)
-            single.append(bool(ex) and (all(e['single'] for e in ex) or len({(e['layer'], e['d']) for e in ex}) == 1))
-        order = self.chain(pads, single)
+            grp.setdefault((p['ref'], p['num']), []).append(p)      # fix 2: same-number pads of one part = one electrical pin
+        G = list(grp.values()); rec['pinstack'] = len(pads) - len(G)
+        if len(G) < 2:
+            rec['status'] = 'skip (pin stack only)'; return rec
+        single = []
+        for g in G:
+            s_all = True
+            for p in g:
+                self.off = (int(round(p['x'] * 1e6)) % GN, int(round(p['y'] * 1e6)) % GN)
+                ex = self.exits(p, pf)
+                s_all = s_all and bool(ex) and (all(e['single'] for e in ex) or len({(e['layer'], e['d']) for e in ex}) == 1)
+            single.append(s_all)
+        order = self.chain(len(G), lambda i, j: min(octi(p, q) for p in G[i] for q in G[j]), single)
         okc = 0
         for i in range(len(order) - 1):
-            A, B_ = pads[order[i]], pads[order[i + 1]]
-            clog = dict(a='%s-%s' % self.pad_key(A), b='%s-%s' % self.pad_key(B_), tries=[])
-            dr = self.direct(pf, A, B_)
-            if dr is not None:
-                segs, da, db, l = dr
-                self.commit(pf, segs, [])
-                self.used.setdefault(self.pad_key(A), []).append(dict(layer=l, d=da, sdir=da, single=False, node=None, back=da))
-                self.used.setdefault(self.pad_key(B_), []).append(dict(layer=l, d=db, sdir=db, single=False, node=None, back=db))
-                clog['status'] = 'ok'; clog['direct'] = True; clog['segs'] = 1; clog['vias'] = 0
-                clog['len'] = round(math.hypot(segs[0][2][0] - segs[0][1][0], segs[0][2][1] - segs[0][1][1]) / 1e6, 3)
-                okc += 1; rec['conns'].append(clog)
-                continue
-            res, err = self.route_conn(pf, A, B_, clog['tries'])
-            attempt = 0; stitches = []
-            while res is not None:
-                path, sm, eB = res
-                segs, vias = self.build_copper(pf, path, sm, eB)
-                ok, why = self.verify(pf, segs, vias)
-                if ok:
-                    stitches, bad = self.place_stitches(pf, segs, vias)
-                    if stitches is None:
-                        ok = False; why = 'no GND stitch spot for via (%.3f,%.3f)' % bad; self.xnovia.append(bad); self.stats['stitch_fail'] += 1
-                if ok:
-                    okp, info = self.pour_ok(pf, segs, vias, stitches)
-                    if not okp:
-                        ok = False; why = 'would isolate GND pour ' + info[0]; self.xblock.append((info[1], info[2])); self.stats['pour_reject'] += 1
-                elif why == 'path touches itself':
-                    self.xblock.append(self._touch); self.stats['self_touch'] += 1
-                if ok or attempt >= self.a.retries or not (why.startswith('no GND stitch') or why.startswith('would isolate') or why == 'path touches itself'):
+            GA, GB = G[order[i]], G[order[i + 1]]
+            clog = dict(a='%s-%s' % (GA[0]['ref'], GA[0]['num']), b='%s-%s' % (GB[0]['ref'], GB[0]['num']), tries=[])
+            sa = sorted(GA, key=lambda p: min(octi(p, q) for q in GB)); sb = sorted(GB, key=lambda q: min(octi(p, q) for p in GA))
+            TA = [self.term_pad(p) for p in sa]; TB = [self.term_pad(p) for p in sb]
+            self.conn_terms[(net, len(rec['conns']))] = (TA, TB)
+            dr = None
+            for A, B_ in sorted(((p, q) for p in sa for q in sb), key=lambda ab: octi(ab[0], ab[1]))[:4]:
+                dr = self.direct(pf, A, B_)
+                if dr is not None:
                     break
-                attempt += 1
-                clog.setdefault('retries', []).append(why)
-                res, err = self.route_conn(pf, A, B_, clog['tries'])
-                if res is None:
-                    why = 'retry: ' + str(err)
-            self.xblock = []; self.xnovia = []
-            if res is not None or attempt:
-                if not ok:
-                    clog['status'] = 'verify failed: ' + why
-                else:
-                    if attempt:
-                        self.stats['retry_ok'] += 1
-                    self.commit(pf, segs, vias, stitches)
-                    clog['stitch'] = len(stitches)
-                    kind, eA, n2 = sm
-                    if kind == 'fresh':
-                        self.used.setdefault(self.pad_key(A), []).append(dict(eA, back=path[1][3] if len(path) > 1 else eA['sdir']))
-                    # arrival direction into B's node: direction of the last move; back = opposite
-                    self.used.setdefault(self.pad_key(B_), []).append(dict(eB, back=(path[-1][3] + 4) % 8))
-                    clog['status'] = 'ok'; clog['segs'] = len(segs); clog['vias'] = len(vias)
-                    clog['len'] = round(sum(math.hypot(b[0] - a[0], b[1] - a[1]) for l, a, b, w in segs) / 1e6, 3)
-                    okc += 1
+            if dr is not None:
+                self.commit_direct(pf, dr, A, B_, clog); okc += 1; rec['conns'].append(clog)
+                continue
+            r, err = self.route_conn_full(pf, TA, TB, clog)
+            if r is not None:
+                self.commit_conn(pf, r, clog); okc += 1
             else:
                 clog['status'] = err
             rec['conns'].append(clog)
         rec['status'] = 'complete' if okc == len(order) - 1 else 'PARTIAL %d/%d' % (okc, len(order) - 1)
         rec['t'] = round(time.time() - t0, 2)
+        self.rereserve(net, pads)
         return rec
 
+    # ---- continuation mode (fix 3): open connections of an already routed board
+    def cont_init(self, drc_path, nets):
+        """per net: items (pads, tracks, vias, zone fills) and their connected groups (own union-find; pins with the same
+        number of one part are one group, fix 2); exits and via directions used by the existing copper; the open
+        connections = DRC unconnected_items of these nets, mapped to (group A, group B)"""
+        D = self.B.D; NS = set(nets)
+        self.cbase = {}; self.cedges = collections.defaultdict(list)
+        items = collections.defaultdict(list)
+        for p in self.B.pads:
+            if p['net'] in NS:
+                lg = {l: mkpolys(pl) for l, pl in p['poly'].items()}
+                items[p['net']].append(dict(kind='pad', pad=p, lg={l: g for l, g in lg.items() if g is not None}, x=p['x'], y=p['y']))
+        for t in D['tracks']:
+            if t['net'] in NS:
+                if t['arc'] and t['poly']:
+                    g = mkpolys(t['poly'])
+                else:
+                    g = LineString([(t['x1'], t['y1']), (t['x2'], t['y2'])]).buffer(t['w'] / 2, 8) if (t['x1'], t['y1']) != (t['x2'], t['y2']) else Point(t['x1'], t['y1']).buffer(t['w'] / 2, 8)
+                if g is not None:
+                    items[t['net']].append(dict(kind='track', t=t, lg={t['layer']: g}, x=(t['x1'] + t['x2']) / 2, y=(t['y1'] + t['y2']) / 2, uuid=t.get('uuid')))
+        for v in D['vias']:
+            if v['net'] in NS:
+                g = Point(v['x'], v['y']).buffer(v['d'] / 2, 16)
+                items[v['net']].append(dict(kind='via', v=v, lg={l: g for l in ALLCU}, x=v['x'], y=v['y']))
+        for z in D['zones']:
+            if z['net'] in NS:
+                lg = {l: mkpolys(pl) for l, pl in z['fills'].items()}
+                lg = {l: g for l, g in lg.items() if g is not None}
+                if lg:
+                    items[z['net']].append(dict(kind='zone', lg=lg, x=0, y=0))
+        for net in NS:
+            its = items.get(net, [])
+            par = list(range(len(its)))
+            def f(i):
+                while par[i] != i:
+                    par[i] = par[par[i]]; i = par[i]
+                return i
+            for i in range(len(its)):
+                for j in range(i + 1, len(its)):
+                    a, b = its[i], its[j]
+                    if any(l in b['lg'] and a['lg'][l].intersects(b['lg'][l]) for l in a['lg']):
+                        par[f(i)] = f(j)
+            stk = {}
+            for i, it in enumerate(its):
+                if it['kind'] == 'pad':
+                    k = (it['pad']['ref'], it['pad']['num'])
+                    if k in stk:
+                        par[f(i)] = f(stk[k])
+                    else:
+                        stk[k] = i
+            par = [f(i) for i in range(len(its))]
+            self.cbase[net] = dict(items=its, parent=par)
+            # exits used by existing copper (direction of the track leaving the pad), and track directions at existing vias
+            trs = [it for it in its if it['kind'] == 'track' and not it['t']['arc']]
+            for it in its:
+                if it['kind'] == 'pad':
+                    p = it['pad']; k = self.pad_key(p)
+                    for tr in trs:
+                        t = tr['t']; l = t['layer']
+                        if l not in it['lg']:
+                            continue
+                        g = it['lg'][l]; e1 = g.intersects(Point(t['x1'], t['y1'])); e2 = g.intersects(Point(t['x2'], t['y2']))
+                        if e1 == e2:
+                            continue
+                        dx, dy = (t['x2'] - t['x1'], t['y2'] - t['y1']) if e1 else (t['x1'] - t['x2'], t['y1'] - t['y2'])
+                        d8 = int(round(math.atan2(dy, dx) / (math.pi / 4))) % 8
+                        for dd in ([d8] if d8 % 2 == 0 else [(d8 + 7) % 8, (d8 + 1) % 8]):
+                            self.base_used.setdefault(k, []).append(dict(layer=l, d=dd, sdir=dd, single=False, node=None, back=dd, existing=True))
+                elif it['kind'] == 'via':
+                    v = it['v']; xn, yn = int(round(v['x'] * 1e6)), int(round(v['y'] * 1e6))
+                    s = self.viaused[net][(xn, yn)]
+                    for tr in trs:
+                        t = tr['t']
+                        for (x1, y1, x2, y2) in ((t['x1'], t['y1'], t['x2'], t['y2']), (t['x2'], t['y2'], t['x1'], t['y1'])):
+                            if abs(x1 - v['x']) < 1e-4 and abs(y1 - v['y']) < 1e-4 and (x1, y1) != (x2, y2):
+                                s.add((t['layer'], int(round(math.atan2(y2 - y1, x2 - x1) / (math.pi / 4))) % 8))
+        for k, lst in self.base_used.items():
+            self.used[k] = [dict(u) for u in lst]
+        self.base_viaused = {n: {k: set(v) for k, v in d.items()} for n, d in self.viaused.items()}
+        # open connections from the DRC report
+        DR = json.load(open(drc_path))
+        rx_pad = re.compile(r'^(?:\S+ )?[Pp]ad (\S+) \[(.+)\] of (\S+) on'); rx_net = re.compile(r'\[(.+)\]')
+        nskip = collections.Counter()
+        for u in DR.get('unconnected_items', []):
+            its2 = u.get('items', [])
+            if len(its2) != 2:
+                continue
+            m = rx_net.search(its2[0]['description']); net = m.group(1) if m else None
+            if net not in NS:
+                nskip['foreign'] += 1; continue
+            ends = []
+            for di in its2:
+                ends.append(self.cont_locate(net, di, rx_pad))
+            ia, ib = ends
+            P = self.cbase[net]['parent']
+            e = dict(ia=ia, ib=ib, pa=(its2[0]['pos']['x'], its2[0]['pos']['y']), pb=(its2[1]['pos']['x'], its2[1]['pos']['y']),
+                     na=self.cont_iname(net, ia), nb=self.cont_iname(net, ib), pinstack=P[ia] == P[ib])
+            self.cedges[net].append(e)
+        for net in self.cedges:
+            self.cedges[net].sort(key=lambda e: math.hypot(e['pa'][0] - e['pb'][0], e['pa'][1] - e['pb'][1]))
+        n = sum(len(v) for v in self.cedges.values()); npin = sum(1 for v in self.cedges.values() for e in v if e['pinstack'])
+        print('continuation: %d open connections in %d nets (%d pin-stack internal, no routing); %d DRC items of other nets ignored; '
+              '%d pads with exits used by existing copper' % (n, len(self.cedges), npin, nskip['foreign'], len(self.base_used)), flush=True)
+
+    def cont_locate(self, net, di, rx_pad):
+        its = self.cbase[net]['items']; desc = di['description']; px, py = di['pos']['x'], di['pos']['y']
+        m = rx_pad.match(desc)
+        if m:
+            c = [i for i, it in enumerate(its) if it['kind'] == 'pad' and it['pad']['ref'] == m.group(3) and it['pad']['num'] == m.group(1)]
+            if c:
+                return min(c, key=lambda i: math.hypot(its[i]['x'] - px, its[i]['y'] - py))
+        if desc.startswith('Track') or desc.startswith('Arc'):
+            c = [i for i, it in enumerate(its) if it['kind'] == 'track' and it.get('uuid') == di.get('uuid')]
+            if c:
+                return c[0]
+        if desc.startswith('Via'):
+            c = [i for i, it in enumerate(its) if it['kind'] == 'via']
+            if c:
+                return min(c, key=lambda i: math.hypot(its[i]['x'] - px, its[i]['y'] - py))
+        pt = Point(px, py)
+        return min(range(len(its)), key=lambda i: min(g.distance(pt) for g in its[i]['lg'].values()))
+
+    def cont_iname(self, net, i):
+        it = self.cbase[net]['items'][i]
+        if it['kind'] == 'pad':
+            return self.pname(it['pad'])
+        return '%s@%.2f,%.2f' % (it['kind'], it['x'], it['y'])
+
+    def cont_terms(self, net, par, g, near):
+        """terminals of group g (existing copper of the net) for a connection towards `near`: nearest pads, vias, segment taps"""
+        its = self.cbase[net]['items']; nx, ny = near; pt = Point(nx, ny)
+        mem = [it for i, it in enumerate(its) if par(i) == g]
+        def dist(it):
+            if it['kind'] in ('pad', 'via'):
+                return math.hypot(it['x'] - nx, it['y'] - ny)
+            return min(gg.distance(pt) for gg in it['lg'].values())
+        cand = [(dist(it), it) for it in mem if it['kind'] != 'zone' and (it['kind'] != 'pad' or any(l in it['pad']['poly'] for l in RL))]
+        if not cand:
+            return []
+        dmin = min(d for d, it in cand); K = self.a.cont_terms
+        pads = sorted([(d, it) for d, it in cand if it['kind'] == 'pad' and d <= dmin + 3.0], key=lambda t: t[0])[:K]
+        vias = sorted([(d, it) for d, it in cand if it['kind'] == 'via' and d <= dmin + 3.0], key=lambda t: t[0])[:2]
+        segs = []
+        padg = [(it['lg'][l], (it['x'], it['y'])) for it in mem if it['kind'] == 'pad' for l in it['lg']]
+        for d, it in sorted([(d, it) for d, it in cand if it['kind'] == 'track' and d <= dmin + 2.0], key=lambda t: t[0]):
+            t = it['t']
+            if t['arc'] or t['w'] > 0.35 or t['layer'] not in RL:
+                continue
+            a = (int(round(t['x1'] * 1e6)), int(round(t['y1'] * 1e6))); b = (int(round(t['x2'] * 1e6)), int(round(t['y2'] * 1e6)))
+            dx, dy = b[0] - a[0], b[1] - a[1]
+            if a == b or not (dx == 0 or dy == 0 or abs(abs(dx) - abs(dy)) <= 0):
+                continue
+            dd = DIRS.index(((dx > 0) - (dx < 0), (dy > 0) - (dy < 0)))
+            ls = LineString([(t['x1'], t['y1']), (t['x2'], t['y2'])]); q = ls.interpolate(ls.project(pt))
+            segs.append(dict(kind='seg', layer=t['layer'], a=a, b=b, d=dd, x=q.x, y=q.y, near=(nx, ny), net=net,
+                             pads=[(gg, c) for gg, c in padg], name='seg@%.2f,%.2f' % (q.x, q.y)))
+            if len(segs) >= 3:
+                break
+        out = [self.term_pad(it['pad']) for d, it in pads]
+        for d, it in vias:
+            v = it['v']
+            out.append(dict(kind='via', x=v['x'], y=v['y'], xn=int(round(v['x'] * 1e6)), yn=int(round(v['y'] * 1e6)), net=net, name='via@%.2f,%.2f' % (v['x'], v['y'])))
+        return out + segs
+
+    def route_net_cont(self, net):
+        pf = self.prof(net)
+        cb = self.cbase.get(net); E = self.cedges.get(net, [])
+        pads = [it['pad'] for it in cb['items'] if it['kind'] == 'pad'] if cb else []
+        rec = dict(net=net, cls=pf['cls'], w=pf['w'], pads=len(pads), conns=[], status='', pinstack=0, pinstack_conns=[])
+        t0 = time.time()
+        for p in pads:
+            self.unreserve(self.pad_key(p))
+        par = list(cb['parent'])
+        def f(i):
+            while par[i] != i:
+                par[i] = par[par[i]]; i = par[i]
+            return i
+        okc = 0; nconn = 0
+        for e in E:
+            clog = dict(a=e['na'], b=e['nb'], tries=[])
+            if e['pinstack']:
+                clog['status'] = 'pin stack (same-number pads of one part: internal, no routing)'
+                rec['pinstack'] += 1; rec['pinstack_conns'].append(clog); continue
+            nconn += 1
+            ga, gb = f(e['ia']), f(e['ib'])
+            if ga == gb:
+                clog['status'] = 'ok'; clog['merged'] = True; clog['len'] = 0.0; clog['omin'] = 0.0; okc += 1; rec['conns'].append(clog); continue
+            TA = self.cont_terms(net, f, ga, e['pb']); TB = self.cont_terms(net, f, gb, e['pa'])
+            self.conn_terms[(net, len(rec['conns']))] = (TA, TB)
+            if not TA or not TB:
+                clog['status'] = 'no terminal'; rec['conns'].append(clog); continue
+            dr = None
+            for A in [t['pad'] for t in TA if t['kind'] == 'pad'][:2]:
+                for B_ in [t['pad'] for t in TB if t['kind'] == 'pad'][:2]:
+                    dr = self.direct(pf, A, B_)
+                    if dr is not None and not self.verify_own(pf, dr[0], [], [self.term_pad(A), self.term_pad(B_)])[0]:
+                        dr = None
+                    if dr is not None:
+                        break
+                if dr is not None:
+                    break
+            if dr is not None:
+                self.commit_direct(pf, dr, A, B_, clog); okc += 1; par[ga] = gb; rec['conns'].append(clog)
+                continue
+            r, err = self.route_conn_full(pf, TA, TB, clog)
+            if r is not None:
+                self.commit_conn(pf, r, clog); okc += 1; par[ga] = gb
+            else:
+                clog['status'] = err
+            rec['conns'].append(clog)
+        rec['status'] = 'complete' if okc == nconn else 'PARTIAL %d/%d' % (okc, nconn)
+        if nconn == 0:
+            rec['status'] = 'skip (pin stack only)'
+        rec['t'] = round(time.time() - t0, 2)
+        self.rereserve(net, pads)
+        return rec
 
     # ---- rip-up and reroute (transactional)
     def net_pads(self, net):
@@ -1255,7 +1821,9 @@ class Router:
 
     def snapshot(self, nets):
         return {n: dict(items=list(self.netcopper.get(n, [])), segs=[s for s in self.out_segs if s['net'] == n], vias=[v for v in self.out_vias if v['net'] == n or v.get('owner') == n],
-                        used={k: list(self.used[k]) for k in self.net_pads(n) if k in self.used}, rec=self.recs.get(n)) for n in nets}
+                        used={k: list(self.used[k]) for k in self.net_pads(n) if k in self.used}, rec=self.recs.get(n),
+                        viaused={k: set(v) for k, v in self.viaused.get(n, {}).items()},
+                        resv={k: list(self.reserved[k]) for k in self.net_pads(n) if k in self.reserved}) for n in nets}
 
     def ripup(self, net):
         for it in self.netcopper.pop(net, []):
@@ -1267,6 +1835,10 @@ class Router:
             self.B.idx[it.layer].remove(it)
         for k in self.net_pads(net):
             self.used.pop(k, None)
+            if k in self.base_used:                          # continuation: exits of the locked existing copper stay used
+                self.used[k] = [dict(u) for u in self.base_used[k]]
+        if net in self.viaused:
+            self.viaused[net] = collections.defaultdict(set, {k: set(v) for k, v in self.base_viaused.get(net, {}).items()})
 
     def restore(self, snap):
         for n, S in snap.items():
@@ -1277,6 +1849,13 @@ class Router:
                     self.B._add(Item(self.B._id(), 'hole', 'Hole', it.net, it.cls, it.layer, it.geom.centroid.buffer(VIA_DR / 2, 16), dyn=True, owner=it.owner))
             self.netcopper[n] = list(S['items']); self.out_segs += S['segs']; self.out_vias += S['vias']
             self.used.update({k: list(v) for k, v in S['used'].items()})
+            self.viaused[n] = collections.defaultdict(set, {k: set(v) for k, v in S['viaused'].items()})
+            for k in self.net_pads(n):
+                self.unreserve(k)
+            for k, its in S['resv'].items():
+                for it in its:
+                    self.B._add(it)
+                self.reserved[k] = list(its)
             if S['rec'] is not None:
                 self.recs[n] = S['rec']
 
@@ -1284,12 +1863,26 @@ class Router:
     def nok(rec):
         return 0 if rec is None else sum(1 for c in rec['conns'] if c['status'] == 'ok')
 
-    def conflicts(self, net, A, B_, candidates):
+    @staticmethod
+    def lensum(rec):
+        if rec is None:
+            return 0.0, 0.0
+        return (sum(c.get('len', 0.0) for c in rec['conns'] if c['status'] == 'ok'),
+                sum(c.get('omin', 0.0) for c in rec['conns'] if c['status'] == 'ok'))
+
+    def complete_short(self, n):
+        r = self.recs.get(n)
+        if r is None or r['status'] != 'complete':
+            return False
+        L, O = self.lensum(r)
+        return O <= 1e-9 or L / O <= self.a.rrr_keep_ratio
+
+    def conflicts(self, net, TA, TB, candidates):
         """route the failed connection with the copper of `candidates` passable at a penalty; return the nets it would cross"""
         pf = self.prof(net)
         self.soft = set(candidates)
         try:
-            res, err = self.route_conn(pf, A, B_, [])
+            res, err = self.route_terms(pf, TA, TB, [])
             if res is None:
                 return None
             segs, vias = self.build_copper(pf, *res)
@@ -1324,7 +1917,7 @@ class Router:
             print('%-28s %-8s %-14s %s' % (net, r['cls'], r['status'], ' '.join('%s>%s:%s' % (c['a'], c['b'], c['status'][:20]) for c in r['conns'] if c['status'] != 'ok')), flush=True)
         if self.a.ripup <= 0:
             return
-        rips = collections.Counter(); T0 = time.time()
+        rips = collections.Counter(); T0 = time.time(); new = self.a.rrr_mode == 'new'
         for rnd in range(self.a.ripup):
             improved = False
             for net in nets:
@@ -1333,27 +1926,35 @@ class Router:
                 r = self.recs[net]
                 if r['status'] == 'complete' or r['status'].startswith('skip'):
                     continue
-                fc = next((c for c in r['conns'] if c['status'] != 'ok'), None)
-                pads = {'%s-%s' % self.pad_key(p): p for p in self.B.pads if p['net'] == net}
-                cands = [n for n in nets if n != net and self.netcopper.get(n) and rips[n] < self.a.ripup]
-                hit = self.conflicts(net, pads[fc['a']], pads[fc['b']], cands)
+                fi = next((i for i, c in enumerate(r['conns']) if c['status'] != 'ok'), None)
+                if fi is None or (net, fi) not in self.conn_terms:
+                    continue
+                fc = r['conns'][fi]; TA, TB = self.conn_terms[(net, fi)]
+                if not TA or not TB:
+                    continue
+                cands = [n for n in nets if n != net and self.netcopper.get(n) and rips[n] < self.a.ripup and not (new and self.complete_short(n))]
+                hit = self.conflicts(net, TA, TB, cands)
                 entry = dict(round=rnd, net=net, conn='%s>%s' % (fc['a'], fc['b']), conflicts=sorted(hit) if hit is not None else None)
                 if not hit or len(hit) > self.a.rrr_max:
-                    entry['result'] = 'no candidate set'; self.rrr_log.append(entry); continue
+                    entry['result'] = 'no candidate set'; self.rrr_log.append(entry); self.stats['rrr_no_set'] += 1; continue
                 group = [net] + sorted(hit)
                 before = sum(self.nok(self.recs.get(n)) for n in group)
+                lb = [self.lensum(self.recs.get(n)) for n in group]; rb = sum(x for x, y in lb) / max(1e-9, sum(y for x, y in lb))
                 snap = self.snapshot(group)
                 for n in group:
                     self.ripup(n)
                 for n in group:
                     self.recs[n] = self.route_net(n)
                 after = sum(self.nok(self.recs.get(n)) for n in group)
-                if after > before:
-                    entry['result'] = 'kept %d -> %d' % (before, after); improved = True
+                la = [self.lensum(self.recs.get(n)) for n in group]; ra = sum(x for x, y in la) / max(1e-9, sum(y for x, y in la))
+                entry.update(ratio_before=round(rb, 3), ratio_after=round(ra, 3))
+                keep = after > before and (not new or sum(y for x, y in lb) <= 1e-9 or ra <= rb + self.a.rrr_ratio_tol)
+                if keep:
+                    entry['result'] = 'kept %d -> %d' % (before, after); improved = True; self.stats['rrr_kept'] += 1
                     for n in hit:
                         rips[n] += 1
                 else:
-                    entry['result'] = 'rolled back %d -> %d' % (before, after)
+                    entry['result'] = 'rolled back %d -> %d' % (before, after); self.stats['rrr_rolled_back'] += 1
                     self.restore(snap)
                 self.rrr_log.append(entry)
                 print('  RRR', entry, flush=True)
@@ -1436,6 +2037,19 @@ def main():
     ap.add_argument('--pour-guard', type=int, default=1, help='reject connections that cut an anchored F/B.Cu GND fill piece (0 = off)')
     ap.add_argument('--retries', type=int, default=2, help='re-searches per connection after self-touch / no stitch spot / pour cut')
     ap.add_argument('--allow-pour-flag', action='store_true', help='route on top of an earlier stage flagged by route_oct_pourcheck.py')
+    ap.add_argument('--rrr-mode', default='new', choices=['new', 'old'], help='new (fix 4): rip only same-stage nets that are not complete-and-short; keep only if connections increase and the length ratio does not worsen')
+    ap.add_argument('--rrr-keep-ratio', type=float, default=1.2, help='a complete net with routed length / octilinear minimum <= this is never ripped (rrr-mode new)')
+    ap.add_argument('--rrr-ratio-tol', type=float, default=0.0, help='allowed increase of the ripped group length ratio (rrr-mode new)')
+    ap.add_argument('--detour', type=float, default=2.5, help='fix 5: path length limit as a multiple of the octilinear minimum between its ends; longer paths are re-searched (via hop, other layer) and reported (0 = off)')
+    ap.add_argument('--run-stitch', type=float, default=6.0, help='fix 6: max spacing of GND vias along B.Cu runs of stitched nets (0 = off)')
+    ap.add_argument('--run-stitch-dist', type=float, default=1.5, help='fix 6: such a GND via lies within this distance of the track')
+    ap.add_argument('--cont-drc', default=None, help='continuation mode (fix 3): DRC JSON of the input board; only its unconnected items of the net file nets are routed, all copper stays')
+    ap.add_argument('--first-refs', default='', help='REF[,REF]: inside the stage, nets with a pad on these parts first (owner decision: U1,J8 in S3)')
+    ap.add_argument('--cont-terms', type=int, default=3, help='continuation: max pad terminals per side')
+    ap.add_argument('--tap-pen-stub', type=float, default=10.0, help='continuation: start cost (cells) of a branch at a stub node of existing copper')
+    ap.add_argument('--tap-pen-mid', type=float, default=200.0, help='continuation: start cost (cells) of a T-junction in the middle of an existing segment (flagged)')
+    ap.add_argument('--tap-radius', type=float, default=3.0, help='continuation: segment taps within this distance of the DRC anchor, mm')
+    ap.add_argument('--tap-nodes', type=int, default=16, help='continuation: max tap nodes per segment')
     a = ap.parse_args()
     a.margins = [float(x) for x in a.margins.split(',')]
     stem = os.path.splitext(a.board)[0]
@@ -1446,54 +2060,97 @@ def main():
     if a.stage not in stages:
         raise SystemExit('stage %s not in %s' % (a.stage, a.nets))
     man = json.load(open(a.manifest)) if os.path.exists(a.manifest) else dict(stages={})
-    # lock check of earlier stages
     names = list(stages)
-    for st in names[:names.index(a.stage)]:
-        if st not in man['stages']:
-            raise SystemExit('earlier stage %s not in manifest; route it first' % st)
-        h, n = LK.copper_hash(a.board, stages[st])
-        if h != man['stages'][st]['copper_sha256']:
-            raise SystemExit('LOCK VIOLATION: copper of stage %s changed (hash %s != %s)' % (st, h, man['stages'][st]['copper_sha256']))
-        print('lock ok', st, n, 'items', flush=True)
-        sv = man['stages'][st].get('stitch_vias', [])
-        if sv:
-            have = {t[2] for t in LK.copper_items(a.board, ['GND']) if t[0] == 'via'}
-            miss = [x for x in sv if x not in have]
-            if miss:
-                raise SystemExit('LOCK VIOLATION: %d GND stitching vias of stage %s missing, e.g. %s' % (len(miss), st, miss[0]))
-            print('lock ok', st, len(sv), 'stitching vias', flush=True)
-        pc = man['stages'][st].get('pour_check')
-        if pc and not pc.get('ok', True) and not a.allow_pour_flag:
-            raise SystemExit('stage %s is flagged by the pour check (%s); fix it or pass --allow-pour-flag' % (st, '; '.join(pc.get('new', [])[:3])))
+    if a.cont_drc:
+        # continuation (fix 3): C0 = every copper item of the first input board (locked); each stage records the items it added
+        if 'C0' not in man['stages']:
+            if man['stages']:
+                raise SystemExit('manifest %s is not a continuation manifest' % a.manifest)
+            hh, nn = LK.hash_strings(list(LK.item_strings(a.board).elements()))
+            man = dict(mode='continue', stages=dict(C0=dict(stage='C0', note='all copper of the continuation input board (locked)', input_board=os.path.abspath(a.board),
+                                                            copper_sha256=hh, copper_items=nn, stitch_vias=[])))
+            print('continuation lock C0 created:', nn, 'items', flush=True)
+        for st in names[names.index(a.stage):]:
+            man['stages'].pop(st, None)                      # re-run of this stage: later entries are stale
+        lk = LK.cont_lock(a.board, man)
+        bad = [k for k, v in lk.items() if not v['ok']]
+        if bad:
+            raise SystemExit('LOCK VIOLATION (continuation): %s' % lk)
+        print('lock ok (continuation):', lk, flush=True)
+        for st, info in man['stages'].items():
+            pc = info.get('pour_check')
+            if pc and not pc.get('ok', True) and not a.allow_pour_flag:
+                raise SystemExit('stage %s is flagged by the pour check (%s); fix it or pass --allow-pour-flag' % (st, '; '.join(pc.get('new', [])[:3])))
+    else:
+        # lock check of earlier stages
+        for st in names[:names.index(a.stage)]:
+            if st not in man['stages']:
+                raise SystemExit('earlier stage %s not in manifest; route it first' % st)
+            h, n = LK.copper_hash(a.board, stages[st])
+            if h != man['stages'][st]['copper_sha256']:
+                raise SystemExit('LOCK VIOLATION: copper of stage %s changed (hash %s != %s)' % (st, h, man['stages'][st]['copper_sha256']))
+            print('lock ok', st, n, 'items', flush=True)
+            sv = man['stages'][st].get('stitch_vias', [])
+            if sv:
+                have = {t[2] for t in LK.copper_items(a.board, ['GND']) if t[0] == 'via'}
+                miss = [x for x in sv if x not in have]
+                if miss:
+                    raise SystemExit('LOCK VIOLATION: %d GND stitching vias of stage %s missing, e.g. %s' % (len(miss), st, miss[0]))
+                print('lock ok', st, len(sv), 'stitching vias', flush=True)
+            pc = man['stages'][st].get('pour_check')
+            if pc and not pc.get('ok', True) and not a.allow_pour_flag:
+                raise SystemExit('stage %s is flagged by the pour check (%s); fix it or pass --allow-pour-flag' % (st, '; '.join(pc.get('new', [])[:3])))
     core = load_core(workdir)
     HALO[0] = a.halo
     B = Board(a.geo, a.dru, a.pro, core, a)
     R = Router(B, a, opts)
     later = [n for st in names[names.index(a.stage):] for n in stages[st]]
+    stage_nets = list(stages[a.stage])
+    if a.cont_drc:
+        R.cont = True
+        R.cont_init(a.cont_drc, later)
+        later = [n for n in later if R.cedges.get(n)]
+        stage_nets = [n for n in stage_nets if R.cedges.get(n)]
+    if a.first_refs:
+        fr = set(a.first_refs.split(','))
+        hasref = {n for n in stage_nets if any(p['net'] == n and p['ref'] in fr for p in B.pads)}
+        stage_nets = [n for n in stage_nets if n in hasref] + [n for n in stage_nets if n not in hasref]
+        print('first inside the stage (pads on %s): %s' % (a.first_refs, ' '.join(n for n in stage_nets if n in hasref)), flush=True)
     if not a.no_reserve:
         print('reserved escapes:', R.reserve(later), flush=True)
     R.pending = set(later)
-    R.route_stage(stages[a.stage])
-    recs = [R.recs[n] for n in stages[a.stage]]
+    R.route_stage(stage_nets)
+    recs = [R.recs[n] for n in stage_nets]
     for r in recs:
         if not r['status'].startswith('complete'):
             print('  final %-28s %s' % (r['net'], r['status']), flush=True)
     write_board(a.board, a.out, R.out_segs, R.out_vias)
-    h, n = LK.copper_hash(a.out, stages[a.stage])
+    # detours of the final copper (R.detours also lists attempts that a rip-up later rolled back)
+    R.detours = [dict(net=r['net'], a=c['a'], b=c['b'], ratio=c['detour'], len=c.get('len'), omin=c.get('omin'), alts=c.get('detour_alts'))
+                 for r in recs for c in r['conns'] if c['status'] == 'ok' and c.get('detour')]
     nconn = sum(len(r['conns']) for r in recs); okc = sum(1 for r in recs for c in r['conns'] if c['status'] == 'ok')
     stv = ['%.6f %.6f' % (v['a'][0] / 1e6, v['a'][1] / 1e6) for v in R.out_vias if v.get('owner')]
-    summ = dict(stage=a.stage, nets=stages[a.stage], complete_nets=sum(1 for r in recs if r['status'] == 'complete'), conns=nconn, conns_ok=okc,
+    lens = [c['ratio'] for r in recs for c in r['conns'] if c['status'] == 'ok' and c.get('ratio')]
+    summ = dict(stage=a.stage, mode='continue' if a.cont_drc else 'stage', nets=stage_nets, complete_nets=sum(1 for r in recs if r['status'] == 'complete'),
+                conns=nconn, conns_ok=okc, pinstack=sum(r.get('pinstack', 0) for r in recs),
                 segments=len(R.out_segs), vias=len(R.out_vias) - len(stv), stitch_vias=len(stv), runtime_s=round(time.time() - T0, 1),
-                stats=dict(R.stats), sp3_nets=B.sp3, module_keepout=B.mod_ko,
-                params={k: getattr(a, k) for k in ('via_cost', 'turn_cost', 'dir_pen', 'bcu_cost', 'b_island', 'b_void', 'f_void', 'pair_attract', 'pair_avoid', 'margins', 'max_exp', 'no_reserve', 'pad_pen', 'pad_halo', 'max_offsets', 'hweight', 'hweight_cells', 'ripup', 'rrr_max', 'rrr_time', 'soft_pen', 'module_keepout', 'halo', 'par_gap', 'par_pen', 'sens_bcu', 'stitch', 'sp3', 'pour_guard', 'retries')})
-    man['stages'][a.stage] = dict(summ, input_board=os.path.abspath(a.board), output_board=os.path.abspath(a.out),
-                                  output_sha256=hashlib.sha256(open(a.out, 'rb').read()).hexdigest(), copper_sha256=h, copper_items=n,
-                                  stitch_vias=stv, dru_sha256=RU.check_dru(a.dru)[1], pro_sha256=hashlib.sha256(open(a.pro, 'rb').read()).hexdigest())
+                stats=dict(R.stats), detours=R.detours, conn_ratio_max=max(lens) if lens else None, sp3_nets=B.sp3, module_keepout=B.mod_ko,
+                params={k: getattr(a, k) for k in ('via_cost', 'turn_cost', 'dir_pen', 'bcu_cost', 'b_island', 'b_void', 'f_void', 'pair_attract', 'pair_avoid', 'margins', 'max_exp', 'no_reserve', 'pad_pen', 'pad_halo', 'max_offsets', 'hweight', 'hweight_cells', 'ripup', 'rrr_max', 'rrr_time', 'soft_pen', 'module_keepout', 'halo', 'par_gap', 'par_pen', 'sens_bcu', 'stitch', 'sp3', 'pour_guard', 'retries',
+                                                 'rrr_mode', 'rrr_keep_ratio', 'rrr_ratio_tol', 'detour', 'run_stitch', 'run_stitch_dist', 'cont_drc', 'first_refs', 'cont_terms', 'tap_pen_stub', 'tap_pen_mid', 'tap_radius', 'tap_nodes')})
+    ent = dict(summ, input_board=os.path.abspath(a.board), output_board=os.path.abspath(a.out),
+               output_sha256=hashlib.sha256(open(a.out, 'rb').read()).hexdigest(), stitch_vias=stv, dru_sha256=RU.check_dru(a.dru)[1],
+               pro_sha256=hashlib.sha256(open(a.pro, 'rb').read()).hexdigest())
+    if a.cont_drc:
+        added = LK.item_strings(a.out) - LK.item_strings(a.board)
+        ent['added_items'] = sorted(added.elements()); ent['copper_sha256'], ent['copper_items'] = LK.hash_strings(ent['added_items'])
+    else:
+        ent['copper_sha256'], ent['copper_items'] = LK.copper_hash(a.out, stages[a.stage])
+    man['stages'][a.stage] = ent
     json.dump(man, open(a.manifest, 'w'), indent=1)
     if a.log:
         json.dump(dict(summary=summ, nets=recs, rrr=R.rrr_log), open(a.log, 'w'), indent=1)
-    print('STAGE %s: nets complete %d/%d, connections %d/%d, %d segments, %d vias (+%d GND stitching), %.1f s%s' % (
-        a.stage, summ['complete_nets'], len(stages[a.stage]), okc, nconn, len(R.out_segs), summ['vias'], len(stv), summ['runtime_s'],
+    print('STAGE %s: nets complete %d/%d, connections %d/%d (+%d pin-stack internal), %d segments, %d vias (+%d GND stitching), %d detours > %.1fx accepted, %.1f s%s' % (
+        a.stage, summ['complete_nets'], len(stage_nets), okc, nconn, summ['pinstack'], len(R.out_segs), summ['vias'], len(stv), len(R.detours), a.detour, summ['runtime_s'],
         '' if okc == nconn else '  PARTIAL'), flush=True)
 
 

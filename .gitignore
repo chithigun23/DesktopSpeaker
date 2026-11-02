@@ -91,3 +91,7 @@ ai-files/website/desktopSpeaker-site/cad/*.glb
 ai-files/website/desktopSpeaker-site/cad/downloads/*.step
 ai-files/website/desktopSpeaker-site/docs/
 ai-files/website/desktopSpeaker-site/cad/downloads/
+ai-files/cad/v13/work/
+ai-files/cad/v13/*.step
+ai-files/cad/v13/*.FCStd
+ai-files/pcb/work-cad13/

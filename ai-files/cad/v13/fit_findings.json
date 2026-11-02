@@ -1,0 +1,169 @@
+{
+ "verdict": "v13 rebuilt from RT-3 with the models-v13 models (36 board footprints relinked, BM83 offset fix) and the real W3-2052SC geometry: 0 unintended overlaps (164 solids), woofer chamber net 0.525 L, main 1.962 L, all lid cutouts aligned, three print bodies valid without supports. Open: SW100 actuator does not reach the lid (draft footprint), woofer screw engagement 3.4-4.4 mm with M3x20, and the four footprint errors (modelled as drawn).",
+ "findings": [
+  {
+   "severity": "fixed",
+   "title": "Woofer seat redesigned for the real Tang Band W3-2052SC (square frame, 68.25 square holes)",
+   "detail": "v12 round 86 ring pad, 83.4 x 1.0 flange recess and 77 mm bolt circle removed. The square 82.55 frame with its factory 3.3 mm foam gasket now seats directly on the floor inner face (z 3.0); aperture 76.2 kept; sealing land 3.18 mm on the flats (gasket inner 73.7 overhangs the aperture). Holes at r 48.26 (68.25 square): pilot edge 8.16 mm from the aperture (v12 pilots broke 1.6 mm into it), hole edge 5.45 mm from the frame edge. Inserts (Ruthex M3x5.7, pilot 4.0 x 6.7) sit in four teardrop bosses 4.7 mm below the outer floor (1.0 mm skin, chamber stays sealed; 45 deg point toward the baffle for support-free printing). Woofer grille 90 -> 86 (1.26 mm to the bosses). Magnet top z 50.75, 3.25 mm under the roof; frame 14.94 mm from the partition, 11.94 mm from the lid, 16.73 mm from the side walls."
+  },
+  {
+   "severity": "decision",
+   "title": "Woofer screws: M3x20 gives only 3.4-4.4 mm thread in the 5.7 mm insert",
+   "detail": "Stack: head on the frame back (z 19.60) through the 13.3 frame block and the 3.3 gasket. M3x20 engages 3.4 mm with the gasket free, 4.4 mm with 1 mm compression (1.1-1.5 d; tip 2.3 mm above the pilot floor). Raising the seat to fit longer screws pushes the magnet into the roof (3.25 mm left). Options: accept M3x20 (gasket compresses), or M3x22 (DIN 912; 5.4-6.4 mm, still inside the 6.7 pilot) if the owner can source it. Frame thickness and gasket are photo estimates (+-1.5): measure before printing."
+  },
+  {
+   "severity": "fixed",
+   "title": "Woofer chamber volume: front-air correction and chamber lengthened 11.2 mm",
+   "detail": "The real woofer displaces 0.103 L (v12 stand-in 0.045). v13 also excludes the 0.020 L of air in front of the cone (gasket and frame opening, open to the outside), which v12 counted as chamber air (the v12 hollow stand-in cone made its 0.525 L nearer 0.485 L, estimate). Displacement parameter 0.056 -> 0.1224 L: chamber length 98.2 -> 109.4 mm, partition front face Y 101.39 -> 90.17, net 0.525 L (gross 0.627). Main chamber net 2.025 -> 1.962 L (target >= 0.8). Woofer centre Y 151.50 -> 149.38 (offset +1.5 from mid-chamber, was -2.0) so the H2 PCB-screw boss stays 2.88 mm from the magnet cup (it touched by 2.2 mm3 at the old offset)."
+  },
+  {
+   "severity": "problem",
+   "title": "SW100 actuator does not reach the lid (draft footprint)",
+   "detail": "With the TE 1977066-1 model on the footprint as drawn, the actuator (dia 2.0, axis 1.70 above the board top) ends 2.30 mm inside the board edge: 2.80 mm short of the lid inner face and 6.80 mm behind the lid outer face. The 5.0 lid bore (radial 1.5) only allows pressing with a pin. v12 assumed a stand-in plunger reaching into the lid. Fix in the footprint correction (actuator at the board edge: then 4.5 mm behind the outer face) and/or add a printed plunger in the lid."
+  },
+  {
+   "severity": "problem",
+   "title": "Footprint errors exposed by the accurate models (modelled as drawn, not fixed here)",
+   "detail": "J2/J3 PJ-307 front NPTH pegs 1.0 mm off (jack cannot seat); U1 BM83 GND pad 56 misplaced 3.37 mm; SW100 TE 1977066-1 DRAFT footprint (pads, pegs on the wrong side, bracket pads missing); C275 D8 can on a CP_Elec_8x10 land (2.4 of 3.0 mm overlap). The coordinator fixes them on the routed board."
+  },
+  {
+   "severity": "ok",
+   "title": "Rear-lid cutouts still aligned with the accurate connector models",
+   "detail": "J1 HRO TYPE-C-31-M-12 (stadium shell 8.94 x 3.16, was a 9.1 x 3.36 box): radial margin 1.45 -> 1.53 mm, wall clearance in the lid 1.53. J2/J3 8.5 bores 1.25 mm (unchanged model). SW100 bore centre moved 0.05 mm to the real actuator axis (Z 70.30). SW101 rocker: GRB112 model fits the 20.2 hole (0.2 radial), body 2.65 mm above the board top behind the panel, 22.4 deep, 3.87 mm from J3."
+  },
+  {
+   "severity": "ok",
+   "title": "New board-part models clear the enclosure",
+   "detail": "J9-J11 JST VH (10.9 tall, were 10.9 stand-ins) 17.5 mm under the top wall; J5 Micro-Fit (5.57) 1.55 mm from its harness tube (schematic); TP23-TP27 Keystone 5010-5014 (8.31 above the board) 20.1 mm under the top wall, TP27 4.10 mm from the H1 screw head; TP1-TP22 (1.5 high) >= 3.06 mm from the H2 screw head. U2 now 1.85 high (was 2.2), U24 1.1 (was 1.6). U1 moved 0.43 mm by the model offset fix: 6.05 mm from the shell. Tightest parts unchanged: C288/C301 2.00 mm, R209 2.01, R106 2.33 mm to M3x16 screw heads."
+  },
+  {
+   "severity": "ok",
+   "title": "Cells: Samsung INR21700-50S model at datasheet max",
+   "detail": "Model 21.25 x 70.62; cradle bay laid out for 70.7 (was 70.2): end stop and PCM moved +0.5 mm in X, 0.08 mm end gap at the PCM, 0.53 mm radial gap in the 22.3 cradle. Cell 1 to the left ND65 7.21 mm, PCM to the right ND65 5.43 mm (>= 3)."
+  },
+  {
+   "severity": "ok",
+   "title": "Hardware swapped for the audited models",
+   "detail": "34 screws (19 M3x10, 11 M3x16 from models-v13 STEP; 4 M3x20 generated with the same ISO 4762 geometry), 38 Ruthex M3x5.7 inserts, 11 Wurth 970100321 spacers, 4 Wurth 971120321 studs, GRB112B802BR1 rocker. Their 2.5 mm thread bores overlap the 3.0 mm screws: 49 intended thread-engagement overlaps (new category). Kept parametric (not selected, so not verified): knob D30 x 14, rubber feet 12 x 3, PCM board, lid gasket, grommet."
+  },
+  {
+   "severity": "note",
+   "title": "Distance artefact guarded",
+   "detail": "OCC distToShape returned 0.0 for C244, R235 and R238 vs the woofer harness tube (no common volume; true distance about 40 mm). fit_check.py now falls back to the vertex distance in that case and lists it in fit.json dist_artefacts."
+  },
+  {
+   "severity": "note",
+   "title": "KiCad GLB vs STEP export differ for two models (unchanged from v12)",
+   "detail": "pcb.glb component boxes match the FreeCAD placement within 0.005 mm for J1, J2, J3, J5, J9, J11, SW100, U1, U2, U24, TP1 (TP23 0.11), but SW102 0.77 and C275 1.0 (exporter treats sub-shapes differently)."
+  }
+ ],
+ "screw_table": [
+  {
+   "site": "ND65 drivers (x8)",
+   "screw": "M3x10",
+   "stack": "head, flange 0.75 (maker STEP)",
+   "engage_mm": 9.25,
+   "insert": "5.7 in the 11 mm pad, pilot 10",
+   "verdict": "ok (unchanged)"
+  },
+  {
+   "site": "Woofer (x4)",
+   "screw": "M3x20",
+   "stack": "head on the frame back, frame 13.3 + gasket 3.3",
+   "engage_mm": "3.4 free / 4.4 at 1 mm compression",
+   "insert": "5.7 in the floor + outside boss, pilot 6.7, 1.0 skin",
+   "verdict": "marginal: M3x22 gives 5.4-6.4"
+  },
+  {
+   "site": "PCB (x11)",
+   "screw": "M3x16",
+   "stack": "head, PCB 1.6, 10 mm spacer",
+   "engage_mm": 4.4,
+   "insert": "5.7 under the insert roof, pilot 6.7",
+   "verdict": "ok (unchanged)"
+  },
+  {
+   "site": "Lid (x11)",
+   "screw": "M3x10",
+   "stack": "head, lid 4",
+   "engage_mm": 6.0,
+   "insert": "5.7, pilot 8",
+   "verdict": "ok (unchanged)"
+  },
+  {
+   "site": "Feet (x4)",
+   "screw": "Wurth 971120321 stud",
+   "stack": "M3 x 6 male stud",
+   "engage_mm": 6.0,
+   "insert": "5.7, pilot 6.5",
+   "verdict": "ok (unchanged)"
+  }
+ ],
+ "parameter_changes": [
+  "w_square 82.55, w_corner_r 4.0, w_bc 77 -> 96.52 (w_hole_sq 68.25), w_hole 3.5 -> 3.4, w_frame_t 13.3, w_gasket 3.3, w_total 47.75 (new: real W3-2052SC frame)",
+  "ring_t 5.5 -> 0, ring_od 86 -> none, w_recess 1.0 -> 0 (w_recess_d 83.4 unused), w_seat 0 (gasket on the floor inner face z 3.0)",
+  "w_screw M3x10 -> M3x20; woofer pilot 6.5 (zf-1) -> 6.7 (insert + 1); w_boss_od 8.0, w_boss_skin 1.0 -> outside bosses 4.7 mm below the floor",
+  "w_grille_d 90 -> 86; w_front_air_d 73.7 (front air excluded from the chamber volume)",
+  "CH_DISPLACED_L 0.056 -> 0.1224 L (env CH_DISP_L); chamber length 98.2 -> 109.4, ch_y0 101.39 -> 90.17",
+  "w_cy_off -2.0 -> +1.5 (woof_cy 151.50 -> 149.38)",
+  "cell_l 70.2 -> 70.7 (cell model 21.25 x 70.62 at max; cell_r 10.85 kept for the cradle so the 21.55 Molicel P45B also fits)",
+  "Hardware and rocker: parametric -> models-v13 STEP (screws, inserts, spacers, studs, rocker); knob, rubber feet, PCM, gaskets, grommet unchanged (not selected)",
+  "PCB stand-ins J5, J9-J11, SW100 + plunger removed (real models in the board STEP); SW100 lid bore centred on the TE actuator"
+ ],
+ "changes_vs_v12": [
+  "Solids 165 -> 164; unintended 0 -> 0; intended 41 -> 89 (38 inserts, 2 J2/J3 pins, 49 thread engagements; the knob/shaft contact is now below the 0.5 mm3 threshold)",
+  "Woofer chamber net 0.525 -> 0.525 L (gross 0.581 -> 0.627; displaced 0.056 -> 0.103 + 0.020 front air); main chamber net 2.025 -> 1.962 L",
+  "Shell 385.6 -> 380.5 cm3 (print envelope 163 x 100 -> 104.7 x 202.6, the outside bosses), lid 59.5 -> 59.5, insert 100.9 -> 102.4 cm3; all valid single solids",
+  "Screws: M3x10 23 -> 19, M3x16 11 -> 11, M3x20 0 -> 4",
+  "J1 lid radial margin 1.45 -> 1.53 mm; SW100 now the real actuator (2.80 mm short of the lid)",
+  "enclosure.glb 10.0 -> 13.8 MB (325 k -> 475 k triangles; fluted inserts, detailed woofer); pcb.glb 15.5 -> 15.3 MB"
+ ],
+ "checks": [
+  {
+   "check": "Model accuracy audit coverage (board)",
+   "result": "340 / 346 within 0.5 mm",
+   "detail": "6 unverified: L200 (XAL7070, Coilcraft drawing blocked), TP23-TP27 (Keystone 5010-5014, no maker drawing)"
+  },
+  {
+   "check": "Footprint errors found by the audit",
+   "result": "4 open",
+   "detail": "J2/J3 pegs 1.0 mm, U1 pad 56 3.37 mm, SW100 draft footprint, C275 land; modelled as drawn"
+  },
+  {
+   "check": "Woofer chamber net volume",
+   "result": "PASS",
+   "detail": "0.525 L (target 0.525 +- 0.05; window 0.45-0.60)"
+  },
+  {
+   "check": "Print bodies (shell, lid, insert)",
+   "result": "PASS",
+   "detail": "3 valid single solids, no supports (outside woofer bosses are 45 deg teardrops toward the bed)"
+  },
+  {
+   "check": "Woofer screw thread engagement",
+   "result": "marginal",
+   "detail": "M3x20: 3.4-4.4 mm in a 5.7 mm insert"
+  },
+  {
+   "check": "SW100 reachable through the lid",
+   "result": "FAIL",
+   "detail": "actuator tip 6.80 mm behind the lid outer face (draft footprint)"
+  }
+ ],
+ "assumptions": [
+  "Woofer W3-2052SC: models-v13 model from Parts Express data (square 82.55, bolt circle 96.52, cutout 76.2, depth 44.45) plus photo estimates +-1.5 mm (gasket 3.3, frame block 13.3, holes 3.4, magnet 35.5 x 14.5, basket 72, pigtail rib). Gasket modelled uncompressed.",
+  "Cells: Samsung INR21700-50S model at datasheet max (21.25 x 70.62); cap/button geometry assumed. PCM board 3 x 43.4 x 18 box (not sourced).",
+  "Placeholders (parts not selected): knob D30 x 14, rubber feet 12 x 3, lid foam gasket, grommet, PCM; harness tubes are schematic.",
+  "ND65-4 maker STEP accepted with its known deviations (flange 0.9 mm wider in y, holes 0.35 mm off the cone axis): accuracy 'estimated'.",
+  "Board parts: models-v13 models via the project library; footprint errors (J2/J3, U1 pad 56, SW100, C275) modelled as drawn.",
+  "Masses: printed bodies at 100 % infill PETG 1.27 g/cm3; drivers/woofer from maker listings; PCB estimated."
+ ],
+ "open_items": [
+  "Owner: caliper the W3-2052SC (frame thickness, gasket, hole pattern, depth) before printing; choose M3x20 (marginal) or source M3x22 for the woofer.",
+  "Coordinator: fix the J2/J3, U1 pad 56, SW100 and C275 footprints; place SW100 so its actuator reaches the board edge (or add a lid plunger).",
+  "Owner: J11 is a JST VH header; the woofer pigtail is JST-PH style: make a PH-to-VH adapter lead or re-terminate.",
+  "Owner: select the knob, rubber feet, PCM board, gasket materials and grommet (still placeholders).",
+  "Check the TC2030 programming cable access through the rear opening with the real cable (unchanged).",
+  "Routing is partial (RT-3): pcb_copper.glb shows only the copper routed so far."
+ ]
+}

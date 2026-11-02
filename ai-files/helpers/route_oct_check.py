@@ -403,7 +403,9 @@ def main():
         for n in nets:
             st[stage_of[n]].append(n)
         R['lock'] = {}
-        for s_, info in man['stages'].items():
+        if man.get('mode') == 'continue':      # continuation manifest: C0 = all input copper, later stages = their added items
+            R['lock'] = {k: dict(ok=v['ok'], items=v['items']) for k, v in LK.cont_lock(a.board, man).items()}
+        for s_, info in ([] if man.get('mode') == 'continue' else man['stages'].items()):
             h, k = LK.copper_hash(a.board, st[s_])
             R['lock'][s_] = dict(ok=h == info['copper_sha256'], items=k)
     if a.rules:
