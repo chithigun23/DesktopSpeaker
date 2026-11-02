@@ -1,0 +1,88 @@
+{
+ "note": "models-v13 mapping; paths are project-relative (${KIPRJMOD}/kicad-library/3d). Generated/edited by the CAD accuracy audit 2026-11-02.",
+ "files": [
+  "3d/JST_B2P-VH_LF_SN.step",
+  "3d/TSSOP-30_DBT_4.4x7.8_P0.5_TI.step",
+  "3d/TE_1977066-1.step",
+  "3d/Molex_Micro-Fit3_43650-0300_RA.step",
+  "3d/Keystone_5015_TestPoint_MicroMini.step",
+  "3d/Keystone_5010-5014_TestPoint_THM.step",
+  "3d/HRO_TYPE-C-31-M-12.step",
+  "3d/SSOP-28_DB_5.3x10.2_P0.65_TI.step"
+ ],
+ "footprints": {
+  "JST_B2P_VH_1x02_P3.96mm_Vertical": {
+   "models": [
+    {
+     "path": "${KIPRJMOD}/kicad-library/3d/JST_B2P-VH_LF_SN.step"
+    }
+   ]
+  },
+  "PCM1862DBTR": {
+   "models": [
+    {
+     "path": "${KIPRJMOD}/kicad-library/3d/TSSOP-30_DBT_4.4x7.8_P0.5_TI.step"
+    }
+   ]
+  },
+  "BM83SM1-00TA": {
+   "models": [
+    {
+     "path": "${KIPRJMOD}/kicad-library/3d/BM83SM1-00TA.step",
+     "offset": [
+      0,
+      -0.427,
+      -5.41
+     ]
+    }
+   ]
+  },
+  "TE_1977066-1_Tact_RA_SMD": {
+   "models": [
+    {
+     "path": "${KIPRJMOD}/kicad-library/3d/TE_1977066-1.step"
+    }
+   ]
+  },
+  "Molex_Micro-Fit_3.0_43650-0300_1x03_P3.00mm_Horizontal": {
+   "models": [
+    {
+     "path": "${KIPRJMOD}/kicad-library/3d/Molex_Micro-Fit3_43650-0300_RA.step"
+    }
+   ]
+  },
+  "TestPoint_Keystone_5015_Micro_Mini": {
+   "models": [
+    {
+     "path": "${KIPRJMOD}/kicad-library/3d/Keystone_5015_TestPoint_MicroMini.step"
+    }
+   ]
+  },
+  "TestPoint_Keystone_5010-5014_Multipurpose": {
+   "models": [
+    {
+     "path": "${KIPRJMOD}/kicad-library/3d/Keystone_5010-5014_TestPoint_THM.step"
+    }
+   ]
+  },
+  "TYPE-C-31-M-12": {
+   "models": [
+    {
+     "path": "${KIPRJMOD}/kicad-library/3d/HRO_TYPE-C-31-M-12.step"
+    }
+   ]
+  },
+  "PCM2902CDBR": {
+   "models": [
+    {
+     "path": "${KIPRJMOD}/kicad-library/3d/SSOP-28_DB_5.3x10.2_P0.65_TI.step",
+     "rotate": [
+      0,
+      0,
+      -90
+     ]
+    }
+   ]
+  }
+ }
+}

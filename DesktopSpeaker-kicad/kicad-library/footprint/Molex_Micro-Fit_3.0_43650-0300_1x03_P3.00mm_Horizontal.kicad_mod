@@ -265,4 +265,15 @@
 		(remove_unused_layers no)
 	)
 	(embedded_fonts no)
+	(model "${KIPRJMOD}/kicad-library/3d/Molex_Micro-Fit3_43650-0300_RA.step"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
 )

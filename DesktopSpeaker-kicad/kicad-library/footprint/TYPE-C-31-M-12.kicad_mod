@@ -69,9 +69,15 @@
 	(fp_line (start -4.47 -2.26) (end 4.47 -2.26) (layer F.CrtYd) (width 0.05))
 	(fp_line (start 4.47 -2.26) (end 4.47 5.09) (layer F.CrtYd) (width 0.05))
 	(fp_line (start 4.47 5.09) (end -4.47 5.09) (layer F.CrtYd) (width 0.05))
-	(model "${KIPRJMOD}/kicad-library/3d/TYPE-C-31-M-12.step"
-		(offset (xyz 0.000 0.000 0.000))
-		(scale (xyz 1 1 1))
-		(rotate (xyz 0 0 180))
+	(model "${KIPRJMOD}/kicad-library/3d/HRO_TYPE-C-31-M-12.step"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
 	)
 )

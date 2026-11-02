@@ -51,9 +51,15 @@
 	(fp_line (start 5.10 -2.65) (end 5.10 2.65) (layer F.CrtYd) (width 0.05))
 	(fp_line (start 5.10 2.65) (end -5.10 2.65) (layer F.CrtYd) (width 0.05))
 	(fp_poly (pts (xy -4.721987 1.270000) (xy -3.659988 1.270000) (xy -4.721987 1.270000)) (stroke (width 0) (type solid)) (fill solid) (layer "F.SilkS"))
-	(model "${KIPRJMOD}/kicad-library/3d/PCM2902CDBR.step"
-		(offset (xyz 0.000 0.000 0.000))
-		(scale (xyz 1 1 1))
-		(rotate (xyz 0 0 0))
+	(model "${KIPRJMOD}/kicad-library/3d/SSOP-28_DB_5.3x10.2_P0.65_TI.step"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 -90)
+		)
 	)
 )

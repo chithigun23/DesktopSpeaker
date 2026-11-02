@@ -418,7 +418,7 @@
 		(roundrect_rratio 0.25)
 	)
 	(embedded_fonts no)
-	(model "${KIPRJMOD}/kicad-library/3d/PCM1862DBTR.step"
+	(model "${KIPRJMOD}/kicad-library/3d/TSSOP-30_DBT_4.4x7.8_P0.5_TI.step"
 		(offset
 			(xyz 0 0 0)
 		)

@@ -119,4 +119,15 @@
 		(uuid "75f84b98-1c1a-457f-9f46-cc72f40a1c20")
 	)
 	(embedded_fonts no)
+	(model "${KIPRJMOD}/kicad-library/3d/Keystone_5010-5014_TestPoint_THM.step"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
 )

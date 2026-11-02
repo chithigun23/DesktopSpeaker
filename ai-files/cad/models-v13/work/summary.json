@@ -1,0 +1,18 @@
+{
+ "before": {
+  "OK": 311,
+  "N/A": 14,
+  "FIX (detail: rectangular opening, corner dev 0.53; no tongue; no posts)": 1,
+  "FIX (no model)": 32,
+  "UNVERIFIED": 1,
+  "FIX": 1
+ },
+ "after": {
+  "OK": 340,
+  "N/A": 14,
+  "UNVERIFIED": 6
+ },
+ "pad_mismatch_before": 3,
+ "pad_mismatch_after": 4,
+ "total": 360
+}

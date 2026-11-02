@@ -82,12 +82,18 @@
 	(fp_line (start -7.50 -21.56) (end 7.50 -21.56) (layer F.CrtYd) (width 0.05))
 	(fp_line (start 7.50 -21.56) (end 7.50 10.44) (layer F.CrtYd) (width 0.05))
 	(fp_line (start 7.50 10.44) (end -7.50 10.44) (layer F.CrtYd) (width 0.05))
-	(model "${KIPRJMOD}/kicad-library/3d/BM83SM1-00TA.step"
-		(offset (xyz 0.000 0.000 -5.410))
-		(scale (xyz 1 1 1))
-		(rotate (xyz 0 0 0))
-	)
 
 	(pad 56 smd rect (at 1.400 -0.030) (size 1.780 1.780) (layers F.Cu F.Paste F.Mask))
 	(pad 57 smd rect (at -3.290 -10.140) (size 2.790 0.760) (layers F.Cu F.Paste F.Mask))
+	(model "${KIPRJMOD}/kicad-library/3d/BM83SM1-00TA.step"
+		(offset
+			(xyz 0 -0.427 -5.41)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
 )

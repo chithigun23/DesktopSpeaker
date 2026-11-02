@@ -227,4 +227,15 @@
 		(remove_unused_layers no)
 	)
 	(embedded_fonts no)
+	(model "${KIPRJMOD}/kicad-library/3d/JST_B2P-VH_LF_SN.step"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
 )
