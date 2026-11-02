@@ -156,3 +156,10 @@ ai-files/pcb/work-route9p/*
 !ai-files/pcb/work-route9p/evidence/
 !ai-files/pcb/work-route9p/t/RT-9p.gates.txt
 !ai-files/pcb/work-route9p/t/RT-9p.parity.json
+ai-files/pcb/work-route10/*
+!ai-files/pcb/work-route10/RT-10.kicad_pcb
+!ai-files/pcb/work-route10/RT-10.kicad_pro
+!ai-files/pcb/work-route10/RT-10.kicad_dru
+!ai-files/pcb/work-route10/scripts/
+!ai-files/pcb/work-route10/evidence/
+!ai-files/pcb/work-route10/t/RT-10.gates.txt

@@ -685,3 +685,8 @@ ERC 19 -> 0 at default severities, netlist unchanged (XML byte-identical apart f
 - Board `ai-files/pcb/work-route9p/RT-9p.*`: pad nets synced as text, with the 5 CHG_INT copper items renamed; PDCTRL_SDA routed U3-33 to U11-8 (14.1 mm, 3 vias, exact 0/45/90; the In2 leg ends on the existing SDA via).
   - Verified: DRC 0; unconnected 53 to 50; schematic parity 0 new (243 inherited); no part moved; rule files byte-identical; HA8 122 (none new); BAT_INT 2.889 mOhm unchanged.
   - r7: B.Cu over In2 void 269.5 mm (+1.8) and F.Cu over In1 void 152.5 mm (+1.8).
+
+## RT-10 (2026-11-03)
+- `ai-files/pcb/work-route10/RT-10.*` (report `reports/routing-rt10.md`): verified independently: DRC 0 violations, 47 unconnected, no part moved, no pad net changed; RT-10.kicad_dru = RT-9p + rule 21 `rt10_in2_slow` (seven slow nets may use In2: BT_RST_M, BT_SYS_CFG, HP_G0, HP_G1, GAUGE_ISO_N, U12-EN, Q101-G; sentinel-tested). 236 of 283 connections routed (83 %). Closed: BT_RST_M, CHG_ENABLE, CHG_SYS_ENABLE (the two CHG lines leave U3 on F.Cu under the package body: accepted, LQFP-64 has no exposed pad).
+- The In2 exemption was not the main lever: most remaining far ends are sealed by local copper, BKO areas or In2 islands. 47 open: U3 long nets 11, U4 charger 4, I2S/AUD I2C/amp control 5, U24 inputs and USB audio 9, headphone mux 7, USB-C/PD/gauge 9, 3V_AO 1, plus CHG_INT accepted. BCK lane (x+y = 232.19) is now crossed by the ADC_INT F.Cu vertical (x 136.2) and TP15.
+- Release steps still pending: copy rule 21 and `rt5_sw100_te_land` into the project `.kicad_dru` at adoption; teardrops in the GUI; position files, stencil, fab outputs, board STEP, CAD v14.
