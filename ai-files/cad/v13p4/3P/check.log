@@ -1,0 +1,36 @@
+unintended 0 intended 89
+{"woof_front_air": 0.02, "woof_gross": 0.627, "woof_disp": 0.103, "woof_net": 0.525, "main_gross": 2.182, "main_disp": 0.248, "main_net": 1.934, "total_internal": 2.946}
+CLR {'a': 'Battery_Cell1_21700_50S', 'b': 'Driver_FrontL_ND65-4', 'mm': 7.21, 'need': 3.0}
+CLR {'a': 'Battery_Cell1_21700_50S', 'b': 'Driver_FrontR_ND65-4', 'mm': 7.61, 'need': 3.0}
+CLR {'a': 'Battery_Cell1_21700_50S', 'b': 'PCB_127.5x137.6x1.6', 'mm': 56.55, 'need': 3.0}
+CLR {'a': 'Battery_Cell2_21700_50S', 'b': 'Driver_FrontL_ND65-4', 'mm': 17.85, 'need': 3.0}
+CLR {'a': 'Battery_Cell2_21700_50S', 'b': 'Driver_FrontR_ND65-4', 'mm': 17.88, 'need': 3.0}
+CLR {'a': 'Battery_Cell2_21700_50S', 'b': 'PCB_127.5x137.6x1.6', 'mm': 45.46, 'need': 3.0}
+CLR {'a': 'Battery_Cell3_21700_50S', 'b': 'Driver_FrontL_ND65-4', 'mm': 21.13, 'need': 3.0}
+CLR {'a': 'Battery_Cell3_21700_50S', 'b': 'Driver_FrontR_ND65-4', 'mm': 21.6, 'need': 3.0}
+CLR {'a': 'Battery_Cell3_21700_50S', 'b': 'PCB_127.5x137.6x1.6', 'mm': 41.52, 'need': 3.0}
+CLR {'a': 'Battery_PCM_board', 'b': 'Driver_FrontL_ND65-4', 'mm': 49.22, 'need': 3.0}
+CLR {'a': 'Battery_PCM_board', 'b': 'Driver_FrontR_ND65-4', 'mm': 5.43, 'need': 3.0}
+CLR {'a': 'Battery_PCM_board', 'b': 'PCB_127.5x137.6x1.6', 'mm': 43.15, 'need': 3.0}
+CLR {'a': 'Woofer_W3-2052SC', 'b': 'Insert_woofer_chamber', 'mm': 2.88, 'need': 0.5}
+CLR {'a': 'Woofer_W3-2052SC', 'b': 'Lid_rear', 'mm': 11.94, 'need': 0.5}
+CLR {'a': 'Woofer_W3-2052SC', 'b': 'Harness_woofer_leads_schematic', 'mm': 0.5, 'need': 0.5}
+CLR {'a': 'Woofer_W3-2052SC', 'b': 'Insert_M3x5.7_PcbScrew_2_H2', 'mm': 4.62, 'need': 0.5}
+CLR {'a': 'Woofer_W3-2052SC', 'b': 'Screw_M3x16_PcbScrew_2_H2', 'mm': 5.69, 'need': 0.5}
+CLR {'a': 'Woofer_W3-2052SC', 'b': 'Insert_M3x5.7_LidScrew_6', 'mm': 10.61, 'need': 0.5}
+CLR {'a': 'Woofer_W3-2052SC', 'b': 'Screw_M3x10_LidScrew_6', 'mm': 10.99, 'need': 0.5}
+CLR {'a': 'Woofer_W3-2052SC', 'b': 'Insert_M3x5.7_LidScrew_7', 'mm': 10.61, 'need': 0.5}
+CLR {'a': 'Woofer_W3-2052SC', 'b': 'Screw_M3x10_LidScrew_7', 'mm': 10.99, 'need': 0.5}
+CLR {'a': 'Harness_J5_to_pack_schematic', 'b': 'woofer chamber air (sealed)', 'mm': 10.0, 'need': 0.01}
+CLR {'a': 'Harness_J5_to_pack_schematic', 'b': 'Insert_woofer_chamber', 'mm': 7.0, 'need': 0.01}
+LID {'ref': 'J1', 'kind': 'USB-C plug clearance', 'cut': (12.0, 7.0), 'centre': (-1.77, 70.28), 'body_section': [8.94, 3.16], 'radial_margin': 1.53, 'min_dist_connector_to_lid': 1.53, 'enters_lid': True, 'wall_clearance': 1.53, 'body_ymax': 203.29, 'ok': True}
+LID {'ref': 'J2', 'kind': '3.5 mm jack bore', 'cut': 8.5, 'centre': (30.98, 71.1), 'body_section': [6.0, 6.0], 'radial_margin': 1.25, 'min_dist_connector_to_lid': 1.51, 'enters_lid': False, 'wall_clearance': None, 'body_ymax': 201.76, 'ok': True}
+LID {'ref': 'J3', 'kind': '3.5 mm jack bore', 'cut': 8.5, 'centre': (44.38, 71.1), 'body_section': [6.0, 6.0], 'radial_margin': 1.25, 'min_dist_connector_to_lid': 1.51, 'enters_lid': False, 'wall_clearance': None, 'body_ymax': 201.76, 'ok': True}
+LID {'ref': 'SW100', 'kind': 'tact actuator (TE 1977066-1 model)', 'cut': 5.0, 'centre': (-14.68, 70.3), 'body_section': [2.0, 2.0], 'radial_margin': 1.5, 'min_dist_connector_to_lid': 3.17, 'enters_lid': False, 'wall_clearance': None, 'body_ymax': 199.81, 'ok': True}
+LID {'ref': 'SW101', 'kind': 'rocker panel hole (GRB112B802BR1)', 'cut': 20.2, 'centre': (63.0, 80.0), 'body_section': [19.8, 19.8], 'radial_margin': 0.2, 'min_dist_connector_to_lid': 0.0, 'enters_lid': True, 'wall_clearance': 0.0, 'body_ymax': None, 'ok': 'panel fit (snap-in body sits in the hole by design)'}
+DISH {'cx': -33.82, 'cy': 121.16, 'shaft_top': 93.09, 'shaft_section': [5.14, 6.0, 'round section 1.5 mm below the tip'], 'floor_top': 85.09, 'floor_bot': 82.09, 'd': 36.0, 'wall': 3.0, 'hole': 8.5, 'exposed_shaft': 8.0, 'envelope_cm3': 23.49, 'pocket_cm3': 12.71, 'fillet_merge': False, 'knob_z': [85.84, 99.84], 'shaft_in_knob': 7.25} loss_L 0.0235
+DISHCLR [(0.0, 'PCB_SW102'), (6.99, 'PCB_L201'), (7.04, 'PCB_smallparts_root'), (7.68, 'PCB_L202'), (7.88, 'PCB_L203'), (10.49, 'Screw_M3x16_PcbScrew_4_H4'), (10.49, 'Screw_M3x16_PcbScrew_8_H8'), (11.89, 'PCB_L2'), (11.94, 'PCB_U12'), (11.99, 'PCB_U3'), (12.29, 'PCB_Q104'), (12.33, 'PCB_U16')]
+FreeCAD 1.0.0, Libs: 1.0.0R
+(C) 2001-2024 FreeCAD contributors
+FreeCAD is free and open-source software licensed under the terms of LGPL2+ license.
+

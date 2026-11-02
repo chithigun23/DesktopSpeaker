@@ -170,3 +170,6 @@ ai-files/pcb/work-route11/*
 !ai-files/pcb/work-route11/scripts/
 !ai-files/pcb/work-route11/evidence/
 !ai-files/pcb/work-route11/t/RT-11.gates.txt
+ai-files/cad/v13p4/*/work/
+ai-files/cad/v13p4/*/*.step
+ai-files/cad/v13p4/*/*.FCStd
