@@ -3778,7 +3778,7 @@
     "source": "Panasonic EEH-ZA case D8"
    }
   ],
-  "footprint_errors_note": "Modelled as drawn by the footprint (not fixed in v13); the coordinator fixes the footprints on the routed board."
+  "footprint_errors_note": "Modelled as drawn by the footprint in CAD v13. Fixed on board RT-5 and in the project library on 2026-11-02 (J2/J3 pegs, U1 pad 56, SW100 redrawn from the TE drawing, C275 6.3 x 7.7 land); the next CAD rebuild (v14, from the final routed board) picks them up."
  },
  "pcb_nodes": [
   {

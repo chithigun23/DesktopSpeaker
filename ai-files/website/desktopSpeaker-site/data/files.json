@@ -13,8 +13,8 @@
   {
    "name": "DesktopSpeaker_JLC_BOM.csv",
    "href": "downloads/DesktopSpeaker_JLC_BOM.csv",
-   "bytes": 8768,
-   "sha256": "e839d111e1b546d0fd7bc382909a7d187db0272f3e3ead44e3b0a2d57221f73d",
+   "bytes": 8771,
+   "sha256": "9cb5f5ce6c98d881ff7bff40c0db137b6793a4747167ddea6178dcbaeb0bb391",
    "desc": "Assembly BOM grouped by LCSC code (JLC format)",
    "source": "ai-files/bom/DesktopSpeaker_JLC_BOM.csv"
   },
@@ -47,8 +47,8 @@
   {
    "name": "HANDOVER.md",
    "href": "docs/HANDOVER.md",
-   "bytes": 133682,
-   "sha256": "c0ca571acb1dad72ca107446e7f8842ecd45345fcc2253e25084b503a6858c18",
+   "bytes": 137778,
+   "sha256": "155fe9307fa3e9ce1198240b0a90dd4f1785acbe03ec9bae8df251310855126b",
    "desc": "Single project handover: decisions, evidence, open items (older sections superseded)",
    "source": "ai-files/HANDOVER.md",
    "kind": "report"
