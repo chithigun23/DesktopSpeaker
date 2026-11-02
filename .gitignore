@@ -173,3 +173,11 @@ ai-files/pcb/work-route11/*
 ai-files/cad/v13p4/*/work/
 ai-files/cad/v13p4/*/*.step
 ai-files/cad/v13p4/*/*.FCStd
+ai-files/pcb/work-route12/*
+!ai-files/pcb/work-route12/RT-12.kicad_pcb
+!ai-files/pcb/work-route12/RT-12.kicad_pro
+!ai-files/pcb/work-route12/RT-12.kicad_dru
+!ai-files/pcb/work-route12/scripts/
+!ai-files/pcb/work-route12/evidence/
+!ai-files/pcb/work-route12/t/RT-12.gates.txt
+ai-files/pcb/work-route12/t/L/
