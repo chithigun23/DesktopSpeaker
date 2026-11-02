@@ -181,3 +181,14 @@ ai-files/pcb/work-route12/*
 !ai-files/pcb/work-route12/evidence/
 !ai-files/pcb/work-route12/t/RT-12.gates.txt
 ai-files/pcb/work-route12/t/L/
+ai-files/pcb/work-route13/*
+!ai-files/pcb/work-route13/RT-13.kicad_pcb
+!ai-files/pcb/work-route13/RT-13.kicad_pro
+!ai-files/pcb/work-route13/RT-13.kicad_dru
+!ai-files/pcb/work-route13/RT-13P.kicad_pcb
+!ai-files/pcb/work-route13/RT-13P.kicad_pro
+!ai-files/pcb/work-route13/RT-13P.kicad_dru
+!ai-files/pcb/work-route13/schematic-patch.md
+!ai-files/pcb/work-route13/scripts/
+!ai-files/pcb/work-route13/evidence/
+!ai-files/pcb/work-route13/t/RT-13.gates.txt
