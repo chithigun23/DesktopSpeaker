@@ -21,9 +21,9 @@ th,td{text-align:left;padding:7px 10px;border-bottom:1px solid var(--line);verti
 .done{background:#d6efd9;color:#14532d}.run{background:#fde9b8;color:#6b4500}.wait{background:#e3e6e3;color:#444}
 @media(prefers-color-scheme:dark){.done{background:#1f4a2a;color:#cfeed3}.run{background:#5a4510;color:#fde9b8}.wait{background:#2d332d;color:#bbb}}
 </style></head><body><main>
-<p><a href="../">&larr; Back</a></p>
+<p><a href="/">&#8249; back to all sites</a></p>
 <h1>Desktop Speaker: routing progress</h1>
-<p>Last updated 2 Nov 2026. Rules: exact 0/45/90 degrees only, shortest runs, stages in order of importance, each stage locked before the next.</p>
+<p>Last updated 2 Nov 2026 (silkscreen and charge policy done). Rules: exact 0/45/90 degrees only, shortest runs, stages in order of importance, each stage locked before the next.</p>
 <table>
 <tr><th>Stage</th><th>Scope</th><th>Status</th><th>Notes</th></tr>
 <tr><td>Placement</td><td>R8/R8b moves, committed 71bdda7</td><td><span class="s done">done</span></td><td>DRC 0, pad nets unchanged, signal minimum length -10 %.</td></tr>
@@ -31,8 +31,8 @@ th,td{text-align:left;padding:7px 10px;border-bottom:1px solid var(--line);verti
 <tr><td>Router tool</td><td>Exact-octilinear A* (<code>route_oct</code>), upgraded</td><td><span class="s done">done</span></td><td>Committed 5c86df6. Geometry 100 % exact; BM83 keep-out, audio spacing, GND stitching vias, switch-node spacing and pour check added. Used as a geometry engine, not as an unattended router.</td></tr>
 <tr><td>S0 and S0b</td><td>Power loops and paths; blocked escapes; USB J1 to U2 template</td><td><span class="s done">done</span></td><td>Committed 4de035e (board RT-1). DRC 0, no part moved, USB pair complete (32.8 mm coupled at 0.15 mm gap), blocked pin exits 56 down to 28.</td></tr>
 <tr><td>S1 to S3</td><td>Clocks and I2S, analog audio and amplifier I2C, then control and logic</td><td><span class="s done">run done, board not finished</span></td><td>Board RT-2, committed d1deaa0. 145 of 283 connections routed (51 %), 48 of 140 nets complete. Every segment exactly 0/45/90, DRC 0 violations, no part moved, no rule changed. Length quality fails: median 1.175 times the octilinear minimum (target 1.15), 95th percentile 3.6 (target 1.4).</td></tr>
-<tr><td>Silkscreen</td><td>Tile the board with aligned section boxes</td><td><span class="s run">running</span></td><td>Boxes will share edges and tile the board; 5V Logic, Volume Encoder and Front Amp boxes form a T.</td></tr>
-<tr><td>Charge policy</td><td>Charge current for the chosen battery with USB PD</td><td><span class="s run">running</span></td><td>Order of priority: safe, reliable, fast. Includes the copper needed at U4 for the charge current.</td></tr>
+<tr><td>Silkscreen</td><td>Tile the board with aligned section boxes</td><td><span class="s done">done</span></td><td>Board RT-3, committed 19814e0. 22 boxes now tile the whole board with shared edges and T-junctions; 5V Logic, Volume Encoder and Front Amp form the T. Only silkscreen changed: 0 parts moved, DRC 0 violations. Four boxes are L-shapes because of fixed parts.</td></tr>
+<tr><td>Charge policy</td><td>Charge current for the chosen battery with USB PD</td><td><span class="s done">done</span></td><td>Fast charge 4.0 A (0.4C of the 10 Ah pack, 2 A per cell), input capped at 17 W so any PD source of 18 W or more charges at the same rate, full-charge voltage 4.10 V (4.16 V max), warm-zone suspend at 45 C. Firmware only, no hardware value change. About 2.75 h empty to full.</td></tr>
 <tr><td>Next: hand work</td><td>136 open connections</td><td><span class="s wait">to do</span></td><td>Causes: no legal pin exit (43), boxed in by neighbouring copper (65), pin order or topology (22), keep-outs and pour islands (6). Remedies: hand templates for the I2S hops and AUD I2C crossing, about 12 small part nudges, a router fix, then teardrops and fab output.</td></tr>
 <tr><td>S4 to S6</td><td>GND fan-out and stitching, pours and necks, clean-up, teardrops, review</td><td><span class="s wait">waiting</span></td><td>Final gates: r7_metrics, DRC with sentinel, independent re-measurement.</td></tr>
 </table>
@@ -44,6 +44,13 @@ th,td{text-align:left;padding:7px 10px;border-bottom:1px solid var(--line);verti
 <figure><img src="rt2_back.png" alt="RT-2 B.Cu"><figcaption><b>RT-2 B.Cu.</b> Sensitive-net hops run only over GND on In2, each with a GND stitching via.</figcaption></figure>
 </div>
 
+<h2>Silkscreen section boxes (RT-3)</h2>
+<p>Before and after. The boxes now tile the whole board with no gaps; the empty strip above Front Amp is gone and 5V Logic, Volume Encoder and Front Amp form a T.</p>
+<div class="grid">
+<figure><img src="rt2_silk.png" alt="Silkscreen before"><figcaption><b>Before (RT-2).</b> Open ends, gaps and untitled boxes.</figcaption></figure>
+<figure><img src="rt3_silk.png" alt="Silkscreen after"><figcaption><b>After (RT-3).</b> 22 titled sections, shared edges, no dangling lines.</figcaption></figure>
+</div>
+
 <h2>Decisions taken (owner asked for judgement)</h2>
 <table>
 <tr><th>Item</th><th>Decision</th><th>Reason</th></tr>
@@ -51,7 +58,8 @@ th,td{text-align:left;padding:7px 10px;border-bottom:1px solid var(--line);verti
 <tr><td>BM83 and J8 nets in S3</td><td>Route them first in stage S3</td><td>They are bound by the module keep-out, so they must get their corridors before the general nets.</td></tr>
 <tr><td>U4 pin 18 (BATP)</td><td>Hand-route it; add a narrow, documented exemption to the 2.0 mm switch clearance for this one stub if needed</td><td>BATP is a sense line right next to the boot-strap pad, a 2.0 mm clearance cannot be met at 0.2 mm pad spacing.</td></tr>
 <tr><td>J7 (programming header) edge clearance</td><td>Allow 0.25 mm copper-to-hole at J7 only, with diagonal hand escapes</td><td>The fabrication minimum (about 0.2 mm; to be confirmed against the JLC capability page before ordering) is lower than the 0.5 mm rule; the header is boxed in otherwise.</td></tr>
-<tr><td>Battery pour at U4 pins 22/23</td><td>Widen it; exact copper set by the charge-current analysis</td><td>See the charge policy report.</td></tr>
+<tr><td>Charge current</td><td>4.0 A, input cap 17 W, charge to 4.10 V (4.16 V maximum, never 4.20 V)</td><td>Safe first: 2 A per cell is 80 % of Samsung's standard rate and a third of the cell maximum. Reliable second: the lower voltage and 45 C warm cut-off extend cell life. Fast third: still about 2.75 h empty to full. The real limit is U4 heat (about 2 W at 20 V), so the layout under U4 matters more than the current setting.</td></tr>
+<tr><td>Battery pour at U4 pins 22/23</td><td>Widen it: 0.6 mm for at most 0.3 mm, then at least 1.6 mm by x 154.05 and 2.5 mm by x 154.8; move R102 out of the BAT_INT strip</td><td>Measured on RT-2: the U4 to Q103 path is 3.3 mOhm; these two fixes give about 2x margin at 4 A charge and 6 A discharge.</td></tr>
 </table>
 
 <h2>Earlier pictures</h2>
