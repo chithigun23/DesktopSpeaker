@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Desktop Speaker: project</title>
+<meta name="description" content="Desktop Speaker: battery and USB-C PD stereo speaker with Bluetooth, USB audio and aux. Specs, BOM, PCB status and an interactive 3D CAD viewer.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='5' y='2' width='22' height='28' rx='3' fill='%233b4651'/%3E%3Ccircle cx='16' cy='11' r='5' fill='%230a7ea4'/%3E%3Ccircle cx='16' cy='23' r='3' fill='%230a7ea4'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;600&display=swap">
+<link rel="stylesheet" href="style.css">
+<script>try{const t=localStorage.getItem('dsTheme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}</script>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top" id="top">
+  <div>
+    <h1>Desktop Speaker</h1>
+    <p class="sub">A battery and USB-C PD powered desktop stereo speaker: two front full-range drivers, a downward woofer, Bluetooth, USB audio, 3.5 mm aux in and a headphone output, on one custom 4-layer board.</p>
+  </div>
+  <div class="meta"><span>Last updated <b id="updated">2026-11-02</b></span><span>Status <b>design in progress: PCB routing unfinished, nothing built or bench tested</b></span></div>
+  <nav class="links" aria-label="Sections">
+    <a href="#cad">3D CAD</a><a href="#specs">Specs</a><a href="#bom">BOM</a><a href="#pcb">PCB</a><a href="#assembly">Assembly</a>
+    <a href="#documents">Documents</a><a href="#downloads">Downloads</a><a href="#verification">Verification</a><a href="#open">Open items</a>
+    <a class="ext" href="routing/index.html">Routing progress</a>
+    <span class="sp"></span>
+    <button type="button" class="mini" id="theme" title="Switch between the system theme, light and dark">Theme: auto</button>
+  </nav>
+  <div class="banner" role="note">
+    <div><b>Not finished.</b> The current routing board (RT-2/RT-3) has 145 of 283 connections routed (51 %). The board adopted in the KiCad project is still the old R6q layout, which does not meet the routing standard and is not to be ordered as it stands. Stock and prices are snapshots; nothing has been tested on the bench.</div>
+  </div>
+</header>
+
+<!-- ======================================================================= 3D CAD -->
+<section id="cad" aria-labelledby="cadh" style="display:grid;gap:10px">
+  <h2 id="cadh" class="cap">3D CAD viewer</h2>
+  <div class="main">
+    <div class="stage" id="stage" tabindex="0" role="application" aria-label="3D view of the speaker. Drag to orbit, right-drag or shift-drag to pan, wheel to zoom. Arrow keys orbit, Home resets the view.">
+      <canvas id="cv"></canvas>
+      <div class="hint" id="hint">drag: orbit · right/shift-drag: pan · wheel/pinch: zoom · hover: part name</div>
+      <div class="vcw" id="vcw" title="Click a face to look from that side"><div class="cube" id="cube"></div></div>
+      <button class="home" id="home" type="button" title="Back to the default isometric view">ISO</button>
+      <svg class="axes" id="axes" viewBox="-32 -32 64 64" aria-hidden="true"></svg>
+      <div class="tip" id="tip" hidden></div>
+      <div class="overlay loading" id="loading" hidden><div class="card"><div id="loadtxt">Loading CAD…</div><div class="bar"><i id="loadbar"></i></div></div></div>
+      <div class="overlay" id="nocad" hidden><div class="card">
+        <div class="big">CAD files not available yet</div>
+        <div class="note" id="nocadwhy">The 3D export (cad/meta.json, cad/enclosure.glb, cad/pcb.glb) has not been published to this site yet.</div>
+        <div class="note">The CAD v11 renders below show the enclosure as of 2026-10-12.</div>
+        <div><a class="mini" href="#renders">Show the v11 renders</a></div>
+      </div></div>
+    </div>
+    <aside class="side">
+      <section class="box"><h3 class="cap">Spec</h3><dl id="cadspec"></dl></section>
+      <section class="box"><h3 class="cap">Groups</h3><div class="chips" id="groups" role="group" aria-label="Show or hide groups"></div>
+        <div class="row" style="display:flex;gap:6px;flex-wrap:wrap"><button class="mini" type="button" id="gall">All</button><button class="mini" type="button" id="gnone">None</button><button class="mini" type="button" id="gonly">Only hovered group</button></div></section>
+      <section class="box"><h3 class="cap">Part under the pointer</h3><div class="part" id="part" aria-live="polite"><span class="muted">Hover over the model to see the part name.</span></div></section>
+    </aside>
+  </div>
+  <div class="ctl" role="group" aria-label="View options">
+    <div class="seg" role="group" aria-label="Camera">
+      <button type="button" data-view="iso" aria-pressed="true">Iso</button><button type="button" data-view="front" aria-pressed="false">Front</button><button type="button" data-view="back" aria-pressed="false">Rear</button><button type="button" data-view="top" aria-pressed="false">Top</button><button type="button" data-view="right" aria-pressed="false">Side</button>
+    </div>
+    <label for="t-pcb"><input type="checkbox" id="t-pcb" data-quick="pcb" checked> PCB</label>
+    <label for="t-enc"><input type="checkbox" id="t-enc" data-quick="enclosure" checked> Enclosure</label>
+    <label for="t-lid"><input type="checkbox" id="t-lid" data-quick="lid" checked> Lid</label>
+    <label for="t-bat"><input type="checkbox" id="t-bat" data-quick="battery" checked> Battery</label>
+    <label for="t-drv"><input type="checkbox" id="t-drv" data-quick="drivers" checked> Drivers</label>
+    <label for="t-wire"><input type="checkbox" id="t-wire"> Wireframe</label>
+    <label for="t-xray"><input type="checkbox" id="t-xray"> See-through enclosure</label>
+    <span id="optfiles" class="ctl" style="display:contents"></span>
+  </div>
+  <div class="ctl" role="group" aria-label="Explode and section">
+    <label for="explode">Exploded <input type="range" id="explode" min="0" max="100" value="0"><span class="val" id="explodev">0 %</span></label>
+    <label for="clx">Section X <input type="range" id="clx" min="0" max="1000" value="1000"><span class="val" id="clxv">off</span></label>
+    <label for="cly">Section Y <input type="range" id="cly" min="0" max="1000" value="1000"><span class="val" id="clyv">off</span></label>
+    <label for="clz">Section Z <input type="range" id="clz" min="0" max="1000" value="1000"><span class="val" id="clzv">off</span></label>
+    <label for="clflip"><input type="checkbox" id="clflip"> Flip sections</label>
+    <label for="clpreset" hidden>Section preset <select id="clpreset"><option value="">none</option></select></label>
+    <button type="button" class="mini" id="reset">Reset view</button>
+    <button type="button" class="mini" id="shot">Screenshot (PNG)</button>
+  </div>
+  <div class="foot" id="cadfoot">Section planes cut in the model frame (millimetres). The PCB model is exported from KiCad; the enclosure is the parametric FreeCAD build.</div>
+  <details class="sec fold" id="cadmore">
+    <summary><h2>CAD model notes</h2><span class="meta" id="cadmeta"></span></summary>
+    <div class="body">
+      <div class="cols"><div class="card"><h3 class="cap">Description</h3><div id="caddesc" class="note">No CAD metadata loaded.</div></div>
+      <div class="card"><h3 class="cap">Assumptions</h3><ul class="plain" id="cadassume"><li class="note">None loaded.</li></ul></div>
+      <div class="card"><h3 class="cap">CAD open items</h3><ul class="plain" id="cadopen"><li class="note">None loaded.</li></ul></div></div>
+    </div>
+  </details>
+  <details class="sec fold" id="renders">
+    <summary><h2 id="rendersh">CAD v11 renders (2026-10-12)</h2><span class="meta">static images</span></summary>
+    <div class="body"><div class="gal" id="gal"></div></div>
+  </details>
+</section>
+
+<!-- ======================================================================= Specs -->
+<details class="sec fold" id="specs" open>
+  <summary><h2>Specs</h2><span class="meta" id="specsmeta"></span></summary>
+  <div class="body">
+    <div class="cols">
+      <div class="card"><h3 class="cap">Overview</h3><dl class="wide" id="overview"></dl></div>
+      <div class="card"><h3 class="cap">Enclosure and mechanics</h3><dl class="wide" id="mech"></dl></div>
+    </div>
+    <h3>System block diagram</h3>
+    <p class="note">Functional order, from the USB-C input to the drivers. Each block lists its parts, its job and what it connects to.</p>
+    <div class="blocks" id="blocks"></div>
+    <h3>Audio</h3><div class="tw"><table class="min"><thead><tr><th>Item</th><th>Value</th><th>Detail</th><th>Status</th><th>Source</th></tr></thead><tbody id="audio"></tbody></table></div>
+    <h3>Power rails</h3><div class="tw"><table class="min"><thead><tr><th>Rail</th><th>Voltage</th><th>Source</th><th>Load or budget</th><th>Enable</th><th>Status</th><th>Source doc</th></tr></thead><tbody id="rails"></tbody></table></div>
+    <h3>Power budget</h3><div class="tw"><table class="min"><thead><tr><th>Item</th><th>Value</th><th>Detail</th><th>Status</th><th>Source</th></tr></thead><tbody id="budget"></tbody></table></div>
+    <h3>Charge policy</h3><div class="tw"><table class="min"><thead><tr><th>Setting</th><th>Value</th><th>Detail</th><th>Status</th><th>Source</th></tr></thead><tbody id="charge"></tbody></table></div>
+    <h3>Firmware states</h3><p class="note">No firmware exists yet; these are the specified states.</p>
+    <div class="tw"><table class="min"><thead><tr><th>State</th><th>Description</th><th>Source</th></tr></thead><tbody id="fwstates"></tbody></table></div>
+    <h3>Firmware open decisions</h3><div class="tw"><table class="min"><thead><tr><th>Item</th><th>Detail</th><th>Source</th></tr></thead><tbody id="fwopen"></tbody></table></div>
+  </div>
+</details>
+
+<!-- ======================================================================= BOM -->
+<details class="sec fold" id="bom" open>
+  <summary><h2>Bill of Materials</h2><span class="meta" id="bommeta"></span></summary>
+  <div class="body">
+    <ul class="caveats" id="bomcaveats"></ul>
+    <div class="sum" id="bomsum"></div>
+    <div class="filters">
+      <label for="bq">Search <input type="search" id="bq" placeholder="ref, value, MPN, LCSC…"></label>
+      <label for="bsheet">Sheet <select id="bsheet"><option value="">All sheets</option></select></label>
+      <label for="bstatus">Status <select id="bstatus"><option value="">All</option></select></label>
+      <span class="note" id="bcount"></span>
+    </div>
+    <div class="tablewrap"><table class="min" id="bomtable"><thead><tr>
+      <th class="sort" data-k="ref">Reference</th><th class="sort" data-k="value">Value</th><th class="sort" data-k="function">Function</th>
+      <th class="sort" data-k="mpn">MPN</th><th class="sort" data-k="mfr">Manufacturer</th><th class="sort" data-k="lcsc">LCSC</th>
+      <th class="sort q" data-k="qty">Qty</th><th class="sort q" data-k="stock">Stock</th><th class="sort" data-k="snapshot">Checked</th>
+      <th class="sort" data-k="status">Status</th><th class="sort" data-k="sheets">Sheet</th></tr></thead><tbody id="bomrows"></tbody></table></div>
+    <p class="note">Click a row for the availability note. Stock is the listed LCSC/JLC quantity at the check date, not an order-time guarantee.</p>
+    <h3>Hardware and mechanical buy list</h3>
+    <div class="sum" id="hwsum"></div>
+    <div class="tw"><table class="min hw"><thead><tr><th class="q">Qty</th><th>Item</th><th>Spec</th><th>Source</th><th>Part number</th><th class="q">Unit</th><th class="q">Line</th><th>Price status</th><th>Stock or date</th><th>Notes</th></tr></thead><tbody id="hwrows"></tbody></table></div>
+    <h3>BOM files</h3>
+    <ul class="plain" id="bomfiles"></ul>
+  </div>
+</details>
+
+<!-- ======================================================================= PCB -->
+<details class="sec fold" id="pcb" open>
+  <summary><h2>PCB</h2><span class="meta">routing board RT-3 · adopted board R6q (old)</span></summary>
+  <div class="body">
+    <div class="banner"><div><b>Routing is not finished.</b> RT-2/RT-3 route 145 of 283 connections (51 %) with exact 0/45/90 geometry and DRC 0 violations, but 136 connections are open and the length quality target is not met. The board inside the KiCad project folder is still the old R6q layout. See the <a href="routing/index.html">routing progress page</a>.</div></div>
+    <div class="cols">
+      <div class="card"><h3 class="cap">Board</h3><dl class="wide" id="pcbfacts"></dl></div>
+      <div class="card"><h3 class="cap">Stack-up and layer roles</h3><div class="tw"><table><thead><tr><th>Layer</th><th>Role</th></tr></thead><tbody id="stackup"></tbody></table></div></div>
+    </div>
+    <h3>Design rules</h3><div class="tw"><table class="min"><thead><tr><th>Rule</th><th>Value</th><th>Source</th></tr></thead><tbody id="rules"></tbody></table></div>
+    <h3>Routing status</h3><div class="tw"><table class="min"><thead><tr><th>Item</th><th>Value</th><th>Status</th><th>Source</th></tr></thead><tbody id="routing"></tbody></table></div>
+    <h3>Placement and silkscreen</h3>
+    <div class="gal">
+      <figure><a href="routing/new_front.png"><img src="routing/new_front.png" alt="New placement baseline F.Cu" loading="lazy"></a><figcaption><b>Placement after the restart (R9-0).</b> Power copper and pours only, parts moved; MCU U3 left of centre.</figcaption></figure>
+      <figure><a href="routing/rt2_front.png"><img src="routing/rt2_front.png" alt="RT-2 F.Cu routing" loading="lazy"></a><figcaption><b>RT-2 F.Cu.</b> Staged routing S1-S3, 51 % of connections, every segment exactly 0/45/90.</figcaption></figure>
+      <figure><a href="routing/rt2_back.png"><img src="routing/rt2_back.png" alt="RT-2 B.Cu routing" loading="lazy"></a><figcaption><b>RT-2 B.Cu.</b> Sensitive hops only over GND on In2.</figcaption></figure>
+      <figure><a href="routing/rt3_silk.png"><img src="routing/rt3_silk.png" alt="RT-3 silkscreen section boxes" loading="lazy"></a><figcaption><b>RT-3 silkscreen.</b> 22 titled section boxes tile the board.</figcaption></figure>
+      <figure><a href="routing/old_front.png"><img src="routing/old_front.png" alt="Old R6q placement and routing" loading="lazy"></a><figcaption><b>Old R6q (adopted in the project).</b> Any-angle routing, judged not good enough on 2026-11-01.</figcaption></figure>
+    </div>
+    <h3>Fabrication outputs</h3><div class="tw"><table class="min"><thead><tr><th>Item</th><th>Value</th><th>Status</th><th>Source</th></tr></thead><tbody id="fab"></tbody></table></div>
+  </div>
+</details>
+
+<!-- ======================================================================= Assembly -->
+<details class="sec fold" id="assembly">
+  <summary><h2>Assembly</h2><span class="meta">hand assembly at home</span></summary>
+  <div class="body">
+    <p id="asmsum"></p>
+    <div class="cols">
+      <div class="card"><h3 class="cap">Process</h3><dl class="wide" id="asmsteps"></dl></div>
+      <div class="card"><h3 class="cap">Hotplate profile, starting values</h3><dl class="wide" id="asmprofile"></dl><p class="note">Research starting values for leaded paste, not measured on this board. Confirm against the paste data sheet and a thermocouple run.</p></div>
+    </div>
+    <ul class="plain" id="asmnotes"></ul>
+  </div>
+</details>
+
+<!-- ======================================================================= Documents -->
+<details class="sec fold" id="documents">
+  <summary><h2>Documents</h2><span class="meta" id="docmeta"></span></summary>
+  <div class="body">
+    <div class="filters"><label for="dq">Search <input type="search" id="dq" placeholder="title or file"></label>
+      <div class="seg" role="group" aria-label="Kind"><button type="button" data-kind="" aria-pressed="true">All</button><button type="button" data-kind="report" aria-pressed="false">Reports</button><button type="button" data-kind="datasheet" aria-pressed="false">Datasheets</button></div></div>
+    <div class="tw"><table class="min"><thead><tr><th>Document</th><th>What it is</th><th class="q">Size</th><th>Repo path</th></tr></thead><tbody id="docrows"></tbody></table></div>
+    <p class="note" id="docnote"></p>
+  </div>
+</details>
+
+<!-- ======================================================================= Downloads -->
+<details class="sec fold" id="downloads" open>
+  <summary><h2>Downloads</h2><span class="meta" id="dlmeta"></span></summary>
+  <div class="body">
+    <div class="tw"><table class="min"><thead><tr><th>File</th><th>What it is</th><th class="q">Size</th><th>SHA256</th></tr></thead><tbody id="dlrows"></tbody></table></div>
+    <p class="note">Checksums: <a href="downloads/SHA256SUMS">downloads/SHA256SUMS</a><span id="cadsums"></span>. Verify with <code>sha256sum -c SHA256SUMS</code>. The v11 print files predate the current board; use the newest CAD export when it is listed above.</p>
+  </div>
+</details>
+
+<!-- ======================================================================= Verification -->
+<details class="sec fold" id="verification">
+  <summary><h2>Verification</h2><span class="meta" id="vermeta"></span></summary>
+  <div class="body">
+    <div class="sum" id="versum"></div>
+    <div class="tw"><table class="min"><thead><tr><th>Result</th><th>Area</th><th>Check</th><th>Detail</th><th>Source</th></tr></thead><tbody id="verrows"></tbody></table></div>
+    <p class="note">Checked means a tool or a review measured it against the design files. Nothing here has been measured on hardware: every electrical, thermal and acoustic behaviour is still an assumption until the bench bring-up plan is run.</p>
+  </div>
+</details>
+
+<!-- ======================================================================= Open items -->
+<details class="sec fold" id="open" open>
+  <summary><h2>Open items</h2><span class="meta" id="openmeta"></span></summary>
+  <div class="body">
+    <div class="tw"><table class="min"><thead><tr><th>Area</th><th>Item</th><th>Detail</th><th>Owner</th><th>Source</th></tr></thead><tbody id="openrows"></tbody></table></div>
+  </div>
+</details>
+
+<div class="foot">Built from the project repository: data/specs.json (curated, a source path on every entry), data/bom.json and data/files.json (generated by ai-files/helpers/build_site_data.py), cad/ (CAD export). Numbers come only from the project documents; where a document says assumed or unverified, so does this page.</div>
+</div>
+<script src="lib/three.min.js"></script>
+<script src="lib/OrbitControls.js"></script>
+<script src="lib/GLTFLoader.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+[{"js":"new Promise(r=>{const t0=Date.now();const f=()=>{if(V.ok||Date.now()-t0>90000)r(V.ok);else setTimeout(f,500)};f()})","wait":1},
+ {"js":"{['t-enc','t-lid','t-bat','t-drv'].forEach(i=>document.getElementById(i).click());document.querySelector('[data-view=top]').click();1}","wait":3},
+ {"js":"{let u=null;scene.traverse(o=>{if(!u&&o.name==='U4')u=o});const b=new THREE.Box3().setFromObject(u);const c=b.getCenter(new THREE.Vector3());c.z=b.max.z;c.y=b.max.y;c.project(camera);const r=canvas.getBoundingClientRect();const x=r.left+(c.x+1)/2*r.width,y=r.top+(1-c.y)/2*r.height;stage.dispatchEvent(new PointerEvent('pointermove',{clientX:x,clientY:y,bubbles:true}));[x,y,document.getElementById('part').innerText]}","wait":2,"shot":"u4"},
+ {"js":"document.getElementById('theme').click();document.getElementById('theme').click();document.getElementById('theme').textContent+' '+document.documentElement.dataset.theme","wait":2,"shot":"forcedark"}]

@@ -1,0 +1,2 @@
+[{"js":"new Promise(r=>{const t0=Date.now();const f=()=>{if(V.ok||!document.getElementById('nocad').hidden||Date.now()-t0>150000)r({ok:V.ok,nocad:!document.getElementById('nocad').hidden,parts:V.parts.length});else setTimeout(f,500)};f()})","wait":1,"shot":"view"},
+ {"js":"document.querySelectorAll('details').forEach(d=>d.open=true);[document.getElementById('versum').innerText,document.getElementById('openmeta').innerText,document.getElementById('dlrows').rows.length,document.getElementById('gal').children.length]","wait":1}]

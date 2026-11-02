@@ -89,3 +89,5 @@ ai-files/pcb/work-cad12/
 ai-files/pcb/work-site-test/
 ai-files/website/desktopSpeaker-site/cad/*.glb
 ai-files/website/desktopSpeaker-site/cad/downloads/*.step
+ai-files/website/desktopSpeaker-site/docs/
+ai-files/website/desktopSpeaker-site/cad/downloads/

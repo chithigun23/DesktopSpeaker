@@ -1,0 +1,1691 @@
+{
+ "generated": "2026-11-02",
+ "overview": [
+  {
+   "k": "Product",
+   "v": "Desktop stereo speaker: 2 front full-range drivers plus 1 downward-firing woofer; battery or USB-C PD powered; Bluetooth, USB audio and 3.5 mm aux inputs; switched 3.5 mm headphone output.",
+   "status": "design (not built, bench untested)",
+   "src": "plan.md"
+  },
+  {
+   "k": "Enclosure (outer)",
+   "v": "163 x 100 x 206.6 mm including 4 mm rear lid; 3 mm walls; FDM print (PETG or ASA), 3 bodies, no supports",
+   "detail": "Shell 163 x 100 x 202.6 + lid 4. Older README sizes (163 x 100 x 180/195/220) are history.",
+   "status": "CAD model; STLs generated; no print reported",
+   "src": "ai-files/cad/volumes.md"
+  },
+  {
+   "k": "Front drivers",
+   "v": "2 x Dayton ND65-4 (2.5 in full range, Re 3.5 ohm, Fs 89.5 Hz, Xmax 3.5 mm, 15 W RMS)",
+   "status": "maker values (via cad/mechanical-parts.md)",
+   "src": "ai-files/reports/firmware-system-spec-2026-11-01.md"
+  },
+  {
+   "k": "Woofer",
+   "v": "1 x Tang Band W3-2052SC (3 in, Re 4.3 ohm, Fs 59 Hz, Qts 0.49, Xmax 5 mm, 15 W RMS), sealed 0.525 L net",
+   "status": "Parts Express table only; no maker drawing; bolt circle unverified",
+   "src": "ai-files/reports/sourcing-2026-10-12.md"
+  },
+  {
+   "k": "Battery",
+   "v": "1S2P 21700 pack, 10 Ah nominal (about 36 Wh); Samsung INR21700-50S preferred, Molicel P45B acceptable; PCM >= 10 A continuous, NTC 10k B3435",
+   "status": "specified, NOT selected or purchased (quotes pending)",
+   "src": "ai-files/reports/charge-policy-2026-11-02.md"
+  },
+  {
+   "k": "Power inputs",
+   "v": "USB-C PD sink 5/9/15/20 V up to 3 A (TPS25730D); legacy 5 V adapters; EPR 28-48 V out of scope",
+   "status": "design; PD contract selection untested",
+   "src": "plan.md"
+  },
+  {
+   "k": "Audio inputs / outputs",
+   "v": "Bluetooth (BM83 module), USB audio (PCM2902C), 3.5 mm aux in; speaker amps 2 x TAS5825M; headphone amp TPA6132A2",
+   "status": "design; no bench measurement",
+   "src": "ai-files/reports/audio-chain-architecture.md"
+  },
+  {
+   "k": "Amplifier supply",
+   "v": "TPS61088 boost to PVDD_AMP = 11.9 V from the 1S battery rail; pack current limited to about 8-9 A",
+   "status": "calculated",
+   "src": "ai-files/reports/audio-chain-architecture.md"
+  },
+  {
+   "k": "Charger",
+   "v": "BQ25792 buck-boost NVDC charger; ICHG 4.0 A, input power cap 17 W, VREG 4.10 V default",
+   "status": "policy decided 2026-11-02, firmware-only, unverified on hardware",
+   "src": "ai-files/reports/charge-policy-2026-11-02.md"
+  },
+  {
+   "k": "MCU",
+   "v": "STM32G071RBT6 (LQFP64), 128 KB flash; no firmware exists yet",
+   "status": "chosen; firmware not written",
+   "src": "ai-files/reports/audio-chain-architecture.md"
+  },
+  {
+   "k": "Board",
+   "v": "127.5 x 137.6 mm, 4 layers, 1.6 mm, ENIG, 360 footprints, 11 M3 mounting holes",
+   "status": "board outline from Edge.Cuts",
+   "src": "ai-files/fab/ORDER-NOTES.md"
+  },
+  {
+   "k": "PCB routing state",
+   "v": "Routing restart partial: RT-2/RT-3 has 145 of 283 connections routed (51 %); DRC 0 violations, 152 unconnected",
+   "status": "in progress; not a releasable board",
+   "src": "ai-files/reports/routing-s1-s3-run.md"
+  },
+  {
+   "k": "Adopted board in repo",
+   "v": "DesktopSpeaker-kicad/ holds the old R6q board: DRC 0/0 but fails the owner's 0/45/90 routing standard; not to be ordered as is",
+   "status": "superseded by restart",
+   "src": "ai-files/reports/routing-review-r6q.md"
+  },
+  {
+   "k": "Assembly",
+   "v": "Hand assembly at home: hand-printed stencil, tweezers, hotplate with leaded Sn63/Pb37 paste",
+   "status": "plan; profile values are starting points",
+   "src": "ai-files/reports/hand-assembly-research-2026-11-01.md"
+  }
+ ],
+ "blocks": [
+  {
+   "name": "USB-C input and protection",
+   "parts": "J1 USB-C receptacle; D6 TVS2200 on raw VBUS; D7 1N5819HW; D1/D5 ESD on CC/data",
+   "role": "Cable entry, surge clamp, ESD",
+   "connects_to": "USB PD controller (U11); data pair to USB audio codec U2",
+   "status": "TVS clamp up to 28.35 V vs 28 V abs max on U11 (surge immunity unproven)",
+   "src": "ai-files/reports/power-analysis-2026-11-01.md"
+  },
+  {
+   "name": "USB PD",
+   "parts": "TPS25730D (U11) with integrated sink path; U19 TPS7B8450 5 V aux regulator",
+   "role": "Negotiates 5/9/15/20 V at up to 3 A; sink path (PPHV/VBUS_PD) to charger; U19 makes USB_AUX_5V for MCU start-up",
+   "connects_to": "VBUS_PD to BQ25792; USB_AUX_5V to U20 mux; LDO_3V3 (about 5 mA) to J4 service header; PD I2C 0x20 to MCU",
+   "status": "ADCIN straps: 20 V max, 3 A max; selection rule untested",
+   "src": "ai-files/HANDOVER.md"
+  },
+  {
+   "name": "Battery charger",
+   "parts": "BQ25792 (U4), L1, Q103 CSD17579Q3A pack disconnect",
+   "role": "1S NVDC buck-boost charger and power path; ship mode; SYS_RAW rail",
+   "connects_to": "VBUS_PD in; BAT_INT/BAT_PACK; SYS_RAW to regulators; I2C 0x6B",
+   "status": "design; thermals and PGND via loading to be checked on bench",
+   "src": "ai-files/reports/charge-policy-2026-11-02.md"
+  },
+  {
+   "name": "Battery pack",
+   "parts": "1S2P 21700 (2 x Samsung 50S), PCM, NTC; J5 Micro-Fit 3-pin; SW101 rocker disconnect",
+   "role": "Energy storage; physical disconnect",
+   "connects_to": "BAT_PACK via J5 (1 PACK+, 2 NTC, 3 GND); no reverse-polarity protection on J5",
+   "status": "pack unselected; RFQ drafted",
+   "src": "ai-files/reports/battery-pack-rfq.md"
+  },
+  {
+   "name": "Fuel gauge and low-current power control",
+   "parts": "MAX17048 (U5, I2C 0x36); U21 TPS3839 3.0 V monitor; U13/U16/U17 TS5A3167 gauge-bus isolation; U20 TPS2116 power mux; U12 TPS7A0230",
+   "role": "State of charge; keep the always-on 3V_AO rail alive from USB or SYS_RAW",
+   "connects_to": "BAT_PACK, SYS_RAW, USB_AUX_5V -> 3V_AO to MCU",
+   "status": "MAX17048 register facts from memory (local PDF text unreadable)",
+   "src": "ai-files/reports/firmware-system-spec-2026-11-01.md"
+  },
+  {
+   "name": "Regulator 5V_LOGIC",
+   "parts": "TPS63802 (U14), EN from MCU PA1",
+   "role": "Logic/codec 5 V rail, feeds U22 and U23",
+   "connects_to": "SYS_RAW in; 5V_LOGIC out",
+   "status": "4.824 V nominal calculated",
+   "src": "ai-files/reports/bench-bringup-plan.md"
+  },
+  {
+   "name": "Regulator 3V3_AUDIO",
+   "parts": "TPS7A2033 (U22), EN tied to IN",
+   "role": "Low-noise 3.3 V for PCM1862, TAS5825M DVDD, TPA6132A2, mux",
+   "connects_to": "5V_LOGIC in",
+   "status": "design",
+   "src": "ai-files/reports/audio-chain-architecture.md"
+  },
+  {
+   "name": "Switch 5V_CODEC",
+   "parts": "TPS22917 (U23), ON from MCU PC7",
+   "role": "Powers the PCM2902C only in USB mode",
+   "connects_to": "5V_LOGIC in; USB codec U2",
+   "status": "TPS22917 pinout listed as VERIFY in audio chain doc",
+   "src": "ai-files/reports/audio-chain-architecture.md"
+  },
+  {
+   "name": "Regulator 3V8_BT",
+   "parts": "TPS63802 (U15), EN from MCU PA8",
+   "role": "Bluetooth module supply (BM83 BAT_IN max 4.3 V abs)",
+   "connects_to": "SYS_RAW in; BM83 U1",
+   "status": "3.819 V nominal calculated",
+   "src": "ai-files/reports/bench-bringup-plan.md"
+  },
+  {
+   "name": "Always-on rail 3V_AO",
+   "parts": "U20 TPS2116 -> U12 TPS7A0230 (3.0 V nominal)",
+   "role": "Keeps MCU, gauge isolation switches and pull-ups alive",
+   "connects_to": "MCU U3, TS5A3167 switches, J7",
+   "status": "200 mA is capability, not a budget",
+   "src": "ai-files/HANDOVER.md"
+  },
+  {
+   "name": "MCU",
+   "parts": "STM32G071RBT6 (U3), SWD via J7 Tag-Connect TC2030 footprint",
+   "role": "Power sequencing, charger/gauge/PD supervision, amp DSP loading, controls",
+   "connects_to": "CTRL I2C (BQ25792, MAX17048), AUD I2C (PCM1862, 2 x TAS5825M), soft I2C to TPS25730D, UART to BM83",
+   "status": "no firmware; 3 rail enables + 100 k pull-downs so reset = off",
+   "src": "ai-files/reports/firmware-system-spec-2026-11-01.md"
+  },
+  {
+   "name": "Bluetooth",
+   "parts": "BM83SM1-00TA module (U1)",
+   "role": "A2DP/AVRCP source, analogue stereo out",
+   "connects_to": "3V8_BT; UART to MCU; BT_AUDIO_L/R to PCM1862 VIN2 and headphone mux",
+   "status": "U1 stock 0 at LCSC/JLC; antenna at board edge",
+   "src": "ai-files/reports/bluetooth-notes.md"
+  },
+  {
+   "name": "USB audio codec",
+   "parts": "PCM2902C (U2)",
+   "role": "USB-C audio device (full speed)",
+   "connects_to": "J1 D+/D-; USB_AUDIO_L/R to PCM1862 VIN1 and headphone mux; 5V_CODEC",
+   "status": "U2 stock 0 at LCSC/JLC",
+   "src": "ai-files/reports/usb-audio-notes.md"
+  },
+  {
+   "name": "Source select / ADC",
+   "parts": "PCM1862 (U24), Y200 24.576 MHz crystal",
+   "role": "Selects USB/BT/AUX (VIN1/2/3) for the speaker path; I2S master 48 kHz to both amplifiers",
+   "connects_to": "I2S_BCK/LRCK/SDATA to U6 and U7; AUD I2C 0x4A",
+   "status": "design; input-select codes 0x41/0x42/0x44 per firmware spec",
+   "src": "ai-files/reports/audio-chain-architecture.md"
+  },
+  {
+   "name": "Headphone and aux",
+   "parts": "U8/U9 TS5A23157 3:1 analogue mux; U10 TPA6132A2; J2 headphone jack; J3 aux jack",
+   "role": "Analogue pass-through to headphones; aux in; plug detect",
+   "connects_to": "USB/BT/AUX analogue; HP_DET and AUX_DET to MCU",
+   "status": "design; pop and detection behaviour to confirm at bring-up",
+   "src": "ai-files/reports/audio-chain-architecture.md"
+  },
+  {
+   "name": "Amplifier boost",
+   "parts": "TPS61088 (U25), L200 2.2 uH",
+   "role": "SYS_RAW to PVDD_AMP 11.9 V for both amplifiers",
+   "connects_to": "SYS_RAW in; PVDD_AMP to U6/U7; AMP_BOOST_EN from MCU",
+   "status": "compensation calculated only; datasheet PDF missing locally",
+   "src": "ai-files/reports/audio-chain-architecture.md"
+  },
+  {
+   "name": "Amplifiers",
+   "parts": "U6 TAS5825M (stereo BTL, I2C 0x4C); U7 TAS5825M (mono PBTL, 0x4D); 22 uH + 0.68 uF output filters",
+   "role": "Class-D amps with DSP (crossover, EQ, AGL)",
+   "connects_to": "J9 FRONT_L, J10 FRONT_R (U6); J11 WOOFER (U7); AMP_FAULT_N wired-OR to MCU",
+   "status": "design; PBTL mono sum depends on a DSP mixer not yet verified",
+   "src": "ai-files/reports/audio-chain-architecture.md"
+  },
+  {
+   "name": "Drivers",
+   "parts": "2 x ND65-4 (front), W3-2052SC (woofer, down-firing); JST B2P-VH connectors",
+   "role": "Acoustic output",
+   "connects_to": "J9, J10, J11",
+   "status": "woofer dimensions partly unverified",
+   "src": "ai-files/reports/sourcing-2026-10-12.md"
+  },
+  {
+   "name": "Controls",
+   "parts": "SW100 TE 1977066-1 (QON/power button), SW101 CW GRB112B802BR1 rocker (pack disconnect), SW102 Alps EC11E18244AU encoder",
+   "role": "Power wake, hard disconnect, volume/source",
+   "connects_to": "SW100 to BQ25792 QON and MCU PC13; SW102 to PC8/PC9/PC10",
+   "status": "no status LED, no button ladder exist",
+   "src": "ai-files/reports/firmware-system-spec-2026-11-01.md"
+  }
+ ],
+ "audio": [
+  {
+   "item": "Front drivers",
+   "value": "2 x Dayton ND65-4",
+   "detail": "2.5 in, Re 3.5 ohm, Fs 89.5 Hz, Qts 0.61, Vas 0.53 L, Xmax 3.5 mm, 15 W RMS, 83 dB at 2.83 V/1 m. Rear-mounted needs a 59.5 mm aperture.",
+   "status": "maker values",
+   "src": "ai-files/reports/firmware-system-spec-2026-11-01.md"
+  },
+  {
+   "item": "Woofer",
+   "value": "Tang Band W3-2052SC (Parts Express 299-572)",
+   "detail": "3 in, Re 4.3 ohm, Fs 59 Hz, Qts 0.49, Qes 0.53, Vas 0.595 L, Xmax 5 mm, 15/30 W, 78.3 dB, 50-800 Hz, flange 82.55 mm, depth 44.45 mm, cutout 76.2 mm. No maker datasheet or drawing found.",
+   "status": "unverified (retailer table)",
+   "src": "ai-files/reports/sourcing-2026-10-12.md"
+  },
+  {
+   "item": "Woofer unverified dimensions",
+   "value": "bolt circle, hole diameter, flange thickness, magnet diameter",
+   "detail": "Parts Express lists bolt circle '3.8' without a unit (96.5 mm if inches, larger than the flange). CAD assumes 77 mm, which breaks into the 76.2 mm aperture by 1.35 mm. Measure the sample before cutting.",
+   "status": "unverified",
+   "src": "ai-files/reports/cad-v11-print-ready.md"
+  },
+  {
+   "item": "Woofer enclosure",
+   "value": "Sealed 0.525 L net (gross 0.581 L)",
+   "detail": "Parts Express recommends vented 1.42 L; the sealed volume is the project's own choice (about 0.88 x Vas). Calculated sealed fc about 86 Hz, Qtc 0.72.",
+   "status": "calculated",
+   "src": "ai-files/reports/sourcing-2026-10-12.md"
+  },
+  {
+   "item": "Front chambers",
+   "value": "Main chamber 2.025 L net (gross 2.255 L), shared by both fronts",
+   "detail": "About 1.0 L effective each; calculated sealed fc about 111 Hz, Qtc 0.76. Chamber also holds battery and PCB.",
+   "status": "calculated",
+   "src": "ai-files/cad/volumes.md"
+  },
+  {
+   "item": "Front amplifier U6",
+   "value": "TAS5825M stereo BTL: channel A = FRONT_L (J9), B = FRONT_R (J10)",
+   "detail": "4 ohm class, about 10 W each design basis; AGAIN -8.5 dB (0 dBFS about 11.1 V peak, about 15 W per 4 ohm at clip); FSW 384 kHz hybrid modulation; I2C 0x4C.",
+   "status": "design",
+   "src": "ai-files/reports/audio-chain-architecture.md"
+  },
+  {
+   "item": "Woofer amplifier U7",
+   "value": "TAS5825M mono PBTL (pre-filter), I2C 0x4D",
+   "detail": "Pairing OUT_A+/A- and OUT_B+/B- verified from datasheet Fig. 159; DAMP_PBTL must be set before leaving Hi-Z. PBTL reads only the left I2S frame, so the (L+R)/2 sum needs a TAS5825M DSP mixer not verified.",
+   "status": "pairing verified; mono sum unverified",
+   "src": "ai-files/reports/firmware-system-spec-2026-11-01.md"
+  },
+  {
+   "item": "Amplifier supply voltage",
+   "value": "PVDD_AMP = 11.9 V (11.93 V by divider 499k/56k, VREF 1.204 V)",
+   "detail": "TPS61088 boost from SYS_RAW; about 1.9 A out at 3.6 V in and 90 % (about 23 W), about 1.2 A (15 W) at 3.0 V worst case. Soft start 47 nF, RILIM 150 k, L200 2.2 uH.",
+   "status": "calculated",
+   "src": "ai-files/reports/audio-chain-architecture.md"
+  },
+  {
+   "item": "Output filter",
+   "value": "22 uH + 0.68 uF per output (4 inductors on U6, 2 on U7)",
+   "detail": "L201-L206; Isat >= 4 A; expected front roll-off about -3 dB near 18 kHz, corrected in DSP.",
+   "status": "design",
+   "src": "ai-files/reports/audio-chain-architecture.md"
+  },
+  {
+   "item": "Power ceilings (AGL)",
+   "value": "Fronts about 5 W continuous each; woofer about 10 W; no-battery mode about 5 W total",
+   "detail": "Three AGL sets (full, -3 dB, -6 dB) selected by battery state of charge.",
+   "status": "proposal",
+   "src": "ai-files/reports/firmware-system-spec-2026-11-01.md"
+  },
+  {
+   "item": "Crossover proposal",
+   "value": "Linkwitz-Riley 4th order, 150 Hz default (range 120-200 Hz); woofer 45 Hz subsonic high-pass",
+   "detail": "Starting values for tuning in TI PPC3; static loudness shelves only in first release.",
+   "status": "proposal, needs owner approval",
+   "src": "ai-files/reports/firmware-system-spec-2026-11-01.md"
+  },
+  {
+   "item": "Source selection (speakers)",
+   "value": "PCM1862 input mux: USB = VIN1 (0x41), BT = VIN2 (0x42), AUX = VIN3 (0x44), 0x40 = mute",
+   "detail": "Architecture doc lists 0x01/0x02/0x04; the firmware spec corrects them using the datasheet (bit 6 reserved, write 1). PGA +6 dB for USB/BT, 0 dB for aux. Full scale 2.1 Vrms.",
+   "status": "datasheet-derived; corrected value in newer doc",
+   "src": "ai-files/reports/firmware-system-spec-2026-11-01.md"
+  },
+  {
+   "item": "ADC / clocks",
+   "value": "PCM1862 (U24) I2S master, 24.576 MHz crystal, 48 kHz, 24-bit in 32-bit slots, BCK 3.072 MHz",
+   "detail": "Y200 is YXC X322524576MOB4SI (CL 12 pF) with C226/C227 15 pF per HANDOVER (audio chain doc says 2 x 20 pF; superseded). No reset pin, MCU re-initialises after rail enable.",
+   "status": "design",
+   "src": "ai-files/HANDOVER.md"
+  },
+  {
+   "item": "USB audio codec",
+   "value": "PCM2902C (U2), full speed, powered from 5V_CODEC (67 mA max) in USB mode only",
+   "detail": "Output 0.7 Vrms nominal; no USB host-detect or SSPND signals wired.",
+   "status": "design",
+   "src": "ai-files/reports/audio-chain-architecture.md"
+  },
+  {
+   "item": "Bluetooth audio",
+   "value": "BM83SM1-00TA analogue out 0.495-0.742 Vrms",
+   "detail": "Fixed BM83 gain; volume handled in the TAS5825M. Power-off timing per datasheet Fig 6-9 (about 2 s, then reset low, then >= 1 s).",
+   "status": "design",
+   "src": "ai-files/reports/firmware-system-spec-2026-11-01.md"
+  },
+  {
+   "item": "Headphone path",
+   "value": "U8/U9 TS5A23157 mux -> U10 TPA6132A2 -> J2; loads 16-300 ohm",
+   "detail": "25 mW into 16 ohm, 1.1 Vrms into 100 ohm at 1 % THD; gain steps -6/0/+3/+6 dB, default -6 dB; analogue headroom about 1.16 Vrms on the headphone path.",
+   "status": "datasheet-derived",
+   "src": "ai-files/reports/audio-chain-architecture.md"
+  },
+  {
+   "item": "Excursion estimate",
+   "value": "Fronts with LR4 150 Hz about 1.9 mm worst case vs Xmax 3.5 mm; woofer about 4.1 mm or less vs Xmax 5 mm",
+   "detail": "Lumped model at 11.1 V peak; ignores thermal limits; to be measured.",
+   "status": "calculated",
+   "src": "ai-files/reports/firmware-system-spec-2026-11-01.md"
+  }
+ ],
+ "rails": [
+  {
+   "rail": "VBUS (raw)",
+   "voltage": "5-20 V from J1 (28 V abs max on U11 VBUS_IN)",
+   "source": "J1 USB-C, D6 TVS2200",
+   "load_or_budget": "up to 3 A contract",
+   "enable": "cable attach",
+   "status": "TVS clamp 28.0 V (27 C) to 28.35 V (125 C)",
+   "src": "ai-files/reports/power-analysis-2026-11-01.md"
+  },
+  {
+   "rail": "VBUS_PD (PPHV)",
+   "voltage": "contract voltage 5/9/15/20 V",
+   "source": "U11 TPS25730D sink path",
+   "load_or_budget": "bulk about 67 uF nominal (97 uF with PMID); limit 100 uF",
+   "enable": "PD_SINK_EN (low = enabled)",
+   "status": "calculated",
+   "src": "ai-files/reports/power-analysis-2026-11-01.md"
+  },
+  {
+   "rail": "USB_AUX_5V",
+   "voltage": "5 V",
+   "source": "U19 TPS7B8450",
+   "load_or_budget": "low current (MCU start-up path)",
+   "enable": "raw USB",
+   "status": "U19 stock 0",
+   "src": "ai-files/HANDOVER.md"
+  },
+  {
+   "rail": "LDO_3V3",
+   "voltage": "3.3 V",
+   "source": "U11 internal LDO",
+   "load_or_budget": "about 5 mA total (output; do not power adapters from J4)",
+   "enable": "PD controller",
+   "status": "datasheet limit",
+   "src": "ai-files/reports/bench-bringup-plan.md"
+  },
+  {
+   "rail": "BAT_PACK",
+   "voltage": "3.0-4.2 V (1S)",
+   "source": "Pack via J5 / SW101",
+   "load_or_budget": "always live while SW101 closed (gauge, U21, Q103 leakage)",
+   "enable": "SW101",
+   "status": "pack not selected",
+   "src": "ai-files/reports/power-analysis-2026-11-01.md"
+  },
+  {
+   "rail": "SYS_RAW / BAT_INT",
+   "voltage": "battery-referred, about 3.0-4.5 V",
+   "source": "U4 BQ25792 NVDC path",
+   "load_or_budget": "BAT_INT limit 6 A RMS / 8 A for 1 s; BQ OCP 9.3 A",
+   "enable": "ship mode / SDRV_CTRL",
+   "status": "design",
+   "src": "ai-files/HANDOVER.md"
+  },
+  {
+   "rail": "3V_AO",
+   "voltage": "3.0 V nominal",
+   "source": "U20 TPS2116 -> U12 TPS7A0230",
+   "load_or_budget": "200 mA capability, not an allocated budget",
+   "enable": "always on while SYS_RAW or USB present",
+   "status": "design",
+   "src": "ai-files/HANDOVER.md"
+  },
+  {
+   "rail": "5V_LOGIC",
+   "voltage": "4.824 V nominal",
+   "source": "U14 TPS63802",
+   "load_or_budget": "U22 + U23 up to about 155 mA",
+   "enable": "MCU PA1 (5V_LOGIC_EN)",
+   "status": "calculated",
+   "src": "ai-files/reports/bench-bringup-plan.md"
+  },
+  {
+   "rail": "3V3_AUDIO",
+   "voltage": "3.25-3.35 V expected",
+   "source": "U22 TPS7A2033 (300 mA)",
+   "load_or_budget": "speakers about 85 mA; headphones about 40 mA",
+   "enable": "tied to 5V_LOGIC",
+   "status": "calculated",
+   "src": "ai-files/reports/audio-chain-architecture.md"
+  },
+  {
+   "rail": "5V_CODEC",
+   "voltage": "about 5V_LOGIC",
+   "source": "U23 TPS22917 switch",
+   "load_or_budget": "PCM2902C 67 mA max",
+   "enable": "MCU PC7 (CODEC_PWR_EN)",
+   "status": "design",
+   "src": "ai-files/reports/audio-chain-architecture.md"
+  },
+  {
+   "rail": "3V8_BT",
+   "voltage": "3.819 V nominal (3.74-3.90 V est.)",
+   "source": "U15 TPS63802 (R150 604k / R151 91k)",
+   "load_or_budget": "500 mA reserve; BM83 BAT_IN abs max 4.3 V",
+   "enable": "MCU PA8 (BT_PWR_EN)",
+   "status": "calculated",
+   "src": "ai-files/reports/bench-bringup-plan.md"
+  },
+  {
+   "rail": "PVDD_AMP",
+   "voltage": "11.9 V (11.93 V by divider)",
+   "source": "U25 TPS61088 boost from SYS_RAW",
+   "load_or_budget": "about 1.9 A out max at 3.6 V in; about 8 A input",
+   "enable": "MCU PA7 (AMP_BOOST_EN)",
+   "status": "calculated; no load disconnect: about SYS_RAW minus a diode drop when off",
+   "src": "ai-files/reports/audio-chain-architecture.md"
+  },
+  {
+   "rail": "VMID_HP",
+   "voltage": "1.65 V",
+   "source": "47k/47k divider on 3V3_AUDIO, 4.7 uF",
+   "load_or_budget": "35 uA",
+   "enable": "with 3V3_AUDIO",
+   "status": "design",
+   "src": "ai-files/reports/audio-chain-architecture.md"
+  }
+ ],
+ "power_budget": [
+  {
+   "k": "Ship mode current (board load)",
+   "v": "17.9 uA typ / 26.8 uA max",
+   "detail": "BQ25792 11/16 uA at VBAT 8 V (no 1S figure), gauge 3/5, 1 M resistors etc. Pack protection and cell self-discharge excluded.",
+   "status": "calculated",
+   "src": "ai-files/reports/power-analysis-2026-11-01.md"
+  },
+  {
+   "k": "Electronic-off standby (state B)",
+   "v": "57.5 uA typ / 104.7 uA max",
+   "detail": "SFET on, rails off, MCU Stop 1. Largest items: PVDD diode path 22.6 uA typ, BQ25792 17 uA, three 1 M resistors 9.7 uA.",
+   "status": "calculated",
+   "src": "ai-files/reports/power-analysis-2026-11-01.md"
+  },
+  {
+   "k": "Shutdown mode (A')",
+   "v": "7.4 uA typ / 11.4 uA max",
+   "detail": "Wakes on adapter only; optional.",
+   "status": "calculated",
+   "src": "ai-files/reports/power-analysis-2026-11-01.md"
+  },
+  {
+   "k": "Idle-awake, rails off (state C)",
+   "v": "87.5 uA typ / 134.7 uA max",
+   "detail": "Adds assumed 2 % MCU run duty. BQ25792 ADC must stay off (540 uA typ).",
+   "status": "calculated",
+   "src": "ai-files/reports/power-analysis-2026-11-01.md"
+  },
+  {
+   "k": "Days to empty 10 Ah (board load only)",
+   "v": "Ship ~23 300 d; electronic-off ~7 250 d (typ); idle-awake ~4 760 d",
+   "detail": "Ideal arithmetic; cell self-discharge (about 210-420 uA equivalent) is larger and not included.",
+   "status": "calculated",
+   "src": "ai-files/reports/power-analysis-2026-11-01.md"
+  },
+  {
+   "k": "Rails on, audio idle",
+   "v": "about 3.7 mA (about 0.9-1.0 W)",
+   "detail": "Playing silence; 113 days to empty ideal; the firmware spec proposes a 3 min amp-off timer.",
+   "status": "estimated",
+   "src": "ai-files/reports/power-analysis-2026-11-01.md"
+  },
+  {
+   "k": "Typical listening",
+   "v": "about 2.2 W, about 16 h on a 36 Wh pack",
+   "detail": "Excludes BT, MCU and codec.",
+   "status": "estimated",
+   "src": "ai-files/reports/audio-chain-architecture.md"
+  },
+  {
+   "k": "Headphone mode",
+   "v": "about 20-25 mW plus source module",
+   "status": "estimated",
+   "src": "ai-files/reports/audio-chain-architecture.md"
+  },
+  {
+   "k": "PVDD boost current limit",
+   "v": "Switch peak about 7.9 A typ (6.6 A min); input at most about 8 A; worst-case pack current about 8.5 A",
+   "detail": "Below BQ25792 IBAT_OCP 9.3 A and SW101 10 A rating; tolerance up to about 9.2 A switch peak approaches the OCP (top risk).",
+   "status": "calculated",
+   "src": "ai-files/reports/audio-chain-architecture.md"
+  },
+  {
+   "k": "Peak audio output",
+   "v": "about 20-23 W out, under 9 A from the pack",
+   "status": "calculated",
+   "src": "ai-files/reports/audio-chain-architecture.md"
+  },
+  {
+   "k": "Input contracts handled",
+   "v": "5, 9, 15, 20 V at up to 3 A (EPR out of scope)",
+   "status": "design",
+   "src": "plan.md"
+  },
+  {
+   "k": "Input limit per source",
+   "v": "IINDPM set so P_in <= 17 W: 5 V/3 A 2.9 A; 9 V 1.88 A; 15 V 1.13 A; 20 V 0.85 A; unknown 5 V source 0.4 A",
+   "detail": "Firmware must write IINDPM after every contract change.",
+   "status": "calculated",
+   "src": "ai-files/reports/charge-policy-2026-11-02.md"
+  },
+  {
+   "k": "Surge clamp issue",
+   "v": "TVS2200 worst-case clamp 28.0 V at 27 C and 28.35 V at 125 C vs TPS25730D 28 V abs max",
+   "detail": "Zero margin at room temperature; 0.35 V over hot. TI recommends this pair but gives no pulse allowance. Possible LC overshoot at U11 up to +3-4 V from 20 V is a model-based upper bound, unverified.",
+   "status": "calculated; surge immunity unproven",
+   "src": "ai-files/reports/power-analysis-2026-11-01.md"
+  },
+  {
+   "k": "PPHV capacitance",
+   "v": "About 67 uF nominal (97 uF with PMID) vs limit 100 uF; effective about 22 uF (16-25) at 20 V vs NOM 47 uF",
+   "detail": "100 uF maximum met at every real bias; TI gives no MIN, consequence of low effective C at 20 V unknown. Murata bias curves not in repo.",
+   "status": "calculated",
+   "src": "ai-files/reports/power-analysis-2026-11-01.md"
+  },
+  {
+   "k": "Attach inrush",
+   "v": "0.22 A typ / 0.42 A max at sink-path enable (PPHV + PMID, 3.8 V/ms)",
+   "status": "calculated",
+   "src": "ai-files/reports/power-analysis-2026-11-01.md"
+  },
+  {
+   "k": "5 -> 20 V transition current",
+   "v": "Up to about 2-3 A source-limited with sink path closed",
+   "detail": "Whether TPS25730 holds PPHV closed during transitions is not stated locally; bench item A2.6.",
+   "status": "unverified",
+   "src": "ai-files/reports/power-analysis-2026-11-01.md"
+  },
+  {
+   "k": "Board BAT_INT copper rating",
+   "v": "6 A RMS / 8 A for 1 s (narrowest strip 3.1 mm)",
+   "status": "accepted standing decision",
+   "src": "ai-files/HANDOVER.md"
+  }
+ ],
+ "charge_policy": [
+  {
+   "k": "ICHG (fast charge)",
+   "v": "4.0 A",
+   "detail": "0.4C of the 10 Ah pack, 2.0 A per cell; REG03 = 0x0190. Supersedes the 3 A ceiling in power-analysis and firmware spec.",
+   "status": "decided 2026-11-02, firmware-only",
+   "src": "ai-files/reports/charge-policy-2026-11-02.md"
+  },
+  {
+   "k": "Input power cap",
+   "v": "17 W",
+   "detail": "Equals 4.5 A x 3.6 V / 0.95; keeps BQ25792 switch current under its 5 A rating. Any PD source of 18 W or more charges at the same rate.",
+   "status": "calculated",
+   "src": "ai-files/reports/charge-policy-2026-11-02.md"
+  },
+  {
+   "k": "Realistic charge current",
+   "v": "about 3.6-3.9 A idle; about 3.2 A playing at typical level",
+   "detail": "BQ25792 thermal loop (TREG 100 C) may reduce it from 15-20 V sources.",
+   "status": "estimated",
+   "src": "ai-files/reports/charge-policy-2026-11-02.md"
+  },
+  {
+   "k": "VREG (float voltage)",
+   "v": "4.10 V default; 4.16 V maximum mode; never 4.20 V",
+   "detail": "REG01 = 0x019A / 0x01A0. Chosen for longevity because the product is mostly plugged in.",
+   "status": "decided",
+   "src": "ai-files/reports/charge-policy-2026-11-02.md"
+  },
+  {
+   "k": "Termination / recharge",
+   "v": "ITERM 480 mA (0.05C per cell); recharge 200 mV below VREG",
+   "status": "decided",
+   "src": "ai-files/reports/charge-policy-2026-11-02.md"
+  },
+  {
+   "k": "Pre-charge",
+   "v": "480 mA up to 71.4 % of VREG",
+   "status": "decided",
+   "src": "ai-files/reports/charge-policy-2026-11-02.md"
+  },
+  {
+   "k": "Temperature window",
+   "v": "Suspend below about 1 C and above 45 C; 20 % of ICHG from 1-10 C; firmware also suspends below 3 C",
+   "detail": "Cell 0-45 C window is taken from sibling Samsung specs, not the 50S spec.",
+   "status": "decided",
+   "src": "ai-files/reports/charge-policy-2026-11-02.md"
+  },
+  {
+   "k": "Thermal regulation",
+   "v": "TREG 100 C (POR 120 C), TSHUT 130 C",
+   "status": "decided",
+   "src": "ai-files/reports/charge-policy-2026-11-02.md"
+  },
+  {
+   "k": "Safety timer",
+   "v": "8 h (up to 16 h in DPM/TREG); 24 h for sources under 15 W",
+   "status": "decided",
+   "src": "ai-files/reports/charge-policy-2026-11-02.md"
+  },
+  {
+   "k": "Battery discharge over-current",
+   "v": "Enabled at 9.3 A (off at POR)",
+   "status": "decided",
+   "src": "ai-files/reports/charge-policy-2026-11-02.md"
+  },
+  {
+   "k": "Estimated charge time",
+   "v": "about 2.8 h empty to termination from a 9 V+ source; about 3.2 h from 5 V/3 A",
+   "status": "estimated",
+   "src": "ai-files/reports/charge-policy-2026-11-02.md"
+  },
+  {
+   "k": "Pack data used",
+   "v": "Samsung 50S standard charge 2.5 A/cell (5 A pack), max 6 A/cell; from a Samsung SDI deck, not the formal spec",
+   "detail": "Formal 50S specification could not be downloaded; real PCM limits and NTC unknown until the pack quote arrives.",
+   "status": "partly unverified",
+   "src": "ai-files/reports/charge-policy-2026-11-02.md"
+  },
+  {
+   "k": "Hardware change needed",
+   "v": "None; two PCB copper fixes recommended (BAT_U4PIN_F finger at U4-22/23, R102 notch in BAT_INT strip)",
+   "detail": "Copper is not yet edited on the routing board.",
+   "status": "open",
+   "src": "ai-files/reports/charge-policy-2026-11-02.md"
+  },
+  {
+   "k": "Old bench-plan cap",
+   "v": "Bench plan still uses <= 3 A and starts at 0.5 A",
+   "status": "superseded by 4.0 A policy (2026-10-12 document)",
+   "src": "ai-files/reports/bench-bringup-plan.md"
+  }
+ ],
+ "firmware_states": [
+  {
+   "state": "S0 OFF / SHIP",
+   "description": "Battery-only deep off (BQ25792 ship mode or SW101 open). 3V_AO dead unless VBUS present; MCU unpowered. Wake: QON held 1 s or VBUS plug.",
+   "src": "ai-files/reports/firmware-system-spec-2026-11-01.md"
+  },
+  {
+   "state": "S1 STANDBY",
+   "description": "User-visible off; the only off state with VBUS present. All switched rails off, MCU in Stop, wake on SW100, encoder push, AUX plug or PD events.",
+   "src": "ai-files/reports/firmware-system-spec-2026-11-01.md"
+  },
+  {
+   "state": "S2 AWAKE-IDLE",
+   "description": "5V_LOGIC, 3V3_AUDIO and Bluetooth up, amplifiers off; 5V_CODEC on only if USB is granted and a candidate.",
+   "src": "ai-files/reports/firmware-system-spec-2026-11-01.md"
+  },
+  {
+   "state": "S3a PLAYING (speaker)",
+   "description": "Boost and both amplifiers on, PCM1862 master; U6 BTL, U7 PBTL; sequence follows datasheet 9.5.3.1.",
+   "src": "ai-files/reports/firmware-system-spec-2026-11-01.md"
+  },
+  {
+   "state": "S3b PLAYING (headphone)",
+   "description": "TPA6132A2 enabled; boost, amps and ADC off; analogue pass-through.",
+   "src": "ai-files/reports/firmware-system-spec-2026-11-01.md"
+  },
+  {
+   "state": "C CHARGING overlay",
+   "description": "Flag valid in S1-S3 whenever VBUS is valid and granted; not a state of its own.",
+   "src": "ai-files/reports/firmware-system-spec-2026-11-01.md"
+  },
+  {
+   "state": "F FAULT",
+   "description": "Latched sub-states F-AMP, F-CHG, F-PD, F-BATT, F-THERM; force amplifiers off.",
+   "src": "ai-files/reports/firmware-system-spec-2026-11-01.md"
+  },
+  {
+   "state": "Proposed timers",
+   "description": "Amps off 3 min after signal loss; S2->S1 after 20 min on battery or 60 min on external power; no standby-to-ship timer. All are proposals.",
+   "src": "ai-files/reports/firmware-system-spec-2026-11-01.md"
+  },
+  {
+   "state": "Battery policy bands",
+   "description": "LOW1 20 % (ceiling -3 dB), LOW2 10 % (-6 dB), CRIT 5 % or VCELL < 3.30 V (stop amps, S1), ship at 3 % or VCELL < 3.20 V on battery. Proposals, tune to the real pack.",
+   "src": "ai-files/reports/firmware-system-spec-2026-11-01.md"
+  }
+ ],
+ "firmware_open": [
+  {
+   "item": "No firmware exists",
+   "detail": "The firmware spec is paper only; nothing was measured on hardware.",
+   "src": "ai-files/reports/firmware-system-spec-2026-11-01.md"
+  },
+  {
+   "item": "Status indicator",
+   "detail": "No LED, buzzer or display exists; an RGB LED on PB13-15 is proposed but is a hardware change needing owner approval.",
+   "src": "ai-files/reports/firmware-system-spec-2026-11-01.md"
+  },
+  {
+   "item": "Missing signals",
+   "detail": "No button ladder, USB_SRC_DET, CODEC_SSPND, HID volume, rail power-good, or amp mute pin. USB host detection uses a TPS25730 register heuristic (untested).",
+   "src": "ai-files/reports/firmware-system-spec-2026-11-01.md"
+  },
+  {
+   "item": "Woofer mono sum",
+   "detail": "PBTL takes the left frame only; (L+R)/2 must come from a TAS5825M DSP mixer in PPC3, not verified (risk R1).",
+   "src": "ai-files/reports/firmware-system-spec-2026-11-01.md"
+  },
+  {
+   "item": "Crossover / driver protection",
+   "detail": "Owner to approve LR4 150 Hz and whether to use the PPC3 Smart Amp excursion flow (needs TI tooling access).",
+   "src": "ai-files/reports/firmware-system-spec-2026-11-01.md"
+  },
+  {
+   "item": "Timers and thresholds",
+   "detail": "Owner to approve idle timers, SOC thresholds (20/10/5/3 %), AGL steps, and charge target (4.20 vs 4.10 V; 4.10 V now chosen).",
+   "src": "ai-files/reports/firmware-system-spec-2026-11-01.md"
+  },
+  {
+   "item": "Gestures",
+   "detail": "SW100 tap play/pause, hold 1 s power, hold 5 s deep off; encoder push mute/source/pairing. All proposals needing owner decision.",
+   "src": "ai-files/reports/firmware-system-spec-2026-11-01.md"
+  },
+  {
+   "item": "Headphone volume",
+   "detail": "Only four TPA6132A2 gain steps; USB host volume cannot be moved from the speaker.",
+   "src": "ai-files/reports/firmware-system-spec-2026-11-01.md"
+  },
+  {
+   "item": "BM83 commands",
+   "detail": "AVRCP absolute volume, battery report and pairing UART commands are not in local files (unverified); baud and MFB polarity to confirm.",
+   "src": "ai-files/reports/firmware-system-spec-2026-11-01.md"
+  },
+  {
+   "item": "MAX17048 registers",
+   "detail": "Register facts are from memory because the local PDF text is unreadable.",
+   "src": "ai-files/reports/firmware-system-spec-2026-11-01.md"
+  },
+  {
+   "item": "Bench list",
+   "detail": "Nine new bench checks (ramp times, DC steps, HP_DET removal, TAS5825M PVDD scale, BM83 timing, QON idle level, etc.).",
+   "src": "ai-files/reports/firmware-system-spec-2026-11-01.md"
+  }
+ ],
+ "pcb": {
+  "stackup": [
+   {
+    "layer": "F.Cu",
+    "role": "Signals and power pours; 35 um (1 oz); all SMD parts; reference plane In1 below",
+    "src": "ai-files/pcb/work-route3/RT-3.kicad_pcb"
+   },
+   {
+    "layer": "Prepreg 7628",
+    "role": "0.2104 mm, er 4.4",
+    "src": "ai-files/pcb/work-route3/RT-3.kicad_pcb"
+   },
+   {
+    "layer": "In1.Cu",
+    "role": "Solid GND plane; 15.2 um (0.5 oz); 94 % of F.Cu signal length lies over it in R6q",
+    "src": "ai-files/reports/routing-review-r6q.md"
+   },
+   {
+    "layer": "Core FR4",
+    "role": "1.065 mm, er 4.6",
+    "src": "ai-files/pcb/work-route3/RT-3.kicad_pcb"
+   },
+   {
+    "layer": "In2.Cu",
+    "role": "Power islands, GND pieces and slow signals; 15.2 um (0.5 oz)",
+    "src": "ai-files/reports/routing-review-r6q.md"
+   },
+   {
+    "layer": "Prepreg 7628",
+    "role": "0.2104 mm, er 4.4",
+    "src": "ai-files/pcb/work-route3/RT-3.kicad_pcb"
+   },
+   {
+    "layer": "B.Cu",
+    "role": "GND pour plus signals; 35 um; returns through In2 (In1 is about 1.3 mm away)",
+    "src": "ai-files/reports/routing-review-r6q.md"
+   },
+   {
+    "layer": "Finish / thickness",
+    "role": "ENIG, 1.6 mm total, JLC04161H-7628 stack-up",
+    "src": "ai-files/fab/ORDER-NOTES.md"
+   }
+  ],
+  "facts": [
+   {
+    "k": "Board size",
+    "v": "127.5 x 137.6 mm (3 mm corner radius)",
+    "src": "ai-files/fab/ORDER-NOTES.md"
+   },
+   {
+    "k": "Layers",
+    "v": "4 (F.Cu, In1.Cu, In2.Cu, B.Cu), 1.6 mm",
+    "src": "ai-files/pcb/work-route3/RT-3.kicad_pcb"
+   },
+   {
+    "k": "Footprints",
+    "v": "360",
+    "src": "ai-files/reports/routing-s1-s3-run.md"
+   },
+   {
+    "k": "Mounting holes",
+    "v": "11 x M3 (3.2 mm PTH, GND); 24 NPTH",
+    "src": "ai-files/fab/ORDER-NOTES.md"
+   },
+   {
+    "k": "USB pair",
+    "v": "Full speed; pair 0.25 / 0.15 mm, about 92 ohm calculated; uncoupled-length waiver 18 mm",
+    "status": "waiver accepted by owner",
+    "src": "ai-files/fab/ORDER-NOTES.md"
+   },
+   {
+    "k": "BM83 position",
+    "v": "Overhangs the left board edge by 8 mm by design (antenna)",
+    "src": "ai-files/reports/cad-v11-print-ready.md"
+   },
+   {
+    "k": "Impedance control",
+    "v": "None ordered",
+    "src": "ai-files/fab/ORDER-NOTES.md"
+   },
+   {
+    "k": "Copper weights",
+    "v": "1 oz outer, 0.5 oz inner (design assumption; 1 oz inner is an allowed upgrade)",
+    "status": "assumption",
+    "src": "ai-files/fab/ORDER-NOTES.md"
+   }
+  ],
+  "rules": [
+   {
+    "k": "Geometry (owner standard 2026-11-01)",
+    "v": "Only 0/45/90 degree traces, every run as short as possible, routed in order of importance; no joint sharper than 90 degrees",
+    "src": "ai-files/reports/pcb-layout-best-practices.md"
+   },
+   {
+    "k": "Reference plane",
+    "v": "F.Cu signals over In1 GND; B.Cu sensitive nets (I2S, USB, clocks, analog audio) only over In2 GND, GND via every 5-8 mm",
+    "src": "ai-files/reports/pcb-layout-best-practices.md"
+   },
+   {
+    "k": "Spacing",
+    "v": "Parallel signals at least 3x dielectric height (0.6 mm on 0.21 mm prepreg) over runs > 3 mm; I2S-to-I2S needs its own rule",
+    "src": "ai-files/reports/pcb-layout-best-practices.md"
+   },
+   {
+    "k": "Additive rules",
+    "v": "New DRC rules placed after the neck_* relaxations and proven with a sentinel rule",
+    "src": "ai-files/reports/pcb-layout-best-practices.md"
+   },
+   {
+    "k": "Rails",
+    "v": "Analog and digital loads on 3V3 get separate branches; pours or >= 0.4 mm tracks",
+    "src": "ai-files/reports/pcb-layout-best-practices.md"
+   },
+   {
+    "k": "Switch-node proximity",
+    "v": "ILIM/PROG/TS/FB pins at least 1.0 mm from SW or L nodes unless pin pitch forbids",
+    "src": "ai-files/reports/pcb-layout-best-practices.md"
+   },
+   {
+    "k": "Corner rule",
+    "v": "Segment between 45 degree bends at least 3x trace width (min 0.4 mm on signals)",
+    "src": "ai-files/reports/pcb-layout-best-practices.md"
+   },
+   {
+    "k": "Net length",
+    "v": "Reject slow nets > 100 mm without reason (30 nets exceeded it in R6q)",
+    "src": "ai-files/reports/pcb-layout-best-practices.md"
+   },
+   {
+    "k": "Quality acceptance",
+    "v": "Length / octilinear minimum median <= 1.15 and p95 <= 1.4; clean DRC alone is not proof; run helpers/r7_metrics.py",
+    "src": "ai-files/reports/routing-s1-s3-run.md"
+   },
+   {
+    "k": "JLC 4-layer limits",
+    "v": "1 oz outer 0.10/0.10 mm track/space, min via drill 0.15 mm (0.2-0.3 preferred), annular ring >= 0.15 mm",
+    "src": "ai-files/reports/pcb-layout-best-practices.md"
+   },
+   {
+    "k": "Current handling",
+    "v": "IPC-2221: 1 oz outer 10 K rise about 0.3 mm/1 A, 1.4 mm/3 A, 3.6 mm/6 A; use pours above about 2 A; 0.3 mm via about 1 A",
+    "src": "ai-files/reports/pcb-layout-best-practices.md"
+   }
+  ],
+  "routing_status": [
+   {
+    "k": "Current routing board",
+    "v": "ai-files/pcb/work-route3/RT-3 (RT-2 plus silkscreen tiling)",
+    "status": "in progress",
+    "src": "ai-files/HANDOVER.md"
+   },
+   {
+    "k": "Connections routed",
+    "v": "145 of 283 (51.2 %); 136 router connections still open",
+    "status": "partial",
+    "src": "ai-files/reports/routing-s1-s3-run.md"
+   },
+   {
+    "k": "Exact 0/45/90 share",
+    "v": "100.000 % of 2458.7 mm",
+    "status": "verified by script",
+    "src": "ai-files/reports/routing-s1-s3-run.md"
+   },
+   {
+    "k": "DRC on RT-3",
+    "v": "0 violations, 152 unconnected items",
+    "status": "re-checked independently",
+    "src": "ai-files/reports/silk-boxes-rt3.md"
+   },
+   {
+    "k": "Length quality",
+    "v": "median length / octilinear minimum 1.175 (target <= 1.15); p95 3.59 (target <= 1.4); 14 complete nets above 1.4",
+    "status": "fails target",
+    "src": "ai-files/reports/routing-s1-s3-run.md"
+   },
+   {
+    "k": "Open-connection causes",
+    "v": "43 no exit, 65 no path, 22 topology/pin order, 4 pour island, 2 BM83 keep-out",
+    "src": "ai-files/reports/routing-s1-s3-run.md"
+   },
+   {
+    "k": "Teardrops",
+    "v": "Absent on RT-2/RT-3 (51 removed, none regenerated)",
+    "status": "open",
+    "src": "ai-files/reports/routing-s1-s3-run.md"
+   },
+   {
+    "k": "Silkscreen",
+    "v": "Section boxes tile the board: 22 faces, one title each, 0 footprints moved",
+    "status": "gates G1-G6 pass",
+    "src": "ai-files/reports/silk-boxes-rt3.md"
+   },
+   {
+    "k": "Placement baseline",
+    "v": "R10 placement; no pad-net changes, S1 22/31 connections vs 18/31 before",
+    "status": "accepted baseline",
+    "src": "ai-files/reports/pcb-placement-r10.md"
+   },
+   {
+    "k": "Adopted board in DesktopSpeaker-kicad/",
+    "v": "Old R6q board: DRC 0/0 but only 38.5 % of copper length on exact 0/45/90; 57 % of B.Cu signal length without In2 GND; I2S 0.20 mm apart for 62-86 mm",
+    "status": "superseded; do not order as is",
+    "src": "ai-files/reports/routing-review-r6q.md"
+   },
+   {
+    "k": "Next routing steps",
+    "v": "Hand templates, small placement nudges, router fixes, then teardrops, silk_tile on the final board, position files and fab output",
+    "status": "planned",
+    "src": "ai-files/HANDOVER.md"
+   }
+  ],
+  "fab_outputs": [
+   {
+    "k": "Fab set in repo",
+    "v": "R9 gerber zip (11 layers), PTH/NPTH drills, drill report, JLC and KiCad position files in ai-files/fab/out/",
+    "status": "exists; generated from the old R6q board, not from RT-3",
+    "src": "ai-files/fab/ORDER-NOTES.md"
+   },
+   {
+    "k": "Release review R8",
+    "v": "Verdict NOT READY (U11 pad mask/paste openings); reported fixed in R9",
+    "status": "fix reported in HANDOVER; no re-review report found",
+    "src": "ai-files/reports/release-review-r8.md"
+   },
+   {
+    "k": "Order options",
+    "v": "4 layers, 1.6 mm, ENIG, tented vias, 0.2 mm via hole option, Confirm production file, single piece",
+    "status": "notes only; nothing ordered",
+    "src": "ai-files/fab/ORDER-NOTES.md"
+   },
+   {
+    "k": "Position file rows",
+    "v": "HANDOVER: CPL 345 rows (347 placements in R8 fab_check); ORDER-NOTES text says 318 placements and 90 BOM lines",
+    "status": "documents disagree",
+    "src": "ai-files/HANDOVER.md"
+   },
+   {
+    "k": "Fab output for the restart board",
+    "v": "None yet; position files and fab output regenerate after routing is final",
+    "status": "not started",
+    "src": "ai-files/HANDOVER.md"
+   }
+  ]
+ },
+ "assembly": {
+  "summary": "Hand assembly at home: hand-printed stainless stencil, tweezers, large hotplate, iron/hot-air rework, Chemtools leaded paste. Layout must suit it. Values below are research starting points, not measured on this board.",
+  "steps": [
+   {
+    "k": "Stencil foil",
+    "v": "0.10 mm laser-cut stainless, electropolished (0.12 mm if few 0.4 mm-pitch parts)",
+    "status": "recommendation (sources disagree 0.10-0.15 mm)",
+    "src": "ai-files/reports/hand-assembly-research-2026-11-01.md"
+   },
+   {
+    "k": "Aperture checks",
+    "v": "Area ratio >= 0.66 and aspect ratio >= 1.5 for every aperture; do not rely on the fab",
+    "status": "consensus of vendor sources",
+    "src": "ai-files/reports/hand-assembly-research-2026-11-01.md"
+   },
+   {
+    "k": "Thermal pads",
+    "v": "Paste as 'window panes' covering 50-75 % of QFN pad, webs >= 0.25 mm, panes between open vias (<= 0.3 mm, 1.0 mm pitch)",
+    "status": "consensus 50-75 %; opinion on webs",
+    "src": "ai-files/reports/hand-assembly-research-2026-11-01.md"
+   },
+   {
+    "k": "Alignment",
+    "v": "3 non-plated tooling holes about 2.5 mm at board corners plus a jig; test print on a spare board",
+    "status": "opinion default",
+    "src": "ai-files/reports/hand-assembly-research-2026-11-01.md"
+   },
+   {
+    "k": "Solder paste",
+    "v": "Chemtools leaded Sn63/Pb37 (Altronics H1640 / NC254); 24 h stencil life claimed by retailer",
+    "status": "flux type, powder type and TDS profile not read",
+    "src": "ai-files/reports/hand-assembly-research-2026-11-01.md"
+   },
+   {
+    "k": "Reflow",
+    "v": "Hotplate from below, watch paste turn shiny; thermocouple on the board recommended",
+    "status": "starting point",
+    "src": "ai-files/reports/hand-assembly-research-2026-11-01.md"
+   },
+   {
+    "k": "Parts soldered by iron after reflow",
+    "v": "Polymer cap C275, JST VH, Micro-Fit, 3.5 mm jacks, encoder, tact switches (unless reflow-rated), USB-C if not rated",
+    "status": "opinion; check each datasheet",
+    "src": "ai-files/reports/hand-assembly-research-2026-11-01.md"
+   },
+   {
+    "k": "BM83 module",
+    "v": "May be reflowed (peak <= 260 C per Microchip snippet); check castellation bridging; hand-fix edge pads",
+    "status": "single-voice source",
+    "src": "ai-files/reports/hand-assembly-research-2026-11-01.md"
+   },
+   {
+    "k": "Moisture-sensitive parts",
+    "v": "Bake per MSL label before reflow (BM83, TAS5825M, QFNs); typical 125 C 4-24 h",
+    "status": "opinion, not verified",
+    "src": "ai-files/reports/hand-assembly-research-2026-11-01.md"
+   },
+   {
+    "k": "Via rules",
+    "v": "No via-in-pad for passives; open thermal vias on top, tented on B.Cu",
+    "status": "recommendation; sources dispute open vs plugged",
+    "src": "ai-files/reports/hand-assembly-research-2026-11-01.md"
+   }
+  ],
+  "profile": [
+   {
+    "stage": "Liquidus",
+    "v": "183 C (Sn63/Pb37)",
+    "src": "ai-files/reports/hand-assembly-research-2026-11-01.md"
+   },
+   {
+    "stage": "Ramp",
+    "v": "<= 2 C/s (opinion; vendor range 1.5-2.5 C/s)",
+    "src": "ai-files/reports/hand-assembly-research-2026-11-01.md"
+   },
+   {
+    "stage": "Soak",
+    "v": "about 150 C (to 155-183 C) for 60-90 s",
+    "src": "ai-files/reports/hand-assembly-research-2026-11-01.md"
+   },
+   {
+    "stage": "Time above liquidus",
+    "v": "45-90 s (opinion)",
+    "src": "ai-files/reports/hand-assembly-research-2026-11-01.md"
+   },
+   {
+    "stage": "Peak",
+    "v": "205-220 C, aim 215 C",
+    "src": "ai-files/reports/hand-assembly-research-2026-11-01.md"
+   },
+   {
+    "stage": "Cooling",
+    "v": "<= 4 C/s; lift board off the plate to cool",
+    "src": "ai-files/reports/hand-assembly-research-2026-11-01.md"
+   }
+  ],
+  "notes": [
+   {
+    "v": "Owner answers applied: hotplate is very large, so board size and plate uniformity were not researched.",
+    "src": "ai-files/reports/hand-assembly-research-2026-11-01.md"
+   },
+   {
+    "v": "All SMD is on the top side; plate contact must be flat, so no B.Cu parts or protruding solder.",
+    "src": "ai-files/reports/hand-assembly-research-2026-11-01.md"
+   },
+   {
+    "v": "Several sources were not reachable (Chemtools TDS, IPC-7525/7351 text, TAS5825M package addendum, BM83 pad drawing); evidence for hotplate profiles is thin.",
+    "src": "ai-files/reports/hand-assembly-research-2026-11-01.md"
+   },
+   {
+    "v": "Out-of-stock parts (U1, U2, U19) do not block hand assembly; the owner buys from any supplier and does not need JLC assembly stock.",
+    "src": "ai-files/reports/bom-restock-2026-11-01.md"
+   },
+   {
+    "v": "U11 TPS25730D paste/mask openings were rebuilt as solid rectangles (R9) after the comb-shaped 0.1 mm openings were found.",
+    "src": "ai-files/HANDOVER.md"
+   }
+  ]
+ },
+ "mechanical": [
+  {
+   "k": "Outer size",
+   "v": "163 x 100 x 206.6 mm (X x Z x Y, lid included)",
+   "status": "CAD",
+   "src": "ai-files/cad/volumes.md"
+  },
+  {
+   "k": "Walls / lid",
+   "v": "3 mm walls, 4 mm lid, 2 x 1.5 mm foam gasket groove in the lid",
+   "status": "design",
+   "src": "ai-files/reports/cad-v11-print-ready.md"
+  },
+  {
+   "k": "Print bodies",
+   "v": "Shell 163 x 100 x 202.6 (baffle down); woofer-chamber insert 122 x 126.6 x 55 (roof down, bonded in floor grooves); lid 163 x 100 x 4",
+   "status": "STLs generated in ai-files/cad/print/; not slice-checked",
+   "src": "ai-files/reports/cad-v11-print-ready.md"
+  },
+  {
+   "k": "Print material",
+   "v": "FDM 0.4 mm nozzle, PETG or ASA, no supports",
+   "status": "design",
+   "src": "ai-files/reports/cad-v11-print-ready.md"
+  },
+  {
+   "k": "Chamber volumes",
+   "v": "Woofer 0.525 L net (sealed); main 2.025 L net",
+   "status": "CAD-computed",
+   "src": "ai-files/cad/volumes.md"
+  },
+  {
+   "k": "Internal cavity",
+   "v": "2.946 L total",
+   "status": "CAD-computed",
+   "src": "ai-files/cad/volumes.md"
+  },
+  {
+   "k": "Fasteners",
+   "v": "M3 heat-set inserts (5.7 mm) in 4.0 mm pilots; PCB on 10 mm hex spacers with M3x16; 11 lid screws; 8 driver screws; 4 woofer screws",
+   "status": "design",
+   "src": "ai-files/reports/cad-v11-print-ready.md"
+  },
+  {
+   "k": "PCB mounting",
+   "v": "11 holes; insert roof top z 57.0, PCB bottom z 67.0",
+   "status": "CAD",
+   "src": "ai-files/reports/cad-v11-print-ready.md"
+  },
+  {
+   "k": "Screw engagement",
+   "v": "Drivers 9.25 mm, woofer 6.0, lid 6.0, PCB 4.4 (limit >= 3.5)",
+   "status": "CAD-computed",
+   "src": "ai-files/reports/cad-v11-print-ready.md"
+  },
+  {
+   "k": "Lid web J1 / SW100",
+   "v": "4.41 mm; separate openings",
+   "status": "CAD (R6q board)",
+   "src": "ai-files/reports/cad-v11-print-ready.md"
+  },
+  {
+   "k": "Rocker SW101",
+   "v": "GRB112B802BR1, 20.2 mm hole + key notch; 28 mm inside pocket leaves a 2.0 mm panel (snap-in range 1.5-2.5 mm)",
+   "status": "CAD; panel thickness assumed",
+   "src": "ai-files/cad/README.md"
+  },
+  {
+   "k": "Encoder knob dish",
+   "v": "36 mm dish over the SW102 shaft; teardrop shaped so no supports; 8 mm of shaft exposed; 30 x 14 knob stand-in",
+   "status": "CAD",
+   "src": "ai-files/cad/README.md"
+  },
+  {
+   "k": "Woofer aperture",
+   "v": "76.2 mm (Parts Express cutout); 77 mm bolt circle assumed and conflicts",
+   "status": "unverified; fallback printed clamp ring ID 74 / OD 96 on 90 mm circle",
+   "src": "ai-files/reports/cad-v11-print-ready.md"
+  },
+  {
+   "k": "Battery cradle",
+   "v": "Printed in shell floor with strap anchors; pack 72.5 x 44 x 22 class",
+   "status": "design; pack not selected",
+   "src": "ai-files/reports/cad-v11-print-ready.md"
+  },
+  {
+   "k": "Still-assumed mechanical items",
+   "v": "Woofer flange/holes/magnet, rocker panel thickness, PCM size, grommet (Heyco 2000 wants 6.35 mm hole), SW100 plunger height, plug body sizes, J5/J9-J11 bodies",
+   "status": "assumptions",
+   "src": "ai-files/cad/README.md"
+  },
+  {
+   "k": "Library 3D offsets",
+   "v": "BM83 offset z -5.41 and XFL4015 z 1.5 fixed on the board; after any footprint edit re-check they survive",
+   "status": "fixed; regression happened once",
+   "src": "ai-files/HANDOVER.md"
+  }
+ ],
+ "verification": [
+  {
+   "area": "CAD",
+   "check": "Pairwise interference of all solids",
+   "result": "PASS",
+   "detail": "165 solids, 0 unintended overlaps, 41 intended (38 heat-set inserts, J2/J3 pins, knob on shaft).",
+   "src": "ai-files/cad/interference.md"
+  },
+  {
+   "area": "CAD",
+   "check": "Chamber volumes and clearances",
+   "result": "PASS",
+   "detail": "Woofer 0.525 L, main 2.025 L; wall/boss clearances in v11 report.",
+   "src": "ai-files/cad/volumes.md"
+  },
+  {
+   "area": "CAD",
+   "check": "Slicer re-check of print bodies",
+   "result": "NOT RUN",
+   "detail": "Wall thickness and first-layer area not checked in a slicer; no print reported.",
+   "src": "ai-files/reports/cad-v11-print-ready.md"
+  },
+  {
+   "area": "PCB RT-3",
+   "check": "DRC violations (project rules)",
+   "result": "PASS",
+   "detail": "0 violations on RT-3.",
+   "src": "ai-files/reports/silk-boxes-rt3.md"
+  },
+  {
+   "area": "PCB RT-3",
+   "check": "DRC unconnected",
+   "result": "OPEN",
+   "detail": "152 unconnected items; 145/283 connections routed.",
+   "src": "ai-files/reports/silk-boxes-rt3.md"
+  },
+  {
+   "area": "PCB RT-3",
+   "check": "Exact 0/45/90 geometry",
+   "result": "PASS",
+   "detail": "100 % of 2458.7 mm.",
+   "src": "ai-files/reports/routing-s1-s3-run.md"
+  },
+  {
+   "area": "PCB RT-3",
+   "check": "Length quality vs octilinear minimum",
+   "result": "FAIL",
+   "detail": "Median 1.175 (target <= 1.15), p95 3.59 (target <= 1.4).",
+   "src": "ai-files/reports/routing-s1-s3-run.md"
+  },
+  {
+   "area": "PCB RT-3",
+   "check": "Silkscreen tiling gates G1-G6",
+   "result": "PASS",
+   "detail": "0 footprints moved, 0 line clearance violations.",
+   "src": "ai-files/reports/silk-boxes-rt3.md"
+  },
+  {
+   "area": "PCB RT-3",
+   "check": "B.Cu GND-via stitching along runs",
+   "result": "FAIL",
+   "detail": "Three nets exceed 8 mm GND via spacing (Net-(C234-Pad2), AUX_R, BT_AUDIO_R).",
+   "src": "ai-files/reports/routing-s1-s3-run.md"
+  },
+  {
+   "area": "PCB R6q (adopted)",
+   "check": "DRC",
+   "result": "PASS",
+   "detail": "0 violations, 0 unconnected on KiCad 10.0.7 (2026-11-01); 244 schematic-parity warnings until the GUI update.",
+   "src": "ai-files/reports/routing-review-r6q.md"
+  },
+  {
+   "area": "PCB R6q (adopted)",
+   "check": "Owner routing standard",
+   "result": "FAIL",
+   "detail": "38.5 % of copper length exactly on 0/45/90; 57 % of B.Cu signal length has no GND beneath it; I2S 0.20 mm apart.",
+   "src": "ai-files/reports/routing-review-r6q.md"
+  },
+  {
+   "area": "PCB R6q (adopted)",
+   "check": "Release review R8",
+   "result": "ACCEPTED",
+   "detail": "NOT READY at R8 for the U11 openings; fixed in R9; 22 vias with hole 0-0.13 mm from a same-net 0402 pad opening accepted for post-assembly inspection.",
+   "src": "ai-files/reports/release-review-r8.md"
+  },
+  {
+   "area": "Fab output",
+   "check": "fab_check.py consistency (R8 set)",
+   "result": "PASS",
+   "detail": "16 files, PTH 958 = pads + vias, NPTH 24, 347 placements, extents inside outline except BM83 silk overhang.",
+   "src": "ai-files/HANDOVER.md"
+  },
+  {
+   "area": "Fab output",
+   "check": "Fab output for RT-3",
+   "result": "NOT RUN",
+   "detail": "Not generated; the restart board is not final.",
+   "src": "ai-files/HANDOVER.md"
+  },
+  {
+   "area": "Schematic",
+   "check": "ERC",
+   "result": "PASS",
+   "detail": "ERC 0 at default severity with one documented exclusion (U11 VIN_3V3 power_pin_not_driven); last recorded 2026-10-10, no later run found.",
+   "src": "ai-files/reports/project-review-fable.md"
+  },
+  {
+   "area": "Power",
+   "check": "TVS2200 clamp vs TPS25730D 28 V",
+   "result": "OPEN",
+   "detail": "Exceeds abs max by up to 0.35 V hot; surge immunity unproven; bench item.",
+   "src": "ai-files/reports/power-analysis-2026-11-01.md"
+  },
+  {
+   "area": "Power",
+   "check": "Standby and charge budgets",
+   "result": "NOT RUN",
+   "detail": "Calculated from datasheets only; no measurement; BQ25792 figures are at VBAT 8 V.",
+   "src": "ai-files/reports/power-analysis-2026-11-01.md"
+  },
+  {
+   "area": "Bench",
+   "check": "Bring-up plan (10 stages)",
+   "result": "NOT RUN",
+   "detail": "Plan written 2026-10-12; no board assembled and no firmware exists. Everything electrical is calculated or assumed.",
+   "src": "ai-files/reports/bench-bringup-plan.md"
+  },
+  {
+   "area": "Mechanical",
+   "check": "SW100 footprint vs TE drawing",
+   "result": "OPEN",
+   "detail": "2026-11-01 comparison: pads, bracket tabs and hole position differ; library file marked DRAFT.",
+   "src": "ai-files/HANDOVER.md"
+  }
+ ],
+ "open_items": [
+  {
+   "area": "BOM",
+   "item": "U1 BM83SM1-00TA, U2 PCM2902CDBR, U19 TPS7B8450 at 0 stock",
+   "detail": "0 at LCSC and JLC on 2026-11-01. Buy identical MPN from Digi-Key/Mouser/TI/Microchip; BM83 -00AA/-00AB variants need Microchip confirmation. Does not block hand assembly.",
+   "owner": "user",
+   "src": "ai-files/reports/bom-restock-2026-11-01.md"
+  },
+  {
+   "area": "BOM",
+   "item": "Partial BOM subtotals",
+   "detail": "$101.69 fitted / $124.59 in-stock order (2026-10-10 snapshot); 93 of 101 rows coded, 6 unresolved, 11 below order quantity. Not a product cost. Hardware buy list about A$474 plus pack, grilles, shipping.",
+   "owner": "user",
+   "src": "ai-files/HANDOVER.md"
+  },
+  {
+   "area": "Battery",
+   "item": "Pack not selected",
+   "detail": "Quotes needed from Keeppower and CM Batteries with NTC, PCM >= 10 A / 5 A charge, price, AU shipping.",
+   "owner": "user",
+   "src": "ai-files/reports/sourcing-2026-10-12.md"
+  },
+  {
+   "area": "Battery",
+   "item": "50S charge window unverified",
+   "detail": "0-45 C window comes from sibling cell specs; formal 50S spec not downloadable; PCM charge-OCP and OV unknown (if OCP < 4.5 A, cap ICHG at 80 %).",
+   "owner": "unknown",
+   "src": "ai-files/reports/charge-policy-2026-11-02.md"
+  },
+  {
+   "area": "Datasheets",
+   "item": "TPS61088 and PESD5V0S2BT datasheets missing locally",
+   "detail": "Downloads returned 404/403; only a TPS61088 layout excerpt is stored. Save manually.",
+   "owner": "user",
+   "src": "ai-files/HANDOVER.md"
+  },
+  {
+   "area": "Power",
+   "item": "Surge immunity unproven",
+   "detail": "TVS2200 clamp exceeds the 28 V abs max slightly; options (higher-voltage PD cap) listed, none applied.",
+   "owner": "user",
+   "src": "ai-files/reports/power-analysis-2026-11-01.md"
+  },
+  {
+   "area": "Power",
+   "item": "PD voltage cap decision",
+   "detail": "Optional ADCIN2 divider would cap contracts at 9 or 15 V; charge speed unchanged; not applied.",
+   "owner": "user",
+   "src": "ai-files/reports/charge-policy-2026-11-02.md"
+  },
+  {
+   "area": "Mechanical",
+   "item": "SW100 footprint vs TE drawing",
+   "detail": "Land pattern is DRAFT and disagrees with the TE drawing; verify before ordering.",
+   "owner": "agent",
+   "src": "ai-files/HANDOVER.md"
+  },
+  {
+   "area": "Mechanical",
+   "item": "Woofer bolt circle and dimensions",
+   "detail": "Bolt circle, hole diameter, flange thickness, magnet diameter unverified; no maker drawing.",
+   "owner": "user",
+   "src": "ai-files/reports/sourcing-2026-10-12.md"
+  },
+  {
+   "area": "Mechanical",
+   "item": "Panel and part assumptions",
+   "detail": "Rocker panel thickness, PCM size, grommet hole, SW100 plunger, plug bodies still assumed.",
+   "owner": "unknown",
+   "src": "ai-files/cad/README.md"
+  },
+  {
+   "area": "PCB",
+   "item": "Finish routing (136 open connections)",
+   "detail": "Hand templates, placement nudges, router reservation/pin-stack fixes, then teardrops, silk_tile, position files, fab output.",
+   "owner": "agent",
+   "src": "ai-files/reports/routing-s1-s3-run.md"
+  },
+  {
+   "area": "PCB",
+   "item": "Owner decisions on U4-18 BATP clearance and J7 edge clearance",
+   "detail": "U4-18 hand-routed with narrow documented exemption; J7 hole clearance 0.25 mm at J7 only (confirm JLC minimum).",
+   "owner": "user",
+   "src": "ai-files/HANDOVER.md"
+  },
+  {
+   "area": "PCB",
+   "item": "Battery-path copper fixes",
+   "detail": "Widen BAT_U4PIN_F finger at U4-22/23 and move R102 out of the BAT_INT strip for the 2x margin at 4 A charge.",
+   "owner": "agent",
+   "src": "ai-files/reports/charge-policy-2026-11-02.md"
+  },
+  {
+   "area": "Firmware",
+   "item": "Firmware and open decisions",
+   "detail": "No firmware; LED, crossover, timers, thresholds and gestures need owner approval (see firmware_open).",
+   "owner": "user",
+   "src": "ai-files/reports/firmware-system-spec-2026-11-01.md"
+  },
+  {
+   "area": "Documents",
+   "item": "Stale documents",
+   "detail": "plan.md header dated 2026-10-05; HANDOVER top summary dated 2026-10-10 and old sections still mention STUSB4500/BQ25895/STL9P3LLH6; reports/mcu-pin-allocation.md line 8 still lists the cut C163/C164; ORDER-NOTES title says R9 but body says R8.",
+   "owner": "agent",
+   "src": "ai-files/HANDOVER.md"
+  },
+  {
+   "area": "Documents",
+   "item": "Conflicting numbers between documents",
+   "detail": "Charge cap 3 A (bench plan, older HANDOVER) vs 4.0 A (charge policy); standby 35-40 uA (firmware spec 2.4) vs 57/105 uA (power analysis); PCM1862 codes 0x01/0x02/0x04 vs 0x41/0x42/0x44; board 116 x 112/152 mm (old CAD) vs 127.5 x 137.6 mm.",
+   "owner": "agent",
+   "src": "ai-files/reports/power-analysis-2026-11-01.md"
+  },
+  {
+   "area": "Assembly",
+   "item": "Paste TDS and package drawings unread",
+   "detail": "Chemtools TDS, BM83 pad dimensions/antenna keep-out, TAS5825M package addendum not obtained; profile values are starting points.",
+   "owner": "user",
+   "src": "ai-files/reports/hand-assembly-research-2026-11-01.md"
+  },
+  {
+   "area": "Audio",
+   "item": "Boost compensation and PFM acoustics",
+   "detail": "Compensation values calculated only; PFM bursts may be audible; FPWM option (R256) is DNP.",
+   "owner": "unknown",
+   "src": "ai-files/reports/audio-chain-architecture.md"
+  }
+ ],
+ "documents": [
+  {
+   "title": "Project handover",
+   "path": "ai-files/HANDOVER.md",
+   "what": "Design decisions, standing decisions, evidence index; newest sections at the end",
+   "date": "2026-11-02"
+  },
+  {
+   "title": "Schematic completion plan",
+   "path": "plan.md",
+   "what": "Checklist and subsystem status (header date stale)",
+   "date": "2026-11-01"
+  },
+  {
+   "title": "Charge policy",
+   "path": "ai-files/reports/charge-policy-2026-11-02.md",
+   "what": "ICHG 4 A, 17 W cap, VREG 4.10 V, register table, battery data",
+   "date": "2026-11-02"
+  },
+  {
+   "title": "Power analysis",
+   "path": "ai-files/reports/power-analysis-2026-11-01.md",
+   "what": "Standby budget, TVS clamp, PPHV capacitance, inrush",
+   "date": "2026-11-01"
+  },
+  {
+   "title": "Firmware system spec",
+   "path": "ai-files/reports/firmware-system-spec-2026-11-01.md",
+   "what": "States, sequencing, controls, open decisions",
+   "date": "2026-11-01"
+  },
+  {
+   "title": "Audio chain architecture",
+   "path": "ai-files/reports/audio-chain-architecture.md",
+   "what": "Source select, DAC/ADC, amps, boost, headphone path",
+   "date": "2026-10-06"
+  },
+  {
+   "title": "Hand assembly research",
+   "path": "ai-files/reports/hand-assembly-research-2026-11-01.md",
+   "what": "Stencil, leaded paste, hotplate profile, DFA rules",
+   "date": "2026-11-01"
+  },
+  {
+   "title": "PCB layout best practices",
+   "path": "ai-files/reports/pcb-layout-best-practices.md",
+   "what": "Per-IC layout checklists and section 14 routing standard",
+   "date": "2026-11-01"
+  },
+  {
+   "title": "Routing review R6q",
+   "path": "ai-files/reports/routing-review-r6q.md",
+   "what": "Why the old routing was restarted",
+   "date": "2026-11-01"
+  },
+  {
+   "title": "Routing stages S1-S3",
+   "path": "ai-files/reports/routing-s1-s3-run.md",
+   "what": "RT-2 result: 145/283 connections, remaining problems",
+   "date": "2026-11-02"
+  },
+  {
+   "title": "Silkscreen section boxes RT-3",
+   "path": "ai-files/reports/silk-boxes-rt3.md",
+   "what": "Silkscreen tiling gates",
+   "date": "2026-11-02"
+  },
+  {
+   "title": "Placement R10",
+   "path": "ai-files/reports/pcb-placement-r10.md",
+   "what": "Placement baseline for the restart",
+   "date": "2026-11-02"
+  },
+  {
+   "title": "Release review R8",
+   "path": "ai-files/reports/release-review-r8.md",
+   "what": "Pre-order review of the old board",
+   "date": "2026-10-12"
+  },
+  {
+   "title": "Fab order notes",
+   "path": "ai-files/fab/ORDER-NOTES.md",
+   "what": "JLC order options and checklist",
+   "date": "2026-10-12"
+  },
+  {
+   "title": "Bench bring-up plan",
+   "path": "ai-files/reports/bench-bringup-plan.md",
+   "what": "Ten-stage bench plan with expected values",
+   "date": "2026-10-12"
+  },
+  {
+   "title": "CAD README",
+   "path": "ai-files/cad/README.md",
+   "what": "Enclosure model history v3-v11.2",
+   "date": "2026-10-12"
+  },
+  {
+   "title": "CAD v11 print-ready",
+   "path": "ai-files/reports/cad-v11-print-ready.md",
+   "what": "Print bodies, lid, PCB stack, checks",
+   "date": "2026-10-12"
+  },
+  {
+   "title": "CAD volumes",
+   "path": "ai-files/cad/volumes.md",
+   "what": "Chamber volumes",
+   "date": "2026-10-12"
+  },
+  {
+   "title": "CAD interference",
+   "path": "ai-files/cad/interference.md",
+   "what": "Overlap check results",
+   "date": "2026-10-12"
+  },
+  {
+   "title": "Sourcing 2026-10-12",
+   "path": "ai-files/reports/sourcing-2026-10-12.md",
+   "what": "Woofer data, encoder, rocker, battery pack",
+   "date": "2026-10-12"
+  },
+  {
+   "title": "BOM restock",
+   "path": "ai-files/reports/bom-restock-2026-11-01.md",
+   "what": "Zero-stock parts U1, U2, U19",
+   "date": "2026-11-01"
+  },
+  {
+   "title": "Battery pack RFQ",
+   "path": "ai-files/reports/battery-pack-rfq.md",
+   "what": "Draft quote request",
+   "date": "2026-10-12"
+  },
+  {
+   "title": "Hardware buy list",
+   "path": "ai-files/bom/hardware-buy-list.md",
+   "what": "Hardware and consumables list",
+   "date": "2026-10-12"
+  },
+  {
+   "title": "Whole-project review",
+   "path": "ai-files/reports/project-review-fable.md",
+   "what": "Review of schematic, board and bring-up",
+   "date": "2026-10-10"
+  },
+  {
+   "title": "Bluetooth notes",
+   "path": "ai-files/reports/bluetooth-notes.md",
+   "what": "BM83 sheet notes",
+   "date": "2026-10-06"
+  },
+  {
+   "title": "USB audio notes",
+   "path": "ai-files/reports/usb-audio-notes.md",
+   "what": "PCM2902C notes",
+   "date": "2026-10-06"
+  },
+  {
+   "title": "Power control contract",
+   "path": "ai-files/reports/replacement-power-control-contract.md",
+   "what": "Charger/PD start-up contract",
+   "date": "2026-10-05"
+  },
+  {
+   "title": "MCU pin allocation",
+   "path": "ai-files/reports/mcu-pin-allocation.md",
+   "what": "STM32G071 pin map (line 8 stale)",
+   "date": "2026-10-11"
+  }
+ ]
+}

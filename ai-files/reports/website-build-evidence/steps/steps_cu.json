@@ -1,0 +1,2 @@
+[{"js":"new Promise(r=>{const t0=Date.now();const f=()=>{if(V.ok||Date.now()-t0>150000)r(V.parts.length);else setTimeout(f,500)};f()})","wait":1},
+ {"js":"new Promise(r=>{const cb=document.querySelector('#optfiles input');cb.click();['t-enc','t-lid','t-bat','t-drv'].forEach(i=>document.getElementById(i).click());document.querySelector('[data-view=top]').click();const t0=Date.now();const f=()=>{if(V.optional[0].loaded||Date.now()-t0>150000)r([V.parts.length,V.optional[0].loaded]);else setTimeout(f,500)};f()})","wait":4,"shot":"copper"}]

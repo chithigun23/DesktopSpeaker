@@ -1,0 +1,8 @@
+[{"js":"new Promise(r=>{const t0=Date.now();const f=()=>{if(V.ok||Date.now()-t0>90000)r(V.ok);else setTimeout(f,500)};f()})","wait":1},
+ {"js":"{document.querySelector('[data-view=top]').click();document.getElementById('t-enc').click();document.getElementById('t-lid').click();document.getElementById('t-bat').click();1}","wait":3},
+ {"mouse":[540,575],"wait":0.3},{"mouse":[542,577],"wait":3,"shot":"pcbhover"},
+ {"js":"document.getElementById('part').innerText"},
+ {"js":"{document.getElementById('gall').click();const c=document.getElementById('clx');c.value=450;c.dispatchEvent(new Event('input'));document.querySelector('[data-view=front]').click();1}","wait":4,"shot":"section"},
+ {"js":"{const c=document.getElementById('clx');c.value=1000;c.dispatchEvent(new Event('input'));document.getElementById('t-wire').click();document.querySelector('[data-view=iso]').click();1}","wait":4,"shot":"wire"},
+ {"theme":"dark","js":"{document.getElementById('t-wire').click();const x=document.getElementById('explode');x.value=60;x.dispatchEvent(new Event('input'));x.dispatchEvent(new Event('change'));1}","wait":5,"shot":"dark"},
+ {"js":"document.querySelector('#bom').scrollIntoView();1","wait":1,"shot":"darkbom"}]

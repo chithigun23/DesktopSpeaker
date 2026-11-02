@@ -1,0 +1,79 @@
+{
+ "version": "v12",
+ "date": "2026-11-02",
+ "board": "RT-3 (placement R10)",
+ "board_sha256": "10eda9517d11d5e6",
+ "verdict": "The enclosure still fits board RT-3 (placement R10): 0 unintended overlaps, all rear-lid cutouts still aligned, the 11 PCB holes and standoffs unchanged. One enclosure fix was made (knob dish axis, 0.86 mm). The woofer bolt circle remains an open owner decision.",
+ "solids": 165,
+ "unintended_overlaps": 0,
+ "intended_overlaps": 41,
+ "woofer_net_L": 0.525,
+ "main_net_L": 2.025,
+ "outer_mm": [
+  163.0,
+  100.0,
+  206.6
+ ],
+ "mass_total_g_estimated": 1732,
+ "lid_cutouts": {
+  "J1": {
+   "radial_margin_mm": 1.45,
+   "ok": true
+  },
+  "J2": {
+   "radial_margin_mm": 1.25,
+   "ok": true
+  },
+  "J3": {
+   "radial_margin_mm": 1.25,
+   "ok": true
+  },
+  "SW100": {
+   "radial_margin_mm": 1.25,
+   "ok": true
+  },
+  "SW101": {
+   "radial_margin_mm": 0.2,
+   "ok": "panel fit (snap-in body sits in the hole by design)"
+  }
+ },
+ "dish": {
+  "axis_x": -33.82,
+  "axis_y": 121.16,
+  "hole_radial_clearance_mm": 1.25,
+  "exposed_shaft_mm": 8.0
+ },
+ "min_part_to_enclosure_mm": 1.51,
+ "min_part_to_enclosure_ref": "J2",
+ "tallest_part_except_SW102_shaft": {
+  "ref": "J4",
+  "gap_to_top_wall_mm": 19.86
+ },
+ "pcb_overlay": {
+  "board_body_err_mm": 0.084,
+  "max_hole_to_standoff_err_mm": 0.007
+ },
+ "glb_bytes": {
+  "enclosure": 9998608,
+  "pcb": 15546500,
+  "pcb_copper_optional": 18132924
+ },
+ "triangles": {
+  "enclosure": 325211,
+  "pcb": 421081
+ },
+ "accuracy_counts": {
+  "<0.5mm": 3,
+  "unverified": 95,
+  "estimated": 16
+ },
+ "pcb_models": {
+  "with_model": 314,
+  "accuracy": "unverified (v13 audit pending)"
+ },
+ "problems": [
+  "C275 3D model link: footprint CP_Elec_8x10 points to CP_Elec_6.3x7.7.step",
+  "Woofer W3-2052SC bolt circle still unverified"
+ ],
+ "open_items": 8
+}

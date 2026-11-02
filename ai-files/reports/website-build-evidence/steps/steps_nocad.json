@@ -1,0 +1,9 @@
+[{"shot":"top","wait":0.5},
+ {"js":"document.querySelectorAll('details').forEach(d=>d.open=true);1","wait":1,"shot":"specs","clip_selector":"#specs"},
+ {"shot":"bom","clip_selector":"#bom"},
+ {"shot":"pcb","clip_selector":"#pcb"},
+ {"shot":"asm","clip_selector":"#assembly"},
+ {"shot":"docs","clip_selector":"#documents"},
+ {"shot":"dl","clip_selector":"#downloads"},
+ {"shot":"ver","clip_selector":"#verification"},
+ {"shot":"open","clip_selector":"#open"}]
