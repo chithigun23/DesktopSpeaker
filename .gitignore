@@ -118,3 +118,12 @@ ai-files/pcb/work-route6/*
 !ai-files/pcb/work-route6/RT-6.gates.json
 !ai-files/pcb/work-route6/scripts/
 !ai-files/pcb/work-route6/evidence/
+ai-files/pcb/work-route7/*
+!ai-files/pcb/work-route7/RT-7.kicad_pcb
+!ai-files/pcb/work-route7/RT-7.kicad_pro
+!ai-files/pcb/work-route7/RT-7.kicad_dru
+!ai-files/pcb/work-route7/RT-7.gates.json
+!ai-files/pcb/work-route7/scripts/
+!ai-files/pcb/work-route7/evidence/
+!ai-files/pcb/work-route7/t/editlog.md
+ai-files/pcb/work-route7/evidence/*.svg

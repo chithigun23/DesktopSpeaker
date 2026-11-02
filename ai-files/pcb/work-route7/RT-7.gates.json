@@ -1,0 +1,20 @@
+{
+ "footprints": 360,
+ "pads": 1194,
+ "moved": [
+  "C212",
+  "R209"
+ ],
+ "moved_not_allowed": [],
+ "pad_net_diff": [],
+ "base_copper_items": 2972,
+ "new_copper_items": 3173,
+ "removed_or_changed": 33,
+ "unexpected_removed": [],
+ "locked_items": 2939,
+ "locked_sha256": "899de752eff497f356f98f71b6fd26ae7c19b2f3ad2e5982a4797e4b4df9c745",
+ "added_items": 234,
+ "new_segments": 188,
+ "new_length_mm": 520.412,
+ "new_not_exact": []
+}
