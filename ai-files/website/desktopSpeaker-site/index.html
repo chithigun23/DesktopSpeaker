@@ -28,7 +28,7 @@
     <button type="button" class="mini" id="theme" title="Switch between the system theme, light and dark">Theme: auto</button>
   </nav>
   <div class="banner" role="note">
-    <div><b>Not finished.</b> The current routing board (RT-10) has 236 of 283 connections routed (83 %). The board adopted in the KiCad project is still the old R6q layout, which does not meet the routing standard and is not to be ordered as it stands. Stock and prices are snapshots; nothing has been tested on the bench.</div>
+    <div><b>Not finished.</b> The current routing board (RT-11) has 246 of 283 connections routed (87 %). The board adopted in the KiCad project is still the old R6q layout, which does not meet the routing standard and is not to be ordered as it stands. Stock and prices are snapshots; nothing has been tested on the bench.</div>
   </div>
 </header>
 
@@ -147,7 +147,7 @@
 <details class="sec fold" id="pcb" open>
   <summary><h2>PCB</h2><span class="meta">routing board RT-3 · adopted board R6q (old)</span></summary>
   <div class="body">
-    <div class="banner"><div><b>Routing is not finished.</b> RT-10 routes 236 of 283 connections (83 %) with exact 0/45/90 geometry and DRC 0 violations, but 47 connections are open and the length quality target is not met. The board inside the KiCad project folder is still the old R6q layout. See the <a href="routing/index.html">routing progress page</a>.</div></div>
+    <div class="banner"><div><b>Routing is not finished.</b> RT-11 routes 246 of 283 connections (87 %) with exact 0/45/90 geometry and DRC 0 violations, but 37 connections are open and the length quality target is not met. The board inside the KiCad project folder is still the old R6q layout. See the <a href="routing/index.html">routing progress page</a>.</div></div>
     <div class="cols">
       <div class="card"><h3 class="cap">Board</h3><dl class="wide" id="pcbfacts"></dl></div>
       <div class="card"><h3 class="cap">Stack-up and layer roles</h3><div class="tw"><table><thead><tr><th>Layer</th><th>Role</th></tr></thead><tbody id="stackup"></tbody></table></div></div>
@@ -157,8 +157,8 @@
     <h3>Placement and silkscreen</h3>
     <div class="gal">
       <figure><a href="routing/new_front.png"><img src="routing/new_front.png" alt="New placement baseline F.Cu" loading="lazy"></a><figcaption><b>Placement after the restart (R9-0).</b> Power copper and pours only, parts moved; MCU U3 left of centre.</figcaption></figure>
-      <figure><a href="routing/rt8_front.png"><img src="routing/rt8_front.png" alt="RT-8 F.Cu routing" loading="lazy"></a><figcaption><b>RT-8 F.Cu.</b> Staged routing plus hand work, 80 % of connections, every segment exactly 0/45/90.</figcaption></figure>
-      <figure><a href="routing/rt8_back.png"><img src="routing/rt8_back.png" alt="RT-8 B.Cu routing" loading="lazy"></a><figcaption><b>RT-8 B.Cu.</b> Sensitive hops only over GND on In2.</figcaption></figure>
+      <figure><a href="routing/rt11_front.png"><img src="routing/rt11_front.png" alt="RT-11 F.Cu routing" loading="lazy"></a><figcaption><b>RT-11 F.Cu.</b> Staged routing plus hand work, 87 % of connections, every segment exactly 0/45/90.</figcaption></figure>
+      <figure><a href="routing/rt11_back.png"><img src="routing/rt11_back.png" alt="RT-11 B.Cu routing" loading="lazy"></a><figcaption><b>RT-11 B.Cu.</b> Sensitive hops only over GND on In2.</figcaption></figure>
       <figure><a href="routing/rt3_silk.png"><img src="routing/rt3_silk.png" alt="RT-3 silkscreen section boxes" loading="lazy"></a><figcaption><b>RT-3 silkscreen.</b> 22 titled section boxes tile the board.</figcaption></figure>
       <figure><a href="routing/old_front.png"><img src="routing/old_front.png" alt="Old R6q placement and routing" loading="lazy"></a><figcaption><b>Old R6q (adopted in the project).</b> Any-angle routing, judged not good enough on 2026-11-01.</figcaption></figure>
     </div>

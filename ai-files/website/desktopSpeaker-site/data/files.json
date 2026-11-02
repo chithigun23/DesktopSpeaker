@@ -47,8 +47,8 @@
   {
    "name": "HANDOVER.md",
    "href": "docs/HANDOVER.md",
-   "bytes": 145093,
-   "sha256": "9bc26abeeeef24fb30110478f5695f180c2029ca04f27506e3da211efb49040f",
+   "bytes": 146388,
+   "sha256": "9f718f295de35e84a99b75df3041cee32f6ae95810d9bbb519f23bb7b1249085",
    "desc": "Single project handover: decisions, evidence, open items (older sections superseded)",
    "source": "ai-files/HANDOVER.md",
    "kind": "report"
