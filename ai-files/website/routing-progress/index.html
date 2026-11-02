@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Desktop Speaker: routing progress</title>
+<style>
+:root{color-scheme:light dark;--bg:#fafaf7;--fg:#1b1f1c;--mut:#5b645e;--card:#fff;--line:#d9ddd6}
+@media(prefers-color-scheme:dark){:root{--bg:#121512;--fg:#e8ece8;--mut:#9aa39c;--card:#1a1e1a;--line:#2d332d}}
+body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.5 system-ui,sans-serif}
+main{max-width:1180px;margin:0 auto;padding:24px 18px 60px}
+h1{font-size:24px;margin:0 0 4px}h2{font-size:18px;margin:34px 0 6px}
+p{margin:6px 0;color:var(--mut)}
+a{color:inherit}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:12px}
+@media(max-width:800px){.grid{grid-template-columns:1fr}}
+figure{margin:0;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px}
+figure img{width:100%;height:auto;display:block;border-radius:4px}
+figcaption{font-size:13px;color:var(--mut);margin-top:8px}
+b{color:var(--fg)}
+table{border-collapse:collapse;width:100%;margin:10px 0;background:var(--card);border:1px solid var(--line);border-radius:8px;font-size:14px}
+th,td{text-align:left;padding:7px 10px;border-bottom:1px solid var(--line);vertical-align:top}th{color:var(--mut);font-weight:600}
+.s{display:inline-block;padding:1px 8px;border-radius:10px;font-size:12px;font-weight:600}
+.done{background:#d6efd9;color:#14532d}.run{background:#fde9b8;color:#6b4500}.wait{background:#e3e6e3;color:#444}
+@media(prefers-color-scheme:dark){.done{background:#1f4a2a;color:#cfeed3}.run{background:#5a4510;color:#fde9b8}.wait{background:#2d332d;color:#bbb}}
+</style></head><body><main>
+<p><a href="../">&larr; Back</a></p>
+<h1>Desktop Speaker: routing progress</h1>
+<p>Last updated 2 Nov 2026. Rules: exact 0/45/90 degrees only, shortest runs, stages in order of importance, each stage locked before the next.</p>
+<table>
+<tr><th>Stage</th><th>Scope</th><th>Status</th><th>Notes</th></tr>
+<tr><td>Placement</td><td>R8/R8b moves, committed 71bdda7</td><td><span class="s done">done</span></td><td>DRC 0, pad nets unchanged, signal minimum length -10 %.</td></tr>
+<tr><td>Placement R10</td><td>I2S / I2C / USB-C pin order, blocked escapes</td><td><span class="s done">done</span></td><td>Committed 436c404. DRC 0, pad nets unchanged, 15 parts moved. The I2S trio and amplifier I2C need B.Cu hops over In2 GND because U6 and U7 are mirror-identical.</td></tr>
+<tr><td>Router tool</td><td>Exact-octilinear A* (<code>route_oct</code>), upgraded</td><td><span class="s done">done</span></td><td>Committed 5c86df6. Geometry 100 % exact; BM83 keep-out, audio spacing, GND stitching vias, switch-node spacing and pour check added. Used as a geometry engine, not as an unattended router.</td></tr>
+<tr><td>S0 and S0b</td><td>Power loops and paths; blocked escapes; USB J1 to U2 template</td><td><span class="s done">done</span></td><td>Committed 4de035e (board RT-1). DRC 0, no part moved, USB pair complete (32.8 mm coupled at 0.15 mm gap), blocked pin exits 56 down to 28.</td></tr>
+<tr><td>S1 to S3</td><td>Clocks and I2S, analog audio and amplifier I2C, then control and logic</td><td><span class="s done">run done, board not finished</span></td><td>Board RT-2, committed d1deaa0. 145 of 283 connections routed (51 %), 48 of 140 nets complete. Every segment exactly 0/45/90, DRC 0 violations, no part moved, no rule changed. Length quality fails: median 1.175 times the octilinear minimum (target 1.15), 95th percentile 3.6 (target 1.4).</td></tr>
+<tr><td>Silkscreen</td><td>Tile the board with aligned section boxes</td><td><span class="s run">running</span></td><td>Boxes will share edges and tile the board; 5V Logic, Volume Encoder and Front Amp boxes form a T.</td></tr>
+<tr><td>Charge policy</td><td>Charge current for the chosen battery with USB PD</td><td><span class="s run">running</span></td><td>Order of priority: safe, reliable, fast. Includes the copper needed at U4 for the charge current.</td></tr>
+<tr><td>Next: hand work</td><td>136 open connections</td><td><span class="s wait">to do</span></td><td>Causes: no legal pin exit (43), boxed in by neighbouring copper (65), pin order or topology (22), keep-outs and pour islands (6). Remedies: hand templates for the I2S hops and AUD I2C crossing, about 12 small part nudges, a router fix, then teardrops and fab output.</td></tr>
+<tr><td>S4 to S6</td><td>GND fan-out and stitching, pours and necks, clean-up, teardrops, review</td><td><span class="s wait">waiting</span></td><td>Final gates: r7_metrics, DRC with sentinel, independent re-measurement.</td></tr>
+</table>
+
+<h2>Router result RT-2 (S1 to S3 done)</h2>
+<p>Placement R10 plus S0b copper plus the upgraded router, 51 % of connections routed. Work in progress, not a releasable board. The long 45 degree runs are the new routes.</p>
+<div class="grid">
+<figure><img src="rt2_front.png" alt="RT-2 F.Cu"><figcaption><b>RT-2 F.Cu.</b> USB pair complete from J1 to U2. Many control and audio connections near U24, U25, U4, U6/U7 and J7 are still open.</figcaption></figure>
+<figure><img src="rt2_back.png" alt="RT-2 B.Cu"><figcaption><b>RT-2 B.Cu.</b> Sensitive-net hops run only over GND on In2, each with a GND stitching via.</figcaption></figure>
+</div>
+
+<h2>Decisions taken (owner asked for judgement)</h2>
+<table>
+<tr><th>Item</th><th>Decision</th><th>Reason</th></tr>
+<tr><td>U2 D+ entry</td><td>Keep the inner entry under the chip</td><td>A U-turn needs 1.81 mm of room; only 1.16 mm exists. Moving R172 would cost more than it gains.</td></tr>
+<tr><td>BM83 and J8 nets in S3</td><td>Route them first in stage S3</td><td>They are bound by the module keep-out, so they must get their corridors before the general nets.</td></tr>
+<tr><td>U4 pin 18 (BATP)</td><td>Hand-route it; add a narrow, documented exemption to the 2.0 mm switch clearance for this one stub if needed</td><td>BATP is a sense line right next to the boot-strap pad, a 2.0 mm clearance cannot be met at 0.2 mm pad spacing.</td></tr>
+<tr><td>J7 (programming header) edge clearance</td><td>Allow 0.25 mm copper-to-hole at J7 only, with diagonal hand escapes</td><td>The fabrication minimum (about 0.2 mm; to be confirmed against the JLC capability page before ordering) is lower than the 0.5 mm rule; the header is boxed in otherwise.</td></tr>
+<tr><td>Battery pour at U4 pins 22/23</td><td>Widen it; exact copper set by the charge-current analysis</td><td>See the charge policy report.</td></tr>
+</table>
+
+<h2>Earlier pictures</h2>
+<p>Top layer F.Cu, board 127.5 x 137.6 mm. Red = copper. Generated from the actual .kicad_pcb files with kicad-cli.</p>
+
+<h2>1. Placement: before and after the restart</h2>
+<p>Left: the old board (R6q placement, with the routing judged not good enough). Right: the new routing baseline R9-0 (commit 71bdda7): power copper and pours only, signal tracks stripped, parts moved. The MCU U3 is now left of centre.</p>
+<div class="grid">
+<figure><img src="old_front.png" alt="Old placement with old routing"><figcaption><b>Old (R6q).</b> MCU U3 at the right (186, 88 mm), signals routed at any angle.</figcaption></figure>
+<figure><img src="new_front.png" alt="New placement baseline R9-0"><figcaption><b>New (R9-0).</b> About 98 parts moved, DRC 0 violations, pad nets unchanged, minimum signal length about 10 % shorter. Silkscreen and courtyards shown.</figcaption></figure>
+</div>
+
+<h2>2. Octilinear router trial: all 140 signal nets re-routed on the old placement</h2>
+<p>The router's best strict run (Hga-3). Every track segment is exactly 0, 45 or 90 degrees with 0 DRC clearance errors, but only <b>130 of 283 connections (46 %)</b> were completed, so it is <b>not</b> a finished board.</p>
+<div class="grid">
+<figure><img src="rt_front.png" alt="Router trial F.Cu"><figcaption><b>F.Cu.</b> Long 45 degree runs; many nets still unconnected.</figcaption></figure>
+<figure><img src="rt_back.png" alt="Router trial B.Cu"><figcaption><b>B.Cu</b> (blue = GND pour). The visible tracks are existing power and other nets that were not stripped; the router added only a 1.2 mm USB_DN jumper here.</figcaption></figure>
+</div>
+</main></body></html>
