@@ -6,10 +6,10 @@
 
 - VDD 1.7-3.6 V. LQFP64 has **one** VDD/VDDA pin (8) and one VSS/VSSA pin (9), plus VBAT (6) and VREF+ (7). All are fed from 3V_AO (U12 TPS7A0230, 3.0 V nominal, USB-priority or pack input); the supply sags with the pack, so ADC readings need VREFINT calibration. Single pins: nothing to stack natively (the power pins are electrically distinct pads).
 - Decoupling (DS12232 fig. 13): VDD/VDDA 100 nF (C160) + 4.7 uF (C161); VREF+ tied to VDDA with no separate VREF+ caps (C163/C164 were cut in the BOM reduction; see the MCU sheet note), VREFBUF off (the datasheet allows VREF+ = VDDA when VDDA is 2.0 V or more; below that VREF+ must equal VDDA, which it does). VBAT tied directly to VDD (no backup cell, LSE and RTC unused). PC14/PC15 are used as GPIO (no crystal planned).
-- NRST (12, PF2-NRST): internal pull-up, 100 nF (C162) to GND, wired to J6/J7. NRST_MODE option must stay "reset input".
+- NRST (12, PF2-NRST): internal pull-up, 100 nF (C162) to GND, wired to J6 pin 3 (and TP19). J7 pin 3 is a no-connect since 2026-11-02 (patch P5, see the last section). NRST_MODE option must stay "reset input".
 - BOOT0 is PA14-BOOT0 (46) shared with SWCLK. nBOOT_SEL=1 ignores the pin. R160 100 k pull-down kept on the SWCLK line.
-- SWD: PA13 SWDIO (45), PA14 SWCLK (46). J7 TC2030-IDC (1 3V_AO, 2 SWDIO, 3 NRST, 4 SWCLK, 5 GND, 6 SWO nc) and J6 4-pin header unchanged. PA13/PA14 must not be remapped. SWO (PB3) is not available because PB3 is BT_MFB.
-- PA11/PA12 (pins 43/44) are named PA11[PA9] / PA12[PA10]: SYSCFG PA11_RMP/PA12_RMP must stay 0 (default).
+- SWD: PA13 SWDIO (45), PA14 SWCLK (46). J7 TC2030-IDC (1 3V_AO, 2 SWDIO, 3 NRST **not connected** (P5, 2026-11-02), 4 SWCLK, 5 GND, 6 SWO nc) and J6 4-pin header (NRST on pin 3). Use J6 for connect-under-reset; over J7 use a software/system reset (SYSRESETREQ). PA13/PA14 must not be remapped. SWO (PB3) is not available because PB3 is BT_MFB.
+- PA11/PA12 (pins 43/44) are named PA11[PA9] / PA12[PA10]: SYSCFG PA11_RMP/PA12_RMP must stay 0 (default). PA12 is a spare no-connect since 2026-11-02 (P4).
 
 ## Allocation (captured: nets exist on the sheet)
 
@@ -17,11 +17,11 @@
 |---|---|---|---|
 | CTRL_SDA | bidir | PB7 (61) | I2C1_SDA AF6, FT_fa. Pull-ups R120/R121 on Fuel_Gauge_Power (3V_AO). |
 | CTRL_SCL | bidir | PB6 (60) | I2C1_SCL AF6, FT_fa. BQ25792 0x6B, MAX17048 0x36 (behind isolation switches). |
-| PDCTRL_SDA | bidir | PA12 (44) | **Software (bit-banged) I2C**, open-drain output, FT_f. Pull-ups R14/R15 10 k to LDO_3V3 on the PD sheet. TPS25730D 0x20. |
+| PDCTRL_SDA | bidir | PB13 (33) | Moved from PA12 (44) on 2026-11-02 (P4). **Software (bit-banged) I2C**, open-drain output, FT_f (DS12232 Table 12; no _d dead-battery pull-down, no UCPD function). Pull-ups R14/R15 10 k to LDO_3V3 on the PD sheet. TPS25730D 0x20. |
 | PDCTRL_SCL | bidir | PA11 (43) | Same; FT_f. Keep both pins analog/input no-pull until PD_PLUG_EVENT = 1 (the pull-ups exist only with VBUS). |
 | CHG_ENABLE | out | PC6 (38) | R107 100 k pull-down, High = charge enabled. |
 | CHG_SYS_ENABLE | out | PA10 (42) | R111 100 k pull-down: reset keeps ILIM_HIZ asserted. |
-| CHG_INT | in | PC15 (5) | BQ INT, open-drain, R106 10 k to 3V_AO. EXTI. |
+| PC15_SPARE | in | PC15 (5) | Was CHG_INT. Since 2026-11-02 (P1) the BQ25792 /INT (U4-21) is a no-connect; firmware polls the BQ25792 status/flag registers. PC15 keeps R106 10 k to 3V_AO (net PC15_SPARE, hierarchical link Battery_Charger to MCU kept because R106 sits on the Battery_Charger sheet). Spare input. |
 | GAUGE_ALRT_N | in | PA0 (17, WKUP1) | MAX17048 ALRT via U17, R122 47 k to 3V_AO. Standby wake. |
 | PD_PLUG_EVENT | in | PC14 (4) | TPS25730D open-drain, R16 100 k to LDO_3V3. EXTI wake from Stop. |
 | PD_SINK_EN | in | PB9 (63) | TPS25730D open-drain, R17 100 k to LDO_3V3. Status only. |
@@ -35,7 +35,7 @@
 | BT_RST_N | out | PB4 (58) | BM83 RST_N via R185; drive open-drain (low only). |
 | BT_TX_IND | in | PB8 (62) | BM83 P0_0 via R187; EXTI wake; internal pull-down in firmware. |
 | AUD_SDA | bidir | PB11 (31) | Captured 2026-10-06: I2C2_SDA AF6, FT_fa, to Source_Select_ADC (PCM1862 0x4A; TAS5825M later). Pull-up R210 2.2 k to 3V3_AUDIO there.
-| AUD_SCL | bidir | PB10 (30) | I2C2_SCL AF6; pull-up R209 2.2 k to 3V3_AUDIO. PB13/PB14 stay LEDs.
+| AUD_SCL | bidir | PB10 (30) | I2C2_SCL AF6; pull-up R209 2.2 k to 3V3_AUDIO. PB14/PB15 stay LED reservations (PB13 is PDCTRL_SDA since 2026-11-02).
 | CODEC_PWR_EN | out | PC7 (39) | Captured: U23 TPS22917 ON, R212 100 k pull-down on Source_Select_ADC (high = 5V_CODEC on).
 | ADC_INT | in | PC5 (26) | Captured: PCM1862 GPIO1/INTA, R211 100 k pull-down (optional input; configure the GPIO as INTA in firmware).
 | HP_SEL_A, HP_SEL_B | out | PC0 (13), PD1 (51) | Captured 2026-10-06: TS5A23157 U8/U9 IN1+IN2 (via Headphone_Aux, 100 k pull-downs R234/R235: USB default).
@@ -56,19 +56,20 @@ All captured pins are 5 V tolerant FT variants. Pin moves versus the G031 are nu
 |---|---|---|---|
 | USB_SRC_DET | in | PB0 (27) | ADC_IN8 (analog). |
 | BTN_ADC | in | PA3 (20) | ADC_IN3, resistor-ladder buttons. |
-| LED_R, LED_G, LED_B | out | PB13 (33), PB14 (34), PB15 (35) | TIM1_CH1N/CH2N/CH3N AF2 PWM (set MOE). |
+| LED_G, LED_B | out | PB14 (34), PB15 (35) | TIM1_CH2N/CH3N AF2 PWM (set MOE). |
+| LED_R | out | (proposed PA2 (19)) | PB13 was taken by PDCTRL_SDA on 2026-11-02 (P4). Proposed new home if an RGB LED is captured: PA2 (FT_a, TIM2_CH3 AF2 or TIM15_CH1 AF5). Not marked on the sheet. |
 | USB_DATA_SEL, USB_DATA_OE_N | out | PD0 (50), PC1 (14) | TS3USB221A; OE_N needs an external pull-up (disabled by default), SEL a pull-down. |
 | CODEC_SSPND | out | PD2 (52) | PCM2902C suspend status/control. |
 | USB_HID_MUTE, USB_HID_VOLUP, USB_HID_VOLDN | out | PC2 (15), PA9 (37), PB5 (59) | PCM2902C HID0/HID1/HID2 drive, pull-downs. |
 
-Spare GPIO (10, unlabelled no-connect): PA2 (19), PA5 (22), PD3 (53), PB12 (32), PC11 (1), PC12 (2), PD8 (40), PD9 (41), PF0 (10), PF1 (11). Budget: 60 I/O = 38 captured + NRST + 11 reserved + 10 spare.
+Spare GPIO (12): unlabelled no-connects PA2 (19, proposed LED_R), PA5 (22), PD3 (53), PB12 (32), PC11 (1), PC12 (2), PD8 (40), PD9 (41), PF0 (10), PF1 (11), PA12 (44, no-connect flag since 2026-11-02); PC15 (5) with the R106 10 k pull-up to 3V_AO (net PC15_SPARE). Budget (2026-11-02): 60 I/O = 37 captured + NRST + 10 reserved + 12 spare.
 
 ## Constraints checked
 
 - **SWD/BOOT0**: PA13/PA14 reserved for SWD, BOOT0 on PA14 as before (nBOOT_SEL=1 ignores it).
 - **ADC**: BTN_ADC PA1 (ADC_IN1) and USB_SRC_DET PB0 (ADC_IN8) are ADC channels; PA0-PA7, PB0-PB2, PB10-PB12, PC4/PC5 are FT_a/TT_a analog-capable if more are needed. ADC reference is the sagging VDDA.
 - **FT tolerance**: every input from a 3.3 V domain (LDO_3V3 PD lines, 3V3_AUDIO lines, QON about 3.6-3.8 V) lands on an FT pin (5.5 V limit; absolute maximum VDD + 4.0 V). The only TT pin used is PA4, an output. The MCU only pulls low on I2C lines.
-- **Alternate functions** (Tables 13/14): I2C1 SCL/SDA PB6/PB7 AF6; I2C2 SCL/SDA PB10/PB11 AF6; USART2 TX/RX PD5/PD6 AF0 (Table 14; PA2/PA3 are AF1); TIM1_CH1N/2N/3N on PB13/14/15 AF2; WKUP1 PA0, WKUP2 PC13 (Table 12 additional functions).
+- **Alternate functions** (Tables 13/14): I2C1 SCL/SDA PB6/PB7 AF6; I2C2 SCL/SDA PB10/PB11 AF6; USART2 TX/RX PD5/PD6 AF0 (Table 14; PA2/PA3 are AF1); TIM1_CH2N/3N on PB14/15 AF2 (PB13 TIM1_CH1N no longer available: PDCTRL_SDA); WKUP1 PA0, WKUP2 PC13 (Table 12 additional functions).
 - **Wake**: GAUGE_ALRT_N (PA0, WKUP1), CHG_QON_SENSE (PC13, WKUP2); other EXTI inputs wake from Stop only.
 - **Safe reset states**: every GPIO is a floating input in reset (SWD pins keep SWD). Captured outputs have external 100 k pull-downs (R107, R111, R142, R152, R153): OFF in reset. Every reserved output must get a pull-down (OE_N: pull-up) when captured, as in the architecture doc; no pin needs an MCU-defined state at reset. Firmware: no audio-domain line driven high before 3V3_AUDIO is up.
 - **PD bus is software I2C**: the TPS25730D is rare, low-rate status traffic; I2C2 hardware is reserved for the audio bus (DSP coefficient loading).
@@ -107,3 +108,14 @@ Changed in `MCU.kicad_sch` (labels moved to the new pins, vacated pins now no-co
 Reserved signals re-homed (no nets yet): BTN_ADC PA3 (ADC_IN3), USB_DATA_OE_N PC1, USB_HID_MUTE PC2, USB_HID_VOLUP PA9, USB_HID_VOLDN PB5. PD3 is now reserved-free/spare, as are PA2 and PD2 (CODEC_SSPND unchanged).
 
 Also: TP13/TP14 net swap on Source_Select_ADC (TP13 = I2S_SDATA, TP14 = I2S_LRCK). Net changes listed in `pcb/work-r6/pin-swaps.json`. ERC 19 before and after (inherited: 18 endpoint_off_grid, 1 power_pin_not_driven).
+
+## 2026-11-02 schematic patches P1, P4, P5 (routing RT-9p)
+
+Applied in `MCU.kicad_sch`, `Battery_Charger.kicad_sch` and the root sheet; proposals in `pcb/work-route8/schematic-patch.md` (P1) and `pcb/work-route9/schematic-patch.md` (P4, P5); evidence in `reports/schematic-patches-applied-2026-11-02.md`.
+
+| Item | Before | After |
+|---|---|---|
+| P1 CHG_INT | U4-21 (BQ25792 /INT) - R106-2 - U3-5 (PC15), EXTI | U4-21 no-connect flag. Net renamed PC15_SPARE (R106-2, U3-5), all CHG_INT labels, sheet pins and hierarchical labels renamed. Firmware polls BQ25792 REG1B-REG27 every 250 ms with a source attached or charging, every 2 s otherwise (FLAG registers are clear-on-read, no event lost). |
+| P4 PDCTRL_SDA | PA12 (44) | PB13 (33). PA12 no-connect flag. PB13 is FT_f like PA12 (5 V tolerant; pull-up R14 to LDO_3V3 is fine), no dead-battery pull-down; I2C2_SCL AF6 exists on PB13 but I2C2 is used on PB10/PB11, and the PD bus is bit-banged GPIO, so no AF is needed. Conflict resolved: PB13 was the LED_R reservation (no hardware); LED_R proposal moves to PA2. Only PB13 has a routable exit (RT-9 probes of pins 34, 35, 37, 40, 41 failed). |
+| P5 NRST | J7-3, J6-3, U3-12, C162, TP19 | J7-3 no-connect flag; NRST stays on J6-3/TP19. |
+

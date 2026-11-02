@@ -16,7 +16,7 @@ Source files: `AGENTS.md`, `plan.md` sections 4, 7-10, `HANDOVER.md`, `reports/m
 2. **PCM1862 input-select codes.** `audio-chain-architecture.md` lists 0x01/0x02/0x04; the datasheet (Table 32) says bit 6 of registers 0x06/0x07 is reserved "always write 1". Correct codes: **0x41 = VIN1 (USB), 0x42 = VIN2 (BT), 0x44 = VIN3 (AUX), 0x40 = no selection (mute)**. The bench plan (D8) already uses 0x41/0x42/0x44. Never write a multi-bit code (it analogue-mixes inputs: that is the hardware source-conflict path).
 3. **U7 woofer mono sum depends on a TAS5825M DSP feature I could not verify.** The datasheet says PBTL takes only the **left I2S frame** (9.4.2.2) and SAP_CTRL3 (0x35) only routes L, R or zero to a channel: there is no L+R option there. The PCM1862 datasheet says L+R mono mixes "can only be done in the digital mixer, post ADC" and that feeds both amps. So (L+R)/2 for U7 must come from the TAS5825M DSP process flow (PPC3 input mixer). The local datasheet text never mentions a mixer; verify in the PPC3 flow before freezing the design (risk R1, section 5.2).
 4. **BM83 power-off timing in `bluetooth-notes.md` is shorter than Figure 6-9.** Rendered FIG 6-9: after the power-off ACK wait about 2 s, then drive RST_N low (all MCU/BM83 lines low), then at least 1 s before BAT_IN (3V8_BT) drops. Power-on: RST_N is low through the BAT_IN ramp, MFB goes high, RST_N is released 400 ms after MFB rises, Power-On ACK comes about 20 ms later. Section 3.4 uses the figure.
-5. **No indicator of any kind exists** (see section 1.2): no LED, no buzzer, no display, BQ25792 STAT (pin 1) is a no-connect, BM83 LED1/LED2 are no-connects, the MCU LED_R/G/B pins are reserved text only. The user has no feedback channel except BT audio through the phone. This is the main UI gap.
+5. **No indicator of any kind exists** (see section 1.2): no LED, no buzzer, no display, BQ25792 STAT (pin 1) is a no-connect, BM83 LED1/LED2 are no-connects, the MCU LED_G/B pins are reserved text only (LED_R lost PB13 to PDCTRL_SDA on 2026-11-02; proposed PA2). The user has no feedback channel except BT audio through the phone. This is the main UI gap.
 6. PA1 is **5V_LOGIC_EN** since the r6e swap (not the button ladder). The ladder net BTN_ADC (PA3, ADC_IN3) is reserved text only: **there is no button ladder in the netlist**.
 
 ---
@@ -29,11 +29,11 @@ Source files: `AGENTS.md`, `plan.md` sections 4, 7-10, `HANDOVER.md`, `reports/m
 |---|---|---|---|---|
 | CHG_SYS_ENABLE | out | PA10 | R111 100k PD, Q101 -> BQ25792 ILIM_HIZ | High releases the input clamp (source conversion on) |
 | CHG_ENABLE | out | PC6 | R107 100k PD -> BQ25792 CE | High = charge allowed |
-| CHG_INT | in | PC15 (EXTI) | R106 10k to 3V_AO | BQ25792 INT (256 us pulse, read-clear) |
+| ~~CHG_INT~~ | - | PC15 is spare (net PC15_SPARE, R106 10k to 3V_AO) | - | **Removed 2026-11-02 (patch P1):** BQ25792 /INT (U4-21) is a no-connect. Poll the BQ25792 status and flag registers (REG1B-REG27) every 250 ms while a source is attached or a charge runs, every 2 s otherwise; FLAG registers are clear-on-read, so no event is lost (latency up to 250 ms, not a safety path) |
 | CHG_QON_SENSE | in | PC13 (WKUP2) | R113 100k from BQ QON | SW100 state, active low |
 | GAUGE_ALRT_N | in | PA0 (WKUP1) | U17, R122 47k | MAX17048 alert, active low |
 | CTRL_SDA / CTRL_SCL | bidir | PB7 / PB6 (I2C1) | R120/R121 4.7k | BQ25792 0x6B, MAX17048 0x36 (behind U13/U16, only when BAT_PACK above about 3.1 V) |
-| PDCTRL_SDA / SCL | bidir | PA12 / PA11 (soft I2C) | R14/R15 10k to LDO_3V3 | TPS25730D 0x20, only valid when VBUS present |
+| PDCTRL_SDA / SCL | bidir | **PB13** / PA11 (soft I2C; SDA moved from PA12 on 2026-11-02, patch P4) | R14/R15 10k to LDO_3V3 | TPS25730D 0x20, only valid when VBUS present |
 | PD_PLUG_EVENT | in | PC14 (EXTI) | R16 100k to LDO_3V3 | 1 = Type-C connection present (DS TPS25730 pin 37) |
 | PD_SINK_EN | in | PB9 | R17 | **Low = sink path enabled** (DS pin 19) |
 | 5V_LOGIC_EN | out | PA1 | R142 -> U14 TPS63802 EN | 5V_LOGIC; also powers U22 -> 3V3_AUDIO |
@@ -55,7 +55,7 @@ Source files: `AGENTS.md`, `plan.md` sections 4, 7-10, `HANDOVER.md`, `reports/m
 | HP_DET | in | PB1 (EXTI) | R239 100k to **3V3_AUDIO**, R240 1k | J2 switched tip; high = plug in |
 | AUX_DET | in | PB2 (EXTI) | R241 1M to 3V_AO, C246 100n, R242 10k | J3 switched tip; about 30 mV unplugged, 3.0 V plugged |
 | ENC_A / ENC_B / ENC_SW | in | PC8 / PC9 / PC10 | SW102 EC11E18244AU, C308-C310 10 nF | Encoder (internal pull-ups) and push (active low) |
-| NRST, SWDIO, SWCLK | | | J6/J7 | debug |
+| NRST, SWDIO, SWCLK | | | J6 (all three); J7 SWDIO/SWCLK only (J7 pin 3 NRST not connected since 2026-11-02, patch P5: connect-under-reset only over J6) | debug |
 
 Rails and their controls: **3V_AO** always on (U12 from U20 TPS2116: USB_AUX_5V via U19 when VBUS present, else SYS_RAW). **5V_LOGIC** U14, EN = PA1. **3V3_AUDIO** U22 TPS7A2033 with EN tied to IN: it is on exactly when 5V_LOGIC is on; there is **no separate enable**. **5V_CODEC** U23, PC7. **3V8_BT** U15, PA8. **PVDD_AMP** U25, PA7 (no load disconnect: with the boost off PVDD_AMP follows SYS_RAW minus a diode drop, which is below the TAS5825M 4.5 V minimum and PDN holds the amps in shutdown). Pack path: SW101 (physical), Q103 (BQ25792 SDRV ship FET), BQ25792 U4.
 
@@ -63,7 +63,7 @@ Rails and their controls: **3V_AO** always on (U12 from U20 TPS2116: USB_AUX_5V 
 
 | Needed | Why | Status in netlist | Workaround used here |
 |---|---|---|---|
-| Status indicator (LED / buzzer) | UI feedback: power, source, pairing, battery, fault | **None.** MCU PB13/PB14/PB15 are reserved text only (LED_R/G/B, TIM1_CH1N/2N/3N); BQ25792 STAT pin 1 NC; BM83 LED1/LED2 NC; no LED part in the BOM | Section 6.3: phone shows battery via BM83 (UNVERIFIED command), otherwise no feedback. Recommend adding an RGB LED (hardware change, user decision) |
+| Status indicator (LED / buzzer) | UI feedback: power, source, pairing, battery, fault | **None.** MCU PB14/PB15 are reserved text only (LED_G/B, TIM1_CH2N/3N; PB13 is PDCTRL_SDA since 2026-11-02, LED_R proposed on PA2 TIM2_CH3); BQ25792 STAT pin 1 NC; BM83 LED1/LED2 NC; no LED part in the BOM | Section 6.3: phone shows battery via BM83 (UNVERIFIED command), otherwise no feedback. Recommend adding an RGB LED (hardware change, user decision) |
 | Button ladder (BTN_ADC, PA3) | extra buttons | Reserved text only | Use encoder push + SW100 only |
 | USB host presence / enumeration (USB_SRC_DET PB0) | auto-select USB, decide to power codec | Reserved only | Heuristic from TPS25730 reg 0x34 (section 2.5) plus Energysense |
 | PCM2902C SSPND (CODEC_SSPND PD2) | USB suspend/resume, idle detect | Reserved only | PCM1862 Energysense loss timeout |
@@ -74,7 +74,7 @@ Rails and their controls: **3V_AO** always on (U12 from U20 TPS2116: USB_AUX_5V 
 | Amp mute pin (TAS GPIO1 MUTE) | hardware mute | TAS GPIO1/GPIO2 are no-connects; PDN is the only hard control | Soft mute over I2C only (arch doc: "mute is firmware only") |
 | Battery presence / PG for charger | battery-absent handling | Via BQ25792 registers over I2C only | Read status registers |
 
-Nothing else the spec uses is missing. In particular AMP_FAULT_N, CHG_INT, GAUGE_ALRT_N, PD_PLUG_EVENT, PD_SINK_EN, HP_DET, AUX_DET, ADC_INT and the encoder lines all exist and are wired through the root hierarchy.
+Nothing else the spec uses is missing. In particular AMP_FAULT_N, GAUGE_ALRT_N, PD_PLUG_EVENT, PD_SINK_EN, HP_DET, AUX_DET, ADC_INT and the encoder lines all exist and are wired through the root hierarchy. CHG_INT was removed on 2026-11-02 (patch P1): the BQ25792 is polled.
 
 ---
 
@@ -127,7 +127,7 @@ Interrupt masks follow the rails: **AMP_FAULT_N (PC4) and HP_DET (PB1) are pulle
 | any -> F-x | section 3.8 | |
 | S3 stays S3 | VBUS attach/detach/contract change | battery supplements SYS (NVDC); grant revoked then re-granted (section 3.2); never retain a stale IINDPM |
 
-Standby wake sources (Stop mode): PC13 WKUP2 (QON), PA0 WKUP1 (GAUGE_ALRT_N), EXTI on PC14 (PD_PLUG_EVENT), PC15 (CHG_INT), PC10 (ENC_SW), PB2 (AUX_DET). HP_DET, AMP_FAULT_N and BT_TX_IND cannot wake (their rails are off); ENC_A/B need not wake (a rotation alone should not turn the speaker on).
+Standby wake sources (Stop mode): PC13 WKUP2 (QON), PA0 WKUP1 (GAUGE_ALRT_N), EXTI on PC14 (PD_PLUG_EVENT), PC10 (ENC_SW), PB2 (AUX_DET). HP_DET, AMP_FAULT_N and BT_TX_IND cannot wake (their rails are off); ENC_A/B need not wake (a rotation alone should not turn the speaker on).
 
 ### 2.4 Timers and thresholds (PROPOSAL, user decision)
 
@@ -137,7 +137,7 @@ Standby wake sources (Stop mode): PC13 WKUP2 (QON), PA0 WKUP1 (GAUGE_ALRT_N), EX
 | S2 -> S1 on battery, no BT link and no input | 20 min | |
 | S2 -> S1 on external power | 60 min | |
 | Standby -> ship | no timer | Standby is about 35-40 uA on the pack (BQ25792 17/24 uA, gauge, U21, MCU Stop) against ship 18-45 uA (bench plan B2.3): negligible for a 10 Ah pack, so ship mode is for deep-off and critical battery only |
-| Battery polling | MAX17048 every 30 s in S2/S3, plus ALRT; BQ25792 on CHG_INT | |
+| Battery polling | MAX17048 every 30 s in S2/S3, plus ALRT; BQ25792 status/flag registers polled every 250 ms with a source attached or charging, every 2 s otherwise (no CHG_INT since 2026-11-02) | |
 
 ### 2.5 Battery policy and USB-host heuristic
 
@@ -165,7 +165,7 @@ All delays are minimums. "Wait" values with no datasheet figure are my margins a
 
 ### 3.1 Reset and boot
 1. All enables are low by hardware (R107, R111, R142, R152, R153, R212, R236, R255, R259 and the HP pull-downs). BT_RST_N, I2C2 and the PD software bus pins start as inputs.
-2. Configure clocks, IWDG (2 s), set every output pin to its low state, then enable GPIO clocks for peripherals. Keep PA11/PA12 (PDCTRL) analog and I2C2 (PB10/PB11) analog until their rails exist. PA11_RMP/PA12_RMP stay 0; PA13/PA14 stay SWD.
+2. Configure clocks, IWDG (2 s), set every output pin to its low state, then enable GPIO clocks for peripherals. Keep PA11/PB13 (PDCTRL) analog (PA12 is a spare no-connect: analog) and I2C2 (PB10/PB11) analog until their rails exist. PA11_RMP/PA12_RMP stay 0; PA13/PA14 stay SWD.
 3. Set UCPD_DBDIS (PWR_CR3) before driving any FT_d pin high. `mcu-pin-allocation.md` lists PD1 (HP_SEL_B), PA9, PA10 (CHG_SYS_ENABLE), PC6 (CHG_ENABLE), PB0, PD3 as FT_d pins with the UCPD dead-battery pull-down (about 5.1 k) active at reset: harmless while they are low, but it would load a high output until DBDIS is set. Verify the pin list against RM0444 (BENCH).
 4. Read BQ25792 identity/status over CTRL (0x6B) before anything else.
 
@@ -173,8 +173,8 @@ All delays are minimums. "Wait" values with no datasheet figure are my margins a
 Order, with CHG_SYS_ENABLE and CHG_ENABLE both low until step 7: (1) establish logic rail and reset state; (2) read identity, keep CE off, set 1S profile, VREG, ICHG (cap 3 A until the U4 PGND via area is checked, HANDOVER line 24), VSYSMIN, TS limits; (3) REG14 SFET_PRESENT = 1 and read back; (4) disable the charger watchdog, set AUTO_INDET_EN = 0 and HVDCP_EN = 0, keep EN_IINDPM; every 5 s read back EN_IINDPM, IINDPM, ICHG, VREG and treat a mismatch as REG_RST (drop both gates, reconfigure); (5) source capability from the PD contract (reg 0x34/0x35); a non-PD Rp-only source gets a conservative **500 mA** fallback (the PD controller does not report Type-C Rp current; 5 V fallback does not grant 2 A); (6) budget total connector draw including U19 and the PD controller, program and read back IINDPM while HIZ is asserted; (7) release CHG_SYS_ENABLE only after valid source/voltage/readbacks, then enable CE last. **Charge current is reduced before audio is shed.**
 
 Events:
-- **PD_PLUG_EVENT (PC14) rising**: start the soft I2C bus, read status. **Falling or PD_SINK_EN (PB9) rising (sink path disabled)**: revoke the grant, drop CHG_ENABLE then CHG_SYS_ENABLE, park PA11/PA12 as analog (LDO_3V3 pull-ups vanish with VBUS), continue on battery. Contract change: same revoke then re-read; do not use old limits.
-- **CHG_INT (PC15) falling**: read the BQ25792 flag registers (read clears). Respond: VBUS OVP/UVLO or power-good loss -> as detach; charge done -> log; TS fault or thermal regulation -> disable CE and retry after 60 s; safety timer expiry -> disable CE, latch F-CHG until detach/re-plug or user gesture; watchdog expiry or VSYS/IBAT OCP -> as REG_RST (reapply configuration).
+- **PD_PLUG_EVENT (PC14) rising**: start the soft I2C bus, read status. **Falling or PD_SINK_EN (PB9) rising (sink path disabled)**: revoke the grant, drop CHG_ENABLE then CHG_SYS_ENABLE, park PA11/PB13 as analog (LDO_3V3 pull-ups vanish with VBUS), continue on battery. Contract change: same revoke then re-read; do not use old limits.
+- **BQ25792 poll** (replaces the CHG_INT EXTI since 2026-11-02, patch P1; every 250 ms with a source attached or charging, every 2 s otherwise): read the BQ25792 flag registers (read clears). Respond: VBUS OVP/UVLO or power-good loss -> as detach; charge done -> log; TS fault or thermal regulation -> disable CE and retry after 60 s; safety timer expiry -> disable CE, latch F-CHG until detach/re-plug or user gesture; watchdog expiry or VSYS/IBAT OCP -> as REG_RST (reapply configuration).
 - **Charge policy (PROPOSAL)**: charge to 4.20 V by default, with a "plugged-in mostly" option at 4.10 V (battery longevity, plan section 2); recharge when 100-200 mV below VREG; ICHG 4.0 A (superseded 2026-11-02, see reports/charge-policy-2026-11-02.md; was: at most 3 A); TS/NTC windows per the final pack; in S3 with a weak source, lower ICHG before AGL.
 
 ### 3.3 Rail up (S1 -> S2)
@@ -236,7 +236,7 @@ Restart minimum: wait at least 500 ms after 5V_LOGIC_EN falls before raising it 
 |---|---|---|
 | **AMP_FAULT_N** (PC4, active low, only while 3V3_AUDIO up and GPIO0 configured) | EXTI falling | Read 0x70 CHAN_FAULT (DC, OC per channel), 0x71 GLOBAL_FAULT1 (clock error etc.), 0x72 GLOBAL_FAULT2 (PVDD UV/OV, thermal shutdown), 0x73 WARNING (OTW) on both devices. The TAS has already put the affected outputs in Hi-Z (DS). Clock error with PCM1862 running: log, auto-recovers, no escalation. PVDD UV: boost or battery sag, re-run the whole start sequence once. OC/DC: full stop (3.6 steps 1-5), 0x78 clear, retry up to 3 times at 0.5 s, 2 s, 5 s with the whole 3.5 sequence, then latch F-AMP: amps off, require user gesture (hold) or detach to clear. Thermal shutdown: wait at least 10 s and OTW clear, one retry. PBTL has no cycle-by-cycle limit (DS 9.5.3.3.1); overcurrent shutdown only |
 | TAS thermal warning (0x73 OTW) | polled every 1 s in S3 | Let thermal foldback (DS 9.4.4) act; log; if persistent, reduce ceiling one step |
-| **CHG_INT** (PC15) | EXTI falling | Section 3.2 |
+| ~~CHG_INT~~ (PC15 spare) | none: BQ25792 polled (250 ms / 2 s) | Section 3.2 |
 | **GAUGE_ALRT_N** (PA0) | falling | Read STATUS (RI reset indicator: re-init gauge model; VL/VH voltage; HD empty-threshold) then SOC policy (2.5); clear ALRT bit |
 | **PD events** (PC14, PB9) | EXTI | Section 3.2 |
 | Gauge unreachable | I2C NACK | Expected when BAT_PACK below about 3.08 V: treat as CRIT if the last SOC was 15% or less, else keep last value |
@@ -362,14 +362,14 @@ Debounce: 20 ms for both buttons, encoder decoded with the hardware filter.
 | AUX_DET / HP_DET | plug events | Section 4: AUX in = switch to AUX, AUX out = revert; HP in/out = speaker<->headphone |
 
 ### 6.3 Battery display and indicators
-- **No LED, display or buzzer exists (section 1.2).** Proposed minimum hardware change: an RGB LED on the reserved PB13/PB14/PB15 (TIM1_CH1N/2N/3N PWM, 3.0 V logic) with series resistors and a mechanical window; this is not in the netlist and is a user decision. Suggested patterns if added: white solid on, amber blinking low battery (LOW1), red blinking CRIT, blue slow pulse pairing, red double blink fault, green charging complete.
+- **No LED, display or buzzer exists (section 1.2).** Proposed minimum hardware change: an RGB LED on PA2/PB14/PB15 (TIM2_CH3 + TIM1_CH2N/3N PWM, 3.0 V logic; PB13 is PDCTRL_SDA since 2026-11-02) with series resistors and a mechanical window; this is not in the netlist and is a user decision. Suggested patterns if added: white solid on, amber blinking low battery (LOW1), red blinking CRIT, blue slow pulse pairing, red double blink fault, green charging complete.
 - Without the LED: battery level to the phone through BM83 (HFP battery indicator / UART battery command, UNVERIFIED in the local files) only.
 - Battery SOC bands: section 2.5.
 
 ---
 
 ## 7. Decisions needed from the user
-1. Add a status LED (RGB on PB13-15) or accept no on-device feedback.
+1. Add a status LED (RGB on PA2/PB14/PB15) or accept no on-device feedback.
 2. Crossover default 150 Hz and the LR4 slopes; whether the PPC3 "Smart Amp" excursion flow is wanted (needs TI tooling access).
 3. Idle timers: 3 min amps off; S2 -> S1 20 min battery / 60 min external; no standby-to-ship timer.
 4. SOC thresholds (20/10/5%, 3% ship) and AGL ceiling steps (-3/-6 dB); charge target 4.20 V vs 4.10 V "plugged-in mostly".

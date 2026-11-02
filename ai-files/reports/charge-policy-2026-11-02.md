@@ -321,7 +321,7 @@ Board total for the battery path: 9.3 mΩ, which is 38 mV / 0.16 W at 4.1 A. **N
   - **≥ 2.5 mm by x = 154.8** (about y 119.65-122.2);
   - merging into the ≥ 3.45 mm body at x = 155.3.
   - Use 45° edges.
-- How: free the lanes held for U4-24 (Net-(Q103-G)), U4-21 (/CHG_INT) and U4-20 (/Battery_Charger/PROG):
+- How: free the lanes held for U4-24 (Net-(Q103-G)), U4-21 (/CHG_INT; a no-connect since 2026-11-02, patch P1, so this lane is free) and U4-20 (/Battery_Charger/PROG):
   - U4-24: 0.2 mm stub north-east to a fine via (0.45/0.2, allowed in NECK_U4), centred about (153.65, 120.2), then B.Cu to Q103-4.
   - U4-21 and U4-20: leave the toe and go south-east, parallel to the existing BTST2 escape. Keep 0.2 mm clearance (neck rule); BTST2 is the SWITCH class.
 - Simulated result [EST]: BAT_INT 3.32 → **2.82 mΩ**; the 0.6 mm section shrinks to the unavoidable 0.28 mm at the pins.

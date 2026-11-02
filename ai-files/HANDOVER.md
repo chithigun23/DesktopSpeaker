@@ -676,3 +676,12 @@ ERC 19 -> 0 at default severities, netlist unchanged (XML byte-identical apart f
 - `ai-files/pcb/work-route9/RT-9.*` (report `reports/routing-rt9.md`): verified independently: DRC 0 violations, 53 unconnected, rule files identical to RT-8, no part moved, no pad net changed. 3 connections closed (PDCTRL_SCL x2, BT_SYS_CFG), none lost. B.Cu over In2 void 268 mm (target <= 200 not reached; BT_AUDIO_R over void 4.3 mm).
 - Decisions: schematic patches P1 (CHG_INT polled over I2C), P4 (PDCTRL_SDA to U3 pin 33 PB13), P5 (NRST not on J7-3) applied by a follow-up task (see `reports/schematic-patches-applied-2026-11-02.md` when present); P2 (3V_AO to R241) is a layout lane on B.Cu along y 56-58. C215-C212 0.14 mm: accept as a hand-assembly item (place both capacitors first) or change the VREF cap size in the schematic; ADC_INT 35.6 mm vs 34.1 mm sense limit needs TP26 moved about 2 mm.
 - Open (53 before the patches): U3 long nets 13, U4 charger 4, I2S/audio I2C/amp control 5, U24 inputs and USB audio 9, headphone mux 8, USB-C/PD/regulators/gauge 9, BT_RST_M, 3V_AO to R241.
+
+## Schematic patches P1/P4/P5 and RT-9p (2026-11-02)
+- Applied in `MCU.kicad_sch`, `Battery_Charger.kicad_sch` and the root sheet (report `reports/schematic-patches-applied-2026-11-02.md`). ERC 240 before and after, the identical inherited set (238 lib_symbol_issues, 1 power_pin_not_driven, 1 same_local_global_label), 0 new. The netlist changes only U4-21, U3-5, R106-2, U3-33, U3-44 and J7-3.
+- P1: U4-21 (BQ25792 /INT) is a no-connect and firmware polls the BQ25792 every 250 ms with a source attached or charging, every 2 s otherwise. R106 sits on the Battery_Charger sheet, so the hierarchical CHG_INT chain was **renamed** PC15_SPARE, not removed: it keeps R106 on U3-5 and the existing copper.
+- P4: PDCTRL_SDA moved to PB13 (pin 33, FT_f); PA12 is a no-connect. The LED_R reservation lost PB13; PA2 (TIM2_CH3) is proposed instead.
+- P5: J7-3 is a no-connect; NRST stays on J6-3 and TP19.
+- Board `ai-files/pcb/work-route9p/RT-9p.*`: pad nets synced as text, with the 5 CHG_INT copper items renamed; PDCTRL_SDA routed U3-33 to U11-8 (14.1 mm, 3 vias, exact 0/45/90; the In2 leg ends on the existing SDA via).
+  - Verified: DRC 0; unconnected 53 to 50; schematic parity 0 new (243 inherited); no part moved; rule files byte-identical; HA8 122 (none new); BAT_INT 2.889 mOhm unchanged.
+  - r7: B.Cu over In2 void 269.5 mm (+1.8) and F.Cu over In1 void 152.5 mm (+1.8).
