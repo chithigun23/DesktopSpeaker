@@ -192,3 +192,10 @@ ai-files/pcb/work-route13/*
 !ai-files/pcb/work-route13/scripts/
 !ai-files/pcb/work-route13/evidence/
 !ai-files/pcb/work-route13/t/RT-13.gates.txt
+ai-files/pcb/work-route14/*
+!ai-files/pcb/work-route14/RT-14.kicad_pcb
+!ai-files/pcb/work-route14/RT-14.kicad_pro
+!ai-files/pcb/work-route14/RT-14.kicad_dru
+!ai-files/pcb/work-route14/scripts/
+!ai-files/pcb/work-route14/evidence/
+!ai-files/pcb/work-route14/t/RT-14.gates.txt
