@@ -355,3 +355,160 @@ Files:
   - scripts `prep_h0.sh`, `run_s12.sh`, `verify.sh`;
   - boards and logs `B0-*`, `N1-*`, `N1s-*`, `N2-*`, `*k-3*`;
   - `orig/` (frozen original router), `v1/` (iteration-1 router).
+
+## 10. Router fixes and continuation mode (2026-11-02)
+
+Agent: "Router fixes and continuation mode". Scratch boards in `ai-files/pcb/work-oct3/` only (copies of `work-route3/RT-3.*`, about 330 MB, do not commit). Nothing in `DesktopSpeaker-kicad/`, `work-route3/`, `work-route4/` or any other work folder was edited. No rule, net class or board-setup change: every output board's `.kicad_dru` (102fbee4...) and `.kicad_pro` (aa88e8c9...) equals the project, and the sentinel fires on every final board. Not committed; nothing published. The pre-change router is frozen in `work-oct3/orig/`.
+
+**Result first.**
+- All six fixes are implemented in `helpers/route_oct.py`; fix 6 for copper that is already on a board is a separate helper `helpers/route_oct_stitch.py`. Every output board passes every gate (sections 10.2 and 10.3).
+- **Continuation mode on RT-3 closes only 7 of the 135 open connections** (DRC unconnected 152 -> 145). The open set is what RT-2 already failed on, and with all RT-3 copper locked almost every remaining pad or corridor is sealed: 56 "no exit", 72 "no path", and most of those searches end in under 0.1 s. Continuation is the tool for the hand-edited RT-4 copy, once the hand edits open the pockets. It is not a way to finish RT-3 unattended.
+- **Full strip with fixes 1, 2, 5 and 6: 126/266 router connections (136/278 with the S0 template), against 135/271 (145/283) for RT-2.** Fix 2 removes 5 pin-stack pseudo-connections. On the same 266 connections RT-2 has 132, so the run closes 6 fewer. Length quality is clearly better: median ratio 1.111 (RT-2 1.175), p95 2.187 (3.591), 8 nets above 1.4 (14).
+- The fixes behave as specified, but they do not raise completion. Fix 1 keeps the HP_SEL lanes free (HP_SEL_B 0/3 -> 2/3), and the four U8/U9-NO audio nets that only completed by taking those lanes now stay open (4/4 -> 0/4). The fix 4 acceptance rule costs 5 S2 connections and gives no length gain (section 10.4).
+
+### 10.1 Code changes
+
+| fix | option (default) | how |
+|---|---|---|
+| 1 escape reservation | always on (`--no-reserve` turns all reservations off) | Before a stage, the fine-pitch pads of this stage and every later stage are reserved in stage order, as before. The difference: a reservation (and a pad stub checked against it) now uses the **neck clearance** (0.2 mm) towards other reservations, so a later-stage pad next to an earlier-stage pad keeps its lane instead of losing it under the 0.5 mm audio clearance. The A* window still keeps the strict clearance between a route body and every reservation. A pad left unrouted gets its reservation back after its net (`rereserve`), so the lane is released only when that pad's own net uses it. Rip-up snapshots and restores reservations. |
+| 2 pad identity | always on | Pads are keyed (ref, number, index) (`pad_key`, names `U11-40#2`). Same-number pads of one part on one net are one electrical pin: the chain runs over pin groups, a connection goes to the nearest member (multi-terminal A*), and a net that is only a pin stack is `skip (pin stack only)`. Found: SW100 "1" x2 (Net-(U4-QON)), U11 "40" x5 (unconnected-(U11-DRAIN-Pad40), RT-2 routed 3 of these 4 pseudo-connections). KiCad still reports the SW100 pair as unconnected, because the footprint does not declare the pads as jumpers. Expected; no footprint change made. |
+| 3 continuation | `--cont-drc IN.drc.json`, `--first-refs U1,J8` (S3), `--cont-terms 3`, `--tap-pen-stub 10`, `--tap-pen-mid 200`, `--tap-radius 3`, `--tap-nodes 16` | Nothing is stripped. Every existing copper item of every net is a locked obstacle; the net's own copper is blocked like this run's own copper, except within 0.75 mm of the taps. The open connections are the DRC `unconnected_items` of the stage's nets: each item (pad by ref, number and position; track by UUID; via by position) is mapped to its connected group (own union-find; pin stacks joined). A connection runs multi-source / multi-target from a group's nearest pads (fresh exits; exits used by existing copper are excluded), vias (start or arrival at >= 90 deg to the tracks already on the via, forced first run), and segment taps (perpendicular branch at a lattice node of an existing straight track: cheap near a pad stub, a 10 mm start penalty and a `tap_mid` flag in the middle of a segment). An own-copper check rejects new copper that touches the net's copper anywhere other than at its two ends. Lock: manifest stage `C0` = SHA-256 of every copper item of the input board; each later stage stores its `added_items`; `route_oct_lock.cont_lock` (used by the router and `route_oct_check.py`) requires every added item to be present and the rest to hash to C0. |
+| 4 rip-up | `--rrr-mode new` (`old` = before), `--rrr-keep-ratio 1.2`, `--rrr-ratio-tol 0`, `--rrr-max 3` | Only same-stage nets of this run are rip candidates (copper loaded from the board, whether hand-made, from an earlier stage or locked, is never in the rip set). Nets that are complete with length / octilinear minimum <= 1.2 are excluded. A group swap is kept only if the group's completed connections increase **and** its length ratio (sum of lengths / sum of octilinear minima of its completed connections) does not rise. The log records ratio_before / ratio_after and kept / rolled back counts (`rrr_kept`, `rrr_rolled_back`, `rrr_no_set`). |
+| 5 detour limit | `--detour 2.5` | A path longer than 2.5 x the octilinear distance between its two ends is searched again, first with via cost 0.3 mm (via hop), then with the dominant layer x3 (other layer). The shortest result is kept. If it is still above 2.5 there is no alternative, so it is accepted and listed (`clog.detour`, stage summary `detours`, computed from the final copper). |
+| 6 stitching along B.Cu runs | `--run-stitch 6 --run-stitch-dist 1.5` (router); `route_oct_stitch.py` (existing copper) | Along every B.Cu run of a stitched net (sensitive classes plus the r7 gvia set), a GND via must lie within 1.5 mm of the track at least every 6 mm (every point of the run within 3 mm, along the run, of a station). Missing stations are placed at 1.0-1.45 mm from the track with the stitch legality: `via_ok_exact` for net GND, In1 and In2 GND around the via pad, and spacing to the path and to other new vias. If no spot exists, the path is searched again with that B.Cu stretch blocked. `route_oct_stitch.py` does the same, plus the LA5 via stitch, for runs and vias already on a board, as continuation stage `ST` (lock-checked and recorded). |
+
+Other changes:
+- `helpers/route_oct_lock.py`: `copper_items(path, None)` covers all nets; new `item_strings`, `hash_strings`, `cont_lock`.
+- `helpers/route_oct_check.py`: continuation manifests are lock-checked with `cont_lock`.
+- `route_oct_rules.py`, `route_oct_export.py`, `route_oct_core.c` and `route_oct_stage.sh` are unchanged.
+- With one pad on each side, the multi-terminal search reproduces the old start, target, origin and scoring order.
+
+### 10.2 Continuation on RT-3 (placement frozen)
+
+Input `C-0` = RT-3 refilled (copper hash identical to RT-3, 2669 items; DRC 0 violations / 152 unconnected = 136 in the 140 router nets + 16 inherited power items). Net file `cont-nets.txt` = `work-route2/hard-nets.txt` with Net-(U2-XTO) moved from S0 to S1: its template copper stays locked, and only its two open ends are routed. Parameters `--via-cost 1.5 --pair-avoid 1 --hweight 1 --max-exp 3e7` + defaults; S3 with `--first-refs U1,J8`. Script `run_cont.sh`, then `stitch_stage.sh` (stage ST).
+
+| run | S1 /7 | S2 /36 | S3 /92 (+1 pin stack) | total /135 | DRC unconnected after | runtime |
+|---|---|---|---|---|---|---|
+| C1 (first code) | 2 | 1 | 4 | **7** | 145 | 591 s |
+| C2 (iteration 1: tap origins, see 10.5) = final | 2 | 1 | 4 | **7** | 145 | 541 s |
+| C2s = C2 + stage ST (stitching of existing runs) | | | | 7 | 145 | +60 s |
+
+- **Closed:**
+  - Net-(U2-XTO) 2/2: C178-1 -> Y170-3 direct, and R174-2 joined to the locked template at Y170-3. The net is complete at ratio 1.06.
+  - BT_AUDIO_R: from an existing via (via tap) to C233-1, ratio 1.83.
+  - BT_TXD_M -> J8-4, BT_RXD_M J8-3 -> R182-2, /MCU/NRST -> U3-12, Net-(U25-COMP) -> U25-18.
+  - No segment tap was used (0 stub, 0 mid T-junctions), and no detour was accepted.
+- **Open (128):**
+  - 56 "no exit": the pad's every legal stub is sealed by locked copper. Examples: U6-13 (BCK) by the RT-2 I2S_SDATA track, U8/U9 HP_SEL by the RT-2 NO-net detours, C206/C207/C239, J7, U4.
+  - 72 "no path": almost all are local pockets (every window search ends in under 0.1 s).
+  - The rip-up has nothing to rip, because locked copper is never ripped.
+  - This is the RT-2 unrouted table (`routing-s1-s3-run.md` section 5) plus the corridors that RT-2's S2/S3 copper now occupies. These need the hand edits and placement nudges listed there; the router cannot fix them.
+- **Stage ST (`route_oct_stitch.py`):**
+  - 8 GND vias on 5 runs.
+  - Worst distance to a GND via along the section 14.1 failures: Net-(C234-Pad2) 4.68 -> 2.95 mm, BT_AUDIO_R 4.22 -> 2.69 mm, AUX_R 6.80 -> 2.73 mm.
+  - All 6 sensitive B.Cu runs over 5 mm are now <= 2.95 mm.
+  - The USB_DP template via at J1 (1.86 mm from GND) has no legal stitch spot.
+- **Gates on C2s (final continuation board):**
+  - 100.000 % exact, max deviation 0.0000 deg.
+  - DRC 0 violations; unconnected 145 (129 these nets + 16 inherited).
+  - Pour check OK on S1, S2, S3 and ST.
+  - Locks C0 (2669), S1 7, S2 8, S3 25, ST 8 items: all ok. Rule hashes equal, sentinel FIRES.
+  - Checker: shorts, dangling ends, joints < 90, 90-deg joints away from pads, colinear splits and short pad exits 0 each. 4 T-junctions, 1 bend spacing and 1 micro segment, all inherited (USB template 3 T + 1 bend, AUD_SDA B-stub T, PDCTRL_SDA width step).
+  - r7 joints < 80 / < 30 deg: 19 / 7 (as RT-2).
+  - parcheck: only the intended DP/DN pair; sensitive vias 46, 1 > 1.5 mm (template DP).
+  - fpdiff vs C-0: 0 poses, 0 pad nets changed; non-routed copper unchanged + 8 GND vias; zone outlines unchanged.
+
+**Continuation on the router's own output (C3, `run_cont_on.sh F1-3 C3`).** This exercises the taps on fresh copper.
+- 11/142 open connections closed (S1 2/7, S2 3/40, S3 6/95 + 1 pin stack); DRC unconnected 159 -> 148; 1101 s.
+- Taps used: 5 via taps, 1 stub tap (AUX_R: the expected stub-node T-junction; the checker then counts 5 T-junctions), 0 mid-segment taps.
+- 1 detour accepted: Net-(C231-Pad2) 5.03x, no alternative.
+- Gates all pass:
+  - exact 100 %, DRC 0 violations, pour check OK x3;
+  - locks C0 2617 / S1 7 / S2 27 / S3 76 items ok, sentinel FIRES;
+  - 0 poses, 0 pad nets, non-routed copper unchanged + 3 GND stitches;
+  - connection ratio median 1.128, p95 2.232.
+
+### 10.3 Full strip with fixes 1, 2, 5, 6 (F1)
+
+The same procedure as `work-route2`: `prep_h0.sh` strips the 135 router nets from RT-3 and also removes RT-2's 25 GND stitching vias, so H0 has the copper of `work-route2/H0` (hash ff9ceadc..., 1633 items). Then `run_stages.sh F1 --rrr-mode old`. Rip-up is the old rule because the brief asks for fixes 1, 2, 5 and 6; fix 4 is measured separately in 10.4. `verify.sh F1-3 F1-manifest.json hard-nets.txt H0`.
+
+| | S1 | S2 | S3 | router total | + S0 template | nets complete (of 140) | vias (+stitch) | runtime |
+|---|---|---|---|---|---|---|---|---|
+| RT-2 (work-route2 A1) | 14/19 | 58/95 | 63/157 | 135/271 | 145/283 | 48 | 144 (+25) | 51 min |
+| RT-2 on the same 266 connections (without U11-40 3/4 and SW100-1 0/1) | 14/19 | 58/95 | 60/152 | 132/266 | | | | |
+| **F1** | **14/19** | **55/95** | **57/152** | **126/266** | **136/278** | 41 | 149 (+31) | 67 min |
+
+Per fix, from the logs:
+- **Fix 1.**
+  - HP_SEL_B 0/3 -> 2/3. Its U9-5 -> U9-1 leg is accepted at 5.27x: no shorter alternative exists.
+  - HP_SEL_A stays 0/3: U8-1 has no path, and the U8-5 leg failed with "own vias too close".
+  - Net-(U8-NO1/NO2) and Net-(U9-NO1/NO2) 4/4 -> 0/4. RT-2 completed them at 3.4-4.1x only through the HP_SEL lanes.
+  - S1 is redistributed with the same count: I2S_BCK and I2S_LRCK 1/3 -> 2/3, I2S_SDATA 3/3 -> 1/3. This is the TP/R-row pin-order conflict.
+- **Fix 2.** 5 pin-stack pseudo-connections removed (4 at U11-40, 1 at SW100).
+- **Fix 5.**
+  - S2: 2 detours shortened by a via hop (BT_AUDIO_L 2.91 -> 2.24, VMID_HP 3.85 -> 1.90), 4 accepted. The accepted ones are AUD_SCL 2.72, VMID_HP 2.67, AUX_R 2.90 and U2-VCOM 3.75 (RT-2 4.57).
+  - S3: 1 shortened (Q104-G 4.05 -> 2.35), 8 accepted. They are HP_SEL_B 5.27, PDCTRL_SCL 4.11, CHG_ENABLE 4.03, U14-FB 3.69, U2-SEL0 3.36, CODEC_PWR_EN 3.33, GAUGE_ISO_N 3.17 and U12-EN 2.56. These are connection-level ratios between the two end pads.
+- **Fix 6.** 23 run stitches in S2 (31 GND stitches in all); 6 run-stitch failures were searched again. Every sensitive B.Cu run over 5 mm has a GND via within 3.29 mm of every point (RT-2: 4.22-6.80 on 3 runs).
+- **S3 per net against RT-2.**
+  - Better: AMP_PDN, BT_UART_RX, PDCTRL_SCL, U16-NC, BT_RST_M, BT_SYS_CFG, BT_RXD_M, HP_SEL_B.
+  - Worse: BT_TX_IND, TS_SENSE, CODEC_PWR_EN, SWCLK, BT_MFB, ENC_A, ENC_B, PDCTRL_SDA (3/3 -> 1/3), ADC_INT, U17-NC, BT_TXD_M.
+  - The changes are sequential-blocking effects of the different S2 copper and reservations.
+
+Gates on F1-3:
+- 100.000 % exact of 2420.5 mm, max deviation 0.0000 deg.
+- DRC **0 violations**; unconnected 159 (143 these nets + 16 inherited).
+- Pour check OK on S1-S3. Locks S0 45, S1 53, S2 329, S3 571 items: ok. Rule hashes equal, sentinel FIRES.
+- Checker: shorts, dangling ends, joints < 90, 90-deg joints away from pads, colinear splits, micro segments outside pads and short pad exits 0 each. 4 T-junctions: 3 USB template, 1 the AUD_SDA B-stub branch (known, section 9 item 5). 1 bend spacing (template).
+- **Length / octilinear minimum (complete nets, n = 41): median 1.111, p95 2.187, max 3.745.** RT-2: 1.175 / 3.591 / 4.566. Nets above 1.4: 8 (RT-2 14). The median target of 1.15 is met; the p95 target of 1.4 is not.
+- r7 joints < 80 / < 30 deg: 19 / 7 (unchanged).
+- parcheck: sensitive pairs only DP/DN. Two non-sensitive B.Cu pairs just over 3 mm: BT_RST_N / BT_SYS_CFG 3.38 mm at 0.27 mm, and BT_FORCE_PWM / BT_UART_RX 3.15 mm at 0.26 mm.
+- Sensitive vias 50, 1 > 1.5 mm (template DP via). BM83 F.Cu inside the module 0 mm.
+- fpdiff vs H0: 0 poses, 0 pad nets; non-routed copper unchanged + 31 GND vias; zone outlines unchanged.
+
+### 10.4 Fix 4 measured (S2 on F1-1, `run_one.sh F1 F1-1 S2 R2new --rrr-mode new`)
+
+| rip-up | S2 conns | kept / rolled back / no set | connection ratio median / p95 / total L/O |
+|---|---|---|---|
+| old (F1-2) | 55/95 | 5 / 6 / 42 | 1.100 / 2.673 / 1.198 |
+| new (R2new-2) | 50/95 | 1 / 6 / 28 | 1.084 / 2.717 / 1.196 |
+
+- The rule "connections increase and the group ratio does not rise" rolls back swaps that complete more at a slightly longer group. For example, Net-(C234-Pad2) with AUX_L / HP_R / VMID_HP went 9 -> 10 connections at a ratio of 1.23 -> 1.57.
+- Excluding complete-and-short nets shrinks the candidate sets.
+- The result is -5 connections with no gain in length.
+- The option stays at the requested default (`new`). Recommendation: `--rrr-ratio-tol 0.3`, or `--rrr-mode old` with the fix 5 detour limit as the length guard. This is an owner choice.
+
+### 10.5 Attempts (AG13)
+
+- **C1:** first code, the agreed parameters.
+- **Iteration 1, C2:** a code fix, not a parameter change. Segment taps produced no lattice nodes on the pad-derived origins, so origins from terminal via centres and segment ends were added. Counts are unchanged (7/135), and S1 took another origin for XTO.
+- **Iteration 2, R2new:** fix 4 comparison (10.4).
+- **C3:** continuation on the router's own F1-3 output. It is a different input, not a tuning step.
+- One iteration is left unused, because no parameter addresses the remaining open connections.
+- Every run is in `work-oct3` with its log (`*.log`, `*-N.route.json`, manifests).
+
+### 10.6 Open problems
+
+1. **Continuation completion on RT-3 is 7/135.** The open set is sealed by locked copper. Continuation becomes useful once the RT-4 hand edits and placement nudges (RT-2 report section 5) open pockets, or when started on a less complete board.
+2. **The fixes cost completion in the full strip (126 vs 132 on equal connections), but improve length** (p95 3.59 -> 2.19). The four U8/U9-NO nets need a hand join or a pad nudge now that they can no longer borrow the HP_SEL lanes. HP_SEL_A is still 0/3.
+3. **Fix 4 as specified reduces completion.** The tolerance or mode needs an owner decision (10.4).
+4. **Accepted detours (no alternative found)** remain in S2 (4) and S3 (8). They are listed per connection in `F1-2/F1-3.route.json` (`detour`) and summarised by `summ.py`.
+5. **Inherited and unchanged items:**
+   - the AUD_SDA B-stub T-junction (it reappears in F1);
+   - the PDCTRL_SDA width step (RT-2 copper);
+   - the template DP via without a GND stitch within 1.5 mm, with no legal spot;
+   - 16 foreign unconnected power items;
+   - KiCad's SW100 pin-stack unconnected item (footprint pads are not declared jumpers).
+6. **Runtime.** The full strip takes 67 min (RT-2 51 min). The extra time is the detour re-searches and the run-stitch retries.
+7. **Untested paths.**
+   - Dangling segment ends are not used as taps (none exist on RT-3).
+   - Mid-segment T taps exist in code (penalty 10 mm, flagged as `tap_mid`) but were never chosen on RT-3/F1-3.
+
+Files:
+- **Helpers:** `helpers/route_oct.py` (changed), `helpers/route_oct_lock.py` (changed), `helpers/route_oct_check.py` (continuation lock), `helpers/route_oct_stitch.py` (new).
+- **Work folder `pcb/work-oct3/`:**
+  - pipeline: `prep_h0.sh`, `rm_stitch.py`, `run_stages.sh`, `run_cont.sh`, `run_cont_on.sh`, `run_one.sh`, `stitch_stage.sh`, `verify.sh`;
+  - diagnosis: `summ.py`, `probe.py`, `tapprobe.py`;
+  - net files `cont-nets.txt`, `hard-nets.txt`;
+  - boards, logs and manifests `C-0`, `C1-*`, `C2-*`, `C2s.*`, `C3-*`, `H0.*`, `F1-*`, `R2new-*`;
+  - checks `*.check.json/.txt`, `*.par.*`, `*.r7.*`, `*.fpdiff.*`, `*.brun.txt`, `*.sentinel.txt`, `*.rulehash.txt`;
+  - `orig/` (frozen router before these fixes).
