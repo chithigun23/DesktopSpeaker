@@ -81,3 +81,11 @@ ai-files/pcb/work-route3/*
 !ai-files/pcb/work-route3/RT-3.kicad_dru
 !ai-files/pcb/work-route3/RT-3.gate.json
 !ai-files/pcb/work-route3/evidence/
+ai-files/cad/v12/work/
+ai-files/cad/v12/*.step
+ai-files/cad/v12/*.FCStd
+ai-files/cad/v12/*.FCBak
+ai-files/pcb/work-cad12/
+ai-files/pcb/work-site-test/
+ai-files/website/desktopSpeaker-site/cad/*.glb
+ai-files/website/desktopSpeaker-site/cad/downloads/*.step

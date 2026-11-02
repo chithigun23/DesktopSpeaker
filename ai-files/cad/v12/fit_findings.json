@@ -1,0 +1,35 @@
+{
+ "verdict": "The enclosure still fits board RT-3 (placement R10): 0 unintended overlaps, all rear-lid cutouts still aligned, the 11 PCB holes and standoffs unchanged. One enclosure fix was made (knob dish axis, 0.86 mm). The woofer bolt circle remains an open owner decision.",
+ "findings": [
+  {"severity": "ok", "title": "Board outline, 11 PCB holes and antenna keep-out unchanged vs v11 (R6q)", "detail": "Outline 127.5 x 137.6, holes H1-H9/HA1/HA2 identical (< 0.001 mm). pcb.glb hole walls sit on the standoff axes within 0.007 mm."},
+  {"severity": "ok", "title": "Connectors unchanged: lid cutouts still aligned", "detail": "J1, J2, J3, SW100, SW102, J5, J9-J11 and U1 did not move (0.00 mm). Radial margins: J1 USB-C 1.45 mm (12 x 7 R2 cut), J2/J3 1.25 mm (8.5 bore), SW100 plunger 1.25 mm, J1/SW100 web 4.41 mm. Rocker SW101 is lid-mounted (wire pads only) and unchanged."},
+  {"severity": "ok", "title": "Moved parts clear the hardware", "detail": "99 footprints moved > 0.05 mm or rotated vs the v11 board (R6q), 18 of them > 2 mm. Largest: U3 (MCU) 59.2 mm, R160 72.3, TP21 80.8, J7 57.8, R106 55.8, C161 52.1, J4 26.4. All are low parts; closest moved part to any enclosure body: R106 2.33 mm to the H8 screw head; U3 4.58 mm to the H8 spacer and 11.99 mm to the knob well; J4 header 3.38 mm to the H7 screw head and 19.86 mm below the top wall."},
+  {"severity": "fixed", "title": "Knob dish axis corrected by 0.86 mm (pre-existing v11 error)", "detail": "The v11 axis detection picked the D-flat side of the EC11E shaft: dish at X -34.68, shaft really at X -33.82 (Y 121.16 unchanged). In v11 the shaft was 0.39 mm from the 8.5 mm floor hole and the knob 0.86 mm eccentric. v12 derives the axis from the first full round shaft section: 1.25 mm radial clearance all round. Shell STL changed accordingly."},
+  {"severity": "note", "title": "Tightest parts to hardware (unchanged from v11)", "detail": "C288/C301 2.00 mm to the HA1/HA2 M3 screw heads; R209 2.01 to H2; L201-L206 2.43-2.57 to H1/HA1/HA2 screw heads; C286/C299 3.30. No contact."},
+  {"severity": "note", "title": "Tall parts under the top wall", "detail": "SW102 shaft top 3.91 mm below the top wall inner face (intended: it reaches into the dish, 8 mm exposed). Next: J4/J6/J8 headers 19.86 mm, C275 20.7 mm (as modelled, see library finding), L200 21.4 mm, MWSA1265S inductors 21.9 mm."},
+  {"severity": "problem", "title": "C275 3D model link: footprint CP_Elec_8x10 points to CP_Elec_6.3x7.7.step", "detail": "Library/footprint model link error (CP_Elec_8x10.step exists in the library). The CAD shows a 6.3 x 7.7 can; the real 100 uF 25 V 8 x 10 part is 1.7 mm wider and 2.3 mm taller. Real top about z 78.6, still 18 mm below the top wall and > 5 mm from the nearest hardware, so no fit problem, but the model is not accurate. Not changed (handed to the model accuracy audit)."},
+  {"severity": "note", "title": "Programming/service access needs the lid off", "detail": "J7 (TC2030, new position CAD X -28.6, Y 158.1) is 44.5 mm inside the lid face with 28 mm headroom; J4 (PD service header) is 23 mm inside the lid face. Both are reachable only with the rear lid removed; the TC2030 plug must go in vertically through the rear opening. Check with the real Tag-Connect cable before printing."},
+  {"severity": "decision", "title": "Woofer W3-2052SC bolt circle still unverified", "detail": "Assumed 4 x 3.5 holes on 77 mm with the 76.2 cutout: holes break 1.35 mm into the aperture (pilots 1.6 mm). Owner must supply the Tang Band drawing, or accept the clamp-ring fallback (printed 4 mm ring ID 74 / OD 96 on a 90 mm screw circle)."},
+  {"severity": "note", "title": "KiCad GLB vs STEP export differ for two models", "detail": "Component bboxes in pcb.glb match the FreeCAD placement within 0.08 mm for J1, J2, J3, U1, U3, L201, J4, but SW102 (0.77 mm) and C275 (1.0 mm) differ between the two kicad-cli exporters (different sub-shapes of those library models). The frame itself is exact."},
+  {"severity": "ok", "title": "Library 3D offsets correct in RT-3", "detail": "No floating or sunk models (meta zfix empty): BM83 U1 and XFL4015 L2/L3 start at the board top. No offset fix was needed."}
+ ],
+ "assumptions": [
+  "Woofer Tang Band W3-2052SC: parametric stand-in (cutout 76.2, flange 82.55, depth 44.45 from Parts Express); bolt circle 77 mm and 3.5 mm holes ASSUMED, magnet and basket shape assumed.",
+  "Battery: 2 x Samsung INR21700-50S as bare cylinders 21.7 x 70.2; PCM board 3 x 43.4 x 18 box (not sourced); strap not modelled.",
+  "Stand-ins without STEP: J5 Micro-Fit (courtyard box), J9-J11 JST B2P-VH, SW100 tact switch + 2.5 mm plunger, SW101 rocker (GRB112B802BR1 catalogue dims), knob D30 x 14, grommet, foam gasket.",
+  "Harness tubes are schematic routes (J5 to pack via the right side pocket; J11 to woofer through the partition grommet).",
+  "Hardware from nominal catalogue dimensions (ISO 4762 M3 screws, M3 x 5.7 heat-set inserts, 10 mm hex spacers, Wurth 1768061 feet).",
+  "Masses: printed bodies at 100 % infill PETG 1.27 g/cm3; drivers/woofer from maker listings; PCB estimated; wires, foam and stuffing not included.",
+  "ND65-4 driver model is the maker STEP (Dayton Audio, 2025-11-20), not measured."
+ ],
+ "open_items": [
+  "Owner: Tang Band W3-2052SC drawing (hole size and bolt circle) or approval of the clamp-ring fallback.",
+  "Owner: PCM/protection board choice and size (4-5 A+ continuous); NTC; strap.",
+  "Owner: knob part (D-shaft 6 mm, 20 mm EC11E shaft) and grommet part number.",
+  "Library: C275 model link (CP_Elec_8x10 footprint uses CP_Elec_6.3x7.7.step).",
+  "Library: STEP models for J5, J9-J11, SW100 and the SW101 rocker body (stand-ins today).",
+  "v13: per-component accuracy audit (ai-files/cad/models-v13/); rerun ai-files/cad/v12/scripts/rebuild_cad.sh with the corrected library copy.",
+  "Check the TC2030 programming cable access through the rear opening with the real cable.",
+  "Routing is partial (RT-3): pcb_copper.glb shows only the copper routed so far."
+ ]
+}

@@ -1,0 +1,6390 @@
+{
+ "version": "v12",
+ "date": "2026-11-02",
+ "title": "DesktopSpeaker internal CAD v12 (board RT-3, placement R10)",
+ "source": {
+  "board": "ai-files/pcb/work-cad12/RT-3.kicad_pcb",
+  "board_sha256": "10eda9517d11d5e6e846649d7b62b0add54c51aba02106f8892cb22aac6f83ee",
+  "cad_scripts": "ai-files/cad/v12/scripts/",
+  "freecad": "1.0.0",
+  "kicad": "10.0.7 (AppImage)"
+ },
+ "units": "mm",
+ "up_axis": "+Y",
+ "frame": {
+  "gltf_from_cad": "glTF (x, y, z) = CAD (X, Z, -Y)",
+  "cad": "X right (long side), Y depth (0 = front outer face, + = rear), Z up (0 = outer bottom of the box)",
+  "front": "+z in glTF (front baffle at z = 0, rear lid outer face at z = -206.6)",
+  "ground": "feet bottoms at y = -15, box bottom at y = 0"
+ },
+ "files": {
+  "enclosure": {
+   "file": "enclosure.glb",
+   "bytes": 9998608,
+   "units": "mm",
+   "transform": null,
+   "triangles": 325211,
+   "tessellation": {
+    "linear_mm": 0.08,
+    "angular_rad": 0.3
+   }
+  },
+  "pcb": {
+   "file": "pcb.glb",
+   "bytes": 15546500,
+   "units": "mm (root node PCB_<board> carries scale 1000 on the KiCad metre data)",
+   "transform": {
+    "node": "PCB_RT-3",
+    "scale": 1000,
+    "translation": [
+     -3.5,
+     67.0,
+     -133.3
+    ],
+    "note": "already applied in the file: load both files unchanged and they overlay"
+   },
+   "triangles": 421081,
+   "content": "kicad-cli pcb export glb --subst-models --include-pads --include-soldermask --include-silkscreen; components by reference designator",
+   "layer_nodes": [
+    "Board_body",
+    "Pads_and_holes",
+    "Soldermask_F",
+    "Soldermask_B",
+    "Silkscreen_F",
+    "Silkscreen_B"
+   ]
+  },
+  "pcb_copper": {
+   "file": "pcb_copper.glb",
+   "bytes": 18132924,
+   "optional": true,
+   "content": "tracks + zones (outer layers) of the partially routed RT-3 board, same frame; optional layer: load on demand (not counted in the 40 MB budget)"
+  },
+  "renders": [
+   "renders/exploded.png",
+   "renders/front.png",
+   "renders/open_top.png",
+   "renders/pcb.png",
+   "renders/rear.png",
+   "renders/section_x-41.png",
+   "renders/section_x0.png",
+   "renders/underside.png"
+  ],
+  "downloads": [
+   "downloads/DesktopSpeaker_internal.step",
+   "downloads/DesktopSpeaker_lid.stl",
+   "downloads/DesktopSpeaker_shell.stl",
+   "downloads/DesktopSpeaker_woofer_chamber_insert.stl",
+   "downloads/SHA256SUMS"
+  ]
+ },
+ "viewer_notes": [
+  "Plain glTF 2.0, no extensions (three.js r128 GLTFLoader).",
+  "Materials are doubleSided so clipped sections show inner faces.",
+  "Explode: add node.userData.explode_mm (mesh nodes in enclosure.glb) to node.position; move the pcb.glb root by [0, 60, 0].",
+  "Per-node provenance is in node extras (userData): model_source, accuracy (unverified | <0.5mm | estimated).",
+  "Soldermask and silkscreen materials are translucent (alpha 0.83 / 0.9, alphaMode BLEND)."
+ ],
+ "groups": [
+  {
+   "key": "Shell",
+   "description": "Printed main shell: front baffle, walls, driver pads, woofer ring pad, lid bosses, feet bosses, battery cradle, encoder knob dish",
+   "explode_mm": [
+    0,
+    0,
+    0
+   ],
+   "nodes": [
+    "Shell_Box"
+   ],
+   "bbox_mm": [
+    [
+     -81.5,
+     0.0,
+     -202.6
+    ],
+    [
+     81.5,
+     100.0,
+     0.0
+    ]
+   ],
+   "color": [
+    0.3,
+    0.32,
+    0.36
+   ]
+  },
+  {
+   "key": "Lid",
+   "description": "Printed rear lid 4 mm: USB-C, 2 jacks, SW100, rocker cutouts; gasket groove",
+   "explode_mm": [
+    0,
+    0,
+    -80
+   ],
+   "nodes": [
+    "Lid_rear"
+   ],
+   "bbox_mm": [
+    [
+     -81.5,
+     0.0,
+     -206.6
+    ],
+    [
+     81.5,
+     100.0,
+     -202.6
+    ]
+   ],
+   "color": [
+    0.38,
+    0.4,
+    0.45
+   ]
+  },
+  {
+   "key": "WooferChamberInsert",
+   "description": "Printed sealed woofer chamber insert (partition, walls, roof, PCB shelf, PCB screw bosses); bonded into the shell",
+   "explode_mm": [
+    0,
+    25,
+    0
+   ],
+   "nodes": [
+    "Insert_woofer_chamber"
+   ],
+   "bbox_mm": [
+    [
+     -61.0,
+     2.0,
+     -202.6
+    ],
+    [
+     61.0,
+     57.0,
+     -76.0
+    ]
+   ],
+   "color": [
+    0.52,
+    0.42,
+    0.32
+   ]
+  },
+  {
+   "key": "Drivers_ND65",
+   "description": "Two Dayton Audio ND65-4 full-range drivers (maker STEP)",
+   "explode_mm": [
+    0,
+    0,
+    40
+   ],
+   "nodes": [
+    "Driver_FrontL_ND65-4",
+    "Driver_FrontR_ND65-4"
+   ],
+   "bbox_mm": [
+    [
+     -73.0,
+     29.11,
+     -55.75
+    ],
+    [
+     72.98,
+     93.99,
+     -7.75
+    ]
+   ],
+   "color": [
+    0.1,
+    0.1,
+    0.11
+   ]
+  },
+  {
+   "key": "Woofer",
+   "description": "Tang Band W3-2052SC down-firing woofer (parametric stand-in, no maker drawing)",
+   "explode_mm": [
+    0,
+    -70,
+    0
+   ],
+   "nodes": [
+    "Woofer_W3-2052SC_standin"
+   ],
+   "bbox_mm": [
+    [
+     -41.28,
+     7.5,
+     -192.77
+    ],
+    [
+     41.28,
+     51.95,
+     -110.22
+    ]
+   ],
+   "color": [
+    0.1,
+    0.1,
+    0.11
+   ]
+  },
+  {
+   "key": "Battery_2P21700",
+   "description": "2P Samsung INR21700-50S pack + PCM board (cradle is printed in the shell)",
+   "explode_mm": [
+    0,
+    -30,
+    0
+   ],
+   "nodes": [
+    "Battery_Cell1_21700_50S",
+    "Battery_Cell2_21700_50S",
+    "Battery_PCM_board"
+   ],
+   "bbox_mm": [
+    [
+     -36.6,
+     4.0,
+     -54.7
+    ],
+    [
+     36.6,
+     25.7,
+     -11.3
+    ]
+   ],
+   "color": [
+    0.22,
+    0.42,
+    0.78
+   ]
+  },
+  {
+   "key": "Harness",
+   "description": "Schematic cable runs: J5 to pack, J11 to woofer through the grommet",
+   "explode_mm": [
+    0,
+    0,
+    0
+   ],
+   "nodes": [
+    "Harness_J5_to_pack_schematic",
+    "Harness_woofer_leads_schematic"
+   ],
+   "bbox_mm": [
+    [
+     28.69,
+     15.85,
+     -121.32
+    ],
+    [
+     72.0,
+     86.1,
+     -31.01
+    ]
+   ],
+   "color": [
+    0.85,
+    0.5,
+    0.1
+   ]
+  },
+  {
+   "key": "PCB_StandIns",
+   "description": "Board parts without a KiCad 3D model (J5, J9-J11, SW100): courtyard-size stand-ins in the PCB frame",
+   "explode_mm": [
+    0,
+    60,
+    0
+   ],
+   "nodes": [
+    "PCB_J5_MicroFit3_standin",
+    "PCB_J9_JST_B2P-VH_standin",
+    "PCB_J10_JST_B2P-VH_standin",
+    "PCB_J11_JST_B2P-VH_standin",
+    "PCB_SW100_tact_standin",
+    "PCB_SW100_plunger"
+   ],
+   "bbox_mm": [
+    [
+     -63.63,
+     68.6,
+     -204.6
+    ],
+    [
+     63.0,
+     79.5,
+     -64.94
+    ]
+   ],
+   "color": [
+    0.92,
+    0.92,
+    0.86
+   ]
+  },
+  {
+   "key": "Hardware",
+   "description": "Screws, heat-set inserts, hex spacers, feet, rubber discs, lid gasket, grommet",
+   "explode_mm": [
+    0,
+    0,
+    0
+   ],
+   "nodes": [
+    "Grommet_6mm_standin",
+    "Gasket_lid_foam_3mm",
+    "Insert_M3x5.7_DrvScrew_L1",
+    "Screw_M3x10_DrvScrew_L1",
+    "Insert_M3x5.7_DrvScrew_L2",
+    "Screw_M3x10_DrvScrew_L2",
+    "Insert_M3x5.7_DrvScrew_L3",
+    "Screw_M3x10_DrvScrew_L3",
+    "Insert_M3x5.7_DrvScrew_L4",
+    "Screw_M3x10_DrvScrew_L4",
+    "Insert_M3x5.7_DrvScrew_R1",
+    "Screw_M3x10_DrvScrew_R1",
+    "Insert_M3x5.7_DrvScrew_R2",
+    "Screw_M3x10_DrvScrew_R2",
+    "Insert_M3x5.7_DrvScrew_R3",
+    "Screw_M3x10_DrvScrew_R3",
+    "Insert_M3x5.7_DrvScrew_R4",
+    "Screw_M3x10_DrvScrew_R4",
+    "Insert_M3x5.7_WoofScrew_1",
+    "Screw_M3x10_WoofScrew_1",
+    "Insert_M3x5.7_WoofScrew_2",
+    "Screw_M3x10_WoofScrew_2",
+    "Insert_M3x5.7_WoofScrew_3",
+    "Screw_M3x10_WoofScrew_3",
+    "Insert_M3x5.7_WoofScrew_4",
+    "Screw_M3x10_WoofScrew_4",
+    "Insert_M3x5.7_PcbScrew_1_H1",
+    "Screw_M3x16_PcbScrew_1_H1",
+    "Standoff_M3_10mm_PcbScrew_1_H1",
+    "Insert_M3x5.7_PcbScrew_2_H2",
+    "Screw_M3x16_PcbScrew_2_H2",
+    "Standoff_M3_10mm_PcbScrew_2_H2",
+    "Insert_M3x5.7_PcbScrew_3_H3",
+    "Screw_M3x16_PcbScrew_3_H3",
+    "Standoff_M3_10mm_PcbScrew_3_H3",
+    "Insert_M3x5.7_PcbScrew_4_H4",
+    "Screw_M3x16_PcbScrew_4_H4",
+    "Standoff_M3_10mm_PcbScrew_4_H4",
+    "Insert_M3x5.7_PcbScrew_5_H5",
+    "Screw_M3x16_PcbScrew_5_H5",
+    "Standoff_M3_10mm_PcbScrew_5_H5",
+    "Insert_M3x5.7_PcbScrew_6_H6",
+    "Screw_M3x16_PcbScrew_6_H6",
+    "Standoff_M3_10mm_PcbScrew_6_H6",
+    "Insert_M3x5.7_PcbScrew_7_H7",
+    "Screw_M3x16_PcbScrew_7_H7",
+    "Standoff_M3_10mm_PcbScrew_7_H7",
+    "Insert_M3x5.7_PcbScrew_8_H8",
+    "Screw_M3x16_PcbScrew_8_H8",
+    "Standoff_M3_10mm_PcbScrew_8_H8",
+    "Insert_M3x5.7_PcbScrew_9_H9",
+    "Screw_M3x16_PcbScrew_9_H9",
+    "Standoff_M3_10mm_PcbScrew_9_H9",
+    "Insert_M3x5.7_PcbScrew_10_HA1",
+    "Screw_M3x16_PcbScrew_10_HA1",
+    "Standoff_M3_10mm_PcbScrew_10_HA1",
+    "Insert_M3x5.7_PcbScrew_11_HA2",
+    "Screw_M3x16_PcbScrew_11_HA2",
+    "Standoff_M3_10mm_PcbScrew_11_HA2",
+    "Insert_M3x5.7_LidScrew_1",
+    "Screw_M3x10_LidScrew_1",
+    "Insert_M3x5.7_LidScrew_2",
+    "Screw_M3x10_LidScrew_2",
+    "Insert_M3x5.7_LidScrew_3",
+    "Screw_M3x10_LidScrew_3",
+    "Insert_M3x5.7_LidScrew_4",
+    "Screw_M3x10_LidScrew_4",
+    "Insert_M3x5.7_LidScrew_5",
+    "Screw_M3x10_LidScrew_5",
+    "Insert_M3x5.7_LidScrew_6",
+    "Screw_M3x10_LidScrew_6",
+    "Insert_M3x5.7_LidScrew_7",
+    "Screw_M3x10_LidScrew_7",
+    "Insert_M3x5.7_LidScrew_8",
+    "Screw_M3x10_LidScrew_8",
+    "Insert_M3x5.7_LidScrew_9",
+    "Screw_M3x10_LidScrew_9",
+    "Insert_M3x5.7_LidScrew_10",
+    "Screw_M3x10_LidScrew_10",
+    "Insert_M3x5.7_LidScrew_11",
+    "Screw_M3x10_LidScrew_11",
+    "Insert_M3x5.7_Foot_1",
+    "Foot_standoff_Wurth1768061_Foot_1",
+    "Foot_rubber_disc_Foot_1",
+    "Insert_M3x5.7_Foot_2",
+    "Foot_standoff_Wurth1768061_Foot_2",
+    "Foot_rubber_disc_Foot_2",
+    "Insert_M3x5.7_Foot_3",
+    "Foot_standoff_Wurth1768061_Foot_3",
+    "Foot_rubber_disc_Foot_3",
+    "Insert_M3x5.7_Foot_4",
+    "Foot_standoff_Wurth1768061_Foot_4",
+    "Foot_rubber_disc_Foot_4"
+   ],
+   "bbox_mm": [
+    [
+     -81.0,
+     -15.0,
+     -209.6
+    ],
+    [
+     81.0,
+     99.5,
+     -1.75
+    ]
+   ],
+   "color": [
+    0.05,
+    0.05,
+    0.05
+   ]
+  },
+  {
+   "key": "Knob_Rocker_Grille",
+   "description": "Encoder knob stand-in, SW101 rocker stand-in, front and woofer perforated grilles",
+   "explode_mm": [
+    0,
+    0,
+    0
+   ],
+   "nodes": [
+    "SW101_rocker_D20_standin",
+    "Knob_D30x14_standin",
+    "Grille_front_perforated",
+    "Grille_woofer_dia90"
+   ],
+   "bbox_mm": [
+    [
+     -81.5,
+     -0.8,
+     -208.6
+    ],
+    [
+     81.5,
+     100.0,
+     0.8
+    ]
+   ],
+   "color": [
+    0.65,
+    0.1,
+    0.1
+   ]
+  }
+ ],
+ "pcb_group": {
+  "key": "PCB",
+  "description": "Board RT-3 (placement R10, partial routing) with KiCad library STEP models",
+  "explode_mm": [
+   0,
+   60,
+   0
+  ],
+  "bbox_mm": [
+   [
+    -72.88,
+    64.89,
+    -203.32
+   ],
+   [
+    63.0,
+    93.09,
+    -64.5
+   ]
+  ],
+  "components_with_model": 314,
+  "components_without_model": [
+   "J10",
+   "J11",
+   "J5",
+   "J7",
+   "J9",
+   "SW100",
+   "SW101"
+  ]
+ },
+ "nodes": [
+  {
+   "name": "Shell_Box",
+   "group": "Shell",
+   "sub": null,
+   "color": [
+    0.3,
+    0.32,
+    0.36
+   ],
+   "bbox_mm": [
+    [
+     -81.5,
+     0.0,
+     -202.60000610351562
+    ],
+    [
+     81.5,
+     100.0,
+     4.440892098500626e-16
+    ]
+   ],
+   "explode_mm": [
+    0,
+    0,
+    0
+   ],
+   "model_source": "parametric design master (build_speaker_cad.py)",
+   "accuracy": "<0.5mm"
+  },
+  {
+   "name": "Insert_woofer_chamber",
+   "group": "WooferChamberInsert",
+   "sub": null,
+   "color": [
+    0.52,
+    0.42,
+    0.32
+   ],
+   "bbox_mm": [
+    [
+     -61.0,
+     2.0,
+     -202.60000610351562
+    ],
+    [
+     61.0,
+     57.0,
+     -76.0
+    ]
+   ],
+   "explode_mm": [
+    0,
+    25,
+    0
+   ],
+   "model_source": "parametric design master (build_speaker_cad.py)",
+   "accuracy": "<0.5mm"
+  },
+  {
+   "name": "Driver_FrontL_ND65-4",
+   "group": "Drivers_ND65",
+   "sub": null,
+   "color": [
+    0.1,
+    0.1,
+    0.11
+   ],
+   "bbox_mm": [
+    [
+     -73.0,
+     29.111122131347656,
+     -55.75
+    ],
+    [
+     -9.020000457763672,
+     93.9902114868164,
+     -7.75
+    ]
+   ],
+   "explode_mm": [
+    0,
+    0,
+    40
+   ],
+   "model_source": "maker STEP: Dayton Audio ND65-4 3D files (daytonaudio.com, 2025-11-20) ND65-4 and 8.step",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Driver_FrontR_ND65-4",
+   "group": "Drivers_ND65",
+   "sub": null,
+   "color": [
+    0.1,
+    0.1,
+    0.11
+   ],
+   "bbox_mm": [
+    [
+     9.000000953674316,
+     29.111122131347656,
+     -55.75
+    ],
+    [
+     72.9800033569336,
+     93.9902114868164,
+     -7.75
+    ]
+   ],
+   "explode_mm": [
+    0,
+    0,
+    40
+   ],
+   "model_source": "maker STEP: Dayton Audio ND65-4 3D files (daytonaudio.com, 2025-11-20) ND65-4 and 8.step",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Woofer_W3-2052SC_standin",
+   "group": "Woofer",
+   "sub": null,
+   "color": [
+    0.1,
+    0.1,
+    0.11
+   ],
+   "bbox_mm": [
+    [
+     -41.275001525878906,
+     7.5,
+     -192.7708740234375
+    ],
+    [
+     41.275001525878906,
+     51.95000076293945,
+     -110.22087860107422
+    ]
+   ],
+   "explode_mm": [
+    0,
+    -70,
+    0
+   ],
+   "model_source": "parametric stand-in from Parts Express listing (no maker drawing; bolt circle assumed)",
+   "accuracy": "estimated"
+  },
+  {
+   "name": "Battery_Cell1_21700_50S",
+   "group": "Battery_2P21700",
+   "sub": null,
+   "color": [
+    0.22,
+    0.42,
+    0.78
+   ],
+   "bbox_mm": [
+    [
+     -36.599998474121094,
+     4.0,
+     -32.969661712646484
+    ],
+    [
+     33.599998474121094,
+     25.700000762939453,
+     -11.330338478088379
+    ]
+   ],
+   "explode_mm": [
+    0,
+    -30,
+    0
+   ],
+   "model_source": "parametric cylinder, Samsung INR21700-50S nominal 21.7 x 70.2",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Battery_Cell2_21700_50S",
+   "group": "Battery_2P21700",
+   "sub": null,
+   "color": [
+    0.22,
+    0.42,
+    0.78
+   ],
+   "bbox_mm": [
+    [
+     -36.599998474121094,
+     4.0,
+     -54.66966247558594
+    ],
+    [
+     33.599998474121094,
+     25.700000762939453,
+     -33.030338287353516
+    ]
+   ],
+   "explode_mm": [
+    0,
+    -30,
+    0
+   ],
+   "model_source": "parametric cylinder, Samsung INR21700-50S nominal 21.7 x 70.2",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Battery_PCM_board",
+   "group": "Battery_2P21700",
+   "sub": null,
+   "color": [
+    0.1,
+    0.45,
+    0.2
+   ],
+   "bbox_mm": [
+    [
+     33.599998474121094,
+     5.849999904632568,
+     -54.70000076293945
+    ],
+    [
+     36.599998474121094,
+     23.850000381469727,
+     -11.300000190734863
+    ]
+   ],
+   "explode_mm": [
+    0,
+    -30,
+    0
+   ],
+   "model_source": "parametric box, PCM not sourced",
+   "accuracy": "estimated"
+  },
+  {
+   "name": "PCB_J5_MicroFit3_standin",
+   "group": "PCB_StandIns",
+   "sub": null,
+   "color": [
+    0.92,
+    0.92,
+    0.86
+   ],
+   "bbox_mm": [
+    [
+     52.0,
+     68.5999984741211,
+     -124.37000274658203
+    ],
+    [
+     63.0,
+     77.5999984741211,
+     -110.62000274658203
+    ]
+   ],
+   "explode_mm": [
+    0,
+    60,
+    0
+   ],
+   "model_source": "courtyard box (no STEP)",
+   "accuracy": "estimated"
+  },
+  {
+   "name": "PCB_J9_JST_B2P-VH_standin",
+   "group": "PCB_StandIns",
+   "sub": null,
+   "color": [
+    0.92,
+    0.92,
+    0.86
+   ],
+   "bbox_mm": [
+    [
+     -27.6299991607666,
+     68.5999984741211,
+     -74.44499969482422
+    ],
+    [
+     -18.360000610351562,
+     79.5,
+     -64.94499969482422
+    ]
+   ],
+   "explode_mm": [
+    0,
+    60,
+    0
+   ],
+   "model_source": "courtyard-size box (no STEP)",
+   "accuracy": "estimated"
+  },
+  {
+   "name": "PCB_J10_JST_B2P-VH_standin",
+   "group": "PCB_StandIns",
+   "sub": null,
+   "color": [
+    0.92,
+    0.92,
+    0.86
+   ],
+   "bbox_mm": [
+    [
+     -63.630001068115234,
+     68.5999984741211,
+     -74.44499969482422
+    ],
+    [
+     -54.36000061035156,
+     79.5,
+     -64.94499969482422
+    ]
+   ],
+   "explode_mm": [
+    0,
+    60,
+    0
+   ],
+   "model_source": "courtyard-size box (no STEP)",
+   "accuracy": "estimated"
+  },
+  {
+   "name": "PCB_J11_JST_B2P-VH_standin",
+   "group": "PCB_StandIns",
+   "sub": null,
+   "color": [
+    0.92,
+    0.92,
+    0.86
+   ],
+   "bbox_mm": [
+    [
+     37.15999984741211,
+     68.5999984741211,
+     -74.44499969482422
+    ],
+    [
+     46.43000030517578,
+     79.5,
+     -64.94499969482422
+    ]
+   ],
+   "explode_mm": [
+    0,
+    60,
+    0
+   ],
+   "model_source": "courtyard-size box (no STEP)",
+   "accuracy": "estimated"
+  },
+  {
+   "name": "PCB_SW100_tact_standin",
+   "group": "PCB_StandIns",
+   "sub": null,
+   "color": [
+    0.92,
+    0.92,
+    0.86
+   ],
+   "bbox_mm": [
+    [
+     -16.979999542236328,
+     68.5999984741211,
+     -200.85499572753906
+    ],
+    [
+     -12.380000114440918,
+     72.0999984741211,
+     -195.85499572753906
+    ]
+   ],
+   "explode_mm": [
+    0,
+    60,
+    0
+   ],
+   "model_source": "parametric box + plunger (no STEP)",
+   "accuracy": "estimated"
+  },
+  {
+   "name": "PCB_SW100_plunger",
+   "group": "PCB_StandIns",
+   "sub": null,
+   "color": [
+    0.8,
+    0.1,
+    0.1
+   ],
+   "bbox_mm": [
+    [
+     -15.926505088806152,
+     69.0999984741211,
+     -204.60000610351562
+    ],
+    [
+     -13.43349552154541,
+     71.5999984741211,
+     -202.10000610351562
+    ]
+   ],
+   "explode_mm": [
+    0,
+    60,
+    0
+   ],
+   "model_source": "parametric box + plunger (no STEP)",
+   "accuracy": "estimated"
+  },
+  {
+   "name": "SW101_rocker_D20_standin",
+   "group": "Knob_Rocker_Grille",
+   "sub": null,
+   "color": [
+    0.65,
+    0.1,
+    0.1
+   ],
+   "bbox_mm": [
+    [
+     50.53495407104492,
+     67.5,
+     -208.60000610351562
+    ],
+    [
+     75.46504974365234,
+     92.5,
+     -193.60000610351562
+    ]
+   ],
+   "explode_mm": [
+    0,
+    0,
+    -80
+   ],
+   "model_source": "parametric stand-in, CW Industries GRB112B802BR1 catalogue dims",
+   "accuracy": "estimated"
+  },
+  {
+   "name": "Knob_D30x14_standin",
+   "group": "Knob_Rocker_Grille",
+   "sub": null,
+   "color": [
+    0.12,
+    0.12,
+    0.13
+   ],
+   "bbox_mm": [
+    [
+     -48.81999969482422,
+     85.83999633789062,
+     -136.16000366210938
+    ],
+    [
+     -18.81999969482422,
+     99.83999633789062,
+     -106.16000366210938
+    ]
+   ],
+   "explode_mm": [
+    0,
+    40,
+    0
+   ],
+   "model_source": "parametric stand-in (knob not selected)",
+   "accuracy": "estimated"
+  },
+  {
+   "name": "Harness_J5_to_pack_schematic",
+   "group": "Harness",
+   "sub": null,
+   "color": [
+    0.85,
+    0.5,
+    0.1
+   ],
+   "bbox_mm": [
+    [
+     39.0,
+     15.850000381469727,
+     -119.49500274658203
+    ],
+    [
+     72.0,
+     75.0999984741211,
+     -31.005592346191406
+    ]
+   ],
+   "explode_mm": [
+    0,
+    0,
+    0
+   ],
+   "model_source": "schematic tube",
+   "accuracy": "estimated"
+  },
+  {
+   "name": "Harness_woofer_leads_schematic",
+   "group": "Harness",
+   "sub": null,
+   "color": [
+    0.75,
+    0.12,
+    0.1
+   ],
+   "bbox_mm": [
+    [
+     28.692060470581055,
+     23.98196029663086,
+     -121.31603240966797
+    ],
+    [
+     43.29499816894531,
+     86.0999984741211,
+     -58.5
+    ]
+   ],
+   "explode_mm": [
+    0,
+    0,
+    0
+   ],
+   "model_source": "schematic tube",
+   "accuracy": "estimated"
+  },
+  {
+   "name": "Grommet_6mm_standin",
+   "group": "Hardware",
+   "sub": "Gaskets_Grommet",
+   "color": [
+    0.05,
+    0.05,
+    0.05
+   ],
+   "bbox_mm": [
+    [
+     35.41286087036133,
+     35.400001525878906,
+     -105.39175415039062
+    ],
+    [
+     44.58713912963867,
+     44.599998474121094,
+     -101.791748046875
+    ]
+   ],
+   "explode_mm": [
+    0,
+    0,
+    0
+   ],
+   "model_source": "parametric stand-in",
+   "accuracy": "estimated"
+  },
+  {
+   "name": "Gasket_lid_foam_3mm",
+   "group": "Hardware",
+   "sub": "Gaskets_Grommet",
+   "color": [
+    0.05,
+    0.05,
+    0.05
+   ],
+   "bbox_mm": [
+    [
+     -81.0,
+     0.5,
+     -204.10000610351562
+    ],
+    [
+     81.0,
+     99.5,
+     -202.60000610351562
+    ]
+   ],
+   "explode_mm": [
+    0,
+    0,
+    -80
+   ],
+   "model_source": "parametric stand-in",
+   "accuracy": "estimated"
+  },
+  {
+   "name": "Lid_rear",
+   "group": "Lid",
+   "sub": null,
+   "color": [
+    0.38,
+    0.4,
+    0.45
+   ],
+   "bbox_mm": [
+    [
+     -81.5,
+     0.0,
+     -206.60000610351562
+    ],
+    [
+     81.5,
+     100.0,
+     -202.60000610351562
+    ]
+   ],
+   "explode_mm": [
+    0,
+    0,
+    -80
+   ],
+   "model_source": "parametric design master (build_speaker_cad.py)",
+   "accuracy": "<0.5mm"
+  },
+  {
+   "name": "Grille_front_perforated",
+   "group": "Knob_Rocker_Grille",
+   "sub": null,
+   "color": [
+    0.08,
+    0.08,
+    0.09
+   ],
+   "bbox_mm": [
+    [
+     -81.5,
+     0.0,
+     -0.0
+    ],
+    [
+     81.5,
+     100.0,
+     0.800000011920929
+    ]
+   ],
+   "explode_mm": [
+    0,
+    0,
+    80
+   ],
+   "model_source": "parametric (0.8 mm perforated sheet, not sourced)",
+   "accuracy": "estimated"
+  },
+  {
+   "name": "Grille_woofer_dia90",
+   "group": "Knob_Rocker_Grille",
+   "sub": null,
+   "color": [
+    0.08,
+    0.08,
+    0.09
+   ],
+   "bbox_mm": [
+    [
+     -44.96052551269531,
+     -0.800000011920929,
+     -196.4860076904297
+    ],
+    [
+     45.0,
+     0.0,
+     -106.50574493408203
+    ]
+   ],
+   "explode_mm": [
+    0,
+    -70,
+    0
+   ],
+   "model_source": "parametric (0.8 mm perforated sheet, not sourced)",
+   "accuracy": "estimated"
+  },
+  {
+   "name": "Insert_M3x5.7_DrvScrew_L1",
+   "group": "Hardware",
+   "sub": "Inserts",
+   "color": [
+    0.85,
+    0.65,
+    0.25
+   ],
+   "bbox_mm": [
+    [
+     -19.89356803894043,
+     82.6500015258789,
+     -11.0
+    ],
+    [
+     -15.30643081665039,
+     87.25,
+     -5.300000190734863
+    ]
+   ],
+   "explode_mm": [
+    0,
+    0,
+    40
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Screw_M3x10_DrvScrew_L1",
+   "group": "Hardware",
+   "sub": "Screws",
+   "color": [
+    0.2,
+    0.2,
+    0.22
+   ],
+   "bbox_mm": [
+    [
+     -20.342309951782227,
+     82.19999694824219,
+     -14.75
+    ],
+    [
+     -14.85768985748291,
+     87.69999694824219,
+     -1.75
+    ]
+   ],
+   "explode_mm": [
+    0,
+    0,
+    40
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Insert_M3x5.7_DrvScrew_L2",
+   "group": "Hardware",
+   "sub": "Inserts",
+   "color": [
+    0.85,
+    0.65,
+    0.25
+   ],
+   "bbox_mm": [
+    [
+     -19.89356803894043,
+     35.849998474121094,
+     -11.0
+    ],
+    [
+     -15.30643081665039,
+     40.45000076293945,
+     -5.300000190734863
+    ]
+   ],
+   "explode_mm": [
+    0,
+    0,
+    40
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Screw_M3x10_DrvScrew_L2",
+   "group": "Hardware",
+   "sub": "Screws",
+   "color": [
+    0.2,
+    0.2,
+    0.22
+   ],
+   "bbox_mm": [
+    [
+     -20.342309951782227,
+     35.400001525878906,
+     -14.75
+    ],
+    [
+     -14.85768985748291,
+     40.900001525878906,
+     -1.75
+    ]
+   ],
+   "explode_mm": [
+    0,
+    0,
+    40
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Insert_M3x5.7_DrvScrew_L3",
+   "group": "Hardware",
+   "sub": "Inserts",
+   "color": [
+    0.85,
+    0.65,
+    0.25
+   ],
+   "bbox_mm": [
+    [
+     -66.69356536865234,
+     82.6500015258789,
+     -11.0
+    ],
+    [
+     -62.10643005371094,
+     87.25,
+     -5.300000190734863
+    ]
+   ],
+   "explode_mm": [
+    0,
+    0,
+    40
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Screw_M3x10_DrvScrew_L3",
+   "group": "Hardware",
+   "sub": "Screws",
+   "color": [
+    0.2,
+    0.2,
+    0.22
+   ],
+   "bbox_mm": [
+    [
+     -67.1423110961914,
+     82.19999694824219,
+     -14.75
+    ],
+    [
+     -61.65768814086914,
+     87.69999694824219,
+     -1.75
+    ]
+   ],
+   "explode_mm": [
+    0,
+    0,
+    40
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Insert_M3x5.7_DrvScrew_L4",
+   "group": "Hardware",
+   "sub": "Inserts",
+   "color": [
+    0.85,
+    0.65,
+    0.25
+   ],
+   "bbox_mm": [
+    [
+     -66.69356536865234,
+     35.849998474121094,
+     -11.0
+    ],
+    [
+     -62.10643005371094,
+     40.45000076293945,
+     -5.300000190734863
+    ]
+   ],
+   "explode_mm": [
+    0,
+    0,
+    40
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Screw_M3x10_DrvScrew_L4",
+   "group": "Hardware",
+   "sub": "Screws",
+   "color": [
+    0.2,
+    0.2,
+    0.22
+   ],
+   "bbox_mm": [
+    [
+     -67.1423110961914,
+     35.400001525878906,
+     -14.75
+    ],
+    [
+     -61.65768814086914,
+     40.900001525878906,
+     -1.75
+    ]
+   ],
+   "explode_mm": [
+    0,
+    0,
+    40
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Insert_M3x5.7_DrvScrew_R1",
+   "group": "Hardware",
+   "sub": "Inserts",
+   "color": [
+    0.85,
+    0.65,
+    0.25
+   ],
+   "bbox_mm": [
+    [
+     62.10643005371094,
+     82.6500015258789,
+     -11.0
+    ],
+    [
+     66.69356536865234,
+     87.25,
+     -5.300000190734863
+    ]
+   ],
+   "explode_mm": [
+    0,
+    0,
+    40
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Screw_M3x10_DrvScrew_R1",
+   "group": "Hardware",
+   "sub": "Screws",
+   "color": [
+    0.2,
+    0.2,
+    0.22
+   ],
+   "bbox_mm": [
+    [
+     61.65768814086914,
+     82.19999694824219,
+     -14.75
+    ],
+    [
+     67.1423110961914,
+     87.69999694824219,
+     -1.75
+    ]
+   ],
+   "explode_mm": [
+    0,
+    0,
+    40
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Insert_M3x5.7_DrvScrew_R2",
+   "group": "Hardware",
+   "sub": "Inserts",
+   "color": [
+    0.85,
+    0.65,
+    0.25
+   ],
+   "bbox_mm": [
+    [
+     62.10643005371094,
+     35.849998474121094,
+     -11.0
+    ],
+    [
+     66.69356536865234,
+     40.45000076293945,
+     -5.300000190734863
+    ]
+   ],
+   "explode_mm": [
+    0,
+    0,
+    40
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Screw_M3x10_DrvScrew_R2",
+   "group": "Hardware",
+   "sub": "Screws",
+   "color": [
+    0.2,
+    0.2,
+    0.22
+   ],
+   "bbox_mm": [
+    [
+     61.65768814086914,
+     35.400001525878906,
+     -14.75
+    ],
+    [
+     67.1423110961914,
+     40.900001525878906,
+     -1.75
+    ]
+   ],
+   "explode_mm": [
+    0,
+    0,
+    40
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Insert_M3x5.7_DrvScrew_R3",
+   "group": "Hardware",
+   "sub": "Inserts",
+   "color": [
+    0.85,
+    0.65,
+    0.25
+   ],
+   "bbox_mm": [
+    [
+     15.30643081665039,
+     82.6500015258789,
+     -11.0
+    ],
+    [
+     19.89356803894043,
+     87.25,
+     -5.300000190734863
+    ]
+   ],
+   "explode_mm": [
+    0,
+    0,
+    40
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Screw_M3x10_DrvScrew_R3",
+   "group": "Hardware",
+   "sub": "Screws",
+   "color": [
+    0.2,
+    0.2,
+    0.22
+   ],
+   "bbox_mm": [
+    [
+     14.85768985748291,
+     82.19999694824219,
+     -14.75
+    ],
+    [
+     20.342309951782227,
+     87.69999694824219,
+     -1.75
+    ]
+   ],
+   "explode_mm": [
+    0,
+    0,
+    40
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Insert_M3x5.7_DrvScrew_R4",
+   "group": "Hardware",
+   "sub": "Inserts",
+   "color": [
+    0.85,
+    0.65,
+    0.25
+   ],
+   "bbox_mm": [
+    [
+     15.30643081665039,
+     35.849998474121094,
+     -11.0
+    ],
+    [
+     19.89356803894043,
+     40.45000076293945,
+     -5.300000190734863
+    ]
+   ],
+   "explode_mm": [
+    0,
+    0,
+    40
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Screw_M3x10_DrvScrew_R4",
+   "group": "Hardware",
+   "sub": "Screws",
+   "color": [
+    0.2,
+    0.2,
+    0.22
+   ],
+   "bbox_mm": [
+    [
+     14.85768985748291,
+     35.400001525878906,
+     -14.75
+    ],
+    [
+     20.342309951782227,
+     40.900001525878906,
+     -1.75
+    ]
+   ],
+   "explode_mm": [
+    0,
+    0,
+    40
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Insert_M3x5.7_WoofScrew_1",
+   "group": "Hardware",
+   "sub": "Inserts",
+   "color": [
+    0.85,
+    0.65,
+    0.25
+   ],
+   "bbox_mm": [
+    [
+     24.92361068725586,
+     1.7999999523162842,
+     -181.0130615234375
+    ],
+    [
+     29.523611068725586,
+     7.5,
+     -176.42591857910156
+    ]
+   ],
+   "explode_mm": [
+    0,
+    0,
+    0
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Screw_M3x10_WoofScrew_1",
+   "group": "Hardware",
+   "sub": "Screws",
+   "color": [
+    0.2,
+    0.2,
+    0.22
+   ],
+   "bbox_mm": [
+    [
+     24.47361183166504,
+     1.5,
+     -181.4617919921875
+    ],
+    [
+     29.97361183166504,
+     14.5,
+     -175.9771728515625
+    ]
+   ],
+   "explode_mm": [
+    0,
+    -70,
+    0
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Insert_M3x5.7_WoofScrew_2",
+   "group": "Hardware",
+   "sub": "Inserts",
+   "color": [
+    0.85,
+    0.65,
+    0.25
+   ],
+   "bbox_mm": [
+    [
+     -29.523611068725586,
+     1.7999999523162842,
+     -181.0130615234375
+    ],
+    [
+     -24.92361068725586,
+     7.5,
+     -176.42591857910156
+    ]
+   ],
+   "explode_mm": [
+    0,
+    0,
+    0
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Screw_M3x10_WoofScrew_2",
+   "group": "Hardware",
+   "sub": "Screws",
+   "color": [
+    0.2,
+    0.2,
+    0.22
+   ],
+   "bbox_mm": [
+    [
+     -29.97361183166504,
+     1.5,
+     -181.4617919921875
+    ],
+    [
+     -24.47361183166504,
+     14.5,
+     -175.9771728515625
+    ]
+   ],
+   "explode_mm": [
+    0,
+    -70,
+    0
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Insert_M3x5.7_WoofScrew_3",
+   "group": "Hardware",
+   "sub": "Inserts",
+   "color": [
+    0.85,
+    0.65,
+    0.25
+   ],
+   "bbox_mm": [
+    [
+     -29.523611068725586,
+     1.7999999523162842,
+     -126.56583404541016
+    ],
+    [
+     -24.92361068725586,
+     7.5,
+     -121.97869873046875
+    ]
+   ],
+   "explode_mm": [
+    0,
+    0,
+    0
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Screw_M3x10_WoofScrew_3",
+   "group": "Hardware",
+   "sub": "Screws",
+   "color": [
+    0.2,
+    0.2,
+    0.22
+   ],
+   "bbox_mm": [
+    [
+     -29.97361183166504,
+     1.5,
+     -127.01457214355469
+    ],
+    [
+     -24.47361183166504,
+     14.5,
+     -121.52995300292969
+    ]
+   ],
+   "explode_mm": [
+    0,
+    -70,
+    0
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Insert_M3x5.7_WoofScrew_4",
+   "group": "Hardware",
+   "sub": "Inserts",
+   "color": [
+    0.85,
+    0.65,
+    0.25
+   ],
+   "bbox_mm": [
+    [
+     24.92361068725586,
+     1.7999999523162842,
+     -126.56583404541016
+    ],
+    [
+     29.523611068725586,
+     7.5,
+     -121.97869873046875
+    ]
+   ],
+   "explode_mm": [
+    0,
+    0,
+    0
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Screw_M3x10_WoofScrew_4",
+   "group": "Hardware",
+   "sub": "Screws",
+   "color": [
+    0.2,
+    0.2,
+    0.22
+   ],
+   "bbox_mm": [
+    [
+     24.47361183166504,
+     1.5,
+     -127.01457214355469
+    ],
+    [
+     29.97361183166504,
+     14.5,
+     -121.52995300292969
+    ]
+   ],
+   "explode_mm": [
+    0,
+    -70,
+    0
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Insert_M3x5.7_PcbScrew_1_H1",
+   "group": "Hardware",
+   "sub": "Inserts",
+   "color": [
+    0.85,
+    0.65,
+    0.25
+   ],
+   "bbox_mm": [
+    [
+     -16.399999618530273,
+     51.29999923706055,
+     -95.99356842041016
+    ],
+    [
+     -11.800000190734863,
+     57.0,
+     -91.40643310546875
+    ]
+   ],
+   "explode_mm": [
+    0,
+    25,
+    0
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Screw_M3x16_PcbScrew_1_H1",
+   "group": "Hardware",
+   "sub": "Screws",
+   "color": [
+    0.2,
+    0.2,
+    0.22
+   ],
+   "bbox_mm": [
+    [
+     -16.850000381469727,
+     52.599998474121094,
+     -96.44231414794922
+    ],
+    [
+     -11.350000381469727,
+     71.5999984741211,
+     -90.95768737792969
+    ]
+   ],
+   "explode_mm": [
+    0,
+    60,
+    0
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Standoff_M3_10mm_PcbScrew_1_H1",
+   "group": "Hardware",
+   "sub": "Standoffs",
+   "color": [
+    0.72,
+    0.72,
+    0.75
+   ],
+   "bbox_mm": [
+    [
+     -17.275426864624023,
+     57.0,
+     -96.44999694824219
+    ],
+    [
+     -10.92457389831543,
+     67.0,
+     -90.94999694824219
+    ]
+   ],
+   "explode_mm": [
+    0,
+    60,
+    0
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Insert_M3x5.7_PcbScrew_2_H2",
+   "group": "Hardware",
+   "sub": "Inserts",
+   "color": [
+    0.85,
+    0.65,
+    0.25
+   ],
+   "bbox_mm": [
+    [
+     0.4000000059604645,
+     51.29999923706055,
+     -127.19356536865234
+    ],
+    [
+     5.0,
+     57.0,
+     -122.60643005371094
+    ]
+   ],
+   "explode_mm": [
+    0,
+    25,
+    0
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Screw_M3x16_PcbScrew_2_H2",
+   "group": "Hardware",
+   "sub": "Screws",
+   "color": [
+    0.2,
+    0.2,
+    0.22
+   ],
+   "bbox_mm": [
+    [
+     -0.05000000074505806,
+     52.599998474121094,
+     -127.6423110961914
+    ],
+    [
+     5.449999809265137,
+     71.5999984741211,
+     -122.1576919555664
+    ]
+   ],
+   "explode_mm": [
+    0,
+    60,
+    0
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Standoff_M3_10mm_PcbScrew_2_H2",
+   "group": "Hardware",
+   "sub": "Standoffs",
+   "color": [
+    0.72,
+    0.72,
+    0.75
+   ],
+   "bbox_mm": [
+    [
+     -0.47542649507522583,
+     57.0,
+     -127.6500015258789
+    ],
+    [
+     5.875426292419434,
+     67.0,
+     -122.1500015258789
+    ]
+   ],
+   "explode_mm": [
+    0,
+    60,
+    0
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Insert_M3x5.7_PcbScrew_3_H3",
+   "group": "Hardware",
+   "sub": "Inserts",
+   "color": [
+    0.85,
+    0.65,
+    0.25
+   ],
+   "bbox_mm": [
+    [
+     13.399999618530273,
+     51.29999923706055,
+     -96.09356689453125
+    ],
+    [
+     18.0,
+     57.0,
+     -91.50643157958984
+    ]
+   ],
+   "explode_mm": [
+    0,
+    25,
+    0
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Screw_M3x16_PcbScrew_3_H3",
+   "group": "Hardware",
+   "sub": "Screws",
+   "color": [
+    0.2,
+    0.2,
+    0.22
+   ],
+   "bbox_mm": [
+    [
+     12.949999809265137,
+     52.599998474121094,
+     -96.54231262207031
+    ],
+    [
+     18.450000762939453,
+     71.5999984741211,
+     -91.05768585205078
+    ]
+   ],
+   "explode_mm": [
+    0,
+    60,
+    0
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Standoff_M3_10mm_PcbScrew_3_H3",
+   "group": "Hardware",
+   "sub": "Standoffs",
+   "color": [
+    0.72,
+    0.72,
+    0.75
+   ],
+   "bbox_mm": [
+    [
+     12.52457332611084,
+     57.0,
+     -96.55000305175781
+    ],
+    [
+     18.87542724609375,
+     67.0,
+     -91.05000305175781
+    ]
+   ],
+   "explode_mm": [
+    0,
+    60,
+    0
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Insert_M3x5.7_PcbScrew_4_H4",
+   "group": "Hardware",
+   "sub": "Inserts",
+   "color": [
+    0.85,
+    0.65,
+    0.25
+   ],
+   "bbox_mm": [
+    [
+     -16.399999618530273,
+     51.29999923706055,
+     -110.99356842041016
+    ],
+    [
+     -11.800000190734863,
+     57.0,
+     -106.40643310546875
+    ]
+   ],
+   "explode_mm": [
+    0,
+    25,
+    0
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Screw_M3x16_PcbScrew_4_H4",
+   "group": "Hardware",
+   "sub": "Screws",
+   "color": [
+    0.2,
+    0.2,
+    0.22
+   ],
+   "bbox_mm": [
+    [
+     -16.850000381469727,
+     52.599998474121094,
+     -111.44231414794922
+    ],
+    [
+     -11.350000381469727,
+     71.5999984741211,
+     -105.95768737792969
+    ]
+   ],
+   "explode_mm": [
+    0,
+    60,
+    0
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Standoff_M3_10mm_PcbScrew_4_H4",
+   "group": "Hardware",
+   "sub": "Standoffs",
+   "color": [
+    0.72,
+    0.72,
+    0.75
+   ],
+   "bbox_mm": [
+    [
+     -17.275426864624023,
+     57.0,
+     -111.44999694824219
+    ],
+    [
+     -10.92457389831543,
+     67.0,
+     -105.94999694824219
+    ]
+   ],
+   "explode_mm": [
+    0,
+    60,
+    0
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Insert_M3x5.7_PcbScrew_5_H5",
+   "group": "Hardware",
+   "sub": "Inserts",
+   "color": [
+    0.85,
+    0.65,
+    0.25
+   ],
+   "bbox_mm": [
+    [
+     55.400001525878906,
+     51.29999923706055,
+     -174.39356994628906
+    ],
+    [
+     60.0,
+     57.0,
+     -169.80642700195312
+    ]
+   ],
+   "explode_mm": [
+    0,
+    25,
+    0
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Screw_M3x16_PcbScrew_5_H5",
+   "group": "Hardware",
+   "sub": "Screws",
+   "color": [
+    0.2,
+    0.2,
+    0.22
+   ],
+   "bbox_mm": [
+    [
+     54.95000076293945,
+     52.599998474121094,
+     -174.84231567382812
+    ],
+    [
+     60.45000076293945,
+     71.5999984741211,
+     -169.35769653320312
+    ]
+   ],
+   "explode_mm": [
+    0,
+    60,
+    0
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Standoff_M3_10mm_PcbScrew_5_H5",
+   "group": "Hardware",
+   "sub": "Standoffs",
+   "color": [
+    0.72,
+    0.72,
+    0.75
+   ],
+   "bbox_mm": [
+    [
+     54.524574279785156,
+     57.0,
+     -174.85000610351562
+    ],
+    [
+     60.87542724609375,
+     67.0,
+     -169.35000610351562
+    ]
+   ],
+   "explode_mm": [
+    0,
+    60,
+    0
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Insert_M3x5.7_PcbScrew_6_H6",
+   "group": "Hardware",
+   "sub": "Inserts",
+   "color": [
+    0.85,
+    0.65,
+    0.25
+   ],
+   "bbox_mm": [
+    [
+     39.099998474121094,
+     51.29999923706055,
+     -120.39356994628906
+    ],
+    [
+     43.70000076293945,
+     57.0,
+     -115.80643463134766
+    ]
+   ],
+   "explode_mm": [
+    0,
+    25,
+    0
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Screw_M3x16_PcbScrew_6_H6",
+   "group": "Hardware",
+   "sub": "Screws",
+   "color": [
+    0.2,
+    0.2,
+    0.22
+   ],
+   "bbox_mm": [
+    [
+     38.650001525878906,
+     52.599998474121094,
+     -120.8423080444336
+    ],
+    [
+     44.150001525878906,
+     71.5999984741211,
+     -115.3576889038086
+    ]
+   ],
+   "explode_mm": [
+    0,
+    60,
+    0
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Standoff_M3_10mm_PcbScrew_6_H6",
+   "group": "Hardware",
+   "sub": "Standoffs",
+   "color": [
+    0.72,
+    0.72,
+    0.75
+   ],
+   "bbox_mm": [
+    [
+     38.22457504272461,
+     57.0,
+     -120.8499984741211
+    ],
+    [
+     44.5754280090332,
+     67.0,
+     -115.3499984741211
+    ]
+   ],
+   "explode_mm": [
+    0,
+    60,
+    0
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Insert_M3x5.7_PcbScrew_7_H7",
+   "group": "Hardware",
+   "sub": "Inserts",
+   "color": [
+    0.85,
+    0.65,
+    0.25
+   ],
+   "bbox_mm": [
+    [
+     -14.800000190734863,
+     51.29999923706055,
+     -189.29356384277344
+    ],
+    [
+     -10.199999809265137,
+     57.0,
+     -184.70643615722656
+    ]
+   ],
+   "explode_mm": [
+    0,
+    25,
+    0
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Screw_M3x16_PcbScrew_7_H7",
+   "group": "Hardware",
+   "sub": "Screws",
+   "color": [
+    0.2,
+    0.2,
+    0.22
+   ],
+   "bbox_mm": [
+    [
+     -15.25,
+     52.599998474121094,
+     -189.7423095703125
+    ],
+    [
+     -9.75,
+     71.5999984741211,
+     -184.2576904296875
+    ]
+   ],
+   "explode_mm": [
+    0,
+    60,
+    0
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Standoff_M3_10mm_PcbScrew_7_H7",
+   "group": "Hardware",
+   "sub": "Standoffs",
+   "color": [
+    0.72,
+    0.72,
+    0.75
+   ],
+   "bbox_mm": [
+    [
+     -15.675426483154297,
+     57.0,
+     -189.75
+    ],
+    [
+     -9.324573516845703,
+     67.0,
+     -184.25
+    ]
+   ],
+   "explode_mm": [
+    0,
+    60,
+    0
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Insert_M3x5.7_PcbScrew_8_H8",
+   "group": "Hardware",
+   "sub": "Inserts",
+   "color": [
+    0.85,
+    0.65,
+    0.25
+   ],
+   "bbox_mm": [
+    [
+     -35.900001525878906,
+     51.29999923706055,
+     -138.4935760498047
+    ],
+    [
+     -31.299999237060547,
+     57.0,
+     -133.90643310546875
+    ]
+   ],
+   "explode_mm": [
+    0,
+    25,
+    0
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Screw_M3x16_PcbScrew_8_H8",
+   "group": "Hardware",
+   "sub": "Screws",
+   "color": [
+    0.2,
+    0.2,
+    0.22
+   ],
+   "bbox_mm": [
+    [
+     -36.349998474121094,
+     52.599998474121094,
+     -138.9423065185547
+    ],
+    [
+     -30.850000381469727,
+     71.5999984741211,
+     -133.4576873779297
+    ]
+   ],
+   "explode_mm": [
+    0,
+    60,
+    0
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Standoff_M3_10mm_PcbScrew_8_H8",
+   "group": "Hardware",
+   "sub": "Standoffs",
+   "color": [
+    0.72,
+    0.72,
+    0.75
+   ],
+   "bbox_mm": [
+    [
+     -36.77542495727539,
+     57.0,
+     -138.9499969482422
+    ],
+    [
+     -30.42457389831543,
+     67.0,
+     -133.4499969482422
+    ]
+   ],
+   "explode_mm": [
+    0,
+    60,
+    0
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Insert_M3x5.7_PcbScrew_9_H9",
+   "group": "Hardware",
+   "sub": "Inserts",
+   "color": [
+    0.85,
+    0.65,
+    0.25
+   ],
+   "bbox_mm": [
+    [
+     -61.04999923706055,
+     51.29999923706055,
+     -164.39356994628906
+    ],
+    [
+     -56.45000076293945,
+     57.0,
+     -159.80642700195312
+    ]
+   ],
+   "explode_mm": [
+    0,
+    25,
+    0
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Screw_M3x16_PcbScrew_9_H9",
+   "group": "Hardware",
+   "sub": "Screws",
+   "color": [
+    0.2,
+    0.2,
+    0.22
+   ],
+   "bbox_mm": [
+    [
+     -61.5,
+     52.599998474121094,
+     -164.84231567382812
+    ],
+    [
+     -56.0,
+     71.5999984741211,
+     -159.35769653320312
+    ]
+   ],
+   "explode_mm": [
+    0,
+    60,
+    0
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Standoff_M3_10mm_PcbScrew_9_H9",
+   "group": "Hardware",
+   "sub": "Standoffs",
+   "color": [
+    0.72,
+    0.72,
+    0.75
+   ],
+   "bbox_mm": [
+    [
+     -61.9254264831543,
+     57.0,
+     -164.85000610351562
+    ],
+    [
+     -55.5745735168457,
+     67.0,
+     -159.35000610351562
+    ]
+   ],
+   "explode_mm": [
+    0,
+    60,
+    0
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Insert_M3x5.7_PcbScrew_10_HA1",
+   "group": "Hardware",
+   "sub": "Inserts",
+   "color": [
+    0.85,
+    0.65,
+    0.25
+   ],
+   "bbox_mm": [
+    [
+     -43.29499816894531,
+     51.29999923706055,
+     -84.78856658935547
+    ],
+    [
+     -38.69499969482422,
+     57.0,
+     -80.20143127441406
+    ]
+   ],
+   "explode_mm": [
+    0,
+    25,
+    0
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Screw_M3x16_PcbScrew_10_HA1",
+   "group": "Hardware",
+   "sub": "Screws",
+   "color": [
+    0.2,
+    0.2,
+    0.22
+   ],
+   "bbox_mm": [
+    [
+     -43.744998931884766,
+     52.599998474121094,
+     -85.23731231689453
+    ],
+    [
+     -38.244998931884766,
+     71.5999984741211,
+     -79.75269317626953
+    ]
+   ],
+   "explode_mm": [
+    0,
+    60,
+    0
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Standoff_M3_10mm_PcbScrew_10_HA1",
+   "group": "Hardware",
+   "sub": "Standoffs",
+   "color": [
+    0.72,
+    0.72,
+    0.75
+   ],
+   "bbox_mm": [
+    [
+     -44.17042541503906,
+     57.0,
+     -85.24500274658203
+    ],
+    [
+     -37.81957244873047,
+     67.0,
+     -79.74500274658203
+    ]
+   ],
+   "explode_mm": [
+    0,
+    60,
+    0
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Insert_M3x5.7_PcbScrew_11_HA2",
+   "group": "Hardware",
+   "sub": "Inserts",
+   "color": [
+    0.85,
+    0.65,
+    0.25
+   ],
+   "bbox_mm": [
+    [
+     39.494998931884766,
+     51.29999923706055,
+     -84.78856658935547
+    ],
+    [
+     44.095001220703125,
+     57.0,
+     -80.20143127441406
+    ]
+   ],
+   "explode_mm": [
+    0,
+    25,
+    0
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Screw_M3x16_PcbScrew_11_HA2",
+   "group": "Hardware",
+   "sub": "Screws",
+   "color": [
+    0.2,
+    0.2,
+    0.22
+   ],
+   "bbox_mm": [
+    [
+     39.04499816894531,
+     52.599998474121094,
+     -85.23731231689453
+    ],
+    [
+     44.54499816894531,
+     71.5999984741211,
+     -79.75269317626953
+    ]
+   ],
+   "explode_mm": [
+    0,
+    60,
+    0
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Standoff_M3_10mm_PcbScrew_11_HA2",
+   "group": "Hardware",
+   "sub": "Standoffs",
+   "color": [
+    0.72,
+    0.72,
+    0.75
+   ],
+   "bbox_mm": [
+    [
+     38.619571685791016,
+     57.0,
+     -85.24500274658203
+    ],
+    [
+     44.97042465209961,
+     67.0,
+     -79.74500274658203
+    ]
+   ],
+   "explode_mm": [
+    0,
+    60,
+    0
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Insert_M3x5.7_LidScrew_1",
+   "group": "Hardware",
+   "sub": "Inserts",
+   "color": [
+    0.85,
+    0.65,
+    0.25
+   ],
+   "bbox_mm": [
+    [
+     -76.29357147216797,
+     5.199999809265137,
+     -202.60000610351562
+    ],
+    [
+     -71.70642852783203,
+     9.800000190734863,
+     -196.89999389648438
+    ]
+   ],
+   "explode_mm": [
+    0,
+    0,
+    0
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Screw_M3x10_LidScrew_1",
+   "group": "Hardware",
+   "sub": "Screws",
+   "color": [
+    0.2,
+    0.2,
+    0.22
+   ],
+   "bbox_mm": [
+    [
+     -76.7423095703125,
+     4.75,
+     -209.60000610351562
+    ],
+    [
+     -71.2576904296875,
+     10.25,
+     -196.60000610351562
+    ]
+   ],
+   "explode_mm": [
+    0,
+    0,
+    -80
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Insert_M3x5.7_LidScrew_2",
+   "group": "Hardware",
+   "sub": "Inserts",
+   "color": [
+    0.85,
+    0.65,
+    0.25
+   ],
+   "bbox_mm": [
+    [
+     71.70642852783203,
+     5.199999809265137,
+     -202.60000610351562
+    ],
+    [
+     76.29357147216797,
+     9.800000190734863,
+     -196.89999389648438
+    ]
+   ],
+   "explode_mm": [
+    0,
+    0,
+    0
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Screw_M3x10_LidScrew_2",
+   "group": "Hardware",
+   "sub": "Screws",
+   "color": [
+    0.2,
+    0.2,
+    0.22
+   ],
+   "bbox_mm": [
+    [
+     71.2576904296875,
+     4.75,
+     -209.60000610351562
+    ],
+    [
+     76.7423095703125,
+     10.25,
+     -196.60000610351562
+    ]
+   ],
+   "explode_mm": [
+    0,
+    0,
+    -80
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Insert_M3x5.7_LidScrew_3",
+   "group": "Hardware",
+   "sub": "Inserts",
+   "color": [
+    0.85,
+    0.65,
+    0.25
+   ],
+   "bbox_mm": [
+    [
+     -76.29357147216797,
+     90.19999694824219,
+     -202.60000610351562
+    ],
+    [
+     -71.70642852783203,
+     94.80000305175781,
+     -196.89999389648438
+    ]
+   ],
+   "explode_mm": [
+    0,
+    0,
+    0
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Screw_M3x10_LidScrew_3",
+   "group": "Hardware",
+   "sub": "Screws",
+   "color": [
+    0.2,
+    0.2,
+    0.22
+   ],
+   "bbox_mm": [
+    [
+     -76.7423095703125,
+     89.75,
+     -209.60000610351562
+    ],
+    [
+     -71.2576904296875,
+     95.25,
+     -196.60000610351562
+    ]
+   ],
+   "explode_mm": [
+    0,
+    0,
+    -80
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Insert_M3x5.7_LidScrew_4",
+   "group": "Hardware",
+   "sub": "Inserts",
+   "color": [
+    0.85,
+    0.65,
+    0.25
+   ],
+   "bbox_mm": [
+    [
+     74.20642852783203,
+     91.69999694824219,
+     -202.60000610351562
+    ],
+    [
+     78.79357147216797,
+     96.30000305175781,
+     -196.89999389648438
+    ]
+   ],
+   "explode_mm": [
+    0,
+    0,
+    0
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Screw_M3x10_LidScrew_4",
+   "group": "Hardware",
+   "sub": "Screws",
+   "color": [
+    0.2,
+    0.2,
+    0.22
+   ],
+   "bbox_mm": [
+    [
+     73.7576904296875,
+     91.25,
+     -209.60000610351562
+    ],
+    [
+     79.2423095703125,
+     96.75,
+     -196.60000610351562
+    ]
+   ],
+   "explode_mm": [
+    0,
+    0,
+    -80
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Insert_M3x5.7_LidScrew_5",
+   "group": "Hardware",
+   "sub": "Inserts",
+   "color": [
+    0.85,
+    0.65,
+    0.25
+   ],
+   "bbox_mm": [
+    [
+     -2.2935688495635986,
+     90.19999694824219,
+     -202.60000610351562
+    ],
+    [
+     2.2935688495635986,
+     94.80000305175781,
+     -196.89999389648438
+    ]
+   ],
+   "explode_mm": [
+    0,
+    0,
+    0
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Screw_M3x10_LidScrew_5",
+   "group": "Hardware",
+   "sub": "Screws",
+   "color": [
+    0.2,
+    0.2,
+    0.22
+   ],
+   "bbox_mm": [
+    [
+     -2.7423105239868164,
+     89.75,
+     -209.60000610351562
+    ],
+    [
+     2.7423105239868164,
+     95.25,
+     -196.60000610351562
+    ]
+   ],
+   "explode_mm": [
+    0,
+    0,
+    -80
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Insert_M3x5.7_LidScrew_6",
+   "group": "Hardware",
+   "sub": "Inserts",
+   "color": [
+    0.85,
+    0.65,
+    0.25
+   ],
+   "bbox_mm": [
+    [
+     -52.2935676574707,
+     5.199999809265137,
+     -202.60000610351562
+    ],
+    [
+     -47.7064323425293,
+     9.800000190734863,
+     -196.89999389648438
+    ]
+   ],
+   "explode_mm": [
+    0,
+    0,
+    0
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Screw_M3x10_LidScrew_6",
+   "group": "Hardware",
+   "sub": "Screws",
+   "color": [
+    0.2,
+    0.2,
+    0.22
+   ],
+   "bbox_mm": [
+    [
+     -52.7423095703125,
+     4.75,
+     -209.60000610351562
+    ],
+    [
+     -47.2576904296875,
+     10.25,
+     -196.60000610351562
+    ]
+   ],
+   "explode_mm": [
+    0,
+    0,
+    -80
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Insert_M3x5.7_LidScrew_7",
+   "group": "Hardware",
+   "sub": "Inserts",
+   "color": [
+    0.85,
+    0.65,
+    0.25
+   ],
+   "bbox_mm": [
+    [
+     47.7064323425293,
+     5.199999809265137,
+     -202.60000610351562
+    ],
+    [
+     52.2935676574707,
+     9.800000190734863,
+     -196.89999389648438
+    ]
+   ],
+   "explode_mm": [
+    0,
+    0,
+    0
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Screw_M3x10_LidScrew_7",
+   "group": "Hardware",
+   "sub": "Screws",
+   "color": [
+    0.2,
+    0.2,
+    0.22
+   ],
+   "bbox_mm": [
+    [
+     47.2576904296875,
+     4.75,
+     -209.60000610351562
+    ],
+    [
+     52.7423095703125,
+     10.25,
+     -196.60000610351562
+    ]
+   ],
+   "explode_mm": [
+    0,
+    0,
+    -80
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Insert_M3x5.7_LidScrew_8",
+   "group": "Hardware",
+   "sub": "Inserts",
+   "color": [
+    0.85,
+    0.65,
+    0.25
+   ],
+   "bbox_mm": [
+    [
+     -72.29357147216797,
+     42.70000076293945,
+     -202.60000610351562
+    ],
+    [
+     -67.70642852783203,
+     47.29999923706055,
+     -196.89999389648438
+    ]
+   ],
+   "explode_mm": [
+    0,
+    0,
+    0
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Screw_M3x10_LidScrew_8",
+   "group": "Hardware",
+   "sub": "Screws",
+   "color": [
+    0.2,
+    0.2,
+    0.22
+   ],
+   "bbox_mm": [
+    [
+     -72.7423095703125,
+     42.25,
+     -209.60000610351562
+    ],
+    [
+     -67.2576904296875,
+     47.75,
+     -196.60000610351562
+    ]
+   ],
+   "explode_mm": [
+    0,
+    0,
+    -80
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Insert_M3x5.7_LidScrew_9",
+   "group": "Hardware",
+   "sub": "Inserts",
+   "color": [
+    0.85,
+    0.65,
+    0.25
+   ],
+   "bbox_mm": [
+    [
+     67.70642852783203,
+     42.70000076293945,
+     -202.60000610351562
+    ],
+    [
+     72.29357147216797,
+     47.29999923706055,
+     -196.89999389648438
+    ]
+   ],
+   "explode_mm": [
+    0,
+    0,
+    0
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Screw_M3x10_LidScrew_9",
+   "group": "Hardware",
+   "sub": "Screws",
+   "color": [
+    0.2,
+    0.2,
+    0.22
+   ],
+   "bbox_mm": [
+    [
+     67.2576904296875,
+     42.25,
+     -209.60000610351562
+    ],
+    [
+     72.7423095703125,
+     47.75,
+     -196.60000610351562
+    ]
+   ],
+   "explode_mm": [
+    0,
+    0,
+    -80
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Insert_M3x5.7_LidScrew_10",
+   "group": "Hardware",
+   "sub": "Inserts",
+   "color": [
+    0.85,
+    0.65,
+    0.25
+   ],
+   "bbox_mm": [
+    [
+     -32.2935676574707,
+     47.70000076293945,
+     -202.60000610351562
+    ],
+    [
+     -27.706430435180664,
+     52.29999923706055,
+     -196.89999389648438
+    ]
+   ],
+   "explode_mm": [
+    0,
+    25,
+    0
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Screw_M3x10_LidScrew_10",
+   "group": "Hardware",
+   "sub": "Screws",
+   "color": [
+    0.2,
+    0.2,
+    0.22
+   ],
+   "bbox_mm": [
+    [
+     -32.7423095703125,
+     47.25,
+     -209.60000610351562
+    ],
+    [
+     -27.2576904296875,
+     52.75,
+     -196.60000610351562
+    ]
+   ],
+   "explode_mm": [
+    0,
+    0,
+    -80
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Insert_M3x5.7_LidScrew_11",
+   "group": "Hardware",
+   "sub": "Inserts",
+   "color": [
+    0.85,
+    0.65,
+    0.25
+   ],
+   "bbox_mm": [
+    [
+     27.706430435180664,
+     47.70000076293945,
+     -202.60000610351562
+    ],
+    [
+     32.2935676574707,
+     52.29999923706055,
+     -196.89999389648438
+    ]
+   ],
+   "explode_mm": [
+    0,
+    25,
+    0
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Screw_M3x10_LidScrew_11",
+   "group": "Hardware",
+   "sub": "Screws",
+   "color": [
+    0.2,
+    0.2,
+    0.22
+   ],
+   "bbox_mm": [
+    [
+     27.2576904296875,
+     47.25,
+     -209.60000610351562
+    ],
+    [
+     32.7423095703125,
+     52.75,
+     -196.60000610351562
+    ]
+   ],
+   "explode_mm": [
+    0,
+    0,
+    -80
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Insert_M3x5.7_Foot_1",
+   "group": "Hardware",
+   "sub": "Inserts",
+   "color": [
+    0.85,
+    0.65,
+    0.25
+   ],
+   "bbox_mm": [
+    [
+     -70.30000305175781,
+     0.0,
+     -27.293569564819336
+    ],
+    [
+     -65.69999694824219,
+     5.699999809265137,
+     -22.706430435180664
+    ]
+   ],
+   "explode_mm": [
+    0,
+    0,
+    0
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Foot_standoff_Wurth1768061_Foot_1",
+   "group": "Hardware",
+   "sub": "Feet",
+   "color": [
+    0.72,
+    0.72,
+    0.75
+   ],
+   "bbox_mm": [
+    [
+     -71.17542266845703,
+     -12.0,
+     -27.75
+    ],
+    [
+     -64.82457733154297,
+     6.0,
+     -22.25
+    ]
+   ],
+   "explode_mm": [
+    0,
+    -25,
+    0
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Foot_rubber_disc_Foot_1",
+   "group": "Hardware",
+   "sub": "Feet",
+   "color": [
+    0.05,
+    0.05,
+    0.05
+   ],
+   "bbox_mm": [
+    [
+     -74.0,
+     -15.0,
+     -30.98322296142578
+    ],
+    [
+     -62.0,
+     -12.0,
+     -19.01677703857422
+    ]
+   ],
+   "explode_mm": [
+    0,
+    -25,
+    0
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Insert_M3x5.7_Foot_2",
+   "group": "Hardware",
+   "sub": "Inserts",
+   "color": [
+    0.85,
+    0.65,
+    0.25
+   ],
+   "bbox_mm": [
+    [
+     65.69999694824219,
+     0.0,
+     -27.293569564819336
+    ],
+    [
+     70.30000305175781,
+     5.699999809265137,
+     -22.706430435180664
+    ]
+   ],
+   "explode_mm": [
+    0,
+    0,
+    0
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Foot_standoff_Wurth1768061_Foot_2",
+   "group": "Hardware",
+   "sub": "Feet",
+   "color": [
+    0.72,
+    0.72,
+    0.75
+   ],
+   "bbox_mm": [
+    [
+     64.82457733154297,
+     -12.0,
+     -27.75
+    ],
+    [
+     71.17542266845703,
+     6.0,
+     -22.25
+    ]
+   ],
+   "explode_mm": [
+    0,
+    -25,
+    0
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Foot_rubber_disc_Foot_2",
+   "group": "Hardware",
+   "sub": "Feet",
+   "color": [
+    0.05,
+    0.05,
+    0.05
+   ],
+   "bbox_mm": [
+    [
+     62.0,
+     -15.0,
+     -30.98322296142578
+    ],
+    [
+     74.0,
+     -12.0,
+     -19.01677703857422
+    ]
+   ],
+   "explode_mm": [
+    0,
+    -25,
+    0
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Insert_M3x5.7_Foot_3",
+   "group": "Hardware",
+   "sub": "Inserts",
+   "color": [
+    0.85,
+    0.65,
+    0.25
+   ],
+   "bbox_mm": [
+    [
+     -70.30000305175781,
+     0.0,
+     -137.29356384277344
+    ],
+    [
+     -65.69999694824219,
+     5.699999809265137,
+     -132.70643615722656
+    ]
+   ],
+   "explode_mm": [
+    0,
+    0,
+    0
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Foot_standoff_Wurth1768061_Foot_3",
+   "group": "Hardware",
+   "sub": "Feet",
+   "color": [
+    0.72,
+    0.72,
+    0.75
+   ],
+   "bbox_mm": [
+    [
+     -71.17542266845703,
+     -12.0,
+     -137.75
+    ],
+    [
+     -64.82457733154297,
+     6.0,
+     -132.25
+    ]
+   ],
+   "explode_mm": [
+    0,
+    -25,
+    0
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Foot_rubber_disc_Foot_3",
+   "group": "Hardware",
+   "sub": "Feet",
+   "color": [
+    0.05,
+    0.05,
+    0.05
+   ],
+   "bbox_mm": [
+    [
+     -74.0,
+     -15.0,
+     -140.98321533203125
+    ],
+    [
+     -62.0,
+     -12.0,
+     -129.01678466796875
+    ]
+   ],
+   "explode_mm": [
+    0,
+    -25,
+    0
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Insert_M3x5.7_Foot_4",
+   "group": "Hardware",
+   "sub": "Inserts",
+   "color": [
+    0.85,
+    0.65,
+    0.25
+   ],
+   "bbox_mm": [
+    [
+     65.69999694824219,
+     0.0,
+     -137.29356384277344
+    ],
+    [
+     70.30000305175781,
+     5.699999809265137,
+     -132.70643615722656
+    ]
+   ],
+   "explode_mm": [
+    0,
+    0,
+    0
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Foot_standoff_Wurth1768061_Foot_4",
+   "group": "Hardware",
+   "sub": "Feet",
+   "color": [
+    0.72,
+    0.72,
+    0.75
+   ],
+   "bbox_mm": [
+    [
+     64.82457733154297,
+     -12.0,
+     -137.75
+    ],
+    [
+     71.17542266845703,
+     6.0,
+     -132.25
+    ]
+   ],
+   "explode_mm": [
+    0,
+    -25,
+    0
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  },
+  {
+   "name": "Foot_rubber_disc_Foot_4",
+   "group": "Hardware",
+   "sub": "Feet",
+   "color": [
+    0.05,
+    0.05,
+    0.05
+   ],
+   "bbox_mm": [
+    [
+     62.0,
+     -15.0,
+     -140.98321533203125
+    ],
+    [
+     74.0,
+     -12.0,
+     -129.01678466796875
+    ]
+   ],
+   "explode_mm": [
+    0,
+    -25,
+    0
+   ],
+   "model_source": "parametric from ISO 4762 / catalogue nominal dims",
+   "accuracy": "unverified"
+  }
+ ],
+ "pcb_nodes": [
+  {
+   "ref": "C100",
+   "footprint": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+   "model_source": "KiCad library STEP C_0805_2012Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C101",
+   "footprint": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+   "model_source": "KiCad library STEP C_0805_2012Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C102",
+   "footprint": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+   "model_source": "KiCad library STEP C_0805_2012Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C103",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C104",
+   "footprint": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+   "model_source": "KiCad library STEP C_0805_2012Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C105",
+   "footprint": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+   "model_source": "KiCad library STEP C_0805_2012Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C106",
+   "footprint": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+   "model_source": "KiCad library STEP C_0805_2012Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C107",
+   "footprint": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+   "model_source": "KiCad library STEP C_0805_2012Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C108",
+   "footprint": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+   "model_source": "KiCad library STEP C_0805_2012Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C109",
+   "footprint": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+   "model_source": "KiCad library STEP C_0805_2012Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C110",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C111",
+   "footprint": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+   "model_source": "KiCad library STEP C_0805_2012Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C112",
+   "footprint": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+   "model_source": "KiCad library STEP C_0805_2012Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C120",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C122",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C123",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C124",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C125",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C126",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C130",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C131",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C132",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C140",
+   "footprint": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+   "model_source": "KiCad library STEP C_0805_2012Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C141",
+   "footprint": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+   "model_source": "KiCad library STEP C_0805_2012Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C142",
+   "footprint": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+   "model_source": "KiCad library STEP C_0805_2012Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C150",
+   "footprint": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+   "model_source": "KiCad library STEP C_0805_2012Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C152",
+   "footprint": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+   "model_source": "KiCad library STEP C_0805_2012Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C153",
+   "footprint": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+   "model_source": "KiCad library STEP C_0805_2012Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C154",
+   "footprint": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+   "model_source": "KiCad library STEP C_0805_2012Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C160",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C161",
+   "footprint": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+   "model_source": "KiCad library STEP C_0805_2012Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C162",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C170",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C171",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C172",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C173",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C174",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C175",
+   "footprint": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+   "model_source": "KiCad library STEP C_0805_2012Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C176",
+   "footprint": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+   "model_source": "KiCad library STEP C_0805_2012Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C177",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C178",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C181",
+   "footprint": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+   "model_source": "KiCad library STEP C_0805_2012Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C182",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C183",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C184",
+   "footprint": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+   "model_source": "KiCad library STEP C_0805_2012Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C186",
+   "footprint": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+   "model_source": "KiCad library STEP C_0805_2012Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C187",
+   "footprint": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+   "model_source": "KiCad library STEP C_0805_2012Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C190",
+   "footprint": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+   "model_source": "KiCad library STEP C_0805_2012Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C191",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C192",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C193",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C194",
+   "footprint": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+   "model_source": "KiCad library STEP C_0805_2012Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C195",
+   "footprint": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+   "model_source": "KiCad library STEP C_0805_2012Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C2",
+   "footprint": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+   "model_source": "KiCad library STEP C_0805_2012Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C200",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C201",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C202",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C203",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C204",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C205",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C206",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C207",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C208",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C209",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C210",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C211",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C212",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C213",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C214",
+   "footprint": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+   "model_source": "KiCad library STEP C_0805_2012Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C215",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C216",
+   "footprint": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+   "model_source": "KiCad library STEP C_0805_2012Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C217",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C218",
+   "footprint": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+   "model_source": "KiCad library STEP C_0805_2012Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C219",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C220",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C221",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C222",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C223",
+   "footprint": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+   "model_source": "KiCad library STEP C_0805_2012Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C224",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C225",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C226",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C227",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C230",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C231",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C232",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C233",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C234",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C235",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C236",
+   "footprint": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+   "model_source": "KiCad library STEP C_0805_2012Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C237",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C238",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C239",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C240",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C241",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C243",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C244",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C245",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C246",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C260",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C261",
+   "footprint": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+   "model_source": "KiCad library STEP C_0805_2012Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C262",
+   "footprint": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+   "model_source": "KiCad library STEP C_0805_2012Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C263",
+   "footprint": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+   "model_source": "KiCad library STEP C_0805_2012Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C264",
+   "footprint": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+   "model_source": "KiCad library STEP C_0805_2012Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C265",
+   "footprint": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+   "model_source": "KiCad library STEP C_0805_2012Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C266",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C267",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C268",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C269",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C270",
+   "footprint": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+   "model_source": "KiCad library STEP C_0805_2012Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C271",
+   "footprint": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+   "model_source": "KiCad library STEP C_0805_2012Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C272",
+   "footprint": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+   "model_source": "KiCad library STEP C_0805_2012Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C273",
+   "footprint": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+   "model_source": "KiCad library STEP C_0805_2012Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C274",
+   "footprint": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+   "model_source": "KiCad library STEP C_0805_2012Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C275",
+   "footprint": "DesktopSpeaker:CP_Elec_8x10",
+   "model_source": "KiCad library STEP CP_Elec_6.3x7.7.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C276",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C277",
+   "footprint": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+   "model_source": "KiCad library STEP C_0805_2012Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C278",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C279",
+   "footprint": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+   "model_source": "KiCad library STEP C_0805_2012Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C280",
+   "footprint": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+   "model_source": "KiCad library STEP C_0805_2012Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C281",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C282",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C283",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C284",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C285",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C286",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C287",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C288",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C289",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C290",
+   "footprint": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+   "model_source": "KiCad library STEP C_0805_2012Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C291",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C292",
+   "footprint": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+   "model_source": "KiCad library STEP C_0805_2012Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C293",
+   "footprint": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+   "model_source": "KiCad library STEP C_0805_2012Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C294",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C295",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C296",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C297",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C298",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C299",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C300",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C301",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C302",
+   "footprint": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+   "model_source": "KiCad library STEP C_0805_2012Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C303",
+   "footprint": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+   "model_source": "KiCad library STEP C_0805_2012Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C304",
+   "footprint": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+   "model_source": "KiCad library STEP C_0805_2012Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C305",
+   "footprint": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+   "model_source": "KiCad library STEP C_0805_2012Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C306",
+   "footprint": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+   "model_source": "KiCad library STEP C_0805_2012Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C307",
+   "footprint": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+   "model_source": "KiCad library STEP C_0805_2012Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C308",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C309",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C310",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C311",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C312",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C313",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C314",
+   "footprint": "DesktopSpeaker:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+   "model_source": "KiCad library STEP C_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C315",
+   "footprint": "DesktopSpeaker:PD_C_1206",
+   "model_source": "KiCad library STEP PD_C_1206.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C316",
+   "footprint": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+   "model_source": "KiCad library STEP C_0805_2012Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C5",
+   "footprint": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+   "model_source": "KiCad library STEP C_0805_2012Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "C6",
+   "footprint": "DesktopSpeaker:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+   "model_source": "KiCad library STEP C_0805_2012Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "D1",
+   "footprint": "DesktopSpeaker:TPD2E2U06DRLR",
+   "model_source": "KiCad library STEP TPD2E2U06DRLR.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "D200",
+   "footprint": "DesktopSpeaker:PESD5V0S2BT",
+   "model_source": "KiCad library STEP PESD5V0S2BT.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "D201",
+   "footprint": "DesktopSpeaker:PESD5V0S2BT",
+   "model_source": "KiCad library STEP PESD5V0S2BT.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "D5",
+   "footprint": "DesktopSpeaker:ESDA25L",
+   "model_source": "KiCad library STEP ESDA25L.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "D6",
+   "footprint": "DesktopSpeaker:TVS2200DRVR",
+   "model_source": "KiCad library STEP TVS2200DRVR.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "D7",
+   "footprint": "DesktopSpeaker:PD_D_SOD123",
+   "model_source": "KiCad library STEP D_SOD-123.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "FB200",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "J1",
+   "footprint": "DesktopSpeaker:TYPE-C-31-M-12",
+   "model_source": "KiCad library STEP TYPE-C-31-M-12.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "J2",
+   "footprint": "DesktopSpeaker:PJ-307",
+   "model_source": "KiCad library STEP PJ-307.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "J3",
+   "footprint": "DesktopSpeaker:PJ-307",
+   "model_source": "KiCad library STEP PJ-307.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "J4",
+   "footprint": "DesktopSpeaker:PD_SERVICE_HDR",
+   "model_source": "KiCad library STEP PinHeader_1x04_P2.54mm_Vertical.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "J6",
+   "footprint": "DesktopSpeaker:PinHeader_1x04_P2.54mm_Vertical",
+   "model_source": "KiCad library STEP PinHeader_1x04_P2.54mm_Vertical.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "J8",
+   "footprint": "DesktopSpeaker:PinHeader_1x05_P2.54mm_Vertical",
+   "model_source": "KiCad library STEP PinHeader_1x05_P2.54mm_Vertical.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "L1",
+   "footprint": "DesktopSpeaker:Bourns_SRN6045TA-2R2Y",
+   "model_source": "KiCad library STEP Bourns_SRN6045TA-2R2Y.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "L2",
+   "footprint": "DesktopSpeaker:Coilcraft_XFL4015-471MEC",
+   "model_source": "KiCad library STEP Coilcraft_XFL4015-471MEC.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "L200",
+   "footprint": "DesktopSpeaker:L_Coilcraft_XAL7070-XXX",
+   "model_source": "KiCad library STEP L_Coilcraft_XAL7070-XXX.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "L201",
+   "footprint": "DesktopSpeaker:L_Sunlord_MWSA1265S",
+   "model_source": "KiCad library STEP L_Sunlord_MWSA1265S.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "L202",
+   "footprint": "DesktopSpeaker:L_Sunlord_MWSA1265S",
+   "model_source": "KiCad library STEP L_Sunlord_MWSA1265S.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "L203",
+   "footprint": "DesktopSpeaker:L_Sunlord_MWSA1265S",
+   "model_source": "KiCad library STEP L_Sunlord_MWSA1265S.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "L204",
+   "footprint": "DesktopSpeaker:L_Sunlord_MWSA1265S",
+   "model_source": "KiCad library STEP L_Sunlord_MWSA1265S.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "L205",
+   "footprint": "DesktopSpeaker:L_Sunlord_MWSA1265S",
+   "model_source": "KiCad library STEP L_Sunlord_MWSA1265S.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "L206",
+   "footprint": "DesktopSpeaker:L_Sunlord_MWSA1265S",
+   "model_source": "KiCad library STEP L_Sunlord_MWSA1265S.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "L3",
+   "footprint": "DesktopSpeaker:Coilcraft_XFL4015-471MEC",
+   "model_source": "KiCad library STEP Coilcraft_XFL4015-471MEC.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "Q100",
+   "footprint": "DesktopSpeaker:2N7002",
+   "model_source": "KiCad library STEP 2N7002.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "Q101",
+   "footprint": "DesktopSpeaker:2N7002",
+   "model_source": "KiCad library STEP 2N7002.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "Q102",
+   "footprint": "DesktopSpeaker:2N7002",
+   "model_source": "KiCad library STEP 2N7002.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "Q103",
+   "footprint": "DesktopSpeaker:CSD17579Q3A_DNH0008A",
+   "model_source": "KiCad library STEP DNH0008A.stp",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "Q104",
+   "footprint": "DesktopSpeaker:2N7002",
+   "model_source": "KiCad library STEP 2N7002.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R10",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R100",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R101",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R102",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R103",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R106",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R107",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R108",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R109",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R11",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R110",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R111",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R112",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R113",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R12",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R120",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R121",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R122",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R124",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R125",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R126",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R127",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R13",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R14",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R140",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R141",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R142",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R15",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R150",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R151",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R152",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R153",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R154",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R16",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R160",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R17",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R170",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R171",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R172",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R173",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R174",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R175",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R176",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R18",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R180",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R181",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R182",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R183",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R184",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R185",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R186",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R187",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R200",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R201",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R202",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R203",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R204",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R205",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R206",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R207",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R208",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R209",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R210",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R211",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R212",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R220",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R221",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R222",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R223",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R224",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R225",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R226",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R227",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R228",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R229",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R230",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R231",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R232",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R233",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R234",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R235",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R236",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R237",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R238",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R239",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R240",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R241",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R242",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R243",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R244",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R250",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R251",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R252",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R253",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R254",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R255",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R256",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R257",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R258",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R259",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R261",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "R262",
+   "footprint": "DesktopSpeaker:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+   "model_source": "KiCad library STEP R_0402_1005Metric.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "SW102",
+   "footprint": "DesktopSpeaker:RotaryEncoder_Alps_EC11E-Switch_Vertical_H20mm_MountingHoles",
+   "model_source": "KiCad library STEP EC11E15244G1.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "U1",
+   "footprint": "DesktopSpeaker:BM83SM1-00TA",
+   "model_source": "KiCad library STEP BM83SM1-00TA.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "U10",
+   "footprint": "DesktopSpeaker:TPA6132A2RTER",
+   "model_source": "KiCad library STEP TPA6132A2RTER.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "U11",
+   "footprint": "DesktopSpeaker:TPS25730D",
+   "model_source": "KiCad library STEP REF0038A.stp",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "U12",
+   "footprint": "DesktopSpeaker:TPS7A0230PDBVR",
+   "model_source": "KiCad library STEP TPS7A0230PDBVR.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "U13",
+   "footprint": "DesktopSpeaker:TS5A3167DBVR",
+   "model_source": "KiCad library STEP TS5A3167DBVR.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "U14",
+   "footprint": "DesktopSpeaker:TPS63802DLAR",
+   "model_source": "KiCad library STEP TPS63802DLAR.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "U15",
+   "footprint": "DesktopSpeaker:TPS63802DLAR",
+   "model_source": "KiCad library STEP TPS63802DLAR.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "U16",
+   "footprint": "DesktopSpeaker:TS5A3167DBVR",
+   "model_source": "KiCad library STEP TS5A3167DBVR.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "U17",
+   "footprint": "DesktopSpeaker:TS5A3167DBVR",
+   "model_source": "KiCad library STEP TS5A3167DBVR.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "U19",
+   "footprint": "DesktopSpeaker:TPS7B8450QWDRBRQ1_WSON-8",
+   "model_source": "KiCad library STEP TPS7B8450QWDRBRQ1.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "U2",
+   "footprint": "DesktopSpeaker:PCM2902CDBR",
+   "model_source": "KiCad library STEP PCM2902CDBR.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "U20",
+   "footprint": "DesktopSpeaker:TPS2116DRLR",
+   "model_source": "KiCad library STEP TPS2116DRLR.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "U21",
+   "footprint": "DesktopSpeaker:TPS3839G33DBZR",
+   "model_source": "KiCad library STEP TPS3839G33DBZ_SOT23.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "U22",
+   "footprint": "DesktopSpeaker:TPS7A2033PDBVR",
+   "model_source": "KiCad library STEP TPS7A2033PDBVR.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "U23",
+   "footprint": "DesktopSpeaker:TPS22917DBVR",
+   "model_source": "KiCad library STEP TPS22917DBVR.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "U24",
+   "footprint": "DesktopSpeaker:PCM1862DBTR",
+   "model_source": "KiCad library STEP PCM1862DBTR.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "U25",
+   "footprint": "DesktopSpeaker:TPS61088RHLR",
+   "model_source": "KiCad library STEP TPS61088RHLR.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "U3",
+   "footprint": "DesktopSpeaker:STM32G071RBT6",
+   "model_source": "KiCad library STEP STM32G071RBT6.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "U4",
+   "footprint": "DesktopSpeaker:BQ25792RQMR",
+   "model_source": "KiCad library STEP RQM0029A.stp",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "U5",
+   "footprint": "DesktopSpeaker:MAX17048G+T10",
+   "model_source": "KiCad library STEP MAX17048G+T10.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "U6",
+   "footprint": "DesktopSpeaker:TAS5825MRHBR",
+   "model_source": "KiCad library STEP TAS5825MRHBR.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "U7",
+   "footprint": "DesktopSpeaker:TAS5825MRHBR",
+   "model_source": "KiCad library STEP TAS5825MRHBR.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "U8",
+   "footprint": "DesktopSpeaker:TS5A23157DGSR",
+   "model_source": "KiCad library STEP TS5A23157DGSR.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "U9",
+   "footprint": "DesktopSpeaker:TS5A23157DGSR",
+   "model_source": "KiCad library STEP TS5A23157DGSR.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "Y170",
+   "footprint": "DesktopSpeaker:Crystal_SMD_3225-4Pin_3.2x2.5mm",
+   "model_source": "KiCad library STEP Crystal_SMD_3225-4Pin_3.2x2.5mm.step",
+   "accuracy": "unverified"
+  },
+  {
+   "ref": "Y200",
+   "footprint": "DesktopSpeaker:Crystal_SMD_3225-4Pin_3.2x2.5mm",
+   "model_source": "KiCad library STEP Crystal_SMD_3225-4Pin_3.2x2.5mm.step",
+   "accuracy": "unverified"
+  }
+ ],
+ "section_planes": [
+  {
+   "name": "x = 0: woofer chamber, PCB stack, knob",
+   "normal": [
+    -1,
+    0,
+    0
+   ],
+   "constant": 0.0,
+   "keeps": "x < 0"
+  },
+  {
+   "name": "x = -41: left ND65 and battery",
+   "normal": [
+    -1,
+    0,
+    0
+   ],
+   "constant": -41.0,
+   "keeps": "x < -41"
+  },
+  {
+   "name": "x = -33.82: encoder shaft and knob dish",
+   "normal": [
+    -1,
+    0,
+    0
+   ],
+   "constant": -33.82,
+   "keeps": "x < -33.82"
+  },
+  {
+   "name": "height 75: components above the PCB, connectors at the lid",
+   "normal": [
+    0,
+    -1,
+    0
+   ],
+   "constant": 75.0,
+   "keeps": "y < 75"
+  },
+  {
+   "name": "height 15: battery pack, harness, woofer ring",
+   "normal": [
+    0,
+    -1,
+    0
+   ],
+   "constant": 15.0,
+   "keeps": "y < 15"
+  },
+  {
+   "name": "height 96.5: top wall removed (open top)",
+   "normal": [
+    0,
+    -1,
+    0
+   ],
+   "constant": 96.5,
+   "keeps": "y < 96.5"
+  },
+  {
+   "name": "depth 121.16: knob dish across",
+   "normal": [
+    0,
+    0,
+    1
+   ],
+   "constant": 121.16,
+   "keeps": "z > -121.16"
+  }
+ ],
+ "key_dimensions": {
+  "outer_W_H_D_mm": [
+   163.0,
+   100.0,
+   206.6
+  ],
+  "depth_note": "D includes the 4 mm lid",
+  "height_with_feet_mm": 115.0,
+  "wall_mm": 3.0,
+  "lid_mm": 4.0,
+  "board_mm": [
+   127.5,
+   137.6,
+   1.6
+  ],
+  "pcb_bottom_z": 67.0,
+  "external_volume_L": 3.368,
+  "internal_cavity_L": 2.946,
+  "woofer_chamber_L": {
+   "gross": 0.581,
+   "net": 0.525,
+   "target": "0.45-0.60"
+  },
+  "main_chamber_L": {
+   "gross": 2.255,
+   "net": 2.025,
+   "target": ">= 0.80"
+  },
+  "print_bodies": [
+   {
+    "name": "shell",
+    "file": "ai-files/cad/v12/print/DesktopSpeaker_shell.stl",
+    "orient": "baffle_down",
+    "supports": "none (cavity walls vertical; lid bosses have 45 deg lead-ins; cradle ribs start on the baffle)",
+    "size": [
+     163.0,
+     100.0,
+     202.6
+    ],
+    "volume_cm3": 385.6,
+    "facets": 16385,
+    "solids": 1,
+    "valid": true
+   },
+   {
+    "name": "lid",
+    "file": "ai-files/cad/v12/print/DesktopSpeaker_lid.stl",
+    "orient": "outer_face_down",
+    "supports": "none (jack counterbore floors bridge 1.25 mm; chamfers on the bed side; rocker pocket on the top face)",
+    "size": [
+     163.0,
+     100.0,
+     4.0
+    ],
+    "volume_cm3": 59.5,
+    "facets": 7956,
+    "solids": 1,
+    "valid": true
+   },
+   {
+    "name": "woofer_chamber_insert",
+    "file": "ai-files/cad/v12/print/DesktopSpeaker_woofer_chamber_insert.stl",
+    "orient": "roof_down",
+    "supports": "none (shelf gussets and bosses grow from the roof)",
+    "size": [
+     122.0,
+     126.6,
+     55.0
+    ],
+    "volume_cm3": 100.9,
+    "facets": 6908,
+    "solids": 1,
+    "valid": true
+   }
+  ],
+  "masses_g_estimated": {
+   "Shell (PETG, 100 % infill)": 490,
+   "Lid (PETG)": 76,
+   "Woofer chamber insert (PETG)": 128,
+   "ND65-4 x2 (Dayton spec 0.18 kg each)": 360,
+   "W3-2052SC (Parts Express 0.25 kg)": 250,
+   "2 x INR21700-50S (about 69 g each, unverified)": 138,
+   "PCB + components (estimate: FR4 1.85 g/cm3 + 30 g parts)": 82,
+   "Screws, inserts, spacers, feet (steel/brass, modelled volume)": 86,
+   "Grilles 0.8 mm (steel, modelled volume)": 122
+  },
+  "mass_total_g_estimated": 1732
+ },
+ "interference": {
+  "solids": 165,
+  "threshold_mm3": 0.5,
+  "unintended": 0,
+  "intended": 41,
+  "unintended_pairs": [],
+  "intended_by_reason": {
+   "heat-set insert (OD 4.6) melted into a 4.0 mm pilot": 38,
+   "through-hole/mid-mount pins and body below PCB top (model pins sit in the board)": 3
+  }
+ },
+ "clearances": [
+  {
+   "a": "Battery_Cell1_21700_50S",
+   "b": "Driver_FrontL_ND65-4",
+   "mm": 6.98,
+   "need": 3.0
+  },
+  {
+   "a": "Battery_Cell1_21700_50S",
+   "b": "Driver_FrontR_ND65-4",
+   "mm": 7.36,
+   "need": 3.0
+  },
+  {
+   "a": "Battery_Cell1_21700_50S",
+   "b": "PCB_127.5x137.6x1.6",
+   "mm": 56.33,
+   "need": 3.0
+  },
+  {
+   "a": "Battery_Cell2_21700_50S",
+   "b": "Driver_FrontL_ND65-4",
+   "mm": 17.63,
+   "need": 3.0
+  },
+  {
+   "a": "Battery_Cell2_21700_50S",
+   "b": "Driver_FrontR_ND65-4",
+   "mm": 17.63,
+   "need": 3.0
+  },
+  {
+   "a": "Battery_Cell2_21700_50S",
+   "b": "PCB_127.5x137.6x1.6",
+   "mm": 45.24,
+   "need": 3.0
+  },
+  {
+   "a": "Battery_PCM_board",
+   "b": "Driver_FrontL_ND65-4",
+   "mm": 48.73,
+   "need": 3.0
+  },
+  {
+   "a": "Battery_PCM_board",
+   "b": "Driver_FrontR_ND65-4",
+   "mm": 5.49,
+   "need": 3.0
+  },
+  {
+   "a": "Battery_PCM_board",
+   "b": "PCB_127.5x137.6x1.6",
+   "mm": 44.25,
+   "need": 3.0
+  },
+  {
+   "a": "Harness_J5_to_pack_schematic",
+   "b": "woofer chamber air (sealed)",
+   "mm": 10.0,
+   "need": 0.01
+  },
+  {
+   "a": "Harness_J5_to_pack_schematic",
+   "b": "Insert_woofer_chamber",
+   "mm": 7.0,
+   "need": 0.01
+  }
+ ],
+ "lid_cutouts": [
+  {
+   "ref": "J1",
+   "kind": "USB-C plug clearance",
+   "cut": [
+    12.0,
+    7.0
+   ],
+   "centre": [
+    -1.77,
+    70.25
+   ],
+   "body_section": [
+    9.1,
+    3.36
+   ],
+   "radial_margin": 1.45,
+   "min_dist_connector_to_lid": 1.53,
+   "enters_lid": true,
+   "wall_clearance": 1.53,
+   "body_ymax": 203.32,
+   "ok": true
+  },
+  {
+   "ref": "J2",
+   "kind": "3.5 mm jack bore",
+   "cut": 8.5,
+   "centre": [
+    30.98,
+    71.1
+   ],
+   "body_section": [
+    6.0,
+    6.0
+   ],
+   "radial_margin": 1.25,
+   "min_dist_connector_to_lid": 1.51,
+   "enters_lid": false,
+   "wall_clearance": null,
+   "body_ymax": 201.76,
+   "ok": true
+  },
+  {
+   "ref": "J3",
+   "kind": "3.5 mm jack bore",
+   "cut": 8.5,
+   "centre": [
+    44.38,
+    71.1
+   ],
+   "body_section": [
+    6.0,
+    6.0
+   ],
+   "radial_margin": 1.25,
+   "min_dist_connector_to_lid": 1.51,
+   "enters_lid": false,
+   "wall_clearance": null,
+   "body_ymax": 201.76,
+   "ok": true
+  },
+  {
+   "ref": "SW100",
+   "kind": "tact plunger (stand-in)",
+   "cut": 5.0,
+   "centre": [
+    -14.68,
+    70.35
+   ],
+   "body_section": [
+    2.5,
+    2.5
+   ],
+   "radial_margin": 1.25,
+   "min_dist_connector_to_lid": 1.25,
+   "enters_lid": true,
+   "wall_clearance": 1.25,
+   "body_ymax": 204.6,
+   "ok": true
+  },
+  {
+   "ref": "SW101",
+   "kind": "rocker panel hole (GRB112B802BR1)",
+   "cut": 20.2,
+   "centre": [
+    63.0,
+    80.0
+   ],
+   "body_section": [
+    19.8,
+    19.8
+   ],
+   "radial_margin": 0.2,
+   "min_dist_connector_to_lid": 0.0,
+   "enters_lid": true,
+   "wall_clearance": 0.0,
+   "body_ymax": null,
+   "ok": "panel fit (snap-in body sits in the hole by design)"
+  }
+ ],
+ "dish": {
+  "cx": -33.82,
+  "cy": 121.16,
+  "shaft_top": 93.09,
+  "shaft_section": [
+   5.14,
+   6.0,
+   "round section 1.5 mm below the tip"
+  ],
+  "floor_top": 85.09,
+  "floor_bot": 82.09,
+  "d": 36.0,
+  "wall": 3.0,
+  "hole": 8.5,
+  "exposed_shaft": 8.0,
+  "envelope_cm3": 23.49,
+  "pocket_cm3": 12.71,
+  "fillet_merge": false,
+  "knob_z": [
+   85.84,
+   99.84
+  ],
+  "shaft_in_knob": 7.25
+ },
+ "rocker": {
+  "centre": [
+   63.0,
+   80.0
+  ],
+  "pocket_d": 28.0,
+  "panel": 2.0,
+  "gap_groove_side": 2.0,
+  "gap_groove_top": 3.5,
+  "nearest_lid_screw": "LidScrew_4",
+  "gap_lid_boss": 1.45,
+  "nearest_jack": "J3",
+  "gap_jack_cbore": 0.64,
+  "body_to_board_top": 1.5
+ },
+ "woofer_ring": {
+  "aperture_r": 38.1,
+  "recess_r": 41.7,
+  "flange_r": 41.275,
+  "bolt_r": 38.5,
+  "hole_r": 1.75,
+  "pilot_r": 2.0,
+  "land_total": 3.6,
+  "hole_inner_minus_aperture": -1.35,
+  "recess_minus_hole_outer": 1.45,
+  "pilot_inner_minus_aperture": -1.6,
+  "flange_minus_hole_outer": 1.02
+ },
+ "tallest_parts": [
+  {
+   "ref": "SW102",
+   "top_z": 93.09,
+   "gap_to_top_wall": 3.91
+  },
+  {
+   "ref": "J4",
+   "top_z": 77.14,
+   "gap_to_top_wall": 19.86
+  },
+  {
+   "ref": "J6",
+   "top_z": 77.14,
+   "gap_to_top_wall": 19.86
+  },
+  {
+   "ref": "J8",
+   "top_z": 77.14,
+   "gap_to_top_wall": 19.86
+  },
+  {
+   "ref": "C275",
+   "top_z": 76.3,
+   "gap_to_top_wall": 20.7
+  },
+  {
+   "ref": "L200",
+   "top_z": 75.6,
+   "gap_to_top_wall": 21.4
+  },
+  {
+   "ref": "L201",
+   "top_z": 75.1,
+   "gap_to_top_wall": 21.9
+  },
+  {
+   "ref": "L202",
+   "top_z": 75.1,
+   "gap_to_top_wall": 21.9
+  },
+  {
+   "ref": "L203",
+   "top_z": 75.1,
+   "gap_to_top_wall": 21.9
+  },
+  {
+   "ref": "L204",
+   "top_z": 75.1,
+   "gap_to_top_wall": 21.9
+  }
+ ],
+ "closest_parts_to_enclosure": [
+  {
+   "ref": "J2",
+   "nearest": "Lid_rear",
+   "mm": 1.51
+  },
+  {
+   "ref": "J3",
+   "nearest": "Lid_rear",
+   "mm": 1.51
+  },
+  {
+   "ref": "J1",
+   "nearest": "Lid_rear",
+   "mm": 1.53
+  },
+  {
+   "ref": "C288",
+   "nearest": "Screw_M3x16_PcbScrew_10_HA1",
+   "mm": 2.0
+  },
+  {
+   "ref": "C301",
+   "nearest": "Screw_M3x16_PcbScrew_11_HA2",
+   "mm": 2.0
+  },
+  {
+   "ref": "R209",
+   "nearest": "Screw_M3x16_PcbScrew_2_H2",
+   "mm": 2.01
+  },
+  {
+   "ref": "R106",
+   "nearest": "Screw_M3x16_PcbScrew_8_H8",
+   "mm": 2.33
+  },
+  {
+   "ref": "L201",
+   "nearest": "Screw_M3x16_PcbScrew_1_H1",
+   "mm": 2.43
+  },
+  {
+   "ref": "L202",
+   "nearest": "Screw_M3x16_PcbScrew_10_HA1",
+   "mm": 2.57
+  },
+  {
+   "ref": "L204",
+   "nearest": "Screw_M3x16_PcbScrew_10_HA1",
+   "mm": 2.57
+  },
+  {
+   "ref": "L205",
+   "nearest": "Screw_M3x16_PcbScrew_11_HA2",
+   "mm": 2.57
+  },
+  {
+   "ref": "L206",
+   "nearest": "Screw_M3x16_PcbScrew_11_HA2",
+   "mm": 2.57
+  }
+ ],
+ "glb_validation": {
+  "board_body_max_err_mm": 0.084,
+  "holes": [
+   {
+    "hole": "PcbScrew_1_H1",
+    "standoff_axis_err_mm": 0.0,
+    "hole_wall_r": 1.6
+   },
+   {
+    "hole": "PcbScrew_2_H2",
+    "standoff_axis_err_mm": 0.0,
+    "hole_wall_r": 1.6
+   },
+   {
+    "hole": "PcbScrew_3_H3",
+    "standoff_axis_err_mm": 0.0,
+    "hole_wall_r": 1.6
+   },
+   {
+    "hole": "PcbScrew_4_H4",
+    "standoff_axis_err_mm": 0.0,
+    "hole_wall_r": 1.6
+   },
+   {
+    "hole": "PcbScrew_5_H5",
+    "standoff_axis_err_mm": 0.0,
+    "hole_wall_r": 1.6
+   },
+   {
+    "hole": "PcbScrew_6_H6",
+    "standoff_axis_err_mm": 0.0,
+    "hole_wall_r": 1.6
+   },
+   {
+    "hole": "PcbScrew_7_H7",
+    "standoff_axis_err_mm": 0.0,
+    "hole_wall_r": 1.6
+   },
+   {
+    "hole": "PcbScrew_8_H8",
+    "standoff_axis_err_mm": 0.0,
+    "hole_wall_r": 1.6
+   },
+   {
+    "hole": "PcbScrew_9_H9",
+    "standoff_axis_err_mm": 0.0,
+    "hole_wall_r": 1.6
+   },
+   {
+    "hole": "PcbScrew_10_HA1",
+    "standoff_axis_err_mm": 0.007,
+    "hole_wall_r": 1.593
+   },
+   {
+    "hole": "PcbScrew_11_HA2",
+    "standoff_axis_err_mm": 0.007,
+    "hole_wall_r": 1.593
+   }
+  ],
+  "components_vs_cad": [
+   {
+    "ref": "J1",
+    "max_err_mm": 0.08
+   },
+   {
+    "ref": "J2",
+    "max_err_mm": 0.005
+   },
+   {
+    "ref": "J3",
+    "max_err_mm": 0.005
+   },
+   {
+    "ref": "SW102",
+    "max_err_mm": 0.774
+   },
+   {
+    "ref": "U1",
+    "max_err_mm": 0.005
+   },
+   {
+    "ref": "U3",
+    "max_err_mm": 0.001
+   },
+   {
+    "ref": "L201",
+    "max_err_mm": 0.004
+   },
+   {
+    "ref": "C275",
+    "max_err_mm": 1.0
+   },
+   {
+    "ref": "J4",
+    "max_err_mm": 0.001
+   }
+  ]
+ },
+ "fit_findings": [
+  {
+   "severity": "ok",
+   "title": "Board outline, 11 PCB holes and antenna keep-out unchanged vs v11 (R6q)",
+   "detail": "Outline 127.5 x 137.6, holes H1-H9/HA1/HA2 identical (< 0.001 mm). pcb.glb hole walls sit on the standoff axes within 0.007 mm."
+  },
+  {
+   "severity": "ok",
+   "title": "Connectors unchanged: lid cutouts still aligned",
+   "detail": "J1, J2, J3, SW100, SW102, J5, J9-J11 and U1 did not move (0.00 mm). Radial margins: J1 USB-C 1.45 mm (12 x 7 R2 cut), J2/J3 1.25 mm (8.5 bore), SW100 plunger 1.25 mm, J1/SW100 web 4.41 mm. Rocker SW101 is lid-mounted (wire pads only) and unchanged."
+  },
+  {
+   "severity": "ok",
+   "title": "Moved parts clear the hardware",
+   "detail": "99 footprints moved > 0.05 mm or rotated vs the v11 board (R6q), 18 of them > 2 mm. Largest: U3 (MCU) 59.2 mm, R160 72.3, TP21 80.8, J7 57.8, R106 55.8, C161 52.1, J4 26.4. All are low parts; closest moved part to any enclosure body: R106 2.33 mm to the H8 screw head; U3 4.58 mm to the H8 spacer and 11.99 mm to the knob well; J4 header 3.38 mm to the H7 screw head and 19.86 mm below the top wall."
+  },
+  {
+   "severity": "fixed",
+   "title": "Knob dish axis corrected by 0.86 mm (pre-existing v11 error)",
+   "detail": "The v11 axis detection picked the D-flat side of the EC11E shaft: dish at X -34.68, shaft really at X -33.82 (Y 121.16 unchanged). In v11 the shaft was 0.39 mm from the 8.5 mm floor hole and the knob 0.86 mm eccentric. v12 derives the axis from the first full round shaft section: 1.25 mm radial clearance all round. Shell STL changed accordingly."
+  },
+  {
+   "severity": "note",
+   "title": "Tightest parts to hardware (unchanged from v11)",
+   "detail": "C288/C301 2.00 mm to the HA1/HA2 M3 screw heads; R209 2.01 to H2; L201-L206 2.43-2.57 to H1/HA1/HA2 screw heads; C286/C299 3.30. No contact."
+  },
+  {
+   "severity": "note",
+   "title": "Tall parts under the top wall",
+   "detail": "SW102 shaft top 3.91 mm below the top wall inner face (intended: it reaches into the dish, 8 mm exposed). Next: J4/J6/J8 headers 19.86 mm, C275 20.7 mm (as modelled, see library finding), L200 21.4 mm, MWSA1265S inductors 21.9 mm."
+  },
+  {
+   "severity": "problem",
+   "title": "C275 3D model link: footprint CP_Elec_8x10 points to CP_Elec_6.3x7.7.step",
+   "detail": "Library/footprint model link error (CP_Elec_8x10.step exists in the library). The CAD shows a 6.3 x 7.7 can; the real 100 uF 25 V 8 x 10 part is 1.7 mm wider and 2.3 mm taller. Real top about z 78.6, still 18 mm below the top wall and > 5 mm from the nearest hardware, so no fit problem, but the model is not accurate. Not changed (handed to the model accuracy audit)."
+  },
+  {
+   "severity": "note",
+   "title": "Programming/service access needs the lid off",
+   "detail": "J7 (TC2030, new position CAD X -28.6, Y 158.1) is 44.5 mm inside the lid face with 28 mm headroom; J4 (PD service header) is 23 mm inside the lid face. Both are reachable only with the rear lid removed; the TC2030 plug must go in vertically through the rear opening. Check with the real Tag-Connect cable before printing."
+  },
+  {
+   "severity": "decision",
+   "title": "Woofer W3-2052SC bolt circle still unverified",
+   "detail": "Assumed 4 x 3.5 holes on 77 mm with the 76.2 cutout: holes break 1.35 mm into the aperture (pilots 1.6 mm). Owner must supply the Tang Band drawing, or accept the clamp-ring fallback (printed 4 mm ring ID 74 / OD 96 on a 90 mm screw circle)."
+  },
+  {
+   "severity": "note",
+   "title": "KiCad GLB vs STEP export differ for two models",
+   "detail": "Component bboxes in pcb.glb match the FreeCAD placement within 0.08 mm for J1, J2, J3, U1, U3, L201, J4, but SW102 (0.77 mm) and C275 (1.0 mm) differ between the two kicad-cli exporters (different sub-shapes of those library models). The frame itself is exact."
+  },
+  {
+   "severity": "ok",
+   "title": "Library 3D offsets correct in RT-3",
+   "detail": "No floating or sunk models (meta zfix empty): BM83 U1 and XFL4015 L2/L3 start at the board top. No offset fix was needed."
+  }
+ ],
+ "assumptions": [
+  "Woofer Tang Band W3-2052SC: parametric stand-in (cutout 76.2, flange 82.55, depth 44.45 from Parts Express); bolt circle 77 mm and 3.5 mm holes ASSUMED, magnet and basket shape assumed.",
+  "Battery: 2 x Samsung INR21700-50S as bare cylinders 21.7 x 70.2; PCM board 3 x 43.4 x 18 box (not sourced); strap not modelled.",
+  "Stand-ins without STEP: J5 Micro-Fit (courtyard box), J9-J11 JST B2P-VH, SW100 tact switch + 2.5 mm plunger, SW101 rocker (GRB112B802BR1 catalogue dims), knob D30 x 14, grommet, foam gasket.",
+  "Harness tubes are schematic routes (J5 to pack via the right side pocket; J11 to woofer through the partition grommet).",
+  "Hardware from nominal catalogue dimensions (ISO 4762 M3 screws, M3 x 5.7 heat-set inserts, 10 mm hex spacers, Wurth 1768061 feet).",
+  "Masses: printed bodies at 100 % infill PETG 1.27 g/cm3; drivers/woofer from maker listings; PCB estimated; wires, foam and stuffing not included.",
+  "ND65-4 driver model is the maker STEP (Dayton Audio, 2025-11-20), not measured."
+ ],
+ "open_items": [
+  "Owner: Tang Band W3-2052SC drawing (hole size and bolt circle) or approval of the clamp-ring fallback.",
+  "Owner: PCM/protection board choice and size (4-5 A+ continuous); NTC; strap.",
+  "Owner: knob part (D-shaft 6 mm, 20 mm EC11E shaft) and grommet part number.",
+  "Library: C275 model link (CP_Elec_8x10 footprint uses CP_Elec_6.3x7.7.step).",
+  "Library: STEP models for J5, J9-J11, SW100 and the SW101 rocker body (stand-ins today).",
+  "v13: per-component accuracy audit (ai-files/cad/models-v13/); rerun ai-files/cad/v12/scripts/rebuild_cad.sh with the corrected library copy.",
+  "Check the TC2030 programming cable access through the rear opening with the real cable.",
+  "Routing is partial (RT-3): pcb_copper.glb shows only the copper routed so far."
+ ],
+ "zfix": {},
+ "skipped_operations": []
+}
