@@ -2,8 +2,8 @@
  "G1": {
   "pass": true,
   "detail": {
-   "base_fsilk_gr_items": 203,
-   "new_fsilk_gr_items": 171,
+   "base_fsilk_gr_items": 171,
+   "new_fsilk_gr_items": 172,
    "rest_identical": true,
    "rest_bytes": 5507241
   }

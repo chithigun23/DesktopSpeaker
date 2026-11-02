@@ -92,7 +92,7 @@ TITLES = {   # text: (at_x, at_y, size or None = keep); placed by the title rule
     'Source Mux + Headphone': (203.002, 57.8, 1.0),   # top-right
     'Gauge + LC Power': (97.243, 64.72, None),   # scan
     '3V AO': (113.024, 72.327, None),   # top-left
-    'MCU': (113.193, 57.22, None),   # top-left
+    'MCU': (128.2, 87.0, None),   # owner request 2026-11-02: just below U3 (x 126.1-130.3 free between the caps at y 84-85 and the NRST button)
     'ADC': (139.86, 70.02, None),   # top-left
     'SWD Header': (170.988, 76.836, 1.0),   # top-left
     'Battery': (192.46, 77.07, None),   # top-left
@@ -106,6 +106,10 @@ TITLES = {   # text: (at_x, at_y, size or None = keep); placed by the title rule
     'Woofer Amp U7': (181.193, 116.18, None),   # top-left
 }
 NEW_TITLE_FONT = (1.4, 0.2)
+# extra labels that are not section titles (the gate ignores them): text -> (at_x, at_y, size, thickness)
+EXTRA_LABELS = {
+    'TC2030': (122.4, 58.4, 1.0, 0.15),   # owner request 2026-11-02: above J7 (TC2030 pads x 118.4-126.4, y 59.75-68.25)
+}
 # other F.SilkS board items to place, by uuid: absolute (at_x, at_y) for gr_text, (dx, dy) translation for gr_line groups
 TEXT_MOVES = {}       # uuid -> (x, y)
 # gr_line groups moved as a whole, by uuid: bbox minimum of the group's points goes to 'to'
@@ -249,6 +253,10 @@ def main():
                 b = set_at(b, x, y); titles_done.add(t)
                 if sz is not None:
                     b = re.sub(r'\(size [-\d.]+ [-\d.]+\)', '(size %s %s)' % (fmt(sz), fmt(sz)), b, count=1)
+            elif t in EXTRA_LABELS and t not in titles_done:
+                x, y, sz, th = EXTRA_LABELS[t]
+                b = set_at(b, x, y); titles_done.add(t)
+                b = re.sub(r'\(size [-\d.]+ [-\d.]+\)', '(size %s %s)' % (fmt(sz), fmt(sz)), b, count=1)
             elif u in TEXT_MOVES:
                 b = set_at(b, *TEXT_MOVES[u])
         m = re.search(r'\(uuid "([^"]+)"\)', b)
@@ -268,6 +276,13 @@ def main():
         for s, e, b in blocks(new):
             if b.startswith('\t(gr_text'): last = e
         add = ''.join(text_block(t, TITLES[t][0], TITLES[t][1], TITLES[t][2] or NEW_TITLE_FONT[0], NEW_TITLE_FONT[1]) for t in missing)
+        new = new[:last] + add + new[last:]
+    missing_x = [t for t in EXTRA_LABELS if t not in titles_done]
+    if missing_x:
+        last = None
+        for s_, e_, b_ in blocks(new):
+            if b_.startswith('\t(gr_text'): last = e_
+        add = ''.join(text_block(t, EXTRA_LABELS[t][0], EXTRA_LABELS[t][1], EXTRA_LABELS[t][2], EXTRA_LABELS[t][3]) for t in missing_x)
         new = new[:last] + add + new[last:]
     open(dst, 'w').write(new)
     rep = {'removed_items': removed, 'segments': len(segs), 'added_titles': missing,

@@ -85096,7 +85096,7 @@
 		)
 	)
 	(gr_text "MCU"
-		(at 113.193 57.22 0)
+		(at 128.2 87 0)
 		(layer "F.SilkS")
 		(uuid "c2bd7da2-3483-406e-996c-476709c030b3")
 		(effects
@@ -85314,6 +85314,17 @@
 			(font
 				(size 1.2 1.2)
 				(thickness 0.2)
+			)
+		)
+	)
+	(gr_text "TC2030"
+		(at 122.4 58.4 0)
+		(layer "F.SilkS")
+		(uuid "e53c54b5-2aa8-50d0-86d0-46a1cbd2a5fa")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
 			)
 		)
 	)

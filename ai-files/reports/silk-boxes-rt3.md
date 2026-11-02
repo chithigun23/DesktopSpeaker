@@ -159,3 +159,8 @@ python3 ai-files/helpers/silk_tile.py ai-files/pcb/work-route2/RT-2.kicad_pcb ai
 cd ai-files/pcb/work-route3 && ~/Applications/kicad.AppImage kicad-cli pcb drc --severity-all --all-track-errors --format json -o RT-3.drc.json RT-3.kicad_pcb
 ~/Applications/kicad.AppImage python3.11 ai-files/helpers/silk_tile_gate.py ai-files/pcb/work-route2/RT-2.kicad_pcb ai-files/pcb/work-route3/RT-3.kicad_pcb --drc-base ai-files/pcb/work-route3/evidence/RT-2.drc-baseline.json --drc-new ai-files/pcb/work-route3/RT-3.drc.json
 ```
+
+## Update 2026-11-02 (owner request)
+- MCU title moved from the top-left of its box to just below U3 (centre 128.2, 87.0; free gap between the caps at y 84-85 and the NRST button).
+- New label "TC2030" (size 1.0, thickness 0.15) at (122.4, 58.4), directly above J7 (TC2030 pads x 118.4-126.4, y 59.75-68.25). Defined in `EXTRA_LABELS` in `helpers/silk_tile.py`; the gate ignores it as a title.
+- Re-applied with `silk_tile.py` (idempotent), gates G1-G6 all pass, DRC 0 violations / 152 unconnected (same as before). The hand-routing board RT-4 must get the same silkscreen by running `python3 ai-files/helpers/silk_tile.py RT-4.kicad_pcb RT-4s.kicad_pcb` at the end.
