@@ -163,3 +163,10 @@ ai-files/pcb/work-route10/*
 !ai-files/pcb/work-route10/scripts/
 !ai-files/pcb/work-route10/evidence/
 !ai-files/pcb/work-route10/t/RT-10.gates.txt
+ai-files/pcb/work-route11/*
+!ai-files/pcb/work-route11/RT-11.kicad_pcb
+!ai-files/pcb/work-route11/RT-11.kicad_pro
+!ai-files/pcb/work-route11/RT-11.kicad_dru
+!ai-files/pcb/work-route11/scripts/
+!ai-files/pcb/work-route11/evidence/
+!ai-files/pcb/work-route11/t/RT-11.gates.txt
