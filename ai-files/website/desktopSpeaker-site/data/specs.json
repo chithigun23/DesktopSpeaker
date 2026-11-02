@@ -70,7 +70,7 @@
   },
   {
    "k": "PCB routing state",
-   "v": "Routing restart partial: RT-7 has 220 of 283 connections routed (78 %); DRC 0 violations, 64 unconnected (16 inherited power items)",
+   "v": "Routing restart partial: RT-8 has 227 of 283 connections routed (80 %); DRC 0 violations, 56 unconnected (16 inherited power items)",
    "status": "in progress; not a releasable board",
    "src": "ai-files/reports/routing-s1-s3-run.md"
   },
@@ -947,7 +947,7 @@
    },
    {
     "k": "Connections routed",
-    "v": "220 of 283 (77.7 %); 63 router connections still open",
+    "v": "227 of 283 (80.2 %); 56 router connections still open",
     "status": "partial",
     "src": "ai-files/reports/routing-s1-s3-run.md"
    },

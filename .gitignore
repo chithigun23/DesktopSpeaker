@@ -127,3 +127,13 @@ ai-files/pcb/work-route7/*
 !ai-files/pcb/work-route7/evidence/
 !ai-files/pcb/work-route7/t/editlog.md
 ai-files/pcb/work-route7/evidence/*.svg
+ai-files/pcb/work-route8/*
+!ai-files/pcb/work-route8/RT-8.kicad_pcb
+!ai-files/pcb/work-route8/RT-8.kicad_pro
+!ai-files/pcb/work-route8/RT-8.kicad_dru
+!ai-files/pcb/work-route8/schematic-patch.md
+!ai-files/pcb/work-route8/scripts/
+!ai-files/pcb/work-route8/evidence/
+!ai-files/pcb/work-route8/t/editlog.md
+!ai-files/pcb/work-route8/t/RT-8.gates.txt
+ai-files/pcb/work-route8/evidence/*.svg
