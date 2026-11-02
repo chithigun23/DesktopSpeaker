@@ -175,7 +175,7 @@ Order, with CHG_SYS_ENABLE and CHG_ENABLE both low until step 7: (1) establish l
 Events:
 - **PD_PLUG_EVENT (PC14) rising**: start the soft I2C bus, read status. **Falling or PD_SINK_EN (PB9) rising (sink path disabled)**: revoke the grant, drop CHG_ENABLE then CHG_SYS_ENABLE, park PA11/PA12 as analog (LDO_3V3 pull-ups vanish with VBUS), continue on battery. Contract change: same revoke then re-read; do not use old limits.
 - **CHG_INT (PC15) falling**: read the BQ25792 flag registers (read clears). Respond: VBUS OVP/UVLO or power-good loss -> as detach; charge done -> log; TS fault or thermal regulation -> disable CE and retry after 60 s; safety timer expiry -> disable CE, latch F-CHG until detach/re-plug or user gesture; watchdog expiry or VSYS/IBAT OCP -> as REG_RST (reapply configuration).
-- **Charge policy (PROPOSAL)**: charge to 4.20 V by default, with a "plugged-in mostly" option at 4.10 V (battery longevity, plan section 2); recharge when 100-200 mV below VREG; ICHG at most 3 A; TS/NTC windows per the final pack; in S3 with a weak source, lower ICHG before AGL.
+- **Charge policy (PROPOSAL)**: charge to 4.20 V by default, with a "plugged-in mostly" option at 4.10 V (battery longevity, plan section 2); recharge when 100-200 mV below VREG; ICHG 4.0 A (superseded 2026-11-02, see reports/charge-policy-2026-11-02.md; was: at most 3 A); TS/NTC windows per the final pack; in S3 with a weak source, lower ICHG before AGL.
 
 ### 3.3 Rail up (S1 -> S2)
 1. Confirm SOC and grant allow it (section 2.5).

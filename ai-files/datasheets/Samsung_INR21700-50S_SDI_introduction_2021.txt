@@ -1,0 +1,347 @@
+© Samsung SDI reserves all rights even in the event of industrial property rights. We reserve all rights of disposal such as copying and passing on to third parties.   Confidential
+                                                                                                                                                                          Confidential
+
+
+
+
+The Highest Capacity High Power 21700 50S
+
+ 2021
+                                                            Confidential
+
+
+Contents
+
+Ⅰ. Target Application
+Ⅱ. Specification
+Ⅲ. Performance
+  1. Capacity / Impedance
+
+  2. Discharge Characteristics (CC/CP)
+
+  3. Cycle Life
+
+  4. Low temperature discharge / High Temperature Storage
+
+  5. Safety Summary
+      SDI privileged and confidential                             1
+                                                                                                                                                        Confidential
+
+
+Target Application
+50S is a product developed by applying the latest material
+This 50S is the most optimized product for runtime application
+
+                                                                        Compatible with 18V Battery Platform
+                  1         P/Tool                                      Increase Pack Capacity
+                                                                        5s1p 5Ah → 5s2p 10Ah → 5s3p 15Ah
+
+                                                                        More Working time in Push mower
+                  2         OPE                                           - 600W 34min※ with 10s2p (25R 17min)
+                            (Outdoor Power Equipment)
+                                                                        Back pack solution (10s8p, 1.44kWh)
+
+                                                                        Better Runtime for Stick Cleaner
+                  3         Cleaner                                       - 80W per cell : Runtime 11min
+                                                                             ※ 480W(6s1p) / 400W(5s1p) : Runtime 11min.
+                                           ※ The change in runtime by cell arrangement and pack design is not considered.
+                                              30W/cell CP discharge time 34min → 600W(20cells) 34min.(estimation)
+                                              80W/cell CP discharge time(80℃ T-cut) 11min → 480W(6cells), 400W(5cells) 11min. (estimation)
+        SDI privileged and confidential      It may be different from the actual value by predicting the pack runtime as a result of cell evaluation.         2
+                                                                                                                                    Confidential
+
+
+Specification
+                                                                             Type                                        Specification
+                                                                              Standard (mAh) (0.2C)                      Typical 5,000
+                                           Capacity
+                                                                                Rated (mAh) (10A)                         Min. 4,800
+ Max 21.25mm
+                                                                             Initial IR (mΩ AC 1kHz)                         ≤ 14
+                                              IR
+                                                                           Initial IR (mΩ DC (10A-1A))                       ≤ 22
+                                                                    Nominal Voltage (V)                                      3.60
+
+                                       Charge Time                            Standard (min), 0.5C 1)                      150min
+                                            (CC-CV)                              Rapid (min), 6A 2)                        100min
+                  Max 70.62mm                                                  Standard current (A)                          2.5
+                                      Charge Current
+                                                                                  Max. current (A)                           6.0
+                                                                                   End voltage (V)                           2.5
+                                           Discharge          Max. discharge capability (with 80℃ T-Cut) (A)
+                                                                        Max discharge capability (without T-Cut) : 25A
+                                                                                                                              45
+
+                                                               Charge 6A 4.2V/Discharge 25A 2.5V w/o T-cut               60%250cycle
+                                             Cycle
+                                                              Charge 6A 4.2V/Discharge 45A 2.5V 80℃ T-cut                60%100cycle
+                                            1) Test Method : CC-CV 0.5C, 4.2V, 250mAh cut-off, 23℃
+         SDI privileged and confidential    2) Test Method : CC-CV 6A, 4.2V, 100mAh cut-off, 23℃                                          3
+                                                                        Confidential
+
+
+Performance                                                  Capacity
+
+
+
+
+                                       Standard Capacity    5,003mAh
+                    0.5C Charge
+                                      Discharging Runtime   299min.
+                    0.2C Discharge
+                                        Charging Time        133min
+
+    SDI privileged and confidential                                           4
+                                                                                                                    Confidential
+
+
+Performance                                                                                      Impedance
+
+
+                                 50S ACIR @ SOC100                                              50S DCIR @ SOC100
+             11.0                                                                17.00
+
+
+                                                                                 16.75
+             10.5
+                                                                                 16.50
+  ACIR[mΩ]
+
+
+
+
+                                                                      DCIR[mΩ]
+                                              10.00
+             10.0                                                                16.25
+                                                                                                           16.27
+
+
+                                                                                 16.00
+              9.5
+                                                                                 15.75
+
+
+              9.0                                                                15.50
+
+
+
+
+                                                                                         DC-IR @SCO100
+                                                           AC-IR @SOC100
+                                                 Average                                    (1A-10A)
+
+                                                            10.00± 2mΩ                    16.27± 2mΩ
+
+
+                    SDI privileged and confidential                                                                       5
+                                                                                               Confidential
+
+
+Performance                                               Discharge Capability ① CC
+
+
+
+
+                                                            Discharge current
+                                                     5A       10A    15A        20A    25A        30A
+
+                                       Capacity
+                                                    4.945    4.975   4.956   4.921     4.865     4.787
+                                         (Ah)
+
+                                      Temperature
+                                                    32.8      42.9   53.7       65.9   79.3       91.2
+                                         (℃)
+
+                                          Time
+                                                    59.3      29.9   19.8       14.8   11.7        9.6
+                                         (min.)
+
+                                        Energy
+                                                    17.58    17.22   16.81   16.39     15.93     15.41
+                                         (Wh)
+
+
+
+
+    SDI privileged and confidential                                                                  6
+                                                                                                       Confidential
+
+
+Performance                                                                 Discharge Capability ② CP
+
+
+
+                                                                                                75℃ T-cut
+                                                                                                80℃ T-cut
+
+
+
+
+Continuous Power               10W          30W     50W     70W     80W         90W     100W
+   Capacity (Ah)              4.933         4.945   4.898   4.808   4.740       4.660   4.562
+ Temperature (℃)               31.1         44.1    58.3    76.0    82.9        90.8    94.4
+Time (min.) w/o T-cut         106.3         34.5    20.0    13.7    11.7        10.1     8.8
+          SDI privileged and confidential                                                                    7
+                                                                                                      Confidential
+
+
+Performance                                                                  Cycle Life ① 10A / 20A
+
+□ 10A Cycle Life                                                □ 20A Cycle Life
+
+
+
+
+                                                  82%@600cy                    87%@250cy
+                                             ※ 4,033mAh@600cy              ※ 4,285mAh@250cy
+
+
+
+
+           SDI privileged and confidential                                                                  8
+                                                                                  Confidential
+
+
+Performance                                                    Cycle Life ② 25A
+
+
+
+
+                                      ※ 4,198mAh@250cy
+
+
+
+
+                 100          200     300       400      500
+
+
+
+    SDI privileged and confidential                                                     9
+                                                                     Confidential
+
+
+Performance                                 Cycle Life ③ 45A (80℃ cut off)
+
+
+
+
+                  91.2%@100cycle
+                          ※ 3,985Ah@100cy
+
+
+
+
+    SDI privileged and confidential                                       10
+                                                                Confidential
+
+
+Performance                            Cycle Life ④ 80W (83℃ cut off)
+
+
+
+
+                                      81.7%@500cycle
+                                        ※ 3,750Ah@500cy
+
+
+
+
+    SDI privileged and confidential                                  11
+                                                                                         Confidential
+
+
+Performance                                                       Low Temp performance
+
+
+
+
+          -20℃ discharge              20A discharge   30A discharge      40A discharge
+          1st hump voltage                2.94V           2.62V              2.28V
+      Capacity (1.5V cut off)           5,147mAh        5,210mAh           5,197mA
+      Capacity (2.5V cut off)           4,832mAh        4,750mAh           4,555mA
+    SDI privileged and confidential                                                           12
+                                                                                                                               Confidential
+
+
+   Performance                                                                              High Temp performance
+
+
+▪ Recovery                                        ▪ AC-IR                                      ▪ DC-IR
+
+
+
+
+                                                              Storage at 60℃
+     storage                       initial                         after storage                           Ratio(%)
+       day     ACIR        DCIR        Capacity vs CN (%)   ACIR   DCIR   Retention Recovery    ACIR     DCIR    Retention Recovery
+
+       30       10.2        15.4         4951     99.0      10.8   18.7     4517     4824       104.7    121.5     91.2     97.4
+
+       50       10.2        15.3         5015     100.3     10.9   18.1     4508     4902       106.9    118.3     89.9     97.7
+
+
+               SDI privileged and confidential                                                                                      13
+                                                                                                                           Confidential
+
+
+Performance                                                                                   Safety Test
+
+
+
+                                   Test item                                Spec.             Results             OK/NG
+
+                                   Overcharge         30A 4.6V (UL)            L1              10L1                   OK
+
+                                                     80mΩ at 23℃
+                                                                               L0               5L0                   OK
+    Electrical Abuse                                    (UL)
+                               Short circuit
+                                                     80mΩ at 60℃
+                                                                               L0               5L0                   OK
+                                                        (UL)
+
+       Mechanical                    Impact                 UL                 L0              10L0                   OK
+        Abuse                        Crush                  UL                 L1              10L0                   OK
+
+     Thermal Abuse                 Hot oven               130℃                  -              10L1                   OK
+
+
+
+
+  Level 0                 Level 1               Level 2           Level 3           Level 4             Level 5
+  • No change             • Leak                • Smoke, < 200℃   • Smoke, > 200℃   • Fire              • Explosion
+
+
+
+
+            SDI privileged and confidential                                                                                     14
+                                                            Confidential
+
+
+[Appendix] Certification                    Certification
+
+
+
+                           Certification     Status
+
+                              UL 1642       Certified
+
+                         CB 62133 (2017)    Certified
+
+                                 PSE        Certified
+
+                                BSMI        Certified
+
+                                 UN         Certified
+
+                        BIS(IS16046:2018)   Certified
+
+                         CQC(GB 31241)      Certified
+
+                             UL 62133       Certified
+
+
+
+     SDI privileged and confidential                             15
+

@@ -75,3 +75,9 @@ ai-files/pcb/work-route2/*
 !ai-files/pcb/work-route2/*.py
 !ai-files/pcb/work-route2/evidence/
 ai-files/pcb/work-route2/evidence/*.svg
+ai-files/pcb/work-route3/*
+!ai-files/pcb/work-route3/RT-3.kicad_pcb
+!ai-files/pcb/work-route3/RT-3.kicad_pro
+!ai-files/pcb/work-route3/RT-3.kicad_dru
+!ai-files/pcb/work-route3/RT-3.gate.json
+!ai-files/pcb/work-route3/evidence/

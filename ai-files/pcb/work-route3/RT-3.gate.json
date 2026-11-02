@@ -1,0 +1,309 @@
+{
+ "G1": {
+  "pass": true,
+  "detail": {
+   "base_fsilk_gr_items": 203,
+   "new_fsilk_gr_items": 171,
+   "rest_identical": true,
+   "rest_bytes": 5507241
+  }
+ },
+ "G2": {
+  "pass": true,
+  "detail": {
+   "footprints": 360,
+   "moved_or_missing": []
+  }
+ },
+ "G3": {
+  "pass": true,
+  "detail": {
+   "violations_base": 0,
+   "violations_new": 0,
+   "unconnected_base": 152,
+   "unconnected_new": 152,
+   "new_types": {}
+  }
+ },
+ "G4": {
+  "pass": true,
+  "detail": {
+   "segments": 58,
+   "end_multiplicity": {
+    "1": 12,
+    "3": 30,
+    "2": 7
+   },
+   "dangling_or_4way": [],
+   "diagonal": 0,
+   "unsplit_T": [],
+   "overlaps": 0,
+   "arcs_or_other": 0,
+   "outside_region": 0
+  }
+ },
+ "G5": {
+  "pass": true,
+  "detail": {
+   "faces": 22,
+   "titles": 22,
+   "rectangular_faces": 18,
+   "faces_without_exactly_one_title": {},
+   "titles_crossing_lines": [],
+   "area_sum": 17332.56,
+   "region_area": 17332.56
+  }
+ },
+ "faces": [
+  [
+   "Bluetooth",
+   [
+    86.65,
+    20.4,
+    127.5,
+    55.9
+   ],
+   1450.17,
+   "rect"
+  ],
+  [
+   "Wake",
+   [
+    127.5,
+    20.4,
+    143.0,
+    40.52
+   ],
+   311.86,
+   "rect"
+  ],
+  [
+   "USB-C Jack",
+   [
+    143.0,
+    20.4,
+    169.55,
+    40.52
+   ],
+   534.19,
+   "rect"
+  ],
+  [
+   "Audio Connectors",
+   [
+    169.55,
+    20.4,
+    213.35,
+    45.0
+   ],
+   1077.48,
+   "rect"
+  ],
+  [
+   "USB-C PD",
+   [
+    127.5,
+    40.52,
+    147.95,
+    68.7
+   ],
+   576.28,
+   "rect"
+  ],
+  [
+   "USB Audio Codec",
+   [
+    147.95,
+    40.52,
+    169.55,
+    68.7
+   ],
+   608.69,
+   "rect"
+  ],
+  [
+   "5V Codec Rail",
+   [
+    169.55,
+    45.0,
+    213.35,
+    56.8
+   ],
+   516.84,
+   "rect"
+  ],
+  [
+   "Gauge + LC Power",
+   [
+    86.65,
+    55.9,
+    110.4,
+    91.4
+   ],
+   843.12,
+   "rect"
+  ],
+  [
+   "MCU",
+   [
+    110.4,
+    55.9,
+    137.3,
+    93.3
+   ],
+   782.0,
+   "rectilinear"
+  ],
+  [
+   "Source Mux + Headphone",
+   [
+    165.95,
+    56.8,
+    213.35,
+    75.75
+   ],
+   855.39,
+   "rectilinear"
+  ],
+  [
+   "ADC",
+   [
+    137.3,
+    68.7,
+    165.95,
+    93.3
+   ],
+   704.79,
+   "rect"
+  ],
+  [
+   "3V AO",
+   [
+    110.4,
+    71.3,
+    117.0,
+    80.6
+   ],
+   61.38,
+   "rect"
+  ],
+  [
+   "SWD Header",
+   [
+    165.95,
+    75.75,
+    188.2,
+    103.13
+   ],
+   609.21,
+   "rect"
+  ],
+  [
+   "Battery",
+   [
+    188.2,
+    75.75,
+    213.35,
+    114.86
+   ],
+   983.62,
+   "rect"
+  ],
+  [
+   "5V Logic",
+   [
+    86.65,
+    91.4,
+    103.5,
+    109.3
+   ],
+   301.62,
+   "rect"
+  ],
+  [
+   "Volume Encoder",
+   [
+    103.5,
+    91.4,
+    130.0,
+    109.3
+   ],
+   474.35,
+   "rect"
+  ],
+  [
+   "Test Points",
+   [
+    130.0,
+    93.3,
+    165.95,
+    109.3
+   ],
+   419.72,
+   "rectilinear"
+  ],
+  [
+   "Charger",
+   [
+    140.75,
+    103.13,
+    172.5,
+    136.4
+   ],
+   937.85,
+   "rectilinear"
+  ],
+  [
+   "Charger FETs",
+   [
+    162.4,
+    103.13,
+    188.2,
+    114.86
+   ],
+   302.63,
+   "rect"
+  ],
+  [
+   "Front Amp U6 + Filters",
+   [
+    86.65,
+    109.3,
+    140.75,
+    157.2
+   ],
+   2591.39,
+   "rect"
+  ],
+  [
+   "Woofer Amp U7",
+   [
+    172.5,
+    114.86,
+    213.35,
+    157.2
+   ],
+   1729.59,
+   "rect"
+  ],
+  [
+   "Boost Converter",
+   [
+    140.75,
+    136.4,
+    172.5,
+    157.2
+   ],
+   660.4,
+   "rect"
+  ]
+ ],
+ "G6": {
+  "pass": true,
+  "detail": {
+   "violations": 0,
+   "first": [],
+   "pad_clearance_mm": 0.2
+  }
+ }
+}
