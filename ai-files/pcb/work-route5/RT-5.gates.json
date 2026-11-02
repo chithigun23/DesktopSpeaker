@@ -1,0 +1,65 @@
+{
+ "footprints": 360,
+ "pads": 1192,
+ "moved": [
+  "C106",
+  "C110",
+  "R102",
+  "R113",
+  "SW100",
+  "TP2"
+ ],
+ "moved_not_allowed": [],
+ "pad_net_diff": [
+  [
+   "SW100",
+   "1",
+   "2"
+  ],
+  [
+   "SW100",
+   "1",
+   "3"
+  ],
+  [
+   "SW100",
+   "2",
+   "4"
+  ],
+  [
+   "SW100",
+   "",
+   "2"
+  ],
+  [
+   "SW100",
+   "",
+   "3"
+  ],
+  [
+   "SW100",
+   "1",
+   "4"
+  ],
+  [
+   "SW100",
+   "1",
+   "5"
+  ],
+  [
+   "SW100",
+   "2",
+   "6"
+  ]
+ ],
+ "base_copper_items": 2934,
+ "new_copper_items": 2929,
+ "removed_or_changed": 33,
+ "unexpected_removed": [],
+ "locked_items": 2901,
+ "locked_sha256": "76ff5ca7da42effd4d77352a19685a9fc6fb4d60b6313f068b8c1bc643834389",
+ "added_items": 28,
+ "new_segments": 23,
+ "new_length_mm": 36.819,
+ "new_not_exact": []
+}

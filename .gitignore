@@ -102,3 +102,12 @@ ai-files/pcb/work-route4/*
 !ai-files/pcb/work-route4/RT-4.gates.json
 !ai-files/pcb/work-route4/scripts/
 !ai-files/pcb/work-route4/evidence/
+ai-files/pcb/work-route5/*
+!ai-files/pcb/work-route5/RT-5.kicad_pcb
+!ai-files/pcb/work-route5/RT-5.kicad_pro
+!ai-files/pcb/work-route5/RT-5.kicad_dru
+!ai-files/pcb/work-route5/RT-5.gates.json
+!ai-files/pcb/work-route5/footprint-fixes.md
+!ai-files/pcb/work-route5/lib-proposed/
+!ai-files/pcb/work-route5/scripts/
+!ai-files/pcb/work-route5/evidence/
