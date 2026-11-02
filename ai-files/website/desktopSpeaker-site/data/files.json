@@ -37,8 +37,8 @@
   {
    "name": "DesktopSpeaker-schematic.pdf",
    "href": "downloads/DesktopSpeaker-schematic.pdf",
-   "bytes": 968472,
-   "sha256": "7aa1ba58121719d1fd82a24555811b59e2616e49be13d93f9acde4d216ddc6a3",
+   "bytes": 971821,
+   "sha256": "662db939ba627d59a95ea29385fc80101aa655d639d1eaa30d76f80d07773e09",
    "desc": "Schematic preview PDF (all sheets)",
    "source": "ai-files/DesktopSpeaker-preview.pdf"
   }
@@ -47,8 +47,8 @@
   {
    "name": "HANDOVER.md",
    "href": "docs/HANDOVER.md",
-   "bytes": 137778,
-   "sha256": "155fe9307fa3e9ce1198240b0a90dd4f1785acbe03ec9bae8df251310855126b",
+   "bytes": 143994,
+   "sha256": "27ad5b114bc1fcd93c3d29b10a56374ef462f00d370dcdaed7ef0a81590197f1",
    "desc": "Single project handover: decisions, evidence, open items (older sections superseded)",
    "source": "ai-files/HANDOVER.md",
    "kind": "report"
@@ -56,8 +56,8 @@
   {
    "name": "plan.md",
    "href": "docs/plan.md",
-   "bytes": 59152,
-   "sha256": "eaab64b06bc8d9a23b53bf802e5103d86ed199666ad9bd2d41dea842f2f73ec5",
+   "bytes": 59329,
+   "sha256": "f3ba4bccec7f43ff3985c59c9528dec2ee65096f5275b34878307f14f7091868",
    "desc": "Schematic completion checklist and subsystem status",
    "source": "plan.md",
    "kind": "report"
@@ -83,8 +83,8 @@
   {
    "name": "charge-policy-2026-11-02.md",
    "href": "docs/charge-policy-2026-11-02.md",
-   "bytes": 35475,
-   "sha256": "fed66254e592f2cb42fa334139dd87b8d1089a2f452d472b1ec455b44fb4be30",
+   "bytes": 35538,
+   "sha256": "d0298f6fdf4379b15dcbe4ddf7fee16ebd5a79682c9af686f3ff36af45371dc1",
    "desc": "Charge policy: ICHG 4.0 A, 17 W input cap, VREG 4.10 V",
    "source": "ai-files/reports/charge-policy-2026-11-02.md",
    "kind": "report"
@@ -92,8 +92,8 @@
   {
    "name": "firmware-system-spec-2026-11-01.md",
    "href": "docs/firmware-system-spec-2026-11-01.md",
-   "bytes": 47037,
-   "sha256": "29abf0b566f2f47b46601041aa09e0d947c5d44ab53b865d335a1714666b2400",
+   "bytes": 47994,
+   "sha256": "dd1d2b020e0ea516f8e2e1004bce57c5cbce8edc23dd873b09731e68099680b8",
    "desc": "Firmware system specification and open decisions",
    "source": "ai-files/reports/firmware-system-spec-2026-11-01.md",
    "kind": "report"
@@ -218,8 +218,8 @@
   {
    "name": "mcu-pin-allocation.md",
    "href": "docs/mcu-pin-allocation.md",
-   "bytes": 12221,
-   "sha256": "c16cf75e78ef7d6cdf10ba7e3a87f151dc46cf7d67cee81abcd612856062ecf4",
+   "bytes": 14482,
+   "sha256": "b0275487f6e7e276df18f7862ba369ff200f2405fe70aca5c0e8ee24497e2b69",
    "desc": "MCU pin allocation (one stale line, see open items)",
    "source": "ai-files/reports/mcu-pin-allocation.md",
    "kind": "report"
