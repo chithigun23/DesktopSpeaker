@@ -204,7 +204,7 @@ function renderFiles(f) {
   $('bomfiles').innerHTML = (f.downloads || []).filter(d => /\.csv$/i.test(d.name)).map(d => `<li><a href="${esc(d.href)}" download>${esc(d.name)}</a> · ${esc(d.desc)} · ${fmtBytes(d.bytes)}</li>`).join('');
   drawDownloads();
   const gal = f.renders || [];
-  $('gal').insertAdjacentHTML('beforeend', gal.map(r => `<figure><a href="${esc(r.href)}"><img src="${esc(r.href)}" alt="${esc(r.caption)}" loading="lazy"></a><figcaption>${esc(r.caption)}</figcaption></figure>`).join(''));
+  $('gal').insertAdjacentHTML('beforeend', gal.map(r => `<figure class="old"><a href="${esc(r.href)}"><img src="${esc(r.href)}" alt="${esc(r.caption)}" loading="lazy"></a><figcaption>${esc(r.caption)}</figcaption></figure>`).join(''));
 }
 function drawDownloads() {
   const f = STATE.files || {downloads: []};
@@ -258,12 +258,22 @@ try {
   renderer = new THREE.WebGLRenderer({canvas, antialias: true, alpha: false});
   renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
   renderer.outputEncoding = THREE.sRGBEncoding;
+  renderer.toneMapping = THREE.ACESFilmicToneMapping;          // filmic roll-off: highlights on mask and metal do not clip
+  renderer.toneMappingExposure = 0.95;
   renderer.localClippingEnabled = false;
+  renderer.shadowMap.enabled = true;                           // one static 2048 px map: contact shadows of the parts on the board
+  renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+  renderer.shadowMap.autoUpdate = false;
   scene = new THREE.Scene();
   camera = new THREE.PerspectiveCamera(32, 1, 1, 20000);
-  scene.add(new THREE.HemisphereLight(0xffffff, 0x445566, 0.75));
-  const d1 = new THREE.DirectionalLight(0xffffff, 0.75); d1.position.set(1, 2, 1.5); camera.add(d1);
-  const d2 = new THREE.DirectionalLight(0xffffff, 0.35); d2.position.set(-1.5, -0.5, -1); scene.add(d2);
+  scene.environment = makeEnvironment(renderer);               // image-based light, generated here (no download)
+  scene.add(new THREE.HemisphereLight(0xffffff, 0x445566, 0.3));
+  const d1 = new THREE.DirectionalLight(0xffffff, 0.4); d1.position.set(1, 2, 1.5); camera.add(d1); camera.add(d1.target); d1.target.position.set(0, 0, -1);   // from over the viewer's right shoulder, about 40 degrees off the view axis
+  const d2 = new THREE.DirectionalLight(0xffffff, 0.2); d2.position.set(-1.5, -0.5, -1); scene.add(d2);
+  V.key = new THREE.DirectionalLight(0xfff6ea, 0.55);          // fixed light over the board, the only shadow caster
+  V.key.castShadow = true; V.key.shadow.mapSize.set(2048, 2048); V.key.shadow.bias = -0.0004; V.key.shadow.normalBias = 0.02;
+  V.key.visible = false;
+  scene.add(V.key, V.key.target);
   scene.add(camera);
   controls = new THREE.OrbitControls(camera, canvas);
   controls.enableDamping = false;
@@ -275,6 +285,29 @@ try {
 } catch (e) {
   console.error('WebGL unavailable', e);
   showNoCad('This browser could not start WebGL, so the 3D view is not available. The renders below show the model.');
+}
+function makeEnvironment(r) {
+  // a small studio: graded walls, a big soft box overhead and two strip lights, prefiltered once with PMREM.
+  // Gives the glossy solder mask and the gold its reflections; costs one 256 px cube render at start-up.
+  const s = new THREE.Scene(), pm = new THREE.PMREMGenerator(r);
+  const g = new THREE.SphereGeometry(50, 48, 24), col = [], p = g.attributes.position;
+  for (let i = 0; i < p.count; i++) {
+    const y = p.getY(i) / 50, k = y > 0 ? 0.38 + 0.22 * y : 0.38 + 0.3 * y;       // brighter ceiling, darker floor
+    col.push(k * 1.0, k * 0.99, k * 0.97);
+  }
+  g.setAttribute('color', new THREE.Float32BufferAttribute(col, 3));
+  s.add(new THREE.Mesh(g, new THREE.MeshBasicMaterial({side: THREE.BackSide, vertexColors: true})));
+  const panel = (w, h, pos, look, I) => {
+    const m = new THREE.Mesh(new THREE.PlaneGeometry(w, h), new THREE.MeshBasicMaterial({color: new THREE.Color(I, I, I * 0.98), side: THREE.DoubleSide}));
+    m.position.set(...pos); m.lookAt(...look); s.add(m);
+  };
+  panel(30, 22, [6, 40, 14], [0, 0, 0], 1.7);        // soft box above, a little in front
+  panel(6, 34, [-38, 12, 10], [0, 0, 0], 1.8);      // strip, left
+  panel(6, 34, [36, 8, -16], [0, 0, 0], 1.6);       // strip, right rear
+  panel(30, 8, [0, 6, 42], [0, 0, 0], 1.2);         // low front fill
+  const t = pm.fromScene(s, 0.035).texture;
+  pm.dispose();
+  return t;
 }
 function cssVar(n) { return getComputedStyle(document.documentElement).getPropertyValue(n).trim(); }
 function applyTheme() { if (renderer) { renderer.setClearColor(new THREE.Color(cssVar('--panel') || '#f8fafb')); schedule(); } }
@@ -373,8 +406,21 @@ async function bootCad() {
   STATE.meta = meta;
   if (STATE.specs) { renderVerification(); renderOpen(); }
   loadCadDownloads();
-  addCadRenders(meta);
+  // realistic board: cad/pcb_textures/textures.json names the board model it was made for (a newer board than the
+  // CAD export may be) and the textures that dress its faces; without it the KiCad layers of meta.files are shown
+  let tex = null;
+  try { tex = await getJSON(PCBTEX + 'textures.json'); } catch (e) {}
+  addCadRenders(meta, tex);
   const allFiles = normFiles(meta || {});
+  if (tex) for (const f of allFiles) {
+    if (!f.isPcb) continue;
+    const alt = f.optional ? tex.copper_glb : tex.glb;
+    if (!alt || !(await headOk('cad/' + alt))) { if (!f.optional) tex = null; continue; }
+    f.url = 'cad/' + alt; f.file = alt;
+    if (f.optional) { f.bytes = tex.copper_bytes || f.bytes; f.label = 'Copper geometry ' + (tex.board_name || ''); f.content = 'Tracks and zones of ' + (tex.board_name || 'the board') + ' as 3D geometry (the board texture already shows them)'; }
+    else { f.tex = tex; f.bytes = tex.glb_bytes || f.bytes; }
+  }
+  V.tex = tex;
   const files = allFiles.filter(f => !f.optional);
   V.optional = allFiles.filter(f => f.optional);
   V.nodes = normNodes(meta || {});
@@ -414,16 +460,30 @@ async function bootCad() {
   V.ok = true;
   if (missing.length) $('hint').textContent = 'Not loaded: ' + missing.join(', ') + ' · ' + $('hint').textContent;
   fillCadSpec(); fillCadNotes(meta); buildOptional(); buildSectionPresets(meta);
+  if (V.pcbTop && tex) $('cadfoot').textContent += ` Board shown: ${tex.board_name || 'newest board'} (${tex.generated || ''}), dressed with textures made from its copper, mask and silkscreen layers: green mask, ENIG gold, white silkscreen (the mask colour is still the owner's choice).`;
   goView('iso', true);
+  updateShadow();
 }
-function addCadRenders(m) {
-  const r = m && ((m.files && Array.isArray(m.files.renders) && m.files.renders) || m.renders);
+function addCadRenders(m, tex) {
+  let r = m && ((m.files && Array.isArray(m.files.renders) && m.files.renders) || m.renders);
   if (!Array.isArray(r) || !r.length) return;
+  if (tex && Array.isArray(tex.renders) && tex.renders.length) {
+    // the newer board renders lead; the CAD export's own board-only picture shows the older board, so it goes
+    const bn = tex.board_name || 'newest board', caps = {iso: bn + ', KiCad raytraced render', top: bn + ', top (KiCad render)', bottom: bn + ', bottom (KiCad render)'};
+    const own = tex.renders.map(h => { const k = (String(h).match(/pcb_real_(\w+)\.png$/) || [])[1]; return {href: h, caption: caps[k] || h, board: true}; });
+    r = [...own, ...r.filter(x => !/(^|\/)pcb\.png$/i.test(typeof x === 'string' ? x : x.href || x.file || x.path || ''))];
+  }
   const name = h => String(h).split('/').pop().replace(/\.png$/i, '').replace(/[_-]+/g, ' ');
-  const figs = r.map(x => typeof x === 'string' ? {href: x, caption: name(x)} : {href: x.href || x.file || x.path, caption: x.caption || x.title || name(x.href || x.file || x.path)})
-    .map(x => ({href: /^(cad\/|https?:)/.test(x.href) ? x.href : 'cad/' + x.href, caption: 'CAD ' + (m.version || 'export') + ': ' + x.caption}));
+  const figs = r.map(x => typeof x === 'string' ? {href: x, caption: name(x)} : {href: x.href || x.file || x.path, caption: x.caption || x.title || name(x.href || x.file || x.path), board: x.board})
+    .map(x => ({href: /^(cad\/|https?:)/.test(x.href) ? x.href : 'cad/' + x.href, caption: (x.board ? 'PCB ' : 'CAD ' + (m.version || 'export') + ': ') + x.caption}));
   $('gal').insertAdjacentHTML('afterbegin', figs.map(f => `<figure><a href="${esc(f.href)}"><img src="${esc(f.href)}" alt="${esc(f.caption)}" loading="lazy"></a><figcaption>${esc(f.caption)}</figcaption></figure>`).join(''));
-  $('rendersh').textContent = 'CAD renders (' + (m.version || 'newest') + ' first, then v11 of 2026-10-12)';
+  $('rendersh').textContent = 'CAD renders (' + (m.version || 'newest') + (tex ? ', board ' + (tex.board_name || '') : '') + ')';
+  // the v11 pictures (2026-10-12) show the old R6q board and enclosure: folded away behind a button
+  const gal = $('gal'); gal.classList.add('hide-old');
+  const btn = document.createElement('button'); btn.type = 'button'; btn.className = 'mini'; btn.id = 'galold';
+  const lab = () => { const n = gal.querySelectorAll('figure.old').length; btn.textContent = (gal.classList.contains('hide-old') ? 'Show' : 'Hide') + ' the ' + (n || '') + ' older CAD v11 renders (2026-10-12, old R6q board)'; };
+  btn.onclick = () => { gal.classList.toggle('hide-old'); lab(); };
+  gal.after(btn); lab(); setTimeout(lab, 3000);
 }
 function buildOptional() {
   // optional layers (for example the copper of a partly routed board) load on demand
@@ -519,8 +579,12 @@ function addFile(f, gltf, meta, nodes) {
   root.traverse(o => {
     if (!o.isMesh) return;
     o.material = Array.isArray(o.material) ? o.material.map(m => m.clone()) : o.material.clone();
-    for (const m of [].concat(o.material)) { m.userData.base = {color: m.color && m.color.clone(), emissive: m.emissive && m.emissive.clone(), opacity: m.opacity, transparent: m.transparent}; m.side = THREE.DoubleSide; }
+    for (const m of [].concat(o.material)) {
+      m.userData.base = {color: m.color && m.color.clone(), emissive: m.emissive && m.emissive.clone(), opacity: m.opacity, transparent: m.transparent}; m.side = THREE.DoubleSide;
+      if (!f.isPcb) m.envMapIntensity = 0.5;            // the enclosure keeps about its earlier brightness under the studio light
+    }
   });
+  if (f.tex) { try { realPcb(root, f.tex); } catch (e) { console.warn('realistic board not applied', e); } }
   // part list: the nodes named in meta.nodes; else the file root for the PCB (one part), else the children of
   // the first non-trivial node
   let top = root;
@@ -553,6 +617,120 @@ function addFile(f, gltf, meta, nodes) {
     if (col) o.traverse(m => { if (m.isMesh) for (const mm of [].concat(m.material)) { mm.color && mm.color.copy(col); mm.userData.base.color = col.clone(); } });
   }
   V.world.remove(holder);
+}
+/* ------------------------------------------------------------------ realistic board */
+const PCBTEX = 'cad/pcb_textures/';
+function partMaterial(m) {
+  // KiCad's glb gives the parts a colour only (glTF default: metal 1, rough 1); pick a believable finish from the colour
+  if (!m.isMeshStandardMaterial || !(m.metalness === 1 && m.roughness === 1)) return;
+  if (!m.name && m.color.getHex() === 0xffffff) {                     // model without any colour (GLTFLoader default): KiCad shows these grey
+    m.color.setRGB(0.42, 0.42, 0.43); m.metalness = 0.6; m.roughness = 0.42; m.userData.base.color = m.color.clone(); return;
+  }
+  const c = m.color.clone().convertLinearToSRGB(), hsl = {};
+  c.getHSL(hsl);
+  const {h, s, l} = hsl;
+  let me = 0, ro = 0.5;
+  if (l < 0.14) { ro = 0.38; }                                         // black epoxy / plastic: soft sheen
+  else if (l > 0.8 && s > 0.25) { ro = 0.55; }                         // cream / white nylon (JST housings)
+  else if (l > 0.93) { ro = 0.55; }                                    // white plastics, labels
+  else if (s < 0.14 && l >= 0.36) { me = 0.85; ro = 0.36; if (l > 0.75) m.color.multiplyScalar(0.72); }   // tin, nickel, steel shells, shafts, pins
+  else if (s < 0.14) { ro = 0.6; }                                     // grey ferrite, dark grey plastics
+  else if (h > 0.09 && h < 0.18 && s > 0.35 && l > 0.38) { me = 1; ro = 0.28; }   // gold plating
+  else if (h < 0.12 && s > 0.15) { ro = 0.55; }                        // tan / brown ceramics
+  else { ro = 0.42; }                                                  // coloured plastics (red test points, LEDs)
+  m.metalness = me; m.roughness = ro;
+  if (m.userData.base) m.userData.base.color = m.color.clone();
+}
+function realPcb(root, T) {
+  let body = null; const hide = [], pads = [];
+  root.traverse(o => {
+    if (o.name === 'Board_body') body = o;
+    else if (/^(Soldermask|Silkscreen)_[FB]$/.test(o.name)) hide.push(o);
+    else if (o.name === 'Pads_and_holes') pads.push(o);
+  });
+  if (!body || !T.sides || !T.box_mm) return false;
+  root.updateMatrixWorld(true);
+  const F = body.parent, inv = new THREE.Matrix4().copy(F.matrixWorld).invert();
+  const [ox, oy] = T.origin_mm || [147.25, 88.8], [bx, by, bw, bh] = T.box_mm;
+  const meshes = o => { const a = []; o.traverse(m => { if (m.isMesh) a.push(m); }); return a; };
+  // split a mesh's triangles by facing (in the board frame: KiCad metres, y = board normal)
+  const split = (mesh, keep) => {
+    const M = new THREE.Matrix4().multiplyMatrices(inv, mesh.matrixWorld), g = mesh.geometry, P = g.attributes.position;
+    const idx = g.index ? g.index.array : null, n = idx ? idx.length : P.count, out = [];
+    const a = new THREE.Vector3(), b = new THREE.Vector3(), c = new THREE.Vector3(), e1 = new THREE.Vector3(), e2 = new THREE.Vector3();
+    for (let i = 0; i < n; i += 3) {
+      const ia = idx ? idx[i] : i, ib = idx ? idx[i + 1] : i + 1, ic = idx ? idx[i + 2] : i + 2;
+      a.fromBufferAttribute(P, ia).applyMatrix4(M); b.fromBufferAttribute(P, ib).applyMatrix4(M); c.fromBufferAttribute(P, ic).applyMatrix4(M);
+      const ny = e1.subVectors(b, a).cross(e2.subVectors(c, a)).normalize().y;
+      if (keep(ny)) out.push(a.x, a.y, a.z, b.x, b.y, b.z, c.x, c.y, c.z);
+    }
+    return out;
+  };
+  const geo = (arr, uv) => {
+    const g = new THREE.BufferGeometry();
+    g.setAttribute('position', new THREE.Float32BufferAttribute(arr, 3));
+    if (uv) {
+      const u = [];
+      for (let i = 0; i < arr.length; i += 3) u.push((arr[i] * 1000 + ox - bx) / bw, (arr[i + 2] * 1000 + oy - by) / bh);
+      g.setAttribute('uv', new THREE.Float32BufferAttribute(u, 2));
+    }
+    g.computeVertexNormals();
+    return g;
+  };
+  const loader = new THREE.TextureLoader(), aniso = Math.min(12, renderer.capabilities.getMaxAnisotropy());
+  const small = Math.min(innerWidth, innerHeight) < 600 || renderer.capabilities.maxTextureSize < 4096;
+  const tx = (file, srgb) => {
+    const t = loader.load(PCBTEX + file, () => { if (V.ok) schedule(); }, undefined, e => console.error('board texture', file, e));
+    t.flipY = false; t.anisotropy = aniso; if (srgb) t.encoding = THREE.sRGBEncoding;
+    return t;
+  };
+  const skin = side => {
+    const S = T.sides[side], rmb = tx(S.rmb, false);
+    const m = new THREE.MeshStandardMaterial({map: tx(small && S.albedo_2k ? S.albedo_2k : S.albedo, true), roughnessMap: rmb, metalnessMap: rmb,
+      bumpMap: rmb, bumpScale: 0.1, roughness: 1, metalness: 1, envMapIntensity: 0.75, side: THREE.FrontSide});
+    m.name = 'board_' + side;
+    return m;
+  };
+  const base = m => { m.userData.base = {color: m.color.clone(), emissive: m.emissive.clone(), opacity: m.opacity, transparent: m.transparent}; return m; };
+  const top = [], bot = [], wall = [];
+  for (const m of meshes(body)) {
+    top.push(...split(m, ny => ny > 0.99)); bot.push(...split(m, ny => ny < -0.99)); wall.push(...split(m, ny => Math.abs(ny) <= 0.99));
+    m.visible = false;
+  }
+  const add = (g, mat, name, recv) => { const o = new THREE.Mesh(g, base(mat)); o.name = name; o.receiveShadow = !!recv; F.add(o); return o; };
+  V.pcbTop = add(geo(top, true), skin('top'), 'Board_top', true);
+  add(geo(bot, true), skin('bottom'), 'Board_bottom', false);
+  // FR4 edge: laminate with the mask wrapping its edges, satin
+  add(geo(wall), new THREE.MeshStandardMaterial({color: 0x8d8a5a, roughness: 0.7, metalness: 0, side: THREE.DoubleSide}), 'Board_edge');
+  // plated barrels and pad walls stay as geometry (gold); pad tops come from the texture
+  for (const p of pads) for (const m of meshes(p)) {
+    const w = split(m, ny => Math.abs(ny) < 0.5);
+    if (w.length) add(geo(w), new THREE.MeshStandardMaterial({color: 0xd9b76a, roughness: 0.32, metalness: 1, side: THREE.DoubleSide}), 'Plated_holes');
+    m.visible = false;
+  }
+  for (const o of hide) o.visible = false;
+  // parts: believable finishes, and they cast the contact shadows
+  root.traverse(o => {
+    if (!o.isMesh || !o.visible || /^Board_|^Plated_holes$/.test(o.name)) return;
+    let p = o; while (p && p !== F) { if (p === body || hide.includes(p) || pads.includes(p)) return; p = p.parent; }
+    for (const m of [].concat(o.material)) partMaterial(m);
+    o.castShadow = true;
+  });
+  V.key.visible = true;
+  return true;
+}
+function updateShadow() {
+  // aim the fixed key light at the board wherever explode put it; the shadow map is redrawn only here
+  if (!V.pcbTop || !renderer) return;
+  V.world.updateMatrixWorld(true);
+  for (let p = V.pcbTop; p; p = p.parent) if (!p.visible) { schedule(); return; }   // hidden board: keep the old map (the light stays on: no shader rebuild)
+  const b = new THREE.Box3().setFromObject(V.pcbTop), c = b.getCenter(new THREE.Vector3()), s = b.getSize(new THREE.Vector3());
+  const r = Math.max(s.x, s.z) / 2 + 8, cam = V.key.shadow.camera;
+  V.key.position.copy(c).add(new THREE.Vector3(0.7, 1, 0.8).multiplyScalar(110));   // about 45 degrees up: visible but short shadows
+  V.key.target.position.copy(c);
+  cam.left = -r; cam.right = r; cam.top = r; cam.bottom = -r; cam.near = 60; cam.far = 260; cam.updateProjectionMatrix();
+  renderer.shadowMap.needsUpdate = true;
+  schedule();
 }
 function computeBox() {
   V.world.updateMatrixWorld(true);
@@ -603,7 +781,7 @@ function setGroup(id, on) {
   const g = V.groups.get(id); if (!g) return;
   g.obj.visible = on;
   const b = document.querySelector(`#groups .chip[data-g="${CSS.escape(id)}"]`); if (b) b.setAttribute('aria-pressed', on);
-  syncQuick(); schedule();
+  syncQuick(); updateShadow(); schedule();
 }
 function quickGroups(q) {
   const re = QUICK[q];
@@ -636,7 +814,7 @@ function applyExplode() {
     g.obj.position.copy(gv).multiplyScalar(f);
     for (const p of g.parts) { const u = p.userData.part; p.position.copy(u.base); if (u.explode) p.position.addScaledVector(u.explode.clone().sub(gv), f); }
   }
-  schedule();
+  updateShadow(); schedule();
 }
 $('explode').addEventListener('input', e => { V.explode = e.target.value / 100; $('explodev').textContent = e.target.value + ' %'; applyExplode(); });
 $('explode').addEventListener('change', () => { if (V.ok) goDir(camera.position.clone().sub(controls.target)); });   // refit, same direction
@@ -697,10 +875,18 @@ function goDir(dirWorld, instant) {
   controls.maxDistance = fit * 8; controls.minDistance = r * 0.05;
   cancelAnimationFrame(V.anim);
   if (instant) { camera.position.copy(end); controls.target.copy(c); controls.update(); schedule(); return; }
-  const p0 = camera.position.clone(), t0 = controls.target.clone(), st = performance.now(), T = 380;
+  swing(end, c, 380);
+}
+function swing(end, c, T) {
+  const p0 = camera.position.clone(), t0 = controls.target.clone(), st = performance.now();
   // interpolate on the sphere around the target so the camera swings round rather than through the model
   const r0 = p0.clone().sub(t0), r1 = end.clone().sub(c), l0 = r0.length(), l1 = r1.length();
-  const q = new THREE.Quaternion().setFromUnitVectors(r0.clone().normalize(), r1.clone().normalize());
+  const n0 = r0.clone().normalize(), n1 = r1.clone().normalize(), q = new THREE.Quaternion();
+  if (n0.dot(n1) < -0.9999) {                              // opposite view: half a turn about a horizontal axis (setFromUnitVectors degenerates)
+    let ax = new THREE.Vector3().crossVectors(n0, new THREE.Vector3(0, 1, 0));
+    if (ax.lengthSq() < 1e-6) ax.set(1, 0, 0);
+    q.setFromAxisAngle(ax.normalize(), Math.PI);
+  } else q.setFromUnitVectors(n0, n1);
   const step = now => {
     const u = Math.min(1, (now - st) / T), z = u < .5 ? 2 * u * u : 1 - Math.pow(-2 * u + 2, 2) / 2;
     const qq = new THREE.Quaternion().slerp(q, z);
@@ -728,23 +914,56 @@ $('reset').onclick = () => {
 };
 stage.addEventListener('keydown', e => { if (e.key === 'Home') { e.preventDefault(); goView('iso'); } });
 
-const W2C = v => [v.x, -v.y, v.z];                     // three.js (y up) to CSS (y down)
+// The view cube: a chamfered cube of 26 buttons (6 faces, 12 edge strips, 8 corner facets), as on the cabinet viewer.
+// A click swings the camera round the current target, at the current distance, to look along that direction:
+// face = orthogonal view, edge = 45 degrees between two faces, corner = isometric from that corner.
+const CE = 11, CH = 32;                                   // chamfer width and half size, px (the widget is 64 px)
+const W2C = v => [v[0], -v[1], v[2]];                     // three.js (y up) to CSS (y down)
+const XP = (a, b) => [a[1] * b[2] - a[2] * b[1], a[2] * b[0] - a[0] * b[2], a[0] * b[1] - a[1] * b[0]];
+const UNIT = v => { const l = Math.hypot(...v); return v.map(x => x / l); };
+const cap = s => s[0].toUpperCase() + s.slice(1);
+function lookAlong(dirWorld) {
+  if (!V.ok) return;
+  hideTip();
+  document.querySelectorAll('[data-view]').forEach(b => b.setAttribute('aria-pressed', 'false'));
+  const t = controls.target.clone(), dist = camera.position.distanceTo(t);
+  const d = dirWorld.clone().normalize();
+  if (Math.abs(d.y) > 0.999) d.add(new THREE.Vector3(0, 0, 0.002)).normalize();       // avoid the orbit pole
+  cancelAnimationFrame(V.anim);
+  swing(t.clone().addScaledVector(d, dist), t, 400);
+}
+function cubePiece(cls, w, h, Z, d, {X, Y}, dir, title, label, clip) {
+  Z = UNIT(Z); if (!X) X = XP(Y, Z); if (!Y) Y = XP(Z, X);
+  const el = document.createElement('div'); el.className = cls;
+  el.style.cssText = `width:${w}px;height:${h}px;margin:${-h / 2}px 0 0 ${-w / 2}px;transform:matrix3d(${[...X, 0, ...Y, 0, ...Z, 0, Z[0] * d, Z[1] * d, Z[2] * d, 1].map(v => +v.toFixed(5)).join(',')})` + (clip ? `;clip-path:${clip}` : '');
+  if (label) el.textContent = label;
+  el.title = title; el.setAttribute('role', 'button'); el.setAttribute('aria-label', title);
+  el.addEventListener('click', e => { e.stopPropagation(); lookAlong(new THREE.Vector3(...dir)); });
+  $('cube').appendChild(el);
+}
 function buildCube() {
   const cube = $('cube'); cube.innerHTML = '';
   if (!V.world) return;
-  const names = ['front', 'back', 'right', 'left', 'top', 'bottom'];
-  const upW = new THREE.Vector3(0, 1, 0);
-  for (const n of names) {
-    const N = toWorldDir(metaDir(n)).round();
-    let U = Math.abs(N.y) > 0.9 ? toWorldDir(metaDir('front')).round().multiplyScalar(N.y > 0 ? -1 : 1) : upW.clone();
-    const R = new THREE.Vector3().crossVectors(U, N).normalize();
-    const X = W2C(R), Y = W2C(U.clone().negate()), Z = W2C(N), d = 23;
-    const el = document.createElement('div');
-    el.textContent = n === 'right' ? 'side' : n;
-    el.title = 'View from the ' + n;
-    el.style.transform = `matrix3d(${[...X, 0, ...Y, 0, ...Z, 0, Z[0] * d, Z[1] * d, Z[2] * d, 1].map(v => +v.toFixed(5)).join(',')})`;
-    el.addEventListener('click', () => { if (V.ok) goView(n); });
-    cube.appendChild(el);
+  // the six faces in the world (three.js) frame from the model frame: front = meta front (+z here), top = up axis
+  const face = n => toWorldDir(metaDir(n)).round().toArray();
+  const FACES = ['front', 'back', 'right', 'left', 'top', 'bottom'].map(n => [n, face(n)]);
+  const up = face('top'), rightW = face('right');
+  const rt = n => Math.abs(n[1]) > 0.9 ? rightW : XP(up, n);        // label x axis: to the viewer's right
+  for (const [name, n] of FACES) cubePiece('f', 2 * (CH - CE), 2 * (CH - CE), W2C(n), CH, {X: W2C(rt(n))}, n, 'View from the ' + name, name);
+  for (let a = 0; a < 6; a++) for (let b = a + 1; b < 6; b++) {
+    const A = FACES[a][1], B = FACES[b][1];
+    if (A[0] * B[0] + A[1] * B[1] + A[2] * B[2] !== 0) continue;   // opposite faces share no edge
+    const s = [0, 1, 2].map(i => A[i] + B[i]);
+    const nm = [FACES[a][0], FACES[b][0]].sort((p, q) => ['top', 'bottom'].includes(q) - ['top', 'bottom'].includes(p));
+    cubePiece('e', 2 * (CH - CE), CE * Math.SQRT2, W2C(s), (CH - CE / 2) * Math.SQRT2, {X: W2C(XP(A, B))}, s, 'View from the ' + nm.join('-') + ' edge (45 degrees)');
+  }
+  for (const sx of [1, -1]) for (const sy of [1, -1]) for (const sz of [1, -1]) {
+    const P = [[sx * CH, sy * (CH - CE), sz * (CH - CE)], [sx * (CH - CE), sy * CH, sz * (CH - CE)], [sx * (CH - CE), sy * (CH - CE), sz * CH]];
+    const c = [0, 1, 2].map(i => (P[0][i] + P[1][i] + P[2][i]) / 3), apex = UNIT([0, 1, 2].map(i => P[0][i] - c[i])), side = CE * Math.SQRT2;
+    const dir = [sx, sy, sz], nm = FACES.filter(([, n]) => n[0] * dir[0] + n[1] * dir[1] + n[2] * dir[2] > 0).map(([k]) => k);
+    nm.sort((p, q) => ['top', 'bottom'].includes(q) - ['top', 'bottom'].includes(p));
+    cubePiece('k', side, side * Math.sqrt(3) / 2 * 4 / 3, W2C(dir), Math.hypot(...c), {Y: W2C(apex).map(v => -v)}, dir,
+      'Isometric view from the ' + nm.join('-') + ' corner', '', 'polygon(50% 0,100% 75%,0 75%)');
   }
 }
 const SG = [1, -1, 1];
@@ -763,6 +982,7 @@ function syncCube() {
   $('axes').innerHTML = s;
 }
 for (const id of ['vcw', 'home']) $(id).addEventListener('pointerdown', e => e.stopPropagation());
+$('vcw').addEventListener('wheel', e => e.stopPropagation(), {passive: true});
 
 /* ------------------------------------------------------------------ hover: name and highlight */
 const ray = new THREE.Raycaster(), mouse = new THREE.Vector2();
@@ -771,7 +991,7 @@ function partOf(o) { while (o && !(o.userData && o.userData.part)) o = o.parent;
 function labelOf(hit) {
   // nearest named ancestor below the part (KiCad names component nodes by reference; '=>' nodes are shape refs)
   // prefer a reference designator (R238, U4) over sub-shape names such as FRAME or MOLD
-  const P = partOf(hit), useful = n => n && !/^=>|^mesh|^Mesh|^node_?\d*$|^$/.test(n), isRef = n => /^[A-Z]{1,4}\d{1,4}[A-Z]?(_\d+)?$/.test(n);
+  const P = partOf(hit), useful = n => n && !/^=>|^mesh|^Mesh|^node_?\d*$|^$|^Board_(top|bottom|edge)$|^Plated_holes$/.test(n), isRef = n => /^[A-Z]{1,4}\d{1,4}[A-Z]?(_\d+)?$/.test(n);
   let o = hit, first = null, ref = null;
   while (o && o !== P.parent) { if (useful(o.name)) { if (!first) first = o; if (isRef(o.name)) { ref = o; break; } } o = o.parent; }
   const node = ref || first;

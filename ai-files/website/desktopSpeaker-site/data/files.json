@@ -5,8 +5,8 @@
   {
    "name": "DesktopSpeaker_LCSC_Starter_BOM.csv",
    "href": "downloads/DesktopSpeaker_LCSC_Starter_BOM.csv",
-   "bytes": 69459,
-   "sha256": "688610fd6e4bd330fefb8a6c9349348a0f3e8172613f0d8843f87bdb71997475",
+   "bytes": 69616,
+   "sha256": "03ed088af515ebcff42550eac85546caf9ec40a4ba8970f0b60711c3b400bb86",
    "desc": "Electronics BOM (LCSC starter, per reference)",
    "source": "ai-files/bom/DesktopSpeaker_LCSC_Starter_BOM.csv"
   },
@@ -21,8 +21,8 @@
   {
    "name": "hardware-buy-list.csv",
    "href": "downloads/hardware-buy-list.csv",
-   "bytes": 17562,
-   "sha256": "82631c07b227cdfe9e28f5947f656bc8db14d84c96901ac4306cc12083d4c11c",
+   "bytes": 39004,
+   "sha256": "4cd4d1fb7cebca7b7855f94efc873381c40f2f6afa1eeb2fc9e80b21b77012ee",
    "desc": "Hardware and mechanical buy list",
    "source": "ai-files/bom/hardware-buy-list.csv"
   },
@@ -47,8 +47,8 @@
   {
    "name": "HANDOVER.md",
    "href": "docs/HANDOVER.md",
-   "bytes": 157728,
-   "sha256": "40e9765b9b423513c385cd8d042ff00079c40d445298249dd6efce2ce28d47d3",
+   "bytes": 164518,
+   "sha256": "0faaeb8742a3dfd720289b9ba6cbd1f11543e5c85ed4495bb4cc489b90971df6",
    "desc": "Single project handover: decisions, evidence, open items (older sections superseded)",
    "source": "ai-files/HANDOVER.md",
    "kind": "report"
@@ -56,8 +56,8 @@
   {
    "name": "plan.md",
    "href": "docs/plan.md",
-   "bytes": 60499,
-   "sha256": "4a973ee69978ebbadf4688397a22527e5b2c182d4b65d3dc7961cf64070f1ce6",
+   "bytes": 64572,
+   "sha256": "1a75ff7ca8f7776e47af695f2025404835c88b18126fd62339c5c3cf666850d9",
    "desc": "Schematic completion checklist and subsystem status",
    "source": "plan.md",
    "kind": "report"
@@ -191,8 +191,8 @@
   {
    "name": "battery-pack-rfq.md",
    "href": "docs/battery-pack-rfq.md",
-   "bytes": 7324,
-   "sha256": "b496056972435fbf7cc784a4f0d7952c79e345e46e8ba27262a74b3f61980e23",
+   "bytes": 10436,
+   "sha256": "84f67fa827c8762213024a24553b6c343c3be25e2e8cfaee2a4dc63c04b654a3",
    "desc": "Battery pack request for quote (1S4P)",
    "source": "ai-files/reports/battery-pack-rfq.md",
    "kind": "report"
@@ -281,8 +281,8 @@
   {
    "name": "mechanical-bom.md",
    "href": "docs/mechanical-bom.md",
-   "bytes": 6667,
-   "sha256": "33bad0e394a1ccb62b46808d8a6f4b9373868a5dafb3fc3876a4e4e66d773c69",
+   "bytes": 20213,
+   "sha256": "1b32ac4263676559384b2ce75f4977f9f90a1a5f892978708e546480777c350e",
    "desc": "Mechanical BOM (fasteners, inserts)",
    "source": "ai-files/cad/mechanical-bom.md",
    "kind": "report"
@@ -290,8 +290,8 @@
   {
    "name": "hardware-buy-list.md",
    "href": "docs/hardware-buy-list.md",
-   "bytes": 27493,
-   "sha256": "fa5448a5e3d659747880c1b4ef002dba9668666c09b9cacec42d8f1704b921f3",
+   "bytes": 52563,
+   "sha256": "632410e4e1550918e5a3cb593dc0257dc1a9436581116d30cb85eb68a69949c4",
    "desc": "Hardware buy list (A$ snapshot prices)",
    "source": "ai-files/bom/hardware-buy-list.md",
    "kind": "report"

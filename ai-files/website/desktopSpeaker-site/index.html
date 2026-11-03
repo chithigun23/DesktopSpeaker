@@ -39,7 +39,7 @@
     <div class="stage" id="stage" tabindex="0" role="application" aria-label="3D view of the speaker. Drag to orbit, right-drag or shift-drag to pan, wheel to zoom. Arrow keys orbit, Home resets the view.">
       <canvas id="cv"></canvas>
       <div class="hint" id="hint">drag: orbit · right/shift-drag: pan · wheel/pinch: zoom · hover: part name</div>
-      <div class="vcw" id="vcw" title="Click a face to look from that side"><div class="cube" id="cube"></div></div>
+      <div class="vcw" id="vcw" title="Click a face, edge or corner to look from that direction"><div class="cube" id="cube"></div></div>
       <button class="home" id="home" type="button" title="Back to the default isometric view">ISO</button>
       <svg class="axes" id="axes" viewBox="-32 -32 64 64" aria-hidden="true"></svg>
       <div class="tip" id="tip" hidden></div>
@@ -60,7 +60,7 @@
   </div>
   <div class="ctl" role="group" aria-label="View options">
     <div class="seg" role="group" aria-label="Camera">
-      <button type="button" data-view="iso" aria-pressed="true">Iso</button><button type="button" data-view="front" aria-pressed="false">Front</button><button type="button" data-view="back" aria-pressed="false">Rear</button><button type="button" data-view="top" aria-pressed="false">Top</button><button type="button" data-view="right" aria-pressed="false">Side</button>
+      <button type="button" data-view="iso" aria-pressed="true">Iso</button><button type="button" data-view="front" aria-pressed="false">Front</button><button type="button" data-view="back" aria-pressed="false">Rear</button><button type="button" data-view="top" aria-pressed="false">Top</button><button type="button" data-view="right" aria-pressed="false">Right</button>
     </div>
     <label for="t-pcb"><input type="checkbox" id="t-pcb" data-quick="pcb" checked> PCB</label>
     <label for="t-enc"><input type="checkbox" id="t-enc" data-quick="enclosure" checked> Enclosure</label>

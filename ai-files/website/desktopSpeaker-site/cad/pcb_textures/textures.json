@@ -1,0 +1,75 @@
+{
+ "board": "ai-files/pcb/gui-finish/DesktopSpeaker-RT15H.kicad_pcb",
+ "box_mm": [
+  86.25,
+  20.0,
+  127.5,
+  137.6
+ ],
+ "sides": {
+  "top": {
+   "albedo": "top_albedo.jpg",
+   "rmb": "top_rmb.jpg",
+   "px": [
+    4096,
+    4096
+   ],
+   "rmb_px": [
+    2048,
+    2048
+   ],
+   "px_per_mm": [
+    32.13,
+    29.77
+   ],
+   "bytes": 3563680,
+   "albedo_2k": "top_albedo_2k.jpg"
+  },
+  "bottom": {
+   "albedo": "bottom_albedo.jpg",
+   "rmb": "bottom_rmb.jpg",
+   "px": [
+    2048,
+    2048
+   ],
+   "rmb_px": [
+    2048,
+    2048
+   ],
+   "px_per_mm": [
+    16.06,
+    14.88
+   ],
+   "bytes": 1088392
+  }
+ },
+ "frame": "u = (board_x - box.x) / box.w, v = (board_y - box.y) / box.h; image row 0 = v 0; bottom not mirrored",
+ "mask": "green (JLC default; ORDER-NOTES leaves the colour to the owner)",
+ "silk": "white",
+ "finish": "ENIG",
+ "thickness_mm": 1.5999999999999999,
+ "holes": 1078,
+ "vias": 984,
+ "glb": "pcb_rt15h.glb",
+ "copper_glb": "pcb_copper_rt15h.glb",
+ "glb_bytes": 15355356,
+ "copper_bytes": 25398108,
+ "origin_mm": [
+  147.25,
+  88.8
+ ],
+ "board_name": "DesktopSpeaker-RT15H",
+ "board_sha256": "3f1e6cae225c7f973eae637bd21f13de352ef381309811e6424e68f05cbadd49",
+ "placement_mm": [
+  -3.5,
+  67.0,
+  -133.3
+ ],
+ "renders": [
+  "renders/pcb_real_iso.png",
+  "renders/pcb_real_top.png",
+  "renders/pcb_real_bottom.png"
+ ],
+ "generated": "2026-11-03",
+ "tool": "ai-files/helpers/make_pcb_textures.sh"
+}

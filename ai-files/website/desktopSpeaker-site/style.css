@@ -62,12 +62,19 @@ nav.links .sp{flex:1}
 .bar i{display:block;height:100%;width:0;background:var(--accent);transition:width .2s}
 
 /* view cube and axes */
-.vcw{position:absolute;top:16px;right:16px;width:64px;height:64px;perspective:240px;z-index:2}
+.vcw{position:absolute;top:16px;right:16px;width:64px;height:64px;perspective:260px;z-index:2;cursor:default;touch-action:manipulation}
 .cube{position:absolute;inset:0;transform-style:preserve-3d}
-.cube>div{position:absolute;left:50%;top:50%;width:46px;height:46px;margin:-23px 0 0 -23px;display:grid;place-items:center;
-  font:500 8px var(--mono);letter-spacing:.04em;text-transform:uppercase;background:var(--panel);color:var(--ink);border:1px solid var(--muted);
-  backface-visibility:hidden;cursor:pointer;user-select:none}
+/* chamfered view cube: 6 faces (.f), 12 edge strips (.e), 8 corner facets (.k); every piece is a button */
+.cube>div{position:absolute;left:50%;top:50%;backface-visibility:hidden;cursor:pointer;user-select:none;-webkit-user-select:none;box-sizing:border-box;transition:background-color .08s}
+.cube .f{display:grid;place-items:center;font:500 8px var(--mono);letter-spacing:.03em;text-transform:uppercase;background:var(--panel);color:var(--ink);border:1px solid var(--muted)}
+.cube .e{background:color-mix(in srgb,var(--line) 75%,var(--panel));border:1px solid var(--muted)}
+.cube .k{background:var(--muted)}
 .cube>div:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+.cube .e:hover{background:color-mix(in srgb,var(--accent) 80%,#000)}
+.cube .k:hover{background:color-mix(in srgb,var(--accent) 70%,#000)}
+.cube>div:active{filter:brightness(1.15)}
+.gal.hide-old figure.old{display:none}
+#galold{justify-self:start;margin-top:8px}
 .home{position:absolute;top:92px;right:16px;width:64px;z-index:2;font:11px var(--mono);padding:3px 0;background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:5px;cursor:pointer}
 .axes{position:absolute;right:16px;top:122px;width:64px;height:64px;z-index:2;pointer-events:none}
 .axes text{font:10px var(--mono)}

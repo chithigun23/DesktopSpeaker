@@ -35,6 +35,16 @@ all get an automatic direction away from the model centre, noted under the viewe
 (v12) feed the side panel, CAD notes and Verification; an optional `checks[]` of `{check, result, detail}`
 is listed in Verification as well.
 
+## pcb_textures/textures.json (realistic board, 2026-11-03)
+
+Optional. Written by `ai-files/helpers/make_pcb_textures.sh`. When present, `glb` and `copper_glb` (files in `cad/`)
+replace the PCB file and the optional copper file of `meta.files` (the board can be newer than the CAD export), and
+the viewer dresses the board: the Board_body top/bottom faces get `sides.{top,bottom}.albedo` (sRGB) and `rmb`
+(R bump, G roughness, B metalness) mapped by `box_mm` / `origin_mm` (u along board x, v along board y, image row 0 =
+`box.y`, bottom image not mirrored); the KiCad mask, silkscreen and pad-top meshes are hidden (plated barrels stay);
+the parts get finishes from their colours and cast a static 2048 px shadow map. `renders` lead the gallery and replace
+the export's `renders/pcb.png`. `top_albedo_2k` is used on small screens or GPUs below 4096 px textures.
+
 ## Hover names
 
 The part name is the nearest named node that looks like a reference designator (KiCad names component nodes
