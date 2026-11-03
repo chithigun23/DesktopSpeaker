@@ -11,7 +11,7 @@
   "Partial subtotal only: the sums below cover priced LCSC electronics lines at snapshot prices. They are NOT a product cost (no pack, PCB fabrication, enclosure, drivers, shipping, tax or unpriced lines).",
   "Stock and prices are snapshots (dates per row, 2026-10-06 to 2026-11-01), not verified order-time availability; re-check every line before ordering.",
   "U1 BM83, U2 PCM2902C and U19 TPS7B84 showed 0 stock at LCSC and JLC on 2026-11-01. The owner assembles by hand (stencil and hotplate), so JLC assembly stock does not block the build: buy these from another distributor.",
-  "Unresolved: the battery pack (1S2P 21700 with PCM and NTC) has no part number; quotes pending.",
+  "Unresolved: the battery pack (1S4P 21700, 4 x INR21700-50S, 20 Ah, with PCM, per-cell fusing and NTC; decided 2026-11-03) has no part number or price; quotes pending.",
   "Value column comes from the schematic Value field; the BOM function text is the description."
  ],
  "summary": {
@@ -32,7 +32,7 @@
   ],
   "jlc_bom_lines": 90,
   "jlc_bom_placements": 318,
-  "hardware_lines": 39
+  "hardware_lines": 42
  },
  "status_legend": {
   "in-stock": "Listed in stock at the snapshot date",
@@ -813,7 +813,7 @@
   {
    "ref": "PACK",
    "refs": [],
-   "function": "Protected 1S Li-ion pack with 10k NTC; capacity/curve/lead open",
+   "function": "Protected 1S4P Li-ion pack, 20 Ah (4 x INR21700-50S), 10k NTC (B 3435); vendor/MPN open (RFQ)",
    "value": "",
    "mfr": "",
    "mpn": "",
@@ -825,7 +825,7 @@
    "order_usd": null,
    "stock": null,
    "snapshot": "2026-10-10",
-   "availability": "UNRESOLVED 2026-10-10: no pack MPN chosen. Cells (2P 21700), PCM/protection board and harness are not LCSC stock items (keyword searches for INR21700 returned nothing); NTC candidates: NCP15XH103F03RC C77131 (Murata 10k 0402 3380 K, 10,406, SMD for board), MF52A103F3950 C13879 (10k 3950 K leaded, 170,230) or MF52A103F3435 C84036 (10k 3435 K, 31,810): curve must match the BQ25792 TS table. NTC: the BQ25792 expects a 103AT-2 10 kOhm curve (B about 3435 K; datasheet thresholds are quoted for 103AT), so MF52A103F3435 C84036 is the closest candidate; the TS divider and thresholds must be checked against the chosen curve. Pack/PCM remain the user decision.",
+   "availability": "2026-11-03: pack decided 1S4P (4 x INR21700-50S, 20 Ah, about 72 Wh; spec in hardware-buy-list.csv row 32 and reports/battery-pack-rfq.md); vendor/MPN still UNRESOLVED (RFQ, no price). UNRESOLVED 2026-10-10: no pack MPN chosen. Cells (2P 21700 at the time), PCM/protection board and harness are not LCSC stock items (keyword searches for INR21700 returned nothing); NTC candidates: NCP15XH103F03RC C77131 (Murata 10k 0402 3380 K, 10,406, SMD for board), MF52A103F3950 C13879 (10k 3950 K leaded, 170,230) or MF52A103F3435 C84036 (10k 3435 K, 31,810): curve must match the BQ25792 TS table. NTC: the BQ25792 expects a 103AT-2 10 kOhm curve (B about 3435 K; datasheet thresholds are quoted for 103AT), so MF52A103F3435 C84036 is the closest candidate; the TS divider and thresholds must be checked against the chosen curve. Pack/PCM remain the user decision.",
    "notes": "",
    "url": "",
    "sheets": [],
@@ -3369,7 +3369,7 @@
    "unit_price": "AUD 5.28",
    "line_price": "AUD 5.28",
    "stock_date": "17 (Core 2026-10-12)",
-   "notes": "Rocker leads (2 x about 0.12 m) and a spare/DIY pack lead. RFQ lead is 150 mm but the CAD harness route is about 230 mm: align before ordering the pack.",
+   "notes": "Rocker leads (2 x about 0.12 m) and a spare/DIY pack lead. RFQ lead is 150 mm but the CAD harness route is about 230 mm: align before ordering the pack. (2026-11-03: the 1S4P RFQ asks for about 180 mm; CAD v15 route about 131 mm.)",
    "category": "Wire",
    "price_status": "confirmed",
    "url": "https://core-electronics.com.au/high-temperature-resistant-silicone-wire-18awg-0-75mm2-1m-red-black.html"
@@ -3406,15 +3406,15 @@
   },
   {
    "item": "Socket cap screw M3 x 10, 316 stainless",
-   "qty": "1 pack of 50",
+   "qty": "0 (superseded 2026-11-03)",
    "qty_2nd_unit": "0 (23+23 = 46)",
    "spec": "ISO 4762 type; 23 per unit (8 drivers + 4 woofer + 11 lid)",
    "source": "Miniature Bearings Australia",
    "part_number": "SC030M-010-C-SK-S6",
    "unit_price": "AUD 8.77",
-   "line_price": "AUD 8.77",
+   "line_price": "AUD 0.00",
    "stock_date": "Available (store JSON 2026-10-12)",
-   "notes": "Woofer screws may change (bolt circle unverified; M2.5 or clamp-ring fallback).",
+   "notes": "2026-11-03: drivers and lid now use the countersunk post-Torx T10 M3x10 (lines 41-43); the woofer uses M3x20 since CAD v13 (not on this list). Was: Woofer screws may change (bolt circle unverified; M2.5 or clamp-ring fallback).",
    "category": "Mechanical",
    "price_status": "confirmed",
    "url": "https://miniaturebearings.com.au/collections/screws-socket-cap-stainless"
@@ -3528,15 +3528,15 @@
    "item": "Hook-and-loop strap (battery)",
    "qty": "1",
    "qty_2nd_unit": "1",
-   "spec": "300 mm (210 loop + 60 hook); width NOT stated",
+   "spec": "2026-11-03 (1S4P pack): loop about 330 mm (2 x (87 + 22) + anchors): order >= 350 mm. CE09642 is 300 mm (210 loop + 60 hook): too short for 1S4P; width NOT stated",
    "source": "Core Electronics (AU)",
    "part_number": "CE09642",
    "unit_price": "AUD 0.39",
    "line_price": "AUD 0.39",
    "stock_date": "399 (Core 2026-10-12)",
-   "notes": "Cradle tunnels are 22 x 2.5 for a 20 mm strap: width and buckle thickness UNVERIFIED. Alternative VELCRO ONE-WRAP 20 mm roll (element14 3499736).",
+   "notes": "1S4P: one 20 mm strap around the brick in the X-Z plane (CAD v15, tunnels 22 x 2.5 in the two side anchor blocks). Order a >= 350 mm strap or cut one from the VELCRO ONE-WRAP 20 mm roll (element14 3499736, price not read). The price shown is for the 300 mm CE09642 (too short) and is kept as a placeholder. Width and buckle thickness UNVERIFIED.",
    "category": "Mechanical",
-   "price_status": "confirmed",
+   "price_status": "estimate",
    "url": "https://core-electronics.com.au/hook-and-loop-strap-with-buckle.html"
   },
   {
@@ -3630,16 +3630,16 @@
    "url": "https://jaycar-prod.australia-southeast1.gcp.storefrontcloud.io/1-75mm-black-esun-petg-filament-1kg-roll/p/TL4465"
   },
   {
-   "item": "1S2P 21700 pack, 10 Ah, PCM >= 10 A, 10k NTC (B 3435), Micro-Fit 43645-0300 lead",
+   "item": "1S4P 21700, 20 Ah (4 x INR21700-50S, same lot, matched within 10 mV before welding), PCM >= 10 A continuous / 20 A for 1 s, over-current trip 12-20 A, charge limit >= 5 A, OV 4.25 V, per-cell fusible links, 10k NTC (B3435) glued between the two middle cells, max 87.0 x 75.0 x 23.0 mm including wrap and PCM, PCM on the positive end, lead about 180 mm, Micro-Fit 43645-0300",
    "qty": "1",
    "qty_2nd_unit": "1",
-   "spec": "max 73 x 44 x 22 mm; see reports/battery-pack-rfq.md",
+   "spec": "Owner decision 2026-11-03 (was 1S2P 10 Ah, max 73 x 44 x 22); CAD v15 cradle allows 87.4 x 75.7; see reports/battery-pack-rfq.md",
    "source": "RFQ: Keeppower / CM Batteries",
    "part_number": "quote",
    "unit_price": "TBD",
    "line_price": "TBD",
    "stock_date": "No price; quote needed",
-   "notes": "PLACEHOLDER: not in any subtotal. UN38.3 shipping to AU not confirmed.",
+   "notes": "PLACEHOLDER: not in any subtotal. No price; cell price unknown. Ask the vendor for the fusing and PCM specification (part number, OCP trip and delay, OV, charge limit, drain). UN38.3 documents and shipping to AU not confirmed.",
    "category": "Battery",
    "price_status": "TBD",
    "url": "https://cmbatteries.com/project/1s2p-battery-pack/"
@@ -3762,6 +3762,51 @@
    "notes": "Not priced. Avoid by having the pack vendor terminate J5 and by soldering/ordering pre-crimped VH leads.",
    "category": "Tools",
    "price_status": "TBD (optional, excluded)",
+   "url": "-"
+  },
+  {
+   "item": "Countersunk post-Torx (T10 security) machine screw M3 x 10, A2-70 (304) stainless",
+   "qty": "19 (+ spares)",
+   "qty_2nd_unit": "19",
+   "spec": "M3 x 0.5, 90 deg countersunk, head dia 5.90 x 2.00 high, T10 post (pin) Torx, full thread; length 10 overall incl. head. 19 per unit: 8 drivers (on cup washers) + 11 lid (6.0 x 90 deg countersinks, CAD v15)",
+   "source": "Bolt and Nut Australia (Hobson Engineering)",
+   "part_number": "YCXSA2M3X10 (MPN inferred from the page list; confirm)",
+   "unit_price": "TBD",
+   "line_price": "TBD",
+   "stock_date": "\"In Stock\" shown, quantity not shown (page 2026-11-03)",
+   "notes": "Owner choice 2026-11-03. Price and pack size not shown on the page. Thread below the lid inner face 6.0 mm, driver 7.65 mm (5.7 mm insert fully engaged). The 11 nylon lid washers (line 23) cannot sit under a flush countersunk head: seal the lid holes inside the gasket loops with sealant instead.",
+   "category": "Mechanical",
+   "price_status": "TBD",
+   "url": "https://www.boltandnut.com.au/m3-x-0-50p-coarse-stainless-a2-70-g304-countersunk-post-torx-t10-machine-screws"
+  },
+  {
+   "item": "T10 x 25 mm post-Torx (security, pin) driver bit",
+   "qty": "1",
+   "qty_2nd_unit": "0",
+   "spec": "1/4 in hex bit, T10 with centre hole for the post",
+   "source": "Bolt and Nut Australia",
+   "part_number": "bundle item on the screw page",
+   "unit_price": "AUD 3.00",
+   "line_price": "AUD 3.00",
+   "stock_date": "page 2026-11-03",
+   "notes": "Needed for the post-Torx screws (a plain T10 bit does not fit). T10 L-key alternative AUD 5.00 on the same page.",
+   "category": "Tools",
+   "price_status": "confirmed",
+   "url": "https://www.boltandnut.com.au/m3-x-0-50p-coarse-stainless-a2-70-g304-countersunk-post-torx-t10-machine-screws"
+  },
+  {
+   "item": "Countersunk (cup / finishing) washer M3, stainless, about 8 x 1.6",
+   "qty": "8",
+   "qty_2nd_unit": "8",
+   "spec": "90 deg seat for the countersunk head on the ND65 flange (0.75 mm thick, 4.2 mm holes: a countersink cannot be cut in it)",
+   "source": "TBD",
+   "part_number": "-",
+   "unit_price": "TBD",
+   "line_price": "TBD",
+   "stock_date": "-",
+   "notes": "Modelled 8.0 x 1.6 (estimate, not sourced). Alternative: a pan or button-head T10 post-Torx M3x10 at the 8 driver sites.",
+   "category": "Mechanical",
+   "price_status": "TBD",
    "url": "-"
   }
  ],

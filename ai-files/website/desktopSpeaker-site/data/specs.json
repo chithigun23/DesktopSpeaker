@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-02",
+ "generated": "2026-11-03",
  "overview": [
   {
    "k": "Product",
@@ -28,9 +28,9 @@
   },
   {
    "k": "Battery",
-   "v": "1S2P 21700 pack, 10 Ah nominal (about 36 Wh); Samsung INR21700-50S preferred, Molicel P45B acceptable; PCM >= 10 A continuous, NTC 10k B3435",
-   "status": "specified, NOT selected or purchased (quotes pending)",
-   "src": "ai-files/reports/charge-policy-2026-11-02.md"
+   "v": "1S4P 21700 pack, 20 Ah nominal (about 72 Wh): 4 x Samsung INR21700-50S in parallel (Molicel P45B acceptable); PCM >= 10 A continuous, over-current trip 12-20 A, per-cell fusible links, NTC 10k B3435 between the two middle cells",
+   "status": "decided by the owner 2026-11-03 (was 1S2P 10 Ah); NOT purchased (RFQ, no price)",
+   "src": "ai-files/reports/battery-4p-feasibility-2026-11-03.md"
   },
   {
    "k": "Power inputs",
@@ -70,7 +70,7 @@
   },
   {
    "k": "PCB routing state",
-   "v": "Routing restart partial: RT-14 has 270 of 282 connections routed (96 %); DRC 0 violations, 12 unconnected (16 inherited power items)",
+   "v": "Routing restart partial: RT-15H has 273 of 282 connections routed (97 %); DRC 0 violations, 9 unconnected (16 inherited power items)",
    "status": "in progress; not a releasable board",
    "src": "ai-files/reports/routing-s1-s3-run.md"
   },
@@ -114,10 +114,10 @@
   },
   {
    "name": "Battery pack",
-   "parts": "1S2P 21700 (2 x Samsung 50S), PCM, NTC; J5 Micro-Fit 3-pin; SW101 rocker disconnect",
+   "parts": "1S4P 21700 (4 x Samsung 50S, 20 Ah), PCM on the + end, NTC between the middle cells; J5 Micro-Fit 3-pin; SW101 rocker disconnect",
    "role": "Energy storage; physical disconnect",
    "connects_to": "BAT_PACK via J5 (1 PACK+, 2 NTC, 3 GND); no reverse-polarity protection on J5",
-   "status": "pack unselected; RFQ drafted",
+   "status": "1S4P decided 2026-11-03; pack not purchased (RFQ drafted); board unchanged",
    "src": "ai-files/reports/battery-pack-rfq.md"
   },
   {
@@ -405,8 +405,8 @@
    "source": "Pack via J5 / SW101",
    "load_or_budget": "always live while SW101 closed (gauge, U21, Q103 leakage)",
    "enable": "SW101",
-   "status": "pack not selected",
-   "src": "ai-files/reports/power-analysis-2026-11-01.md"
+   "status": "1S4P pack decided 2026-11-03, not purchased; currents unchanged by the cell count",
+   "src": "ai-files/reports/battery-4p-feasibility-2026-11-03.md"
   },
   {
    "rail": "SYS_RAW / BAT_INT",
@@ -511,10 +511,10 @@
    "src": "ai-files/reports/power-analysis-2026-11-01.md"
   },
   {
-   "k": "Days to empty 10 Ah (board load only)",
-   "v": "Ship ~23 300 d; electronic-off ~7 250 d (typ); idle-awake ~4 760 d",
-   "detail": "Ideal arithmetic; cell self-discharge (about 210-420 uA equivalent) is larger and not included.",
-   "status": "calculated",
+   "k": "Days to empty 20 Ah 1S4P (board load only)",
+   "v": "Ship ~46 600 d; electronic-off ~14 500 d (typ); idle-awake ~9 500 d",
+   "detail": "Ideal arithmetic, twice the 10 Ah figures; cell self-discharge (about 420-840 uA equivalent at 20 Ah) is larger and not included.",
+   "status": "calculated (estimate)",
    "src": "ai-files/reports/power-analysis-2026-11-01.md"
   },
   {
@@ -526,8 +526,8 @@
   },
   {
    "k": "Typical listening",
-   "v": "about 2.2 W, about 16 h on a 36 Wh pack",
-   "detail": "Excludes BT, MCU and codec.",
+   "v": "about 2.2 W, about 32 h on the 72 Wh 1S4P pack (16 h on 36 Wh)",
+   "detail": "Excludes BT, MCU and codec. Estimate.",
    "status": "estimated",
    "src": "ai-files/reports/audio-chain-architecture.md"
   },
@@ -601,8 +601,8 @@
   {
    "k": "ICHG (fast charge)",
    "v": "4.0 A",
-   "detail": "0.4C of the 10 Ah pack, 2.0 A per cell; REG03 = 0x0190. Supersedes the 3 A ceiling in power-analysis and firmware spec.",
-   "status": "decided 2026-11-02, firmware-only",
+   "detail": "0.2C of the 20 Ah 1S4P pack, 1.0 A per cell; REG03 = 0x0190 (unchanged by the 1S4P decision, capped in practice by the 17 W input). Supersedes the 3 A ceiling in power-analysis and firmware spec.",
+   "status": "decided 2026-11-02, confirmed for 1S4P 2026-11-03; firmware-only",
    "src": "ai-files/reports/charge-policy-2026-11-02.md"
   },
   {
@@ -628,14 +628,14 @@
   },
   {
    "k": "Termination / recharge",
-   "v": "ITERM 480 mA (0.05C per cell); recharge 200 mV below VREG",
-   "status": "decided",
+   "v": "ITERM 1000 mA (0.05C per cell, REG09 = 0x19; was 480 mA for 1S2P); recharge 200 mV below VREG",
+   "status": "decided (1S4P, 2026-11-03)",
    "src": "ai-files/reports/charge-policy-2026-11-02.md"
   },
   {
    "k": "Pre-charge",
-   "v": "480 mA up to 71.4 % of VREG",
-   "status": "decided",
+   "v": "720 mA up to 71.4 % of VREG (REG08 = 0xD2; was 480 mA for 1S2P)",
+   "status": "decided (1S4P, 2026-11-03)",
    "src": "ai-files/reports/charge-policy-2026-11-02.md"
   },
   {
@@ -653,9 +653,10 @@
   },
   {
    "k": "Safety timer",
-   "v": "8 h (up to 16 h in DPM/TREG); 24 h for sources under 15 W",
-   "status": "decided",
-   "src": "ai-files/reports/charge-policy-2026-11-02.md"
+   "v": "12 h (REG0E = 0x3D, up to 24 h in DPM/TREG) for sources of 15 W or more; 24 h (0x3F) below 15 W",
+   "status": "decided (1S4P, 2026-11-03)",
+   "src": "ai-files/reports/charge-policy-2026-11-02.md",
+   "detail": "Worst estimated charge time from a 15 W+ source is 5.9 h (20 V, U4 in TREG): 2.0x margin at full timer rate. 8 h (1S2P) would leave only 1.36x."
   },
   {
    "k": "Battery discharge over-current",
@@ -665,14 +666,29 @@
   },
   {
    "k": "Estimated charge time",
-   "v": "about 2.8 h empty to termination from a 9 V+ source; about 3.2 h from 5 V/3 A",
+   "v": "about 5.1 h empty to termination from a 9 V+ PD source (3.3 h for 20-80 %); 5.8 h from 5 V/3 A; 5.9 h at 20 V in TREG",
+   "status": "estimated (1S4P)",
+   "src": "ai-files/reports/charge-policy-2026-11-02.md",
+   "detail": "CC-CV model with a generic OCV curve, about +-10 %. 1S2P was about 2.8 h."
+  },
+  {
+   "k": "Run time (1S4P)",
+   "v": "about 12.2 h at 5 W, 6.1 h at 10 W, 3.1 h at 20 W average (11.0 / 5.5 / 2.8 h with the 4.10 V float)",
+   "detail": "72 Wh, 85 % conversion efficiency; 20 W average is near the boost ceiling.",
    "status": "estimated",
    "src": "ai-files/reports/charge-policy-2026-11-02.md"
   },
   {
+   "k": "Gauge and firmware constants (1S4P)",
+   "v": "MAX17048 HibThr 0x40 (HIBRT 0x4030) if the default model is used; capacity constant 20 Ah",
+   "detail": "CRATE (%/h) falls by half for the same current, so CRATE thresholds scale by 0.5. SOC itself needs no change.",
+   "status": "decided (1S4P, 2026-11-03)",
+   "src": "ai-files/reports/charge-policy-2026-11-02.md"
+  },
+  {
    "k": "Pack data used",
-   "v": "Samsung 50S standard charge 2.5 A/cell (5 A pack), max 6 A/cell; from a Samsung SDI deck, not the formal spec",
-   "detail": "Formal 50S specification could not be downloaded; real PCM limits and NTC unknown until the pack quote arrives.",
+   "v": "Samsung 50S standard charge 2.5 A/cell (10 A for 4 cells), max 6 A/cell; from a Samsung SDI deck, not the formal spec",
+   "detail": "Formal 50S specification (charge window, mass) could not be downloaded; real PCM limits, outline and NTC unknown until the pack quote arrives.",
    "status": "partly unverified",
    "src": "ai-files/reports/charge-policy-2026-11-02.md"
   },
@@ -947,7 +963,7 @@
    },
    {
     "k": "Connections routed",
-    "v": "270 of 282 (95.7 %); 12 connections still open (one, CHG_INT, accepted unrouted)",
+    "v": "273 of 282 (96.8 %); 9 connections still open (finish in the KiCad GUI) (one, CHG_INT, accepted unrouted)",
     "status": "partial",
     "src": "ai-files/reports/routing-s1-s3-run.md"
    },
@@ -1184,9 +1200,9 @@
   },
   {
    "k": "Chamber volumes",
-   "v": "Woofer 0.525 L net (sealed); main 2.025 L net",
-   "status": "CAD-computed",
-   "src": "ai-files/cad/volumes.md"
+   "v": "Woofer 0.525 L net (sealed); main 1.905 L net (CAD v15 with the 1S4P pack; v14 1S2P 1.962 L)",
+   "status": "CAD-computed (v15)",
+   "src": "ai-files/cad/v15/volumes.md"
   },
   {
    "k": "Internal cavity",
@@ -1196,9 +1212,15 @@
   },
   {
    "k": "Fasteners",
-   "v": "M3 heat-set inserts (5.7 mm) in 4.0 mm pilots; PCB on 10 mm hex spacers with M3x16; 11 lid screws; 8 driver screws; 4 woofer screws",
-   "status": "design",
-   "src": "ai-files/reports/cad-v11-print-ready.md"
+   "v": "M3 heat-set inserts (5.7 mm) in 4.0 mm pilots; PCB on 10 mm hex spacers with M3x16; 11 lid + 8 driver screws are M3x10 countersunk post-Torx T10 (A2-70, Hobson Engineering): lid heads flush in 6.0 x 90 deg countersinks, driver heads on M3 cup washers (the 0.75 mm ND65 flange cannot be countersunk); 4 woofer screws M3x20",
+   "status": "owner choice 2026-11-03 (CAD v15); screw price and cup washer not sourced",
+   "src": "ai-files/cad/v15/fit_findings.json"
+  },
+  {
+   "k": "Internal wiring (CAD v15)",
+   "v": "J9/J10: JST VHR-2N + SVH-21T-P1.1 on 20 AWG, soldered to the ND65-4 solder tabs (two flat tabs, no quick-connect); J11: VHR-2N adapter through the Heyco 2000 grommet, splice to an inline PH male mating the woofer PHR-2; J5: Molex 43645-0300 + 43030 crimps, 2 x 18 AWG + 24 AWG NTC to the PCM top edge",
+   "status": "modelled in CAD v15 with lengths and bend radii (cut list in cad/meta.json wiring); J5 first bend 5.3 x OD",
+   "src": "ai-files/cad/v15/fit_findings.json"
   },
   {
    "k": "PCB mounting",
@@ -1238,9 +1260,9 @@
   },
   {
    "k": "Battery cradle",
-   "v": "Printed in shell floor with strap anchors; pack 72.5 x 44 x 22 class",
-   "status": "design; pack not selected",
-   "src": "ai-files/reports/cad-v11-print-ready.md"
+   "v": "1S4P brick cradle printed in the shell floor: 2 saddle ribs, 4 front fingers, one 20 mm strap with side anchors; brick 86.8 x 73.7 x 21.7, cells front to back, PCM at the rear 1.0 mm from the woofer-chamber partition (the rear stop)",
+   "status": "CAD v15; pack not purchased; PCM/holder placeholders",
+   "src": "ai-files/cad/v15/meta.json"
   },
   {
    "k": "Still-assumed mechanical items",
@@ -1407,10 +1429,17 @@
   },
   {
    "area": "Battery",
-   "item": "Pack not selected",
-   "detail": "Quotes needed from Keeppower and CM Batteries with NTC, PCM >= 10 A / 5 A charge, price, AU shipping.",
+   "item": "Pack decided (1S4P), not purchased",
+   "detail": "Send the 1S4P RFQ (Keeppower, CM Batteries): 20 Ah, PCM over-current trip 12-20 A, charge >= 5 A, per-cell fusing, NTC between the middle cells, max 87.0 x 75.0 x 23.0 mm, 180 mm lead, UN38.3; ask for the fusing and PCM specification. Order genuine Molex J5 housing and crimps.",
    "owner": "user",
-   "src": "ai-files/reports/sourcing-2026-10-12.md"
+   "src": "ai-files/reports/battery-pack-rfq.md"
+  },
+  {
+   "area": "Battery",
+   "item": "1S4P items not verified",
+   "detail": "Real PCM and holder dimensions, Samsung 50S formal spec and mass, genuine Molex 8.5 A rating (local file is a 5 A clone), cell price, drop loads on the partition that acts as the rear stop.",
+   "owner": "unknown",
+   "src": "ai-files/HANDOVER.md"
   },
   {
    "area": "Battery",
@@ -1534,8 +1563,8 @@
   {
    "title": "Charge policy",
    "path": "ai-files/reports/charge-policy-2026-11-02.md",
-   "what": "ICHG 4 A, 17 W cap, VREG 4.10 V, register table, battery data",
-   "date": "2026-11-02"
+   "what": "ICHG 4 A, 17 W cap, VREG 4.10 V, register table, battery data; section 12 = 1S4P values",
+   "date": "2026-11-03"
   },
   {
    "title": "Power analysis",
@@ -1648,8 +1677,14 @@
   {
    "title": "Battery pack RFQ",
    "path": "ai-files/reports/battery-pack-rfq.md",
-   "what": "Draft quote request",
-   "date": "2026-10-12"
+   "what": "Quote request for the 1S4P pack (1S2P draft kept as history)",
+   "date": "2026-11-03"
+  },
+  {
+   "title": "Battery 1S3P / 1S4P feasibility",
+   "path": "ai-files/reports/battery-4p-feasibility-2026-11-03.md",
+   "what": "Pack layouts, CAD results, electrical change list and verdict behind the 1S4P decision",
+   "date": "2026-11-03"
   },
   {
    "title": "Hardware buy list",

@@ -5,8 +5,8 @@
   {
    "name": "DesktopSpeaker_LCSC_Starter_BOM.csv",
    "href": "downloads/DesktopSpeaker_LCSC_Starter_BOM.csv",
-   "bytes": 69230,
-   "sha256": "4a43b030617000bab102435a8e01ced3227409a228d2708a537f8df2b9193998",
+   "bytes": 69459,
+   "sha256": "688610fd6e4bd330fefb8a6c9349348a0f3e8172613f0d8843f87bdb71997475",
    "desc": "Electronics BOM (LCSC starter, per reference)",
    "source": "ai-files/bom/DesktopSpeaker_LCSC_Starter_BOM.csv"
   },
@@ -21,8 +21,8 @@
   {
    "name": "hardware-buy-list.csv",
    "href": "downloads/hardware-buy-list.csv",
-   "bytes": 14789,
-   "sha256": "b1f7bf88de6676e799063ca55404324269d34dd6ab16b893a06e1e60f62ca978",
+   "bytes": 17562,
+   "sha256": "82631c07b227cdfe9e28f5947f656bc8db14d84c96901ac4306cc12083d4c11c",
    "desc": "Hardware and mechanical buy list",
    "source": "ai-files/bom/hardware-buy-list.csv"
   },
@@ -47,8 +47,8 @@
   {
    "name": "HANDOVER.md",
    "href": "docs/HANDOVER.md",
-   "bytes": 149797,
-   "sha256": "8e09648e1825c4365a6d16d153afa54809424ccf32f3fb89be97200a2fadf8a2",
+   "bytes": 156968,
+   "sha256": "cc23b52c886618ebe14183da25f047562fd9b600060e6003e5a4e4fca43d3752",
    "desc": "Single project handover: decisions, evidence, open items (older sections superseded)",
    "source": "ai-files/HANDOVER.md",
    "kind": "report"
@@ -56,8 +56,8 @@
   {
    "name": "plan.md",
    "href": "docs/plan.md",
-   "bytes": 59329,
-   "sha256": "f3ba4bccec7f43ff3985c59c9528dec2ee65096f5275b34878307f14f7091868",
+   "bytes": 60381,
+   "sha256": "8c8a51918dc47904ba3dc5f64a2c97732c768c5b6bee2a8d666006c8e5e4aef6",
    "desc": "Schematic completion checklist and subsystem status",
    "source": "plan.md",
    "kind": "report"
@@ -65,8 +65,8 @@
   {
    "name": "audio-chain-architecture.md",
    "href": "docs/audio-chain-architecture.md",
-   "bytes": 26779,
-   "sha256": "81f331ed7ddcfb14bcc3114b1b72df834d7a8962d44a53f3777e4a7919227b92",
+   "bytes": 26845,
+   "sha256": "2988915aad394935c67a07e6f90669a8b3ffef1d2f1c4f3700127fab6fec5bf1",
    "desc": "Audio chain architecture and MCU sizing",
    "source": "ai-files/reports/audio-chain-architecture.md",
    "kind": "report"
@@ -74,8 +74,8 @@
   {
    "name": "power-analysis-2026-11-01.md",
    "href": "docs/power-analysis-2026-11-01.md",
-   "bytes": 34037,
-   "sha256": "2bf3da41734c08422e66ca9b32a35ae6fa9b0930a7a6890214d14628c54b9db2",
+   "bytes": 35036,
+   "sha256": "a3a913fffa5418689c65a31e4b8d6dbf9b17bc85bb4733472888eb90b48a0d3d",
    "desc": "Power analysis: standby, surge clamp, PPHV, inrush",
    "source": "ai-files/reports/power-analysis-2026-11-01.md",
    "kind": "report"
@@ -83,17 +83,17 @@
   {
    "name": "charge-policy-2026-11-02.md",
    "href": "docs/charge-policy-2026-11-02.md",
-   "bytes": 35538,
-   "sha256": "d0298f6fdf4379b15dcbe4ddf7fee16ebd5a79682c9af686f3ff36af45371dc1",
-   "desc": "Charge policy: ICHG 4.0 A, 17 W input cap, VREG 4.10 V",
+   "bytes": 43834,
+   "sha256": "01a8fa81a5b40a383578405d1d16a39a7c1d070a82c162c431cb4956d70a8e1d",
+   "desc": "Charge policy: ICHG 4.0 A, 17 W input cap, VREG 4.10 V; section 12 = 1S4P pack",
    "source": "ai-files/reports/charge-policy-2026-11-02.md",
    "kind": "report"
   },
   {
    "name": "firmware-system-spec-2026-11-01.md",
    "href": "docs/firmware-system-spec-2026-11-01.md",
-   "bytes": 47994,
-   "sha256": "dd1d2b020e0ea516f8e2e1004bce57c5cbce8edc23dd873b09731e68099680b8",
+   "bytes": 49465,
+   "sha256": "0ed88e59cb19b8a1b28505207873d75a0e830b19fe9e0b39972fb1af78667ead",
    "desc": "Firmware system specification and open decisions",
    "source": "ai-files/reports/firmware-system-spec-2026-11-01.md",
    "kind": "report"
@@ -110,8 +110,8 @@
   {
    "name": "bench-bringup-plan.md",
    "href": "docs/bench-bringup-plan.md",
-   "bytes": 48985,
-   "sha256": "1ad27447e58e996a0a790b6376e4298e3fab2f917dcabe099678bb89a017d945",
+   "bytes": 49164,
+   "sha256": "a47864c92860958a9a59d01034df11bb009bf835d4be0b9f7ea63ab94307d69e",
    "desc": "Bench bring-up plan",
    "source": "ai-files/reports/bench-bringup-plan.md",
    "kind": "report"
@@ -182,8 +182,8 @@
   {
    "name": "sourcing-2026-10-12.md",
    "href": "docs/sourcing-2026-10-12.md",
-   "bytes": 7595,
-   "sha256": "98882a289b9e6c693d8ac899974d585cb64de8702f33ae020c03d59ffad5ca76",
+   "bytes": 7755,
+   "sha256": "dc21b05b6042be3591fbfca51d8d9d4d2e2e2b59dc521e7bcbd2b2c739841d26",
    "desc": "Sourcing: woofer data, battery pack candidates",
    "source": "ai-files/reports/sourcing-2026-10-12.md",
    "kind": "report"
@@ -191,10 +191,19 @@
   {
    "name": "battery-pack-rfq.md",
    "href": "docs/battery-pack-rfq.md",
-   "bytes": 2500,
-   "sha256": "9585db20b6a2aba4168ddfd04d03babd7f9d439daa3adbc039c9461fe368b5fe",
-   "desc": "Battery pack request for quote",
+   "bytes": 7324,
+   "sha256": "b496056972435fbf7cc784a4f0d7952c79e345e46e8ba27262a74b3f61980e23",
+   "desc": "Battery pack request for quote (1S4P)",
    "source": "ai-files/reports/battery-pack-rfq.md",
+   "kind": "report"
+  },
+  {
+   "name": "battery-4p-feasibility-2026-11-03.md",
+   "href": "docs/battery-4p-feasibility-2026-11-03.md",
+   "bytes": 26658,
+   "sha256": "fbcb6a8337f5e1315d060d363937b98cd86f0cd72ae022adabc035b447626f87",
+   "desc": "Battery 1S3P / 1S4P feasibility (basis of the 1S4P decision)",
+   "source": "ai-files/reports/battery-4p-feasibility-2026-11-03.md",
    "kind": "report"
   },
   {
@@ -245,8 +254,8 @@
   {
    "name": "cad-README.md",
    "href": "docs/cad-README.md",
-   "bytes": 17626,
-   "sha256": "2bafff5855cd876b27b3048ead7a7012e42ae38fa37e836d523c25160ab89c20",
+   "bytes": 17907,
+   "sha256": "850b43890921ee0384596a029972c5d5ce8c1f5837d8c131838a8479744658f0",
    "desc": "Enclosure CAD build: rebuild, assumptions",
    "source": "ai-files/cad/README.md",
    "kind": "report"
@@ -272,8 +281,8 @@
   {
    "name": "mechanical-bom.md",
    "href": "docs/mechanical-bom.md",
-   "bytes": 3901,
-   "sha256": "585ce16b0f7f870eafd432b588de7afc5278494dc9fd49cb0d581fbb147fcfc2",
+   "bytes": 6580,
+   "sha256": "b79e2e7782a64165eab0c4dd83c0a40f63524b9897e34c42d6240091db6a93d5",
    "desc": "Mechanical BOM (fasteners, inserts)",
    "source": "ai-files/cad/mechanical-bom.md",
    "kind": "report"
@@ -281,8 +290,8 @@
   {
    "name": "hardware-buy-list.md",
    "href": "docs/hardware-buy-list.md",
-   "bytes": 24052,
-   "sha256": "b209b05872eeceb737103515fec0485d75cf16159dc016b0b292b92be7e17dab",
+   "bytes": 27493,
+   "sha256": "fa5448a5e3d659747880c1b4ef002dba9668666c09b9cacec42d8f1704b921f3",
    "desc": "Hardware buy list (A$ snapshot prices)",
    "source": "ai-files/bom/hardware-buy-list.md",
    "kind": "report"
