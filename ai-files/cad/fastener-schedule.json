@@ -1,0 +1,629 @@
+{
+ "title": "DesktopSpeaker fastener schedule: T10 post-Torx conversion (CAD v15 basis)",
+ "date": "2026-11-03",
+ "basis": [
+  "ai-files/cad/v15/scripts/build_speaker_cad.py (sites, stacks)",
+  "ai-files/cad/v15/scripts/v15_detail.py (CSK head, cup washer)",
+  "ai-files/cad/v15/work/meta.json (site coordinates, woofer_ring, dish)",
+  "ai-files/cad/v15/fit_findings.json (screw_table)",
+  "ai-files/bom/hardware-buy-list.csv",
+  "ai-files/cad/mechanical-bom.md"
+ ],
+ "conventions": {
+  "csk_length": "overall incl. head (Bolt and Nut countersunk page: \"Length Overall Including Head\")",
+  "button_length": "under the head (Bolt and Nut button page: \"Length From Under The Head\")",
+  "insert": "Ruthex-type M3 x 5.7 heat-set, OD 4.6, pilot 4.0; insert top flush with the face it sits in",
+  "engagement_rule": "full = 5.7 (whole insert); >= 4.5 (1.5 d) acceptable; 3.0-4.5 marginal",
+  "prices": "AUD incl. GST, per piece at the quantity tier (Magento product JSON of each page, fetched 2026-11-03); shipping not included"
+ },
+ "vendor_findings": {
+  "bolt_and_nut_m3_post_torx_heads": "Only two M3 post-Torx T10 products in the Security Fasteners > Machine Screws category (28 products listed): countersunk and button. No pan, cheese or flange post-Torx in M3 (VERIFIED from the category listing).",
+  "csk": {
+   "url": "https://www.boltandnut.com.au/m3-x-0-50p-coarse-stainless-a2-70-g304-countersunk-post-torx-t10-machine-screws",
+   "brand": "Hobson Engineering (alt. Sentinel)",
+   "head": "dk 5.90, k 2.00, 90 deg",
+   "lengths_overall": [
+    6,
+    8,
+    10,
+    12,
+    16,
+    20,
+    25
+   ],
+   "skus": {
+    "6": "22CPTS36",
+    "8": "22CPTS38",
+    "10": "22CPTS310",
+    "12": "22CPTS312",
+    "16": "22CPTS316",
+    "20": "22CPTS320",
+    "25": "22CPTS325 (discontinued, 355 left)"
+   },
+   "maker_mpn_pattern": "YCXSA2M3X<L> (page text)",
+   "stock": {
+    "6": 29695,
+    "8": 29203,
+    "10": 29590,
+    "12": 29700,
+    "16": 29979,
+    "20": 29840,
+    "25": 355
+   },
+   "price_tiers_aud": {
+    "1": 6.0,
+    "2": 3.5,
+    "5": 1.6,
+    "10": 1.0,
+    "20": 0.75,
+    "30": 0.63,
+    "50": 0.42,
+    "100": 0.25
+   },
+   "pack_note": "industry pack 100; sold per piece with tier pricing",
+   "status": "VERIFIED (page JSON)"
+  },
+  "button": {
+   "url": "https://www.boltandnut.com.au/security-fasteners/machine-screws/m3-x-0-50p-coarse-stainless-a2-70-g304-button-post-torx-t10-machine-screws",
+   "brand": "Hobson Engineering (alt. Sentinel Fasteners)",
+   "head": "dk 5.11-5.70, k 1.60-1.80",
+   "lengths_under_head": [
+    6,
+    8,
+    10,
+    12,
+    16,
+    20
+   ],
+   "skus": {
+    "6": "22BPTS36",
+    "8": "22BPTS38",
+    "10": "22BPTS310",
+    "12": "22BPTS312",
+    "16": "22BPTS316",
+    "20": "22BPTS320"
+   },
+   "stock": {
+    "6": 26550,
+    "8": 29198,
+    "10": 20345,
+    "12": 29894,
+    "16": 29742,
+    "20": 29639
+   },
+   "price_tiers_aud": {
+    "1": 6.0,
+    "2": 3.5,
+    "5": 1.6,
+    "10": 1.0,
+    "20": 0.7,
+    "30": 0.6,
+    "50": 0.46,
+    "100": 0.26
+   },
+   "standard": "HEC Security / A2",
+   "status": "VERIFIED (page JSON)"
+  },
+  "cup_washer_6g": {
+   "url": "https://www.boltandnut.com.au/washers/cup-washers/6g-3-5mm-g304-stainless-cup-washers",
+   "sku": "71CS6",
+   "spec": "G304 A2, ID 4.10-4.50, OD 11.00-11.40, cup height 2.10-2.30, sheet 0.35-0.45, 90 deg, cup c/c 7.8-8.0",
+   "brand": "Hobson Engineering",
+   "price_tiers_aud": {
+    "1": 5.5,
+    "2": 2.9,
+    "5": 1.2,
+    "10": 0.64,
+    "20": 0.34
+   },
+   "stock": "In stock (quantity not shown)",
+   "status": "VERIFIED spec and price; fit of an M3 CSK head (5.90) in a 6g cup is by geometry, not tested"
+  },
+  "bit": {
+   "url": "https://www.boltandnut.com.au/t10-x-25mm-alpha-post-torx-insert-security-standard-driver-bit",
+   "sku": "11PT1025A",
+   "maker": "Alpha TXSE1025",
+   "spec": "T10 x 25 mm post-Torx insert bit, 1/4 in hex",
+   "price_aud": {
+    "1": 9.0,
+    "2": 7.0,
+    "5": 6.5
+   },
+   "bundle_price_on_screw_page_aud": 3.0,
+   "stock": "In stock",
+   "status": "VERIFIED"
+  },
+  "l_key": {
+   "url": "https://www.boltandnut.com.au/t10-x-90mm-hobson-post-torx-security-allen-key",
+   "sku": "11PTK10H",
+   "maker": "Hobson ISKPT10",
+   "spec": "T10 post-Torx L-key, length 90, short arm 19, alloy tool steel",
+   "price_aud": {
+    "1": 9.0,
+    "2": 6.0,
+    "5": 5.0
+   },
+   "bundle_price_on_screw_page_aud": 5.0,
+   "stock": "In stock",
+   "status": "VERIFIED"
+  },
+  "plain_torx_pan_alternative": {
+   "url": "https://www.boltandnut.com.au/machine-screws/pan-head/limited-stock-m3-x-0-50p-metric-coarse-pan-head-torx-t10-machine-screws-a4-70-stainless-g316-iso-14583",
+   "skus": {
+    "8": "21PTS38M",
+    "10": "21PTS310M"
+   },
+   "spec": "M3 pan head Torx T10 (no pin), A4-70 G316, ISO 14583, dk 5.70-6.00, k 2.28-2.52; LIMITED STOCK 10000 / 2500",
+   "price_tiers_aud": {
+    "1": 6.0,
+    "10": 0.9,
+    "20": 0.5,
+    "100": 0.17
+   },
+   "status": "VERIFIED; only for H8 if a cut-down post key will not fit"
+  },
+  "nylon_washer": {
+   "url": "https://www.boltandnut.com.au/washers/nylon-flat-round-washers/m3-1-8-x-8mm-x-0-8mm-natural-nylon-flat-washers-hec-standard",
+   "sku": "71N3808",
+   "spec": "M3 x 8 x 0.8 nylon",
+   "price_tiers_aud": {
+    "1": 5.5,
+    "10": 0.8,
+    "20": 0.5
+   },
+   "status": "VERIFIED; not needed in the recommended schedule"
+  },
+  "not_at_bolt_and_nut": "No PCB spacers/standoffs category in the site navigation (spacers stay Wurth via Digi-Key). Site search is client-rendered and could not be read: M3x22 or longer button post-Torx not found in any category.",
+  "wurth_971100321": {
+   "url": "https://www.digikey.com/en/products/result?keywords=971100321",
+   "dk": "732-10398-ND",
+   "spec": "M3 hex standoff M/F, steel zinc, 5.5 AF, body 10, overall 16 (male 6)",
+   "price_usd": 0.33,
+   "stock": 32433,
+   "female_thread_depth": "UNVERIFIED: an RS listing (search snippet) gives \"hole depth 10 mm\"; Wurth datasheet 403, Farnell timed out",
+   "status": "price/stock VERIFIED (Digi-Key 2026-11-03)"
+  }
+ },
+ "sites": [
+  {
+   "id": "lid",
+   "qty": 11,
+   "names": "LidScrew_1..11 (9 shell bosses + 2 into the woofer-chamber insert roof)",
+   "current": "M3x10 countersunk post-Torx T10 (CAD v15, already converted)",
+   "head": "countersunk 90 deg, flush in a 6.0 x 90 countersink",
+   "stack": "lid 4.0 (head flush); insert top at the lid inner face; pilot 8.0",
+   "insert": "Ruthex M3x5.7, pilot 8",
+   "candidates": {
+    "6": {
+     "thread_past_insert_top_mm": 2.0,
+     "insert_engaged_mm": 2.0,
+     "tip_margin_to_pilot_floor_mm": 6.0,
+     "verdict": "no"
+    },
+    "8": {
+     "thread_past_insert_top_mm": 4.0,
+     "insert_engaged_mm": 4.0,
+     "tip_margin_to_pilot_floor_mm": 4.0,
+     "verdict": "marginal"
+    },
+    "10": {
+     "thread_past_insert_top_mm": 6.0,
+     "insert_engaged_mm": 5.7,
+     "tip_margin_to_pilot_floor_mm": 2.0,
+     "verdict": "full"
+    },
+    "12": {
+     "thread_past_insert_top_mm": 8.0,
+     "insert_engaged_mm": 5.7,
+     "tip_margin_to_pilot_floor_mm": 0.0,
+     "verdict": "no (bottoms in pilot)"
+    }
+   },
+   "recommended": {
+    "part": "CSK post-Torx M3x10",
+    "sku": "22CPTS310",
+    "length": 10,
+    "engagement": "6.0 thread, insert full, tip 2.0 above the pilot floor"
+   },
+   "change": "none"
+  },
+  {
+   "id": "driver",
+   "qty": 8,
+   "names": "DrvScrew_L1..L4, R1..R4 (Dayton ND65-4, rear-mounted on the 11 mm pads)",
+   "current": "M3x10 countersunk post-Torx T10 on an UNSOURCED 8 x 1.6 cup washer (CAD v15)",
+   "head": "countersunk on a cup washer (the 0.75 mm flange cannot be countersunk)",
+   "stack": "cup washer (head top about 1.75 above the flange) + ND65 flange 0.75; insert top at the pad face; pilot 10",
+   "insert": "Ruthex M3x5.7 in the 11 mm pad, pilot 10",
+   "candidates": {
+    "8": {
+     "thread_past_insert_top_mm": 5.5,
+     "insert_engaged_mm": 5.5,
+     "tip_margin_to_pilot_floor_mm": 4.5,
+     "verdict": "ok (>= 1.5 d)"
+    },
+    "10": {
+     "thread_past_insert_top_mm": 7.5,
+     "insert_engaged_mm": 5.7,
+     "tip_margin_to_pilot_floor_mm": 2.5,
+     "verdict": "full"
+    },
+    "12": {
+     "thread_past_insert_top_mm": 9.5,
+     "insert_engaged_mm": 5.7,
+     "tip_margin_to_pilot_floor_mm": 0.5,
+     "verdict": "full"
+    }
+   },
+   "candidates_button_with_0p8_washer": {
+    "8": {
+     "thread_past_insert_top_mm": 6.45,
+     "insert_engaged_mm": 5.7,
+     "tip_margin_to_pilot_floor_mm": 3.55,
+     "verdict": "full"
+    },
+    "10": {
+     "thread_past_insert_top_mm": 8.45,
+     "insert_engaged_mm": 5.7,
+     "tip_margin_to_pilot_floor_mm": 1.55,
+     "verdict": "full"
+    },
+    "12": {
+     "thread_past_insert_top_mm": 10.45,
+     "insert_engaged_mm": 5.7,
+     "tip_margin_to_pilot_floor_mm": -0.45,
+     "verdict": "no (bottoms in pilot)"
+    }
+   },
+   "recommended": {
+    "part": "CSK post-Torx M3x10 + Bolt and Nut 6g stainless cup washer 71CS6 (11.2 x 2.2)",
+    "sku": "22CPTS310 + 71CS6",
+    "length": 10,
+    "engagement": "about 7.5 thread below the pad face (+-0.3 for the cup seat), insert full, tip about 2.5 above the pilot floor"
+   },
+   "change": "CAD: cup washer model 8.0 x 1.6 -> 11.2 OD x 2.2; check the 5.7 mm washer radius against the ND65 basket ribs next to each hole (hole centre 8.6 from the flange edge)",
+   "note": "A button head straight on the flange is NOT acceptable: dk 5.11 min on a 4.2 hole leaves a 0.45 mm bearing ring on a 0.75 mm flange."
+  },
+  {
+   "id": "pcb",
+   "qty": 11,
+   "names": "PcbScrew H1..H9, HA1, HA2 (all on the woofer-chamber insert roof/shelf, insert top z 57.0)",
+   "current": "ISO 4762 socket M3x16 (hex) through a Wurth 970100321 10 mm F/F hex spacer into the roof insert",
+   "head": "-> button post-Torx (no pan/cheese post-Torx in M3 at Bolt and Nut)",
+   "stack": "head, PCB 1.6, 10 mm spacer, insert in the roof (pilot 6.7, bosses below the roof)",
+   "insert": "Ruthex M3x5.7, pilot 6.7",
+   "options": {
+    "a_button_M3x16_through_10mm_spacer": {
+     "candidates": {
+      "12": {
+       "thread_past_insert_top_mm": 0.4,
+       "insert_engaged_mm": 0.4,
+       "tip_margin_to_pilot_floor_mm": 6.3,
+       "verdict": "no"
+      },
+      "16": {
+       "thread_past_insert_top_mm": 4.4,
+       "insert_engaged_mm": 4.4,
+       "tip_margin_to_pilot_floor_mm": 2.3,
+       "verdict": "marginal"
+      },
+      "20": {
+       "thread_past_insert_top_mm": 8.4,
+       "insert_engaged_mm": 5.7,
+       "tip_margin_to_pilot_floor_mm": -1.7,
+       "verdict": "no (bottoms in pilot)"
+      }
+     },
+     "cad_change": "none (head 1.8 instead of 3.0)",
+     "note": "same 4.4 mm as today; a threaded F/F spacer is screwed through, so the spacer is not clamped to the roof (an unthreaded spacer is the correct part); the only site needing 16"
+    },
+    "b_6mm_spacer_M3x12": {
+     "candidates": {
+      "10": {
+       "thread_past_insert_top_mm": 2.4,
+       "insert_engaged_mm": 2.4,
+       "tip_margin_to_pilot_floor_mm": 4.3,
+       "verdict": "no"
+      },
+      "12": {
+       "thread_past_insert_top_mm": 4.4,
+       "insert_engaged_mm": 4.4,
+       "tip_margin_to_pilot_floor_mm": 2.3,
+       "verdict": "marginal"
+      },
+      "16": {
+       "thread_past_insert_top_mm": 8.4,
+       "insert_engaged_mm": 5.7,
+       "tip_margin_to_pilot_floor_mm": -1.7,
+       "verdict": "no (bottoms in pilot)"
+      }
+     },
+     "cad_change": "board drops 4 mm: every lid cutout (USB-C, jacks, SW100, TC2030 access), the knob dish depth and shaft exposure move; M3x10 would need a 4 mm spacer (board -6 mm)",
+     "verdict": "rejected: still not 10 mm, large CAD change"
+    },
+    "c_printed_10mm_boss_on_roof_M3x10": {
+     "candidates": {
+      "8": {
+       "thread_past_insert_top_mm": 6.4,
+       "insert_engaged_mm": 5.7,
+       "tip_margin_to_pilot_floor_mm": 3.0,
+       "verdict": "full"
+      },
+      "10": {
+       "thread_past_insert_top_mm": 8.4,
+       "insert_engaged_mm": 5.7,
+       "tip_margin_to_pilot_floor_mm": 1.0,
+       "verdict": "full"
+      }
+     },
+     "cad_change": "boss 10 high OD 8 with the insert at its top (pilot 9.4); the under-roof bosses go (+about 2.6 cm3 chamber volume)",
+     "verdict": "rejected: the insert prints roof-down (roof top on the bed), so a boss above the roof cannot be printed with it; separate glued posts take the screw torque in a glue joint"
+    },
+    "d_MF_standoff_Wurth_971100321_button_M3x10": {
+     "candidates_into_standoff_female": {
+      "6": {
+       "thread_in_steel_female_mm": 4.4
+      },
+      "8": {
+       "thread_in_steel_female_mm": 6.4
+      },
+      "10": {
+       "thread_in_steel_female_mm": 8.4
+      }
+     },
+     "stud": "male 6 into the 5.7 insert (insert full, 0.7 above the 6.7 pilot floor)",
+     "cad_change": "model swap only: same 5.5 AF x 10 body envelope; the stud replaces the screw shank in the insert; head 5.7 x 1.8 instead of 5.5 x 3.0",
+     "verdict": "RECOMMENDED: M3x10 everywhere on the PCB, steel thread for the PCB screw, the stud preloads the spacer onto the insert; condition: female thread >= 8.5 (RS listing hole depth 10, UNVERIFIED); fallback M3x8 (6.4 mm) if shorter"
+    }
+   },
+   "recommended": {
+    "part": "Wurth 971100321 M/F standoff (10 + 6) + button post-Torx M3x10",
+    "sku": "DK 732-10398-ND + 22BPTS310",
+    "length": 10,
+    "engagement": "stud: insert full; screw: 8.4 mm in the steel female thread (check depth on arrival)"
+   },
+   "access": "H8 is under the knob dish floor: 11.7 mm from the button head top (z 70.4) to the dish floor (z 82.09). The T10 post L-key short arm is 19 mm and the bit 25 mm: neither fits. Cut a second L-key short arm to about 8 mm, or use the plain-Torx pan M3x10 (21PTS310M) at H8 with a ball-end T10 key (not at Bolt and Nut). The other ten holes have about 26.6 mm above the head: the 19 mm key fits."
+  },
+  {
+   "id": "woofer",
+   "qty": 4,
+   "names": "WoofScrew_1..4 (Tang Band W3-2052SC, square frame, 68.25 mm hole square)",
+   "current": "ISO 4762 socket M3x20 (hex), not on the buy list",
+   "head": "-> button post-Torx M3x20 (longest M3 button post-Torx at Bolt and Nut)",
+   "stack": "head on the frame back; frame block 13.3 + factory gasket 3.3 (photo estimates +-1.5); insert top at the floor inner face (seat); pilot 6.7, skin 1.0, outside boss 4.7 below the floor",
+   "insert": "Ruthex M3x5.7 in the floor + outside teardrop boss, pilot 6.7",
+   "candidates_free_gasket": {
+    "16": {
+     "thread_past_insert_top_mm": -0.6,
+     "insert_engaged_mm": 0.0,
+     "tip_margin_to_pilot_floor_mm": 7.3,
+     "verdict": "no"
+    },
+    "20": {
+     "thread_past_insert_top_mm": 3.4,
+     "insert_engaged_mm": 3.4,
+     "tip_margin_to_pilot_floor_mm": 3.3,
+     "verdict": "marginal"
+    }
+   },
+   "candidates_1mm_compressed": {
+    "16": {
+     "thread_past_insert_top_mm": 0.4,
+     "insert_engaged_mm": 0.4,
+     "tip_margin_to_pilot_floor_mm": 6.3,
+     "verdict": "no"
+    },
+    "20": {
+     "thread_past_insert_top_mm": 4.4,
+     "insert_engaged_mm": 4.4,
+     "tip_margin_to_pilot_floor_mm": 2.3,
+     "verdict": "marginal"
+    }
+   },
+   "m3x25_note": "25 exists only as a discontinued countersunk (no seat for a countersink on the frame) and would need pilot 10.4 / outside bosses 8.4 deep",
+   "tweak": {
+    "description": "four 2.0 mm high, OD 7.0 bosses on the floor inner face at the screw axes (insert top raised 2.0), 7.5 mm holes punched in the factory gasket at the screws, pilot 7.7 from the boss top, outside bosses 4.7 -> 3.7 below the floor",
+    "candidates_free_gasket": {
+     "20": {
+      "thread_past_insert_top_mm": 5.4,
+      "insert_engaged_mm": 5.4,
+      "tip_margin_to_pilot_floor_mm": 2.3,
+      "verdict": "ok (>= 1.5 d)"
+     }
+    },
+    "candidates_1mm_compressed": {
+     "20": {
+      "thread_past_insert_top_mm": 6.4,
+      "insert_engaged_mm": 5.7,
+      "tip_margin_to_pilot_floor_mm": 1.3,
+      "verdict": "full"
+     }
+    },
+    "conditions": "gasket keeps >= 6 mm of seal band inside the bosses (bolt corner radius 48.26 vs aperture 38.1); bosses must stay below the compressed gasket height; caliper the frame and gasket first"
+   },
+   "recommended": {
+    "part": "button post-Torx M3x20",
+    "sku": "22BPTS320",
+    "length": 20,
+    "engagement": "3.4 free / 4.4 compressed as drawn; 5.4 / 5.7 (full) with the 2 mm boss tweak"
+   }
+  },
+  {
+   "id": "feet",
+   "qty": 4,
+   "names": "Foot_1..4",
+   "current": "Wurth 971120321 M/F stud (12 + 6) into a floor insert + 3M SJ5312 bumpon",
+   "head": "hex body, no drive recess",
+   "stack": "male 6 in the 5.7 insert, pilot 6.5",
+   "recommended": {
+    "part": "unchanged",
+    "length": null
+   },
+   "change": "none (external, not a screw)"
+  },
+  {
+   "id": "other",
+   "qty": 0,
+   "names": "rocker SW101, grommet, grilles, strap, chamber insert, knob, wiring",
+   "current": "SW101 snap-in (fastons), Heyco 2000 snap bushing, grilles and chamber insert bonded with Sikaflex, hook-and-loop strap through printed tunnels, knob grub screw supplied with the Jaycar HK7011 knob, wires routed free (no clips in CAD v15)",
+   "recommended": {
+    "part": "no fasteners to change",
+    "length": null
+   }
+  }
+ ],
+ "buy_list": [
+  {
+   "item": "CSK post-Torx T10 M3x10 A2-70 (lid 11 + drivers 8)",
+   "qty_per_unit": 19,
+   "order_qty": 21,
+   "unit_price": "AUD 0.75 (20+ tier)",
+   "line_price": "AUD 15.75",
+   "source": "Bolt and Nut",
+   "part": "22CPTS310 (YCXSA2M3X10)",
+   "url": "https://www.boltandnut.com.au/m3-x-0-50p-coarse-stainless-a2-70-g304-countersunk-post-torx-t10-machine-screws",
+   "status": "verified",
+   "note": "50 cost AUD 21.00 (0.42) and cover two units"
+  },
+  {
+   "item": "Button post-Torx T10 M3x10 A2-70 (PCB 11)",
+   "qty_per_unit": 11,
+   "order_qty": 13,
+   "unit_price": "AUD 1.00 (10+ tier)",
+   "line_price": "AUD 13.00",
+   "source": "Bolt and Nut",
+   "part": "22BPTS310",
+   "url": "https://www.boltandnut.com.au/security-fasteners/machine-screws/m3-x-0-50p-coarse-stainless-a2-70-g304-button-post-torx-t10-machine-screws",
+   "status": "verified",
+   "note": "20 cost AUD 14.00 (0.70)"
+  },
+  {
+   "item": "Button post-Torx T10 M3x20 A2-70 (woofer 4)",
+   "qty_per_unit": 4,
+   "order_qty": 5,
+   "unit_price": "AUD 1.60 (5+ tier)",
+   "line_price": "AUD 8.00",
+   "source": "Bolt and Nut",
+   "part": "22BPTS320",
+   "url": "https://www.boltandnut.com.au/security-fasteners/machine-screws/m3-x-0-50p-coarse-stainless-a2-70-g304-button-post-torx-t10-machine-screws",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "item": "Cup washer 6g G304 stainless, 11.2 x 2.2, 90 deg (drivers 8)",
+   "qty_per_unit": 8,
+   "order_qty": 10,
+   "unit_price": "AUD 0.64 (10+ tier)",
+   "line_price": "AUD 6.40",
+   "source": "Bolt and Nut",
+   "part": "71CS6",
+   "url": "https://www.boltandnut.com.au/washers/cup-washers/6g-3-5mm-g304-stainless-cup-washers",
+   "status": "verified (fit by geometry)",
+   "note": "10 are cheaper than 9 (AUD 1.20 tier)"
+  },
+  {
+   "item": "T10 post-Torx insert bit 25 mm, 1/4 in hex (one + spare)",
+   "qty_per_unit": 2,
+   "order_qty": 2,
+   "unit_price": "AUD 3.00 bundle / 7.00 at 2+",
+   "line_price": "AUD 6.00 (bundle) / 14.00",
+   "source": "Bolt and Nut",
+   "part": "11PT1025A (Alpha TXSE1025)",
+   "url": "https://www.boltandnut.com.au/t10-x-25mm-alpha-post-torx-insert-security-standard-driver-bit",
+   "status": "verified (bundle quantity rule not verified)",
+   "note": "drivers, woofer (with a 1/4 in driver / extension)"
+  },
+  {
+   "item": "T10 post-Torx L-key 90 mm, short arm 19 (one + one to cut for H8)",
+   "qty_per_unit": 2,
+   "order_qty": 2,
+   "unit_price": "AUD 5.00 bundle / 6.00 at 2+",
+   "line_price": "AUD 10.00 (bundle) / 12.00",
+   "source": "Bolt and Nut",
+   "part": "11PTK10H (Hobson ISKPT10)",
+   "url": "https://www.boltandnut.com.au/t10-x-90mm-hobson-post-torx-security-allen-key",
+   "status": "verified (bundle quantity rule not verified)",
+   "note": "PCB screws through the rear opening; cut the second short arm to about 8 mm for H8"
+  },
+  {
+   "item": "Wurth 971100321 hex standoff M3 M/F 10 mm + 6 stud, 5.5 AF (PCB 11)",
+   "qty_per_unit": 11,
+   "order_qty": 13,
+   "unit_price": "USD 0.33",
+   "line_price": "USD 4.29",
+   "source": "Digi-Key",
+   "part": "732-10398-ND",
+   "url": "https://www.digikey.com/en/products/result?keywords=971100321",
+   "status": "price/stock verified; female thread depth UNVERIFIED",
+   "note": "replaces the F/F 970100321 (line 20)"
+  },
+  {
+   "item": "OPTIONAL fallback: button post-Torx T10 M3x8 (PCB, only if the standoff female thread < 8.5 mm)",
+   "qty_per_unit": 0,
+   "order_qty": 0,
+   "unit_price": "AUD 1.00 (10+)",
+   "line_price": "AUD 0.00",
+   "source": "Bolt and Nut",
+   "part": "22BPTS38",
+   "url": "https://www.boltandnut.com.au/security-fasteners/machine-screws/m3-x-0-50p-coarse-stainless-a2-70-g304-button-post-torx-t10-machine-screws",
+   "status": "verified, excluded",
+   "note": "excluded from the subtotal"
+  },
+  {
+   "item": "Heat-set inserts M3 x 5.7",
+   "qty_per_unit": 38,
+   "order_qty": "unchanged (line 16, bag of 100)",
+   "unit_price": "-",
+   "line_price": "-",
+   "source": "RS / ruthex",
+   "part": "line 16",
+   "url": "-",
+   "status": "unchanged",
+   "note": "lid 11 + drivers 8 + woofer 4 + PCB 11 + feet 4"
+  },
+  {
+   "item": "Feet studs Wurth 971120321 + bumpons",
+   "qty_per_unit": 4,
+   "order_qty": "unchanged (lines 21-22)",
+   "unit_price": "-",
+   "line_price": "-",
+   "source": "-",
+   "part": "lines 21-22",
+   "url": "-",
+   "status": "unchanged",
+   "note": ""
+  }
+ ],
+ "csv_rows": [
+  "\"Countersunk post-Torx (T10 security) machine screw M3 x 10, A2-70 (304) stainless\",21,19,\"M3 x 0.5, 90 deg CSK, head 5.90 x 2.00, length 10 overall incl. head; 19 per unit (11 lid + 8 drivers) + 2 spares\",Bolt and Nut Australia (Hobson Engineering),22CPTS310 (YCXSA2M3X10),AUD 0.75,AUD 15.75,\"29,590 (page JSON 2026-11-03)\",\"Replaces line 41. Tiers per piece: 10+ 1.00, 20+ 0.75, 30+ 0.63, 50+ 0.42 (50 covers two units for AUD 21.00).\",Mechanical,confirmed,https://www.boltandnut.com.au/m3-x-0-50p-coarse-stainless-a2-70-g304-countersunk-post-torx-t10-machine-screws",
+  "\"Button post-Torx (T10 security) machine screw M3 x 10, A2-70 (304) stainless\",13,11,\"M3 x 0.5 button head 5.11-5.70 x 1.60-1.80, length 10 under the head; PCB H1-H9, HA1, HA2 into the Wurth 971100321 standoffs (8.4 mm in the steel female thread)\",Bolt and Nut Australia (Hobson Engineering),22BPTS310,AUD 1.00,AUD 13.00,\"20,345 (page JSON 2026-11-03)\",\"Replaces line 18 (M3x16 socket). 20+ tier AUD 0.70. H8 under the knob dish: drive with a cut-down post-Torx L-key (11.7 mm headroom).\",Mechanical,confirmed,https://www.boltandnut.com.au/security-fasteners/machine-screws/m3-x-0-50p-coarse-stainless-a2-70-g304-button-post-torx-t10-machine-screws",
+  "\"Button post-Torx (T10 security) machine screw M3 x 20, A2-70 (304) stainless\",5,4,\"M3 x 0.5 button head 5.11-5.70 x 1.60-1.80, length 20 under the head; woofer W3-2052SC (frame 13.3 + gasket 3.3)\",Bolt and Nut Australia (Hobson Engineering),22BPTS320,AUD 1.60,AUD 8.00,\"29,639 (page JSON 2026-11-03)\",\"Replaces the unlisted ISO 4762 M3x20. Engagement 3.4 free / 4.4 compressed; 5.4-5.7 with the 2 mm floor-boss tweak. 20 is the longest M3 button post-Torx at Bolt and Nut.\",Mechanical,confirmed,https://www.boltandnut.com.au/security-fasteners/machine-screws/m3-x-0-50p-coarse-stainless-a2-70-g304-button-post-torx-t10-machine-screws",
+  "\"Cup washer 6g (3.5 mm) G304 stainless, OD 11.0-11.4, ID 4.1-4.5, cup 2.1-2.3, 90 deg\",10,8,\"under the M3 CSK post-Torx heads on the 0.75 mm ND65 flanges (8 per unit)\",Bolt and Nut Australia (Hobson Engineering),71CS6,AUD 0.64,AUD 6.40,In stock (page 2026-11-03),\"Replaces line 43 (unsourced 8 x 1.6). 10 cost less than 9 (5+ tier AUD 1.20). Fit of the 5.90 head in a 6g cup by geometry only; CAD: check the 11.4 OD against the ND65 basket ribs.\",Mechanical,confirmed,https://www.boltandnut.com.au/washers/cup-washers/6g-3-5mm-g304-stainless-cup-washers",
+  "\"T10 x 25 mm post-Torx (security, pin) insert driver bit, 1/4 in hex\",2,0,\"Alpha TXSE1025; one + spare\",Bolt and Nut Australia,11PT1025A,AUD 3.00,AUD 6.00,In stock (page 2026-11-03),\"Replaces line 42 (qty 1). AUD 3.00 is the bundle price on the screw pages (quantity rule not verified); standalone AUD 9.00, 2+ AUD 7.00.\",Tools,confirmed,https://www.boltandnut.com.au/t10-x-25mm-alpha-post-torx-insert-security-standard-driver-bit",
+  "\"T10 post-Torx L-key 90 mm, short arm 19 mm\",2,0,\"Hobson ISKPT10, alloy tool steel; one for the PCB screws, one cut to about 8 mm short arm for H8\",Bolt and Nut Australia,11PTK10H,AUD 5.00,AUD 10.00,In stock (page 2026-11-03),\"Bundle price on the screw pages (quantity rule not verified); standalone AUD 9.00, 2+ AUD 6.00.\",Tools,confirmed,https://www.boltandnut.com.au/t10-x-90mm-hobson-post-torx-security-allen-key",
+  "\"Hex standoff M3 M/F, 10 mm body + 6 mm stud, 5.5 AF, steel zinc\",13,11,\"PCB stack: stud into the roof insert, button M3x10 into the female end\",Digi-Key,Wurth 971100321 (DK 732-10398-ND),USD 0.33,USD 4.29,\"32,433 (DK 2026-11-03)\",\"Replaces line 20 (F/F 970100321). Female thread depth UNVERIFIED (RS listing: hole depth 10); if < 8.5 mm use button M3x8 22BPTS38.\",Mechanical,confirmed,https://www.digikey.com/en/products/result?keywords=971100321"
+ ],
+ "csv_row_actions": [
+  "line 17: already 0 (superseded)",
+  "line 18 (M3x16 socket, PCB): set qty 0, superseded by the button M3x10 row",
+  "line 20 (F/F spacer 970100321): set qty 0, superseded by the 971100321 M/F row",
+  "line 23 (nylon washers): set qty 0 (no washer under the flush CSK lid heads; already decided)",
+  "lines 41-43: replace by the CSK, bit/L-key and cup washer rows above",
+  "lines 16, 21, 22 unchanged"
+ ],
+ "owner_decisions": [
+  "PCB: approve option (d) Wurth 971100321 M/F + button M3x10 (all 10 mm) or keep option (a) button M3x16 through the existing spacer (one 16 mm length, no Digi-Key change)",
+  "Woofer: accept button M3x20 (3.4-4.4 mm, as today) or add the 2 mm floor-boss tweak (5.4-5.7 mm) after calipering the frame and gasket",
+  "Drivers: CSK M3x10 on the 6g cup washer (recommended, matches the lid) or button M3x10 + M3 x 8 x 0.8 washer",
+  "H8: cut a second L-key (short arm about 8 mm) or use a plain-Torx pan M3x10 (21PTS310M, limited stock) with a ball-end T10 key",
+  "Buy quantity: one unit with spares (as listed) or the 50-piece CSK tier (AUD 21.00) for two units"
+ ],
+ "totals": {
+  "bolt_and_nut_aud_bundle_tools": 59.15,
+  "bolt_and_nut_aud_standalone_tools": 69.15,
+  "digikey_usd": 4.29,
+  "superseded_lines": "18 (AUD 7.68), 20 (USD 3.19), 23 (USD 1.10); 17 already 0",
+  "note": "AUD incl. GST, per one unit with >= 10 % spares; Bolt and Nut shipping not read; Digi-Key line ships with the existing DK order. Not a complete mechanical cost."
+ },
+ "csv_header": "Item,Qty,Qty 2nd unit,Spec,Source,Part number,Unit price,Line price,Stock/date,Notes,Category,Price status,URL"
+}
