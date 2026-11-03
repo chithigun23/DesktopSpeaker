@@ -1,0 +1,245 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-11-03T13:20:33",
+    "ignored_checks": [
+        {
+            "description": "Footprint has no courtyard defined",
+            "key": "missing_courtyard"
+        },
+        {
+            "description": "Track endpoint not centered on via",
+            "key": "track_not_centered_on_via"
+        },
+        {
+            "description": "Tuning profile track geometries",
+            "key": "tuning_profile_track_geometries"
+        },
+        {
+            "description": "Footprint doesn't match symbol's footprint filters",
+            "key": "footprint_filters_mismatch"
+        },
+        {
+            "description": "Footprint component type doesn't match footprint pads",
+            "key": "footprint_type_mismatch"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.0.7",
+    "schematic_parity": [],
+    "source": "RT-15S.kicad_pcb",
+    "unconnected_items": [
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [/AUD_SDA] on F.Cu, length 2.1000 mm",
+                    "pos": {
+                        "x": 139.05,
+                        "y": 80.9975
+                    },
+                    "uuid": "7df1e863-4107-4c62-9f0f-728914a903bf"
+                },
+                {
+                    "description": "Pad 23 [/AUD_SDA] of U24 on F.Cu",
+                    "pos": {
+                        "x": 150.745,
+                        "y": 88.28
+                    },
+                    "uuid": "2d0d2242-b4e6-42b2-9cc9-c71e0801696b"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad 15 [/AUD_SDA] of U7 on F.Cu",
+                    "pos": {
+                        "x": 191.295,
+                        "y": 126.395
+                    },
+                    "uuid": "b25202dd-eca6-4a22-948e-554d2f8d6703"
+                },
+                {
+                    "description": "Pad 1 [/AUD_SDA] of TP17 on F.Cu",
+                    "pos": {
+                        "x": 142.3,
+                        "y": 108.3
+                    },
+                    "uuid": "9b33e841-cfb2-4f55-b06b-7cca7bf86dc6"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad 1 [Net-(C205-Pad2)] of R205 on F.Cu",
+                    "pos": {
+                        "x": 156.95,
+                        "y": 89.2775
+                    },
+                    "uuid": "bdababe0-3d83-464f-b6b7-e0220a9ba3ad"
+                },
+                {
+                    "description": "Pad 2 [Net-(C205-Pad2)] of C205 on F.Cu",
+                    "pos": {
+                        "x": 192.89,
+                        "y": 42.3675
+                    },
+                    "uuid": "3ef5a040-5070-4aa2-b6d9-04195ab9345a"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad 13 [/I2S_BCK] of U7 on F.Cu",
+                    "pos": {
+                        "x": 192.295,
+                        "y": 126.395
+                    },
+                    "uuid": "9abe1eff-11a5-4527-a85f-4efe05707020"
+                },
+                {
+                    "description": "Track [/I2S_BCK] on F.Cu, length 0.9000 mm",
+                    "pos": {
+                        "x": 147.15,
+                        "y": 93.75
+                    },
+                    "uuid": "be02426c-fbf1-4ce2-93ff-b15b7f34a182"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad 1 [Net-(C204-Pad2)] of R204 on F.Cu",
+                    "pos": {
+                        "x": 156.3475,
+                        "y": 90.73
+                    },
+                    "uuid": "2c6728ec-deea-4e21-ab0e-d969295489c8"
+                },
+                {
+                    "description": "Pad 2 [Net-(C204-Pad2)] of C204 on F.Cu",
+                    "pos": {
+                        "x": 191.14,
+                        "y": 40.1675
+                    },
+                    "uuid": "795c9480-2b93-4dc6-bb08-93b24c38d90c"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad 1 [/USB_AUDIO_L] of C200 on F.Cu",
+                    "pos": {
+                        "x": 162.0175,
+                        "y": 79.0
+                    },
+                    "uuid": "12d1f2b1-ee6b-4a52-bc38-c80c5a29ffd5"
+                },
+                {
+                    "description": "Track [/USB_AUDIO_L] on F.Cu, length 7.1418 mm",
+                    "pos": {
+                        "x": 174.55,
+                        "y": 60.8825
+                    },
+                    "uuid": "77685b41-08b9-4119-8279-4cb3edea0f24"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad 1 [/HP_SEL_B] of R235 on F.Cu",
+                    "pos": {
+                        "x": 183.4,
+                        "y": 58.6975
+                    },
+                    "uuid": "ae2ca811-f1a9-4ab2-ade9-55b4baf7b69d"
+                },
+                {
+                    "description": "Pad 51 [/HP_SEL_B] of U3 on F.Cu",
+                    "pos": {
+                        "x": 122.325,
+                        "y": 73.75
+                    },
+                    "uuid": "3121488e-6765-4654-a0e6-071bf7c7050c"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad 29 [/AUX_DET] of U3 on F.Cu",
+                    "pos": {
+                        "x": 133.675,
+                        "y": 74.25
+                    },
+                    "uuid": "8fc27569-8dd3-4df5-acf0-f7d0aadad984"
+                },
+                {
+                    "description": "Pad 2 [/AUX_DET] of R242 on F.Cu",
+                    "pos": {
+                        "x": 189.8225,
+                        "y": 36.3
+                    },
+                    "uuid": "26fa0bb1-35ee-4a8d-bfc7-b8ae47a7619d"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [/USB_AUDIO_R] on F.Cu, length 1.5556 mm",
+                    "pos": {
+                        "x": 168.75,
+                        "y": 56.4325
+                    },
+                    "uuid": "6ec85e78-b0f7-47f9-9f35-c19338fc7aca"
+                },
+                {
+                    "description": "Pad 1 [/USB_AUDIO_R] of C201 on F.Cu",
+                    "pos": {
+                        "x": 162.0175,
+                        "y": 77.65
+                    },
+                    "uuid": "936225b6-21e3-4365-a201-29ed55bcc6a4"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        }
+    ],
+    "violations": []
+}
