@@ -1,6 +1,8 @@
 # Mechanical parts for the CAD model (2026-10-06)
 Sources: web snapshots 2026-10-06; "UNVERIFIED" = not confirmed from a maker drawing. Only the PCB is estimated.
 
+> **2026-11-03 (review fixes): current-design pointer.** This file is the 2026-10-06 parts research; values below are kept as history. The current design is in `cad/mechanical-bom.md` (table "current design 2026-11-03") and `reports/review-fixes-2026-11-03.md`. Superseded here: the woofer hole pattern (now square 82.55 frame, 4 x 3.4 holes on a 96.52 mm bolt circle = 68.25 mm square, frame block 13.3, factory 3.3 mm gasket, total 47.75, photo estimates, CAD v13+), the pack (now 1S4P 21700, section 4), the screws (section 5: now countersunk post-Torx T10 M3x10 for lid, drivers, knob cup and woofer-chamber insert; button post-Torx M3x10 for the PCB on Wurth 971100321 M/F standoffs, nylon at H9; button post-Torx M3x20 for the woofer; see `reports/fastener-schedule-2026-11-03.md`), the feet (Wurth 971120321 stud + screw-in rubber foot, no glued disc), the grille cloth (now also behind the woofer grille), the woofer termination (a PHR-2 pigtail seen in the photo, UNVERIFIED) and the J5/J9-J11 3D models (built in models-v13).
+
 ## 1. Front full-range drivers (x2) - Dayton Audio ND65-4 (Parts Express 290-204)
 | Item | Value |
 |---|---|
@@ -20,7 +22,7 @@ Two side by side need 2 x 64 = 128 mm of width; fits in 163 mm. Needs a small se
 |---|---|
 | Maker/MPN | Tang Band (Taiwan) W3-2052SC, 3 in RBM neodymium sub, 4 ohm; US$29.98 sale (MSRP 69.99), "in stock" at Parts Express |
 | Drawing | NOT FOUND (no Tang Band PDF reachable). Dimensions below are from the Parts Express listing. Request the drawing from Tang Band/Parts Express before cutting |
-| Flange | OD 3.25 in = 82.6 mm, round, 4 mounting holes (diameter/pattern UNVERIFIED; assume 4 x dia 3.5 on about 73 mm bolt circle until confirmed) |
+| Flange | OD 3.25 in = 82.6 mm, round, 4 mounting holes (diameter/pattern UNVERIFIED; assume 4 x dia 3.5 on about 73 mm bolt circle until confirmed) **Superseded 2026-11-02 (CAD v13): square 82.55 frame, 4 x 3.4 holes on a 96.52 mm bolt circle (68.25 mm square), photo estimate.** |
 | Cutout | listed as 3 in (76.2 mm). UNVERIFIED, plausible values are 70-76 mm |
 | Depth | 1.75 in = 44.5 mm (meets <=45 mm). Magnet dia UNVERIFIED, assume about 40 mm neodymium |
 | Mass | 0.55 lb = 0.25 kg |
@@ -48,6 +50,7 @@ SKIPPED. The 0.4-0.6 L sealed volume matches the W3-2052SC Vas; a radiator would
 | Item | Value | 3D |
 |---|---|---|
 | M3x10 socket cap, ISO 4762 | head dia 5.5, head height 3.0, hex 2.5, fully threaded (L=10, thread dia 3.0) | parametric |
+| (2026-11-03, current) countersunk post-Torx T10 M3x10 A2-70 (Bolt and Nut 22CPTS310) / button post-Torx T10 M3x10 and M3x20 (22BPTS310 / 22BPTS320) | CSK head 5.90 x 2.00, 90 deg, length overall; button head 5.11-5.70 x 1.60-1.80, length under the head; T10 pin (post) Torx: ball-end keys do not fit | parametric |
 | (alternative) ISO 7380 button M3x10 | head dia 5.7, height 1.65, hex 2.0 | parametric |
 | M3 brass heat-set insert, e.g. Ruthex RX-M3x5.7 (MPN family unverified in this pass) | OD 4.6 (knurled, 5.0 max), length 5.7, ID M3, pilot hole dia 4.0-4.2 x 6.5 deep in the part; M3x10 screw leaves 10-5.7 = 4.3 mm for clamped plate thickness (clamp up to 4 mm incl. PCB 1.6) | parametric |
 | M3 PCB standoff F/F brass hex, Wurth WA-SBRII family (M3, hex SW 5.5 typ, UNVERIFIED), lengths 5/6/8/10 mm | with M3x10 screws: PCB (1.6) + standoff 6 mm fits through-screw 10 mm with 2.4 mm thread in the far end; use 6 mm or 5 mm for screw-from-top, avoid 8-10 mm | parametric hex dia 5.5 x L, bore dia 3 |

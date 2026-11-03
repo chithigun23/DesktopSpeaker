@@ -1,6 +1,6 @@
 # Desktop Speaker schematic completion plan
 
-Updated: 2026-10-05. Use this checklist with `AGENTS.md` and `ai-files/HANDOVER.md`. The active KiCad project is the source of truth. Checkboxes indicate completed work; **PARTIAL** sections still have open tasks. Update this file in place as work progresses.
+Updated: 2026-11-03 (current status section below refreshed after the CAD completeness review; first written 2026-10-05). Use this checklist with `AGENTS.md` and `ai-files/HANDOVER.md`. The active KiCad project is the source of truth. Checkboxes indicate completed work; **PARTIAL** sections still have open tasks. Update this file in place as work progresses.
 
 ## Product and architecture requirements
 
@@ -11,7 +11,23 @@ Updated: 2026-10-05. Use this checklist with `AGENTS.md` and `ai-files/HANDOVER.
 - Prioritize battery life, low standby/storage current and battery longevity when usually plugged in.
 - Target a protected 1S pack around 10 Ah (2026-11-03: owner decision **1S4P, 4 x Samsung INR21700-50S, 20 Ah, about 72 Wh**; HANDOVER "Pack decision 1S4P (2026-11-03)"). Enclosure dimensions and acoustic volume drive selection; weight is not a concern and a heavier enclosure is welcome if acoustics benefit.
 - Use automatic USB-A source detection with a conservative fallback; a 2 A label alone does not grant USB host current.
-- Custom PCB for internal electronics. Placement and routing (R6m) exist and are adopted; see "PCB status" below.
+- Custom PCB for internal electronics. Placement and routing (R6m) exist and are adopted; see "PCB status" below. (2026-11-03: superseded by the routing restart; current board RT-15H, see "Current status (2026-11-03)".)
+
+## Current status (2026-11-03, after the CAD completeness review)
+
+Sources: `ai-files/reports/project-review-cad-completeness-2026-11-03.md`, `reports/review-fixes-2026-11-03.md`, HANDOVER sections "RT-15 and GUI finish package", "Pack decision 1S4P" and "Review fixes 2026-11-03". The dated PCB status sections below this one are history.
+
+- [x] Schematic: 11 child sheets integrated; patches P1 (CHG_INT polled, U4-21 no-connect), P4 (PDCTRL_SDA on PB13) and P5 (J7-3 no-connect) applied 2026-11-02; ERC 240 = the inherited set (238 lib_symbol_issues, 1 documented power_pin_not_driven, 1 same_local_global_label), 0 new.
+- [ ] PCB: **RT-15H** (`ai-files/pcb/gui-finish/`): DRC 0 violations, **9 unconnected**, 273 of 282 connections routed (97 %). Owner routes the 9 in the KiCad GUI (README table), then `regen_final.sh` (teardrops, position files, fab output), adoption into `DesktopSpeaker-kicad/` (the project board is still R6q) with rules 20/21 copied into the project `.kicad_dru`. 13 accepted quality exceptions are listed in HANDOVER. Paste windows on the 10 exposed pads are in the library.
+- [ ] Release package: draft material on RT-14 in `ai-files/fab/draft-rt14/` (not for ordering); `reports/release-todo-2026-11-03.md` is superseded for status (it still says 12 open and pack 2P/3P/4P). Final gerbers, stencil, position files and board STEP follow the GUI finish. Then order PCB + 0.10 mm stencil.
+- [x] Battery: **1S4P** decided (4 x INR21700-50S, 20 Ah, about 72 Wh); charge values in `charge-policy-2026-11-02.md` section 12.
+- [ ] Battery purchase: send `reports/battery-pack-rfq.md` (2026-11-03: adds a 15 A PACK+ fuse, an about 85 C thermal cut-off and a **22.3 mm** maximum thickness; thin-wall 18 AWG leads about 180 mm; dimensioned drawing and UN38.3 documents). No quote yet.
+- [x] CAD v15 (`ai-files/cad/v15/`): 1S4P brick, real wiring, countersunk T10 screws; 218 solids, 0 unintended overlaps.
+- [ ] CAD v16 (`ai-files/cad/v16/`, in progress, CAD agent): separate knob cup (PCB install path), removable woofer-chamber insert (screws + 1.5 mm foam gasket), SW100 plunger (3 nub variants), cable-tie bridges, seals (2 mm lid cord, connector-face foam, encoder washer), vents, damping placeholder, fasteners per the schedule, grommet hole 6.35, feet, insertion-path and tool-access check. Do not print the shell before v16 passes.
+- [x] Fasteners decided (`reports/fastener-schedule-2026-11-03.md`, buy list rows 40-49): T10 post-Torx M3x10 countersunk (lid, drivers on 6g cup washers, knob cup, insert), button M3x10 on Wurth 971100321 M/F standoffs (PCB; nylon standoff and screw at H9), button M3x20 (woofer); 46 inserts; nylon lid washers and socket screws superseded.
+- [x] BOM/documents consistent with the review (2026-11-03): buy list rows 43-71 added (seals, damping, ties, wire, fuse/TCO, feet, knob, printed parts); `cad/mechanical-bom.md` current-design table; RFQ updated.
+- [ ] Firmware: **no code exists** (spec only: `reports/firmware-system-spec-2026-11-01.md`). Bring-up firmware is needed before first sound and before charging (CE default off). Deferred by the owner ("firmware later").
+- [ ] Owner purchases and measurements: order list in `reports/review-fixes-2026-11-03.md` section 3; caliper the woofer (frame, gasket, holes, termination), check the ND65 tab polarity, measure the rocker depth; BM83, PCM2902C and U19 from Digi-Key/Mouser (0 stock at LCSC/JLC).
 
 ## PCB status (2026-11-01 update)
 - R6q review (artifact "Routing Review R6q", `ai-files/reports/routing-review-r6q.md`) found the routing does not meet the owner standard (0/45/90 only, shortest runs, route by importance). Decision: restart routing with a placement pass first (R8 placement, then staged routing). Do NOT order the board as it stands unless the user decides to run it as a prototype. Rulebook artifact and `pcb-layout-best-practices.md` section 14 define the acceptance numbers.
@@ -21,7 +37,7 @@ Updated: 2026-10-05. Use this checklist with `AGENTS.md` and `ai-files/HANDOVER.
 - Board: R6q with teardrops in `DesktopSpeaker-kicad/DesktopSpeaker.kicad_pcb` (commit cfea017): DRC 0/0, 0 open edges, USB FS waiver rule, 360 footprints, 888 vias, 1825 teardrops. Routing history R6a-R6q in `ai-files/reports/pcb-routing-*.md`.
 - Fab outputs R9 in `ai-files/fab/out/` (gerbers, drills, position files, checked by `helpers/fab_check.py`); order options `ai-files/fab/ORDER-NOTES.md`; assembly BOM `ai-files/bom/DesktopSpeaker_JLC_BOM.csv` (`helpers/jlc_bom.py`).
 - Open (user): JLC preview and order; battery pack quotes (Keeppower / CM Batteries, NTC; 2026-11-03: now for the 1S4P pack); rocker GRB112B802BR1 from Digi-Key; bench items in HANDOVER.
-- Enclosure CAD v11 (print-ready STLs) in `ai-files/cad/`; knob dish and R6q rebuild in progress.
+- Enclosure CAD v11 (print-ready STLs) in `ai-files/cad/`; knob dish and R6q rebuild in progress. (2026-11-03: superseded; CAD v15 done, v16 in progress: see "Current status".)
 
 ## 1. USB-C power delivery — PARTIAL
 
@@ -44,7 +60,7 @@ Updated: 2026-10-05. Use this checklist with `AGENTS.md` and `ai-files/HANDOVER.
 - [x] Integrate `VBUS_PD`, `SYS_RAW` and `BAT_PACK`; add default-disabled charge enable through Q100.
 - [x] Add the provisional 103AT-2 thermistor divider and three-contact battery interface. Pack protection/current/temperature specifications remain open.
 - [x] Select battery chemistry, cell count/capacity, pack/connector and protection arrangement; confirm charge/discharge current requirements. 2026-11-03: **1S4P Li-ion 21700 (4 x Samsung INR21700-50S, 20 Ah, about 72 Wh)**, J5 Micro-Fit 3-pin unchanged. PCM >= 10 A continuous / 20 A for 1 s, over-current trip 12-20 A, charge >= 5 A, OV 4.25 V, per-cell fusible links, 10k NTC (B3435) between the middle cells. The board currents do not change with the cell count, so the board is unchanged. Charge values in `reports/charge-policy-2026-11-02.md` section 12 (ITERM 1000 mA, IPRECHG 720 mA, timer 12 h). CAD v15 (`ai-files/cad/v15/`) models the vendor brick, strap, real wiring (crimps/housings) and the countersunk T10 screws; 0 unintended overlaps.
-- [ ] Buy the 1S4P pack: send `reports/battery-pack-rfq.md` (Keeppower / CM Batteries), get the PCM and fusing specification and UN38.3 documents, and order genuine Molex J5 housing/crimps. Not yet verified: real PCM/holder size, 50S formal spec and mass, genuine Molex 8.5 A rating, cell price, drop loads on the partition that acts as the rear stop.
+- [ ] Buy the 1S4P pack: send `reports/battery-pack-rfq.md` (Keeppower / CM Batteries; 2026-11-03: the RFQ now also asks for a 15 A PACK+ fuse, an about 85 C thermal cut-off and a maximum thickness of 22.3 mm), get the PCM and fusing specification and UN38.3 documents, and order genuine Molex J5 housing/crimps. Not yet verified: real PCM/holder size, 50S formal spec and mass, genuine Molex 8.5 A rating, cell price, drop loads on the partition that acts as the rear stop.
 - [ ] Add temperature sensing, protection and required charge/power-path support components.
 - [ ] Define adapter input-current limits for ordinary USB and negotiated PD, including audio load and charging together.
 - [ ] Define firmware charge target, recharge thresholds and plugged-in policy to reduce battery ageing; confirm what the charger actually supports.
@@ -337,7 +353,7 @@ Quick mechanical envelope review: `ai-files/reports/mechanical-fit-rough-2026-10
 - [x] Internal CAD built under `ai-files/cad/` (README there): FCStd + STEP assembly, renders, interference check (0 unintended overlaps in 107 solids), chamber volumes, mechanical BOM.
 - [x] Pack decision: LP1260100 pouch rejected (3 A continuous). Pack choice now: 2P 21700 (2 x Samsung 50S 5 Ah) with protection board (4-5 A+ continuous capability; PCM and 10k NTC still to be sourced); J5 stays. (Superseded 2026-11-03: 1S4P, see section 2.)
 - [x] Enclosure 163 x 100 x 160 mm (+15 mm feet), 2 ND65-4 front, W3-2052SC down, sealed woofer chamber 0.506 L net, main chamber 1.436 L net; PCB estimate 100 x 66 mm (area method in `ai-files/cad/pcb-size-estimate.md`, about 5 300 mm2 courtyard sum x 2.0 / two sides + 15 %).
-- [ ] Open: Tang Band drawing (flange thickness/hole pattern/cutout/magnet), ND65 aperture 59.5 and 11 mm pad vs M3x10 (or switch to M3x6), PCM/NTC/holder sourcing, real PCB layout, grommets for woofer wires, J5/SW100/SW101/JST VH models, connector overhang on the real footprints.
+- [ ] (2026-11-03: largely superseded: woofer geometry from photos since CAD v13, real PCB layout RT-15H, J5/SW100/SW101/JST VH models built in models-v13, grommet Heyco 2000; still open: caliper the woofer, real PCM/holder size. See "Current status".) Open: Tang Band drawing (flange thickness/hole pattern/cutout/magnet), ND65 aperture 59.5 and 11 mm pad vs M3x10 (or switch to M3x6), PCM/NTC/holder sourcing, real PCB layout, grommets for woofer wires, J5/SW100/SW101/JST VH models, connector overhang on the real footprints.
 
 ## Hand-solder passive repackage (2026-10-06)
 - [x] Policy: all resistors/capacitors on hand-solder footprints, 0402 by default; 0805 only for large or high-voltage capacitors (10/22/4.7 uF, 50 V 1 uF, 0.68 uF filter, C265). 262 passives repackaged, netlist identical, ERC 19, BOM merged by MPN. Details and FLAGS (X5R derating on VBUS/PMID/PVDD, unverified MPNs/LCSC codes): `ai-files/reports/passive-repackage-2026-10-06.md`.

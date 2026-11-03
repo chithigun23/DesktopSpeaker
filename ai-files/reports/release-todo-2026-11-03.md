@@ -1,5 +1,7 @@
 # Release to-do: RT-14 to JLC order (2026-11-03)
 
+> **Superseded for status (2026-11-03, review fixes).** The board is now RT-15H (`ai-files/pcb/gui-finish/`, 9 unconnected, not 12) and the pack is decided as 1S4P (not 2P/3P/4P). The release steps below still apply in order; current status: `plan.md` "Current status (2026-11-03)" and HANDOVER "RT-15 and GUI finish package" / "Review fixes 2026-11-03".
+
 Agent "Draft release package on RT-14". Draft material: `ai-files/fab/draft-rt14/`. Nothing in `DesktopSpeaker-kicad/` was edited. Nothing was committed.
 
 ## Status now
