@@ -1,0 +1,191 @@
+{
+ "verdict": "v15 = RT-14 routing draft (unchanged board) with the 1S4P pack modelled as a vendor-built brick, real wiring (wires, crimps, housings) and countersunk post-Torx T10 screws: 218 solids, 0 unintended overlaps (96 intended), woofer chamber net 0.524 L, main 1.897 L, print bodies valid without supports (shell overhang 1102 mm2). Brick 86.85 x 74.47 x 21.75 mm incl. wrap (RFQ max 87.0 x 75.0 x 23.0), radial cradle clearance 0.275 mm, rear stop gap 0.63 mm. All wires meet 6 x OD except the J5 leads at the receptacle (R 9.5 = 5.3 x OD: the receptacle faces the right wall with 11 mm free). SW100 still needs a lid plunger; woofer screw engagement stays marginal (M3x20).",
+ "findings": [
+  {
+   "severity": "problem",
+   "title": "SW100: actuator at the board edge, still 4.50 mm behind the lid outer face (lid plunger needed)",
+   "detail": "RT-14 redrawn TE 1977066-1 footprint moved the switch 2.295 mm toward the rear edge (y 25.245 -> 22.95). Measured in CAD: actuator (dia 2.0, axis 1.70 above the board top, X -14.68 Z 70.30) tip at Y 202.10 = board rear edge (0.00 mm past it), 0.50 mm short of the lid inner face (Y 202.6) and 4.50 mm behind the lid outer face (Y 206.6). v13 (draft footprint): 2.80 / 6.80 mm. The 5.0 bore is centred on the actuator axis (radial 1.5); the nearest switch geometry is 1.35 mm from the lid. A fingertip cannot reach it: a printed plunger must bridge 4.50 mm (lid 4.0 + 0.5 gap) plus its own protrusion and travel. Only 0.5 mm is free behind the lid, so a retaining collar would need a counterbore in the lid inner face (owner decision; not modelled, v14 keeps the v13 lid). Switch travel not extracted (TE PDF is a drawing without text)."
+  },
+  {
+   "severity": "ok",
+   "title": "1S4P vendor-built brick seated in the saddle cradle (0 interference)",
+   "detail": "Cells: models-v13 INR21700-50S at datasheet max (21.25 x 70.62), positive buttons toward the PCM (rear), negative ends toward the baffle. Pack: 0.15 nickel strip on the negative ends; fish paper 0.25 with button holes; positive nickel pads with a 1.0 x 3.4 mm fusible neck per cell to a common bus bar; PCM 60 x 18 x 1.6 + parts; 103AT NTC (dia 2.4) between cells 2 and 3 at mid-length with its lead to the PCM; 0.25 mm heat-shrink with 3 mm end rims and a lead-exit slit. Brick 86.85 x 74.47 x 21.75. Cradle: the v13p4 saddle profile followed each cell and its inter-cell peaks pressed 278 mm3 into the wrap; v15 uses a stadium saddle (outer arcs + flat bottom): radial clearance 0.275 mm (nominal 0.2-0.3), front gap 0.60 mm to the fingers, rear gap 0.63 mm to the partition (rear stop). Clearances: cells to ND65 5.29, PCB 41.27, J5 wires 0.1."
+  },
+  {
+   "severity": "ok",
+   "title": "Strap modelled on its tensioned path",
+   "detail": "20 x 1.2 hook-and-loop strap at y 34.9-54.9: under the brick in a new 0.6 mm floor channel (45 deg rear edge for printing), through both anchor tunnels, up the outer block faces and over the brick. Centreline 243 mm; with the buckle overlap (about 60-80 mm) about 300-320 mm: order >= 350 mm."
+  },
+  {
+   "severity": "ok",
+   "title": "Real wiring: wires, crimps and housings (cut list in meta.json wiring)",
+   "detail": "J9 (FRONT_L) J9_FrontL_2 55 mm, J9_FrontL_1 49 mm; J10 (FRONT_R) J10_FrontR_1 296 mm, J10_FrontR_2 252 mm; J11 adapter J11_Woofer_adapter_2 196 mm, J11_Woofer_adapter_1 195 mm; J5 J5_3_GND 131 mm, J5_2_TS 131 mm, J5_1_PACKplus 131 mm. VH: JST VHR-2N (datasheet envelope) + SVH-21T-P1.1 on 20 AWG OD 1.75; J5: Molex 43645-0300 (envelope estimated) + 43030-0038 / -0007; woofer: inline JST-PH-compatible male + the woofer PHR-2 (SPH-002T). Wires run under the top wall at z 95.6 (0.5 mm under it), over the drivers, never through the sealed chamber except the J11 pair via the grommet. Nearest bodies: Woofer_pigtail_1 to Wire_Woofer_pigtail_2 0.00 mm (touch, overlap -0.00 mm3); Woofer_pigtail_2 to Wire_Woofer_pigtail_1 0.00 mm (touch, overlap -0.00 mm3); J11_Woofer_adapter_1 to Grommet_Heyco2000_ID3.56 0.01 mm; J11_Woofer_adapter_2 to Grommet_Heyco2000_ID3.56 0.01 mm; J11_Woofer_adapter_1 to Wire_J11_Woofer_adapter_2 0.05 mm; J11_Woofer_adapter_2 to Wire_J11_Woofer_adapter_1 0.05 mm; J5_1_PACKplus to Battery_Wrap_heatshrink 0.10 mm; J5_3_GND to Battery_Wrap_heatshrink 0.10 mm."
+  },
+  {
+   "severity": "finding",
+   "title": "ND65-4 terminals are two flat solder tabs: wires are soldered (no quick-connect)",
+   "detail": "Measured on the Dayton maker STEP: a terminal strip on top of the basket with two flat tabs about 1.95 x 0.5 mm, pointing rearward, 7.6 / 7.0 mm either side of the axis, tips 21.1 / 22.4 mm behind the flange face, top 27 mm above the axis. The spec sheet drawing shows two solder lugs with holes; no faston size. Polarity marking is not in the STEP or the spec sheet: check the red dot / + on the part."
+  },
+  {
+   "severity": "problem",
+   "title": "J5 receptacle faces the right wall: first bend R 9.5 (5.3 x OD) for the 18 AWG leads",
+   "detail": "The RA header mates along +X; the 43645-0300 (estimated 5.0 mm outside the header) ends at x 67.45 with the wall inner face at 78.5: 11.05 mm for the 90 deg bend down. 6 x OD (OD 1.8) needs 11.7 mm. Options: thin-wall 18 AWG OD <= 1.7 (6 x OD = 10.2, fits), accept 5.3 x OD (silicone wire tolerates it), or rotate J5 on the next board revision."
+  },
+  {
+   "severity": "decision",
+   "title": "Countersunk post-Torx T10 M3x10 (owner choice): lid flush, ND65 sites on cup washers",
+   "detail": "Vendor page: head 5.90 x 2.00, 90 deg, T10 post (pin) Torx, A2-70, full thread, overall length incl. head; MPNs YCXSA2M3X6...X25. Lid: 11 x 6.0 x 90 deg countersinks (0.6 counterbore + cone to the 3.4 hole), head flush; thread below the lid inner face 6.0 mm (insert 5.7 fully engaged, tip 2.0 above the pilot floor). Drivers: the ND65 flange is 0.75 mm with 4.2 holes, so no countersink can be cut; an M3 stainless cup (finishing) washer about 8 x 1.6 carries the head (head tip 0.4 mm into the flange hole); thread below the pad face 7.65 mm, insert fully engaged. M3x10 is correct at both sites; M3x8 would leave 4.0 / 5.65 mm. The 11 nylon lid washers cannot be used under a flush head: seal the lid holes inside the gasket loops with sealant. PCB (M3x16) and woofer (M3x20) screws unchanged."
+  },
+  {
+   "severity": "note",
+   "title": "Woofer lead: PH 2 A rating and the adapter",
+   "detail": "The adapter (VH at J11, 20 AWG, splice to 24 AWG, inline PH male) mates the woofer pigtail PHR-2 inside the chamber at x 53, z 40, y 135-148. JST PH is rated 2 A at 24 AWG: fine for the woofer AGL ceiling (about 10 W into 4 ohm = 1.6 A RMS), marginal above 16 W. Alternative: cut the PH plug and splice the pigtail directly to the 20 AWG pair. The grommet moved from (40, 40) to (50, 47) on the partition so the J5 leads pass under its boss and the pair reaches the free side band of the chamber."
+  },
+  {
+   "severity": "ok",
+   "title": "TP20 moved 40.8 mm (RT-14) clears every enclosure body",
+   "detail": "TP20 (Keystone 5015, 1.5 above the board) from (110.155, 149.645) to (123.9, 111.25): nearest body the H4 PCB spacer 8.54 mm (its M3x16 head 8.77), 11.6 mm to the insert roof under the board, 11.99 mm to the shell; woofer harness tube 70.6 mm (J5 harness farther); 26.9 mm under the top wall. In v13 it was 22.9 mm from the shell."
+  },
+  {
+   "severity": "decision",
+   "title": "Woofer screws: M3x20 gives only 3.4-4.4 mm thread in the 5.7 mm insert (unchanged from v13)",
+   "detail": "Stack: head on the frame back (z 19.60) through the 13.3 frame block and the 3.3 gasket. M3x20 engages 3.4 mm with the gasket free, 4.4 mm with 1 mm compression (1.1-1.5 d; tip 2.3 mm above the pilot floor). Raising the seat to fit longer screws pushes the magnet into the roof (3.25 mm left). Options: accept M3x20 (gasket compresses), or M3x22 (DIN 912; 5.4-6.4 mm, still inside the 6.7 pilot) if the owner can source it. Frame thickness and gasket are photo estimates (+-1.5): measure before printing."
+  }
+ ],
+ "screw_table": [
+  {
+   "site": "ND65 drivers (x8)",
+   "screw": "M3x10",
+   "stack": "head, flange 0.75 (maker STEP)",
+   "engage_mm": 9.25,
+   "insert": "5.7 in the 11 mm pad, pilot 10",
+   "verdict": "ok (unchanged)"
+  },
+  {
+   "site": "Woofer (x4)",
+   "screw": "M3x20",
+   "stack": "head on the frame back, frame 13.3 + gasket 3.3",
+   "engage_mm": "3.4 free / 4.4 at 1 mm compression",
+   "insert": "5.7 in the floor + outside boss, pilot 6.7, 1.0 skin",
+   "verdict": "marginal: M3x22 gives 5.4-6.4"
+  },
+  {
+   "site": "PCB (x11)",
+   "screw": "M3x16",
+   "stack": "head, PCB 1.6, 10 mm spacer",
+   "engage_mm": 4.4,
+   "insert": "5.7 under the insert roof, pilot 6.7",
+   "verdict": "ok (unchanged)"
+  },
+  {
+   "site": "Lid (x11)",
+   "screw": "M3x10",
+   "stack": "head, lid 4",
+   "engage_mm": 6.0,
+   "insert": "5.7, pilot 8",
+   "verdict": "ok (unchanged)"
+  },
+  {
+   "site": "Feet (x4)",
+   "screw": "Wurth 971120321 stud",
+   "stack": "M3 x 6 male stud",
+   "engage_mm": 6.0,
+   "insert": "5.7, pilot 6.5",
+   "verdict": "ok (unchanged)"
+  }
+ ],
+ "parameter_changes": [
+  "BATT = 4P (v15 default): v13p4 battery branch + vendor brick (wrap, nickel with fusible links, fish paper, PCM, NTC) and a stadium saddle profile (flat bottom between the outer arcs).",
+  "Strap: 0.6 mm floor channel under the strap path (x +-55.6, y strap +-11, 45 deg rear edge).",
+  "Grommet (woofer leads) moved from x 40, z 40 to x 50, z 47 on the partition; stand-in replaced by a Heyco 2000 (ID 3.56).",
+  "Lid: 11 x 6.0 x 90 deg countersinks (replace the 0.5 mm chamfers at the lid screw holes).",
+  "Fasteners: M3x10 ISO 4762 -> M3x10 countersunk post-Torx T10 at the 8 driver and 11 lid sites; 8 cup washers on the ND65 flanges.",
+  "Wiring: schematic tubes replaced by swept wires, crimps and housings (wire_check.py lists the nearest bodies per wire)."
+ ],
+ "checks": [
+  {
+   "check": "Model accuracy audit coverage (board)",
+   "result": "340 / 346 within 0.5 mm",
+   "detail": "6 unverified: L200 (XAL7070, Coilcraft drawing blocked), TP23-TP27 (Keystone 5010-5014, no maker drawing)"
+  },
+  {
+   "check": "Footprint errors found by the audit",
+   "result": "PASS",
+   "detail": "0 open: J2/J3 pegs, U1 pad 56, SW100, C275 fixed on RT-14"
+  },
+  {
+   "check": "Woofer chamber net volume",
+   "result": "PASS",
+   "detail": "0.525 L (target 0.525 +- 0.05; window 0.45-0.60)"
+  },
+  {
+   "check": "Print bodies (shell, lid, insert)",
+   "result": "PASS",
+   "detail": "3 valid single solids, no supports"
+  },
+  {
+   "check": "Woofer screw thread engagement",
+   "result": "marginal",
+   "detail": "M3x20: 3.4-4.4 mm in a 5.7 mm insert"
+  },
+  {
+   "check": "SW100 reachable through the lid",
+   "result": "FAIL",
+   "detail": "actuator at the board edge, 0.50 mm behind the lid inner face, 4.50 mm behind the outer face: lid plunger needed"
+  },
+  {
+   "check": "1S4P pack interference and seating",
+   "result": "PASS",
+   "detail": "0 unintended overlaps; radial cradle clearance 0.275 mm; rear stop gap 0.63 mm"
+  },
+  {
+   "check": "Print overhang audit (shell, 1S4P cradle + strap channel)",
+   "result": "PASS",
+   "detail": "1102 mm2 off-bed overhang > 45 deg (1S2P 978); no supports"
+  },
+  {
+   "check": "Wire bend radius >= 6 x OD",
+   "result": "PASS except J5",
+   "detail": "Wire_J5_3_GND 9.5 mm (5.3 x OD); Wire_J5_1_PACKplus 9.5 mm (5.3 x OD)"
+  },
+  {
+   "check": "Main chamber net volume",
+   "result": "PASS",
+   "detail": "1.897 L (target >= 0.80)"
+  }
+ ],
+ "assumptions": [
+  "Woofer W3-2052SC: models-v13 model from Parts Express data (square 82.55, bolt circle 96.52, cutout 76.2, depth 44.45) plus photo estimates +-1.5 mm (gasket 3.3, frame block 13.3, holes 3.4, magnet 35.5 x 14.5, basket 72, pigtail rib). Gasket modelled uncompressed.",
+  "Placeholders (parts not selected): knob D30 x 14, rubber feet 12 x 3, lid foam gasket, grommet, PCM; harness tubes are schematic.",
+  "ND65-4 maker STEP accepted with its known deviations (flange 0.9 mm wider in y, holes 0.35 mm off the cone axis): accuracy 'estimated'.",
+  "Board parts: models-v13 models via the project library; RT-14 carries the footprint fixes (J2/J3, U1 pad 56, SW100, C275).",
+  "Masses: printed bodies at 100 % infill PETG 1.27 g/cm3; drivers/woofer from maker listings; PCB estimated.",
+  "Cells: Samsung INR21700-50S model at datasheet max (21.25 x 70.62); the brick parts (wrap 0.25, nickel 0.15, fish paper 0.25, PCM 60 x 18 x 1.6, NTC) are placeholders for the vendor pack.",
+  "Pack mass: 50S 69 g per cell UNVERIFIED; pack overhead 8 + 3 g per cell estimated.",
+  "Strap 20 x 1.2 (width and thickness UNVERIFIED).",
+  "Wires: typical insulation OD per gauge (20 AWG 1.75, 18 AWG 1.80, 24 AWG 1.2-1.3, 26 AWG 1.0) UNVERIFIED for the bought wire; Molex 43645-0300 and the inline PH male are estimated envelopes; JST VHR-2N and PHR-2 envelopes from the JST datasheets.",
+  "Screws: countersunk post-Torx M3x10 from the vendor page values; cup washer 8 x 1.6 not sourced.",
+  "The woofer-chamber insert partition is the pack rear stop; drop loads on it are not analysed."
+ ],
+ "open_items": [
+  "Owner: caliper the W3-2052SC (frame thickness, gasket, hole pattern, depth) before printing; choose M3x20 (marginal) or source M3x22 for the woofer.",
+  "Owner: approve a printed SW100 lid plunger (bridges 4.50 mm: 4.0 lid + 0.5 gap; needs a collar pocket in the lid inner face) or another press solution; check the TE switch travel.",
+  "Owner: J11 is a JST VH header; the woofer pigtail is JST-PH style: make a PH-to-VH adapter lead or re-terminate.",
+  "Check the TC2030 programming cable access through the rear opening with the real cable (unchanged).",
+  "Routing is a draft (RT-14, 12 unconnected): pcb_copper.glb shows the copper routed so far.",
+  "Owner: send the 1S4P pack RFQ (ai-files/reports/battery-pack-rfq.md); ask for the PCM and fusing specification and a dimensioned drawing; check it against 87.0 x 75.0 x 23.0.",
+  "Owner: order genuine Molex J5 housing and crimps (the local J5 drawing is a 5 A clone); choose thin-wall 18 AWG (OD <= 1.7) for the J5 leads to meet 6 x OD at the receptacle.",
+  "Owner: choose cup washers (about 8 x 1.6) or a pan-head T10 post-Torx for the 8 driver screws; buy a T10 post-Torx bit; seal the lid screw holes inside the gasket loops (no nylon washers under countersunk heads).",
+  "Owner: check the ND65 tab polarity mark before soldering; decide PH adapter vs re-terminating the woofer pigtail.",
+  "Owner: select the knob, rubber feet, gasket materials (still placeholders); order a >= 350 mm battery strap."
+ ],
+ "changes_vs_v14": [
+  "Pack 1S2P -> 1S4P vendor brick 86.85 x 74.47 x 21.75 (axes front to back, PCM at the rear against the partition)",
+  "Solids 164 -> 218; unintended 0 -> 0; intended 89 -> 96",
+  "Main chamber net 1.962 -> 1.897 L; woofer chamber net 0.525 -> 0.524 L",
+  "Shell overhang 978 -> 1102 mm2, shell 382.0 cm3 (v14 380.5); lid 59.3 cm3; no supports",
+  "Wiring: J5, J9, J10, J11 + woofer pigtail as real wires (cut list in meta.json wiring); grommet moved to (50, 47)",
+  "Screws: 19 x M3x10 countersunk post-Torx T10 (+ 8 cup washers) replace the ISO 4762 M3x10",
+  "Board RT-14 unchanged (fit_check baseline = v14 board: 0 parts moved)"
+ ]
+}

@@ -9,7 +9,7 @@ Updated: 2026-10-05. Use this checklist with `AGENTS.md` and `ai-files/HANDOVER.
 - USB-C audio/power, Bluetooth and 3.5 mm auxiliary input; switched 3.5 mm headphone output.
 - Battery operation and operation directly from external power. User now requests actual operation across common 5–20 V USB PD contracts, alongside traditional 5 V / 2 A adapter support. User decided (2026-10-05): support standard 5/9/15/20 V PD only; EPR 28/36/48 V is out of scope. Actual allowed current depends on source/cable capability; fallback to 5 V does not grant 2 A.
 - Prioritize battery life, low standby/storage current and battery longevity when usually plugged in.
-- Target a protected 1S pack around 10 Ah. Enclosure dimensions and acoustic volume drive selection; weight is not a concern and a heavier enclosure is welcome if acoustics benefit.
+- Target a protected 1S pack around 10 Ah (2026-11-03: owner decision **1S4P, 4 x Samsung INR21700-50S, 20 Ah, about 72 Wh**; HANDOVER "Pack decision 1S4P (2026-11-03)"). Enclosure dimensions and acoustic volume drive selection; weight is not a concern and a heavier enclosure is welcome if acoustics benefit.
 - Use automatic USB-A source detection with a conservative fallback; a 2 A label alone does not grant USB host current.
 - Custom PCB for internal electronics. Placement and routing (R6m) exist and are adopted; see "PCB status" below.
 
@@ -20,7 +20,7 @@ Updated: 2026-10-05. Use this checklist with `AGENTS.md` and `ai-files/HANDOVER.
 ## PCB status (2026-10-12)
 - Board: R6q with teardrops in `DesktopSpeaker-kicad/DesktopSpeaker.kicad_pcb` (commit cfea017): DRC 0/0, 0 open edges, USB FS waiver rule, 360 footprints, 888 vias, 1825 teardrops. Routing history R6a-R6q in `ai-files/reports/pcb-routing-*.md`.
 - Fab outputs R9 in `ai-files/fab/out/` (gerbers, drills, position files, checked by `helpers/fab_check.py`); order options `ai-files/fab/ORDER-NOTES.md`; assembly BOM `ai-files/bom/DesktopSpeaker_JLC_BOM.csv` (`helpers/jlc_bom.py`).
-- Open (user): JLC preview and order; battery pack quotes (Keeppower / CM Batteries, NTC); rocker GRB112B802BR1 from Digi-Key; bench items in HANDOVER.
+- Open (user): JLC preview and order; battery pack quotes (Keeppower / CM Batteries, NTC; 2026-11-03: now for the 1S4P pack); rocker GRB112B802BR1 from Digi-Key; bench items in HANDOVER.
 - Enclosure CAD v11 (print-ready STLs) in `ai-files/cad/`; knob dish and R6q rebuild in progress.
 
 ## 1. USB-C power delivery — PARTIAL
@@ -43,7 +43,8 @@ Updated: 2026-10-05. Use this checklist with `AGENTS.md` and `ai-files/HANDOVER.
 - [x] Create/connect the BQ25895 charger subsystem using its datasheet configuration and decoupling.
 - [x] Integrate `VBUS_PD`, `SYS_RAW` and `BAT_PACK`; add default-disabled charge enable through Q100.
 - [x] Add the provisional 103AT-2 thermistor divider and three-contact battery interface. Pack protection/current/temperature specifications remain open.
-- [ ] Select battery chemistry, cell count/capacity, pack/connector and protection arrangement; confirm charge/discharge current requirements.
+- [x] Select battery chemistry, cell count/capacity, pack/connector and protection arrangement; confirm charge/discharge current requirements. 2026-11-03: **1S4P Li-ion 21700 (4 x Samsung INR21700-50S, 20 Ah, about 72 Wh)**, J5 Micro-Fit 3-pin unchanged. PCM >= 10 A continuous / 20 A for 1 s, over-current trip 12-20 A, charge >= 5 A, OV 4.25 V, per-cell fusible links, 10k NTC (B3435) between the middle cells. The board currents do not change with the cell count, so the board is unchanged. Charge values in `reports/charge-policy-2026-11-02.md` section 12 (ITERM 1000 mA, IPRECHG 720 mA, timer 12 h). CAD v15 (`ai-files/cad/v15/`) models the vendor brick, strap, real wiring (crimps/housings) and the countersunk T10 screws; 0 unintended overlaps.
+- [ ] Buy the 1S4P pack: send `reports/battery-pack-rfq.md` (Keeppower / CM Batteries), get the PCM and fusing specification and UN38.3 documents, and order genuine Molex J5 housing/crimps. Not yet verified: real PCM/holder size, 50S formal spec and mass, genuine Molex 8.5 A rating, cell price, drop loads on the partition that acts as the rear stop.
 - [ ] Add temperature sensing, protection and required charge/power-path support components.
 - [ ] Define adapter input-current limits for ordinary USB and negotiated PD, including audio load and charging together.
 - [ ] Define firmware charge target, recharge thresholds and plugged-in policy to reduce battery ageing; confirm what the charger actually supports.
@@ -334,7 +335,7 @@ Quick mechanical envelope review: `ai-files/reports/mechanical-fit-rough-2026-10
 
 ## Mechanical CAD (2026-10-06, not committed)
 - [x] Internal CAD built under `ai-files/cad/` (README there): FCStd + STEP assembly, renders, interference check (0 unintended overlaps in 107 solids), chamber volumes, mechanical BOM.
-- [x] Pack decision: LP1260100 pouch rejected (3 A continuous). Pack choice now: 2P 21700 (2 x Samsung 50S 5 Ah) with protection board (4-5 A+ continuous capability; PCM and 10k NTC still to be sourced); J5 stays.
+- [x] Pack decision: LP1260100 pouch rejected (3 A continuous). Pack choice now: 2P 21700 (2 x Samsung 50S 5 Ah) with protection board (4-5 A+ continuous capability; PCM and 10k NTC still to be sourced); J5 stays. (Superseded 2026-11-03: 1S4P, see section 2.)
 - [x] Enclosure 163 x 100 x 160 mm (+15 mm feet), 2 ND65-4 front, W3-2052SC down, sealed woofer chamber 0.506 L net, main chamber 1.436 L net; PCB estimate 100 x 66 mm (area method in `ai-files/cad/pcb-size-estimate.md`, about 5 300 mm2 courtyard sum x 2.0 / two sides + 15 %).
 - [ ] Open: Tang Band drawing (flange thickness/hole pattern/cutout/magnet), ND65 aperture 59.5 and 11 mm pad vs M3x10 (or switch to M3x6), PCM/NTC/holder sourcing, real PCB layout, grommets for woofer wires, J5/SW100/SW101/JST VH models, connector overhang on the real footprints.
 

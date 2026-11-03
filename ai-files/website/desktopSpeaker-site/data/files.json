@@ -47,8 +47,8 @@
   {
    "name": "HANDOVER.md",
    "href": "docs/HANDOVER.md",
-   "bytes": 156968,
-   "sha256": "cc23b52c886618ebe14183da25f047562fd9b600060e6003e5a4e4fca43d3752",
+   "bytes": 157728,
+   "sha256": "40e9765b9b423513c385cd8d042ff00079c40d445298249dd6efce2ce28d47d3",
    "desc": "Single project handover: decisions, evidence, open items (older sections superseded)",
    "source": "ai-files/HANDOVER.md",
    "kind": "report"
@@ -56,8 +56,8 @@
   {
    "name": "plan.md",
    "href": "docs/plan.md",
-   "bytes": 60381,
-   "sha256": "8c8a51918dc47904ba3dc5f64a2c97732c768c5b6bee2a8d666006c8e5e4aef6",
+   "bytes": 60499,
+   "sha256": "4a973ee69978ebbadf4688397a22527e5b2c182d4b65d3dc7961cf64070f1ce6",
    "desc": "Schematic completion checklist and subsystem status",
    "source": "plan.md",
    "kind": "report"
@@ -281,8 +281,8 @@
   {
    "name": "mechanical-bom.md",
    "href": "docs/mechanical-bom.md",
-   "bytes": 6580,
-   "sha256": "b79e2e7782a64165eab0c4dd83c0a40f63524b9897e34c42d6240091db6a93d5",
+   "bytes": 6667,
+   "sha256": "33bad0e394a1ccb62b46808d8a6f4b9373868a5dafb3fc3876a4e4e66d773c69",
    "desc": "Mechanical BOM (fasteners, inserts)",
    "source": "ai-files/cad/mechanical-bom.md",
    "kind": "report"

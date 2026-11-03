@@ -2,6 +2,8 @@
 
 Analysis only. No schematic, board, library, plan or handover file was edited. Builds on `replacement-power-control-contract.md`, `5-20v-pd-front-end-review.md`, `bq25792-*.md`, `audio-chain-architecture.md` and `mcu-pin-allocation.md` (not repeated here). Net/part membership was read from the current `DesktopSpeaker.kicad_pcb` (360 footprints) and the schematic MPN properties, not from the stale 2026-10-05 netlist.
 
+> **2026-11-03: the pack is now 1S4P** (4 x Samsung INR21700-50S, 20 Ah nominal, about 72 Wh; `charge-policy-2026-11-02.md` section 12). The 10 Ah figures below are the earlier basis. Notes marked 2026-11-03 give the 20 Ah values. Section 4 (charge policy) was already superseded by `charge-policy-2026-11-02.md`.
+
 Conventions: "typ" = datasheet typical (25 C unless noted), "max" = datasheet maximum (85 C or full range where the datasheet says so), "est." = my arithmetic, "ASSUMPTION" = not from a datasheet. Page numbers are the printed datasheet page. Where a figure comes from a proxy part or a web page rather than a local PDF this is stated.
 
 ---
@@ -42,7 +44,7 @@ State columns: **A** ship mode (SDRV_CTRL=10, QON or USB wakes); **A'** shutdown
 | D6 TVS2200, D7, D1/D5, D200/D201 | 0 | 0 | 0 | 0 | No VBUS present. For reference with VBUS at 20 V: TVS2200 ILEAK 3.5 nA typ / 62 nA max (27 C), 400 nA max (85 C), 1.3 uA max (105 C), DS §7.6 p.5. D7 1N5819HW reverse leakage at 20 V hot is NOT quantified (datasheet not in repo); it only affects USB-plugged idle, not battery standby. |
 | **Total (sum of the rows)** | **17.9 / 26.8** | **7.4 / 11.4** | **57.5 / 104.7** | **87.5 / 134.7** | Sum of maxima is pessimistic. At 85 C add roughly +120 (MCU Stop max 135 vs 15). |
 
-Not in the board budget (ASSUMPTIONS): pack protection IC and cell self-discharge. A protection IC typically costs a few uA; cell self-discharge for Li-ion is commonly 1.5-3 % per month, which for 10 Ah is the equivalent of roughly 210-420 uA continuous. Pack unselected, no figure available.
+Not in the board budget (ASSUMPTIONS): pack protection IC and cell self-discharge. A protection IC typically costs a few uA; cell self-discharge for Li-ion is commonly 1.5-3 % per month, which for 10 Ah is the equivalent of roughly 210-420 uA continuous. Pack unselected, no figure available. (2026-11-03: for the 20 Ah 1S4P pack this is about 420-840 uA equivalent [est.]; the PCM drain is still unknown, and the RFQ asks for under 10 uA.)
 
 Variants (est., same table): state B with MCU in Standby 54.3 / 90.6; B with gauge in sleep 55.0 / 101.7; B without the PVDD path (22.6 typ / 41.7 max removed) 34.9 / 63.0; B with R126, R127, R241 raised to 10 M (leaves about 0.9) 48.7 typ.
 
@@ -56,7 +58,7 @@ Variants (est., same table): state B with MCU in Standby 54.3 / 90.6; B with gau
 | C idle-awake | 87.5 | about 4 760 (13 y) | 134.7 | about 3 090 (8.5 y) | 475 / 310 |
 | C' rails on, audio idle, BM83 off (est., section 1.5) | about 3 700 | about 113 | | | 11 |
 
-Days = 10 Ah / I / 24 (ideal, no cell self-discharge, no cutoff reserve). Even state B is irrelevant next to cell self-discharge (about 200-400 uA equivalent); the board load matters mainly for depleted-pack protection (the gauge and U21 keep draining a pack that is already low, so a low-battery software cutoff plus ship mode is the real protection) and for "ship it and shelve it" claims.
+Days = 10 Ah / I / 24 (ideal, no cell self-discharge, no cutoff reserve). 2026-11-03: with the 20 Ah 1S4P pack every "days" figure doubles [est.], for example state B 57.5 uA typ is about 14 500 days and C' about 225 days. The ranking does not change; cell self-discharge still dominates. Even state B is irrelevant next to cell self-discharge (about 200-400 uA equivalent); the board load matters mainly for depleted-pack protection (the gauge and U21 keep draining a pack that is already low, so a low-battery software cutoff plus ship mode is the real protection) and for "ship it and shelve it" claims.
 
 ### 1.4 What dominates
 
@@ -186,7 +188,7 @@ All values are proposals, defaults chosen from BQ25792 SLUSDG1C. REG numbers per
 
 ### 4.1 Charge current ceiling
 
-- **ICHG ceiling 3.0 A** (REG03 = 0x12C), about 0.3C for a 10 Ah pack, 1.5 A per cell for a 2P 21700 pack (cells unselected; confirm the cell datasheet's maximum standard charge). Normal default 2.0 A (0xC8, the BQ25792 1S POR default, Table 9-9) to keep U4/L1/PGND-via heating down until the bench step clears 3 A (handover: PGND via area unchecked, bench starts at 0.5 A).
+- (2026-11-03: superseded twice: by `charge-policy-2026-11-02.md` ICHG 4.0 A, and for the 1S4P pack by its section 12: 0.2C, 1.0 A per cell, ITERM 1000 mA, IPRECHG 720 mA, timer 12 h / 24 h.) **ICHG ceiling 3.0 A** (REG03 = 0x12C), about 0.3C for a 10 Ah pack, 1.5 A per cell for a 2P 21700 pack (cells unselected; confirm the cell datasheet's maximum standard charge). Normal default 2.0 A (0xC8, the BQ25792 1S POR default, Table 9-9) to keep U4/L1/PGND-via heating down until the bench step clears 3 A (handover: PGND via area unchecked, bench starts at 0.5 A).
 - BQ25792 accuracy at 3 A is not tabulated; at 4 A/VBAT 8 V buck-mode it is -5.5 / +2.5 % (§8.5 p.12).
 - ICHG (REG03), VRECHG, ITERM, precharge reset on watchdog and REG_RST; **VREG (REG01) and IINDPM (REG06) reset only on REG_RST** (register field notes). With CE held high by default (R103, CHG_ENABLE low) a dead MCU means no charging at all, so a post-reset 4.2 V default is not reached unattended.
 
@@ -217,7 +219,7 @@ Recommended default: **VREG 4.10 V**, recharge 200 mV below (3.90 V), terminatio
 | 4.05 V / 4.15 V are 0x195 / 0x19F | | | | | |
 
 - Rationale for 200 mV recharge window at 4.10 V: after termination the BATFET turns off and the converter powers the system (§9.3.9.3 p.41), so the pack rests between 4.10 V and about 3.90 V (roughly 60-85 % state of charge) instead of 100 %. A 100 mV window keeps it higher (more ageing) with no benefit; 200 mV is the POR value so no write is needed. VREG_ACC (§8.5 p.11) is tabulated only for 2S-4S (-0.85 to +0.65 %); no 1S figure is given, so assume about +/-0.7 %, roughly +/-30 mV at 4.10 V.
-- **Termination:** ITERM 400 mA (REG09[4:0] = 0x0A) about C/25 for 10 Ah (POR is 200 mA, 0x05). Termination accuracy is +/-14 % at 480 mA (§8.5 p.12). Top-off timer (REG0E[7:6]) stays 0 (disabled); the comparator offset problem (§9.3.9.3) applies only at 40-160 mA.
+- (2026-11-03, 1S4P: ITERM 1000 mA = REG09 0x19, about C/20; timer REG0E 0x3D = 12 h; see `charge-policy-2026-11-02.md` section 12.) **Termination:** ITERM 400 mA (REG09[4:0] = 0x0A) about C/25 for 10 Ah (POR is 200 mA, 0x05). Termination accuracy is +/-14 % at 480 mA (§8.5 p.12). Top-off timer (REG0E[7:6]) stays 0 (disabled); the comparator offset problem (§9.3.9.3) applies only at 40-160 mA.
 - **JEITA/NTC:** the POR warm-zone rule lowers VREG by 400 mV (JEITA_VSET = 3h, REG17[7:5], §9.5.1.20). At a 4.10 V float that would be 3.70 V above about 45 C inside a warm enclosure; propose JEITA_VSET = 6h (-100 mV) so warm charging still reaches 4.0 V. Leave JEITA_ISETH = unchanged, JEITA_ISETC = 20 % (cool region).
 - Timers: fast-charge CHG_TMR (REG0E[2:1]) 8 h (field 1h) instead of the 12 h default; TMR2X stays on (timer counts at half rate during DPM). Pre-charge timer 2 h and trickle 1 h unchanged (Table 9-9).
 - Gauge consequence: MAX17048's default model reports about 100 % at 4.20 V, so at a 4.10 V float it will read roughly 85-90 % while the charger reports charge done (CHG_STAT = 111, §9.3.9.1). Firmware should map CHG_STAT = 111 to 100 % (or re-run the gauge model); not a hardware issue.

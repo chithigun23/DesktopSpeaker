@@ -136,7 +136,7 @@ Standby wake sources (Stop mode): PC13 WKUP2 (QON), PA0 WKUP1 (GAUGE_ALRT_N), EX
 | Amplifiers off after Energysense loss and no A2DP stream (S3 -> S2) | 3 min | Playing silence costs about 0.9-1.0 W (`audio-chain-architecture.md` section 6); 3 min keeps pause/skip instant |
 | S2 -> S1 on battery, no BT link and no input | 20 min | |
 | S2 -> S1 on external power | 60 min | |
-| Standby -> ship | no timer | Standby is about 35-40 uA on the pack (BQ25792 17/24 uA, gauge, U21, MCU Stop) against ship 18-45 uA (bench plan B2.3): negligible for a 10 Ah pack, so ship mode is for deep-off and critical battery only |
+| Standby -> ship | no timer | Standby is about 35-40 uA on the pack (BQ25792 17/24 uA, gauge, U21, MCU Stop) against ship 18-45 uA (bench plan B2.3): negligible for a 10 Ah pack (and for the 20 Ah 1S4P pack chosen on 2026-11-03), so ship mode is for deep-off and critical battery only |
 | Battery polling | MAX17048 every 30 s in S2/S3, plus ALRT; BQ25792 status/flag registers polled every 250 ms with a source attached or charging, every 2 s otherwise (no CHG_INT since 2026-11-02) | |
 
 ### 2.5 Battery policy and USB-host heuristic
@@ -152,6 +152,12 @@ SOC thresholds (MAX17048 over CTRL bus; the gauge is reachable only while BAT_PA
 | Re-arm | SOC 15% or above, or VBUS present | |
 
 Set ATHD for 10% so the first alert arrives on GAUGE_ALRT_N; clear CONFIG.ALRT after reading STATUS.
+
+**Pack 1S4P (2026-11-03).** The pack is now selected: 1S4P, 4 x Samsung INR21700-50S, 20 Ah nominal, about 72 Wh (`charge-policy-2026-11-02.md` section 12, `battery-4p-feasibility-2026-11-03.md`). Firmware constants that follow from it:
+- Capacity constant **20 Ah** for time-to-empty, the UI and charge-time estimates (was 10 Ah).
+- MAX17048: SOC needs no change (ModelGauge is voltage-based and has no capacity register). If the default HIBRT is used, set **HibThr 0x40 (HIBRT 0x4030)** instead of the default 0x80, and halve any other CRATE (%/h) threshold, because CRATE for a given current falls by 2/n [DS MAX17048 HIBRT, via the feasibility report §2.6; the local PDF text is still unreadable here, so verify against the real datasheet].
+- The SOC thresholds in the table above are percentages and stay as they are. In time, each band is twice as long as with 10 Ah.
+- Run time [EST, 85 % efficiency, 4.20 V-equivalent full charge; 4.10 V default float in brackets]: about 12.2 h (11.0) at 5 W, 6.1 h (5.5) at 10 W, 3.1 h (2.8) at 20 W average.
 
 Battery absent or invalid (BQ25792 VBAT status): cap audio at about 5 W total (arch doc section 3 "Power path") and do not start the codec from SYS until the input limit is programmed (the battery-absent bootstrap deadlock in the contract is an open hardware gate; do not claim battery-absent SDP audio).
 
@@ -175,7 +181,7 @@ Order, with CHG_SYS_ENABLE and CHG_ENABLE both low until step 7: (1) establish l
 Events:
 - **PD_PLUG_EVENT (PC14) rising**: start the soft I2C bus, read status. **Falling or PD_SINK_EN (PB9) rising (sink path disabled)**: revoke the grant, drop CHG_ENABLE then CHG_SYS_ENABLE, park PA11/PB13 as analog (LDO_3V3 pull-ups vanish with VBUS), continue on battery. Contract change: same revoke then re-read; do not use old limits.
 - **BQ25792 poll** (replaces the CHG_INT EXTI since 2026-11-02, patch P1; every 250 ms with a source attached or charging, every 2 s otherwise): read the BQ25792 flag registers (read clears). Respond: VBUS OVP/UVLO or power-good loss -> as detach; charge done -> log; TS fault or thermal regulation -> disable CE and retry after 60 s; safety timer expiry -> disable CE, latch F-CHG until detach/re-plug or user gesture; watchdog expiry or VSYS/IBAT OCP -> as REG_RST (reapply configuration).
-- **Charge policy (PROPOSAL)**: charge to 4.20 V by default, with a "plugged-in mostly" option at 4.10 V (battery longevity, plan section 2); recharge when 100-200 mV below VREG; ICHG 4.0 A (superseded 2026-11-02, see reports/charge-policy-2026-11-02.md; was: at most 3 A); TS/NTC windows per the final pack; in S3 with a weak source, lower ICHG before AGL.
+- **Charge policy (PROPOSAL)**: charge to 4.20 V by default, with a "plugged-in mostly" option at 4.10 V (battery longevity, plan section 2); recharge when 100-200 mV below VREG; ICHG 4.0 A (superseded 2026-11-02, see reports/charge-policy-2026-11-02.md; was: at most 3 A); for the 1S4P pack (2026-11-03, charge-policy section 12) ITERM 1000 mA (REG09 0x19), IPRECHG 720 mA (REG08 0xD2), safety timer 12 h (REG0E 0x3D) for sources of 15 W or more and 24 h (0x3F) below, and an expected charge time of about 5.1 h from empty at 9 V or higher PD (3.3 h for 20-80 %) [EST]; TS/NTC windows per the final pack (one 103AT-type NTC between the two middle cells, network unchanged); in S3 with a weak source, lower ICHG before AGL.
 
 ### 3.3 Rail up (S1 -> S2)
 1. Confirm SOC and grant allow it (section 2.5).

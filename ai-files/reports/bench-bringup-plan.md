@@ -24,7 +24,7 @@ Rule for every step: record the measured value in the log column of section 7. I
 | Power resistors: 8 Ω 25 W x2, 4 Ω 50 W x1 (dummy speaker loads; actual driver impedances are TBD, plan.md section 9), 32 Ω for the headphone test | |
 | Resistors for the TS window: 2.2 k, 4.7 k, 10 k, 22 k, 33 k (1 %) and one 103AT-2 thermistor | Stage C |
 | Thermocouple or IR camera | U4, L1, Q103, U25, L200, U6, U7, U11 |
-| Protected test pack (2P 21700, PCM, 10 k NTC per HO line 512; not yet sourced) with an inline fuse (est. 7.5 A blade) and a J5 harness with a TS break-out | Stage B2 onward |
+| Protected test pack (2P 21700, PCM, 10 k NTC per HO line 512; not yet sourced; **2026-11-03: the product pack is now 1S4P 20 Ah**, `battery-pack-rfq.md`; a smaller 1S test pack is still fine for B2 because the board currents do not depend on the cell count) with an inline fuse (est. 7.5 A blade) and a J5 harness with a TS break-out | Stage B2 onward |
 | Near-field H probe (optional) | EMI spot checks |
 
 ### 0.2 Supply settings per stage

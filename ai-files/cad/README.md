@@ -2,6 +2,8 @@
 
 **Current entry point and state: see the v11 section at the end.** The sections in between are the v3-v10 history.
 
+> 2026-11-03: this README covers v3-v11 (history). The current CAD is `v15/` (`v15/scripts/rebuild_cad.sh`; board RT-14; **1S4P pack**, owner decision 2026-11-03, HANDOVER section "Pack decision 1S4P (2026-11-03)"). The "2P 21700" statements below describe the pack at that time.
+
 Parametric FreeCAD model of the enclosure, drivers, 2P 21700 pack, estimated PCB with real KiCad STEP parts, and hardware.
 Only the PCB size is an estimate (`pcb-size-estimate.md`). Nothing in the KiCad project folders was touched; no PCB layout was made.
 

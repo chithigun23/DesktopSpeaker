@@ -33,6 +33,8 @@ Alternative with real STEP: use a second ND65-4 pair is not recommended; the Day
 SKIPPED. The 0.4-0.6 L sealed volume matches the W3-2052SC Vas; a radiator would add depth and area without clear gain.
 
 ## 4. Battery pack - LP1260100 (LiPol 10000 mAh 1S1P with PCM)
+> History. 2026-10-06: the LP1260100 was rejected (3 A continuous) for a 1S2P 21700 pack. **2026-11-03: the owner chose 1S4P** (4 x Samsung INR21700-50S, 20 Ah, about 72 Wh; brick 86.8 x 73.7 x 21.7, PCM at the rear against the woofer-chamber partition). Current pack data: `ai-files/reports/battery-pack-rfq.md`, `ai-files/cad/mechanical-bom.md`, CAD v15 (`ai-files/cad/v15/`).
+
 | Item | Value |
 |---|---|
 | Part | LP1260100, 3.7 V, 10 000 mAh min (10 050 typ), 37 Wh, about 200 g; resellers Soldered, Electrokit, Videotronics (price/stock UNVERIFIED, about US$25-45) |

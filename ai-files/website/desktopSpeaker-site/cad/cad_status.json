@@ -1,21 +1,21 @@
 {
- "version": "v14",
- "title": "DesktopSpeaker internal CAD v14 (RT-14 draft): board RT-14 + models-v13 accurate models",
+ "version": "v15",
+ "title": "CAD v15 (RT-14 draft, 1S4P pack)",
  "date": "2026-11-03",
  "board": "RT-14 (routing draft) + models-v13 model links",
  "board_sha256": "a200d97b78fc53ee",
- "verdict": "v14 rebuilt from RT-14 (routing draft, 12 unconnected, DRC 0) with the v13 pipeline and the 2-cell (1S2P) enclosure unchanged: 0 unintended overlaps (164 solids, 89 intended), woofer chamber net 0.525 L, main 1.962 L, lid cutouts aligned, three print bodies valid without supports. The four v13 footprint errors are fixed on RT-14. SW100 actuator now ends at the board edge: 0.50 mm behind the lid inner face, 4.50 mm behind the outer face, so a lid plunger is still needed. Woofer screw engagement stays marginal (M3x20).",
- "solids": 164,
+ "verdict": "v15 = RT-14 routing draft (unchanged board) with the 1S4P pack modelled as a vendor-built brick, real wiring (wires, crimps, housings) and countersunk post-Torx T10 screws: 218 solids, 0 unintended overlaps (96 intended), woofer chamber net 0.524 L, main 1.897 L, print bodies valid without supports (shell overhang 1102 mm2). Brick 86.85 x 74.47 x 21.75 mm incl. wrap (RFQ max 87.0 x 75.0 x 23.0), radial cradle clearance 0.275 mm, rear stop gap 0.63 mm. All wires meet 6 x OD except the J5 leads at the receptacle (R 9.5 = 5.3 x OD: the receptacle faces the right wall with 11 mm free). SW100 still needs a lid plunger; woofer screw engagement stays marginal (M3x20).",
+ "solids": 218,
  "unintended_overlaps": 0,
- "intended_overlaps": 89,
- "woofer_net_L": 0.525,
- "main_net_L": 1.962,
+ "intended_overlaps": 96,
+ "woofer_net_L": 0.524,
+ "main_net_L": 1.897,
  "outer_mm": [
   163.0,
   100.0,
   206.6
  ],
- "mass_total_g_estimated": 1726,
+ "mass_total_g_estimated": 1879,
  "lid_cutouts": {
   "J1": {
    "radial_margin_mm": 1.53,
@@ -55,18 +55,18 @@
   "max_hole_to_standoff_err_mm": 0.007
  },
  "glb_bytes": {
-  "enclosure": 13817068,
+  "enclosure": 15331832,
   "pcb": 15368488,
   "pcb_copper_optional": 24879916
  },
  "triangles": {
-  "enclosure": 474801,
+  "enclosure": 538605,
   "pcb": 415736
  },
  "accuracy_counts": {
-  "<0.5mm": 95,
+  "<0.5mm": 82,
   "unverified": 0,
-  "estimated": 13
+  "estimated": 80
  },
  "pcb_models": {
   "with_model": 346,
@@ -140,11 +140,6 @@
    "detail": "3 valid single solids, no supports"
   },
   {
-   "check": "Moved parts (RT-3 -> RT-14) vs enclosure",
-   "result": "PASS",
-   "detail": "42 references, minimum TP2 2.55 mm (H3 screw head); TP20 8.54 mm"
-  },
-  {
    "check": "Woofer screw thread engagement",
    "result": "marginal",
    "detail": "M3x20: 3.4-4.4 mm in a 5.7 mm insert"
@@ -153,11 +148,54 @@
    "check": "SW100 reachable through the lid",
    "result": "FAIL",
    "detail": "actuator at the board edge, 0.50 mm behind the lid inner face, 4.50 mm behind the outer face: lid plunger needed"
+  },
+  {
+   "check": "1S4P pack interference and seating",
+   "result": "PASS",
+   "detail": "0 unintended overlaps; radial cradle clearance 0.275 mm; rear stop gap 0.63 mm"
+  },
+  {
+   "check": "Print overhang audit (shell, 1S4P cradle + strap channel)",
+   "result": "PASS",
+   "detail": "1102 mm2 off-bed overhang > 45 deg (1S2P 978); no supports"
+  },
+  {
+   "check": "Wire bend radius >= 6 x OD",
+   "result": "PASS except J5",
+   "detail": "Wire_J5_3_GND 9.5 mm (5.3 x OD); Wire_J5_1_PACKplus 9.5 mm (5.3 x OD)"
+  },
+  {
+   "check": "Main chamber net volume",
+   "result": "PASS",
+   "detail": "1.897 L (target >= 0.80)"
   }
  ],
  "problems": [
   "SW100: actuator at the board edge, still 4.50 mm behind the lid outer face (lid plunger needed)",
+  "J5 receptacle faces the right wall: first bend R 9.5 (5.3 x OD) for the 18 AWG leads",
+  "Countersunk post-Torx T10 M3x10 (owner choice): lid flush, ND65 sites on cup washers",
   "Woofer screws: M3x20 gives only 3.4-4.4 mm thread in the 5.7 mm insert (unchanged from v13)"
  ],
- "open_items": 6
+ "open_items": 10,
+ "pack": {
+  "configuration": "1S4P",
+  "cells": 4,
+  "brick_mm": [
+   86.85,
+   74.47,
+   21.75
+  ],
+  "pcm": "positive (rear) end, wrapped with the cells; the woofer-chamber partition is the rear stop (0.63 mm gap)",
+  "tightest_mm": {
+   "pcm_to_partition": 0.63,
+   "j5_wires_to_cells": 0.1,
+   "cells_to_nd65": 5.29,
+   "cells_to_driver_screws": 8.92,
+   "pack_to_pcb_bottom": 41.27,
+   "pack_to_pcb_parts": 39.18,
+   "cells_to_shell_cradle": 0.251
+  },
+  "print_overhang_shell_mm2": 1102.0,
+  "supports": "none (v14 2P shell baseline 978 mm2; 4P adds two 2.5 mm strap-tunnel ceiling bridges; the strap-channel chamfer and the lid countersinks are exactly 45 deg and counted at the limit)"
+ }
 }

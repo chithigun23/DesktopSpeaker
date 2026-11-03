@@ -140,7 +140,7 @@ Estimated battery-referred consumption:
 - **Off or standby** (5V_LOGIC off, boost off): about 25 µA on the PVDD path plus 3 µA AUX_DET. Ship mode or SW101 removes even this.
 - **Headphones:** about 20-25 mW (TPA 2.2 mA, PCM1862 standby 0.2 mA, LDO and U14 overhead), plus the source module.
 - **Speakers, playing silence:** PVDD about 2 × 0.24 W ÷ 0.85 ≈ 0.57 W; DVDD and ADC about 0.3-0.4 W via LDO and U14. About **0.9-1.0 W in total**.
-- **Typical listening** (about 1 W average audio): about 2.2 W, roughly 16 h on a 36 Wh (10 Ah) pack, excluding BT, MCU and codec.
+- **Typical listening** (about 1 W average audio): about 2.2 W, roughly 16 h on a 36 Wh (10 Ah) pack, excluding BT, MCU and codec (2026-11-03: about 32 h on the 72 Wh 1S4P pack now chosen [est.]).
 - **Peak:** limited by the boost to about 20-23 W out, under 9 A from the pack.
 - **Rejected:** a 1.8 V TAS DVDD would save about 0.1 W but needs the PCM1862 LDO pin driven from 1.8 V and a second rail.
 

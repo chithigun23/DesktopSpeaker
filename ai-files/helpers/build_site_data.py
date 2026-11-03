@@ -48,7 +48,7 @@ REPORTS = [
     ("plan.md", "Schematic completion checklist and subsystem status"),
     ("ai-files/reports/audio-chain-architecture.md", "Audio chain architecture and MCU sizing"),
     ("ai-files/reports/power-analysis-2026-11-01.md", "Power analysis: standby, surge clamp, PPHV, inrush"),
-    ("ai-files/reports/charge-policy-2026-11-02.md", "Charge policy: ICHG 4.0 A, 17 W input cap, VREG 4.10 V"),
+    ("ai-files/reports/charge-policy-2026-11-02.md", "Charge policy: ICHG 4.0 A, 17 W input cap, VREG 4.10 V; section 12 = 1S4P pack"),
     ("ai-files/reports/firmware-system-spec-2026-11-01.md", "Firmware system specification and open decisions"),
     ("ai-files/reports/hand-assembly-research-2026-11-01.md", "Hand assembly: stencil, hotplate, paste, profile"),
     ("ai-files/reports/bench-bringup-plan.md", "Bench bring-up plan"),
@@ -60,7 +60,8 @@ REPORTS = [
     ("ai-files/reports/project-review-fable.md", "Whole-project review (2026-10-10)"),
     ("ai-files/reports/cad-v11-print-ready.md", "Enclosure CAD v11 print-ready report"),
     ("ai-files/reports/sourcing-2026-10-12.md", "Sourcing: woofer data, battery pack candidates"),
-    ("ai-files/reports/battery-pack-rfq.md", "Battery pack request for quote"),
+    ("ai-files/reports/battery-pack-rfq.md", "Battery pack request for quote (1S4P)"),
+    ("ai-files/reports/battery-4p-feasibility-2026-11-03.md", "Battery 1S3P / 1S4P feasibility (basis of the 1S4P decision)"),
     ("ai-files/reports/bom-restock-2026-11-01.md", "BOM restock check: U1/U2/U19 out of stock"),
     ("ai-files/reports/bom-sourcing-pass.md", "BOM sourcing pass (2026-10-10)"),
     ("ai-files/reports/mcu-pin-allocation.md", "MCU pin allocation (one stale line, see open items)"),
@@ -288,7 +289,8 @@ def build_bom(refmap):
             "re-check every line before ordering." % (snaps[0] if snaps else "?", snaps[-1] if snaps else "?"),
             "U1 BM83, U2 PCM2902C and U19 TPS7B84 showed 0 stock at LCSC and JLC on 2026-11-01. The owner assembles "
             "by hand (stencil and hotplate), so JLC assembly stock does not block the build: buy these from another distributor.",
-            "Unresolved: the battery pack (1S2P 21700 with PCM and NTC) has no part number; quotes pending.",
+            "Unresolved: the battery pack (1S4P 21700, 4 x INR21700-50S, 20 Ah, with PCM, per-cell fusing and NTC; decided 2026-11-03) "
+            "has no part number or price; quotes pending.",
             "Value column comes from the schematic Value field; the BOM function text is the description.",
         ],
         "summary": {

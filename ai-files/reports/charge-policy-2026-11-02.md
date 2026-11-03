@@ -4,6 +4,8 @@ Owner's question: "we want to use USB PD so the charge current should be fairly 
 
 Scope: decision, register policy and hardware/PCB check. **Result: firmware-only.** No schematic, BOM, library or `.kicad_pcb` file was changed, so no ERC run was needed. This report supersedes the "ICHG ceiling 3 A / default 2 A" proposal in `power-analysis-2026-11-01.md` section 4 and the "ICHG at most 3 A" line in `firmware-system-spec-2026-11-01.md` section 3.2.
 
+> **2026-11-03: pack decision 1S4P** (4 x Samsung INR21700-50S, 20 Ah, about 72 Wh). Section 12 gives the 1S4P values and supersedes ITERM, IPRECHG and the safety timer in sections 0 and 3, and the charge times in sections 0 and 5. ICHG, VREG, the input cap, JEITA, TREG and OCP are unchanged. Sections 0-11 are kept as the 1S2P basis.
+
 Labels: **[DS]** = read in a local datasheet (file, section/page). **[FIG]** = read off a datasheet plot (about ±1 % efficiency). **[EST]** = my arithmetic or model. **[UNVERIFIED]** = not read in a primary document.
 
 ---
@@ -31,6 +33,8 @@ Charge time [EST, section 5]: about 2.8 h from empty to termination at 4.10 V wi
 ---
 
 ## 1. The chosen battery pack
+
+> 2026-11-03: superseded by section 12 (1S4P, 20 Ah). The 1S2P description below is history.
 
 **Pack (as specified; not yet purchased).** `HANDOVER.md` "Mechanical CAD and pack decision (2026-10-06)", `reports/battery-pack-rfq.md`, `bom/hardware-buy-list.csv` row 32.
 - 1S2P 21700, 10 Ah nominal, 3.6 V. Preferred cells are Samsung INR21700-50S; Molicel P45B "or equivalent" is also acceptable.
@@ -403,3 +407,76 @@ Keep U4-27 PGND's escape between them, and keep the SW copper area small (TI lay
 ```
 
 **Not obtained:** the Samsung INR21700-50S formal product specification (imrbatteries.com 404, nkon.nl 403).
+
+---
+
+## 12. Pack decision 1S4P (2026-11-03)
+
+**Owner decision (2026-11-03): 1S4P, 4 x Samsung INR21700-50S in parallel, 20 Ah nominal, about 72 Wh (3.6 V).** The analysis is in `battery-4p-feasibility-2026-11-03.md` sections 2-3. This section supersedes the values that depend on capacity. Everything that depends on cell voltage or on the board current is unchanged, because the load sets the pack terminal current, not the cell count. Pack status: RFQ only (`battery-pack-rfq.md`, `bom/hardware-buy-list.csv` row 32).
+
+### 12.1 Register and firmware values
+
+| Item | 1S2P (sections 0-3) | **1S4P (now)** | Reason |
+|---|---|---|---|
+| REG03 ICHG | 0x0190, 4.0 A (0.4C, 2.0 A per cell) | **0x0190, 4.0 A (0.2C, 1.0 A per cell)**: unchanged | The 17 W input cap (section 2.2) sets the real charge current (3.6-3.9 A product off). 1.0 A per cell is 40 % of Samsung's 2.5 A standard charge [DS deck p.3]. |
+| REG09 ITERM | 0x0C, 480 mA | **0x19, 1000 mA** | Keeps 0.05C per cell: Samsung cut-off 250 mA per cell [DS deck p.3 note 1] x 4. 1000 mA is the top of the 40-1000 mA range (40 mA step) [DS SLUSDG1C REG09]. Accuracy is tabulated only at 480 mA (±14 %) [UNVERIFIED at 1000 mA]. |
+| REG08 VBAT_LOWV / IPRECHG | 0xCC, 71.4 %, 480 mA | **0xD2, 71.4 %, 720 mA** | Against the fixed 2 h pre-charge timer: 0.72 A x 2 h = 1.44 Ah. A 2.5 V to 2.93 V recovery needs about 0.2-0.6 Ah at 20 Ah [EST, section 2.5 scaled x2]. 0.18 A per cell (0.036C) is gentle. U4 BATFET-LDO loss at most (3.7 − 2.5) x 0.72 = 0.86 W [EST]; TREG covers it. |
+| REG0E timers | 0x3B (8 h, TMR2X) for sources ≥ 15 W; 0x3F (24 h) below | **0x3D (12 h, TMR2X; this is the POR value) for sources ≥ 15 W; 0x3F (24 h) below 15 W** | Section 12.2. CHG_TMR choices are 5/8/12/24 h [DS SLUSDG1C §8.5 tSAFETY, REG0E]. |
+| MAX17048 HIBRT | default 0x8030 | **HibThr 0x40 (HIBRT 0x4030) if the default model and thresholds are used** | CRATE in %/h falls by 2/n for the same current. With the default HibThr 0x80 (26.6 %/h) the gauge would hibernate below about 5.3 A at 20 Ah, which includes playback [DS MAX17048 HIBRT; feasibility §2.6]. Scale every other CRATE-based firmware threshold by 0.5 too. ModelGauge has no capacity register; SOC needs no change. |
+| Firmware capacity constant (time-to-empty, UI, charge-time estimate) | 10 Ah | **20 Ah** | |
+| Unchanged | | VREG 4.10 V / 4.16 V (0x019A / 0x01A0), VRECHG 200 mV, JEITA (REG17 0x02, REG18 0x54), TREG 100 °C / TSHUT 130 °C (REG16 0x90), watchdog off, EN_BATOC (9.3 A), input cap 17 W and the section 4 IINDPM/VINDPM table, TS network R100/R101 | These depend on the cell or on the current, not on the capacity. |
+
+The section 3 register table is otherwise unchanged. Write REG08 = **0xD2**, REG09 = **0x19** and REG0E = **0x3D** (or 0x3F below 15 W) in place of 0xCC / 0x0C / 0x3B. All three are reset by the watchdog and REG_RST, so they belong to the firmware's 5 s read-back set (firmware spec 3.2).
+
+### 12.2 Safety timer vs charge time (consistency check)
+
+The charge times use the CC-CV model of section 5, recalibrated, with ITERM at 0.05C per cell (`battery-4p-feasibility` §2.3). They are estimates, about ±10 % (generic OCV curve) [EST].
+
+| Source / condition (charge current) | Empty to termination [EST] | 20-80 % [EST] | Timer | Headroom |
+|---|---|---|---|---|
+| ICHG 4.0 A reached | 4.9 h | 3.1 h | 12 h | 2.4x |
+| 9-15 V PD, product off (about 3.7 A) | **5.1 h** | **3.3 h** | 12 h | 2.35x |
+| 1 W SYS, or 5 V / 3 A (about 3.2 A) | 5.8 h | 3.8 h | 12 h (5 V / 3 A = 15 W is in the ≥ 15 W branch) | 2.1x |
+| 20 V, U4 in TREG (about 3.1 A): **worst case for sources ≥ 15 W** | **5.9 h** | 3.9 h | 12 h, counted at half rate while in TREG (TMR2X), so up to 24 h | **2.0x** at full rate; about 4x if TREG holds for the whole charge |
+| 5 V / 1.5 A (about 1.5 A) | 11.6 h | 8.1 h | 24 h (0x3F) | 2.1x |
+| VREG 4.16 V "full" mode, about 3.7 A | 5.5 h | | 12 h | 2.2x |
+| 5 V / 0.5 A fallback (0.2-0.4 A) | about 50-100 h | | 24 h | maintenance only (as before): the timer may expire, and firmware latches F-CHG |
+
+Result: **12 h is consistent with the worst ≥ 15 W estimate (5.9 h) and leaves 2.0x margin even if the timer runs at full rate.** That is slightly less than the 1S2P ratio (8 h vs about 3 h, 2.7x), but still a factor of 2. The 8 h setting would leave only 1.36x over 5.9 h, which is too tight for the ±10 % model error plus playback while charging. Loud playback lowers the charge current (section 4: about 1.8 A at 8 W SYS), but the input is then in IINDPM, so TMR2X halves the timer rate as well. ITERM left at 480 mA would add about 0.7 h (5.8 h at 9-15 V; 6.6 h worst case).
+
+### 12.3 Run time [EST]
+
+Basis: n x 5.0 Ah x 3.6 V (50S typical, deck p.3) = 72 Wh, 85 % conversion efficiency, full charge to 4.20 V equivalent. The value in brackets is with the 4.10 V default float (about 90 %, section 2.3).
+
+| Average load | 1S2P (36 Wh) | **1S4P (72 Wh)** |
+|---|---|---|
+| 5 W | 6.1 h (5.5) | **12.2 h (11.0)** |
+| 10 W | 3.1 h (2.8) | **6.1 h (5.5)** |
+| 20 W | 1.5 h (1.4) | **3.1 h (2.8)** |
+
+A 20 W average is near the boost ceiling and is not a realistic continuous load. P45B cells would give about 10 % less.
+
+### 12.4 Pack, PCM and hardware
+
+- **Board: no change.** J5, SW101, the battery-path copper, Q103, L1 and U4 carry the same currents as with 1S2P (`battery-4p-feasibility` §2.1, §2.5). The section 6 conclusion stands.
+- Per-cell current falls: 1.0 A at 4 A charge, 1.5 A at 6 A RMS, 2.0-2.3 A at the 8 A boost peaks. Charge heating is about 16 mW per cell (64 mW for 1S2P) [EST, 16.3 mΩ DCIR].
+- **PCM (RFQ):** OV 4.25 V; over-discharge 2.5-2.8 V; ≥ 10 A continuous / 20 A for 1 s; **discharge over-current trip 12-20 A** with a delay of 10 ms or more (above the BQ25792 9.3 A OCP and the 8 A peaks, below what J5 and the 18 AWG harness can carry); charge limit ≥ 5 A; under 10 µA drain. A "4P" PCM sold for 20-30 A is acceptable only if its trip point is inside this window. Add **per-cell fusible links** (slotted nickel or fuse wire on each positive end), because three cells feed an internal short in the fourth.
+- **NTC:** one 10 kΩ 103AT-type (B 3435), glued between the two middle cells (2 and 3) at mid-length. The TS network is unchanged (section 2.6).
+- **Build:** same model and lot, matched within about 2 % capacity and ±1 mΩ DCIR [EST, common practice]; every cell within 10 mV OCV before the first weld; spot-welded 0.15-0.2 mm pure nickel; vendor-built.
+- Harness: lead about 180 mm (CAD v15 route about 131 mm plus slack), 18 AWG: about 7.5 mΩ for the pair [EST, 20.9 mΩ/m], 0.13 W at 4.1 A.
+- Shipping: 72 Wh nominal is under the 100 Wh airline limit [UNVERIFIED for the AU shipping route]. UN38.3 documents are still required (RFQ item 7).
+
+### 12.5 Bench additions (section 8)
+
+- Item 7: pre-charge at **720 mA** from 2.5 V; check that it reaches 2.93 V well inside the 2 h pre-charge timer.
+- Read back REG0E = 0x3D. Run one full charge from empty at 9 V and one at 20 V, and log the time to termination against section 12.2 (expected about 5.1 h and 5.9 h).
+- Check termination at ITERM 1000 mA (CHG_STAT = 111), and the gauge reading at the 4.10 V float.
+- NTC position check: compare the NTC reading with a thermocouple on cells 1 and 4 during a 4 A charge and during loud playback (cell temperature spread across the brick).
+
+### 12.6 Not verified
+
+- The real PCM (OCP, OV, charge limit, size) and the pack outline: RFQ only.
+- The Samsung 50S formal specification (charge-temperature window, mass): only the SDI 2021 deck was read; the siblings are as in section 1.
+- The genuine Molex 43650-0300 8.5 A rating: the local PDF is an LXW clone drawing rated 5 A. This applies to 1S2P too, and the J5 current does not change with 1S4P. Order genuine Molex.
+- Cell price: unknown.
+- The charge times and run times above are model estimates.
